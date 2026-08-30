@@ -289,10 +289,12 @@ anything larger.
 
 ## Licence
 
-This archive is dedicated to the public domain under CC0 1.0.
+My contributions to this archive, the Pronto conversions, the schema, and the
+organization of the data, are released under CC0 1.0 Universal.
 
-The underlying device and protocol data originates with Logitech's Harmony
-service; this project makes no ownership claim over it and asserts no rights
-beyond its own compilation and derived formats.
+The underlying IR codes and protocol definitions originate with Logitech. I make no
+representation about their copyright status and I'm not in a position to license them.
+CC0 waives my rights, not anyone else's. If you're building something commercial on
+this, evaluate that yourself.
 
 See `LICENSE` for the full CC0 1.0 Universal text.
