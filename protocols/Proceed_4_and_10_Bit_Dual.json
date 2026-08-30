@@ -1,0 +1,207 @@
+{
+  "carrierHz": 34000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 34000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 260
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 965
+          }
+        ],
+        "Name": "Proceed 4 and 10 Bit Dual",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 275
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 965
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 275
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 965
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 4,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 275
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 2830
+          }
+        ]
+      },
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 275
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 960
+          }
+        ],
+        "Name": "Proceed 4 and 10 Bit Dual 1",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 275
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 960
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 275
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1915
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 10,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 275
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 102000
+          }
+        ]
+      }
+    ],
+    "Id-": 256,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Proceed 4 and 10 Bit Dual",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Proceed 4 and 10 Bit Dual 1",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Proceed 4 and 10 Bit Dual",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{34.0k,msb}(<275u,-965u|275u,-965u>(260u,-965u,Code0:4,275u,-2830u),<275u,-960u|275u,-1915u>(275u,-960u,Code1:10,275u,-102000u))*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 4,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 10,
+      "segment": "1",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 1
+    }
+  },
+  "logitechProtocolId": 256,
+  "name": "Proceed 4 and 10 Bit Dual",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

@@ -1,0 +1,129 @@
+{
+  "carrierHz": 38000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 38000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 260
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 260
+          }
+        ],
+        "Name": "Siemens 22 Bit Dual",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 260
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 260
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 260
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 260
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 22,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 88300
+          }
+        ]
+      }
+    ],
+    "Id-": 272,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Siemens 22 Bit Dual",
+          "SegmentType": 1
+        }
+      ],
+      "Start": [
+        {
+          "SegmentName": "Siemens 22 Bit Dual",
+          "SegmentType": 1
+        }
+      ]
+    },
+    "Name": "Siemens 22 Bit Dual",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{38.0k,msb}<-260u,260u|260u,-260u>(260u,-260u,Code0:22,-88300u)(260u,-260u,Code1:22,-88300u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 22,
+      "segment": "0",
+      "sequence": "start",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 22,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 272,
+  "name": "Siemens 22 Bit Dual",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

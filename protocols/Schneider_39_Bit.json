@@ -1,0 +1,123 @@
+{
+  "carrierHz": 34400,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 34400,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 220
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 780
+          }
+        ],
+        "Name": "Schneider 39 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 205
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 290
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 205
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 790
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 39,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 205
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 39600
+          }
+        ]
+      }
+    ],
+    "Id-": 355,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Schneider 39 Bit",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Schneider 39 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{34.4k,msb}<205u,-290u|205u,-790u>(220u,-780u,Code0:39,205u,-39600u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 39,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 355,
+  "name": "Schneider 39 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

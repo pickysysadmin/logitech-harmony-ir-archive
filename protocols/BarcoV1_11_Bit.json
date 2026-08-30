@@ -1,0 +1,135 @@
+{
+  "carrierHz": 415000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 415000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 30
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 290
+          }
+        ],
+        "Name": "BarcoV1 11 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 30
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 85
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 30
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 185
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 11,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 30
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 290
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 30
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 130000
+          }
+        ]
+      }
+    ],
+    "Id-": 760,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "BarcoV1 11 Bit",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "BarcoV1 11 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{415.0k,msb}<30u,-85u|30u,-185u>(30u,-290u,Code0:11,30u,-290u,30u,-130000u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 11,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 760,
+  "name": "BarcoV1 11 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

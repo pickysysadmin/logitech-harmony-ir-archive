@@ -1,0 +1,194 @@
+{
+  "carrierHz": 38034,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 38034,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 2000
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 480
+          }
+        ],
+        "Name": "OrTek 17 Bit",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 508
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 472
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 472
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 508
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 17,
+          "ToggleBit": null
+        },
+        "TotalLength": 67500,
+        "Trailer": []
+      },
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 2000
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 480
+          }
+        ],
+        "Name": "OrTek 17 Bit 1",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 508
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 472
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 472
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 508
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 17,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": []
+      }
+    ],
+    "Id-": 650,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": [
+        {
+          "SegmentName": "OrTek 17 Bit 1",
+          "SegmentType": 1
+        }
+      ],
+      "Repeat": [
+        {
+          "SegmentName": "OrTek 17 Bit",
+          "SegmentType": 1
+        }
+      ],
+      "Start": [
+        {
+          "SegmentName": "OrTek 17 Bit",
+          "SegmentType": 1
+        }
+      ]
+    },
+    "Name": "OrTek 17 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{38.0k,msb}<-508u,472u|472u,-508u>(2000u,-480u,Code0:17,^67500u)(2000u,-480u,Code1:17,^67500u)*(2000u,-480u,Code2:17)",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 17,
+      "segment": "0",
+      "sequence": "start",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 17,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code2": {
+      "bits": 17,
+      "segment": "1",
+      "sequence": "finish",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 650,
+  "name": "OrTek 17 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "OrtekMCE"
+}

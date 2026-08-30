@@ -1,0 +1,188 @@
+{
+  "carrierHz": 37000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 37000,
+    "CodeSegments": [
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 650
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 1620
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 650
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 46800
+          }
+        ],
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 650
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 1620
+          }
+        ],
+        "Name": "Toshiba 32 Bit 3 KeyCodeRepeat",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 650
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 46800
+          }
+        ]
+      }
+    ],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 9000
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 4500
+          }
+        ],
+        "Name": "Toshiba 32 Bit 3",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 550
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 600
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 550
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1700
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 32,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 550
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 46800
+          }
+        ]
+      }
+    ],
+    "Id-": 37,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Toshiba 32 Bit 3 KeyCodeRepeat",
+          "SegmentType": 0
+        }
+      ],
+      "Start": [
+        {
+          "SegmentName": "Toshiba 32 Bit 3",
+          "SegmentType": 1
+        }
+      ]
+    },
+    "Name": "Toshiba 32 Bit 3",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{37.0k,msb}<550u,-600u|550u,-1700u>(9000u,-4500u,Code0:32,550u,-46800u)(650u,-1620u,650u,-46800u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 32,
+      "segment": "0",
+      "sequence": "start",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 37,
+  "name": "Toshiba 32 Bit 3",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "Tivo"
+}

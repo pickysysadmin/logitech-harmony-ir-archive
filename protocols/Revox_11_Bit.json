@@ -1,0 +1,135 @@
+{
+  "carrierHz": 455000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 455000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 20
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 470
+          }
+        ],
+        "Name": "Revox 11 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 20
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 155
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 20
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 315
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 11,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 20
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 470
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 20
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 2000
+          }
+        ]
+      }
+    ],
+    "Id-": 159,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Revox 11 Bit",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Revox 11 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{455.0k,msb}<20u,-155u|20u,-315u>(20u,-470u,Code0:11,20u,-470u,20u,-2000u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 11,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 159,
+  "name": "Revox 11 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

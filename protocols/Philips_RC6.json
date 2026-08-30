@@ -1,0 +1,258 @@
+{
+  "carrierHz": 36000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 36000,
+    "CodeSegments": [
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 900
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 900
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 900
+          }
+        ],
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 900
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 900
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 900
+          }
+        ],
+        "Name": "Philips RC6 KeyCodeStart",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": []
+      },
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 3600
+          }
+        ],
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 3600
+          }
+        ],
+        "Name": "Philips RC6 KeyCodeSpace",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": []
+      },
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 78000
+          }
+        ],
+        "Header": [],
+        "Name": "Philips RC6 KeyCodeTrailer",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 78000
+          }
+        ]
+      }
+    ],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [],
+        "Name": "Philips RC6",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 900
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 900
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 900
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 900
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 6,
+          "ToggleBit": 0
+        },
+        "TotalLength": 0,
+        "Trailer": []
+      },
+      {
+        "Header": [],
+        "Name": "Philips RC6 1",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 900
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 900
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 900
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 900
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 12,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": []
+      }
+    ],
+    "Id-": 26,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": false,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Philips RC6 KeyCodeStart",
+          "SegmentType": 0
+        },
+        {
+          "SegmentName": "Philips RC6",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Philips RC6 KeyCodeSpace",
+          "SegmentType": 0
+        },
+        {
+          "SegmentName": "Philips RC6 1",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Philips RC6 KeyCodeTrailer",
+          "SegmentType": 0
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Philips RC6",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{36.0k,msb}<900u,-900u|-900u,900u>(900u,-900u,900u,T:1,Code0B:5,-3600u,Code1:12,-78000u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 6,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": 0,
+      "token": 1
+    },
+    "Code1": {
+      "bits": 12,
+      "segment": "1",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 3
+    }
+  },
+  "logitechProtocolId": 26,
+  "name": "Philips RC6",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "RC5x"
+}

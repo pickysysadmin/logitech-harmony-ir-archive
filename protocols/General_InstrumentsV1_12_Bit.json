@@ -1,0 +1,117 @@
+{
+  "carrierHz": 38000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 38000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 5000
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 2000
+          }
+        ],
+        "Name": "General InstrumentsV1 12 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 1000
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 3000
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 1000
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1000
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 12,
+          "ToggleBit": null
+        },
+        "TotalLength": 99500,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 1000
+          }
+        ]
+      }
+    ],
+    "Id-": 683,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "General InstrumentsV1 12 Bit",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "General InstrumentsV1 12 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{38.0k,msb}<1000u,-3000u|1000u,-1000u>(5000u,-2000u,Code0:12,1000u,^99500u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 12,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 683,
+  "name": "General InstrumentsV1 12 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "G.I.4DTV"
+}

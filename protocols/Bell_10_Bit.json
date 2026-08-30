@@ -1,0 +1,150 @@
+{
+  "carrierHz": 56000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 56000,
+    "CodeSegments": [
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 375
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 9600
+          }
+        ],
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 375
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 9600
+          }
+        ],
+        "Name": "Bell 10 Bit KeyCodeStart",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": []
+      }
+    ],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [],
+        "Name": "Bell 10 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 375
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 2800
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 375
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 4600
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 10,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 375
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 9600
+          }
+        ]
+      }
+    ],
+    "Id-": 34,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Bell 10 Bit",
+          "SegmentType": 1
+        }
+      ],
+      "Start": [
+        {
+          "SegmentName": "Bell 10 Bit KeyCodeStart",
+          "SegmentType": 0
+        }
+      ]
+    },
+    "Name": "Bell 10 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{56.0k,msb}<375u,-2800u|375u,-4600u>(375u,-9600u)(Code0:10,375u,-9600u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 10,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 34,
+  "name": "Bell 10 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

@@ -1,0 +1,157 @@
+{
+  "carrierHz": 37000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 37000,
+    "CodeSegments": [
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 20
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 88500
+          }
+        ],
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 20
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 88500
+          }
+        ],
+        "Name": "Corona 48 Bit KeyCodeRepeat",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": []
+      }
+    ],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 3475
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 1825
+          }
+        ],
+        "Name": "Corona 48 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 425
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 480
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 425
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1400
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 48,
+          "ToggleBit": null
+        },
+        "TotalLength": 156320,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 568
+          }
+        ]
+      }
+    ],
+    "Id-": 379,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Corona 48 Bit KeyCodeRepeat",
+          "SegmentType": 0
+        }
+      ],
+      "Start": [
+        {
+          "SegmentName": "Corona 48 Bit",
+          "SegmentType": 1
+        }
+      ]
+    },
+    "Name": "Corona 48 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{37.0k,msb}<425u,-480u|425u,-1400u>(3475u,-1825u,Code0:48,568u,^156320u)(20u,-88500u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 48,
+      "segment": "0",
+      "sequence": "start",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 379,
+  "name": "Corona 48 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

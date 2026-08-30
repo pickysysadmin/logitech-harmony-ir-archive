@@ -1,0 +1,104 @@
+{
+  "carrierHz": 34000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 34000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [],
+        "Name": "Thomson 12 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 470
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 2040
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 470
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 4570
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 12,
+          "ToggleBit": null
+        },
+        "TotalLength": 80000,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 470
+          }
+        ]
+      }
+    ],
+    "Id-": 52,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": false,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Thomson 12 Bit",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Thomson 12 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{34.0k,msb}<470u,-2040u|470u,-4570u>(Code0:12,470u,^80000u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 12,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 52,
+  "name": "Thomson 12 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "Thomson7"
+}

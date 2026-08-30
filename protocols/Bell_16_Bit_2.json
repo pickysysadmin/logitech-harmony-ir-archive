@@ -1,0 +1,211 @@
+{
+  "carrierHz": 56000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 56000,
+    "CodeSegments": [
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 400
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 6270
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 375
+          }
+        ],
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 400
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 6270
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 375
+          }
+        ],
+        "Name": "Bell 16 Bit 2 KeyCodeStart",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": []
+      },
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 6270
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 375
+          }
+        ],
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 6270
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 375
+          }
+        ],
+        "Name": "Bell 16 Bit 2 KeyCodeRepeatStart",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": []
+      }
+    ],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [],
+        "Name": "Bell 16 Bit 2",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1700
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 375
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 2920
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 375
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 16,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 6300
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 375
+          }
+        ]
+      }
+    ],
+    "Id-": 33,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Bell 16 Bit 2 KeyCodeRepeatStart",
+          "SegmentType": 0
+        },
+        {
+          "SegmentName": "Bell 16 Bit 2",
+          "SegmentType": 1
+        }
+      ],
+      "Start": [
+        {
+          "SegmentName": "Bell 16 Bit 2 KeyCodeStart",
+          "SegmentType": 0
+        },
+        {
+          "SegmentName": "Bell 16 Bit 2",
+          "SegmentType": 1
+        }
+      ]
+    },
+    "Name": "Bell 16 Bit 2",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{56.0k,msb}<-1700u,375u|-2920u,375u>(400u,-6270u,375u,Code0:16,-6300u,375u)(-6270u,375u,Code1:16,-6300u,375u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 16,
+      "segment": "0",
+      "sequence": "start",
+      "toggleBit": null,
+      "token": 1
+    },
+    "Code1": {
+      "bits": 16,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 1
+    }
+  },
+  "logitechProtocolId": 33,
+  "name": "Bell 16 Bit 2",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "Dish_Network"
+}

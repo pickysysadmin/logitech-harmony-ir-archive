@@ -1,0 +1,122 @@
+{
+  "carrierHz": 38000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 38000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 600
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 600
+          }
+        ],
+        "Name": "Canton 22 Bit",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 600
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 600
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 600
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 600
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 22,
+          "ToggleBit": null
+        },
+        "TotalLength": 100000,
+        "Trailer": []
+      }
+    ],
+    "Id-": 717,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Canton 22 Bit",
+          "SegmentType": 1
+        }
+      ],
+      "Start": [
+        {
+          "SegmentName": "Canton 22 Bit",
+          "SegmentType": 1
+        }
+      ]
+    },
+    "Name": "Canton 22 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{38.0k,msb}<-600u,600u|600u,-600u>(600u,-600u,Code0:22,^100000u)(600u,-600u,Code1:22,^100000u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 22,
+      "segment": "0",
+      "sequence": "start",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 22,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 717,
+  "name": "Canton 22 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

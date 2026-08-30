@@ -1,0 +1,199 @@
+{
+  "carrierHz": 38000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 38000,
+    "CodeSegments": [
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 9025
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 2283
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 525
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 95419
+          }
+        ],
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 9025
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 2283
+          }
+        ],
+        "Name": "Cambridge 32 Bit Dual KeyCodeRepeat",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 525
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 95419
+          }
+        ]
+      }
+    ],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 9025
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 4750
+          }
+        ],
+        "Name": "Cambridge 32 Bit Dual",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 525
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1740
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 525
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 610
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 32,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 525
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 41360
+          }
+        ]
+      }
+    ],
+    "Id-": 55,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Cambridge 32 Bit Dual KeyCodeRepeat",
+          "SegmentType": 0
+        }
+      ],
+      "Start": [
+        {
+          "SegmentName": "Cambridge 32 Bit Dual",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Cambridge 32 Bit Dual",
+          "SegmentType": 1
+        }
+      ]
+    },
+    "Name": "Cambridge 32 Bit Dual",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{38.0k,msb}<525u,-1740u|525u,-610u>(9025u,-4750u,Code0:32,525u,-41360u,9025u,-4750u,Code1:32,525u,-41360u)(9025u,-2283u,525u,-95419u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 32,
+      "segment": "0",
+      "sequence": "start",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 32,
+      "segment": "0",
+      "sequence": "start",
+      "toggleBit": null,
+      "token": 1
+    }
+  },
+  "logitechProtocolId": 55,
+  "name": "Cambridge 32 Bit Dual",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "NEC2"
+}

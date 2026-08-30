@@ -1,0 +1,145 @@
+{
+  "carrierHz": 36000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 36000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 3600
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 1800
+          }
+        ],
+        "Name": "Corona 56 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 455
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 460
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 455
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1348
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 56,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 455
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 11300
+          }
+        ]
+      }
+    ],
+    "Id-": 421,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Corona 56 Bit",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Corona 56 Bit",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Corona 56 Bit",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Corona 56 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{36.0k,msb}<455u,-460u|455u,-1348u>(3600u,-1800u,Code0:56,455u,-11300u,3600u,-1800u,Code1:56,455u,-11300u,3600u,-1800u,Code2:56,455u,-11300u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 56,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 56,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 1
+    },
+    "Code2": {
+      "bits": 56,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 2
+    }
+  },
+  "logitechProtocolId": 421,
+  "name": "Corona 56 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

@@ -1,0 +1,138 @@
+{
+  "carrierHz": 40000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 40000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 650
+          }
+        ],
+        "Name": "LCN 24 Bit Quad",
+        "Payload": {
+          "EncodingType": 2,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 250
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 250
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 250
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 525
+                }
+              ],
+              "BitType": 1
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 525
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 250
+                }
+              ],
+              "BitType": 2
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 525
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 525
+                }
+              ],
+              "BitType": 3
+            }
+          ],
+          "NumberOfBits": 24,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": []
+      }
+    ],
+    "Id-": 747,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "LCN 24 Bit Quad",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "LCN 24 Bit Quad",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{40.0k,msb}<-250u,250u|-250u,525u|-525u,250u|-525u,525u>(650u,Code0:48)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 24,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 747,
+  "name": "LCN 24 Bit Quad",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

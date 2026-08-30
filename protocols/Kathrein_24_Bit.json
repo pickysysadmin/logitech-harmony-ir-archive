@@ -1,0 +1,194 @@
+{
+  "carrierHz": 37764,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 37764,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 9015
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 4400
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 548
+          }
+        ],
+        "Name": "Kathrein 24 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 590
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 548
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1710
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 548
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 24,
+          "ToggleBit": null
+        },
+        "TotalLength": 108163,
+        "Trailer": []
+      },
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 9010
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 4510
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 548
+          }
+        ],
+        "Name": "Kathrein 24 Bit 1",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 567
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 550
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1704
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 550
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 8,
+          "ToggleBit": null
+        },
+        "TotalLength": 107709,
+        "Trailer": []
+      }
+    ],
+    "Id-": 173,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Kathrein 24 Bit 1",
+          "SegmentType": 1
+        }
+      ],
+      "Start": [
+        {
+          "SegmentName": "Kathrein 24 Bit",
+          "SegmentType": 1
+        }
+      ]
+    },
+    "Name": "Kathrein 24 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{37.8k,msb}(<-590u,548u|-1710u,548u>(9015u,-4400u,548u,Code0:24,^108163u))(<-567u,550u|-1704u,550u>(9010u,-4510u,548u,Code1:8,^107709u))*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 24,
+      "segment": "0",
+      "sequence": "start",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 8,
+      "segment": "1",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 173,
+  "name": "Kathrein 24 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "Kathrein"
+}

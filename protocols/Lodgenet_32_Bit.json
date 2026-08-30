@@ -1,0 +1,182 @@
+{
+  "carrierHz": 25000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 25000,
+    "CodeSegments": [
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 13725
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 3438
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 895
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 79232
+          }
+        ],
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 13725
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 3438
+          }
+        ],
+        "Name": "Lodgenet 32 Bit KeyCodeRepeat",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 895
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 79232
+          }
+        ]
+      }
+    ],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 13725
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 6805
+          }
+        ],
+        "Name": "Lodgenet 32 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 895
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 869
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 895
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 2610
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 32,
+          "ToggleBit": null
+        },
+        "TotalLength": 162700,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 895
+          }
+        ]
+      }
+    ],
+    "Id-": 508,
+    "IsFullSequence": true,
+    "IsPadded": true,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Lodgenet 32 Bit KeyCodeRepeat",
+          "SegmentType": 0
+        }
+      ],
+      "Start": [
+        {
+          "SegmentName": "Lodgenet 32 Bit",
+          "SegmentType": 1
+        }
+      ]
+    },
+    "Name": "Lodgenet 32 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{25.0k,msb}<895u,-869u|895u,-2610u>(13725u,-6805u,Code0:32,895u,^162700u)(13725u,-3438u,895u,-79232u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 32,
+      "segment": "0",
+      "sequence": "start",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 508,
+  "name": "Lodgenet 32 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

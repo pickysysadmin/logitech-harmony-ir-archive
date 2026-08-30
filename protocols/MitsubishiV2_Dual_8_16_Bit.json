@@ -1,0 +1,214 @@
+{
+  "carrierHz": 38000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 38000,
+    "CodeSegments": [
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 8370
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 4220
+          }
+        ],
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 8370
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 4220
+          }
+        ],
+        "Name": "MitsubishiV2 Dual 8 16 Bit KeyCodeStart",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": []
+      }
+    ],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [],
+        "Name": "MitsubishiV2 Dual 8 16 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 508
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1588
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 508
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 536
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 8,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 508
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 4213
+          }
+        ]
+      },
+      {
+        "Header": [],
+        "Name": "MitsubishiV2 Dual 8 16 Bit 1",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 508
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1588
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 508
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 536
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 8,
+          "ToggleBit": null
+        },
+        "TotalLength": 39500,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 508
+          }
+        ]
+      }
+    ],
+    "Id-": 420,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": false,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "MitsubishiV2 Dual 8 16 Bit KeyCodeStart",
+          "SegmentType": 0
+        },
+        {
+          "SegmentName": "MitsubishiV2 Dual 8 16 Bit",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "MitsubishiV2 Dual 8 16 Bit 1",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "MitsubishiV2 Dual 8 16 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{38.0k,msb}<508u,-1588u|508u,-536u>(8370u,-4220u,Code0:8,508u,-4213u,Code1:8,508u,^39500u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 8,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 1
+    },
+    "Code1": {
+      "bits": 8,
+      "segment": "1",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 2
+    }
+  },
+  "logitechProtocolId": 420,
+  "name": "MitsubishiV2 Dual 8 16 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "Audiovox"
+}

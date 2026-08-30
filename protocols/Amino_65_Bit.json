@@ -1,0 +1,217 @@
+{
+  "carrierHz": 55000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 55000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 950
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 970
+          }
+        ],
+        "Name": "Amino 65 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 320
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 320
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 65,
+          "ToggleBit": null
+        },
+        "TotalLength": 100000,
+        "Trailer": []
+      },
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 950
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 970
+          }
+        ],
+        "Name": "Amino 65 Bit 1",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 320
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 320
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 65,
+          "ToggleBit": null
+        },
+        "TotalLength": 31954,
+        "Trailer": []
+      },
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 950
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 970
+          }
+        ],
+        "Name": "Amino 65 Bit 2",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 320
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 320
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 65,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": []
+      }
+    ],
+    "Id-": 493,
+    "IsFullSequence": true,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": [
+        {
+          "SegmentName": "Amino 65 Bit 1",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Amino 65 Bit 2",
+          "SegmentType": 1
+        }
+      ],
+      "Repeat": [
+        {
+          "SegmentName": "Amino 65 Bit",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Amino 65 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{55.0k,msb}<-320u|320u>(950u,-970u,Code0:65,^100000u)*(950u,-970u,Code1:65,^31954u,950u,-970u,Code2:65)",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 65,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 65,
+      "segment": "1",
+      "sequence": "finish",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code2": {
+      "bits": 65,
+      "segment": "2",
+      "sequence": "finish",
+      "toggleBit": null,
+      "token": 1
+    }
+  },
+  "logitechProtocolId": 493,
+  "name": "Amino 65 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "Sejin-1-56"
+}

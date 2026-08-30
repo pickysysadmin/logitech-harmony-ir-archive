@@ -1,0 +1,200 @@
+{
+  "carrierHz": 38000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 38000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 890
+          }
+        ],
+        "Name": "Azur 32 Bit Toggle",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 890
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 890
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 890
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 890
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 13,
+          "ToggleBit": 1
+        },
+        "TotalLength": 106500,
+        "Trailer": []
+      },
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 4800
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 4280
+          }
+        ],
+        "Name": "Azur 32 Bit Toggle 1",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 585
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1610
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 585
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 550
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 32,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 585
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 1610
+          }
+        ]
+      }
+    ],
+    "Id-": 292,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Azur 32 Bit Toggle 1",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Azur 32 Bit Toggle",
+          "SegmentType": 1
+        }
+      ],
+      "Start": [
+        {
+          "SegmentName": "Azur 32 Bit Toggle",
+          "SegmentType": 1
+        }
+      ]
+    },
+    "Name": "Azur 32 Bit Toggle",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{38.0k,msb}(<-890u,890u|890u,-890u>(890u,Code0A:1,T:1,Code0B:11,^106500u))(<585u,-1610u|585u,-550u>(4800u,-4280u,Code1:32,585u,-1610u),<-890u,890u|890u,-890u>(890u,Code2A:1,T:1,Code2B:11,^106500u))*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 13,
+      "segment": "0",
+      "sequence": "start",
+      "toggleBit": 1,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 32,
+      "segment": "1",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code2": {
+      "bits": 13,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": 1,
+      "token": 1
+    }
+  },
+  "logitechProtocolId": 292,
+  "name": "Azur 32 Bit Toggle",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "RC5"
+}

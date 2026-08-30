@@ -1,0 +1,161 @@
+{
+  "carrierHz": 39000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 39000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 250
+          }
+        ],
+        "Name": "Sharp 15 Bit Quad",
+        "Payload": {
+          "EncodingType": 2,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 700
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 250
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1700
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 250
+                }
+              ],
+              "BitType": 1
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 700
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 1700
+                }
+              ],
+              "BitType": 2
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1700
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 1700
+                }
+              ],
+              "BitType": 3
+            }
+          ],
+          "NumberOfBits": 15,
+          "ToggleBit": null
+        },
+        "TotalLength": 65000,
+        "Trailer": []
+      }
+    ],
+    "Id-": 184,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": false,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Sharp 15 Bit Quad",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Sharp 15 Bit Quad",
+          "SegmentType": 1
+        }
+      ],
+      "Start": [
+        {
+          "SegmentName": "Sharp 15 Bit Quad",
+          "SegmentType": 1
+        }
+      ]
+    },
+    "Name": "Sharp 15 Bit Quad",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{39.0k,msb}<-700u,250u|-1700u,250u|-700u,1700u|-1700u,1700u>(250u,Code0:30,^65000u)(250u,Code1:30,^65000u,250u,Code2:30,^65000u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 15,
+      "segment": "0",
+      "sequence": "start",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 15,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code2": {
+      "bits": 15,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 1
+    }
+  },
+  "logitechProtocolId": 184,
+  "name": "Sharp 15 Bit Quad",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "Sharp"
+}

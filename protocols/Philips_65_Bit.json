@@ -1,0 +1,110 @@
+{
+  "carrierHz": 56500,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 56500,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 950
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 970
+          }
+        ],
+        "Name": "Philips 65 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 320
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 320
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 65,
+          "ToggleBit": null
+        },
+        "TotalLength": 98500,
+        "Trailer": []
+      }
+    ],
+    "Id-": 543,
+    "IsFullSequence": true,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": [
+        {
+          "SegmentName": "Philips 65 Bit",
+          "SegmentType": 1
+        }
+      ],
+      "Repeat": [
+        {
+          "SegmentName": "Philips 65 Bit",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Philips 65 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{56.5k,msb}<-320u|320u>(950u,-970u,Code0:65,^98500u)*(950u,-970u,Code1:65,^98500u)",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 65,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 65,
+      "segment": "0",
+      "sequence": "finish",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 543,
+  "name": "Philips 65 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "Sejin-1-56"
+}

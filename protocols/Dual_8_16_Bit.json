@@ -1,0 +1,175 @@
+{
+  "carrierHz": 36000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 36000,
+    "CodeSegments": [
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 8700
+          }
+        ],
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 8700
+          }
+        ],
+        "Name": "Dual 8 16 Bit KeyCodeStart",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": []
+      },
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 27500
+          }
+        ],
+        "Header": [],
+        "Name": "Dual 8 16 Bit KeyCodeTrailer",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 27500
+          }
+        ]
+      }
+    ],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 4300
+          }
+        ],
+        "Name": "Dual 8 16 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 600
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 500
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 600
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1500
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 8,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 600
+          }
+        ]
+      }
+    ],
+    "Id-": 30,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": false,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Dual 8 16 Bit KeyCodeStart",
+          "SegmentType": 0
+        },
+        {
+          "SegmentName": "Dual 8 16 Bit",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Dual 8 16 Bit",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Dual 8 16 Bit KeyCodeTrailer",
+          "SegmentType": 0
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Dual 8 16 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{36.0k,msb}<600u,-500u|600u,-1500u>(8700u,-4300u,Code0:8,600u,-4300u,Code1:8,600u,-27500u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 8,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 1
+    },
+    "Code1": {
+      "bits": 8,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 2
+    }
+  },
+  "logitechProtocolId": 30,
+  "name": "Dual 8 16 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

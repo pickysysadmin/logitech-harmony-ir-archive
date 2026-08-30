@@ -1,0 +1,183 @@
+{
+  "carrierHz": 37800,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 37800,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 8471
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 4212
+          }
+        ],
+        "Name": "JVC 32 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 518
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1603
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 518
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 530
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 32,
+          "ToggleBit": null
+        },
+        "TotalLength": 95000,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 492
+          }
+        ]
+      },
+      {
+        "Header": [],
+        "Name": "JVC 32 Bit 1",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 518
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1603
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 518
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 530
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 32,
+          "ToggleBit": null
+        },
+        "TotalLength": 82000,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 492
+          }
+        ]
+      }
+    ],
+    "Id-": 103,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "JVC 32 Bit 1",
+          "SegmentType": 1
+        }
+      ],
+      "Start": [
+        {
+          "SegmentName": "JVC 32 Bit",
+          "SegmentType": 1
+        }
+      ]
+    },
+    "Name": "JVC 32 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{37.8k,msb}<518u,-1603u|518u,-530u>(8471u,-4212u,Code0:32,492u,^95000u)(Code1:32,492u,^82000u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 32,
+      "segment": "0",
+      "sequence": "start",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 32,
+      "segment": "1",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 103,
+  "name": "JVC 32 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "NEC-f16"
+}

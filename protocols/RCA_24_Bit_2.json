@@ -1,0 +1,199 @@
+{
+  "carrierHz": 56000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 56000,
+    "CodeSegments": [
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 20000
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 4100
+          }
+        ],
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 20000
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 4100
+          }
+        ],
+        "Name": "RCA 24 Bit 2 KeyCodeStart",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": []
+      },
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 4300
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 4700
+          }
+        ],
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 4300
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 4700
+          }
+        ],
+        "Name": "RCA 24 Bit 2 KeyCodeRepeatStart",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": []
+      }
+    ],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [],
+        "Name": "RCA 24 Bit 2",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 540
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 980
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 540
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1980
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 24,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 1000
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 8200
+          }
+        ]
+      }
+    ],
+    "Id-": 23,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "RCA 24 Bit 2 KeyCodeRepeatStart",
+          "SegmentType": 0
+        },
+        {
+          "SegmentName": "RCA 24 Bit 2",
+          "SegmentType": 1
+        }
+      ],
+      "Start": [
+        {
+          "SegmentName": "RCA 24 Bit 2 KeyCodeStart",
+          "SegmentType": 0
+        },
+        {
+          "SegmentName": "RCA 24 Bit 2",
+          "SegmentType": 1
+        }
+      ]
+    },
+    "Name": "RCA 24 Bit 2",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{56.0k,msb}<540u,-980u|540u,-1980u>(20000u,-4100u,Code0:24,1000u,-8200u)(4300u,-4700u,Code1:24,1000u,-8200u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 24,
+      "segment": "0",
+      "sequence": "start",
+      "toggleBit": null,
+      "token": 1
+    },
+    "Code1": {
+      "bits": 24,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 1
+    }
+  },
+  "logitechProtocolId": 23,
+  "name": "RCA 24 Bit 2",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "RCA(Old)"
+}

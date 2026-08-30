@@ -1,0 +1,170 @@
+{
+  "carrierHz": 39000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 39000,
+    "CodeSegments": [
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 9000
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 2300
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 550
+          }
+        ],
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 9000
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 2300
+          }
+        ],
+        "Name": "Jerrold 16 Bit 3 KeyCodeRepeat",
+        "Payload": null,
+        "TotalLength": 100500,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 550
+          }
+        ]
+      }
+    ],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 9000
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 4500
+          }
+        ],
+        "Name": "Jerrold 16 Bit 3",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 550
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 2200
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 550
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 4500
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 16,
+          "ToggleBit": null
+        },
+        "TotalLength": 100550,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 550
+          }
+        ]
+      }
+    ],
+    "Id-": 204,
+    "IsFullSequence": true,
+    "IsPadded": true,
+    "IsPublic": false,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Jerrold 16 Bit 3 KeyCodeRepeat",
+          "SegmentType": 0
+        }
+      ],
+      "Start": [
+        {
+          "SegmentName": "Jerrold 16 Bit 3",
+          "SegmentType": 1
+        }
+      ]
+    },
+    "Name": "Jerrold 16 Bit 3",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{39.0k,msb}<550u,-2200u|550u,-4500u>(9000u,-4500u,Code0:16,550u,^100550u)(9000u,-2300u,550u,-88650u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 16,
+      "segment": "0",
+      "sequence": "start",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 204,
+  "name": "Jerrold 16 Bit 3",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "G.I.Cable"
+}

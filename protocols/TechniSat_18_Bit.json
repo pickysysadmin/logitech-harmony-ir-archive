@@ -1,0 +1,182 @@
+{
+  "carrierHz": 36500,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 36500,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 300
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 330
+          }
+        ],
+        "Name": "TechniSat 18 Bit",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 330
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 330
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 330
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 330
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 18,
+          "ToggleBit": null
+        },
+        "TotalLength": 125000,
+        "Trailer": []
+      },
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 300
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 330
+          }
+        ],
+        "Name": "TechniSat 18 Bit 1",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 330
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 330
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 330
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 330
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 9,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": []
+      }
+    ],
+    "Id-": 787,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": [
+        {
+          "SegmentName": "TechniSat 18 Bit 1",
+          "SegmentType": 1
+        }
+      ],
+      "Repeat": [
+        {
+          "SegmentName": "TechniSat 18 Bit",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "TechniSat 18 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{36.5k,msb}<-330u,330u|330u,-330u>(300u,-330u,Code0:18,^125000u)*(300u,-330u,Code1:9)",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 18,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 9,
+      "segment": "1",
+      "sequence": "finish",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 787,
+  "name": "TechniSat 18 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

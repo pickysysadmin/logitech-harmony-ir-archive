@@ -1,0 +1,104 @@
+{
+  "carrierHz": 38500,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 38500,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 900
+          }
+        ],
+        "Name": "Scenario 13 Bit Toggle",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 900
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 900
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 900
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 900
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 13,
+          "ToggleBit": 1
+        },
+        "TotalLength": 54500,
+        "Trailer": []
+      }
+    ],
+    "Id-": 709,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Scenario 13 Bit Toggle",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Scenario 13 Bit Toggle",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{38.5k,msb}<900u,-900u|-900u,900u>(900u,Code0A:1,T:1,Code0B:11,^54500u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 13,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": 1,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 709,
+  "name": "Scenario 13 Bit Toggle",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

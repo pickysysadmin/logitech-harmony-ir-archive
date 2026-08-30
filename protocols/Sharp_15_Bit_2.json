@@ -1,0 +1,138 @@
+{
+  "carrierHz": 37000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 37000,
+    "CodeSegments": [
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 100000
+          }
+        ],
+        "Header": [],
+        "Name": "Sharp 15 Bit 2 KeyCodeSpace",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 100000
+          }
+        ]
+      }
+    ],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 270
+          }
+        ],
+        "Name": "Sharp 15 Bit 2",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 790
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 260
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1850
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 260
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 15,
+          "ToggleBit": null
+        },
+        "TotalLength": 67792,
+        "Trailer": []
+      }
+    ],
+    "Id-": 195,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Sharp 15 Bit 2",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Sharp 15 Bit 2",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Sharp 15 Bit 2",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{37.0k,msb}<-790u,260u|-1850u,260u>(270u,Code0:15,^67792u,270u,Code1:15,^67792u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 15,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 15,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 1
+    }
+  },
+  "logitechProtocolId": 195,
+  "name": "Sharp 15 Bit 2",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "Denon"
+}

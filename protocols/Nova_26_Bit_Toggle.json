@@ -1,0 +1,135 @@
+{
+  "carrierHz": 38250,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 38250,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 300
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 720
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 250
+          }
+        ],
+        "Name": "Nova 26 Bit Toggle",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 250
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 325
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 325
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 250
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 26,
+          "ToggleBit": 24
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 405
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 295
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 85000
+          }
+        ]
+      }
+    ],
+    "Id-": 798,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Nova 26 Bit Toggle",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Nova 26 Bit Toggle",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{38.2k,msb}<250u,-325u|-325u,250u>(300u,-720u,250u,Code0A:24,T:1,Code0B:1,-405u,295u,-85000u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 26,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": 24,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 798,
+  "name": "Nova 26 Bit Toggle",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

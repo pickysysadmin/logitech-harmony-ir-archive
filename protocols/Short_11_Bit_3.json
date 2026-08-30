@@ -1,0 +1,104 @@
+{
+  "carrierHz": 36500,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 36500,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [],
+        "Name": "Short 11 Bit 3",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 145
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 7410
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 145
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 4950
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 11,
+          "ToggleBit": 1
+        },
+        "TotalLength": 120000,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 145
+          }
+        ]
+      }
+    ],
+    "Id-": 230,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": false,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Short 11 Bit 3",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Short 11 Bit 3",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{36.5k,msb}<145u,-7410u|145u,-4950u>(Code0A:1,T:1,Code0B:9,145u,^120000u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 11,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": 1,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 230,
+  "name": "Short 11 Bit 3",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "RECS80"
+}

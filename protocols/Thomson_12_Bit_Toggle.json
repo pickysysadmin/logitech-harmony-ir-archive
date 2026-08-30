@@ -1,0 +1,104 @@
+{
+  "carrierHz": 34000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 34000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [],
+        "Name": "Thomson 12 Bit Toggle",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 470
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 2040
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 470
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 4570
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 12,
+          "ToggleBit": 4
+        },
+        "TotalLength": 80000,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 470
+          }
+        ]
+      }
+    ],
+    "Id-": 51,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Thomson 12 Bit Toggle",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Thomson 12 Bit Toggle",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{34.0k,msb}<470u,-2040u|470u,-4570u>(Code0A:4,T:1,Code0B:7,470u,^80000u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 12,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": 4,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 51,
+  "name": "Thomson 12 Bit Toggle",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "Thomson7"
+}

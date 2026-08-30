@@ -1,0 +1,214 @@
+{
+  "carrierHz": 15288,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 15288,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [],
+        "Name": "Ferguson 9 Bit Toggle",
+        "Payload": {
+          "EncodingType": 2,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 20
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 3783
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 20
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 5050
+                }
+              ],
+              "BitType": 1
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 20
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 7581
+                }
+              ],
+              "BitType": 2
+            },
+            {
+              "Atoms": [],
+              "BitType": 3
+            }
+          ],
+          "NumberOfBits": 9,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 20
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 58276
+          }
+        ]
+      },
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 20
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 3783
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 20
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 3783
+          }
+        ],
+        "Name": "Ferguson 9 Bit Toggle 1",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 20
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 5050
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 20
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 7581
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 1,
+          "ToggleBit": 0
+        },
+        "TotalLength": 0,
+        "Trailer": []
+      }
+    ],
+    "Id-": 554,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Ferguson 9 Bit Toggle 1",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Ferguson 9 Bit Toggle",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Ferguson 9 Bit Toggle",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{15.3k,msb}(<20u,-5050u|20u,-7581u>(20u,-3783u,20u,-3783u,T:1),<20u,-3783u|20u,-5050u|20u,-7581u|>(Code1:18,20u,-58276u))*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 1,
+      "segment": "1",
+      "sequence": "repeat",
+      "toggleBit": 0,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 9,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 1
+    }
+  },
+  "logitechProtocolId": 554,
+  "name": "Ferguson 9 Bit Toggle",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

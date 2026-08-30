@@ -1,0 +1,171 @@
+{
+  "carrierHz": 32400,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 32400,
+    "CodeSegments": [
+      {
+        "Atoms": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 3897
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 50000
+          }
+        ],
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 3897
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 50000
+          }
+        ],
+        "Name": "Airwell 34 Bit KeyCodeFinish",
+        "Payload": null,
+        "TotalLength": 0,
+        "Trailer": []
+      }
+    ],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 3008
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 2850
+          }
+        ],
+        "Name": "Airwell 34 Bit",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 872
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1040
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1040
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 872
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 34,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": []
+      }
+    ],
+    "Id-": 458,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Airwell 34 Bit",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Airwell 34 Bit",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Airwell 34 Bit",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Airwell 34 Bit KeyCodeFinish",
+          "SegmentType": 0
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Airwell 34 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{32.4k,msb}<872u,-1040u|-1040u,872u>(3008u,-2850u,Code0:34,3008u,-2850u,Code1:34,3008u,-2850u,Code2:34,3897u,-50000u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 34,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 34,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 1
+    },
+    "Code2": {
+      "bits": 34,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 2
+    }
+  },
+  "logitechProtocolId": 458,
+  "name": "Airwell 34 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

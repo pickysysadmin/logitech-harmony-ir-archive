@@ -1,0 +1,181 @@
+{
+  "carrierHz": 38500,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 38500,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 2550
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 2640
+          }
+        ],
+        "Name": "Polycom 16 Bit Toggle",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 555
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 895
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 835
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1200
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 15,
+          "ToggleBit": 14
+        },
+        "TotalLength": 0,
+        "Trailer": []
+      },
+      {
+        "Header": [],
+        "Name": "Polycom 16 Bit Toggle 1",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 555
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 895
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 835
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1200
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 1,
+          "ToggleBit": 0
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 555
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 60000
+          }
+        ]
+      }
+    ],
+    "Id-": 218,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Polycom 16 Bit Toggle",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Polycom 16 Bit Toggle 1",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Polycom 16 Bit Toggle",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{38.5k,msb}<555u,-895u|835u,-1200u>(2550u,-2640u,Code0A:14,T:1,T:1,555u,-60000u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 15,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": 14,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 1,
+      "segment": "1",
+      "sequence": "repeat",
+      "toggleBit": 0,
+      "token": 1
+    }
+  },
+  "logitechProtocolId": 218,
+  "name": "Polycom 16 Bit Toggle",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

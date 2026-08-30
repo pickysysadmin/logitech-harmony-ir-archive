@@ -1,0 +1,233 @@
+{
+  "carrierHz": 36000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 36000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 2800
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 800
+          }
+        ],
+        "Name": "Philips 16 Bit LongToggle",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 500
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 420
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 420
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 500
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 4,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": []
+      },
+      {
+        "Header": [],
+        "Name": "Philips 16 Bit LongToggle 1",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 900
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 900
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 900
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 900
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 1,
+          "ToggleBit": 0
+        },
+        "TotalLength": 0,
+        "Trailer": []
+      },
+      {
+        "Header": [],
+        "Name": "Philips 16 Bit LongToggle 2",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 500
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 400
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 400
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 500
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 16,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 86000
+          }
+        ]
+      }
+    ],
+    "Id-": 32,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Philips 16 Bit LongToggle",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Philips 16 Bit LongToggle 1",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Philips 16 Bit LongToggle 2",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Philips 16 Bit LongToggle",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{36.0k,msb}(<500u,-420u|-420u,500u>(2800u,-800u,Code0:4),<900u,-900u|-900u,900u>(T:1),<500u,-400u|-400u,500u>(Code2:16,-86000u))*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 4,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 1,
+      "segment": "1",
+      "sequence": "repeat",
+      "toggleBit": 0,
+      "token": 1
+    },
+    "Code2": {
+      "bits": 16,
+      "segment": "2",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 2
+    }
+  },
+  "logitechProtocolId": 32,
+  "name": "Philips 16 Bit LongToggle",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "RC6"
+}

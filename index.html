@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logitech Harmony IR archive</title>
+<style>
+  :root {
+    --bg: #fbfbfa; --fg: #1a1a1a; --dim: #6b6b6b; --line: #dedcd8;
+    --panel: #ffffff; --accent: #7a3e12; --hi: #f2ede4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#16171a; --fg:#e6e5e2; --dim:#9a9894; --line:#2f3136;
+            --panel:#1d1e22; --accent:#e0a06a; --hi:#26282d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:14px/1.5
+         ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { padding:18px 20px 12px; border-bottom:1px solid var(--line); }
+  h1 { margin:0 0 4px; font-size:17px; font-weight:600; letter-spacing:.01em; }
+  .sub { color:var(--dim); font-size:12.5px; }
+  nav { margin-top:12px; display:flex; gap:6px; }
+  nav button { font:inherit; padding:5px 12px; border:1px solid var(--line);
+    background:var(--panel); color:var(--fg); border-radius:5px; cursor:pointer; }
+  nav button[aria-selected="true"] { background:var(--hi); border-color:var(--accent); }
+  main { padding:16px 20px 60px; }
+  .cols { display:grid; grid-template-columns:260px 260px minmax(0,1fr); gap:16px;
+          align-items:start; }
+  @media (max-width: 900px) { .cols { grid-template-columns:1fr; } }
+  .panel { border:1px solid var(--line); background:var(--panel); border-radius:6px;
+           overflow:hidden; }
+  .panel h2 { margin:0; padding:8px 10px; font-size:12px; font-weight:600;
+    color:var(--dim); text-transform:uppercase; letter-spacing:.06em;
+    border-bottom:1px solid var(--line); }
+  input[type=search] { width:100%; border:0; border-bottom:1px solid var(--line);
+    padding:8px 10px; font:inherit; background:transparent; color:var(--fg); }
+  input[type=search]:focus { outline:2px solid var(--accent); outline-offset:-2px; }
+  ul.list { list-style:none; margin:0; padding:0; max-height:60vh; overflow:auto; }
+  ul.list li { padding:5px 10px; cursor:pointer; border-bottom:1px solid var(--line); }
+  ul.list li:last-child { border-bottom:0; }
+  ul.list li:hover { background:var(--hi); }
+  ul.list li[aria-current="true"] { background:var(--hi); font-weight:600; }
+  ul.list li small { color:var(--dim); font-weight:400; }
+  .note { color:var(--dim); padding:6px 10px; font-size:12px; }
+  table { border-collapse:collapse; width:100%; font-size:13px; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line);
+           vertical-align:top; }
+  th { color:var(--dim); font-weight:600; font-size:11.5px; text-transform:uppercase;
+       letter-spacing:.05em; }
+  code, .mono { font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                font-size:12px; }
+  td.pronto { max-width:420px; }
+  /* exactly two lines: an exact multiple of line-height, so the preview never
+     clips a row of hex in half. The copy button carries the whole value. */
+  td.pronto .val { display:block; line-height:1.45; max-height:2.9em;
+                   overflow:hidden; word-break:break-all; color:var(--dim); }
+  button.copy { font:inherit; font-size:11.5px; padding:2px 8px; cursor:pointer;
+    border:1px solid var(--line); border-radius:4px; background:var(--bg);
+    color:var(--fg); white-space:nowrap; }
+  button.copy:hover { border-color:var(--accent); }
+  a { color:var(--accent); }
+  .head { display:flex; gap:14px; align-items:baseline; flex-wrap:wrap;
+          margin-bottom:10px; }
+  .head h3 { margin:0; font-size:15px; }
+  .irp { white-space:pre-wrap; word-break:break-all; }
+  .err { color:#b3261e; padding:10px; }
+  .local { margin-top:12px; padding:10px 12px; border:1px solid var(--line);
+           background:var(--panel); border-radius:6px; max-width:70ch;
+           font-size:12.5px; color:var(--dim); }
+  .local b { color:var(--fg); }
+  .local button { font:inherit; margin-top:8px; padding:5px 12px; cursor:pointer;
+    border:1px solid var(--accent); border-radius:5px; background:var(--hi);
+    color:var(--fg); display:block; }
+  .local code { background:var(--hi); padding:1px 4px; border-radius:3px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Logitech Harmony IR archive</h1>
+  <div class="sub" id="counts">loading…</div>
+  <nav>
+    <button id="tab-devices" aria-selected="true">Devices</button>
+    <button id="tab-protocols" aria-selected="false">Protocols</button>
+  </nav>
+  <div class="local" id="local" hidden></div>
+</header>
+<main>
+  <div id="view-devices" class="cols">
+    <div class="panel">
+      <h2>Manufacturer</h2>
+      <input type="search" id="q-man" placeholder="filter 7,889 manufacturers"
+             autocomplete="off">
+      <ul class="list" id="list-man"></ul>
+      <div class="note" id="note-man"></div>
+    </div>
+    <div class="panel">
+      <h2>Model</h2>
+      <input type="search" id="q-mod" placeholder="filter models" autocomplete="off">
+      <ul class="list" id="list-mod"></ul>
+      <div class="note" id="note-mod">Pick a manufacturer.</div>
+    </div>
+    <div class="panel" id="device-panel">
+      <h2>Commands</h2>
+      <div class="note" id="device-body">Pick a model.</div>
+    </div>
+  </div>
+
+  <div id="view-protocols" hidden>
+    <div class="cols" style="grid-template-columns:340px minmax(0,1fr)">
+      <div class="panel">
+        <h2>Protocol</h2>
+        <input type="search" id="q-proto" placeholder="filter 684 protocols"
+               autocomplete="off">
+        <ul class="list" id="list-proto"></ul>
+        <div class="note" id="note-proto"></div>
+      </div>
+      <div class="panel">
+        <h2>Definition</h2>
+        <div class="note" id="proto-body">Pick a protocol.</div>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const CAP = 300;                       // rows rendered per list; filter to narrow
+
+/* Two ways to read the archive.
+
+   Served over HTTP, the page just fetch()es. Opened straight off disk it cannot:
+   browsers block fetch() on file:// URLs. So it also accepts a folder handle from
+   the browser's directory picker and reads through that instead. The picker is the
+   only local option that works here — anything that enumerates the folder up front
+   would have to walk 338,935 files, while a handle opens only what is asked for. */
+let ROOT = null;                    // FileSystemDirectoryHandle, when reading a folder
+const DIRS = new Map();             // path -> handle, so codesets/xx opens once
+const CAN_PICK = typeof window.showDirectoryPicker === "function";
+
+async function dirHandle(path) {
+  if (!path) return ROOT;
+  if (DIRS.has(path)) return DIRS.get(path);
+  const i = path.lastIndexOf("/");
+  const parent = await dirHandle(i < 0 ? "" : path.slice(0, i));
+  const h = await parent.getDirectoryHandle(i < 0 ? path : path.slice(i + 1));
+  DIRS.set(path, h);
+  return h;
+}
+
+async function getJSON(path) {
+  if (ROOT) {
+    const i = path.lastIndexOf("/");
+    const dir = await dirHandle(i < 0 ? "" : path.slice(0, i));
+    const fh = await dir.getFileHandle(i < 0 ? path : path.slice(i + 1));
+    return JSON.parse(await (await fh.getFile()).text());
+  }
+  const url = path.split("/").map(encodeURIComponent).join("/");
+  const r = await fetch(url, {cache: "no-cache"});
+  if (!r.ok) throw new Error(path + ": HTTP " + r.status);
+  return r.json();
+}
+
+/* A path is a link only when there is a URL behind it. */
+function pathRef(path) {
+  if (ROOT) return el("span", path, "mono");
+  const a = el("a", path);
+  a.href = path.split("/").map(encodeURIComponent).join("/");
+  a.className = "mono";
+  return a;
+}
+
+function fail(el_, e) {
+  el_.innerHTML = '<div class="err"></div>';
+  el_.firstChild.textContent = (location.protocol === "file:" && !ROOT)
+    ? "Opened from disk: browsers block fetch() on file:// URLs. Use the button "
+      + "above to open the archive folder, or serve the folder over HTTP."
+    : String(e);
+}
+const esc = s => String(s === null || s === undefined ? "" : s);
+function el(tag, text, cls) {
+  const n = document.createElement(tag);
+  if (text !== undefined && text !== null) n.textContent = String(text);
+  if (cls) n.className = cls;
+  return n;
+}
+function fmt(n) { return n.toLocaleString("en-US"); }
+
+/* ---------------------------------------------------------------- list widget */
+function renderList(ul, note, items, label, sub, onPick) {
+  ul.replaceChildren();
+  items.slice(0, CAP).forEach(it => {
+    const li = el("li");
+    li.append(el("span", label(it)));
+    const s = sub(it);
+    if (s) { li.append(" "); li.append(el("small", s)); }
+    li.onclick = () => {
+      [...ul.children].forEach(c => c.removeAttribute("aria-current"));
+      li.setAttribute("aria-current", "true");
+      onPick(it);
+    };
+    ul.append(li);
+  });
+  note.textContent = items.length > CAP
+    ? "showing " + fmt(CAP) + " of " + fmt(items.length) + " — keep typing"
+    : fmt(items.length) + (items.length === 1 ? " match" : " matches");
+}
+
+/* ---------------------------------------------------------------- devices */
+let MANS = [], MODELS = [], CURMAN = null;
+
+function filterMans() {
+  const q = $("q-man").value.trim().toLowerCase();
+  const hits = q ? MANS.filter(m => m.n.toLowerCase().includes(q)) : MANS;
+  renderList($("list-man"), $("note-man"), hits, m => m.n,
+             m => fmt(m.c) + (m.c === 1 ? " model" : " models"), pickMan);
+}
+async function pickMan(m) {
+  CURMAN = m;
+  $("list-mod").replaceChildren();
+  $("note-mod").textContent = "loading…";
+  $("q-mod").value = "";
+  try {
+    MODELS = await getJSON("devices/" + m.s + "/index.json");
+    filterMods();
+  } catch (e) { fail($("note-mod"), e); }
+}
+function filterMods() {
+  const q = $("q-mod").value.trim().toLowerCase();
+  const hits = q ? MODELS.filter(d => (d.m || "").toLowerCase().includes(q)) : MODELS;
+  renderList($("list-mod"), $("note-mod"), hits, d => d.m || "(unnamed)",
+             d => "#" + d.id, pickModel);
+}
+
+async function pickModel(d) {
+  const body = $("device-body");
+  body.textContent = "loading…";
+  try {
+    const dev = await getJSON("devices/" + CURMAN.s + "/" + d.f);
+    const head = el("div", null, "head");
+    const h = el("h3", dev.manufacturer + " " + dev.model);
+    head.append(h, el("span", "device " + dev.globalDeviceId, "sub"),
+                el("span", "type " + esc(dev.deviceType), "sub"));
+    body.replaceChildren(head);
+    if (!dev.codeset) {
+      body.append(el("div", "Logitech lists no commands for this device.", "note"));
+      return;
+    }
+    const cs = await getJSON(dev.codeset);
+    head.append(el("span", cs.commands.length + " commands", "sub"));
+    head.append(pathRef(dev.codeset));
+    body.append(commandTable(cs.commands));
+  } catch (e) { fail(body, e); }
+}
+
+function commandTable(cmds) {
+  const t = el("table");
+  const tr = el("tr");
+  ["Name", "Protocol", "Keycode", "Pronto"].forEach(x => tr.append(el("th", x)));
+  const thead = el("thead"); thead.append(tr); t.append(thead);
+  const tb = el("tbody");
+  cmds.forEach(c => {
+    const r = el("tr");
+    r.append(el("td", c.name || "(unnamed)"));
+    const p = el("td");
+    const a = el("a", c.protocol);
+    a.href = "#protocol:" + c.protocol;
+    a.onclick = () => { showProtocolByName(c.protocol); };
+    p.append(a);
+    r.append(p);
+    const k = el("td"); k.append(el("code", c.keycode)); r.append(k);
+    const pr = el("td", null, "pronto");
+    if (c.pronto) {
+      const b = el("button", "copy", "copy");
+      b.onclick = () => copy(b, c.pronto);
+      pr.append(b, el("span", c.pronto, "val mono"));
+      if (c.prontoRepeat) {
+        const b2 = el("button", "copy repeat", "copy");
+        b2.onclick = () => copy(b2, c.prontoRepeat);
+        pr.append(b2);
+      }
+    } else {
+      pr.append(el("span", "not infrared", "note"));
+    }
+    r.append(pr);
+    tb.append(r);
+  });
+  t.append(tb);
+  return t;
+}
+function copy(btn, text) {
+  const done = ok => { btn.textContent = ok ? "copied" : "failed";
+                       setTimeout(() => { btn.textContent = "copy"; }, 1200); };
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(() => done(true), () => done(false));
+  } else {
+    const ta = el("textarea"); ta.value = text; document.body.append(ta);
+    ta.select(); done(document.execCommand("copy")); ta.remove();
+  }
+}
+
+/* ---------------------------------------------------------------- protocols */
+let PROTOS = [];
+function filterProtos() {
+  const q = $("q-proto").value.trim().toLowerCase();
+  const hits = q ? PROTOS.filter(p => (p.n + " " + (p.standardProtocol || ""))
+                                        .toLowerCase().includes(q)) : PROTOS;
+  renderList($("list-proto"), $("note-proto"), hits, p => p.n,
+             p => (p.carrierHz / 1000) + " kHz"
+                  + (p.standardProtocol ? " · " + p.standardProtocol : ""),
+             showProtocol);
+}
+async function showProtocol(p) {
+  const body = $("proto-body");
+  body.textContent = "loading…";
+  try {
+    const d = await getJSON("protocols/" + p.f);
+    const head = el("div", null, "head");
+    head.append(el("h3", d.name), el("span", "id " + d.logitechProtocolId, "sub"),
+                el("span", fmt(d.carrierHz) + " Hz", "sub"),
+                el("span", d.standardProtocol || "no standard decode", "sub"));
+    head.append(pathRef("protocols/" + p.f));
+    body.replaceChildren(head);
+    const t = el("table"), tb = el("tbody");
+    const row = (k, v) => { const r = el("tr"); r.append(el("th", k));
+                            const c = el("td"); c.append(v); r.append(c); tb.append(r); };
+    row("IRP", el("code", d.irp || "— not an IR protocol —", "irp"));
+    row("Press repeats", el("span", d.pressMinimumRepeats === null
+                            ? "unspecified" : d.pressMinimumRepeats));
+    if (d.keycodeFields) {
+      const ul = el("ul"); ul.style.margin = "0"; ul.style.paddingLeft = "18px";
+      Object.entries(d.keycodeFields).forEach(([f, v]) => {
+        ul.append(el("li", f + ": " + v.bits + " bits from the " + v.sequence
+                     + " group, token " + v.token + ", segment “" + v.segment
+                     + "”" + (v.toggleBit === null ? ""
+                        : ", toggle at bit " + v.toggleBit)));
+      });
+      row("Keycode fields", ul);
+    }
+    t.append(tb); body.append(t);
+  } catch (e) { fail(body, e); }
+}
+function showProtocolByName(name) {
+  const p = PROTOS.find(x => x.n === name);
+  if (!p) return;
+  tab("protocols");
+  $("q-proto").value = name;
+  filterProtos();
+  showProtocol(p);
+}
+
+/* ---------------------------------------------------------------- boot */
+function tab(which) {
+  $("view-devices").hidden = which !== "devices";
+  $("view-protocols").hidden = which !== "protocols";
+  $("tab-devices").setAttribute("aria-selected", which === "devices");
+  $("tab-protocols").setAttribute("aria-selected", which === "protocols");
+}
+$("tab-devices").onclick = () => tab("devices");
+$("tab-protocols").onclick = () => tab("protocols");
+$("q-man").oninput = filterMans;
+$("q-mod").oninput = filterMods;
+$("q-proto").oninput = filterProtos;
+
+async function boot() {
+  const m = await getJSON("manifest.json");
+  const c = m.counts;
+  $("counts").textContent =
+    fmt(c.devices) + " devices · " + fmt(c.manufacturers) + " manufacturers · "
+    + fmt(c.commands) + " commands · " + fmt(c.codesets) + " code sets · "
+    + fmt(c.protocols) + " protocols · built " + m.generated;
+  MANS = await getJSON("index.json");
+  $("q-man").placeholder = "filter " + fmt(MANS.length) + " manufacturers";
+  filterMans();
+  PROTOS = await getJSON("protocols/index.json");
+  $("q-proto").placeholder = "filter " + fmt(PROTOS.length) + " protocols";
+  filterProtos();
+  $("local").hidden = true;
+}
+
+async function pickFolder() {
+  let handle;
+  try {
+    handle = await window.showDirectoryPicker({mode: "read"});
+  } catch (e) { return; }                       // cancelled
+  ROOT = handle;
+  DIRS.clear();
+  try {
+    await boot();
+  } catch (e) {
+    ROOT = null;
+    offerFolder("That folder has no manifest.json in it. Pick the archive's top "
+                + "folder — the one holding manifest.json, devices/ and codesets/.");
+  }
+}
+
+function offerFolder(why) {
+  const box = $("local");
+  box.replaceChildren();
+  box.hidden = false;
+  box.append(el("b", why), document.createElement("br"));
+  if (CAN_PICK) {
+    box.append("Nothing is uploaded — the browser reads the files where they are, "
+               + "and only the ones you look at.");
+    const b = el("button", "Open archive folder…");
+    b.onclick = pickFolder;
+    box.append(b);
+  } else {
+    box.append("This browser has no folder picker, so serve the archive folder "
+               + "instead and open it over http://. Any of these works from inside "
+               + "the folder: ");
+    ["npx --yes serve", "php -S localhost:8000", "ruby -run -e httpd . -p 8000",
+     "busybox httpd -f -p 8000", "python3 -m http.server"].forEach((c, i) => {
+      if (i) box.append(", ");
+      box.append(el("code", c));
+    });
+    box.append(".");
+  }
+}
+
+(async function () {
+  if (location.protocol === "file:") {
+    offerFolder("This page is open from a file, so it cannot read the archive yet.");
+    return;
+  }
+  try {
+    await boot();
+  } catch (e) {
+    fail($("counts"), e);
+    if (CAN_PICK) offerFolder("Could not read the archive over the network.");
+  }
+})();
+</script>
+</body>
+</html>

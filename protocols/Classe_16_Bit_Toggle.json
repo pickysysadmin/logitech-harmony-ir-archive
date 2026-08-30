@@ -1,0 +1,233 @@
+{
+  "carrierHz": 56000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 56000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 2625
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 880
+          }
+        ],
+        "Name": "Classe 16 Bit Toggle",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 442
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 442
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 442
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 442
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 4,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": []
+      },
+      {
+        "Header": [],
+        "Name": "Classe 16 Bit Toggle 1",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 880
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 880
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 880
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 880
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 1,
+          "ToggleBit": 0
+        },
+        "TotalLength": 0,
+        "Trailer": []
+      },
+      {
+        "Header": [],
+        "Name": "Classe 16 Bit Toggle 2",
+        "Payload": {
+          "EncodingType": 1,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 442
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 442
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 442
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 442
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 16,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 32600
+          }
+        ]
+      }
+    ],
+    "Id-": 302,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "Classe 16 Bit Toggle",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Classe 16 Bit Toggle 1",
+          "SegmentType": 1
+        },
+        {
+          "SegmentName": "Classe 16 Bit Toggle 2",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "Classe 16 Bit Toggle",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{56.0k,msb}(<442u,-442u|-442u,442u>(2625u,-880u,Code0:4),<880u,-880u|-880u,880u>(T:1),<442u,-442u|-442u,442u>(Code2:16,-32600u))*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 4,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    },
+    "Code1": {
+      "bits": 1,
+      "segment": "1",
+      "sequence": "repeat",
+      "toggleBit": 0,
+      "token": 1
+    },
+    "Code2": {
+      "bits": 16,
+      "segment": "2",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 2
+    }
+  },
+  "logitechProtocolId": 302,
+  "name": "Classe 16 Bit Toggle",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}

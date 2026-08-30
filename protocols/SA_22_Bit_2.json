@@ -1,0 +1,123 @@
+{
+  "carrierHz": 58000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 58000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 3350
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 3350
+          }
+        ],
+        "Name": "SA 22 Bit 2",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 850
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 830
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 850
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 2500
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 22,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 850
+          },
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 38000
+          }
+        ]
+      }
+    ],
+    "Id-": 290,
+    "IsFullSequence": true,
+    "IsPadded": null,
+    "IsPublic": true,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "SA 22 Bit 2",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "SA 22 Bit 2",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 0,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{58.0k,msb}<850u,-830u|850u,-2500u>(3350u,-3350u,Code0:22,850u,-38000u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 22,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 290,
+  "name": "SA 22 Bit 2",
+  "pressMinimumRepeats": null,
+  "standardProtocol": "Panasonic_Old"
+}

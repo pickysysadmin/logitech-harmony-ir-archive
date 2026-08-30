@@ -1,0 +1,111 @@
+{
+  "carrierHz": 433000000,
+  "definition": {
+    "Attributes": [],
+    "CarrierFrequency": 433000000,
+    "CodeSegments": [],
+    "ControlSection": null,
+    "Flags": [],
+    "HoldDelay": null,
+    "HoldMinimumRepeats": null,
+    "IRSegments": [
+      {
+        "Header": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 1,
+            "Value": 4000
+          }
+        ],
+        "Name": "ATI 21 Bit",
+        "Payload": {
+          "EncodingType": 0,
+          "Encodings": [
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 560
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 560
+                }
+              ],
+              "BitType": 0
+            },
+            {
+              "Atoms": [
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 0,
+                  "Value": 1680
+                },
+                {
+                  "MaxValue": null,
+                  "MinValue": null,
+                  "Type": 1,
+                  "Value": 560
+                }
+              ],
+              "BitType": 1
+            }
+          ],
+          "NumberOfBits": 21,
+          "ToggleBit": null
+        },
+        "TotalLength": 0,
+        "Trailer": [
+          {
+            "MaxValue": null,
+            "MinValue": null,
+            "Type": 0,
+            "Value": 51200
+          }
+        ]
+      }
+    ],
+    "Id-": 111,
+    "IsFullSequence": null,
+    "IsPadded": null,
+    "IsPublic": false,
+    "KeyCode": {
+      "Finish": null,
+      "Repeat": [
+        {
+          "SegmentName": "ATI 21 Bit",
+          "SegmentType": 1
+        }
+      ],
+      "Start": null
+    },
+    "Name": "ATI 21 Bit",
+    "NumberOfLinkedLanguage": 0,
+    "PressMinimumRepeats": null,
+    "Rating": null,
+    "RelatedProtocols": [],
+    "SendingType": 4,
+    "Status": null,
+    "__type": "IrProtocol"
+  },
+  "irp": "{433000.0k,msb}<-560u,560u|-1680u,560u>(4000u,Code0:21,-51200u)*",
+  "keycodeFields": {
+    "Code0": {
+      "bits": 21,
+      "segment": "0",
+      "sequence": "repeat",
+      "toggleBit": null,
+      "token": 0
+    }
+  },
+  "logitechProtocolId": 111,
+  "name": "ATI 21 Bit",
+  "pressMinimumRepeats": null,
+  "standardProtocol": null
+}
