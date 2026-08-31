@@ -287,6 +287,20 @@ python3 rehydrate.py --all --out /tmp/everything      # ~5.8 GB, 276,236 files
 5.1 parses JSON slowly — fine for one manufacturer; use Python or PowerShell 7 for
 anything larger.
 
+## Acknowledgements
+
+A massive thank you to the following projects:
+
+- Flipper-IRDB – https://github.com/Lucaslhm/Flipper-IRDB
+- IrScrutinizer – https://github.com/bengtmartensson/IrScrutinizer
+- IrpTransmogrifier – https://github.com/bengtmartensson/IrpTransmogrifier
+- MakeHex – https://github.com/probonopd/MakeHex
+- irdb – https://github.com/probonopd/irdb
+- Remote Central – https://www.remotecentral.com/cgi-bin/codes/
+- harmony-hub-root – https://github.com/Ripthulhu/harmony-hub-root
+
+Your work was invaluable in getting this archive created and the Pronto codes validated (hopefully).
+
 ## Licence
 
 My contributions to this archive, the Pronto conversions, the schema, and the
