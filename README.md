@@ -4,6 +4,14 @@
 
 I heavily used AI in creating this archive.
 
+## TL;DR - Just give me the data
+
+Don't care about my attempt, with Claudes help, to pull out the relevant data? Don't blame you :)
+
+Check the files attached to the [Verbatim capture, 2026-09-02](https://github.com/pickysysadmin/logitech-harmony-ir-archive/releases/tag/raw-2026-09-02) release.
+
+They are the unfiltered raw data I captured to do with as you see fit.
+
 ## Overview
 
 The infrared control database from Logitech's Harmony universal remotes: **276,236
