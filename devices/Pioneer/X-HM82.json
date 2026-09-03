@@ -2,6 +2,75 @@
   "codeset": "codesets/10/10f751d90ad9f129.json",
   "deviceType": 21,
   "globalDeviceId": 334140,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod/USB"}],"name":"iPod/USB"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"BT Audio"}],"name":"BT Audio"},
+      {"commands":[{"set":"InputType","to":"Music Server"}],"name":"Music Server"},
+      {"commands":[{"set":"InputType","to":"NetService"},{"set":"NetServiceInput","to":"Internet Radio"}],"name":"Internet Radio"},
+      {"commands":[{"set":"InputType","to":"NetService"},{"set":"NetServiceInput","to":"Spotify"}],"name":"Spotify"},
+      {"commands":[{"set":"InputType","to":"Favorites"}],"name":"Favorites"},
+      {"commands":[{"set":"InputType","to":"Digital In"}],"name":"Digital In"},
+      {"commands":[{"set":"InputType","to":"Audio In"}],"name":"Audio In"},
+      {"commands":[{"set":"InputType","to":"Line1/2"},{"set":"Line1/2Input","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"Line1/2"},{"set":"Line1/2Input","to":"Line 2"}],"name":"Line 2"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "X-HM82"
+  "model": "X-HM82",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"iPod/USB","select":[{"commands":["InputiPod/Usb"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"BT Audio","select":[{"commands":["InputBTAudio"],"setType":2}]},
+        {"name":"Music Server","select":[{"commands":["InputMusicServer"],"setType":2}]},
+        {"name":"Favorites","select":[{"commands":["InputFavorites"],"setType":2}]},
+        {"name":"Digital In","select":[{"commands":["InputDigitalIn"],"setType":2}]},
+        {"name":"Audio In","select":[{"commands":["InputAudioIn"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"NetService","select":[{"commands":["InputNetService"],"setType":2}]},
+        {"name":"Line1/2","select":[{"commands":["InputLine1/2"],"setType":2}]}
+      ]
+    },
+    "Line1/2Input": {
+      "next": ["InputLine1/2"],
+      "values": [
+        {"name":"Line 1"},
+        {"name":"Line 2"}
+      ]
+    },
+    "NetServiceInput": {
+      "next": ["InputNetService"],
+      "values": [
+        {"name":"Internet Radio"},
+        {"name":"Spotify"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

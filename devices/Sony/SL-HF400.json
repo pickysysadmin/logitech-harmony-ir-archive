@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/ac/ac11ee22a9c453e2.json",
   "deviceType": 2,
   "globalDeviceId": 153564,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line"}
+    ],
+    "next": ["InputSelect"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "SL-HF400"
+  "model": "SL-HF400",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

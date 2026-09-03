@@ -2,6 +2,42 @@
   "codeset": "codesets/5d/5de7a9d510a9051b.json",
   "deviceType": 5,
   "globalDeviceId": 206900,
+  "inputs": {
+    "list": [
+      {"commands":["InputDVD"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputBd"],"name":"BD","ports":["HDMI","Composite"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDock"],"name":"Dock","ports":["Composite","S-Video"]},
+      {"commands":["InputSat/Cbl"],"name":"SAT/CBL","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputGame"],"name":"Game","ports":["HDMI"]},
+      {"commands":["InputVAux"],"name":"V-AUX","ports":["HDMI","Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["HDMI","Composite","Optical","S-Video"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Optical"]},
+      {"commands":["InputNet/Usb"],"name":"NET/USB","ports":["USB"]},
+      {"commands":["InputiPod"],"name":"iPod","ports":["Dock"]},
+      {"commands":["QuickSelect1"],"name":"QuickSelect 1","ports":["Streaming"]},
+      {"commands":["QuickSelect2"],"name":"QuickSelect 2","ports":["Streaming"]},
+      {"commands":["QuickSelect3"],"name":"QuickSelect 3","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-2311CI"
+  "model": "AVR-2311CI",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

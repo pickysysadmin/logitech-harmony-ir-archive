@@ -2,6 +2,35 @@
   "codeset": "codesets/a2/a2b78730ec208857.json",
   "deviceType": 1,
   "globalDeviceId": 107225,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"DVD"},
+      {"name":"EXT 2"},
+      {"name":"DIGI"},
+      {"name":"FRONT"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "36PW9525/75R"
+  "model": "36PW9525/75R",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

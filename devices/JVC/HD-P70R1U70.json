@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/41/418f3c95dc07e63d.json",
   "deviceType": 1,
   "globalDeviceId": 127411,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"},
+      {"name":"Video 4"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "JVC",
-  "model": "HD-P70R1U70"
+  "model": "HD-P70R1U70",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Display": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"CA"},
+        {"name":"CB"},
+        {"name":"CH"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Display","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Video A","select":[{"commands":["InputVideoA"],"setType":2}]},
+        {"name":"Video B","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video C","select":[{"commands":["InputVideo3"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

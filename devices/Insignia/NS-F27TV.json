@@ -2,6 +2,35 @@
   "codeset": "codesets/ab/ab3be0006bcb95e0.json",
   "deviceType": 1,
   "globalDeviceId": 153076,
+  "inputs": {
+    "list": [
+      {"name":"ANT/CATV"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"},
+      {"name":"S-Video 1"},
+      {"name":"S-Video 2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Insignia",
-  "model": "NS-F27TV"
+  "model": "NS-F27TV",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"ANT/CATV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

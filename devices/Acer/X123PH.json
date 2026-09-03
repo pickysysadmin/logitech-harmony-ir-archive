@@ -2,6 +2,37 @@
   "codeset": "codesets/64/645ef0e43ff64497.json",
   "deviceType": 7,
   "globalDeviceId": 337068,
+  "inputs": {
+    "list": [
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputHdmi/Dvi"],"name":"HDMI"},
+      {"commands":["InputLan/Wifi"],"name":"Lan/Wifi"},
+      {"commands":["InputUsbB"],"name":"USB B"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Acer",
-  "model": "X123PH"
+  "model": "X123PH",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

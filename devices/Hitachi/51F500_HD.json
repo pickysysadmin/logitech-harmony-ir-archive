@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 35213,
+  "inputs": {
+    "list": [
+      {"commands":["Input 1"],"name":"VIDEO 1"},
+      {"commands":["Input 2"],"name":"VIDEO 2"},
+      {"commands":["Input 3"],"name":"VIDEO 3"},
+      {"commands":["Input 4"],"name":"VIDEO 4"},
+      {"commands":["Input 5"],"name":"VIDEO 5"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hitachi",
-  "model": "51F500 HD"
+  "model": "51F500 HD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaAB": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"A"},
+        {"name":"B"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

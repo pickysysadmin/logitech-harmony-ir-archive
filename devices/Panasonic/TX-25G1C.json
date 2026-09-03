@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a8/a8547d18fe86ba3f.json",
   "deviceType": 1,
   "globalDeviceId": 81312,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV2S"},
+      {"name":"AV3"},
+      {"name":"TvAv"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-25G1C"
+  "model": "TX-25G1C",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"AV1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red",{"delayMs":100},"Red",{"delayMs":200}],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["Red",{"delayMs":100},"Red",{"delayMs":200},"Green"],"setType":1}]},
+        {"name":"AV2S","select":[{"commands":["Red",{"delayMs":100},"Red",{"delayMs":200},"Green",{"delayMs":200},"Green"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":["Red",{"delayMs":100},"Red",{"delayMs":200},"Yellow"],"setType":1}]}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["TvVideo",{"delayMs":300}],"setType":2}]},
+        {"name":"Av","select":[{"commands":["TvVideo",{"delayMs":500}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/d0/d058b16b974699b3.json",
   "deviceType": 1,
   "globalDeviceId": 138066,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntennaA"],"name":"TV"},
+      {"commands":["Input1"],"name":"Input 1"},
+      {"commands":["Input2"],"name":"Input 2"},
+      {"commands":["Input3"],"name":"Input 3"},
+      {"commands":["Input4"],"name":"Input 4"},
+      {"commands":["Input5"],"name":"Input 5"},
+      {"commands":[{"delayMs":500},"Input5","InputNext","InputNext"],"name":"Input 6"},
+      {"commands":[{"delayMs":500},"Input5","InputNext","InputNext","InputNext"],"name":"Input 7"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-52D96"
+  "model": "LC-52D96",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

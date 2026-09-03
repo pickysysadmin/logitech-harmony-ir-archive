@@ -2,6 +2,37 @@
   "codeset": "codesets/b2/b233c611e3cda33f.json",
   "deviceType": 1,
   "globalDeviceId": 149973,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"Ypbpr"},
+      {"name":"VGA"},
+      {"name":"DVI"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Niko",
-  "model": "OTP-2612W"
+  "model": "OTP-2612W",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/b7/b77a10d9198b86cb.json",
   "deviceType": 1,
   "globalDeviceId": 229660,
+  "inputs": {
+    "list": [
+      {"commands":["InputTV","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputTV"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputAv","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputAv"],"name":"AV","ports":["Composite"]},
+      {"commands":["InputComponent","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputHdmi1","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputHdmi1"],"name":"HDMI 1/DVI","ports":["HDMI"]},
+      {"commands":["InputHdmi2","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["Exit","SmartHub"],"name":"Smart Hub","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "PN51E550D1F"
+  "model": "PN51E550D1F",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

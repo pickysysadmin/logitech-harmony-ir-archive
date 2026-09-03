@@ -2,6 +2,47 @@
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 160295,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"AV4"},
+      {"name":"AV5"},
+      {"name":"AV6"},
+      {"name":"AV7"},
+      {"name":"AV8"},
+      {"name":"PC"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Sony",
-  "model": "KDL-40X3500U"
+  "model": "KDL-40X3500U",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

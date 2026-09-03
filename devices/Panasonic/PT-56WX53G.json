@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 9317,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["InputComponent2"],"name":"Component 2"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputVideo4"],"name":"Video 4"},
+      {"commands":["InputComponent1","InputNext"],"name":"DIGITAL"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-56WX53G"
+  "model": "PT-56WX53G",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

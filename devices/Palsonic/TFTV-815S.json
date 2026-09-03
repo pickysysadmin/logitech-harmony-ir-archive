@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/b9/b93d24c32807950e.json",
   "deviceType": 1,
   "globalDeviceId": 175042,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"commands":["1"],"name":"TV"},
+      {"commands":["2"],"name":"Video"},
+      {"commands":["3"],"name":"S-Video"},
+      {"commands":["4"],"name":"Scart1"},
+      {"commands":["5"],"name":"Scart2 AV"},
+      {"commands":["6"],"name":"Scart2 Y/C"},
+      {"commands":["7"],"name":"YPbPr"},
+      {"commands":["8"],"name":"D-sub"},
+      {"commands":["9"],"name":"HDMI"}
+    ],
+    "start": ["InputNext"],
+    "type": 3
+  },
   "manufacturer": "Palsonic",
-  "model": "TFTV-815S"
+  "model": "TFTV-815S",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,39 @@
   "codeset": "codesets/8c/8c8fb4a225b1db6e.json",
   "deviceType": 1,
   "globalDeviceId": 128230,
+  "inputs": {
+    "list": [
+      {"name":"EXT 0"},
+      {"name":"EXT 1"},
+      {"name":"EXT 2"},
+      {"name":"Tuner"}
+    ],
+    "next": ["InputTv"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "CS-2131TATOP"
+  "model": "CS-2131TATOP",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/46/465aa7052f3ed47d.json",
   "deviceType": 1,
   "globalDeviceId": 81631,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"Video3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "2835SF"
+  "model": "2835SF",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

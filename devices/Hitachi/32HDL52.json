@@ -2,6 +2,51 @@
   "codeset": "codesets/35/35d2a77874cd2f03.json",
   "deviceType": 1,
   "globalDeviceId": 97491,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"NTSC"}],"name":"NTSC"},
+      {"commands":[{"set":"InputType","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"RGB/DVI"}],"name":"RGB/DVI"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video4"}],"name":"Video4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "32HDL52"
+  "model": "32HDL52",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"NTSC","select":[{"commands":["InputNtsc"],"setType":2}]},
+        {"name":"DTV","select":[{"commands":["InputDtv"],"setType":2}]},
+        {"name":"RGB/DVI","select":[{"commands":["InputRgb/Dvi"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"},
+        {"name":"Video4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

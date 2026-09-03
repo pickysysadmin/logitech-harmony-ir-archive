@@ -2,6 +2,70 @@
   "codeset": "codesets/4d/4dc677697d4f791f.json",
   "deviceType": 5,
   "globalDeviceId": 207131,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"BD/DVD"}],"name":"BD/DVD","ports":["HDMI","Component","Composite","Optical"]},
+      {"commands":[{"set":"InputType","to":"SAT"}],"name":"SAT","ports":["HDMI","Component","Composite","Optical"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["HDMI","Composite","Optical"]},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"MultiCh"}],"name":"MultiCh","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"VCR/AUX"},{"set":"VCR/AUXInput","to":"VCR"}],"name":"VCR","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"VCR/AUX"},{"set":"VCR/AUXInput","to":"AUX"}],"name":"AUX","ports":["HDMI","Composite"]},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"iPod Audio"}],"name":"iPod Audio","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"iPod Video"}],"name":"iPod Video","ports":["Dock"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HW-C700"
+  "model": "HW-C700",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"FM","select":[{"commands":["TuneUp"],"setType":2}]},
+        {"name":"BD/DVD","select":[{"commands":["InputBD/Dvd"],"setType":2}]},
+        {"name":"SAT","select":[{"commands":["InputSat"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"MultiCh","select":[{"commands":["InputMultiChannel"],"setType":2}]},
+        {"name":"VCR/AUX","select":[{"commands":["InputVcr/Aux"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]}
+      ]
+    },
+    "VCR/AUXInput": {
+      "next": ["InputVcr/Aux"],
+      "values": [
+        {"name":"VCR"},
+        {"name":"AUX"}
+      ]
+    },
+    "iPODInput": {
+      "next": ["InputiPod"],
+      "values": [
+        {"name":"IPOD AUDIO"},
+        {"name":"IPOD VIDEO"}
+      ]
+    },
+    "iPodInput": {
+      "next": ["InputiPod"],
+      "values": [
+        {"name":"iPod Audio"},
+        {"name":"iPod Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

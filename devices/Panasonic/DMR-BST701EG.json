@@ -2,6 +2,40 @@
   "codeset": "codesets/0f/0ffde4deb0a5ba0f.json",
   "deviceType": 34,
   "globalDeviceId": 222535,
+  "inputs": {
+    "list": [
+      {"name":"HDD"},
+      {"name":"BD"},
+      {"name":"SD"},
+      {"name":"USB"}
+    ],
+    "next": ["DriveSelect"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-BST701EG"
+  "model": "DMR-BST701EG",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

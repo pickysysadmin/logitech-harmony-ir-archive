@@ -2,6 +2,41 @@
   "codeset": "codesets/f1/f15c08fb5a768a75.json",
   "deviceType": 34,
   "globalDeviceId": 135157,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputHdd"],"name":"HDD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "D76"
+  "model": "D76",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV 3"},
+        {"name":"AV 4"},
+        {"name":"DV IN"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

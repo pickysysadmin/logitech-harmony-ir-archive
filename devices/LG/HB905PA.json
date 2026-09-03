@@ -2,6 +2,38 @@
   "codeset": "codesets/06/06ccff60f47ad336.json",
   "deviceType": 22,
   "globalDeviceId": 205422,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"commands":["1"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["2"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["3"],"name":"iPod","ports":["Dock"]},
+      {"commands":["4"],"name":"Aux","ports":["Composite"]},
+      {"commands":["5"],"name":"Portable","ports":["Portable"]},
+      {"commands":["6"],"name":"Optical 1","ports":["Optical"]},
+      {"commands":["7"],"name":"Optical 2","ports":["Optical"]},
+      {"commands":["8"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["9"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["Menu",{"delayMs":2000},"Menu"],"name":"Bluray","ports":["BuiltIn"]}
+    ],
+    "start": ["InputNext"],
+    "type": 3
+  },
   "manufacturer": "LG",
-  "model": "HB905PA"
+  "model": "HB905PA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 1
+  }
 }

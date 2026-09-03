@@ -2,6 +2,47 @@
   "codeset": "codesets/48/48127f64f6d82a19.json",
   "deviceType": 34,
   "globalDeviceId": 180054,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"ExtInputs"},{"set":"ExtInputsInput","to":"L1"}],"name":"L1"},
+      {"commands":[{"set":"InputType","to":"ExtInputs"},{"set":"ExtInputsInput","to":"L2"}],"name":"L2"},
+      {"commands":[{"set":"InputType","to":"ExtInputs"},{"set":"ExtInputsInput","to":"DV"}],"name":"DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "RDR-GX255"
+  "model": "RDR-GX255",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ExtInputsInput": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["DVD"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["HDD"],"setType":2}]},
+        {"name":"ExtInputs","select":[{"commands":["InputSelect"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 700,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,43 @@
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 132290,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Scart 1 sky"},
+      {"name":"Scart 2 dvd"},
+      {"name":"Scart 3 360"},
+      {"name":"EXT4"},
+      {"name":"EXT4S"},
+      {"name":"EXT5"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Vistron",
-  "model": "VIS-027HDID"
+  "model": "VIS-027HDID",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

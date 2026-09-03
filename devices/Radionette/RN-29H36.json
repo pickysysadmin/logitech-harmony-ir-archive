@@ -2,6 +2,43 @@
   "codeset": "codesets/a7/a7019404b7ba11c5.json",
   "deviceType": 1,
   "globalDeviceId": 153424,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"S-Video"},
+      {"name":"Component"}
+    ],
+    "next": ["Menu"],
+    "type": 2
+  },
   "manufacturer": "Radionette",
-  "model": "RN-29H36"
+  "model": "RN-29H36",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

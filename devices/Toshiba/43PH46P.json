@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a7/a7b29e16f4c822f3.json",
   "deviceType": 1,
   "globalDeviceId": 98889,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"EXT1"},
+      {"name":"EXT2"},
+      {"name":"EXT3"},
+      {"name":"EXT4"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "43PH46P"
+  "model": "43PH46P",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

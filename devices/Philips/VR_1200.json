@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/76/76fd558fad7b9d4b.json",
   "deviceType": 2,
   "globalDeviceId": 163742,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Tuner"},
+      {"commands":[{"delayMs":1500},"1","ChannelDown"],"name":"S-Video"},
+      {"commands":["1",{"delayMs":1500},"ChannelDown","ChannelDown"],"name":"L-V"},
+      {"commands":["1",{"delayMs":1500},"ChannelDown","ChannelDown","ChannelDown","ChannelDown"],"name":"Line 1"},
+      {"commands":["1",{"delayMs":1500},"ChannelDown","ChannelDown","ChannelDown"],"name":"Line 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "VR 1200"
+  "model": "VR 1200",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"},
+      {"set":"AntennaOutput","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

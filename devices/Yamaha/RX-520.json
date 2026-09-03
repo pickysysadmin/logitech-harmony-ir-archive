@@ -2,6 +2,43 @@
   "codeset": "codesets/b8/b8db576dcb1eab08.json",
   "deviceType": 5,
   "globalDeviceId": 28867,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd/Md"],"name":"CD"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputMd/Cdr"],"name":"MD/CD-R"},
+      {"commands":["InputDvd/Ld"],"name":"DVD"},
+      {"commands":["InputTv/Dbs"],"name":"D-TV/CBL"},
+      {"commands":["InputVcr1"],"name":"VCR"},
+      {"commands":["InputPhono"],"name":"AUX"},
+      {"commands":["InputAux"],"name":"V-AUX"},
+      {"commands":["InputMultiChannel"],"name":"6CH"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-520"
+  "model": "RX-520",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "SoundMode": {
+      "values": [
+        {"name":"Enhanced","select":[{"commands":["Surround1","DirectionDown"],"setType":1}]},
+        {"name":"5ChStereo","select":[{"commands":["Surround5","DirectionDown"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

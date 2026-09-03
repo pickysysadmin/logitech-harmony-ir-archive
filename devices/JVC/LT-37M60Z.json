@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/27/27c502b599174a1e.json",
   "deviceType": 1,
   "globalDeviceId": 154938,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"E1"},
+      {"commands":["InputVideo2"],"name":"E2"},
+      {"commands":["InputVideo3"],"name":"E3"},
+      {"commands":["InputVideo4"],"name":"E4"},
+      {"commands":["InputVideo4",{"delayMs":3000},"InputNext"],"name":"E5"},
+      {"commands":["InputVideo4",{"delayMs":3000},"InputNext","InputNext"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-37M60Z"
+  "model": "LT-37M60Z",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

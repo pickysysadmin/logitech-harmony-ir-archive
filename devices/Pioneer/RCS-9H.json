@@ -2,6 +2,56 @@
   "codeset": "codesets/dd/dd07c545e5a6af2a.json",
   "deviceType": 22,
   "globalDeviceId": 113727,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"tuner"},{"set":"tunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"tuner"},{"set":"tunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Analog"}],"name":"Analog"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "RCS-9H"
+  "model": "RCS-9H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioInput": {
+      "next": ["InputAudio"],
+      "values": [
+        {"name":"Digital"},
+        {"name":"Analog"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Audio","select":[{"commands":["InputAudio"],"setType":2}]}
+      ]
+    },
+    "tunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

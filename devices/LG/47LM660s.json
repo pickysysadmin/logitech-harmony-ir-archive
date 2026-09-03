@@ -1,7 +1,69 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/56/56090216f0b4773b.json",
   "deviceType": 1,
   "globalDeviceId": 233304,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AV 3"}],"name":"AV 3"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"RGB-PC"}],"name":"RGB-PC"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"Smart TV"}],"name":"Smart TV"},
+      {"commands":[{"set":"InputType","to":"TV/Radio"},{"set":"TV/RadioInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"TV/Radio"},{"set":"TV/RadioInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/Radio"},{"set":"TV/RadioInput","to":"TNT"}],"name":"TNT"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "47LM660s"
+  "model": "47LM660s",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["Exit","Exit","InputAv1",{"delayMs":2000}],"setType":2}]},
+        {"name":"AV 2","select":[{"commands":["Exit","Exit","InputAv2",{"delayMs":2000}],"setType":2}]},
+        {"name":"AV 3","select":[{"commands":["Exit","Exit","InputAv3",{"delayMs":2000}],"setType":2}]},
+        {"name":"Component","select":[{"commands":["Exit","Exit","InputComponent1",{"delayMs":2000}],"setType":2}]},
+        {"name":"RGB-PC","select":[{"commands":["Exit","Exit","InputRgb-Pc",{"delayMs":2000}],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["Exit","Exit","InputHdmi1",{"delayMs":2000}],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["Exit","Exit","InputHdmi2",{"delayMs":2000}],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["Exit","Exit","InputHDMI3",{"delayMs":2000}],"setType":2}]},
+        {"name":"HDMI 4","select":[{"commands":["Exit","Exit","InputHdmi4",{"delayMs":2000}],"setType":2}]},
+        {"name":"Smart TV","select":[{"commands":["Exit","MyApps"],"setType":2}]},
+        {"name":"TV/Radio","select":[{"commands":["Exit","Exit","InputTv",{"delayMs":2000}],"setType":2}]}
+      ]
+    },
+    "TV/RadioInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Radio"},
+        {"name":"TV"},
+        {"name":"TNT"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,55 @@
   "codeset": "codesets/a5/a5b54f72a01f34f7.json",
   "deviceType": 22,
   "globalDeviceId": 215231,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"MW"}],"name":"MW"},
+      {"commands":[{"set":"InputType","to":"AUX/DI"},{"set":"AUX/DIInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"AUX/DI"},{"set":"AUX/DIInput","to":"Digital In"}],"name":"Digital In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS3300/96"
+  "model": "HTS3300/96",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUX/DIInput": {
+      "next": ["InputAux/Di"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"Digital In"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AUX/DI","select":[{"commands":["InputAux/Di"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"MW"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

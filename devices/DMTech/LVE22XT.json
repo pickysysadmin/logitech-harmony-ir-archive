@@ -2,6 +2,53 @@
   "codeset": "codesets/f0/f0999e040a273d70.json",
   "deviceType": 37,
   "globalDeviceId": 149520,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "DMTech",
-  "model": "LVE22XT"
+  "model": "LVE22XT",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["AV"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"S-Video"},
+        {"name":"PC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":1}]},
+        {"name":"AV","select":[{"commands":["AV",{"set":"AVInput","to":"DVD"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 5,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

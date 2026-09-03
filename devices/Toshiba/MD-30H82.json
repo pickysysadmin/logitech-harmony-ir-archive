@@ -2,6 +2,52 @@
   "codeset": "codesets/e2/e2dcd59536761dd8.json",
   "deviceType": 37,
   "globalDeviceId": 158298,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Ant"}],"name":"NTSCTuner"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Colorstream"}],"name":"Colorstream"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "MD-30H82"
+  "model": "MD-30H82",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "next": ["TvDvd"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"Video"}
+      ]
+    },
+    "VideoInput": {
+      "finish": ["Select"],
+      "start": ["TvVideo"],
+      "values": [
+        {"name":"Ant","select":[{"commands":["0"],"setType":1}]},
+        {"name":"Video1","select":[{"commands":["1"],"setType":1}]},
+        {"name":"Video2","select":[{"commands":["2"],"setType":1}]},
+        {"name":"Colorstream","select":[{"commands":["3"],"setType":1}]},
+        {"name":"HDMI","select":[{"commands":["4"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

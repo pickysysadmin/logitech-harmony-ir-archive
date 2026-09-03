@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 108335,
+  "inputs": {
+    "list": [
+      {"name":"EXT1"},
+      {"name":"EXT2"},
+      {"name":"SVHS2"},
+      {"name":"AV"},
+      {"name":"1 SVT1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "24PT-5507/01"
+  "model": "24PT-5507/01",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"EXT1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

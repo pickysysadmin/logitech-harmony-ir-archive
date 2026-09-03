@@ -2,6 +2,35 @@
   "codeset": "codesets/9e/9ed492ad9df5d197.json",
   "deviceType": 1,
   "globalDeviceId": 169399,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tv"},
+      {"commands":["InputAv1"],"name":"AV1"},
+      {"commands":["InputAv2"],"name":"AV2"},
+      {"commands":["InputAv3"],"name":"AV3"},
+      {"commands":["InputAV4"],"name":"AV4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KV-32LS60B"
+  "model": "KV-32LS60B",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,37 @@
   "codeset": "codesets/69/69bb86d84991a65b.json",
   "deviceType": 34,
   "globalDeviceId": 157014,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"Scart"},
+      {"name":"DVIn"},
+      {"name":"Tuner"},
+      {"name":"Front CVBS"},
+      {"name":"Front S-Vid"},
+      {"name":"Rear CVBS"},
+      {"name":"YUV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Magnex",
-  "model": "HDVR-7000"
+  "model": "HDVR-7000",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

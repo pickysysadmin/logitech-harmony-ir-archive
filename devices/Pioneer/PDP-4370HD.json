@@ -2,6 +2,49 @@
   "codeset": "codesets/2b/2b0bb33797ddb4d1.json",
   "deviceType": 1,
   "globalDeviceId": 122647,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"Input 1"},
+      {"commands":["InputVideo2"],"name":"Input 2"},
+      {"commands":["InputVideo3"],"name":"Input 3"},
+      {"commands":["InputVideo4"],"name":"Input 4"},
+      {"commands":["InputVideo5"],"name":"HDMI 5"},
+      {"commands":["InputVideo6"],"name":"HDMI 6"},
+      {"commands":["InputAntennaA/B"],"name":"ANT"},
+      {"commands":["AvMode"],"name":"AV SELECTION"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Pioneer",
-  "model": "PDP-4370HD"
+  "model": "PDP-4370HD",
+  "states": {
+    "ANTInput": {
+      "next": ["InputAntennaA/B"],
+      "values": [
+        {"name":"ANT A"},
+        {"name":"ANT B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ANT","select":[{"commands":["InputAntennaA/B"],"setType":2}]},
+        {"name":"I LINK","select":[{"commands":["InputiLink"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"INPUT 1","select":[{"commands":[{"delayMs":1500},"InputVideo1"],"setType":2}]},
+        {"name":"INPUT 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"INPUT 3","select":[{"commands":[{"delayMs":1500},"InputVideo3"],"setType":2}]},
+        {"name":"INPUT 4","select":[{"commands":["InputVideo4"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

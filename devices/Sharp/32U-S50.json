@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e5/e5c7d5dfacca063c.json",
   "deviceType": 1,
   "globalDeviceId": 907,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"input 1"},
+      {"name":"input 2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sharp",
-  "model": "32U-S50"
+  "model": "32U-S50",
+  "power": {
+    "toggle": [
+      {"delayMs":3000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

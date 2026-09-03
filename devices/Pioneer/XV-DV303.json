@@ -2,6 +2,47 @@
   "codeset": "codesets/91/91e08a2b54e3ac4b.json",
   "deviceType": 22,
   "globalDeviceId": 159536,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"L1"}],"name":"L1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"L2"}],"name":"L2","ports":["Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "XV-DV303"
+  "model": "XV-DV303",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputLine"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"L1"},
+        {"name":"L2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2250,
+    "pressMinRepeats": 3
+  }
 }

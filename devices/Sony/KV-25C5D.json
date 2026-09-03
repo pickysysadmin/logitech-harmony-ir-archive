@@ -1,7 +1,34 @@
 {
+  "channelTuning": {
+    "greaterTen": ["10+"]
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 100367,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo2","InputNext"],"name":"S-Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KV-25C5D"
+  "model": "KV-25C5D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

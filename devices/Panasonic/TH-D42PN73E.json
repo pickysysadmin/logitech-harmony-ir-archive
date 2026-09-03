@@ -2,6 +2,43 @@
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 157402,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi2","TvVideo","TvVideo","TvVideo"],"name":"AV1"},
+      {"commands":["InputHdmi2","TvVideo","TvVideo","TvVideo","TvVideo"],"name":"AV2"},
+      {"commands":["InputHdmi2","TvVideo","TvVideo","TvVideo","TvVideo","DirectionRight"],"name":"AV2S"},
+      {"commands":["InputPc","TvVideo","DirectionUp","Select"],"name":"Component"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["Mode"],"name":"TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-D42PN73E"
+  "model": "TH-D42PN73E",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":3000}
+    ],
+    "on": [
+      {"set":"Input","to":"TV"},
+      {"command":"PowerOn","durationMs":3000}
+    ],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 2
+  }
 }

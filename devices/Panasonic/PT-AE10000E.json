@@ -2,6 +2,47 @@
   "codeset": "codesets/c0/c0f7c31198088f0a.json",
   "deviceType": 7,
   "globalDeviceId": 120673,
+  "inputs": {
+    "list": [
+      {"commands":["InputRgb"],"name":"S-Video"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputRgb"],"name":"HDMI"},
+      {"commands":["InputRgb"],"name":"PC"},
+      {"commands":["InputRgb"],"name":"RGB1"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-AE10000E"
+  "model": "PT-AE10000E",
+  "power": {
+    "off": ["PowerToggle","PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"SVideo","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["InputRgb"],
+      "values": [
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

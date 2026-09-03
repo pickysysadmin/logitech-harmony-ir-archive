@@ -2,6 +2,32 @@
   "codeset": "codesets/bf/bfaa934b298daa0a.json",
   "deviceType": 1,
   "globalDeviceId": 160540,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"AV1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Beko",
-  "model": "21P1TG2-NX"
+  "model": "21P1TG2-NX",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Antenna/Cable"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

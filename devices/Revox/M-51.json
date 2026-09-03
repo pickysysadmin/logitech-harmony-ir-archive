@@ -2,6 +2,40 @@
   "codeset": "codesets/85/850c6c2aefdc1c48.json",
   "deviceType": 22,
   "globalDeviceId": 3434,
+  "inputs": {
+    "list": [
+      {"commands":["InputAux1"],"name":"Aux 1","ports":["Composite"]},
+      {"commands":["InputAux2"],"name":"Aux 2","ports":["Composite"]},
+      {"commands":["InputAux3"],"name":"Aux 3","ports":["Composite"]},
+      {"commands":["InputCd/Dvd"],"name":"CD/DVD","ports":["Streaming"]},
+      {"commands":["InputTuner"],"name":"Tuner","ports":["FM Antenna"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Others"]},
+      {"commands":["InputLocal"],"name":"Local","ports":["Streaming"]},
+      {"commands":["InputVideo1"],"name":"Video 1","ports":["Others"]},
+      {"commands":["InputVideo2"],"name":"Video 2","ports":["Others"]},
+      {"commands":["InputVideo3"],"name":"Video 3","ports":["Others"]},
+      {"commands":["InputVideo4"],"name":"Video 4","ports":["Others"]},
+      {"commands":["InputVideo5"],"name":"Video 5","ports":["Others"]},
+      {"commands":["InputVideo6"],"name":"Video 6","ports":["Others"]},
+      {"commands":["InputTape"],"name":"Tape","ports":["Others"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Revox",
-  "model": "M-51"
+  "model": "M-51",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputCd/Dvd"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

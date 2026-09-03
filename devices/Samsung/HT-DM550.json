@@ -2,6 +2,55 @@
   "codeset": "codesets/74/74b3aaa4816ab642.json",
   "deviceType": 22,
   "globalDeviceId": 76897,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Am"}],"name":"AM","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm"}],"name":"FM","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Digital"}],"name":"Digital","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 1"}],"name":"Aux 1","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 2"}],"name":"Aux 2","ports":["Aux"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-DM550"
+  "model": "HT-DM550",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

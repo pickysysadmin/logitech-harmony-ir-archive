@@ -2,6 +2,29 @@
   "codeset": "codesets/ed/ed90fbeb8833b921.json",
   "deviceType": 22,
   "globalDeviceId": 34802,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":[{"delayMs":1000},"InputTelevision"],"name":"TV"},
+      {"commands":[{"delayMs":1000},"InputDvd"],"name":"DVD"},
+      {"commands":[{"delayMs":1000},"InputAux"],"name":"AUX"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "LX300D"
+  "model": "LX300D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/f5/f5d1d735a9df89eb.json",
   "deviceType": 34,
   "globalDeviceId": 42029,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Tuner"},
+      {"name":"DV"},
+      {"name":"Video1"},
+      {"name":"S-Video"},
+      {"name":"Video2"}
+    ],
+    "next": ["DirectionRight"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "CyberHome",
-  "model": "CH-DVR 1600MU"
+  "model": "CH-DVR 1600MU",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

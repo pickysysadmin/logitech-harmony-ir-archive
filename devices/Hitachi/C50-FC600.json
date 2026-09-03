@@ -2,6 +2,35 @@
   "codeset": "codesets/b0/b0bde47f92aa2ba7.json",
   "deviceType": 1,
   "globalDeviceId": 108189,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"AV4 (COMPONENT)"},
+      {"name":"TUNER"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "C50-FC600"
+  "model": "C50-FC600",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TUNER"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 1
+  }
 }

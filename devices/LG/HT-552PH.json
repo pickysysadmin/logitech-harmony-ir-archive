@@ -2,6 +2,60 @@
   "codeset": "codesets/e3/e370310b73e6fe94.json",
   "deviceType": 22,
   "globalDeviceId": 160752,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dvd"}],"name":"Dvd"},
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"Band"},{"set":"BandInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Band"},{"set":"BandInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AUX OPT"}],"name":"AUX OPT"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"TV-AUDIO"}],"name":"TV-AUDIO"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AUDIO IN"}],"name":"AUDIO IN"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HT-552PH"
+  "model": "HT-552PH",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"AUX OPT"},
+        {"name":"TV-AUDIO"},
+        {"name":"AUDIO IN"}
+      ]
+    },
+    "BandInput": {
+      "next": ["InputBand"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dvd","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Usb","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Band","select":[{"commands":["InputBand"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

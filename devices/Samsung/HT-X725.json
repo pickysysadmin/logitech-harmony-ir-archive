@@ -2,6 +2,60 @@
   "codeset": "codesets/09/09544d5349ba9f5d.json",
   "deviceType": 22,
   "globalDeviceId": 180506,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 1"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 2"}],"name":"Aux 2"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Port"},{"set":"PortInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Port"},{"set":"PortInput","to":"OsdIPod"}],"name":"OsdIPod"},
+      {"commands":[{"set":"InputType","to":"Port"},{"set":"PortInput","to":"V/PIpod"}],"name":"V/PIpod"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-X725"
+  "model": "HT-X725",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"FM","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Port","select":[{"commands":["InputPort"],"setType":2}]}
+      ]
+    },
+    "PortInput": {
+      "next": ["InputPort"],
+      "values": [
+        {"name":"USB"},
+        {"name":"OsdIPod"},
+        {"name":"V/PIpod"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

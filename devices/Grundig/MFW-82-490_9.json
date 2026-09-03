@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 101480,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VIDEOS"},{"set":"VIDEOSInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"VIDEOS"},{"set":"VIDEOSInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"VIDEOS"},{"set":"VIDEOSInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"VIDEOS"},{"set":"VIDEOSInput","to":"AV4"}],"name":"AV4"},
+      {"commands":[{"set":"InputType","to":"VIDEOS"},{"set":"VIDEOSInput","to":"AV5"}],"name":"AV5"},
+      {"commands":[{"set":"InputType","to":"AVTV"}],"name":"Tuner"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Grundig",
-  "model": "MFW-82-490/9"
+  "model": "MFW-82-490/9",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "type": "discrete"
+  },
+  "states": {
+    "AVTVInput": {
+      "values": [
+        {"name":"AV","select":[{"commands":["InputNext"],"setType":1}]},
+        {"name":"Tuner","select":[{"commands":["1"],"setType":2}]}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VIDEOS","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"AVTV","select":[{"commands":["1"],"setType":2}]}
+      ]
+    },
+    "VIDEOSInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"AV4"},
+        {"name":"AV5"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

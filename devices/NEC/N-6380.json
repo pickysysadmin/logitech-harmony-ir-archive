@@ -2,6 +2,31 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 1,
   "globalDeviceId": 88982,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "NEC",
-  "model": "N-6380"
+  "model": "N-6380",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

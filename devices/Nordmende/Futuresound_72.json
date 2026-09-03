@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/84/84161d9af43a306d.json",
   "deviceType": 1,
   "globalDeviceId": 223493,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Nordmende",
-  "model": "Futuresound 72"
+  "model": "Futuresound 72",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

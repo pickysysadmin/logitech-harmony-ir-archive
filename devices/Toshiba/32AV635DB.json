@@ -2,6 +2,58 @@
   "codeset": "codesets/cd/cd3075da9c950a08.json",
   "deviceType": 1,
   "globalDeviceId": 177557,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Ext 1"}],"name":"Ext 1"},
+      {"commands":[{"set":"InputType","to":"Ext 2"}],"name":"Ext 2"},
+      {"commands":[{"set":"InputType","to":"Ext 3C"}],"name":"Ext 3C"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Atv/Dtv"},{"set":"Atv/DtvInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"Atv/Dtv"},{"set":"Atv/DtvInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "32AV635DB"
+  "model": "32AV635DB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Atv/DtvInput": {
+      "next": ["ATV/DTV"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Ext 1","select":[{"commands":["InputExt1"],"setType":2}]},
+        {"name":"Ext 2","select":[{"commands":["InputExt2"],"setType":2}]},
+        {"name":"Ext 3C","select":[{"commands":["Input3c"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"HDMI 4","select":[{"commands":["InputHdmi4"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Atv/Dtv","select":[{"commands":["ATV/DTV"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,49 @@
   "codeset": "codesets/52/52c8ef2a4a90f53d.json",
   "deviceType": 22,
   "globalDeviceId": 131955,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"TunerInput","to":"Fm"}],"name":"FM"},
+      {"commands":[{"set":"TunerInput","to":"Am"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HT473"
+  "model": "SC-HT473",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Fm"},
+        {"name":"Am"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

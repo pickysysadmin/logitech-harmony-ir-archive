@@ -1,7 +1,47 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/36/369a1d55fd454b88.json",
   "deviceType": 47,
   "globalDeviceId": 170947,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"DVD"},
+      {"name":"HDD"},
+      {"name":"SD"},
+      {"name":"VHS"}
+    ],
+    "next": ["DriveSelect"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-EH75V"
+  "model": "DMR-EH75V",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Input1"},
+        {"name":"Input2"},
+        {"name":"Input3"},
+        {"name":"Dv"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

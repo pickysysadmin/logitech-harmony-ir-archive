@@ -2,6 +2,52 @@
   "codeset": "codesets/cf/cfc8733fc006476c.json",
   "deviceType": 1,
   "globalDeviceId": 206613,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi1"}],"name":"Hdmi 1"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi2"}],"name":"Hdmi 2"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi3"}],"name":"Hdmi 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Element Electronics",
-  "model": "ELCHW402"
+  "model": "ELCHW402",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HdmiInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"},
+        {"name":"Hdmi3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":1}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":1}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":1}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":1}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

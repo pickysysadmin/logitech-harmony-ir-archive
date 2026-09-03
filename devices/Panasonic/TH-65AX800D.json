@@ -1,7 +1,78 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/b6/b68e8c964e3d8a7c.json",
   "deviceType": 1,
   "globalDeviceId": 265413,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Digital TV"}],"name":"Digital TV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Analogue TV"}],"name":"Analogue TV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"USB/SD Card"}],"name":"USB/SD Card"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-65AX800D"
+  "model": "TH-65AX800D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["AV"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"},
+        {"name":"Component"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"HDMI 4"},
+        {"name":"USB/SD Card"}
+      ]
+    },
+    "CompAVInput": {
+      "finish": ["OK"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"AV"},
+        {"name":"Component"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["AV"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"Digital TV"},
+        {"name":"Analogue TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

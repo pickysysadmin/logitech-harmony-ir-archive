@@ -2,6 +2,45 @@
   "codeset": "codesets/ff/ffeee5282f60fe02.json",
   "deviceType": 21,
   "globalDeviceId": 274380,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Radio/Aux"},{"set":"Radio/AuxInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio/Aux"},{"set":"Radio/AuxInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HC39"
+  "model": "SC-HC39",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Radio/Aux","select":[{"commands":["InputRadio/Aux"],"setType":2}]}
+      ]
+    },
+    "Radio/AuxInput": {
+      "next": ["InputRadio/Aux"],
+      "values": [
+        {"name":"FM"},
+        {"name":"Aux"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

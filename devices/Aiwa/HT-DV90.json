@@ -2,6 +2,63 @@
   "codeset": "codesets/09/09792f712cd4ecd8.json",
   "deviceType": 22,
   "globalDeviceId": 150885,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Video1"},{"set":"Video1Input","to":"Video1Analog"}],"name":"Video1Analog"},
+      {"commands":[{"set":"InputType","to":"Video1"},{"set":"Video1Input","to":"Video1Digital"}],"name":"Video1Digital"},
+      {"commands":[{"set":"InputType","to":"Video2"},{"set":"Video2Input","to":"Video2Analog"}],"name":"Video2Analog"},
+      {"commands":[{"set":"InputType","to":"Video2"},{"set":"Video2Input","to":"Video2Digital"}],"name":"Video2Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Aiwa",
-  "model": "HT-DV90"
+  "model": "HT-DV90",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Video1","select":[{"commands":["InputVideo 1",{"set":"Video1Input","to":"Video1Analog"}],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo 2",{"set":"Video2Input","to":"Video2Analog"}],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "Video1Input": {
+      "next": ["Digital/Analog"],
+      "values": [
+        {"name":"Video1Analog"},
+        {"name":"Video1Digital"}
+      ]
+    },
+    "Video2Input": {
+      "next": ["Digital/Analog"],
+      "values": [
+        {"name":"Video2Analog"},
+        {"name":"Video2Digital"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

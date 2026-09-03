@@ -2,6 +2,33 @@
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 127807,
+  "inputs": {
+    "list": [
+      {"commands":["Display"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"1"},
+      {"commands":["InputVideo2"],"name":"2"},
+      {"commands":["InputVideo3"],"name":"3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KV-V2120K"
+  "model": "KV-V2120K",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

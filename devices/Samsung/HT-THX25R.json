@@ -2,6 +2,58 @@
   "codeset": "codesets/29/29b205291cd5e5af.json",
   "deviceType": 22,
   "globalDeviceId": 155471,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Am"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"DigitalIn"}],"name":"DigitalIn"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux1"}],"name":"Aux1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux2"}],"name":"Aux2"},
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-THX25R"
+  "model": "HT-THX25R",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"},
+        {"name":"DigitalIn"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux",{"set":"AuxInput","to":"Aux1"}],"setType":2}]},
+        {"name":"Usb","select":[{"commands":["InputUsb"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

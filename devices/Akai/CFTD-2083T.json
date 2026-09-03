@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/a3/a3cbbca52210de3c.json",
   "deviceType": 38,
   "globalDeviceId": 140399,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"VCR"},
+      {"name":"DVD"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Akai",
-  "model": "CFTD-2083T"
+  "model": "CFTD-2083T",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

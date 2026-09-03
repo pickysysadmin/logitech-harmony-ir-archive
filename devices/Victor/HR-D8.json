@@ -2,6 +2,32 @@
   "codeset": "codesets/9d/9de16f229c1fc7ef.json",
   "deviceType": 2,
   "globalDeviceId": 118619,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"VCR"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Victor",
-  "model": "HR-D8"
+  "model": "HR-D8",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"},
+      {"set":"AntennaOutput","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

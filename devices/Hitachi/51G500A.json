@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/91/916d0ea4be35345e.json",
   "deviceType": 1,
   "globalDeviceId": 149948,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Antenna A"}],"name":"Antenna A"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Antenna B"}],"name":"Antenna B"},
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Video 4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"Video 5"}],"name":"Video 5"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "51G500A"
+  "model": "51G500A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputAntenna"],
+      "values": [
+        {"name":"Antenna A"},
+        {"name":"Antenna B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["InputAntenna"],"setType":2}]},
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Video 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"Video 5","select":[{"commands":["InputVideo5"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

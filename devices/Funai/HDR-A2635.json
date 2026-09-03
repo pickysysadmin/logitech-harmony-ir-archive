@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/69/69ac6db6e73410d6.json",
   "deviceType": 47,
   "globalDeviceId": 181550,
+  "inputs": {
+    "list": [
+      {"commands":["InputDVD"],"name":"DVD"},
+      {"commands":["InputHdd"],"name":"HDD"},
+      {"commands":["InputVCR"],"name":"VCR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Funai",
-  "model": "HDR-A2635"
+  "model": "HDR-A2635",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Video1"},
+        {"name":"Video2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

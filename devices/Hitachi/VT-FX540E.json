@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f3/f30f0f0d8bab4418.json",
   "deviceType": 2,
   "globalDeviceId": 98141,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Input 1"},
+      {"name":"Input 2"}
+    ],
+    "next": ["TvVcr"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "VT-FX540E"
+  "model": "VT-FX540E",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

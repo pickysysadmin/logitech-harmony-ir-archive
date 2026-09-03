@@ -2,6 +2,51 @@
   "codeset": "codesets/ce/ce70f09209504481.json",
   "deviceType": 7,
   "globalDeviceId": 201844,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Rgb"},{"set":"RgbInput","to":"Rgb1"}],"name":"Rgb 1"},
+      {"commands":[{"set":"InputType","to":"Rgb"},{"set":"RgbInput","to":"Rgb2"}],"name":"Rgb 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"SVideo"}],"name":"SVideo"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-L520E"
+  "model": "PT-L520E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Rgb","select":[{"commands":["InputRGB"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "RgbInput": {
+      "next": ["InputRGB"],
+      "values": [
+        {"name":"Rgb1"},
+        {"name":"Rgb2"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"SVideo"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

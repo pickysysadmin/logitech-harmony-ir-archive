@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 6767,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Antenna/Cable"},
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputRgb1"],"name":"RGB"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo2","InputNext"],"name":"YC2"},
+      {"commands":["InputVideo3"],"name":"AV3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KV-28DX30U"
+  "model": "KV-28DX30U",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

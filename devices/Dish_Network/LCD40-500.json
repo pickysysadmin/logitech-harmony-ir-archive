@@ -2,6 +2,39 @@
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 32031,
+  "inputs": {
+    "list": [
+      {"name":"DVI DISH"},
+      {"name":"YTBTR1"},
+      {"name":"YTBTR2"},
+      {"name":"YCBCR1"},
+      {"name":"YCBCR2"},
+      {"name":"VIDEO1"},
+      {"name":"VIDEO2"},
+      {"name":"VGA"},
+      {"name":"TV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Dish Network",
-  "model": "LCD40-500"
+  "model": "LCD40-500",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"DVI DISH"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 13000,
+    "pressMinRepeats": 3
+  }
 }

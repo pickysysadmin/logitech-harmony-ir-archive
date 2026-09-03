@@ -2,6 +2,53 @@
   "codeset": "codesets/78/78260ef26ba4489d.json",
   "deviceType": 21,
   "globalDeviceId": 259238,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"iPod Dock"}],"name":"iPod Dock"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"iPod Port"}],"name":"iPod Port"},
+      {"commands":[{"set":"InputType","to":"CD/Radio"},{"set":"CD/RadioInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"CD/Radio"},{"set":"CD/RadioInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HC38"
+  "model": "SC-HC38",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CD/RadioInput": {
+      "next": ["InputCd/Radio"],
+      "values": [
+        {"name":"CD"},
+        {"name":"FM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"CD/Radio","select":[{"commands":["InputCd/Radio"],"setType":2}]}
+      ]
+    },
+    "iPodInput": {
+      "next": ["InputiPod"],
+      "values": [
+        {"name":"iPod Dock"},
+        {"name":"iPod Port"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

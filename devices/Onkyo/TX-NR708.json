@@ -2,6 +2,41 @@
   "codeset": "codesets/bb/bbb0e9601a81743e.json",
   "deviceType": 5,
   "globalDeviceId": 209235,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR","ports":["HDMI","Composite","Coaxial","S-Video"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputGame"],"name":"Game","ports":["HDMI","Composite","Optical","S-Video"]},
+      {"commands":["InputPc"],"name":"PC","ports":["HDMI","Composite"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["HDMI","Composite"]},
+      {"commands":["InputTv/Cd"],"name":"TV/CD","ports":["Composite","Optical"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputPort"],"name":"Port","ports":["Portable"]},
+      {"commands":["InternetRadio"],"name":"Internet Radio","ports":["Streaming"]},
+      {"commands":["MusicServer"],"name":"Music Server","ports":["Streaming"]},
+      {"commands":["MusicServer","InputNet/Usb"],"name":"USB","ports":["USB"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputAm"],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-NR708"
+  "model": "TX-NR708",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

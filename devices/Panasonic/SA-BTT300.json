@@ -2,6 +2,36 @@
   "codeset": "codesets/85/854db722e5fa6ea7.json",
   "deviceType": 22,
   "globalDeviceId": 269069,
+  "inputs": {
+    "list": [
+      {"commands":["InputDisc/Sd"],"name":"Disc","ports":["BuiltIn"]},
+      {"commands":["Home","Home","OK",{"delayMs":500},"DirectionRight","OK"],"name":"SD","ports":["SD-Card"]},
+      {"commands":["Home","Home","OK",{"delayMs":500},"DirectionLeft","OK"],"name":"USB","ports":["Streaming"]},
+      {"commands":["Home","Home",{"delayMs":1000},"DirectionRight","DirectionUp","OK"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["Home","Home",{"delayMs":500},"DirectionUp","DirectionLeft","OK",{"delayMs":500},"DirectionUp","OK"],"name":"AUX","ports":["Composite"]},
+      {"commands":["Home","Home",{"delayMs":500},"DirectionUp","DirectionLeft","OK",{"delayMs":500},"DirectionDown","OK"],"name":"ARC","ports":["HDMI"]},
+      {"commands":["Home","Home",{"delayMs":500},"DirectionUp","DirectionLeft","OK",{"delayMs":500},"DirectionRight","OK"],"name":"Digital In","ports":["Optical"]},
+      {"commands":["Home","Home",{"delayMs":500},"DirectionUp","DirectionLeft","OK",{"delayMs":500},"OK"],"name":"HDMI IN 1","ports":["HDMI"]},
+      {"commands":["Home","Home",{"delayMs":500},"DirectionUp","DirectionLeft","OK",{"delayMs":500},"DirectionLeft","OK"],"name":"HDMI IN 2","ports":["HDMI"]},
+      {"commands":["Home"],"name":"Home","ports":["Others"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-BTT300"
+  "model": "SA-BTT300",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

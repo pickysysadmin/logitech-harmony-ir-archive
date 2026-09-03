@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 37,
   "globalDeviceId": 52225,
+  "inputs": {
+    "list": [
+      {"name":"video 1"},
+      {"name":"video 2"},
+      {"name":"frnt"},
+      {"name":"cmpt 1"},
+      {"name":"cmpt 2"},
+      {"name":"DVI"},
+      {"name":"DVD"},
+      {"name":"tuner"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "RCA",
-  "model": "D40W15"
+  "model": "D40W15",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "VidMode": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"},
+        {"name":"Dvi"},
+        {"name":"video1"},
+        {"name":"video2"},
+        {"name":"front"}
+      ]
+    },
+    "inputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["0","3"],"setType":2}]},
+        {"name":"vid","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"inputDVD","select":[{"commands":["InputSat/Cable"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,37 @@
   "codeset": "codesets/1f/1f32a3e87faadef5.json",
   "deviceType": 1,
   "globalDeviceId": 126794,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"TV"},
+      {"name":"TV S-VHS"},
+      {"name":"DVD"},
+      {"name":"DVD S-VHS"},
+      {"name":"Vorne"},
+      {"name":"YC3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KV-32WS"
+  "model": "KV-32WS",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

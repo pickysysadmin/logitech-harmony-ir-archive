@@ -2,6 +2,63 @@
   "codeset": "codesets/67/67c56b71dd97d589.json",
   "deviceType": 22,
   "globalDeviceId": 213479,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AuxOpt"}],"name":"AuxOpt"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AudioIn"}],"name":"AudioIn"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"OSD iPod"}],"name":"OSD iPod"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"HdmiIn"}],"name":"HdmiIn"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "XV-THG41 (AP)"
+  "model": "XV-THG41 (AP)",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FunctionInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"DVD/CD"},
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"USB"},
+        {"name":"Aux"},
+        {"name":"AuxOpt"},
+        {"name":"AudioIn"},
+        {"name":"OSD iPod"},
+        {"name":"iPod"},
+        {"name":"HdmiIn"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Function","select":[{"commands":["Function"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

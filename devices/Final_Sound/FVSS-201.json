@@ -2,6 +2,52 @@
   "codeset": "codesets/46/46bba010558ae28c.json",
   "deviceType": 22,
   "globalDeviceId": 154013,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Sat/Cable"}],"name":"Sat/Cable"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Aux 1"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"Aux 2"}],"name":"Aux 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Final Sound",
-  "model": "FVSS-201"
+  "model": "FVSS-201",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Sat/Cable","select":[{"commands":["InputSat/Cable"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"Aux 1","select":[{"commands":["InputAux1"],"setType":2}]},
+        {"name":"Aux 2","select":[{"commands":["InputAux2"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/3a/3a4c35f5e26b74ae.json",
   "deviceType": 1,
   "globalDeviceId": 178357,
+  "inputs": {
+    "list": [
+      {"commands":["Analog"],"name":"Analog"},
+      {"commands":["Digital"],"name":"Digital"},
+      {"commands":["InputAv1"],"name":"Video 1"},
+      {"commands":["InputAv2"],"name":"Video 2"},
+      {"commands":["InputAv3"],"name":"Video 3"},
+      {"commands":["InputAv4"],"name":"HDMI 1"},
+      {"commands":["InputAv5"],"name":"HDMI 2"},
+      {"commands":["InputAv6"],"name":"HDMI 3"},
+      {"commands":["InputAv7"],"name":"Component"},
+      {"commands":["InputPc"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-32U4000"
+  "model": "KDL-32U4000",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

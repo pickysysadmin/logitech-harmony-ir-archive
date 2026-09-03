@@ -2,6 +2,34 @@
   "codeset": "codesets/66/664b615150a0e4b9.json",
   "deviceType": 7,
   "globalDeviceId": 8211,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputSVideo"],"name":"S-Video"},
+      {"commands":["InputRgb1"],"name":"RGB1"},
+      {"commands":["InputRGB"],"name":"RGB2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "LT260"
+  "model": "LT260",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":6000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":6000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

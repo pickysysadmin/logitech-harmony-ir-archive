@@ -2,6 +2,37 @@
   "codeset": "codesets/f1/f1bd23ca9635b87d.json",
   "deviceType": 19,
   "globalDeviceId": 491738,
+  "inputs": {
+    "list": [
+      {"commands":["Input1"],"name":"Input1","ports":["AES"]},
+      {"commands":["Input2"],"name":"Input2","ports":["AES"]},
+      {"commands":["Input3"],"name":"Input3","ports":["Composite"]},
+      {"commands":["Input4"],"name":"Input4","ports":["Composite"]},
+      {"commands":["Input5"],"name":"Input5","ports":["Composite"]},
+      {"commands":["Input6"],"name":"Input6","ports":["Optical"]},
+      {"commands":["Input7"],"name":"Input7","ports":["Optical"]},
+      {"commands":["Input8"],"name":"Input8","ports":["Optical"]},
+      {"commands":["Input9"],"name":"Input9","ports":["Optical"]},
+      {"commands":[{"command":"Input1","durationMs":1000},{"delayMs":500},"Input0"],"name":"Input10","ports":["Coaxial"]},
+      {"commands":[{"command":"Input1","durationMs":1000},{"delayMs":500},"Input1"],"name":"Input11","ports":["Coaxial"]},
+      {"commands":[{"command":"Input1","durationMs":1000},{"delayMs":500},"Input2"],"name":"Input12","ports":["USB"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Primare",
-  "model": "I35 DAC"
+  "model": "I35 DAC",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

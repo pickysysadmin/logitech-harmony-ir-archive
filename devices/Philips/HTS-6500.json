@@ -2,6 +2,68 @@
   "codeset": "codesets/82/827e4579135eba01.json",
   "deviceType": 22,
   "globalDeviceId": 159549,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AuxInput","to":"AuxAnalog"}],"name":"AUX Analog","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AuxInput","to":"AuxDigital"}],"name":"AUX Digital","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Disc/USB"},{"set":"Disc/USBInput","to":"Disc"}],"name":"Disc","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Disc/USB"},{"set":"Disc/USBInput","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS-6500"
+  "model": "HTS-6500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": [
+        {"delayMs":8000},
+        "InputAux"
+      ],
+      "values": [
+        {"name":"AuxAnalog"},
+        {"name":"AuxDigital"}
+      ]
+    },
+    "Disc/USBInput": {
+      "next": ["InputDisc/Usb"],
+      "values": [
+        {"name":"Disc"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"MP3","select":[{"commands":["InputMp3"],"setType":2}]},
+        {"name":"Disc/USB","select":[{"commands":["InputDisc/Usb"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

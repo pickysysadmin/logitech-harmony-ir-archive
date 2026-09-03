@@ -2,6 +2,45 @@
   "codeset": "codesets/f8/f836581739d190d7.json",
   "deviceType": 22,
   "globalDeviceId": 7065,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Aux/Digi"},{"set":"Aux/DigiInput","to":"Digital Line In"}],"name":"Digital Line In","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Aux/Digi"},{"set":"Aux/DigiInput","to":"Aux"}],"name":"Aux","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-DB120"
+  "model": "HT-DB120",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/DigiInput": {
+      "next": ["InputAux/Digi"],
+      "values": [
+        {"name":"Digital Line In"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Aux/Digi","select":[{"commands":["InputAux/Digi"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,48 @@
   "codeset": "codesets/07/0771d9d08f150afc.json",
   "deviceType": 22,
   "globalDeviceId": 138724,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Tuner/MusicP"},{"set":"Tuner/MusicPInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner/MusicP"},{"set":"Tuner/MusicPInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner/MusicP"},{"set":"Tuner/MusicPInput","to":"Music P"}],"name":"Music P"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-VK850"
+  "model": "SC-VK850",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"DVD/CD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner/MusicP","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "Tuner/MusicPInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"Music P"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

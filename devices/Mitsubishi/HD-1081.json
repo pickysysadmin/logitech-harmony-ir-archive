@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/3d/3d13651ffb4ece65.json",
   "deviceType": 1,
   "globalDeviceId": 126697,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"S-VHS"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Mitsubishi",
-  "model": "HD-1081"
+  "model": "HD-1081",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Video 2"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

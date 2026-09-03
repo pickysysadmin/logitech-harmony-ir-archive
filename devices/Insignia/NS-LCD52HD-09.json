@@ -2,6 +2,71 @@
   "codeset": "codesets/b7/b7f8430dbaa7c448.json",
   "deviceType": 1,
   "globalDeviceId": 176819,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Composite Rear (Video 1)"}],"name":"Composite Rear (Video 1)"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Composite Side (Video 2)"}],"name":"Composite Side (Video 2)"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"S-Video Rear (Video 3)"}],"name":"S-Video Rear (Video 3)"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"S-Video Side (Video 4)"}],"name":"S-Video Side (Video 4)"},
+      {"commands":[{"set":"InputType","to":"COMP"},{"set":"COMPInput","to":"Component 1 (Video 5)"}],"name":"Component 1 (Video 5)"},
+      {"commands":[{"set":"InputType","to":"COMP"},{"set":"COMPInput","to":"Component 2 (Video 6)"}],"name":"Component 2 (Video 6)"},
+      {"commands":[{"set":"InputType","to":"VGA (Video 7)"}],"name":"VGA (Video 7)"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1 (VIdeo 8)"}],"name":"HDMI 1 (VIdeo 8)"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2 (VIdeo 9)"}],"name":"HDMI 2 (VIdeo 9)"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 3 (VIdeo 10)"}],"name":"HDMI 3 (VIdeo 10)"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Insignia",
-  "model": "NS-LCD52HD-09"
+  "model": "NS-LCD52HD-09",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "COMPInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Component 1 (Video 5)"},
+        {"name":"Component 2 (Video 6)"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1 (VIdeo 8)"},
+        {"name":"HDMI 2 (VIdeo 9)"},
+        {"name":"HDMI 3 (VIdeo 10)"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"VGA (Video 7)","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"VIDEO","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"COMP","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Composite Rear (Video 1)"},
+        {"name":"Composite Side (Video 2)"},
+        {"name":"S-Video Rear (Video 3)"},
+        {"name":"S-Video Side (Video 4)"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

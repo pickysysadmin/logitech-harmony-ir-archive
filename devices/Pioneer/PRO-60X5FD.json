@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2a/2af6d39d6f0f817b.json",
   "deviceType": 1,
   "globalDeviceId": 222721,
+  "inputs": {
+    "list": [
+      {"commands":["ChannelUp","Exit","Exit",{"delayMs":2000},"ChannelUp"],"name":"TV"},
+      {"commands":["Input1","Exit","Exit",{"delayMs":2000},"Input1"],"name":"HDMI 1"},
+      {"commands":["Input2","Exit","Exit",{"delayMs":2000},"Input2"],"name":"HDMI 2"},
+      {"commands":["Input3","Exit","Exit",{"delayMs":2000},"Input3"],"name":"HDMI 3"},
+      {"commands":["Input4","Exit","Exit",{"delayMs":2000},"Input4"],"name":"HDMI 4"},
+      {"commands":["Input5","Exit","Exit",{"delayMs":2000},"Input5"],"name":"HDMI 5"},
+      {"commands":["Input6","Exit","Exit",{"delayMs":2000},"Input6"],"name":"Component"},
+      {"commands":["Input7","Exit","Exit",{"delayMs":2000},"Input7"],"name":"Video 1"},
+      {"commands":["Input8","Exit","Exit",{"delayMs":2000},"Input8"],"name":"Video 2"},
+      {"commands":["InputPc","Exit","Exit",{"delayMs":2000},"InputPc"],"name":"PC"},
+      {"commands":["InputPc","Input","Input"],"name":"Home Network (DLNA)"},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputPc","Input","Input"],"name":"USB"},
+      {"commands":["Apps"],"name":"Apps"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Pioneer",
-  "model": "PRO-60X5FD"
+  "model": "PRO-60X5FD",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 45000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

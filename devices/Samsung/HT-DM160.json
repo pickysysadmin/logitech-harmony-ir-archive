@@ -2,6 +2,55 @@
   "codeset": "codesets/79/79ff0ae7c5f1bb66.json",
   "deviceType": 22,
   "globalDeviceId": 128080,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-DM160"
+  "model": "HT-DM160",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

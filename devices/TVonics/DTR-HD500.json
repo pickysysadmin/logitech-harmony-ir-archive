@@ -2,6 +2,49 @@
   "codeset": "codesets/7f/7fa003ca8b8c495e.json",
   "deviceType": 18,
   "globalDeviceId": 213570,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DTT"}],"name":"DTT"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Tv/Radio"},{"set":"Tv/RadioInput","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Tv/Radio"},{"set":"Tv/RadioInput","to":"Radio"}],"name":"Radio"}
+    ],
+    "type": 5
+  },
   "manufacturer": "TVonics",
-  "model": "DTR-HD500"
+  "model": "DTR-HD500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DTT","select":[{"commands":["InputDTT"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Tv/Radio","select":[{"commands":["Tv/Radio"],"setType":2}]}
+      ]
+    },
+    "Tv/RadioInput": {
+      "next": ["Tv/Radio"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Radio"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

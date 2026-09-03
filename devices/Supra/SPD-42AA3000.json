@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/36/362eb927ae6329c2.json",
   "deviceType": 1,
   "globalDeviceId": 155027,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"YPbPr"},
+      {"name":"PC"},
+      {"name":"DVI"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Supra",
-  "model": "SPD-42AA3000"
+  "model": "SPD-42AA3000",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 1
+  }
 }

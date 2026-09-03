@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/45/45b5030882437172.json",
   "deviceType": 37,
   "globalDeviceId": 109302,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Time",
-  "model": "LD-2015"
+  "model": "LD-2015",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"S-Video"},
+        {"name":"PC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["1"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext",{"set":"InputNextInput","to":"DVD"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

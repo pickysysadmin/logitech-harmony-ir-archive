@@ -2,6 +2,58 @@
   "codeset": "codesets/b7/b72a2d16f6058af9.json",
   "deviceType": 1,
   "globalDeviceId": 158504,
+  "inputs": {
+    "list": [
+      {"commands":["InputYCbCr"],"name":"DVI"},
+      {"commands":["InputYCbCr"],"name":"VGA"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputVideo"],"name":"Scart 1"},
+      {"commands":["InputVideo"],"name":"Tuner"},
+      {"commands":["InputVideo"],"name":"Scart 2"},
+      {"commands":["InputYPbPr"],"name":"HDTV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Akura",
-  "model": "AH-260"
+  "model": "AH-260",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"Componant","select":[{"commands":["InputYPbPr"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo",{"set":"VideoInput","to":"Scart 1"}],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputYCbCr",{"set":"PCInput","to":"VGA"}],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputYCbCr"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Scart 1"},
+        {"name":"Scart 2"},
+        {"name":"Tuner"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

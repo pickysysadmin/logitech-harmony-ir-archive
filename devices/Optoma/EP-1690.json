@@ -2,6 +2,35 @@
   "codeset": "codesets/6d/6dd44657af3a86e5.json",
   "deviceType": 7,
   "globalDeviceId": 94662,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"SVideo"},
+      {"commands":["InputVga1"],"name":"VGA1"},
+      {"commands":["InputVga2"],"name":"VGA2"},
+      {"commands":["InputDVI"],"name":"DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "EP-1690"
+  "model": "EP-1690",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

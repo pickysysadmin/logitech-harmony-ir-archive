@@ -2,6 +2,48 @@
   "codeset": "codesets/f9/f979eda67f5370e5.json",
   "deviceType": 47,
   "globalDeviceId": 168371,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AV 3"}],"name":"AV 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Funai",
-  "model": "W4A-A4180DB"
+  "model": "W4A-A4180DB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

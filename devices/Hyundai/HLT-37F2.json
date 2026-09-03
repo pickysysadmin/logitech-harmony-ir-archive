@@ -1,7 +1,49 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/b2/b27b1c4b30753ad2.json",
   "deviceType": 1,
   "globalDeviceId": 108153,
+  "inputs": {
+    "finish": ["Exit"],
+    "list": [
+      {"name":"TV"},
+      {"name":"Scart 1"},
+      {"name":"Scart 2"},
+      {"name":"S-Video"},
+      {"name":"Component 1"},
+      {"name":"Component 2"},
+      {"name":"PC"},
+      {"name":"DVI"}
+    ],
+    "next": ["StartInput"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Hyundai",
-  "model": "HLT-37F2"
+  "model": "HLT-37F2",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

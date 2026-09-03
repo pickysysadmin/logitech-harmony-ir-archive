@@ -2,6 +2,32 @@
   "codeset": "codesets/eb/eb8a064e7b0fe626.json",
   "deviceType": 1,
   "globalDeviceId": 108202,
+  "inputs": {
+    "list": [
+      {"name":"Tuner - analog"},
+      {"name":"AV-1"},
+      {"name":"AV-S"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "OVP",
-  "model": "CTV-213"
+  "model": "CTV-213",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner - analog"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

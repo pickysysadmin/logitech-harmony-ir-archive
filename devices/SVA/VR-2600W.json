@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ef/ef799f1a4b50d6e5.json",
   "deviceType": 1,
   "globalDeviceId": 94893,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Composite 1"},
+      {"name":"S-Video 1"},
+      {"name":"YPbPr"},
+      {"name":"DVI"},
+      {"name":"Composite 2"},
+      {"name":"S-Video 2"},
+      {"name":"YCBCR"},
+      {"name":"RGB"}
+    ],
+    "next": ["InputNext"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "SVA",
-  "model": "VR-2600W"
+  "model": "VR-2600W",
+  "power": {
+    "toggle": [
+      {"delayMs":1000},
+      "PowerToggle",
+      {"delayMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

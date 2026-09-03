@@ -2,6 +2,34 @@
   "codeset": "codesets/4a/4a6fc747c0aeec47.json",
   "deviceType": 1,
   "globalDeviceId": 504,
+  "inputs": {
+    "list": [
+      {"name":"EXT 1"},
+      {"name":"EXT 2"},
+      {"name":"EXT 3"},
+      {"name":"Front"},
+      {"name":"TV"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "28PN9611/02"
+  "model": "28PN9611/02",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

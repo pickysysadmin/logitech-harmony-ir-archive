@@ -2,6 +2,52 @@
   "codeset": "codesets/70/704a0d07477fb1e8.json",
   "deviceType": 5,
   "globalDeviceId": 97508,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVR/DVD"}],"name":"DVR/DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"DBS"}],"name":"DBS"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "RX-D202"
+  "model": "RX-D202",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "FM/AMInput": {
+      "next": ["InputFM/AM"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVR/DVD","select":[{"commands":["InputDvr/Dvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVCR"],"setType":2}]},
+        {"name":"DBS","select":[{"commands":["InputDBS"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTV"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"AM/FM","select":[{"commands":["InputFM/AM"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

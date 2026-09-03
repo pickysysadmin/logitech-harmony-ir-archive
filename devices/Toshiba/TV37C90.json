@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/36/362eb927ae6329c2.json",
   "deviceType": 1,
   "globalDeviceId": 21781,
+  "inputs": {
+    "list": [
+      {"name":"Antenna 1"},
+      {"name":"Antenna 2"},
+      {"name":"Colourstream HD2"},
+      {"name":"Colourstream HD1"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "TV37C90"
+  "model": "TV37C90",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Video 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

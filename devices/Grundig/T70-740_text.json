@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/dd/ddfaaf2c892c388b.json",
   "deviceType": 1,
   "globalDeviceId": 105711,
+  "inputs": {
+    "list": [
+      {"name":"Antenna"},
+      {"name":"Av1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "T70-740 text"
+  "model": "T70-740 text",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

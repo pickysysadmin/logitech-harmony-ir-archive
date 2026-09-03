@@ -2,6 +2,36 @@
   "codeset": "codesets/93/936889d5c4956a9e.json",
   "deviceType": 22,
   "globalDeviceId": 177154,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"Tv","ports":["Composite"]},
+      {"commands":["InputDisc"],"name":"Disc","ports":["Streaming"]},
+      {"commands":["InputRadio"],"name":"Radio","ports":["FM Antenna"]},
+      {"commands":["InputAux"],"name":"Aux","ports":["Composite"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Others"]},
+      {"commands":["InputD-In"],"name":"D-In","ports":["Coaxial","Optical"]},
+      {"commands":["InputUsb1"],"name":"Usb1","ports":["USB"]},
+      {"commands":["InputUsb2"],"name":"Usb2","ports":["USB"]},
+      {"commands":["InputPc"],"name":"Pc","ports":["Others"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Harman Kardon",
-  "model": "HS-150"
+  "model": "HS-150",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputD-In"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,42 @@
   "codeset": "codesets/73/739b5e84df7e5da6.json",
   "deviceType": 1,
   "globalDeviceId": 128675,
+  "inputs": {
+    "list": [
+      {"commands":["Analog"],"name":"Analogue"},
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo3"],"name":"AV3"},
+      {"commands":["InputVideo4"],"name":"AV4"},
+      {"commands":["InputVideo5"],"name":"AV5"},
+      {"commands":["InputVideo6"],"name":"PC"},
+      {"commands":["Digital"],"name":"Digital"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-46S2030U"
+  "model": "KDL-46S2030U",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

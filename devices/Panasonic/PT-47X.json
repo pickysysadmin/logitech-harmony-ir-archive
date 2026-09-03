@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 55557,
+  "inputs": {
+    "list": [
+      {"commands":["StartInput","1"],"name":"TV"},
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["InputComponent2"],"name":"Component 2"},
+      {"commands":[{"delayMs":1000},"InputComponent2",{"delayMs":1000},"InputNext",{"delayMs":1000},"InputNext"],"name":"HDMI"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputVideo4"],"name":"Video 4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-47X"
+  "model": "PT-47X",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

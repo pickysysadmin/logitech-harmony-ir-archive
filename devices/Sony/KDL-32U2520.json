@@ -2,6 +2,34 @@
   "codeset": "codesets/1b/1bb4a1a4e71e89cd.json",
   "deviceType": 1,
   "globalDeviceId": 163894,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo3"],"name":"AV3"},
+      {"commands":["InputVideo4"],"name":"AV4"},
+      {"commands":["Input","InputVideo4"],"name":"PC"},
+      {"commands":["InputVideo4","Input","Input"],"name":"Hdmi1"},
+      {"commands":["InputVideo4","Input","Input","Input"],"name":"Hdmi2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-32U2520"
+  "model": "KDL-32U2520",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

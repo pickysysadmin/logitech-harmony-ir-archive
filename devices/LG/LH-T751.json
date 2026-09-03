@@ -2,6 +2,52 @@
   "codeset": "codesets/8d/8dff015ea888af96.json",
   "deviceType": 22,
   "globalDeviceId": 75276,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Band"}],"name":"Band"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"D.Input"},{"set":"D.InputInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"D.Input"},{"set":"D.InputInput","to":"AV1 OPT"}],"name":"AV1 OPT"},
+      {"commands":[{"set":"InputType","to":"D.Input"},{"set":"D.InputInput","to":"TV-AUDIO"}],"name":"TV-AUDIO"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LH-T751"
+  "model": "LH-T751",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "D.InputInput": {
+      "next": ["InputDigital"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV1 OPT"},
+        {"name":"TV-AUDIO"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Band","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Usb","select":[{"commands":["InputUSB"],"setType":2}]},
+        {"name":"D.Input","select":[{"commands":["InputDigital"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

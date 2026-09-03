@@ -2,6 +2,39 @@
   "codeset": "codesets/a1/a183a74241ba92cb.json",
   "deviceType": 1,
   "globalDeviceId": 46292,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo 1"],"name":"AV 1"},
+      {"commands":["InputVideo 2"],"name":"AV 2"},
+      {"commands":["InputVideo 3"],"name":"AV 3"},
+      {"commands":["InputVideo 4"],"name":"AV 4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-76PW150A"
+  "model": "TX-76PW150A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVMode": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

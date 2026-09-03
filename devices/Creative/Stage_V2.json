@@ -2,6 +2,53 @@
   "codeset": "codesets/ee/eec4d6c6ec0fce81.json",
   "deviceType": 19,
   "globalDeviceId": 500672,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"a"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"TvArc/Usb"},{"set":"TvArc/UsbInput","to":"TvArc"}],"name":"TvArc"},
+      {"commands":[{"set":"InputType","to":"TvArc/Usb"},{"set":"TvArc/UsbInput","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"Opt/Aux"},{"set":"InputType","to":"Opt"}],"name":"Opt"},
+      {"commands":[{"set":"InputType","to":"Opt/Aux"},{"set":"InputType","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Creative",
-  "model": "Stage V2"
+  "model": "Stage V2",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":1}]},
+        {"name":"TvArc/Usb","select":[{"commands":["InputTvArc/Usb"],"setType":1}]},
+        {"name":"Opt/Aux","select":[{"commands":["InputOpt/Aux"],"setType":1}]}
+      ]
+    },
+    "Opt/AuxInput": {
+      "next": ["InputOpt/Aux"],
+      "values": [
+        {"name":"Opt"},
+        {"name":"Aux"}
+      ]
+    },
+    "TvArc/UsbInput": {
+      "next": ["InputTvArc/Usb"],
+      "values": [
+        {"name":"TvArc"},
+        {"name":"Usb"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

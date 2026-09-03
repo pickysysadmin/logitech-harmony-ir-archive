@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/30/30baed27d75c35b8.json",
   "deviceType": 1,
   "globalDeviceId": 167577,
+  "inputs": {
+    "list": [
+      {"name":"Antenna A"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Universum",
-  "model": "FT-8172T"
+  "model": "FT-8172T",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Antenna A"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

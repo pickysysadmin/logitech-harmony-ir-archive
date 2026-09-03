@@ -2,6 +2,49 @@
   "codeset": "codesets/8b/8b2bc8147db1a5b7.json",
   "deviceType": 5,
   "globalDeviceId": 169506,
+  "inputs": {
+    "list": [
+      {"commands":["InputDVD"],"name":"DVD"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputVideo4"],"name":"Video 4"},
+      {"commands":["InputVideo5"],"name":"Video 5"},
+      {"commands":["InputMultiChannel"],"name":"Multi-Ch"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SR602E"
+  "model": "TX-SR602E",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "SoundMode": {
+      "next": ["SurroundToggle"],
+      "values": [
+        {"name":"NeoMovie"},
+        {"name":"NeoMusic"},
+        {"name":"ProLogic2Movie"},
+        {"name":"ProLogic2Music"},
+        {"name":"NeoCinema"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

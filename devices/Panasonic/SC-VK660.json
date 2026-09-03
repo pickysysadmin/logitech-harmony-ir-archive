@@ -2,6 +2,54 @@
   "codeset": "codesets/5b/5b473120e4305c91.json",
   "deviceType": 22,
   "globalDeviceId": 168363,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Extn"},{"set":"ExtnInput","to":"Music P"}],"name":"Music P"},
+      {"commands":[{"set":"InputType","to":"Extn"},{"set":"ExtnInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Band"},{"set":"BandInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Band"},{"set":"BandInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-VK660"
+  "model": "SC-VK660",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "BandInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "ExtnInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Music P"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"Extn","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Band","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

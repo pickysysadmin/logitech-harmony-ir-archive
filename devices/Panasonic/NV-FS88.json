@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/87/876ff88c718300a0.json",
   "deviceType": 2,
   "globalDeviceId": 180701,
+  "inputs": {
+    "list": [
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"},
+      {"name":"Tuner"},
+      {"name":"Television"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "NV-FS88"
+  "model": "NV-FS88",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,54 @@
   "codeset": "codesets/84/84aded3666cf9655.json",
   "deviceType": 22,
   "globalDeviceId": 210173,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Optical1"}],"name":"Optical1","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Optical2"}],"name":"Optical2","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AnalogL/R1"}],"name":"AnalogL/R1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AnalogL/R2"}],"name":"AnalogL/R2","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "BDS-300"
+  "model": "BDS-300",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Coaxial"},
+        {"name":"Optical1"},
+        {"name":"Optical2"},
+        {"name":"AnalogL/R1"},
+        {"name":"AnalogL/R2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

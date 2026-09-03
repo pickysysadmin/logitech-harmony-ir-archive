@@ -1,7 +1,74 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/6f/6f781e4d905a181c.json",
   "deviceType": 1,
   "globalDeviceId": 268536,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VieraCastMENU","to":"OFF"},{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"VieraCastMENU","to":"OFF"},{"set":"InputType","to":"Component1"}],"name":"Component 1"},
+      {"commands":[{"set":"VieraCastMENU","to":"OFF"},{"set":"InputType","to":"Component2"}],"name":"Component 2"},
+      {"commands":[{"set":"VieraCastMENU","to":"OFF"},{"set":"InputType","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"VieraCastMENU","to":"OFF"},{"set":"InputType","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"VieraCastMENU","to":"OFF"},{"set":"InputType","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"VieraCastMENU","to":"OFF"},{"set":"InputType","to":"HDMI4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"VieraCastMENU","to":"OFF"},{"set":"InputType","to":"Video1"}],"name":"Video 1"},
+      {"commands":[{"set":"VieraCastMENU","to":"OFF"},{"set":"InputType","to":"Video2"}],"name":"Video 2"},
+      {"commands":[{"set":"VieraCastMENU","to":"OFF"},{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"VieraCastMENU","to":"OFF"},{"set":"InputType","to":"SDCard"}],"name":"SD Card"},
+      {"commands":[{"set":"VieraCastMENU","to":"ON"},{"set":"InputType","to":"VieraCast"}],"name":"Viera Cast"},
+      {"commands":[{"set":"VieraCastMENU","to":"OFF"},{"set":"InputType","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-58PZ850U"
+  "model": "TH-58PZ850U",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "start": ["TvVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Component1"},
+        {"name":"Component2"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"HDMI4"},
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"PC"},
+        {"name":"SDCard"},
+        {"name":"Netflix"},
+        {"name":"VieraCast"}
+      ]
+    },
+    "VieraCastMENU": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 10000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/d8/d8c453eeeb441f54.json",
   "deviceType": 1,
   "globalDeviceId": 39115,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"S-Video"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "DMTech",
-  "model": "DML-4117W"
+  "model": "DML-4117W",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

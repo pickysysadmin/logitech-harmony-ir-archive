@@ -1,7 +1,81 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/bf/bf88905d03690a33.json",
   "deviceType": 1,
   "globalDeviceId": 157713,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV1"},{"set":"MENU","to":"OFF"}],"name":"AV1"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"MENU","to":"OFF"}],"name":"AV2"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"MENU","to":"OFF"}],"name":"AV3"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV4"},{"set":"MENU","to":"OFF"}],"name":"AV4"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"PC"},{"set":"MENU","to":"OFF"}],"name":"PC"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"HDMI"},{"set":"HDMIInput","to":"HDMI1"},{"set":"MENU","to":"OFF"}],"name":"HDMI1"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"HDMI"},{"set":"HDMIInput","to":"HDMI2"},{"set":"MENU","to":"OFF"}],"name":"HDMI2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-26LXD600A"
+  "model": "TX-26LXD600A",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":[{"set":"PAGE12","to":"PAGE1"},"Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":[{"set":"PAGE12","to":"PAGE1"},"Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":[{"set":"PAGE12","to":"PAGE1"},"Yellow"],"setType":2}]},
+        {"name":"AV4","select":[{"commands":[{"set":"PAGE12","to":"PAGE2"},"Green"],"setType":2}]},
+        {"name":"PC","select":[{"commands":[{"set":"PAGE12","to":"PAGE2"},"Yellow"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":[{"set":"PAGE12","to":"PAGE2"},"Blue"],"setType":2}]}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "InputNext",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["OK"],"setType":2}]}
+      ]
+    },
+    "PAGE12": {
+      "values": [
+        {"name":"PAGE1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"PAGE2","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,33 @@
   "codeset": "codesets/1a/1a8bbfdea9e6c566.json",
   "deviceType": 1,
   "globalDeviceId": 128264,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Video 1"},
+      {"name":"Video 2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "60EX36B"
+  "model": "60EX36B",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

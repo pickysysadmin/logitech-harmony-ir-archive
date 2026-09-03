@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/b9/b95558f19dae4c93.json",
   "deviceType": 1,
   "globalDeviceId": 179610,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"AV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "AudioSonic",
-  "model": "KT-9148TX"
+  "model": "KT-9148TX",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

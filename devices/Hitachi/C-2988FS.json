@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 56989,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"VIDEO:1"},
+      {"name":"VIDEO:2"},
+      {"name":"VIDEO:3"},
+      {"name":"S.VIDEO:1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "C-2988FS"
+  "model": "C-2988FS",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle","0"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

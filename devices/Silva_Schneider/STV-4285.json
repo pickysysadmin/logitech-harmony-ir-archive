@@ -2,6 +2,38 @@
   "codeset": "codesets/b7/b7bf9558218fa9f0.json",
   "deviceType": 1,
   "globalDeviceId": 135330,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Scart 1"},
+      {"name":"Scart 2"},
+      {"name":"Component 1"},
+      {"name":"Component 2"},
+      {"name":"S-Video"},
+      {"name":"PC"},
+      {"name":"DVI"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Silva Schneider",
-  "model": "STV-4285"
+  "model": "STV-4285",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "onReset": [
+      {"set":"Input","to":"Component 1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

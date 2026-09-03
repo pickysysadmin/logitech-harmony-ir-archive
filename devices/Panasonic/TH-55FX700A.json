@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/ff/fff61d26acee8581.json",
   "deviceType": 1,
   "globalDeviceId": 496545,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Apps"}],"name":"Apps"},
+      {"commands":[{"set":"InputType","to":"Screen Mirroring"}],"name":"Screen Mirroring"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Analogue TV"}],"name":"Analogue TV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Digital TV"}],"name":"Digital TV"},
+      {"commands":[{"set":"InputType","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-55FX700A"
+  "model": "TH-55FX700A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":1}]},
+        {"name":"AV","select":[{"commands":["AV"],"setType":1}]},
+        {"name":"Apps","select":[{"commands":["Apps"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"Screen Mirroring","select":[{"commands":["Devices","Devices",{"delayMs":2000},{"command":"DirectionRight","durationMs":1500},"DirectionLeft","OK"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["TV"],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"Analogue TV"},
+        {"name":"Digital TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

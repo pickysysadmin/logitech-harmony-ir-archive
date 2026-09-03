@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/72/72c4dacfbb3035c8.json",
   "deviceType": 1,
   "globalDeviceId": 16321,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Video","to":"Vid1"},{"set":"InputType","to":"Ant"},{"set":"Antenna","to":"A"}],"name":"Antenna A"},
+      {"commands":[{"set":"Video","to":"Vid1"},{"set":"InputType","to":"Ant"},{"set":"Antenna","to":"B"}],"name":"Antenna B"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"Vid1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"Vid2"}],"name":"Video 2"},
+      {"commands":[{"set":"Video","to":"Vid1"},{"set":"InputType","to":"Front"}],"name":"Front"},
+      {"commands":[{"set":"Video","to":"Vid1"},{"set":"InputType","to":"Comp1"}],"name":"Comp 1"},
+      {"commands":[{"set":"Video","to":"Vid1"},{"set":"InputType","to":"Comp2"}],"name":"Comp 2"},
+      {"commands":[{"set":"Video","to":"Vid1"},{"set":"InputType","to":"RGB"}],"name":"RGB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Zenith",
-  "model": "D52WLCD"
+  "model": "D52WLCD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Antenna": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"A"},
+        {"name":"B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Ant","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Front","select":[{"commands":["InputFront"],"setType":2}]},
+        {"name":"Comp1","select":[{"commands":["InputComp 3"],"setType":2}]},
+        {"name":"Comp2","select":[{"commands":["InputComp 2"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRGB2"],"setType":2}]}
+      ]
+    },
+    "Video": {
+      "next": ["InputVideo2"],
+      "values": [
+        {"name":"Vid1"},
+        {"name":"Vid2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 37000,
+    "pressMinRepeats": 3
+  }
 }

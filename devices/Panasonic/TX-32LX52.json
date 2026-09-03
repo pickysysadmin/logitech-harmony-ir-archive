@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 69521,
+  "inputs": {
+    "list": [
+      {"commands":["TvVideo"],"name":"Tuner"},
+      {"commands":["TvVideo","Red"],"name":"AV1"},
+      {"commands":["TvVideo","Green"],"name":"AV2"},
+      {"commands":["TvVideo","Yellow"],"name":"AV3"},
+      {"commands":["TvVideo","Blue"],"name":"AV4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-32LX52"
+  "model": "TX-32LX52",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": [
+      "PowerToggle",
+      {"delayMs":600},
+      {"command":"PowerToggle","durationMs":3000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 5,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

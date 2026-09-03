@@ -2,6 +2,59 @@
   "codeset": "codesets/c6/c616fc9c39cf6f39.json",
   "deviceType": 1,
   "globalDeviceId": 177566,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AV3"}],"name":"AV 3"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI3"}],"name":"HDMI 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "42LF75"
+  "model": "42LF75",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI3","select":[{"commands":["InputHDMI3"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

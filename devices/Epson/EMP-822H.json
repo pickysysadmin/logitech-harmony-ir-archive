@@ -2,6 +2,38 @@
   "codeset": "codesets/b6/b66816a741a8d3a2.json",
   "deviceType": 7,
   "globalDeviceId": 273353,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"name":"Computer 1"},
+      {"name":"Computer 2"},
+      {"name":"S-Video"},
+      {"name":"Video"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["SourceSearch"],
+    "type": 4
+  },
   "manufacturer": "Epson",
-  "model": "EMP-822H"
+  "model": "EMP-822H",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

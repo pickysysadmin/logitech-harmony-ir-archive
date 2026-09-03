@@ -2,6 +2,35 @@
   "codeset": "codesets/66/664b615150a0e4b9.json",
   "deviceType": 7,
   "globalDeviceId": 124920,
+  "inputs": {
+    "list": [
+      {"commands":["InputRgb1"],"name":"RGB1"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputSVideo"],"name":"S-Video"},
+      {"commands":["InputRGB"],"name":"Component"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "VT-57"
+  "model": "VT-57",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

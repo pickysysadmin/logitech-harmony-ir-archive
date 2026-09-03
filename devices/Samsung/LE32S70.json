@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 146157,
+  "inputs": {
+    "list": [
+      {"name":"Component"},
+      {"name":"TV"},
+      {"name":"EXT1"},
+      {"name":"EXT2"},
+      {"name":"S-Video"},
+      {"name":"HDMI"}
+    ],
+    "next": ["16:9"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "LE32S70"
+  "model": "LE32S70",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

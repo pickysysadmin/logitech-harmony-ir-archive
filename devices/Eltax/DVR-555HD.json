@@ -2,6 +2,57 @@
   "codeset": "codesets/28/2806d2f1f90cb733.json",
   "deviceType": 34,
   "globalDeviceId": 166327,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Front"}],"name":"Front"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Comp"}],"name":"Comp"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Scart"}],"name":"Scart"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Eltax",
-  "model": "DVR-555HD"
+  "model": "DVR-555HD",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Front"},
+        {"name":"Comp"},
+        {"name":"S-Video"},
+        {"name":"Scart"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

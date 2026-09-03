@@ -2,6 +2,36 @@
   "codeset": "codesets/c2/c2ce65b54ed1d3e4.json",
   "deviceType": 1,
   "globalDeviceId": 162866,
+  "inputs": {
+    "list": [
+      {"name":"Ext1"},
+      {"name":"Ext2"},
+      {"name":"AV"},
+      {"name":"Component"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"TV/DTV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "LE-19R86BDX"
+  "model": "LE-19R86BDX",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV/DTV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

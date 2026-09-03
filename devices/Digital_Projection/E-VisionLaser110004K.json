@@ -2,6 +2,38 @@
   "codeset": "codesets/b3/b3739f57700b81ef.json",
   "deviceType": 7,
   "globalDeviceId": 493322,
+  "inputs": {
+    "list": [
+      {"commands":["HDMI1"],"name":"HDMI1","ports":["HDMI"]},
+      {"commands":["HDMI2"],"name":"HDMI2","ports":["HDMI"]},
+      {"commands":["DisplayPort"],"name":"DisplayPort"},
+      {"commands":["HDBaseT"],"name":"HDBaseT"},
+      {"commands":["3GSDI"],"name":"3GSDI"},
+      {"commands":["HDMI3"],"name":"HDMI3","ports":["HDMI"]},
+      {"commands":["HDMI4"],"name":"HDMI4","ports":["HDMI"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Digital Projection",
-  "model": "E-VisionLaser110004K"
+  "model": "E-VisionLaser110004K",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

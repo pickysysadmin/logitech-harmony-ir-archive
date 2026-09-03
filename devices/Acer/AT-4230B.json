@@ -2,6 +2,78 @@
   "codeset": "codesets/49/4989cd436dcc702f.json",
   "deviceType": 1,
   "globalDeviceId": 139726,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "AT-4230B"
+  "model": "AT-4230B",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputSat"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputSat"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"VGA"}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

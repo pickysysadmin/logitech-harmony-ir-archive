@@ -2,6 +2,36 @@
   "codeset": "codesets/bb/bb5305c0d45fba2a.json",
   "deviceType": 19,
   "globalDeviceId": 264437,
+  "inputs": {
+    "list": [
+      {"name":"CD"},
+      {"name":"Tuner"},
+      {"name":"Video"},
+      {"name":"Line 1"},
+      {"name":"Line 2"},
+      {"name":"Phono"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Roksan",
-  "model": "Test MkIII"
+  "model": "Test MkIII",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"CD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

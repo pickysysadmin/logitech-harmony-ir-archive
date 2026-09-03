@@ -2,6 +2,34 @@
   "codeset": "codesets/dc/dc2b1d1953b351c2.json",
   "deviceType": 1,
   "globalDeviceId": 164689,
+  "inputs": {
+    "list": [
+      {"name":"TUNER"},
+      {"name":"EXT1"},
+      {"name":"EXT2"},
+      {"name":"COMP"},
+      {"name":"HDMI1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "LE32-M71"
+  "model": "LE32-M71",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TUNER"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

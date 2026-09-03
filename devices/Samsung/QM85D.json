@@ -2,6 +2,62 @@
   "codeset": "codesets/cb/cb244c7141916ae3.json",
   "deviceType": 1,
   "globalDeviceId": 271219,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"DP"},{"set":"DPInput","to":"DisplayPort 1"}],"name":"DisplayPort 1"},
+      {"commands":[{"set":"InputType","to":"DP"},{"set":"DPInput","to":"DisplayPort 2"}],"name":"DisplayPort 2"},
+      {"commands":[{"set":"InputType","to":"DP"},{"set":"DPInput","to":"DisplayPort 3"}],"name":"DisplayPort 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "QM85D"
+  "model": "QM85D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "DPInput": {
+      "next": ["InputDP"],
+      "values": [
+        {"name":"DisplayPort 1"},
+        {"name":"DisplayPort 2"},
+        {"name":"DisplayPort 3"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"DVI","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"DP","select":[{"commands":["InputDP"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

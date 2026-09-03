@@ -2,6 +2,49 @@
   "codeset": "codesets/f2/f273e36a77ff17f4.json",
   "deviceType": 1,
   "globalDeviceId": 179706,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"PC/DVI"}],"name":"PC/DVI"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV3"}],"name":"AV3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Daewoo",
-  "model": "DT-42A1"
+  "model": "DT-42A1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"PC/DVI","select":[{"commands":["InputPC/DVI"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

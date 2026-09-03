@@ -2,6 +2,44 @@
   "codeset": "codesets/dc/dcd39b83fef18c1a.json",
   "deviceType": 7,
   "globalDeviceId": 152861,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 1"}],"name":"Computer 1"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 2"}],"name":"Computer 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sanyo",
-  "model": "PLC-XU75"
+  "model": "PLC-XU75",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComputerInput": {
+      "next": ["InputPC1"],
+      "values": [
+        {"name":"Computer 1"},
+        {"name":"Computer 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Computer","select":[{"commands":["InputPC1"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

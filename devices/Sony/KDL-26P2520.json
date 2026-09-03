@@ -2,6 +2,47 @@
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 124881,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"AV4"},
+      {"name":"PC5"},
+      {"name":"HDMI1 6"},
+      {"name":"HDMI2 7"},
+      {"name":"D-TV"},
+      {"name":"A-TV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KDL-26P2520"
+  "model": "KDL-26P2520",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"A-TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

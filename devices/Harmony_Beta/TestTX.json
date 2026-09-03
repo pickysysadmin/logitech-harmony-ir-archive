@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/11/111d1d5daf9d9060.json",
   "deviceType": 1,
   "globalDeviceId": 492210,
+  "inputs": {
+    "list": [
+      {"commands":["TV"],"name":"DVB-T"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputVideo1"],"name":"AV/Component"},
+      {"commands":["Apps"],"name":"Apps"},
+      {"commands":["Netflix"],"name":"Netflix"},
+      {"commands":["Devices","Devices",{"delayMs":2000},{"command":"DirectionRight","durationMs":1500},"DirectionLeft","OK"],"name":"Screen Mirroring"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Harmony Beta",
-  "model": "TestTX"
+  "model": "TestTX",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

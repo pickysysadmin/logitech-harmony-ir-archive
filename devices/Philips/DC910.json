@@ -2,6 +2,47 @@
   "codeset": "codesets/1f/1f57d77c9ddbd242.json",
   "deviceType": 33,
   "globalDeviceId": 176550,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Usb/Sd"},{"set":"Usb/SdInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Usb/Sd"},{"set":"Usb/SdInput","to":"SD"}],"name":"SD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DC910"
+  "model": "DC910",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Usb/Sd","select":[{"commands":["InputUSB"],"setType":2}]}
+      ]
+    },
+    "Usb/SdInput": {
+      "next": ["InputUSB"],
+      "values": [
+        {"name":"USB"},
+        {"name":"SD"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

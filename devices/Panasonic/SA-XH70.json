@@ -2,6 +2,49 @@
   "codeset": "codesets/54/540656f23aaf806b.json",
   "deviceType": 22,
   "globalDeviceId": 249386,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"RADIO"}],"name":"RADIO"},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"ARC"}],"name":"ARC"},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"D-IN"}],"name":"D-IN"},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"MusicP"}],"name":"Music P."}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-XH70"
+  "model": "SA-XH70",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "EXT-INInput": {
+      "next": ["InputExtIn"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"ARC"},
+        {"name":"D-IN"},
+        {"name":"MusicP"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"RADIO","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"EXT-IN","select":[{"commands":["InputExtIn"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

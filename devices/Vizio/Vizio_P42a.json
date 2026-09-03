@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/0c/0cd1e4cf30d96827.json",
   "deviceType": 1,
   "globalDeviceId": 57853,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputAv1"],"name":"AV1"},
+      {"commands":["InputAv2"],"name":"AV2"},
+      {"commands":["InputAv2","InputNext"],"name":"S-Video1"},
+      {"commands":["InputAv2","InputNext","InputNext"],"name":"S-Video2"},
+      {"commands":["InputYPbPr"],"name":"YPbPr"},
+      {"commands":["InputYCbCr"],"name":"YCbCr"},
+      {"commands":["InputVga"],"name":"RGB"},
+      {"commands":["InputDVI"],"name":"DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Vizio",
-  "model": "Vizio P42a"
+  "model": "Vizio P42a",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":1}]},
+        {"name":"AV1","select":[{"commands":["InputAv1"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["InputAv2"],"setType":1}]},
+        {"name":"S-Vid","select":[{"commands":["InputS-Video",{"set":"S-VidInput","to":"S-Video1"}],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputYPbPr"],"setType":1}]},
+        {"name":"YCbCr","select":[{"commands":["InputYCbCr"],"setType":1}]},
+        {"name":"DVI","select":[{"commands":["InputDVI"],"setType":1}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":1}]}
+      ]
+    },
+    "S-VidInput": {
+      "next": ["InputS-Video"],
+      "values": [
+        {"name":"S-Video1"},
+        {"name":"S-Video2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

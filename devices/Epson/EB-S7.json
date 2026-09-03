@@ -2,6 +2,46 @@
   "codeset": "codesets/39/397e5d0d1d122653.json",
   "deviceType": 7,
   "globalDeviceId": 211138,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"}],"name":"Computer"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"SVideo"}],"name":"SVideo"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "EB-S7"
+  "model": "EB-S7",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Computer","select":[{"commands":["Computer"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["USB"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["Video"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Video"],
+      "values": [
+        {"name":"Video"},
+        {"name":"SVideo"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

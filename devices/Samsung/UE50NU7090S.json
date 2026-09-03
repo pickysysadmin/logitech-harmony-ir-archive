@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/2c/2cc3a2a4c6ed3db3.json",
   "deviceType": 1,
   "globalDeviceId": 494033,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","Exit","InputTv"],"name":"TV"},
+      {"commands":["InputHdmi1","InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2","InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["Exit",{"delayMs":500},"Exit",{"delayMs":500},"SmartHub"],"name":"SmartHub"},
+      {"commands":["Amazon"],"name":"Amazon","ports":["Streaming"]},
+      {"commands":["Ambient"],"name":"Ambient"},
+      {"commands":["Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UE50NU7090S"
+  "model": "UE50NU7090S",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,58 @@
   "codeset": "codesets/be/be1930054d9620b9.json",
   "deviceType": 30,
   "globalDeviceId": 212990,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV3"}],"name":"AV 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Thor",
-  "model": "HDC200"
+  "model": "HDC200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["AvRight"],
+      "previous": ["AvLeft"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["HdmiRight"],
+      "previous": ["HdmiLeft"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDMI","select":[{"commands":["HdmiRight"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["AvRight"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

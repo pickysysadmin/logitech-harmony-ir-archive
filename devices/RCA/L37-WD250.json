@@ -1,7 +1,68 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 132493,
+  "inputs": {
+    "list": [
+      {"name":"VID1"},
+      {"name":"VID2"},
+      {"name":"CMP1"},
+      {"name":"CMP2"},
+      {"name":"VGA"},
+      {"name":"HDMI"},
+      {"name":"HDMI2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "RCA",
-  "model": "L37-WD250"
+  "model": "L37-WD250",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CompMode": {
+      "next": ["InputVideo2"],
+      "values": [
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Comp","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRGB"],"setType":2}]}
+      ]
+    },
+    "RGBMode": {
+      "next": ["InputRGB"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoMode": {
+      "next": ["InputVideo1"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

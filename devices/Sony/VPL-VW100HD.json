@@ -2,6 +2,36 @@
   "codeset": "codesets/86/86c0414bdfd42ee3.json",
   "deviceType": 7,
   "globalDeviceId": 77968,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI"},
+      {"commands":["InputHdmi2"],"name":"DVI"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-VIDEO"},
+      {"commands":["InputA"],"name":"Input-A"},
+      {"commands":["InputComponent"],"name":"Component"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "VPL-VW100HD"
+  "model": "VPL-VW100HD",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

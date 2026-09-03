@@ -2,6 +2,46 @@
   "codeset": "codesets/e9/e9610c354892f2e2.json",
   "deviceType": 22,
   "globalDeviceId": 13895,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"AuxPower","to":"Off"},"InputDvd"],"name":"DVD"},
+      {"commands":[{"set":"AuxPower","to":"Off"},"InputTuner"],"name":"Tuner"},
+      {"commands":[{"set":"AuxPower","to":"On"},{"set":"AuxSetting","to":"Digital Line In"}],"name":"Digital Line In"},
+      {"commands":[{"set":"AuxPower","to":"On"},{"set":"AuxSetting","to":"Aux 1"}],"name":"Aux 1"},
+      {"commands":[{"set":"AuxPower","to":"On"},{"set":"AuxSetting","to":"Aux 2"}],"name":"Aux 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-DB120E"
+  "model": "HT-DB120E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxPower": {
+      "values": [
+        {"name":"On","select":[{"commands":["InputAUX"],"setType":1}]},
+        {"name":"Off","select":[{"commands":["InputDvd"],"setType":1}]}
+      ]
+    },
+    "AuxSetting": {
+      "next": ["InputAUX"],
+      "values": [
+        {"name":"Digital Line In"},
+        {"name":"Aux 1"},
+        {"name":"Aux 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/90/90049928a11d2d09.json",
   "deviceType": 1,
   "globalDeviceId": 107870,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AVS"}
+    ],
+    "next": ["StartInput"],
+    "type": 2
+  },
   "manufacturer": "United",
-  "model": "LTV-15L50"
+  "model": "LTV-15L50",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

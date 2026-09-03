@@ -2,6 +2,57 @@
   "codeset": "codesets/57/574d644d1df00e28.json",
   "deviceType": 5,
   "globalDeviceId": 160001,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD/COX 1"}],"name":"CD/COX 1","ports":["Composite","Coaxial"]},
+      {"commands":[{"set":"InputType","to":"AUX/COX 2"}],"name":"AUX/COX 2","ports":["Composite","Coaxial"]},
+      {"commands":[{"set":"InputType","to":"DVD/OPT"}],"name":"DVD/OPT","ports":["Composite","S-Video","Optical"]},
+      {"commands":[{"set":"InputType","to":"6ChIn"}],"name":"6ChIn","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Am/Fm"},{"set":"Am/FmInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Am/Fm"},{"set":"Am/FmInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Insignia",
-  "model": "IS-HC040917"
+  "model": "IS-HC040917",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Am/FmInput": {
+      "next": ["InputAm/Fm"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD/COX 1"},
+        {"name":"AUX/COX 2"},
+        {"name":"DVD/OPT"},
+        {"name":"6ChIn"},
+        {"name":"Tuner"},
+        {"name":"VCR"},
+        {"name":"TV"},
+        {"name":"Video"},
+        {"name":"Am/Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

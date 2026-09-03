@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f2/f298434f20428ac0.json",
   "deviceType": 1,
   "globalDeviceId": 212897,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AV 3"}],"name":"AV 3"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"DTV/Analog"},{"set":"DTV/AnalogInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"DTV/Analog"},{"set":"DTV/AnalogInput","to":"Analog"}],"name":"Analog"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TC-L37G11B"
+  "model": "TC-L37G11B",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "DTV/AnalogInput": {
+      "next": ["DTV/Analog"],
+      "values": [
+        {"name":"DTV"},
+        {"name":"Analog"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"AV 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"AV 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHDMI3"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"DTV/Analog","select":[{"commands":["DTV/Analog"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/c4/c422e0d963ff531f.json",
   "deviceType": 1,
   "globalDeviceId": 178857,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenna"],"name":"Antenna"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo1","InputNext"],"name":"Video 2"},
+      {"commands":["InputSVideo1"],"name":"S-Video 1"},
+      {"commands":["InputSVideo2"],"name":"S-Video 2"},
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["InputComponent2"],"name":"Component 2"},
+      {"commands":["InputComponent3"],"name":"Component 3"},
+      {"commands":["InputDvi"],"name":"DVI"},
+      {"commands":["InputPC"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HLN-4365W1X/XAC"
+  "model": "HLN-4365W1X/XAC",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

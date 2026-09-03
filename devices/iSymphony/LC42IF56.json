@@ -2,6 +2,57 @@
   "codeset": "codesets/8b/8bc5b96b02ad655f.json",
   "deviceType": 1,
   "globalDeviceId": 212227,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 2/S-Video"}],"name":"AV 2/S-Video"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "iSymphony",
-  "model": "LC42IF56"
+  "model": "LC42IF56",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2/S-Video"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

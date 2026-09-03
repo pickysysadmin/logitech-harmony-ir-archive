@@ -1,7 +1,57 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 31376,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Input 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Input 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"Input 4"}],"name":"Input 4"},
+      {"commands":[{"set":"InputType","to":"Input 5"}],"name":"Input 5"},
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"AntennaInput","to":"AntA"}],"name":"AntennaA"},
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"AntennaInput","to":"AntB"}],"name":"AntennaB"},
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"AntennaInput","to":"AntC"}],"name":"AntennaC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "57XWX20B"
+  "model": "57XWX20B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AntA"},
+        {"name":"AntB"},
+        {"name":"AntC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ANT","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Input 1","select":[{"commands":["Input 1"],"setType":2}]},
+        {"name":"Input 2","select":[{"commands":["Input 2"],"setType":2}]},
+        {"name":"Input 3","select":[{"commands":["Input 3"],"setType":2}]},
+        {"name":"Input 4","select":[{"commands":["Input 4"],"setType":2}]},
+        {"name":"Input 5","select":[{"commands":["Input 5"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 400,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

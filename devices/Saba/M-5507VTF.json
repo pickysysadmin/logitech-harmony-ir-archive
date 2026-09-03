@@ -2,6 +2,41 @@
   "codeset": "codesets/d0/d0c83ec2e16e439a.json",
   "deviceType": 1,
   "globalDeviceId": 101710,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Saba",
-  "model": "M-5507VTF"
+  "model": "M-5507VTF",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

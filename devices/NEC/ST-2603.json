@@ -2,6 +2,31 @@
   "codeset": "codesets/31/31b0eb942fe1cf3f.json",
   "deviceType": 1,
   "globalDeviceId": 216340,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "NEC",
-  "model": "ST-2603"
+  "model": "ST-2603",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

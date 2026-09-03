@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/2d/2d0a4b018cb5a582.json",
   "deviceType": 1,
   "globalDeviceId": 168174,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Video 4"}],"name":"Video 4","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Video 5"}],"name":"Video 5","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Video 6"}],"name":"Video 6","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Video 7"}],"name":"Video 7","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Ant"},{"set":"AntInput","to":"Analog TV"}],"name":"Analog TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Ant"},{"set":"AntInput","to":"Digital TV"}],"name":"Digital TV","ports":["Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PDP-6020FD"
+  "model": "PDP-6020FD",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AntInput": {
+      "next": ["Tv/Dtv"],
+      "values": [
+        {"name":"Analog TV"},
+        {"name":"Digital TV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":["Input1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["Input2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["Input3"],"setType":2}]},
+        {"name":"Video 4","select":[{"commands":["Input4"],"setType":2}]},
+        {"name":"Video 5","select":[{"commands":["Input5"],"setType":2}]},
+        {"name":"Video 6","select":[{"commands":["Input6"],"setType":2}]},
+        {"name":"Video 7","select":[{"commands":["Input7"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Ant","select":[{"commands":["Tv/Dtv"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

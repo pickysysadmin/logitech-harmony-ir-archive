@@ -2,6 +2,37 @@
   "codeset": "codesets/f1/f1541464bf2a2f51.json",
   "deviceType": 34,
   "globalDeviceId": 120406,
+  "inputs": {
+    "list": [
+      {"commands":["InputHDD"],"name":"HDD"},
+      {"commands":["InputDVD"],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Mitsubishi",
-  "model": "DVR-HS315"
+  "model": "DVR-HS315",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"L1"},
+        {"name":"L2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

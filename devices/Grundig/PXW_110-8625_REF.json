@@ -2,6 +2,41 @@
   "codeset": "codesets/05/05cc366f8bf52393.json",
   "deviceType": 1,
   "globalDeviceId": 86953,
+  "inputs": {
+    "list": [
+      {"name":"Analog Tuner"},
+      {"name":"SCART1(FULL)"},
+      {"name":"SCART2(HALF)"},
+      {"name":"COMPOSITE 1"},
+      {"name":"S-VIDEO 1"},
+      {"name":"COMPOSITE 2"},
+      {"name":"S-VIDEO 2"},
+      {"name":"COMPONENT 1"},
+      {"name":"COMPONENT 2"},
+      {"name":"DVI"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "start": [
+      {"delayMs":1000},
+      "InputNext"
+    ],
+    "type": 4
+  },
   "manufacturer": "Grundig",
-  "model": "PXW 110-8625 REF"
+  "model": "PXW 110-8625 REF",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

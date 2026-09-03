@@ -2,6 +2,57 @@
   "codeset": "codesets/58/58de93c0e2062038.json",
   "deviceType": 1,
   "globalDeviceId": 155953,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"YPbPr 1"}],"name":"YPbPr 1"},
+      {"commands":[{"set":"InputType","to":"YPbPr 2"}],"name":"YPbPr 2"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"HDMI 4"}],"name":"HDMI 4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Westinghouse",
-  "model": "TX-42F450S"
+  "model": "TX-42F450S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputHDMI"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"HDMI 4"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAV"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"YPbPr 1","select":[{"commands":["InputYPbPr1"],"setType":2}]},
+        {"name":"YPbPr 2","select":[{"commands":["InputYPbPr2"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputVGA"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputHDMI"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,64 @@
   "codeset": "codesets/1a/1a1d7811a858f0c1.json",
   "deviceType": 21,
   "globalDeviceId": 349412,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Internet Radio"}],"name":"Internet Radio"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Spotify"}],"name":"Spotify"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"DAB Radio"}],"name":"DAB Radio"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM Radio"}],"name":"FM Radio"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"Music Player"}],"name":"Music Player"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Roberts",
-  "model": "Stream 65i"
+  "model": "Stream 65i",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"Media","select":[{"commands":["InputMedia"],"setType":2}]}
+      ]
+    },
+    "MediaInput": {
+      "next": ["InputMedia"],
+      "values": [
+        {"name":"CD"},
+        {"name":"USB"},
+        {"name":"SD"},
+        {"name":"Bluetooth"},
+        {"name":"Music Player"}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"Internet Radio"},
+        {"name":"Spotify"},
+        {"name":"DAB Radio"},
+        {"name":"FM Radio"},
+        {"name":"Aux"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

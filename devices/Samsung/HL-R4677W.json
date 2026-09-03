@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 52524,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenna"],"name":"Antenna"},
+      {"commands":["InputVideo"],"name":"AV1"},
+      {"commands":["InputVideo","InputNext"],"name":"AV2"},
+      {"commands":["InputVideo","InputNext","InputNext"],"name":"AV3"},
+      {"commands":["InputSVideo"],"name":"S-Video 1"},
+      {"commands":["InputSVideo2"],"name":"S-Video 2"},
+      {"commands":["InputSVideo2","InputNext"],"name":"S-Video 3"},
+      {"commands":["InputComponent 2"],"name":"Component 1"},
+      {"commands":["InputComponent 1"],"name":"Component 2"},
+      {"commands":["InputComponent 1","InputNext"],"name":"HDMI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HL-R4677W"
+  "model": "HL-R4677W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 28000,
+    "pressMinRepeats": 3
+  }
 }

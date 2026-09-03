@@ -2,6 +2,56 @@
   "codeset": "codesets/fb/fb13a3a191abb32b.json",
   "deviceType": 22,
   "globalDeviceId": 251021,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"USB/SD"}],"name":"USB/SD"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AU 1"}],"name":"AU 1"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AU 2"}],"name":"AU 2"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AU 3"}],"name":"AU 3"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Bluetooth"}],"name":"Bluetooth"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Genesis",
-  "model": "GT-3.0"
+  "model": "GT-3.0",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"AU 1"},
+        {"name":"AU 2"},
+        {"name":"AU 3"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"Bluetooth"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["Disc"],"setType":2}]},
+        {"name":"USB/SD","select":[{"commands":["InputUsb/Sd"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

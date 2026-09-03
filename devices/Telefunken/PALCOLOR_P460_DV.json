@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["Zoom+"]
+  },
   "codeset": "codesets/d0/d0c83ec2e16e439a.json",
   "deviceType": 1,
   "globalDeviceId": 128849,
+  "inputs": {
+    "list": [
+      {"name":"Antenna Tuner"},
+      {"name":"AV1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Telefunken",
-  "model": "PALCOLOR P460 DV"
+  "model": "PALCOLOR P460 DV",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"Input","to":"Antenna Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

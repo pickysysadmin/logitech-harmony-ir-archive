@@ -2,6 +2,31 @@
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 53132,
+  "inputs": {
+    "list": [
+      {"name":"TPS"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "JVC",
-  "model": "AV28VM1PF"
+  "model": "AV28VM1PF",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TPS"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

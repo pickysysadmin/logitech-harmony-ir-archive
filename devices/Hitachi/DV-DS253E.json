@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ea/eab6aca0cfc99e30.json",
   "deviceType": 34,
   "globalDeviceId": 167048,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VideoInput","to":"Tuner"},{"set":"InputType","to":"DVD"}],"name":"DVDTuner"},
+      {"commands":[{"set":"VideoInput","to":"AV1"},{"set":"InputType","to":"DVD"}],"name":"DVDAV1"},
+      {"commands":[{"set":"VideoInput","to":"AV2"},{"set":"InputType","to":"DVD"}],"name":"DVDAV2"},
+      {"commands":[{"set":"VideoInput","to":"AV3"},{"set":"InputType","to":"DVD"}],"name":"DVDAV3"},
+      {"commands":[{"set":"VideoInput","to":"AV4"},{"set":"InputType","to":"DVD"}],"name":"DVDAV4"},
+      {"commands":[{"set":"VideoInput","to":"DV"},{"set":"InputType","to":"DVD"}],"name":"DVD/DV"},
+      {"commands":[{"set":"VideoInput","to":"Tuner"},{"set":"InputType","to":"HDD"}],"name":"HDDTuner"},
+      {"commands":[{"set":"VideoInput","to":"AV1"},{"set":"InputType","to":"HDD"}],"name":"HDDAV1"},
+      {"commands":[{"set":"VideoInput","to":"AV2"},{"set":"InputType","to":"HDD"}],"name":"HDDAV2"},
+      {"commands":[{"set":"VideoInput","to":"AV3"},{"set":"InputType","to":"HDD"}],"name":"HDDAV3"},
+      {"commands":[{"set":"VideoInput","to":"AV4"},{"set":"InputType","to":"HDD"}],"name":"HDDAV4"},
+      {"commands":[{"set":"VideoInput","to":"DV"},{"set":"InputType","to":"DVD"}],"name":"HDD/DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "DV-DS253E"
+  "model": "DV-DS253E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"AV4"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,34 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/30/308e3826bd4ab834.json",
   "deviceType": 1,
   "globalDeviceId": 114503,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV-1"},
+      {"name":"RBG"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Dantax",
-  "model": "MND-48"
+  "model": "MND-48",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/bf/bfea79650737ced0.json",
   "deviceType": 1,
   "globalDeviceId": 138368,
+  "inputs": {
+    "list": [
+      {"name":"HDMI"},
+      {"name":"PC"},
+      {"name":"4"},
+      {"name":"AV 1C"},
+      {"name":"AV 2"},
+      {"name":"AV 3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "47WL66RS"
+  "model": "47WL66RS",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV 1C"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

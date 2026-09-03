@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/40/4049021db24e18dd.json",
   "deviceType": 1,
   "globalDeviceId": 3768,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"AV1"},
+      {"name":"SVHS1"},
+      {"name":"AV2"},
+      {"name":"SVHS2"},
+      {"name":"FAV"},
+      {"name":"FSVHS"},
+      {"name":"YPBPr1"},
+      {"name":"YPBPr2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Apex",
-  "model": "GB43HD09"
+  "model": "GB43HD09",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna/Cable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

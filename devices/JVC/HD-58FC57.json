@@ -2,6 +2,53 @@
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 132865,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InputAux"}],"name":"InputAux"},
+      {"commands":[{"set":"InputType","to":"InputVcr"}],"name":"InputVcr"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital 1 IN"}],"name":"Digital 1 IN"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital 2 IN"}],"name":"Digital 2 IN"},
+      {"commands":["InputTuner"],"name":"Tuner"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "HD-58FC57"
+  "model": "HD-58FC57",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputDigital In"],
+      "values": [
+        {"name":"Digital 1 IN"},
+        {"name":"Digital 2 IN"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"InputAux","select":[{"commands":["InputAB"],"setType":2}]},
+        {"name":"InputVcr","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDigital In"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

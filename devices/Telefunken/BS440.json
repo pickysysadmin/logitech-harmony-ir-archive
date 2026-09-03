@@ -2,6 +2,48 @@
   "codeset": "codesets/65/652a0b7b021f2b5d.json",
   "deviceType": 1,
   "globalDeviceId": 99841,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"Tuner"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Telefunken",
-  "model": "BS440"
+  "model": "BS440",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"InputType","to":"AV2"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["9"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 0,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

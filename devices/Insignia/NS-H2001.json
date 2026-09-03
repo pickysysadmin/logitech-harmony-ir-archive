@@ -2,6 +2,36 @@
   "codeset": "codesets/08/08737a36fd12e45d.json",
   "deviceType": 22,
   "globalDeviceId": 160193,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"DVD"},
+      {"name":"FM"},
+      {"name":"AM"},
+      {"name":"Aux1"},
+      {"name":"Aux2"},
+      {"name":"Coax"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Insignia",
-  "model": "NS-H2001"
+  "model": "NS-H2001",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

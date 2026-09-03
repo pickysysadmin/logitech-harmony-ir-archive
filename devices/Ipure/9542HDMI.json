@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/a7/a7019404b7ba11c5.json",
   "deviceType": 1,
   "globalDeviceId": 114630,
+  "inputs": {
+    "finish": ["InputNext"],
+    "list": [
+      {"name":"TV"},
+      {"name":"Scart 1"},
+      {"name":"Scart 2"},
+      {"name":"Video"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"RGB DTV"},
+      {"name":"D-SUB"},
+      {"name":"HDMI"}
+    ],
+    "next": ["DirectionUp"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Ipure",
-  "model": "9542HDMI"
+  "model": "9542HDMI",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"HDMI"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

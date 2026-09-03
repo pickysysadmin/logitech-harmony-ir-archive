@@ -2,6 +2,37 @@
   "codeset": "codesets/83/8311670abd88003f.json",
   "deviceType": 5,
   "globalDeviceId": 150593,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR"},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT"},
+      {"commands":["InputGame/Tv"],"name":"Game/TV"},
+      {"commands":["InputMultiChannel"],"name":"MultiCh"},
+      {"commands":["InputAux"],"name":"AUX"},
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM"},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "HT-S7100"
+  "model": "HT-S7100",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,49 @@
   "codeset": "codesets/3b/3b94838d92fa1bac.json",
   "deviceType": 1,
   "globalDeviceId": 127015,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"PC1"}],"name":"PC1"},
+      {"commands":[{"set":"InputType","to":"PC2"}],"name":"PC2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "MFM-HT205"
+  "model": "MFM-HT205",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"PC1","select":[{"commands":["InputPc1"],"setType":2}]},
+        {"name":"PC2","select":[{"commands":["InputPc2"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

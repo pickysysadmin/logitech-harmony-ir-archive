@@ -2,6 +2,70 @@
   "codeset": "codesets/4d/4dbc1d069bddc060.json",
   "deviceType": 1,
   "globalDeviceId": 160708,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CompositeRear"}],"name":"CompositeRear","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-VideoRear"}],"name":"S-VideoRear","ports":["S-Video"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CompositeSide"}],"name":"CompositeSide","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-VideoSide"}],"name":"S-VideoSide","ports":["S-Video"]},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component1"}],"name":"Component1","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component2"}],"name":"Component2","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"VGA"}],"name":"VGA","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"HDMI1"}],"name":"HDMI1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"HDMI2"}],"name":"HDMI2","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Dynex",
-  "model": "DX-LCD32"
+  "model": "DX-LCD32",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"CompositeRear"},
+        {"name":"S-VideoRear"},
+        {"name":"CompositeSide"},
+        {"name":"S-VideoSide"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 14000,
+    "pressMinRepeats": 1
+  }
 }

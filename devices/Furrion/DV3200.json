@@ -2,6 +2,62 @@
   "codeset": "codesets/fb/fbea26cf8f2aa127.json",
   "deviceType": 22,
   "globalDeviceId": 303622,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"AV IN"}],"name":"AV IN","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"DVD/USB"},{"set":"DVD/USBInput","to":"DVD"}],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"DVD/USB"},{"set":"DVD/USBInput","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"FM 1"}],"name":"FM 1","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"FM 2"}],"name":"FM 2","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"FM 3"}],"name":"FM 3","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"AM 1"}],"name":"AM 1","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"AM 2"}],"name":"AM 2","ports":["AM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Furrion",
-  "model": "DV3200"
+  "model": "DV3200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVD/USBInput": {
+      "next": ["InputDvd/Usb"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"USB"}
+      ]
+    },
+    "FM/AMInput": {
+      "next": ["InputFm/Am"],
+      "values": [
+        {"name":"FM 1"},
+        {"name":"FM 2"},
+        {"name":"FM 3"},
+        {"name":"AM 1"},
+        {"name":"AM 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"AV IN","select":[{"commands":["InputAvIn"],"setType":2}]},
+        {"name":"DVD/USB","select":[{"commands":["InputDvd/Usb"],"setType":2}]},
+        {"name":"FM/AM","select":[{"commands":["InputFm/Am"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

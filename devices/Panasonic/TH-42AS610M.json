@@ -1,7 +1,66 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/81/81f949b105a13d0c.json",
   "deviceType": 1,
   "globalDeviceId": 301872,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"CompAV"},{"set":"CompAVInput","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"CompAV"},{"set":"CompAVInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Screen","to":"Apps"}],"name":"Apps"},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Screen","to":"MediaPlayer"}],"name":"Media Player"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42AS610M"
+  "model": "TH-42AS610M",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "CompAVInput": {
+      "finish": ["OK"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"Component"}
+      ]
+    },
+    "Screen": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV","OK"],"setType":1}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1","OK"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi1","OK"],"setType":1}]},
+        {"name":"CompAV","select":[{"commands":["InputVideo1","OK"],"setType":1}]},
+        {"name":"Apps","select":[{"commands":["Apps"],"setType":1}]},
+        {"name":"MediaPlayer","select":[{"commands":["MediaPlayer"],"setType":1}]}
+      ]
+    },
+    "SmartTV_MENU": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Exit",{"delayMs":500}],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,62 @@
   "codeset": "codesets/34/3403945d875394f8.json",
   "deviceType": 7,
   "globalDeviceId": 500761,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"}],"name":"Computer"},
+      {"commands":[{"set":"InputType","to":"Lan"}],"name":"Lan"},
+      {"commands":[{"set":"InputType","to":"Hdmi/Video"},{"set":"Hdmi/VideoInput","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Hdmi/Video"},{"set":"Hdmi/VideoInput","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"Hdmi/Video"},{"set":"Hdmi/VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Usb"},{"set":"UsbInput","to":"UsbA"}],"name":"UsbA"},
+      {"commands":[{"set":"InputType","to":"Usb"},{"set":"UsbInput","to":"UsbB"}],"name":"UsbB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "PowerLite 1286"
+  "model": "PowerLite 1286",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "Hdmi/VideoInput": {
+      "next": ["InputHdmi/Video"],
+      "values": [
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"},
+        {"name":"Video"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":1}]},
+        {"name":"Lan","select":[{"commands":["InputLan"],"setType":1}]},
+        {"name":"Hdmi/Video","select":[{"commands":["InputHdmi/Video"],"setType":1}]},
+        {"name":"Usb","select":[{"commands":["InputUsb"],"setType":1}]}
+      ]
+    },
+    "UsbInput": {
+      "next": ["InputUsb"],
+      "values": [
+        {"name":"UsbA"},
+        {"name":"UsbB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

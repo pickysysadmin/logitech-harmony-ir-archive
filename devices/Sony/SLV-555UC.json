@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/63/63da3cad31342900.json",
   "deviceType": 2,
   "globalDeviceId": 160423,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"LineIn1"},
+      {"name":"LineIn2"}
+    ],
+    "next": ["InputSelect"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "SLV-555UC"
+  "model": "SLV-555UC",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"},
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

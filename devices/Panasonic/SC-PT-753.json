@@ -2,6 +2,57 @@
   "codeset": "codesets/88/883ea25e8bff20e0.json",
   "deviceType": 22,
   "globalDeviceId": 163544,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm"}],"name":"Fm"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Am"}],"name":"Am"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Xm"}],"name":"Xm"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"MusicP"}],"name":"MusicP"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Option"}],"name":"Option"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PT-753"
+  "model": "SC-PT-753",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"MusicP"},
+        {"name":"Aux"},
+        {"name":"Option"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner",{"set":"TunerInput","to":"Fm"}],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux",{"set":"AuxInput","to":"MusicP"}],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Fm"},
+        {"name":"Am"},
+        {"name":"Xm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

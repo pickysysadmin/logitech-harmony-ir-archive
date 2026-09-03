@@ -2,6 +2,36 @@
   "codeset": "codesets/30/3057ffcfb9f555b7.json",
   "deviceType": 5,
   "globalDeviceId": 167408,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","S-Video"]},
+      {"commands":["InputVideo1"],"name":"Video 1","ports":["Component","Composite","S-Video"]},
+      {"commands":["InputVideo2"],"name":"Video 2","ports":["Component","Composite","S-Video"]},
+      {"commands":["InputVideo3"],"name":"Video 3","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputTape"],"name":"Tape","ports":["Composite"]},
+      {"commands":["InputMultiCh"],"name":"Multi-CH","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SR503"
+  "model": "TX-SR503",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

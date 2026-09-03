@@ -2,6 +2,33 @@
   "codeset": "codesets/cc/ccd7c2d282b57cbd.json",
   "deviceType": 1,
   "globalDeviceId": 160083,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"Video 1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "D-Vision",
-  "model": "FC-2115T"
+  "model": "FC-2115T",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

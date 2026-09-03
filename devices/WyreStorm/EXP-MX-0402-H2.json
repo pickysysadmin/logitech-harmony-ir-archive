@@ -2,6 +2,43 @@
   "codeset": "codesets/23/23fc926b9d1bb11d.json",
   "deviceType": 30,
   "globalDeviceId": 495824,
+  "inputs": {
+    "list": [
+      {"commands":["Output1Input1"],"name":"Output1Input1"},
+      {"commands":["Output1Input2"],"name":"Output1Input2"},
+      {"commands":["Output1Input3"],"name":"Output1Input3"},
+      {"commands":["Output1Input4"],"name":"Output1Input4"},
+      {"commands":["Output2Input1"],"name":"Output2Input1"},
+      {"commands":["Output2Input2"],"name":"Output2Input2"},
+      {"commands":["Output2Input3"],"name":"Output2Input3"},
+      {"commands":["Output2Input4"],"name":"Output2Input4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "WyreStorm",
-  "model": "EXP-MX-0402-H2"
+  "model": "EXP-MX-0402-H2",
+  "power": {
+    "off": [
+      "PowerOffOutput1",
+      {"delayMs":500},
+      "PowerOffOutput2"
+    ],
+    "on": [
+      "PowerOnOutput1",
+      {"delayMs":500},
+      "PowerOnOutput2"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

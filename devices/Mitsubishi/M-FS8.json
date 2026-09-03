@@ -2,6 +2,38 @@
   "codeset": "codesets/d9/d9fcffefaa20f468.json",
   "deviceType": 19,
   "globalDeviceId": 228958,
+  "inputs": {
+    "list": [
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"},
+      {"name":"Video 4/DVD"},
+      {"name":"Tape 1"},
+      {"name":"Tape 2"},
+      {"name":"Tuner"},
+      {"name":"Aux"},
+      {"name":"CD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Mitsubishi",
-  "model": "M-FS8"
+  "model": "M-FS8",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Video 2"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

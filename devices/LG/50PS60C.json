@@ -2,6 +2,36 @@
   "codeset": "codesets/ed/ede064febfaf5f7d.json",
   "deviceType": 1,
   "globalDeviceId": 165812,
+  "inputs": {
+    "list": [
+      {"commands":["Tv"],"name":"TV"},
+      {"commands":["InputAv1"],"name":"AV1"},
+      {"commands":["InputAv2"],"name":"AV2"},
+      {"commands":["InputComponent1"],"name":"Component1"},
+      {"commands":["InputComponent2"],"name":"Component2"},
+      {"commands":["InputRgb"],"name":"RGB"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi3",{"delayMs":3000},"Input"],"name":"HDMI 4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "50PS60C"
+  "model": "50PS60C",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

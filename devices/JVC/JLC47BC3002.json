@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/81/81b4a92cfeecd84f.json",
   "deviceType": 1,
   "globalDeviceId": 232609,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Music"}],"name":"Music"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "JLC47BC3002"
+  "model": "JLC47BC3002",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Music","select":[{"commands":["InputMusic"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

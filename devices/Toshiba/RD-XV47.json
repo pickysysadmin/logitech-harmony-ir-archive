@@ -2,6 +2,39 @@
   "codeset": "codesets/ae/ae038712866bffb7.json",
   "deviceType": 47,
   "globalDeviceId": 138209,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputHdd"],"name":"HDD"},
+      {"commands":["InputVcr"],"name":"VCR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Toshiba",
-  "model": "RD-XV47"
+  "model": "RD-XV47",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"},
+        {"name":"Av3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

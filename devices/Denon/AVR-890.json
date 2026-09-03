@@ -2,6 +2,43 @@
   "codeset": "codesets/be/bef692b61970ff3e.json",
   "deviceType": 5,
   "globalDeviceId": 180127,
+  "inputs": {
+    "list": [
+      {"commands":["InputDVD"],"name":"DVD","ports":["HDMI","Component"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Optical"]},
+      {"commands":["InputIpod"],"name":"iPod","ports":["Dock"]},
+      {"commands":["InputV.Aux"],"name":"V.AUX","ports":["HDMI","Composite","S-Video","Optical"]},
+      {"commands":["InputSatTu"],"name":"SAT TU","ports":["Others"]},
+      {"commands":["InputHdp"],"name":"HDP","ports":["HDMI"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["HDMI","Component","Composite","S-Video","Optical"]},
+      {"commands":["InputVCR"],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputPhono"],"name":"PHONO","ports":["Composite"]},
+      {"commands":["InputSat/Cbl"],"name":"SAT/CBL","ports":["HDMI","Composite","Coaxial","S-Video"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputXM"],"name":"Sirius XM","ports":["Streaming"]},
+      {"commands":["QuickSelect1"],"name":"QuickSelect 1","ports":["Streaming"]},
+      {"commands":["QuickSelect2"],"name":"QuickSelect 2","ports":["Streaming"]},
+      {"commands":["QuickSelect3"],"name":"QuickSelect 3","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-890"
+  "model": "AVR-890",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

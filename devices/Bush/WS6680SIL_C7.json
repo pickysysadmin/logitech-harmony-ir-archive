@@ -2,6 +2,35 @@
   "codeset": "codesets/ca/ca785ed14e8a0261.json",
   "deviceType": 1,
   "globalDeviceId": 91030,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"av1"},
+      {"name":"av2"},
+      {"name":"av2s"},
+      {"name":"av3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Bush",
-  "model": "WS6680SIL/C7"
+  "model": "WS6680SIL/C7",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

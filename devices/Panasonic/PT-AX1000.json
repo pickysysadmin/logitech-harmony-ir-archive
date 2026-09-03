@@ -2,6 +2,34 @@
   "codeset": "codesets/c0/c0f7c31198088f0a.json",
   "deviceType": 7,
   "globalDeviceId": 108351,
+  "inputs": {
+    "list": [
+      {"name":"HDMI"},
+      {"name":"Component"},
+      {"name":"SVideo"},
+      {"name":"Composite"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-AX1000"
+  "model": "PT-AX1000",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"HDMI"}
+    ],
+    "toggle": ["PowerToggle","PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

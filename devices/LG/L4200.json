@@ -2,6 +2,48 @@
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 13,
   "globalDeviceId": 91703,
+  "inputs": {
+    "finish": [
+      {"delayMs":700},
+      "Enter"
+    ],
+    "list": [
+      {"name":"DVI DIGITAL"},
+      {"name":"DSUB ANALOG"},
+      {"name":"VIDEO 1"},
+      {"name":"VIDEO 2"},
+      {"name":"COMPONENT 1"},
+      {"name":"COMPONENT 2"}
+    ],
+    "next": [
+      {"delayMs":1000},
+      "ChannelDown"
+    ],
+    "previous": [
+      {"delayMs":1000},
+      "ChannelUp"
+    ],
+    "start": [
+      {"delayMs":1000},
+      "InputRgb"
+    ],
+    "type": 4
+  },
   "manufacturer": "LG",
-  "model": "L4200"
+  "model": "L4200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 1
+  }
 }

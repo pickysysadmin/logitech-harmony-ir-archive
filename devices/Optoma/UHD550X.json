@@ -2,6 +2,34 @@
   "codeset": "codesets/26/26ce4c1bad7613b2.json",
   "deviceType": 7,
   "globalDeviceId": 392355,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2/MHL"},
+      {"commands":["InputVga"],"name":"VGA"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "UHD550X"
+  "model": "UHD550X",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

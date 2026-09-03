@@ -2,6 +2,53 @@
   "codeset": "codesets/98/98eb11f32c71ea0c.json",
   "deviceType": 22,
   "globalDeviceId": 98024,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TUNER"}],"name":"TUNER"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"CD/DVD"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"Video 1 OPT"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"Video 1 Coax"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"Video 2 Opt"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"Video Coax"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LH-T6348"
+  "model": "LH-T6348",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 1 OPT"},
+        {"name":"Video 1 Coax"},
+        {"name":"Video 2"},
+        {"name":"Video 2 Opt"},
+        {"name":"Video Coax"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TUNER","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

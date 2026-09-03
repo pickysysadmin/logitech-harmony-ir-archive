@@ -2,6 +2,77 @@
   "codeset": "codesets/d1/d1248cfa994502e8.json",
   "deviceType": 1,
   "globalDeviceId": 161424,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV"}
+    ],
+    "next": ["Tv/Av"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-21AP1 (EU)"
+  "model": "TX-21AP1 (EU)",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1500}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2Mode": {
+      "next": ["Green"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AV3Mode": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AV4Mode": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AVType": {
+      "values": [
+        {"name":"Red","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"Green","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"Yellow","select":[{"commands":["Yellow"],"setType":2}]},
+        {"name":"Blue","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    },
+    "InputMode": {
+      "next": ["Tv/Av"],
+      "values": [
+        {"name":"TunerMode"},
+        {"name":"VideoMode"}
+      ]
+    },
+    "OnScreenMenu": {
+      "values": [
+        {"name":"True","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"False"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

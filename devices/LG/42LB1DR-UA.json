@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a8/a879ff5e510d37d3.json",
   "deviceType": 1,
   "globalDeviceId": 166571,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnt/Cable"],"name":"Antenna"},
+      {"commands":["InputAnt/Cable","TvVideo"],"name":"Cable"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["InputRgb"],"name":"RGB"},
+      {"commands":["InputRgb","TvVideo"],"name":"HDMI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "42LB1DR-UA"
+  "model": "42LB1DR-UA",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

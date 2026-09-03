@@ -1,7 +1,76 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a4/a4cf8a5062fef927.json",
   "deviceType": 1,
   "globalDeviceId": 181273,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"SVid1"}],"name":"SVid1"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"SVid2"}],"name":"SVid2"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"YPbPr1"}],"name":"YPbPr1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"YPbPr2"}],"name":"YPbPr2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"Vga"}],"name":"Vga"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI2"}],"name":"HDMI2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Syntax-Brillian",
-  "model": "OLEVIA LT-42HVI"
+  "model": "OLEVIA LT-42HVI",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"YPbPr1"},
+        {"name":"YPbPr2"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi/Vga"],
+      "values": [
+        {"name":"Vga"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["TvVideo",{"set":"TvInput","to":"Tuner"}],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent",{"set":"ComponentInput","to":"YPbPr1"}],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi/Vga",{"set":"HDMIInput","to":"Vga"}],"setType":2}]}
+      ]
+    },
+    "TvInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"SVid1"},
+        {"name":"SVid2"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

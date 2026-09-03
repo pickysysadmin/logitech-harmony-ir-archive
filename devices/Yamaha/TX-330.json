@@ -2,6 +2,42 @@
   "codeset": "codesets/b8/b8db576dcb1eab08.json",
   "deviceType": 36,
   "globalDeviceId": 100992,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"6ChToggle","to":"Off"},"InputVcr1"],"name":"VCR"},
+      {"commands":[{"set":"6ChToggle","to":"Off"},"InputAux"],"name":"V-AUX"},
+      {"commands":[{"set":"6ChToggle","to":"Off"},"InputCbl/Sat"],"name":"D-TV/CBL"},
+      {"commands":[{"set":"6ChToggle","to":"Off"},"InputDvd2"],"name":"DVD"},
+      {"commands":[{"set":"6ChToggle","to":"Off"},"InputMd/Cdr"],"name":"MD/CD-R"},
+      {"commands":[{"set":"6ChToggle","to":"Off"},"InputTuner"],"name":"Tuner"},
+      {"commands":[{"set":"6ChToggle","to":"Off"},"InputCd/Md"],"name":"CD"},
+      {"commands":[{"set":"6ChToggle","to":"On"}],"name":"6CH"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "TX-330"
+  "model": "TX-330",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "6ChToggle": {
+      "next": ["InputMultiChannel"],
+      "values": [
+        {"name":"On"},
+        {"name":"Off"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

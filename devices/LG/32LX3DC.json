@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 87670,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnt/Cable"],"name":"Antenna"},
+      {"commands":["InputAnt/Cable","TvVideo"],"name":"Cable"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["InputRgb"],"name":"RGB"},
+      {"commands":["InputRgb","TvVideo"],"name":"HDMI"},
+      {"commands":["InputVideo2"],"name":"Video2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "32LX3DC"
+  "model": "32LX3DC",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 0,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

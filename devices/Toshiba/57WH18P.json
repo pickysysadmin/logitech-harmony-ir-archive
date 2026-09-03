@@ -2,6 +2,35 @@
   "codeset": "codesets/99/99af4eedd5bf3b73.json",
   "deviceType": 1,
   "globalDeviceId": 181838,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"EXT1"},
+      {"name":"EXT2"},
+      {"name":"EXT3"},
+      {"name":"EXT4"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "57WH18P"
+  "model": "57WH18P",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

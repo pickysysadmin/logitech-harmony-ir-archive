@@ -2,6 +2,48 @@
   "codeset": "codesets/77/77ccd3299c85eba4.json",
   "deviceType": 22,
   "globalDeviceId": 99487,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM/AM"}],"name":"FM/AM"},
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"Aux","to":"Aux1"}],"name":"Aux1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"Aux","to":"Aux2"}],"name":"Aux2"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"Aux","to":"DigitalIn"}],"name":"DigitalIn"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "SD-KT50SU"
+  "model": "SD-KT50SU",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"},
+        {"name":"DigitalIn"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"FM/AM","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

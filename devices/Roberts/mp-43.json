@@ -2,6 +2,58 @@
   "codeset": "codesets/3a/3ad60628844e9b20.json",
   "deviceType": 21,
   "globalDeviceId": 159049,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"IPOD"}],"name":"IPOD"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Roberts",
-  "model": "mp-43"
+  "model": "mp-43",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"Media","select":[{"commands":["InputCD/iPOD"],"setType":2}]}
+      ]
+    },
+    "MediaInput": {
+      "next": ["InputCD/iPOD"],
+      "values": [
+        {"name":"CD"},
+        {"name":"IPOD"},
+        {"name":"SD"},
+        {"name":"USB"}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"DAB"},
+        {"name":"FM"},
+        {"name":"Aux"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

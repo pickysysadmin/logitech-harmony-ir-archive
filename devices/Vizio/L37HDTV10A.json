@@ -1,7 +1,72 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/9a/9ae9300a0b6c2731.json",
   "deviceType": 1,
   "globalDeviceId": 168004,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV3"}],"name":"AV 3"},
+      {"commands":[{"set":"InputType","to":"AnalogHD"},{"set":"AnalogHDInput","to":"AnalogHD1"}],"name":"Analog HD1"},
+      {"commands":[{"set":"InputType","to":"AnalogHD"},{"set":"AnalogHDInput","to":"AnalogHD2"}],"name":"Analog HD2"},
+      {"commands":[{"set":"InputType","to":"DIGITAL"},{"set":"DIGITALInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"DIGITAL"},{"set":"DIGITALInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "L37HDTV10A"
+  "model": "L37HDTV10A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    },
+    "AnalogHDInput": {
+      "next": ["InputAnalogHd"],
+      "values": [
+        {"name":"AnalogHD1"},
+        {"name":"AnalogHD2"}
+      ]
+    },
+    "DIGITALInput": {
+      "next": ["InputDigitalHd"],
+      "values": [
+        {"name":"Digital"},
+        {"name":"DTV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"AV","select":[{"commands":[{"delayMs":1500},"InputAv",{"set":"AVInput","to":"AV1"}],"setType":2}]},
+        {"name":"AnalogHD","select":[{"commands":["InputAnalogHd",{"set":"AnalogHDInput","to":"AnalogHD1"}],"setType":2}]},
+        {"name":"DIGITAL","select":[{"commands":[{"delayMs":1500},"InputDigitalHd",{"set":"DIGITALInput","to":"Digital"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 1
+  }
 }

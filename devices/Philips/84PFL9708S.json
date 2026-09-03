@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/2b/2b389ca10f3fbc44.json",
   "deviceType": 1,
   "globalDeviceId": 261632,
+  "inputs": {
+    "list": [
+      {"commands":["InputScart"],"name":"Scart"},
+      {"commands":["InputYPbPr"],"name":"YPbPr"},
+      {"commands":["Network"],"name":"Network"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["InputHdmi5"],"name":"HDMI 5"},
+      {"commands":["InputUsb"],"name":"USB"},
+      {"commands":["InputUsb",{"delayMs":1000},"Source",{"delayMs":3500},"DirectionLeft","DirectionLeft","OK"],"name":"SAT"},
+      {"commands":["InputUsb",{"delayMs":1000},"Source",{"delayMs":3500},"DirectionLeft","OK"],"name":"TV"},
+      {"commands":["Exit","SmartTv"],"name":"Smart Tv"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "84PFL9708S"
+  "model": "84PFL9708S",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 24000,
+    "pressMinRepeats": 3
+  }
 }

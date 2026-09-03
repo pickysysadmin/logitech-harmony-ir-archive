@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b3/b3ae336a7136e727.json",
   "deviceType": 1,
   "globalDeviceId": 126613,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"Video1"},
+      {"commands":["InputVideo2"],"name":"Video2"},
+      {"commands":["InputVideo3"],"name":"Video3"},
+      {"commands":["InputHD1"],"name":"HD/DVD 1"},
+      {"commands":["InputHD2"],"name":"HD/DVD 2"},
+      {"commands":["InputHD2","InputNext","InputNext"],"name":"HDMI"},
+      {"commands":["InputPc"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KLV-40V200A"
+  "model": "KLV-40V200A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

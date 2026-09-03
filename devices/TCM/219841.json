@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d1/d17384221b2b5451.json",
   "deviceType": 1,
   "globalDeviceId": 179728,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Antenna"}],"name":"Antenna"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"SCART1"}],"name":"SCART1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"SCART2"}],"name":"SCART2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Yc"}],"name":"Yc"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"CVBS"}],"name":"CVBS"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Yuv"}],"name":"Yuv"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"Digital"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "TCM",
-  "model": "219841"
+  "model": "219841",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"SCART1"},
+        {"name":"SCART2"},
+        {"name":"Yc"},
+        {"name":"CVBS"},
+        {"name":"Yuv"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputPc"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Digital"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

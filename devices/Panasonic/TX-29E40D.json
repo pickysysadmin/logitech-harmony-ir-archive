@@ -1,7 +1,127 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/4f/4f36280fc04a74c8.json",
   "deviceType": 1,
   "globalDeviceId": 162394,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE1","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"INPUTMODE1","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV1"},{"set":"MENU","to":"OFF"}],"name":"AV1"},
+      {"commands":[{"set":"INPUTMODE1","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"AV2Input","to":"AV2"},{"set":"MENU","to":"OFF"}],"name":"AV2"},
+      {"commands":[{"set":"INPUTMODE1","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"AV2Input","to":"AV2S"},{"set":"MENU","to":"OFF"}],"name":"AV2S"},
+      {"commands":[{"set":"INPUTMODE1","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"AV3Input","to":"AV3"},{"set":"MENU","to":"OFF"}],"name":"AV3"},
+      {"commands":[{"set":"INPUTMODE1","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"AV3Input","to":"AV3S"},{"set":"MENU","to":"OFF"}],"name":"AV3S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-29E40D"
+  "model": "TX-29E40D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"True"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AV2Input": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "AV2Mode": {
+      "next": ["Green"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AV3Input": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AV3Mode": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AV4Mode": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":2}]}
+      ]
+    },
+    "AVType": {
+      "values": [
+        {"name":"Red"},
+        {"name":"Green","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"Yellow","select":[{"commands":["Yellow"],"setType":2}]},
+        {"name":"Blue","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    },
+    "INPUTMODE1": {
+      "next": [
+        "Tv/Av",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "InputMode": {
+      "next": ["Tv/Av"],
+      "values": [
+        {"name":"TunerMode"},
+        {"name":"VideoMode"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":2}]}
+      ]
+    },
+    "OnScreenMenu": {
+      "values": [
+        {"name":"True","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"False"}
+      ]
+    },
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

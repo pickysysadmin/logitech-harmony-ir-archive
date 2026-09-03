@@ -2,6 +2,36 @@
   "codeset": "codesets/ba/bad9dfa1a9b6523e.json",
   "deviceType": 5,
   "globalDeviceId": 81593,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"TV/DBS"},
+      {"name":"V. AUX"},
+      {"name":"VCR"},
+      {"name":"CDR/Tape"},
+      {"name":"Tuner"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Denon",
-  "model": "AVD-700"
+  "model": "AVD-700",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,55 @@
   "codeset": "codesets/5f/5f10f96ea768da7e.json",
   "deviceType": 22,
   "globalDeviceId": 141742,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AM/FMInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AM/FMInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Front"}],"name":"Front","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Rear"}],"name":"Rear","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux"}],"name":"Aux","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-HT743"
+  "model": "SA-HT743",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AM/FMInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Front"},
+        {"name":"Rear"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"AM/FM","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux",{"set":"AuxInput","to":"Front"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

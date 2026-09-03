@@ -2,6 +2,45 @@
   "codeset": "codesets/27/27c502b599174a1e.json",
   "deviceType": 1,
   "globalDeviceId": 147868,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"AV"},
+      {"name":"Ext 1"},
+      {"name":"Ext 2"},
+      {"name":"Ext 3"},
+      {"name":"Ext 4"},
+      {"name":"PC"},
+      {"name":"HDMI"},
+      {"name":"DTV"}
+    ],
+    "next": ["DirectionUp"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "JVC",
-  "model": "LT-32DR71"
+  "model": "LT-32DR71",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 20000,
+    "pressMinRepeats": 3
+  }
 }

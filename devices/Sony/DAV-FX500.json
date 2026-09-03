@@ -2,6 +2,51 @@
   "codeset": "codesets/2f/2f96f9f1b19a1e6b.json",
   "deviceType": 22,
   "globalDeviceId": 165777,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"XM"}],"name":"XM","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"TV/VCR1"}],"name":"TV/VCR 1","ports":["Component","Composite","Coaxial"]},
+      {"commands":[{"set":"InputType","to":"TV/VCR2"}],"name":"TV/VCR 2","ports":["Composite","Optical"]},
+      {"commands":[{"set":"InputType","to":"audio"}],"name":"Audio","ports":["Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"Am/Fm"},{"set":"Am/FmInput","to":"Am"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Am/Fm"},{"set":"Am/FmInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "DAV-FX500"
+  "model": "DAV-FX500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Am/FmInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"Am"},
+        {"name":"FM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"XM","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"TV/VCR1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"TV/VCR2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"audio","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Am/Fm","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2250,
+    "pressMinRepeats": 3
+  }
 }

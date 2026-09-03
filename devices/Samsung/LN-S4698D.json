@@ -1,7 +1,52 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 148587,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"}
+    ],
+    "type": 6
+  },
   "manufacturer": "Samsung",
-  "model": "LN-S4698D"
+  "model": "LN-S4698D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputAntenna"],
+      "values": [
+        {"name":"ANT 1"},
+        {"name":"ANT 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"AV 2","select":[{"commands":["InputVideo2V2"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHDMI2V2"],"setType":2}]},
+        {"name":"Component 1","select":[{"commands":["InputComponent 1"],"setType":2}]},
+        {"name":"Component 2","select":[{"commands":["InputComponent 2"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["InputAntenna"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

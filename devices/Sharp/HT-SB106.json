@@ -2,6 +2,54 @@
   "codeset": "codesets/44/444e879ba3c4d902.json",
   "deviceType": 19,
   "globalDeviceId": 492327,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"Line/Usb"},{"set":"Line/UsbInput","to":"LineIn"}],"name":"LineIn","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Line/Usb"},{"set":"Line/UsbInput","to":"Usb"}],"name":"Usb","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Opt/Arc"},{"set":"Opt/ArcInput","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Opt/Arc"},{"set":"Opt/ArcInput","to":"HdmiArc"}],"name":"HdmiArc","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "HT-SB106"
+  "model": "HT-SB106",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Line/Usb","select":[{"commands":["InputLineIn/Usb"],"setType":2}]},
+        {"name":"Opt/Arc","select":[{"commands":["InputOptical/Arc"],"setType":2}]}
+      ]
+    },
+    "Line/UsbInput": {
+      "next": ["InputLineIn/Usb"],
+      "values": [
+        {"name":"LineIn"},
+        {"name":"Usb"}
+      ]
+    },
+    "Opt/ArcInput": {
+      "next": ["InputOptical/Arc"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"HdmiArc"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

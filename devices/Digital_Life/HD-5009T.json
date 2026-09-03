@@ -2,6 +2,35 @@
   "codeset": "codesets/ef/ef799f1a4b50d6e5.json",
   "deviceType": 1,
   "globalDeviceId": 122861,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Anolog RGB1"},
+      {"name":"Composite Video"},
+      {"name":"S Video"},
+      {"name":"Componant Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Digital Life",
-  "model": "HD-5009T"
+  "model": "HD-5009T",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

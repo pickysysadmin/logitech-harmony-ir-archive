@@ -2,6 +2,59 @@
   "codeset": "codesets/17/17b3c944d04233ac.json",
   "deviceType": 5,
   "globalDeviceId": 180198,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Cable/Sat"}],"name":"Cable/Sat","ports":["HDMI","Component","Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"Dvd"}],"name":"Dvd","ports":["HDMI","Component","Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"TheBridge"}],"name":"TheBridge","ports":["DMPort"]},
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv","ports":["Component","Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"Game"}],"name":"Game","ports":["HDMI","Component","Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"MediaServer"}],"name":"MediaServer","ports":["HDMI","Component","Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux","ports":["Component","Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Sirius"}],"name":"Sirius","ports":["Others"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "AVR 2600"
+  "model": "AVR 2600",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Cable/Sat","select":[{"commands":["InputCable/Sat"],"setType":2}]},
+        {"name":"Dvd","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"TheBridge","select":[{"commands":["InputTheBridge"],"setType":2}]},
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Game","select":[{"commands":["InputGame"],"setType":2}]},
+        {"name":"MediaServer","select":[{"commands":["InputMediaServer"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"},
+        {"name":"Sirius"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

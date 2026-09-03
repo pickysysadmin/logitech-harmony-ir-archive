@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/d4/d4a464da41f5b301.json",
   "deviceType": 1,
   "globalDeviceId": 264077,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3(MHL)"}],"name":"HDMI 3(MHL)"},
+      {"commands":[{"set":"InputType","to":"Smart TV"}],"name":"Smart TV"},
+      {"commands":[{"set":"InputType","to":"TV/Radio"},{"set":"TV/RadioInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"TV/Radio"},{"set":"TV/RadioInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/Radio"},{"set":"TV/RadioInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "47LB570V"
+  "model": "47LB570V",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"Component"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3(MHL)"},
+        {"name":"Smart TV"},
+        {"name":"TV/Radio"}
+      ]
+    },
+    "TV/RadioInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Radio"},
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

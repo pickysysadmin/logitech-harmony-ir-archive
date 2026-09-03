@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 30245,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Antenna"},
+      {"commands":["Input 1"],"name":"1"},
+      {"commands":["Input 2"],"name":"2"},
+      {"commands":["Input 3"],"name":"3"},
+      {"commands":["Input 4"],"name":"4"},
+      {"commands":["Input 5"],"name":"5"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hitachi",
-  "model": "52G500"
+  "model": "52G500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaAB": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"A"},
+        {"name":"B"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

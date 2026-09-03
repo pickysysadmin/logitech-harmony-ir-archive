@@ -2,6 +2,49 @@
   "codeset": "codesets/7f/7f74be4ad6e65437.json",
   "deviceType": 21,
   "globalDeviceId": 270129,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Audio/Line"},{"set":"Audio/LineInput","to":"Audio"}],"name":"Audio"},
+      {"commands":[{"set":"InputType","to":"Audio/Line"},{"set":"Audio/LineInput","to":"Line"}],"name":"Line"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Medion",
-  "model": "MD-84185"
+  "model": "MD-84185",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Audio/LineInput": {
+      "next": ["InputAudio/Line"],
+      "values": [
+        {"name":"Audio"},
+        {"name":"Line"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Audio/Line","select":[{"commands":["InputAudio/Line"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

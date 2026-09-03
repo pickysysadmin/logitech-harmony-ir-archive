@@ -2,6 +2,34 @@
   "codeset": "codesets/ca/ca785ed14e8a0261.json",
   "deviceType": 1,
   "globalDeviceId": 130984,
+  "inputs": {
+    "list": [
+      {"name":"P1"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV2-S"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Altus",
-  "model": "ALT-L228NX"
+  "model": "ALT-L228NX",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"P1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

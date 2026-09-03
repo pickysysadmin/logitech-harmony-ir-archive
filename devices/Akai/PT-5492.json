@@ -2,6 +2,32 @@
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 157275,
+  "inputs": {
+    "list": [
+      {"commands":["TvVideo",{"delayMs":500},"VolumeUp"],"name":"Antenna"},
+      {"commands":["TvVideo",{"delayMs":500},"ChannelDown","VolumeUp"],"name":"Video 1"},
+      {"commands":[{"delayMs":1000},"TvVideo","VolumeUp",{"delayMs":500},"TvVideo","ChannelDown","ChannelDown","VolumeUp"],"name":"Video 2"},
+      {"commands":[{"delayMs":500},"TvVideo","ChannelDown","ChannelDown","VolumeUp"],"name":"Video 3"},
+      {"commands":[{"delayMs":500},"TvVideo","ChannelDown","ChannelDown","ChannelDown","VolumeUp"],"name":"SVideo 1"},
+      {"commands":[{"delayMs":500},"TvVideo","ChannelDown","ChannelDown","ChannelDown","ChannelDown","VolumeUp"],"name":"SVideo 2"},
+      {"commands":["TvVideo",{"delayMs":500},"ChannelDown","ChannelDown","ChannelDown","ChannelDown","ChannelDown","VolumeUp"],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Akai",
-  "model": "PT-5492"
+  "model": "PT-5492",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

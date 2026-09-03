@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e8/e8f1e0cd47c37fd1.json",
   "deviceType": 47,
   "globalDeviceId": 168368,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputVcr"],"name":"VCR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "DR-MV100B"
+  "model": "DR-MV100B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["Aux"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"DV IN"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

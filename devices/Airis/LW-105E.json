@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/1c/1c5b4d08f445197f.json",
   "deviceType": 34,
   "globalDeviceId": 104495,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Front CVBS"},
+      {"name":"Front S-Video"},
+      {"name":"Rear CVBS"},
+      {"name":"Rear S-Video"},
+      {"name":"DV"},
+      {"name":"Component"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputDvd"],
+    "type": 2
+  },
   "manufacturer": "Airis",
-  "model": "LW-105E"
+  "model": "LW-105E",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 1
+  }
 }

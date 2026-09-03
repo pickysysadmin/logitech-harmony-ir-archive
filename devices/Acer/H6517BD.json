@@ -2,6 +2,38 @@
   "codeset": "codesets/c5/c55e357ccdc2f8b9.json",
   "deviceType": 7,
   "globalDeviceId": 274599,
+  "inputs": {
+    "list": [
+      {"commands":["InputVga"],"name":"VGA","ports":["PC"]},
+      {"commands":["InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputS-Video"],"name":"S-Video","ports":["S-Video"]},
+      {"commands":["InputHdmi/Dvi"],"name":"HDMI/DVI","ports":["HDMI"]},
+      {"commands":["InputLan/WiFi"],"name":"Lan/WiFi","ports":["Streaming"]},
+      {"commands":["InputUsbB"],"name":"USB B","ports":["USB"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Acer",
-  "model": "H6517BD "
+  "model": "H6517BD ",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

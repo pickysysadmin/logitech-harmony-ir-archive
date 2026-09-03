@@ -2,6 +2,60 @@
   "codeset": "codesets/94/94b6d47f67128c2a.json",
   "deviceType": 5,
   "globalDeviceId": 176169,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"BD"}],"name":"BD"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"DVR 1"}],"name":"DVR 1"},
+      {"commands":[{"set":"InputType","to":"DVR 2"}],"name":"DVR 2"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"CD-R"}],"name":"CD-R"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"iPod/Usb"}],"name":"iPod/Usb"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "VSX-LX51"
+  "model": "VSX-LX51",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"BD","select":[{"commands":["InputBD"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"DVR 1","select":[{"commands":["InputDvr1"],"setType":2}]},
+        {"name":"DVR 2","select":[{"commands":["InputDvr2"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"CD-R","select":[{"commands":["InputCD-R"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"iPod/Usb","select":[{"commands":["InputiPod/USB"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

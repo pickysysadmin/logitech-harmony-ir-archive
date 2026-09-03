@@ -2,6 +2,36 @@
   "codeset": "codesets/df/df31db7c3e34213a.json",
   "deviceType": 5,
   "globalDeviceId": 80524,
+  "inputs": {
+    "list": [
+      {"commands":["InputPhono"],"name":"PHONO","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd/Vdp"],"name":"DVD/VDP","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputTv/Dbs"],"name":"TV/DBS","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVcr1"],"name":"VCR1","ports":["Composite","S-Video"]},
+      {"commands":["InputVcr2"],"name":"VCR2","ports":["Composite","S-Video"]},
+      {"commands":["InputVAux"],"name":"V.AUX","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputCdr/Tape"],"name":"CDR/TAPE","ports":["Composite","Optical"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-1804"
+  "model": "AVR-1804",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

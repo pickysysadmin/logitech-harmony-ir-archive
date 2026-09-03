@@ -1,7 +1,57 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 68730,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Ant/Cable"},{"set":"Antenna/Cable","to":"Antenna"}],"name":"Antenna"},
+      {"commands":[{"set":"InputType","to":"Ant/Cable"},{"set":"Antenna/Cable","to":"Cable"}],"name":"Cable"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "23LX1R"
+  "model": "23LX1R",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Antenna/Cable": {
+      "next": ["InputAnt/Cable"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"Cable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Component 1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component 2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputDVI/DTV"],"setType":2}]},
+        {"name":"Ant/Cable","select":[{"commands":["InputAnt/Cable",{"set":"Antenna/Cable","to":"Cable"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

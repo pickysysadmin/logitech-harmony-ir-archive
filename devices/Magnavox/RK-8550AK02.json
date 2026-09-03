@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ab/ab949ed9af78a67c.json",
   "deviceType": 1,
   "globalDeviceId": 114251,
+  "inputs": {
+    "finish": ["Exit"],
+    "list": [
+      {"name":"Antenna"},
+      {"name":"AUX 1"},
+      {"name":"AUX 2"},
+      {"name":"S-Video"}
+    ],
+    "next": ["DirectionRight"],
+    "previous": ["DirectionLeft"],
+    "start": [
+      "Menu",
+      {"delayMs":500},
+      "3",
+      {"delayMs":500},
+      "3"
+    ],
+    "type": 4
+  },
   "manufacturer": "Magnavox",
-  "model": "RK-8550AK02"
+  "model": "RK-8550AK02",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

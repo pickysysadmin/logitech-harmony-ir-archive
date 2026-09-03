@@ -2,6 +2,55 @@
   "codeset": "codesets/55/553041dd7e7b4321.json",
   "deviceType": 21,
   "globalDeviceId": 244174,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"iPod/iPhone"}],"name":"iPod/iPhone"},
+      {"commands":[{"set":"InputType","to":"Tuner/Dab"},{"set":"Tuner/DabInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Tuner/Dab"},{"set":"Tuner/DabInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"Usb/Mp3"},{"set":"Usb/Mp3Input","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Usb/Mp3"},{"set":"Usb/Mp3Input","to":"MP3 Link"}],"name":"MP3 Link"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DCB293/79"
+  "model": "DCB293/79",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"iPod/iPhone","select":[{"commands":["InputiPod/iPhone"],"setType":2}]},
+        {"name":"Tuner/Dab","select":[{"commands":["InputTuner/Dab"],"setType":2}]},
+        {"name":"Usb/Mp3","select":[{"commands":["InputUsb/Mp3Link"],"setType":2}]}
+      ]
+    },
+    "Tuner/DabInput": {
+      "next": ["InputTuner/Dab"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"DAB"}
+      ]
+    },
+    "Usb/Mp3Input": {
+      "next": ["InputUsb/Mp3Link"],
+      "values": [
+        {"name":"USB"},
+        {"name":"MP3 Link"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,37 @@
   "codeset": "codesets/f2/f2655649049c259f.json",
   "deviceType": 34,
   "globalDeviceId": 174860,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputHdd"],"name":"HDD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "RDR-HX980"
+  "model": "RDR-HX980",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line1"},
+        {"name":"Line2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,57 @@
   "codeset": "codesets/9c/9c651ede15126385.json",
   "deviceType": 5,
   "globalDeviceId": 481195,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Am"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"XM"}],"name":"XM","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"AuxToggle"},{"set":"AuxToggleInput","to":"Aux"}],"name":"Aux","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"AuxToggle"},{"set":"AuxToggleInput","to":"Option"}],"name":"Option","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"AuxToggle"},{"set":"AuxToggleInput","to":"MusicP"}],"name":"MusicP","ports":["Streaming"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harmony Beta",
-  "model": "TTestSA-PT950"
+  "model": "TTestSA-PT950",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxToggleInput": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Option"},
+        {"name":"MusicP"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner",{"set":"TunerInput","to":"Fm"}],"setType":2}]},
+        {"name":"AuxToggle","select":[{"commands":["InputSelect",{"set":"AuxToggleInput","to":"MusicP"}],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Fm"},
+        {"name":"Am"},
+        {"name":"XM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

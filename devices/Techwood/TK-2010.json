@@ -2,6 +2,35 @@
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 116521,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"RGB"},
+      {"name":"AV2"},
+      {"name":"S-VHS"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Techwood",
-  "model": "TK-2010"
+  "model": "TK-2010",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

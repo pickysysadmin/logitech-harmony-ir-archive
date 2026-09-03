@@ -2,6 +2,45 @@
   "codeset": "codesets/ca/ca9e3aa3f9d0355e.json",
   "deviceType": 7,
   "globalDeviceId": 269046,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 1"}],"name":"Computer 1"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 2"}],"name":"Computer 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sanyo",
-  "model": "PLC-XE50A"
+  "model": "PLC-XE50A",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "ComputerInput": {
+      "next": ["InputComputer"],
+      "values": [
+        {"name":"Computer 1"},
+        {"name":"Computer 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

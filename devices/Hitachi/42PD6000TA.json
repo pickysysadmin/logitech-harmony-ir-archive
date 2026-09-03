@@ -2,6 +2,52 @@
   "codeset": "codesets/0c/0c9b4d271f33085e.json",
   "deviceType": 1,
   "globalDeviceId": 132061,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"TvVideo"},{"set":"TvVideoInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TvVideo"},{"set":"TvVideoInput","to":"CompositeVideo"}],"name":"CompositeVideo"},
+      {"commands":[{"set":"InputType","to":"TvVideo"},{"set":"TvVideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"TvVideo"},{"set":"TvVideoInput","to":"YCBCR"}],"name":"YCBCR"},
+      {"commands":[{"set":"InputType","to":"TvVideo"},{"set":"TvVideoInput","to":"YPBPR"}],"name":"YPBPR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "42PD6000TA"
+  "model": "42PD6000TA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"TvVideo","select":[{"commands":["TvVideo"],"setType":2}]}
+      ]
+    },
+    "TvVideoInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"CompositeVideo"},
+        {"name":"S-Video"},
+        {"name":"YCBCR"},
+        {"name":"YPBPR"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

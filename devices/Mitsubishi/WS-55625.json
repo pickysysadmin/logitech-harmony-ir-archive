@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/01/01c8d15763045db3.json",
   "deviceType": 1,
   "globalDeviceId": 102214,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntA"],"name":"Ant A"},
+      {"commands":["InputAntB"],"name":"Ant B"},
+      {"commands":["InputDtv"],"name":"DTV"},
+      {"commands":["InputComp1"],"name":"Comp 1"},
+      {"commands":["InputComp2"],"name":"Comp 2"},
+      {"commands":["Input1"],"name":"Input 1"},
+      {"commands":["Input2"],"name":"Input 2"},
+      {"commands":["Input3"],"name":"Input 3"},
+      {"commands":["InputNext"],"name":"Mon Link"},
+      {"commands":["InputSTB",{"delayMs":200},"InputNext",{"delayMs":200},"InputNext",{"delayMs":200},"Select"],"name":"Fire Wire"},
+      {"commands":["InputSTB"],"name":"HDMI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Mitsubishi",
-  "model": "WS-55625"
+  "model": "WS-55625",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

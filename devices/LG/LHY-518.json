@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/8b/8b0a280b3b181b06.json",
   "deviceType": 47,
   "globalDeviceId": 174898,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"OPT"}],"name":"OPT"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"DV"}],"name":"DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LHY-518"
+  "model": "LHY-518",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"OPT"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

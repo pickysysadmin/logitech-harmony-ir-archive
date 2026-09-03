@@ -2,6 +2,64 @@
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 126967,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"Analog HD"},{"set":"AnalogHDInput","to":"Analog HD1"}],"name":"ANALOG HD1"},
+      {"commands":[{"set":"InputType","to":"Analog HD"},{"set":"AnalogHDInput","to":"Analog HD2"}],"name":"ANALOG HD2"},
+      {"commands":[{"set":"InputType","to":"Digital HD"}],"name":"DIGITAL HD"},
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "VX-32"
+  "model": "VX-32",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": [
+        {"command":"InputS-Video","durationMs":1000}
+      ],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    },
+    "AnalogHDInput": {
+      "next": [
+        {"command":"InputVideo1","durationMs":1000}
+      ],
+      "values": [
+        {"name":"Analog HD1"},
+        {"name":"Analog HD2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputAnt/Cable"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":[{"command":"InputRgb","durationMs":1000}],"setType":2}]},
+        {"name":"Digital HD","select":[{"commands":[{"command":"InputDVI/DTV","durationMs":1000}],"setType":2}]},
+        {"name":"Analog HD","select":[{"commands":[{"command":"InputVideo1","durationMs":1000},{"set":"AnalogHDInput","to":"Analog HD1"}],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputS-Video",{"set":"AVInput","to":"AV1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,37 @@
   "codeset": "codesets/d7/d7075cfef11b97a4.json",
   "deviceType": 34,
   "globalDeviceId": 118112,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdd"],"name":"HDD"},
+      {"commands":["InputDvd"],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-EH53"
+  "model": "DMR-EH53",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

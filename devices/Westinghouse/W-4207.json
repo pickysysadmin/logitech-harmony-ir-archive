@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/e0/e09bf09ab740cfaa.json",
   "deviceType": 1,
   "globalDeviceId": 159559,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video","ports":["S-Video"]},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"DVI","ports":["DVI"]},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"YPbPr1"}],"name":"YPbPr1","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"YPbPr2"}],"name":"YPbPr2","ports":["Component"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Westinghouse",
-  "model": "W-4207"
+  "model": "W-4207",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"DVI","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputYPbPr"],"setType":2}]}
+      ]
+    },
+    "YPbPrInput": {
+      "next": ["InputYPbPr"],
+      "values": [
+        {"name":"YPbPr1"},
+        {"name":"YPbPr2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

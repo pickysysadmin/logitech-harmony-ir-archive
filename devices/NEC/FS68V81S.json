@@ -2,6 +2,52 @@
   "codeset": "codesets/4f/4f319005b7189ff9.json",
   "deviceType": 13,
   "globalDeviceId": 3130,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VideoInput","to":"Video1"}],"name":"Video 1"},
+      {"commands":[{"set":"VideoInput","to":"Video2"}],"name":"Video 2"},
+      {"commands":[{"set":"VideoInput","to":"Video3"}],"name":"Video 3"},
+      {"commands":["Dvd/Hd"],"name":"Dvd1/Hd1"},
+      {"commands":[{"set":"RGBInput","to":"RGB1"}],"name":"RGB 1"},
+      {"commands":[{"set":"RGBInput","to":"RGB2"}],"name":"RGB 2"},
+      {"commands":[{"set":"RGBInput","to":"RGB3"}],"name":"RGB 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "FS68V81S"
+  "model": "FS68V81S",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "RGBInput": {
+      "next": ["InputRgb/Pc"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/00/001990052245ea70.json",
   "deviceType": 2,
   "globalDeviceId": 168159,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"Tuner"},
+      {"name":"L1"},
+      {"name":"L2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "PV-7451"
+  "model": "PV-7451",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

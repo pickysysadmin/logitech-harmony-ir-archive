@@ -2,6 +2,36 @@
   "codeset": "codesets/e0/e03d084704970680.json",
   "deviceType": 5,
   "globalDeviceId": 123785,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputVideo1"],"name":"Video1"},
+      {"commands":["InputVideo2"],"name":"Video2"},
+      {"commands":["InputVideo3"],"name":"Video3"},
+      {"commands":["InputVideo4"],"name":"Video4"},
+      {"commands":["InputTuner",{"delayMs":500},"InputFm"],"name":"FM"},
+      {"commands":["InputTuner",{"delayMs":500},"InputAm"],"name":"AM"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SR604 (Zone 2)"
+  "model": "TX-SR604 (Zone 2)",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

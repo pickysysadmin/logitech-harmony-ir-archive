@@ -2,6 +2,61 @@
   "codeset": "codesets/b8/b8db576dcb1eab08.json",
   "deviceType": 5,
   "globalDeviceId": 65227,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputCd-r"],"name":"MD/CD-R"},
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputTv/Dbs"],"name":"D-TV/CBL"},
+      {"commands":["InputVcr1"],"name":"VCR"},
+      {"commands":["InputAUX"],"name":"AUX"},
+      {"commands":["InputV-Aux"],"name":"V-AUX"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "HTR-6450"
+  "model": "HTR-6450",
+  "power": {
+    "toggle": [
+      "PowerToggle",
+      {"delayMs":5000},
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "6chInput": {
+      "next": ["InputMulti Ch In"],
+      "values": [
+        {"name":"On"},
+        {"name":"Off"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd/Md"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"MD/CD-R","select":[{"commands":["InputMd/Cdr"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd2"],"setType":2}]},
+        {"name":"D-TV/CBL","select":[{"commands":["InputTv/Dbs"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr1"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"V-AUX","select":[{"commands":["InputAUX"],"setType":2}]},
+        {"name":"6CH Input","select":[{"commands":["InputMultiChannel"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

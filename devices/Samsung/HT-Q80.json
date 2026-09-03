@@ -2,6 +2,60 @@
   "codeset": "codesets/f4/f42fde5ab649e59a.json",
   "deviceType": 22,
   "globalDeviceId": 169792,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AUX1"}],"name":"AUX1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AUX2"}],"name":"AUX2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"HDMI IN"}],"name":"HDMI IN","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"DIGITAL IN"}],"name":"DIGITAL IN","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"XM"}],"name":"XM","ports":["Others"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-Q80"
+  "model": "HT-Q80",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX1"},
+        {"name":"AUX2"},
+        {"name":"HDMI IN"},
+        {"name":"DIGITAL IN"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux",{"set":"AuxInput","to":"AUX1"}],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner",{"set":"TunerInput","to":"FM"}],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"XM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

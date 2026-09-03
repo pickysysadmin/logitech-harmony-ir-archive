@@ -2,6 +2,36 @@
   "codeset": "codesets/c9/c9b7be3c14b269f8.json",
   "deviceType": 7,
   "globalDeviceId": 143001,
+  "inputs": {
+    "list": [
+      {"name":"S-Video"},
+      {"name":"Video"},
+      {"name":"Y Pb Pr"},
+      {"name":"Computer"}
+    ],
+    "next": ["InputVideo"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "TLP-780"
+  "model": "TLP-780",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

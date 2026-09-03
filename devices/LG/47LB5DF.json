@@ -1,7 +1,68 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/72/72ca2bb573e0b1fa.json",
   "deviceType": 1,
   "globalDeviceId": 179754,
+  "inputs": {
+    "list": [
+      {"commands":["InputComponent1"],"name":"Comp1"},
+      {"commands":["InputHdmi1"],"name":"HDMI"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["InputAv1"],"name":"AV 1"},
+      {"commands":["InputAv2"],"name":"AV 2"},
+      {"commands":["InputAv3"],"name":"AV 3"},
+      {"commands":["InputAv4"],"name":"AV 4"},
+      {"commands":["InputRGB/PC"],"name":"RGB/PC"},
+      {"commands":["InputDVI/DTV"],"name":"HDMI/DVI"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputTv"],"name":"Antenna"},
+      {"commands":["InputTv"],"name":"Cable"},
+      {"commands":["InputComponent2"],"name":"Comp2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "47LB5DF"
+  "model": "47LB5DF",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "ANT/CABLEInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"Cable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Comp1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"AV 1","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"AV 2","select":[{"commands":["InputAv2"],"setType":2}]},
+        {"name":"AV 3","select":[{"commands":["InputAv3"],"setType":2}]},
+        {"name":"AV 4","select":[{"commands":["InputAv4"],"setType":2}]},
+        {"name":"RGB/PC","select":[{"commands":["InputRGB/PC"],"setType":2}]},
+        {"name":"HDMI/DVI","select":[{"commands":["InputDVI/DTV"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"ANT/CABLE","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

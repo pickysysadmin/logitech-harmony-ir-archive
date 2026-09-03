@@ -2,6 +2,54 @@
   "codeset": "codesets/0a/0a7f69672ce6ece5.json",
   "deviceType": 22,
   "globalDeviceId": 178332,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DISC"}],"name":"DISC"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"SCART IN"}],"name":"SCART IN"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"COAX IN"}],"name":"COAX IN"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"OPTI IN"}],"name":"OPTI IN"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"MP3 Link"}],"name":"MP3 Link"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS3377W/12"
+  "model": "HTS3377W/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DISC","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"SCART IN"},
+        {"name":"COAX IN"},
+        {"name":"OPTI IN"},
+        {"name":"MP3 Link"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

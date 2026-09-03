@@ -2,6 +2,35 @@
   "codeset": "codesets/b7/b7bf9558218fa9f0.json",
   "deviceType": 1,
   "globalDeviceId": 86075,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"DVD"},
+      {"name":"Video"},
+      {"name":"EXT 3"},
+      {"name":"Front"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Radiola",
-  "model": "70-TA4413/18"
+  "model": "70-TA4413/18",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

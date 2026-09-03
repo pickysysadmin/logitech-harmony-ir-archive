@@ -2,6 +2,34 @@
   "codeset": "codesets/a2/a21c35e106e27d06.json",
   "deviceType": 1,
   "globalDeviceId": 139462,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"Video3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "ST-70829NIC"
+  "model": "ST-70829NIC",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

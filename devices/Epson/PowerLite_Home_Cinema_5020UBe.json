@@ -2,6 +2,37 @@
   "codeset": "codesets/a9/a9442c2135a9f972.json",
   "deviceType": 7,
   "globalDeviceId": 236226,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputWirelessHd"],"name":"Wireless HD","ports":["Streaming"]},
+      {"commands":["InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputPC"],"name":"PC","ports":["PC"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "PowerLite Home Cinema 5020UBe"
+  "model": "PowerLite Home Cinema 5020UBe",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

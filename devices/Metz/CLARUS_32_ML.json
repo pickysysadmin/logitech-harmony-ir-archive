@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/85/85dd3eb8ba6b781f.json",
   "deviceType": 1,
   "globalDeviceId": 211565,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV4"}],"name":"AV4"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV5"}],"name":"AV5"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV6"}],"name":"AV6"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV7"}],"name":"AV7"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV8"}],"name":"AV8"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV9"}],"name":"AV9"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Metz",
-  "model": "CLARUS 32 ML"
+  "model": "CLARUS 32 ML",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"AV4"},
+        {"name":"AV5"},
+        {"name":"AV6"},
+        {"name":"AV7"},
+        {"name":"AV8"},
+        {"name":"AV9"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

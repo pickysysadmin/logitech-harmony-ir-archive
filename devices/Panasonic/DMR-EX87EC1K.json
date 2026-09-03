@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f7/f7b562ee6cf8e5dd.json",
   "deviceType": 34,
   "globalDeviceId": 124272,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputHdd"],"name":"HDD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-EX87EC1K"
+  "model": "DMR-EX87EC1K",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Av1"},
+        {"name":"Av2"},
+        {"name":"Av3"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

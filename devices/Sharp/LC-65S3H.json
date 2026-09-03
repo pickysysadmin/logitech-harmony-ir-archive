@@ -2,6 +2,35 @@
   "codeset": "codesets/05/0587424dcfe4cb1d.json",
   "deviceType": 1,
   "globalDeviceId": 303598,
+  "inputs": {
+    "list": [
+      {"commands":["InputAtv","Return","Return",{"delayMs":2000},"InputAtv"],"name":"ATV"},
+      {"commands":["InputDtv","Return","Return",{"delayMs":2000},"InputDtv"],"name":"DTV"},
+      {"commands":["InputExt1","Return","Return",{"delayMs":2000},"InputExt1"],"name":"HDMI 1"},
+      {"commands":["InputExt2","Return","Return",{"delayMs":2000},"InputExt2"],"name":"HDMI 2"},
+      {"commands":["Return","Return",{"delayMs":2000},"InputExt3"],"name":"HDMI 3"},
+      {"commands":["Return","Return",{"delayMs":2000},"InputExt4"],"name":"Component"},
+      {"commands":["Return","Return",{"delayMs":2000},"InputExt5"],"name":"AV"},
+      {"commands":["Return","Return","InputExt5","InputNext"],"name":"Home Network(DLNA)"},
+      {"commands":["Return","Return","InputExt5","InputNext","InputNext"],"name":"USB"},
+      {"commands":["Return","Return","Smart",{"delayMs":2000},"Smart"],"name":"Smart"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-65S3H"
+  "model": "LC-65S3H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 19000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/2f/2f1f7abfaf642c14.json",
   "deviceType": 1,
   "globalDeviceId": 480952,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","Exit","InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputHdmi1","InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2","InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3","InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputAv","InputAv"],"name":"AV","ports":["Composite"]},
+      {"commands":["InputComponent","InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["Exit",{"delayMs":500},"Exit",{"delayMs":500},"SmartHub"],"name":"SmartHub","ports":["Streaming"]},
+      {"commands":["Amazon"],"name":"Amazon","ports":["Streaming"]},
+      {"commands":["Ambient"],"name":"Ambient"},
+      {"commands":["Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UE58MU6125KXXC"
+  "model": "UE58MU6125KXXC",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

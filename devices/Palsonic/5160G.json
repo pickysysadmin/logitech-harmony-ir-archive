@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e6/e694918ecb0c5676.json",
   "deviceType": 1,
   "globalDeviceId": 75293,
+  "inputs": {
+    "list": [
+      {"name":"CH 1"},
+      {"name":"AV1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Palsonic",
-  "model": "5160G"
+  "model": "5160G",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"CH 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

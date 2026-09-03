@@ -2,6 +2,34 @@
   "codeset": "codesets/a5/a548c9379914d660.json",
   "deviceType": 7,
   "globalDeviceId": 227976,
+  "inputs": {
+    "list": [
+      {"name":"Video"},
+      {"name":"Component"},
+      {"name":"PC/RGB"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Boxlight",
-  "model": "CD-726C"
+  "model": "CD-726C",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":700},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

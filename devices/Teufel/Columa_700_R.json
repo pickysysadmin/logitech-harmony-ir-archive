@@ -2,6 +2,52 @@
   "codeset": "codesets/b8/b879725c0cd369dc.json",
   "deviceType": 5,
   "globalDeviceId": 176665,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Coax"}],"name":"Coax"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teufel",
-  "model": "Columa 700 R"
+  "model": "Columa 700 R",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"Coax","select":[{"commands":["InputCoax"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,49 @@
   "codeset": "codesets/48/48ab4e06faa0cbf7.json",
   "deviceType": 21,
   "globalDeviceId": 242184,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"HD"}],"name":"HD"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"UPnP"}],"name":"UPnP"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "WACS-7005"
+  "model": "WACS-7005",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"HD","select":[{"commands":["InputHD"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Radio"},
+        {"name":"UPnP"},
+        {"name":"USB"},
+        {"name":"Aux"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

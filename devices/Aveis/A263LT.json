@@ -2,6 +2,70 @@
   "codeset": "codesets/ba/bae71ec2d3252e59.json",
   "deviceType": 1,
   "globalDeviceId": 239440,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"S-Video"},{"set":"S-VideoInput","to":"S-Video1"}],"name":"S-Video1"},
+      {"commands":[{"set":"InputType","to":"S-Video"},{"set":"S-VideoInput","to":"S-Video2"}],"name":"S-Video2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI2"}],"name":"HDMI2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Aveis",
-  "model": "A263LT"
+  "model": "A263LT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputYpbpr"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-video"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    },
+    "S-VideoInput": {
+      "next": ["InputS-video"],
+      "values": [
+        {"name":"S-Video1"},
+        {"name":"S-Video2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,57 @@
   "codeset": "codesets/da/da5d8f08a4a9afdd.json",
   "deviceType": 19,
   "globalDeviceId": 501040,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"BT"}],"name":"BT"},
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"Hdmi1/2"},{"set":"Hdmi1/2Input","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Hdmi1/2"},{"set":"Hdmi1/2Input","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"Opt/Coax"},{"set":"Opt/CoaxInput","to":"Opt"}],"name":"Opt"},
+      {"commands":[{"set":"InputType","to":"Opt/Coax"},{"set":"Opt/CoaxInput","to":"Coax"}],"name":"Coax"}
+    ],
+    "type": 5
+  },
   "manufacturer": "MonoPrice",
-  "model": "SB-600"
+  "model": "SB-600",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Hdmi1/2Input": {
+      "next": ["InputHdmi1/2"],
+      "values": [
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":1}]},
+        {"name":"BT","select":[{"commands":["InputBT"],"setType":1}]},
+        {"name":"Usb","select":[{"commands":["InputUsb"],"setType":1}]},
+        {"name":"Hdmi1/2","select":[{"commands":["InputHdmi1/2"],"setType":1}]},
+        {"name":"Opt/Coax","select":[{"commands":["InputOpt/Coax"],"setType":1}]}
+      ]
+    },
+    "Opt/CoaxInput": {
+      "next": ["InputOpt/Coax"],
+      "values": [
+        {"name":"Opt"},
+        {"name":"Coax"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

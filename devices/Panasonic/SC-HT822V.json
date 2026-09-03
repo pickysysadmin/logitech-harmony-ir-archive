@@ -1,7 +1,49 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/c7/c720e50d3a9227d9.json",
   "deviceType": 32,
   "globalDeviceId": 16052,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/VCR"},{"set":"DVD/VCRInput","to":"DVDinput"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVD/VCR"},{"set":"DVD/VCRInput","to":"VCRinput"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"Radiotype"}],"name":"FM/AM"},
+      {"commands":[{"set":"InputType","to":"Auxtype"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HT822V"
+  "model": "SC-HT822V",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVD/VCRInput": {
+      "next": ["InputDVD/VCR"],
+      "values": [
+        {"name":"DVDinput"},
+        {"name":"VCRinput"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/VCR","select":[{"commands":["InputDVD/VCR"],"setType":2}]},
+        {"name":"Radiotype","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Auxtype","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

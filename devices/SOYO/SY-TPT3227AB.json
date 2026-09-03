@@ -2,6 +2,64 @@
   "codeset": "codesets/57/570454a81cc359de.json",
   "deviceType": 1,
   "globalDeviceId": 154927,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"SVideo"}],"name":"SVideo"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"YCbCr"}],"name":"YCbCr"},
+      {"commands":[{"set":"InputType","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"HDMItoggle"},{"set":"HDMItoggleInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMItoggle"},{"set":"HDMItoggleInput","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"HDMItoggle"},{"set":"HDMItoggleInput","to":"HDMI3"}],"name":"HDMI3"},
+      {"commands":[{"set":"InputType","to":"AVtoggle"},{"set":"AVtoggleInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AVtoggle"},{"set":"AVtoggleInput","to":"AV2"}],"name":"AV2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "SOYO",
-  "model": "SY-TPT3227AB"
+  "model": "SY-TPT3227AB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVtoggleInput": {
+      "next": ["InputAV"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"}
+      ]
+    },
+    "HDMItoggleInput": {
+      "next": ["InputDvi"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTV"],"setType":2}]},
+        {"name":"SVideo","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"YCbCr","select":[{"commands":["InputYcbcr"],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputYpbpr"],"setType":2}]},
+        {"name":"HDMItoggle","select":[{"commands":["InputDvi",{"set":"HDMItoggleInput","to":"HDMI1"}],"setType":2}]},
+        {"name":"AVtoggle","select":[{"commands":["InputAV",{"set":"AVtoggleInput","to":"AV1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

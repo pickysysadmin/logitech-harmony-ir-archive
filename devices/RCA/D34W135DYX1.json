@@ -1,7 +1,52 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 21185,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Antenna"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video3"}],"name":"Video 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "D34W135DYX1"
+  "model": "D34W135DYX1",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["PowerOn"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

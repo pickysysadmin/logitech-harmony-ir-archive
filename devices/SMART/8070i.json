@@ -2,6 +2,70 @@
   "codeset": "codesets/4c/4cf0059f7972c1a0.json",
   "deviceType": 1,
   "globalDeviceId": 269195,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"Display Port"}],"name":"Display Port"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"RGB/HV"}],"name":"RGB/HV"},
+      {"commands":[{"set":"InputType","to":"DVD/HD"}],"name":"DVD/HD"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"nputType","to":"Option"}],"name":"Option"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"AudioInput"},{"set":"AudioInputInput","to":"AudioIn 1"}],"name":"AudioIn 1"},
+      {"commands":[{"set":"InputType","to":"AudioInput"},{"set":"AudioInputInput","to":"AudioIn 2"}],"name":"AudioIn 2"},
+      {"commands":[{"set":"InputType","to":"AudioInput"},{"set":"AudioInputInput","to":"AudioIn 3"}],"name":"AudioIn 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "SMART",
-  "model": "8070i"
+  "model": "8070i",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AudioInputInput": {
+      "next": ["AudioInput"],
+      "values": [
+        {"name":"AudioIn 1"},
+        {"name":"AudioIn 2"},
+        {"name":"AudioIn 3"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVI","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"Display Port","select":[{"commands":["InputDisplayPort"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"RGB/HV","select":[{"commands":["InputRgb/Hv"],"setType":2}]},
+        {"name":"DVD/HD","select":[{"commands":["InputDvd/Hd"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"Option","select":[{"commands":["Option"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"AudioInput","select":[{"commands":["AudioInput"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

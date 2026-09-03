@@ -2,6 +2,48 @@
   "codeset": "codesets/ee/ee9712e1877aea5f.json",
   "deviceType": 5,
   "globalDeviceId": 267014,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"5.1Ch"}],"name":"5.1Ch"},
+      {"commands":[{"set":"InputType","to":"2.1Ch"}],"name":"2.1Ch"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Bluetooth"}],"name":"Bluetooth"}
+    ],
+    "type": 5
+  },
   "manufacturer": "AEG",
-  "model": "BSS 4816"
+  "model": "BSS 4816",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"FM"},
+        {"name":"USB"},
+        {"name":"Bluetooth"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"5.1Ch","select":[{"commands":["Input5.1Ch"],"setType":2}]},
+        {"name":"2.1Ch","select":[{"commands":["Input2.1Ch"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

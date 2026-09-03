@@ -1,7 +1,67 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 92310,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video1"},
+      {"commands":["InputVideo","InputNext"],"name":"Video2"},
+      {"commands":["InputVideo","InputNext","InputNext"],"name":"Video3"},
+      {"commands":["InputVideo","InputNext","InputNext","InputNext"],"name":"Video4"},
+      {"commands":["InputSVideo"],"name":"S-Video1"},
+      {"commands":["InputSVideo 2"],"name":"S-Video2"},
+      {"commands":["InputAntenna",{"delayMs":3000}],"name":"Cable"},
+      {"commands":["InputComponent 2"],"name":"Component1"},
+      {"commands":["InputComponent 1"],"name":"Component2"},
+      {"commands":["HDMI 1"],"name":"HDMI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "TW-R3079"
+  "model": "TW-R3079",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "COMPONENTInput": {
+      "next": ["InputToggle"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"},
+        {"name":"HDMI"},
+        {"name":"Cable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VIDEO","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"COMPONENT","select":[{"commands":["InputToggle"],"setType":2}]}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"},
+        {"name":"Video4"},
+        {"name":"S-Video1"},
+        {"name":"S-Video2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

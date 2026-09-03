@@ -2,6 +2,35 @@
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 79075,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"SAT"},
+      {"name":"DVD"},
+      {"name":"GAME"},
+      {"name":"FRONT"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "27-FQ86"
+  "model": "27-FQ86",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 5,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

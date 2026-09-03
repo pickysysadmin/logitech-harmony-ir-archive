@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/f5/f508d6d028e7714f.json",
   "deviceType": 34,
   "globalDeviceId": 178849,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"ExternalInput"},{"set":"ExternalInputInput","to":"Prog"}],"name":"Prog"},
+      {"commands":[{"set":"InputType","to":"ExternalInput"},{"set":"ExternalInputInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"ExternalInput"},{"set":"ExternalInputInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"ExternalInput"},{"set":"ExternalInputInput","to":"DV"}],"name":"DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "DVD-HR721"
+  "model": "DVD-HR721",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ExternalInputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Prog"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["Tv/Dvd"],"setType":2}]},
+        {"name":"ExternalInput","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

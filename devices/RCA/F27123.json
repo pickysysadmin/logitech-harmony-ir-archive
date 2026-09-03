@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/dc/dc6425688f43398b.json",
   "deviceType": 1,
   "globalDeviceId": 81173,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"90"},
+      {"name":"91"},
+      {"name":"92"}
+    ],
+    "next": ["ChannelDown"],
+    "start": ["ChannelUp"],
+    "type": 4
+  },
   "manufacturer": "RCA",
-  "model": "F27123"
+  "model": "F27123",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

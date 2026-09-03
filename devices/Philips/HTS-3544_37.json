@@ -2,6 +2,59 @@
   "codeset": "codesets/93/9303347bf9ccd125.json",
   "deviceType": 22,
   "globalDeviceId": 182022,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Mp3Link-IN"}],"name":"Mp3Link-IN","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Dock"}],"name":"Dock","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Disc/USB"},{"set":"Disc/USBInput","to":"Disc"}],"name":"Disc","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Disc/USB"},{"set":"Disc/USBInput","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"AUX/DI"},{"set":"AUX/DIInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX/DI"},{"set":"AUX/DIInput","to":"DI"}],"name":"DI","ports":["Coaxial"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS-3544/37"
+  "model": "HTS-3544/37",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUX/DIInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"DI"}
+      ]
+    },
+    "Disc/USBInput": {
+      "next": ["InputDisc/Usb"],
+      "values": [
+        {"name":"Disc"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Mp3Link-IN","select":[{"commands":["InputMp3LineIn"],"setType":2}]},
+        {"name":"Dock","select":[{"commands":["InputDock"],"setType":2}]},
+        {"name":"Disc/USB","select":[{"commands":["InputDisc/Usb"],"setType":2}]},
+        {"name":"AUX/DI","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

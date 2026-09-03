@@ -1,7 +1,57 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d6/d6de5e9d03afc652.json",
   "deviceType": 34,
   "globalDeviceId": 147848,
+  "inputs": {
+    "list": [
+      {"name":"A1"},
+      {"name":"A2"},
+      {"name":"A3"},
+      {"name":"A4"},
+      {"name":"1"},
+      {"name":"2"},
+      {"name":"3"}
+    ],
+    "next": ["ChannelUp"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-E83H"
+  "model": "DMR-E83H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"AV4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

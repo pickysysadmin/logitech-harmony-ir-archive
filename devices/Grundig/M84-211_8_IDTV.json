@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b8/b881c173b9b08a45.json",
   "deviceType": 1,
   "globalDeviceId": 59825,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Input 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Input 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Input 3"}],"name":"Input 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Grundig",
-  "model": "M84-211/8 IDTV"
+  "model": "M84-211/8 IDTV",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"InputType","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["Av"],
+      "values": [
+        {"name":"Input 1"},
+        {"name":"Input 2"},
+        {"name":"Input 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["1"],"setType":1}]},
+        {"name":"AV","select":[{"commands":["Av"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

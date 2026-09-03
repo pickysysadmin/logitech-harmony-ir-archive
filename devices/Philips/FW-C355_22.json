@@ -2,6 +2,65 @@
   "codeset": "codesets/da/dae2a53ae5d79cca.json",
   "deviceType": 21,
   "globalDeviceId": 119811,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"CD1"}],"name":"CD1"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"CD2"}],"name":"CD2"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"CD3"}],"name":"CD3"},
+      {"commands":[{"set":"InputType","to":"Tape"},{"set":"TapeInput","to":"Tape1"}],"name":"Tape1"},
+      {"commands":[{"set":"InputType","to":"Tape"},{"set":"TapeInput","to":"Tape2"}],"name":"Tape2"},
+      {"commands":[{"set":"InputType","to":"Aux/CDR"},{"set":"Aux/CDRInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux/CDR"},{"set":"Aux/CDRInput","to":"Cdr"}],"name":"Cdr"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "FW-C355/22"
+  "model": "FW-C355/22",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/CDRInput": {
+      "next": ["InputAux/Cdr"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Cdr"}
+      ]
+    },
+    "CDInput": {
+      "next": ["InputCd"],
+      "values": [
+        {"name":"CD1"},
+        {"name":"CD2"},
+        {"name":"CD3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Aux/CDR","select":[{"commands":["InputAux/Cdr"],"setType":2}]}
+      ]
+    },
+    "TapeInput": {
+      "next": ["InputTape"],
+      "values": [
+        {"name":"Tape1"},
+        {"name":"Tape2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

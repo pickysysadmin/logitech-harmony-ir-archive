@@ -1,7 +1,88 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/bd/bdd13688c17b8792.json",
   "deviceType": 1,
   "globalDeviceId": 204470,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"AV2"},{"set":"AV2Input","to":"AV2"}],"name":"AV2","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"AV2"},{"set":"AV2Input","to":"AV2S"}],"name":"AV2S","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"AV3"}],"name":"AV3","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI3"}],"name":"HDMI3","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI4"}],"name":"HDMI4","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVBS"}],"name":"DVB-S","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVBC"}],"name":"DVB-C","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVBT"}],"name":"DVB-T","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"MediaServer"}],"name":"MediaServer","ports":["Streaming"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-P50VT20E"
+  "model": "TX-P50VT20E",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AV2Input": {
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"Component","select":[{"commands":["InputVideo3","AV","DirectionDown","Select"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":1}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":1}]},
+        {"name":"HDMI4","select":[{"commands":["InputHdmi4"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]},
+        {"name":"MediaServer","select":[{"commands":["InputHdmi4","AV","DirectionDown","DirectionDown","Select"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"DVBS"},
+        {"name":"DVBC"},
+        {"name":"DVBT"},
+        {"name":"TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

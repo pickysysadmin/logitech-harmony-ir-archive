@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b0/b058fdde955180f6.json",
   "deviceType": 32,
   "globalDeviceId": 71209,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Dvd/Vcr"},{"set":"Dvd/VcrInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Dvd/Vcr"},{"set":"Dvd/VcrInput","to":"VCR"}],"name":"VCR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-HT810V"
+  "model": "SA-HT810V",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Dvd/VcrInput": {
+      "next": ["InputDVD/VCR"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"VCR"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dvd/Vcr","select":[{"commands":["InputDVD/VCR"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

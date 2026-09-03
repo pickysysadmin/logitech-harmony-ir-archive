@@ -1,7 +1,48 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ca/ca785ed14e8a0261.json",
   "deviceType": 1,
   "globalDeviceId": 138244,
+  "inputs": {
+    "list": [
+      {"name":"no"},
+      {"name":"av1"},
+      {"name":"av2"},
+      {"name":"av3"},
+      {"name":"av3-s"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Cinex",
-  "model": "TV-83951"
+  "model": "TV-83951",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"no"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["Guide"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Guide"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 2
+  }
 }

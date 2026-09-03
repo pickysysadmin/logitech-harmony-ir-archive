@@ -2,6 +2,55 @@
   "codeset": "codesets/38/388fe23e22a2f434.json",
   "deviceType": 22,
   "globalDeviceId": 260167,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"iPod/iPhone"}],"name":"iPod/iPhone"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"OpticalIn"}],"name":"Optical In"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"CoaxialIn"}],"name":"Coaxial In"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMIARC"}],"name":"HDMI ARC"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"BT"}],"name":"BT"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTB5510D/78"
+  "model": "HTB5510D/78",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["InputSource"],"setType":2}]},
+        {"name":"iPod/iPhone","select":[{"commands":["InputiPod/iPhone"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["InputSource"],
+      "values": [
+        {"name":"OpticalIn"},
+        {"name":"CoaxialIn"},
+        {"name":"AUX"},
+        {"name":"HDMIARC"},
+        {"name":"BT"},
+        {"name":"USB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 20000,
+    "pressMinRepeats": 3
+  }
 }

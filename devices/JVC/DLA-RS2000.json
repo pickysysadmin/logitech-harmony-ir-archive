@@ -2,6 +2,35 @@
   "codeset": "codesets/d8/d8686f6b4c0fc5a3.json",
   "deviceType": 7,
   "globalDeviceId": 480543,
+  "inputs": {
+    "list": [
+      {"name":"HDMI 1","ports":["HDMI"]},
+      {"name":"HDMI 2","ports":["HDMI"]}
+    ],
+    "next": ["Input"],
+    "type": 2
+  },
   "manufacturer": "JVC",
-  "model": "DLA-RS2000"
+  "model": "DLA-RS2000",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":5000},
+      "PowerOff",
+      "PowerOff",
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 5000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 60000,
+    "pressMinRepeats": 3
+  }
 }

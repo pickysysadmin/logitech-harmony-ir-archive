@@ -2,6 +2,40 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 155425,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"AV2/AV2S"},
+      {"name":"AV3/AV3S"},
+      {"name":"PC"},
+      {"name":"COMPONENT"},
+      {"name":"HDMI1"},
+      {"name":"HDMI2"},
+      {"name":"TV"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-D42PN73"
+  "model": "TH-D42PN73",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":3000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 2
+  }
 }

@@ -2,6 +2,68 @@
   "codeset": "codesets/86/86f24f84ad76ab16.json",
   "deviceType": 22,
   "globalDeviceId": 170182,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AuxAnalog"}],"name":"AuxAnalog"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AuxDigital"}],"name":"AuxDigital"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AuxFront"}],"name":"AuxFront"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"TunerFM"}],"name":"TunerFM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"TunerAM"}],"name":"TunerAM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"XMRadio"}],"name":"XMRadio"},
+      {"commands":[{"set":"InputType","to":"DVD/CD"},{"set":"DVD/CDInput","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"DVD/CD"},{"set":"DVD/CDInput","to":"iPod"}],"name":"iPod"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "DVR-C310"
+  "model": "DVR-C310",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AuxAnalog"},
+        {"name":"AuxDigital"},
+        {"name":"AuxFront"}
+      ]
+    },
+    "DVD/CDInput": {
+      "next": ["InputDVD/CD"],
+      "values": [
+        {"name":"DVD/CD"},
+        {"name":"iPod"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD/CD","select":[{"commands":["InputDVD/CD"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"TunerFM"},
+        {"name":"TunerAM"},
+        {"name":"XMRadio"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

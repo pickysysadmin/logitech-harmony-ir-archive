@@ -1,7 +1,57 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a4/a4ec43f7e535b0e6.json",
   "deviceType": 1,
   "globalDeviceId": 181849,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input 1"}],"name":"Input 1","ports":["HDMI","Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Input 2"}],"name":"Input 2","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Input 3"}],"name":"Input 3","ports":["HDMI","Composite"]},
+      {"commands":[{"set":"InputType","to":"Input 4"}],"name":"Input 4","ports":["Component","Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"iLink"}],"name":"iLink","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AntennaA"}],"name":"AntennaA","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AntennaB"}],"name":"AntennaB","ports":["Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PDP-R06U"
+  "model": "PDP-R06U",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Input 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Input 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Input 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Input 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"iLink","select":[{"commands":["InputiLink"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputAntennaA/B"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputAntennaA/B"],
+      "values": [
+        {"name":"AntennaA"},
+        {"name":"AntennaB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

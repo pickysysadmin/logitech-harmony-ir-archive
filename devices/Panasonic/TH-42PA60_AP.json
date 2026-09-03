@@ -2,6 +2,58 @@
   "codeset": "codesets/85/85149f29616a7b69.json",
   "deviceType": 1,
   "globalDeviceId": 180152,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV1"},{"set":"MENU","to":"OFF"}],"name":"AV1","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"MENU","to":"OFF"}],"name":"AV2","ports":["Component"]},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"MENU","to":"OFF"}],"name":"AV3","ports":["Component","Composite"]},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"HDMI"},{"set":"MENU","to":"OFF"}],"name":"Hdmi","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PA60 (AP)"
+  "model": "TH-42PA60 (AP)",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1500}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi1"],"setType":1}]}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "Tv/Av",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

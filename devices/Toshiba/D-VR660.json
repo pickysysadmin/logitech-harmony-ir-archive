@@ -2,6 +2,39 @@
   "codeset": "codesets/5b/5b0d8af378ac65de.json",
   "deviceType": 47,
   "globalDeviceId": 168586,
+  "inputs": {
+    "list": [
+      {"commands":["DVD"],"name":"DVD"},
+      {"commands":["VCR"],"name":"VCR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Toshiba",
-  "model": "D-VR660"
+  "model": "D-VR660",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"L3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

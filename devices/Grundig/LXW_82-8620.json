@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/34/3433029b5e201ec7.json",
   "deviceType": 1,
   "globalDeviceId": 161255,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"SVHS"},
+      {"name":"PC"},
+      {"name":"DVI"},
+      {"name":"HDMI"},
+      {"name":"YPBPR"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Grundig",
-  "model": "LXW 82-8620"
+  "model": "LXW 82-8620",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerOff"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 16000,
+    "pressMinRepeats": 3
+  }
 }

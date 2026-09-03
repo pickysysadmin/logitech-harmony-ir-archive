@@ -2,6 +2,69 @@
   "codeset": "codesets/46/467f99604cb95bc0.json",
   "deviceType": 1,
   "globalDeviceId": 125223,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component 1"}],"name":"Component 1","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component 2"}],"name":"Component 2","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 1"}],"name":"AV 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 2"}],"name":"AV 2","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "L42HDTV10A"
+  "model": "L42HDTV10A",
+  "power": {
+    "toggle": [
+      {"delayMs":1000},
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAV"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"}
+      ]
+    },
+    "ComponentInput": {
+      "next": ["InputAnalogHd"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputDigitalHd"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRGB"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputAnalogHd",{"set":"ComponentInput","to":"Component 1"}],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputDigitalHd",{"set":"HDMIInput","to":"HDMI 1"}],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAV",{"set":"AVInput","to":"AV 1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 1
+  }
 }

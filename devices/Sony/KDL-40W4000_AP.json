@@ -1,7 +1,67 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2b/2bc35705dade4c2e.json",
   "deviceType": 1,
   "globalDeviceId": 204652,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"HD/DVD1"}],"name":"HD/DVD1"},
+      {"commands":[{"set":"InputType","to":"HD/DVD2"}],"name":"HD/DVD2"},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"HDMI3"}],"name":"HDMI3"},
+      {"commands":[{"set":"InputType","to":"DMPORT"}],"name":"DMPORT"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Digital/Analog"},{"set":"Digital/AnalogInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Digital/Analog"},{"set":"Digital/AnalogInput","to":"Analog"}],"name":"Analog"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "KDL-40W4000(AP)"
+  "model": "KDL-40W4000(AP)",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Digital/AnalogInput": {
+      "next": ["InputDigital/Analog"],
+      "values": [
+        {"name":"Digital"},
+        {"name":"Analog"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"HD/DVD1","select":[{"commands":["InputHD/DVD1"],"setType":2}]},
+        {"name":"HD/DVD2","select":[{"commands":["InputHD/DVD2"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI3","select":[{"commands":["InputHDMI3"],"setType":2}]},
+        {"name":"DMPORT","select":[{"commands":["InputDmPort"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"Digital/Analog","select":[{"commands":["InputDigital/Analog"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

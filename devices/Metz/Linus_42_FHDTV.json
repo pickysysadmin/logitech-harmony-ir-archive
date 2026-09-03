@@ -1,7 +1,69 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/85/85dd3eb8ba6b781f.json",
   "deviceType": 1,
   "globalDeviceId": 164457,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TVSide"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AVSide"},{"set":"AVInput","to":"AVs 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AVSide"},{"set":"AVInput","to":"AVs 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AVSide"},{"set":"AVInput","to":"AVs 3"}],"name":"AV 3"},
+      {"commands":[{"set":"InputType","to":"AVSide"},{"set":"AVInput","to":"AVs 4"}],"name":"AV 4"},
+      {"commands":[{"set":"InputType","to":"AVSide"},{"set":"AVInput","to":"AVs 5"}],"name":"AV 5"},
+      {"commands":[{"set":"InputType","to":"AVSide"},{"set":"AVInput","to":"AVs 6"}],"name":"AV 6"},
+      {"commands":[{"set":"InputType","to":"AVSide"},{"set":"AVInput","to":"AVs 7"}],"name":"AV 7"},
+      {"commands":[{"set":"InputType","to":"AVSide"},{"set":"AVInput","to":"AVs 8"}],"name":"AV 8"},
+      {"commands":[{"set":"InputType","to":"AVSide"},{"set":"AVInput","to":"AVs 9"}],"name":"AV 9"},
+      {"commands":[{"set":"InputType","to":"AVSide"},{"set":"AVInput","to":"AVs 10"}],"name":"AV 10"},
+      {"commands":[{"set":"InputType","to":"AVSide"},{"set":"AVInput","to":"AVs 11"}],"name":"AV 11"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Metz",
-  "model": "Linus 42 FHDTV"
+  "model": "Linus 42 FHDTV",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TVSide"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv","Select"],
+      "values": [
+        {"name":"AVs 1"},
+        {"name":"AVs 2"},
+        {"name":"AVs 3"},
+        {"name":"AVs 4"},
+        {"name":"AVs 5"},
+        {"name":"AVs 6"},
+        {"name":"AVs 7"},
+        {"name":"AVs 8"},
+        {"name":"AVs 9"},
+        {"name":"AVs 10"},
+        {"name":"AVs 11"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TVSide","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AVSide","select":[{"commands":["InputAv"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

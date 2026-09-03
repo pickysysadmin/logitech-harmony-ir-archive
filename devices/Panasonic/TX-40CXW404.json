@@ -2,6 +2,67 @@
   "codeset": "codesets/db/db300d2b11739cc8.json",
   "deviceType": 1,
   "globalDeviceId": 278241,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"screen","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"screen","to":"EXT1"}],"name":"EXT 1"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"screen","to":"SideAV"}],"name":"Side AV"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"screen","to":"Hdmi1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"screen","to":"Hdmi2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"screen","to":"Hdmi3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"screen","to":"Hdmi4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"screen","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"screen","to":"PC"}],"name":"VGA/PC"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"Smart_TV","to":"MediaPlayer"}],"name":"Media Player"},
+      {"commands":[{"set":"TVApps","to":"ON"},{"set":"Smart_TV","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-40CXW404"
+  "model": "TX-40CXW404",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Smart_TV": {
+      "values": [
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"MediaPlayer","select":[{"commands":["MediaPlayer"],"setType":1}]}
+      ]
+    },
+    "TVApps": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Exit","Exit","Back"],"setType":2}]}
+      ]
+    },
+    "screen": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"EXT1"},
+        {"name":"SideAV"},
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"},
+        {"name":"Hdmi3"},
+        {"name":"Hdmi4"},
+        {"name":"YPbPr"},
+        {"name":"PC"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 10000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

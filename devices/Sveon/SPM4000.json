@@ -2,6 +2,54 @@
   "codeset": "codesets/0a/0a2b7d7f144cdbff.json",
   "deviceType": 35,
   "globalDeviceId": 267887,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Music"}],"name":"Music"},
+      {"commands":[{"set":"InputType","to":"Photo"}],"name":"Photo"},
+      {"commands":[{"set":"InputType","to":"Movie"}],"name":"Movie"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Internal Disk"}],"name":"Internal Disk"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"MMC"}],"name":"MMC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sveon",
-  "model": "SPM4000"
+  "model": "SPM4000",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Music","select":[{"commands":["MyMusic"],"setType":2}]},
+        {"name":"Photo","select":[{"commands":["MyPictures"],"setType":2}]},
+        {"name":"Movie","select":[{"commands":["MyMovies"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Internal Disk"},
+        {"name":"USB"},
+        {"name":"Network"},
+        {"name":"SD"},
+        {"name":"MMC"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

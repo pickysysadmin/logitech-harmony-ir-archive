@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/68/68dc404c4f93e9f6.json",
   "deviceType": 2,
   "globalDeviceId": 68716,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AUX 1"},
+      {"name":"AUX 2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "SEG",
-  "model": "California-II"
+  "model": "California-II",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

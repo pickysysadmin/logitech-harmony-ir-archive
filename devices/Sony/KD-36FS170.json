@@ -2,6 +2,33 @@
   "codeset": "codesets/c0/c07c0833070c0ef8.json",
   "deviceType": 1,
   "globalDeviceId": 147009,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"Video1"},
+      {"commands":["InputVideo2"],"name":"Video2"},
+      {"commands":["InputVideo3"],"name":"Video3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KD-36FS170"
+  "model": "KD-36FS170",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 700,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

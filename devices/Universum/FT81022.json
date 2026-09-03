@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 22754,
+  "inputs": {
+    "finish": ["InputNext"],
+    "list": [
+      {"name":"EXT 1"},
+      {"name":"EXT 2"},
+      {"name":"S-VHS"},
+      {"name":"EXT 3"},
+      {"name":"AV Front"}
+    ],
+    "next": ["InputNext"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Universum",
-  "model": "FT81022"
+  "model": "FT81022",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"EXT 1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

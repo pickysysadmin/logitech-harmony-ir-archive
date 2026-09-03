@@ -2,6 +2,62 @@
   "codeset": "codesets/14/148824fb6dc17a2e.json",
   "deviceType": 1,
   "globalDeviceId": 391578,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 3"}],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AV"}],"name":"AV","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Component"}],"name":"Component","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"VGA"}],"name":"VGA","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"ATV"}],"name":"ATV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DTV"}],"name":"DTV","ports":["Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "E506"
+  "model": "E506",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"AV"},
+        {"name":"Component"},
+        {"name":"VGA"},
+        {"name":"USB"}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

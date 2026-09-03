@@ -1,7 +1,68 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 113088,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"Antenna"}],"name":"Antenna"},
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"Cable"}],"name":"Cable"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"Front Video"}],"name":"Front Video"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"HDMI 1/DVI"}],"name":"HDMI 1/DVI"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "44SZ8D"
+  "model": "44SZ8D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AnalogInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"Cable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Analog","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"TV/Video","select":[{"commands":["TvVideo"],"setType":2}]}
+      ]
+    },
+    "TV/VideoInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Front Video"},
+        {"name":"Component 1"},
+        {"name":"Component 2"},
+        {"name":"RGB"},
+        {"name":"HDMI 1/DVI"},
+        {"name":"HDMI 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 9000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,33 @@
   "codeset": "codesets/ab/ab949ed9af78a67c.json",
   "deviceType": 1,
   "globalDeviceId": 214744,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Schneider",
-  "model": "STV-7016"
+  "model": "STV-7016",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

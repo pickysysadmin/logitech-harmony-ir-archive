@@ -2,6 +2,55 @@
   "codeset": "codesets/71/713ff425b650ffd4.json",
   "deviceType": 21,
   "globalDeviceId": 251280,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dock"}],"name":"Dock"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Fm/Dab"},{"set":"Fm/DabInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Fm/Dab"},{"set":"Fm/DabInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"Mp3Link/Usb"},{"set":"Mp3Link/UsbInput","to":"Mp3 Link"}],"name":"Mp3 Link"},
+      {"commands":[{"set":"InputType","to":"Mp3Link/Usb"},{"set":"Mp3Link/UsbInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DCB2070/10"
+  "model": "DCB2070/10",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Fm/DabInput": {
+      "next": ["InputFm/Dab"],
+      "values": [
+        {"name":"FM"},
+        {"name":"DAB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dock","select":[{"commands":["InputDock"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Fm/Dab","select":[{"commands":["InputFm/Dab"],"setType":2}]},
+        {"name":"Mp3Link/Usb","select":[{"commands":["InputMp3Link/Usb"],"setType":2}]}
+      ]
+    },
+    "Mp3Link/UsbInput": {
+      "next": ["InputMp3Link/Usb"],
+      "values": [
+        {"name":"Mp3 Link"},
+        {"name":"USB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

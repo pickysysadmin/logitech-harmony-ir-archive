@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/4d/4deea558708ad6df.json",
   "deviceType": 1,
   "globalDeviceId": 491761,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"DTV"}],"name":"DTV","ports":["Antenna"]},
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"Radio"}],"name":"Radio","ports":["Antenna"]},
+      {"commands":[{"set":"Screen","to":"HDMI1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"Screen","to":"HDMI2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"Screen","to":"AV"}],"name":"AV","ports":["Composite"]},
+      {"commands":[{"set":"Screen","to":"Component"}],"name":"Component","ports":["Component"]},
+      {"commands":[{"set":"Screen","to":"SmartTV"}],"name":"Smart TV","ports":["Streaming"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "55UF6807"
+  "model": "55UF6807",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Screen": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["InputTv",{"delayMs":2000}],"setType":1}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"AV","select":[{"commands":["InputAv1"],"setType":1}]},
+        {"name":"Component","select":[{"commands":["InputComponent1"],"setType":1}]},
+        {"name":"SmartTV","select":[{"commands":["Home"],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"},
+        {"name":"Radio"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

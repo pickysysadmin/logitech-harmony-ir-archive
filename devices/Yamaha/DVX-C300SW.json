@@ -2,6 +2,48 @@
   "codeset": "codesets/d4/d499b77cd20aecf8.json",
   "deviceType": 22,
   "globalDeviceId": 115049,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "DVX-C300SW"
+  "model": "DVX-C300SW",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

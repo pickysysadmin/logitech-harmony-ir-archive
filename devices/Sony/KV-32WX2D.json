@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3,
+    "greaterTen": ["Greater10"]
+  },
   "codeset": "codesets/20/20f97c27db69a188.json",
   "deviceType": 1,
   "globalDeviceId": 181489,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"AVI"},
+      {"commands":["InputRgb1"],"name":"RGB"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo2","InputNext"],"name":"YC2"},
+      {"commands":["InputVideo3"],"name":"AV3"},
+      {"commands":["InputVideo3","InputNext"],"name":"YC3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KV-32WX2D"
+  "model": "KV-32WX2D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["5"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

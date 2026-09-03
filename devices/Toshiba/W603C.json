@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/05/05b7ce91cda9a11d.json",
   "deviceType": 2,
   "globalDeviceId": 168008,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line In 1"},
+      {"name":"Line In 2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "W603C"
+  "model": "W603C",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"},
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 1
+  }
 }

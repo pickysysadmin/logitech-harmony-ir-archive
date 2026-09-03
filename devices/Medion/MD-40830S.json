@@ -2,6 +2,55 @@
   "codeset": "codesets/84/843ce1e9b31004d0.json",
   "deviceType": 1,
   "globalDeviceId": 103352,
+  "inputs": {
+    "list": [
+      {"name":"Scart 2"},
+      {"name":"CVBS"},
+      {"name":"S-Video"},
+      {"name":"Scart 1"}
+    ],
+    "next": ["InputSat"],
+    "type": 2
+  },
   "manufacturer": "Medion",
-  "model": "MD-40830S"
+  "model": "MD-40830S",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputSat"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputSat"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"RGB"},
+        {"name":"DVI"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputSat"],
+      "values": [
+        {"name":"Scart 1"},
+        {"name":"Scart 2"},
+        {"name":"CVBS"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 37,
   "globalDeviceId": 30156,
+  "inputs": {
+    "list": [
+      {"commands":["InputS-Video"],"name":"video 1"},
+      {"commands":["InputVideo2"],"name":"video 2"},
+      {"commands":["InputFront"],"name":"frnt"},
+      {"commands":[{"set":"VidMode","to":"Component 1"}],"name":"cmpt 1"},
+      {"commands":[{"set":"VidMode","to":"Component 2"}],"name":"cmpt 2"},
+      {"commands":["InputRgb"],"name":"DVI"},
+      {"commands":["InputSat/Cable"],"name":"DVD"},
+      {"commands":[{"set":"inputType","to":"Tuner"}],"name":"tuner"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "Scenium HD50"
+  "model": "Scenium HD50",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "VidMode": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"},
+        {"name":"Dvi"},
+        {"name":"video1"},
+        {"name":"video2"},
+        {"name":"front"}
+      ]
+    },
+    "inputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["0","3"],"setType":2}]},
+        {"name":"vid","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"inputDVD","select":[{"commands":["InputSat/Cable"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 18000,
+    "pressMinRepeats": 3
+  }
 }

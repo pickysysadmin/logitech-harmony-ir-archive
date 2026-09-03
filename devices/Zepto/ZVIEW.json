@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/45/45b511e148111822.json",
   "deviceType": 1,
   "globalDeviceId": 166479,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"ExtInput"},{"set":"ExtInputInput","to":"Ext1"}],"name":"Ext1"},
+      {"commands":[{"set":"InputType","to":"ExtInput"},{"set":"ExtInputInput","to":"Ext2"}],"name":"Ext2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Zepto",
-  "model": "ZVIEW"
+  "model": "ZVIEW",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"InputType","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "ExtInputInput": {
+      "finish": ["TvVideo"],
+      "next": ["DirectionDown"],
+      "start": ["Menu"],
+      "values": [
+        {"name":"Ext1"},
+        {"name":"Ext2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["1"],"setType":2}]},
+        {"name":"ExtInput","select":[{"commands":["Menu","TvVideo"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

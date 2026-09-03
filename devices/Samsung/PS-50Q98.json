@@ -2,6 +2,44 @@
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 156002,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenna"],"name":"TV"},
+      {"commands":["InputVideo"],"name":"Ext1"},
+      {"commands":["InputVideo2V2"],"name":"Ext2"},
+      {"commands":["InputVideo3V2"],"name":"AV"},
+      {"commands":["InputSVideo"],"name":"S-Video"},
+      {"commands":["InputComponent 2"],"name":"Component"},
+      {"commands":["InputRGB"],"name":"PC"},
+      {"commands":["InputHDMI1"],"name":"Hdmi1"},
+      {"commands":["InputHDMI2v3"],"name":"Hdmi2"},
+      {"commands":["InputHdmi3"],"name":"Hdmi3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "PS-50Q98"
+  "model": "PS-50Q98",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

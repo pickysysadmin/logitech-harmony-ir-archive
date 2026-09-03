@@ -2,6 +2,88 @@
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 175988,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"AVONE","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"AVONE","to":"AV1S"}],"name":"AV1S"},
+      {"commands":[{"set":"AVTWO","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"AVTWO","to":"AV2S"}],"name":"AV2S"},
+      {"commands":[{"set":"AVTHREE","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"AVTHREE","to":"AV3/Component"}],"name":"AV3/Component"},
+      {"commands":[{"set":"AVFOUR","to":"AV4"}],"name":"AV4"},
+      {"commands":[{"set":"AVFOUR","to":"AV4C"}],"name":"AV4/Component"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX32F250"
+  "model": "TX32F250",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVFOUR": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4C"}
+      ]
+    },
+    "AVONE": {
+      "next": ["Red"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV1S"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"Red","select":[{"commands":["Red"],"setType":1}]},
+        {"name":"Green","select":[{"commands":["Green"],"setType":1}]},
+        {"name":"Yellow","select":[{"commands":["Yellow"],"setType":1}]},
+        {"name":"Blue","select":[{"commands":["Blue"],"setType":1}]}
+      ]
+    },
+    "AVTHREE": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3/Component"}
+      ]
+    },
+    "AVTWO": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "TvVideo",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

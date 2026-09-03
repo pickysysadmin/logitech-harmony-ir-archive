@@ -2,6 +2,60 @@
   "codeset": "codesets/ff/ffddd3f886bbd761.json",
   "deviceType": 36,
   "globalDeviceId": 130887,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"TAPE"}],"name":"TAPE"},
+      {"commands":[{"set":"InputType","to":"PHONO"}],"name":"PHONO"},
+      {"commands":[{"set":"InputType","to":"TUNER"},{"set":"TUNERInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"TUNER"},{"set":"TUNERInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"MD"}],"name":"MD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Cambridge Audio",
-  "model": "340T"
+  "model": "340T",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv/Md"],
+      "values": [
+        {"name":"AV"},
+        {"name":"MD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCD"],"setType":2}]},
+        {"name":"TAPE","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"PHONO","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"TUNER","select":[{"commands":["InputFM/AM",{"set":"TUNERInput","to":"AM"}],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv/Md"],"setType":2}]}
+      ]
+    },
+    "TUNERInput": {
+      "next": ["InputFM/AM"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/7b/7bf2a6c8b27b7b52.json",
   "deviceType": 1,
   "globalDeviceId": 102658,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"SVHS2"},
+      {"name":"AV3"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Daewoo",
-  "model": "DWX-2880F"
+  "model": "DWX-2880F",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

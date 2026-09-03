@@ -2,6 +2,58 @@
   "codeset": "codesets/ba/ba9f53d000097a47.json",
   "deviceType": 19,
   "globalDeviceId": 218897,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Input 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Input 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Input 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi 1"}],"name":"Hdmi 1"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi 2"}],"name":"Hdmi 2"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi 3"}],"name":"Hdmi 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "YRS-700"
+  "model": "YRS-700",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HdmiInput": {
+      "next": ["InputHdmi1-3"],
+      "values": [
+        {"name":"Hdmi 1"},
+        {"name":"Hdmi 2"},
+        {"name":"Hdmi 3"}
+      ]
+    },
+    "InputInput": {
+      "next": ["Input1-3"],
+      "values": [
+        {"name":"Input 1"},
+        {"name":"Input 2"},
+        {"name":"Input 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["Input1-3"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi1-3"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

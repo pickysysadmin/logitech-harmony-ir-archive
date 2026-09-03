@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/fc/fc97cd89b5a66af8.json",
   "deviceType": 37,
   "globalDeviceId": 22878,
+  "inputs": {
+    "list": [
+      {"name":"Cable"},
+      {"name":"Vid1"},
+      {"name":"DVD"},
+      {"name":"Front"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "KLH",
-  "model": "KDT-133UY"
+  "model": "KDT-133UY",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Cable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

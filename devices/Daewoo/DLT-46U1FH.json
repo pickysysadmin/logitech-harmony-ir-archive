@@ -2,6 +2,67 @@
   "codeset": "codesets/e6/e6730326b13cbc00.json",
   "deviceType": 1,
   "globalDeviceId": 161786,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"InputAv"},{"set":"InputAvInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"InputAv"},{"set":"InputAvInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"InputAv"},{"set":"InputAvInput","to":"AV3/S-Video"}],"name":"AV3/S-Video"},
+      {"commands":[{"set":"InputType","to":"InputDvb"},{"set":"InputDvbInput","to":"DVB"}],"name":"DVB"},
+      {"commands":[{"set":"InputType","to":"InputDvb"},{"set":"InputDvbInput","to":"RF Analog"}],"name":"RF Analog"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Daewoo",
-  "model": "DLT-46U1FH"
+  "model": "DLT-46U1FH",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputAvInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3/S-Video"}
+      ]
+    },
+    "InputDvbInput": {
+      "next": ["InputDvb"],
+      "values": [
+        {"name":"DVB"},
+        {"name":"RF Analog"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Multimedia","select":[{"commands":["Multimedia"],"setType":2}]},
+        {"name":"InputAv","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"InputDvb","select":[{"commands":["InputDvb"],"setType":2}]}
+      ]
+    },
+    "MultimediaInput": {
+      "next": ["Multimedia"],
+      "values": [
+        {"name":"PC"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"Component"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

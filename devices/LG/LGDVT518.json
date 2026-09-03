@@ -2,6 +2,57 @@
   "codeset": "codesets/98/98eb11f32c71ea0c.json",
   "deviceType": 22,
   "globalDeviceId": 226564,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVType","to":"Av1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVType","to":"Av1Opt"}],"name":"AV1Opt"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVType","to":"Av1Coax"}],"name":"AV1Coax"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVType","to":"Av2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Tuner","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Tuner","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LGDVT518"
+  "model": "LGDVT518",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVType": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av1Opt"},
+        {"name":"Av1Coax"},
+        {"name":"Av2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputCd/Dvd"],"setType":1}]},
+        {"name":"Tuner","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    },
+    "Tuner": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

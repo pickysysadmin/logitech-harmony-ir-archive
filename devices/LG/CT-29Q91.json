@@ -2,6 +2,33 @@
   "codeset": "codesets/f8/f85bada5f8fd15c8.json",
   "deviceType": 1,
   "globalDeviceId": 154401,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Video 1"},
+      {"name":"Video 2"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "CT-29Q91"
+  "model": "CT-29Q91",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/30/3004eb016ced6373.json",
   "deviceType": 1,
   "globalDeviceId": 201837,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InputTv"}],"name":"InputTv"},
+      {"commands":[{"set":"InputType","to":"InputPc/Hdmi"},{"set":"InputPc/HdmiInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"InputPc/Hdmi"},{"set":"InputPc/HdmiInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Scart1"}],"name":"Scart1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Scart2"}],"name":"Scart2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Component2"}],"name":"Component2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "QPVision",
-  "model": "LD-3280"
+  "model": "LD-3280",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Scart1"},
+        {"name":"Scart2"},
+        {"name":"Component1"},
+        {"name":"Component2"}
+      ]
+    },
+    "InputPc/HdmiInput": {
+      "next": ["InputPc/Hdmi"],
+      "values": [
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"InputTv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"InputPc/Hdmi","select":[{"commands":["InputPc/Hdmi"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

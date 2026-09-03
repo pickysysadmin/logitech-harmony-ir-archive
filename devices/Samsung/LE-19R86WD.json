@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2f/2f818b61b213c5bd.json",
   "deviceType": 1,
   "globalDeviceId": 140424,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Ext"}],"name":"Ext"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "LE-19R86WD"
+  "model": "LE-19R86WD",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Ext","select":[{"commands":["InputExt1"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"TV/DTV","select":[{"commands":["TV/DTV"],"setType":2}]}
+      ]
+    },
+    "TV/DTVInput": {
+      "next": ["TV/DTV"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

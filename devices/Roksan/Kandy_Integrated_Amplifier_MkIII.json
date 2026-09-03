@@ -2,6 +2,52 @@
   "codeset": "codesets/bb/bb5305c0d45fba2a.json",
   "deviceType": 19,
   "globalDeviceId": 94536,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Other"},{"set":"OtherInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Other"},{"set":"OtherInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Other"},{"set":"OtherInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Other"},{"set":"OtherInput","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"Other"},{"set":"OtherInput","to":"Line 2"}],"name":"Line 2"},
+      {"commands":[{"set":"InputType","to":"Other"},{"set":"OtherInput","to":"Phono"}],"name":"Phono"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Roksan",
-  "model": "Kandy Integrated Amplifier MkIII"
+  "model": "Kandy Integrated Amplifier MkIII",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Other","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "OtherInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"CD"},
+        {"name":"Tuner"},
+        {"name":"Video"},
+        {"name":"Line 1"},
+        {"name":"Line 2"},
+        {"name":"Phono"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

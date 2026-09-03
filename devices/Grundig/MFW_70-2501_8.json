@@ -2,6 +2,35 @@
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 85116,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV2S"},
+      {"name":"AV3"},
+      {"name":"AV3S"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "MFW 70-2501/8"
+  "model": "MFW 70-2501/8",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

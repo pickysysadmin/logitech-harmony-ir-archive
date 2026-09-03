@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/03/03ea1335ba361266.json",
   "deviceType": 1,
   "globalDeviceId": 348484,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv",{"delayMs":300},"InputTv"],"name":"TV Key"},
+      {"commands":["InputAnalog",{"delayMs":300},"InputAnalog"],"name":"Analogue"},
+      {"commands":["InputVideo1","InputNext",{"delayMs":1000},"DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Digital"},
+      {"commands":["InputVideo1","InputNext",{"delayMs":1000},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"General satellite"},
+      {"commands":["InputVideo1","InputNext",{"delayMs":1000},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Preferred satellite"},
+      {"commands":["InputVideo1","InputNext",{"delayMs":1000},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"CAM service list"},
+      {"commands":["InputVideo2","InputNext",{"delayMs":1000},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Streaming channels"},
+      {"commands":["InputHdmi1",{"delayMs":1000},"InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2",{"delayMs":300},"InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3",{"delayMs":300},"InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4",{"delayMs":300},"InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["InputVideo1",{"delayMs":300},"InputVideo1"],"name":"AV 1"},
+      {"commands":["InputVideo2",{"delayMs":300},"InputVideo2"],"name":"AV 2/Component"},
+      {"commands":["InputVideo2","InputNext",{"delayMs":500},"DirectionDown","Select"],"name":"Screen Mirroring"},
+      {"commands":["Back",{"delayMs":500},"Home",{"delayMs":2000},"DirectionDown"],"name":"Android TV"},
+      {"commands":["GooglePlay",{"delayMs":300},"GooglePlay"],"name":"GooglePlay"},
+      {"commands":["Netflix",{"delayMs":300},"Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KD-49XE8099"
+  "model": "KD-49XE8099",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":300},
+      "PowerOff"
+    ],
+    "on": [
+      "PowerOn",
+      {"delayMs":300},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

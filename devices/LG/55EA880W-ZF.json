@@ -1,7 +1,65 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/1b/1b0bfa4b2a71e893.json",
   "deviceType": 1,
   "globalDeviceId": 334395,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"Screen","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"Screen","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"Screen","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"Screen","to":"HDMI4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"Screen","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"Screen","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"Screen","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"Screen","to":"SmartTV"}],"name":"Smart TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "55EA880W-ZF"
+  "model": "55EA880W-ZF",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Screen": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["Exit","Exit",{"delayMs":2000},"InputTv"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi2"],"setType":2}]},
+        {"name":"HDMI3","select":[{"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi3"],"setType":2}]},
+        {"name":"HDMI4","select":[{"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi4"],"setType":2}]},
+        {"name":"AV1","select":[{"commands":["Exit","Exit",{"delayMs":2000},"InputAv1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["Exit","Exit",{"delayMs":2000},"InputAv2"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["Exit","Exit",{"delayMs":2000},"InputComponent1"],"setType":2}]},
+        {"name":"SmartTV","select":[{"commands":["Exit","Home"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"},
+        {"name":"Radio"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

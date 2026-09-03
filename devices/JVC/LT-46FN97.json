@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/5b/5b06708526cea6f3.json",
   "deviceType": 1,
   "globalDeviceId": 165064,
+  "inputs": {
+    "list": [
+      {"commands":["Digital/Analog"],"name":"InputAntenna"},
+      {"commands":["InputVideo1"],"name":"InputVideo1"},
+      {"commands":["InputVideo2"],"name":"InputVideo2"},
+      {"commands":["InputVideo3"],"name":"InputVideo3"},
+      {"commands":["InputVideo3","InputNext","InputNext"],"name":"Digital-In1"},
+      {"commands":["InputVideo3","InputNext","InputNext","InputNext"],"name":"Digital-In2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-46FN97"
+  "model": "LT-46FN97",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

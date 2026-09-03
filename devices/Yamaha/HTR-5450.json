@@ -2,6 +2,37 @@
   "codeset": "codesets/35/3558a78d7024c442.json",
   "deviceType": 5,
   "globalDeviceId": 172906,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputMd/Cdr"],"name":"MD/CD-R","ports":["Composite","Optical"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputDtv/Cbl"],"name":"DTV/CBL","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Composite"]},
+      {"commands":["InputVAux"],"name":"V-AUX","ports":["Composite","Optical","S-Video"]},
+      {"commands":["Input6Channel"],"name":"6Ch","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "HTR-5450"
+  "model": "HTR-5450",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,45 @@
   "codeset": "codesets/ca/ca785ed14e8a0261.json",
   "deviceType": 1,
   "globalDeviceId": 147618,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV2-S"},
+      {"name":"AV3"},
+      {"name":"AV3-S"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Firstline",
-  "model": "NR RFL 55"
+  "model": "NR RFL 55",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Guide"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

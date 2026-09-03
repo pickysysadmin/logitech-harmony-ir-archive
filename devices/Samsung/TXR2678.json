@@ -2,6 +2,33 @@
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 47051,
+  "inputs": {
+    "list": [
+      {"commands":["InputSVideo","TvVideo"],"name":"Tuner"},
+      {"commands":["InputVideo"],"name":"Video 1"},
+      {"commands":["InputVideo",{"delayMs":100},"TvVideo"],"name":"Video 2"},
+      {"commands":["InputVideo",{"delayMs":100},"TvVideo",{"delayMs":100},"TvVideo"],"name":"Video 3"},
+      {"commands":["InputSVideo"],"name":"S-Video"},
+      {"commands":["InputComponent 1"],"name":"Component 1"},
+      {"commands":["InputComponent 2"],"name":"Component 2"},
+      {"commands":["InputDvi3"],"name":"DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "TXR2678"
+  "model": "TXR2678",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

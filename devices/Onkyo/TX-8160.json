@@ -2,6 +2,38 @@
   "codeset": "codesets/29/29c7de1c3f5ffce5.json",
   "deviceType": 5,
   "globalDeviceId": 272818,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD"},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputGame"],"name":"Game"},
+      {"commands":["InputTv/Tape"],"name":"TV/Tape"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputBluetooth"],"name":"Bluetooth"},
+      {"commands":["InputNet"],"name":"NET"},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM"},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-8160"
+  "model": "TX-8160",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

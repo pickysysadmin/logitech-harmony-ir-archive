@@ -2,6 +2,46 @@
   "codeset": "codesets/f3/f33d8e686fe3b7d8.json",
   "deviceType": 22,
   "globalDeviceId": 164052,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sangean",
-  "model": "WR3"
+  "model": "WR3",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"SD"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/a1/a149d8db1292a5be.json",
   "deviceType": 47,
   "globalDeviceId": 217952,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"Tuner"}],"name":"DVDTuner"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"Line1"}],"name":"DVDLine1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"Line2"}],"name":"DVDLine2"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"DV"}],"name":"DVDDV"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"Tuner"}],"name":"VCRTuner"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"Line1"}],"name":"VCRLine1"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"Line2"}],"name":"VCRLine2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "RDR-VX526"
+  "model": "RDR-VX526",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line1"},
+        {"name":"Line2"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

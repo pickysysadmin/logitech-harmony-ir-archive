@@ -2,6 +2,52 @@
   "codeset": "codesets/36/362eb927ae6329c2.json",
   "deviceType": 1,
   "globalDeviceId": 32769,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"SCART"},{"set":"InputSCART","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"SCART"},{"set":"InputSCART","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"SCART"},{"set":"InputSCART","to":"AV3"}],"name":"AV 3"},
+      {"commands":[{"set":"InputType","to":"SCART"},{"set":"InputSCART","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"SCART"},{"set":"InputSCART","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "23WL46B"
+  "model": "23WL46B",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputSCART": {
+      "next": ["InputNext 2"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"S-Video"},
+        {"name":"PC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["ChannelUp"],"setType":2}]},
+        {"name":"SCART","select":[{"commands":["InputNext 2",{"set":"InputSCART","to":"AV1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

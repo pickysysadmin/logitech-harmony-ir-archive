@@ -2,6 +2,52 @@
   "codeset": "codesets/78/7896cbbe7ae63c37.json",
   "deviceType": 1,
   "globalDeviceId": 160605,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"1C"}],"name":"1C"},
+      {"commands":[{"set":"InputType","to":"2"}],"name":"2"},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "42C3000A"
+  "model": "42C3000A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"1C","select":[{"commands":["InputScart1"],"setType":2}]},
+        {"name":"2","select":[{"commands":["InputScart2"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHDMI1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHDMI2"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["A/D",{"set":"TunerInput","to":"ATV"}],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["A/D"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 13000,
+    "pressMinRepeats": 1
+  }
 }

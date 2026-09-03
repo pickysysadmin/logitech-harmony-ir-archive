@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/86/86d7bb14f5513bbb.json",
   "deviceType": 1,
   "globalDeviceId": 495510,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["Exit",{"delayMs":1000},"Home"],"name":"Smart TV"},
+      {"commands":["PrimeVideo"],"name":"PrimeVideo"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "65NANO866NA"
+  "model": "65NANO866NA",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 30000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

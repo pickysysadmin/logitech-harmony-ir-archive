@@ -2,6 +2,52 @@
   "codeset": "codesets/da/da282a5c36149adb.json",
   "deviceType": 7,
   "globalDeviceId": 269111,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer 1"}],"name":"Computer 1"},
+      {"commands":[{"set":"InputType","to":"Computer 2"}],"name":"Computer 2"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "BenQ",
-  "model": "SH915"
+  "model": "SH915",
+  "power": {
+    "off": ["PowerOff","PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Computer 1","select":[{"commands":["InputComputer1"],"setType":2}]},
+        {"name":"Computer 2","select":[{"commands":["InputComputer2"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"Network","select":[{"commands":["InputNetwork"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

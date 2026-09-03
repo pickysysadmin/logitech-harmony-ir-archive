@@ -2,6 +2,36 @@
   "codeset": "codesets/b8/b8564a19b9382ff2.json",
   "deviceType": 7,
   "globalDeviceId": 333881,
+  "inputs": {
+    "list": [
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputHdmi/Dvi"],"name":"HDMI/DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Acer",
-  "model": "X1285"
+  "model": "X1285",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

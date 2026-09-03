@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/8b/8baf2014fc83b7fe.json",
   "deviceType": 16,
   "globalDeviceId": 36178,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"RADIO"},
+      {"name":"AV"}
+    ],
+    "next": ["DirectionRight"],
+    "type": 2
+  },
   "manufacturer": "EuroStar",
-  "model": "STB2005CI"
+  "model": "STB2005CI",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

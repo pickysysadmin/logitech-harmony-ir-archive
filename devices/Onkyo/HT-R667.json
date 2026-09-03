@@ -2,6 +2,36 @@
   "codeset": "codesets/7b/7b4a9b89d3d221b5.json",
   "deviceType": 5,
   "globalDeviceId": 148171,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Optical"]},
+      {"commands":["InputTape"],"name":"Tape","ports":["Composite"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Composite"]},
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR","ports":["HDMI","Composite","Optical","S-Video"]},
+      {"commands":["InputiPod"],"name":"Dock","ports":["Dock"]},
+      {"commands":["InputMultiChannel"],"name":"Multi Channel","ports":["Composite"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "HT-R667"
+  "model": "HT-R667",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

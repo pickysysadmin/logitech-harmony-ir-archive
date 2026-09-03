@@ -1,7 +1,33 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/8c/8c44e1e2a267e86f.json",
   "deviceType": 32,
   "globalDeviceId": 121944,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":["InputTv/Vcr"],"name":"VCR","ports":["BuiltIn"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "HTS-2600"
+  "model": "HTS-2600",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,56 @@
   "codeset": "codesets/39/3947decb141e6bb0.json",
   "deviceType": 22,
   "globalDeviceId": 261290,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Stream"}],"name":"Stream"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Auxiliary Analog Input"}],"name":"Auxiliary Analog Input"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Optical Digital Input"}],"name":"Optical Digital Input"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Coaxial Digital Input"}],"name":"Coaxial Digital Input"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI ARC"}],"name":"HDMI ARC"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JBL",
-  "model": "CINEMA BD300"
+  "model": "CINEMA BD300",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["Disc"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"Stream","select":[{"commands":["Stream"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Auxiliary Analog Input"},
+        {"name":"Optical Digital Input"},
+        {"name":"Coaxial Digital Input"},
+        {"name":"HDMI ARC"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

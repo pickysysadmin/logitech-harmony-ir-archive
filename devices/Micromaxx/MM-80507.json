@@ -2,6 +2,57 @@
   "codeset": "codesets/9f/9f39a06302242665.json",
   "deviceType": 22,
   "globalDeviceId": 148177,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"5.1"}],"name":"5.1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Micromaxx",
-  "model": "MM-80507"
+  "model": "MM-80507",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV1"},
+        {"name":"AV2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"5.1","select":[{"commands":["Audio"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

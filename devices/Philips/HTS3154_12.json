@@ -2,6 +2,49 @@
   "codeset": "codesets/8f/8ff80bd191a311f6.json",
   "deviceType": 22,
   "globalDeviceId": 153023,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"MP3"}],"name":"MP3","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscInput","to":"Disc"}],"name":"Disc","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscInput","to":"USB"}],"name":"USB","ports":["USB"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS3154/12"
+  "model": "HTS3154/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DiscInput": {
+      "next": ["InputDvd/Usb"],
+      "values": [
+        {"name":"Disc"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"MP3","select":[{"commands":["InputMP3/LineIn"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Disc","select":[{"commands":["InputDvd/Usb"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

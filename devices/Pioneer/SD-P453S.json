@@ -2,6 +2,51 @@
   "codeset": "codesets/80/8039178fcda5d107.json",
   "deviceType": 1,
   "globalDeviceId": 73163,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"Tuner"},
+      {"commands":["InputDvd"],"name":"VDP"},
+      {"commands":["InputVideo1"],"name":"Video1"},
+      {"commands":["InputVideo2"],"name":"Video2"},
+      {"commands":["InputVideo3"],"name":"Video3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Pioneer",
-  "model": "SD-P453S"
+  "model": "SD-P453S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["AntennaA/B"],
+      "values": [
+        {"name":"Antenna A"},
+        {"name":"Antenna B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["AntennaA/B"],"setType":2}]},
+        {"name":"Input 1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"Input 2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"Input 3","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"Input 4","select":[{"commands":["InputVideo4"],"setType":1}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":1}]},
+        {"name":"i-Link","select":[{"commands":["InputiLink"],"setType":1}]},
+        {"name":"DTV","select":[{"commands":["InputDtv"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

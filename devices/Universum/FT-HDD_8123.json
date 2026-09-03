@@ -2,6 +2,33 @@
   "codeset": "codesets/63/639a16dcdbefd6a6.json",
   "deviceType": 1,
   "globalDeviceId": 29973,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"EXT-1"},
+      {"name":"EXT-2"}
+    ],
+    "next": ["Red"],
+    "type": 2
+  },
   "manufacturer": "Universum",
-  "model": "FT-HDD 8123"
+  "model": "FT-HDD 8123",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["PowerToggle"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

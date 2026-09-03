@@ -2,6 +2,35 @@
   "codeset": "codesets/26/266a7d1c7f51098d.json",
   "deviceType": 7,
   "globalDeviceId": 276470,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi"],"name":"HDMI"},
+      {"commands":["InputMedia"],"name":"Media"},
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["InputVideo"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "ML1000P"
+  "model": "ML1000P",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

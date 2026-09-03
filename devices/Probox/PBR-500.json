@@ -2,6 +2,70 @@
   "codeset": "codesets/05/0575ee8d93b461bb.json",
   "deviceType": 35,
   "globalDeviceId": 203092,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Recorded TV"}],"name":"Recorded TV"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"Movie"}],"name":"Movie"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"Audio"}],"name":"Audio"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"Photo"}],"name":"Photo"},
+      {"commands":[{"set":"InputType","to":"MultiMedia"},{"set":"MultiMediaInput","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"MultiMedia"},{"set":"MultiMediaInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"MultiMedia"},{"set":"MultiMediaInput","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"AV-IN"},{"set":"AV-INInput","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"AV-IN"},{"set":"AV-INInput","to":"Component"}],"name":"Component"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Probox",
-  "model": "PBR-500"
+  "model": "PBR-500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV-INInput": {
+      "next": ["AV-In"],
+      "values": [
+        {"name":"Composite"},
+        {"name":"Component"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]},
+        {"name":"Recorded TV","select":[{"commands":["RecList"],"setType":2}]},
+        {"name":"Media","select":[{"commands":["MediaType"],"setType":2}]},
+        {"name":"MultiMedia","select":[{"commands":["MultiMedia"],"setType":2}]},
+        {"name":"AV-IN","select":[{"commands":["AV-In"],"setType":2}]}
+      ]
+    },
+    "MediaInput": {
+      "next": ["MediaType"],
+      "values": [
+        {"name":"Movie"},
+        {"name":"Audio"},
+        {"name":"Photo"}
+      ]
+    },
+    "MultiMediaInput": {
+      "next": ["MultiMedia"],
+      "values": [
+        {"name":"HDD"},
+        {"name":"USB"},
+        {"name":"Network"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,86 @@
   "codeset": "codesets/2c/2ca4d261ebfd62e4.json",
   "deviceType": 1,
   "globalDeviceId": 166619,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"Tuner"},{"set":"AV1Scart","to":"ON"},{"set":"AV2Scart","to":"ON"},{"set":"AV2SScart","to":"ON"}],"name":"Tuner"},
+      {"commands":[{"set":"AV1Scart","to":"ON"},{"set":"AV2Scart","to":"OFF"},{"set":"AV2SScart","to":"OFF"}],"name":"AV1"},
+      {"commands":[{"set":"AV2Scart","to":"ON"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2SScart","to":"OFF"}],"name":"AV2"},
+      {"commands":[{"set":"AV2SScart","to":"ON"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"}],"name":"AV2S"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"AV2SScart","to":"OFF"}],"name":"AV3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-28LD4F"
+  "model": "TX-28LD4F",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"},
+      {"set":"AV1Scart","to":"ON"},
+      {"set":"AV2Scart","to":"ON"},
+      {"set":"AV2SScart","to":"ON"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV1Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV1"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF","select":[{"commands":[{"set":"MENU","to":"OFF"}],"setType":2}]}
+      ]
+    },
+    "AV2Input": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "AV2SScart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"AV2Input","to":"AV2S"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF","select":[{"commands":[{"set":"MENU","to":"OFF"}],"setType":2}]}
+      ]
+    },
+    "AV2Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"AV2Input","to":"AV2"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF","select":[{"commands":[{"set":"MENU","to":"OFF"}],"setType":2}]}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":2}]}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "Tv/Av",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["NumberEnter"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

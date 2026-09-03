@@ -2,6 +2,47 @@
   "codeset": "codesets/74/7421f0f040a42f85.json",
   "deviceType": 19,
   "globalDeviceId": 349758,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"PC/AUX"},{"set":"PC/AUXInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"PC/AUX"},{"set":"PC/AUXInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Opt/Cox"},{"set":"Opt/CoxInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Opt/Cox"},{"set":"Opt/CoxInput","to":"Coaxial"}],"name":"Coaxial"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Edifier",
-  "model": "R2800"
+  "model": "R2800",
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"PC/AUX","select":[{"commands":["InputPc/Aux"],"setType":2}]},
+        {"name":"Opt/Cox","select":[{"commands":["InputOpt/Cox"],"setType":2}]}
+      ]
+    },
+    "Opt/CoxInput": {
+      "next": ["InputOpt/Cox"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"Coaxial"}
+      ]
+    },
+    "PC/AUXInput": {
+      "next": ["InputPc/Aux"],
+      "values": [
+        {"name":"PC"},
+        {"name":"AUX"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "pressMinRepeats": 1
+  }
 }

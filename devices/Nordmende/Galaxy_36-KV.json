@@ -2,6 +2,31 @@
   "codeset": "codesets/45/453b6538f9b3c94a.json",
   "deviceType": 1,
   "globalDeviceId": 122527,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenne"],"name":"Antenna"},
+      {"commands":["0"],"name":"Scart"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Nordmende",
-  "model": "Galaxy 36-KV"
+  "model": "Galaxy 36-KV",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

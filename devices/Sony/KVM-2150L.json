@@ -2,6 +2,32 @@
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 151297,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Video1"}
+    ],
+    "next": ["InputAV2"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KVM-2150L"
+  "model": "KVM-2150L",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

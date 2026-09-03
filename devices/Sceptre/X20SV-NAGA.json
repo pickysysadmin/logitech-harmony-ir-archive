@@ -1,7 +1,66 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b8/b889f51a88d9740d.json",
   "deviceType": 1,
   "globalDeviceId": 108780,
+  "inputs": {
+    "list": [
+      {"commands":["InputPC"],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"HDCP"}],"name":"HDCP"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"VGA"}],"name":"VGA-PC"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"YPbPr1"}],"name":"YPbPr1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Tuner"}],"name":"VGA-YPbPr2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sceptre",
-  "model": "X20SV-NAGA"
+  "model": "X20SV-NAGA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"Dummy"},
+        {"name":"YPbPr1"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"PC","select":[{"commands":["InputPC",{"set":"PCInput","to":"DTV"}],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputVideo",{"set":"AVInput","to":"Tuner"}],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"DTV"},
+        {"name":"HDMI"},
+        {"name":"HDCP"},
+        {"name":"DVI"},
+        {"name":"VGA"},
+        {"name":"YPbPr2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4500,
+    "pressMinRepeats": 3
+  }
 }

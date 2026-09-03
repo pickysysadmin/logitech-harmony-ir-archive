@@ -2,6 +2,66 @@
   "codeset": "codesets/64/64123a4e083872ca.json",
   "deviceType": 22,
   "globalDeviceId": 142681,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVDToggle"},{"set":"DVDToggleInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVDToggle"},{"set":"DVDToggleInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"TunerToggle"},{"set":"TunerToggleInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"TunerToggle"},{"set":"TunerToggleInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"DigitalToggle"},{"set":"DigitalToggleInput","to":"Coaxial"}],"name":"Coax"},
+      {"commands":[{"set":"InputType","to":"DigitalToggle"},{"set":"DigitalToggleInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"TVToggle"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"DigitalToggle"},{"set":"DigitalToggleInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Jamo",
-  "model": "DMR-70"
+  "model": "DMR-70",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDToggleInput": {
+      "next": ["InputDvdUsb"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"USB"}
+      ]
+    },
+    "DigitalToggleInput": {
+      "next": ["InputAudio"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Optical"},
+        {"name":"Coaxial"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVDToggle","select":[{"commands":["InputDvdUsb"],"setType":2}]},
+        {"name":"TunerToggle","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"DigitalToggle","select":[{"commands":["InputAudio"],"setType":2}]},
+        {"name":"TVToggle","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "TunerToggleInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

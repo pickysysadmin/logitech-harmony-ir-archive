@@ -2,6 +2,53 @@
   "codeset": "codesets/4b/4b7c44028f81520f.json",
   "deviceType": 21,
   "globalDeviceId": 301616,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"FM/BT"},{"set":"FM/BTInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/BT"},{"set":"FM/BTInput","to":"BT"}],"name":"BT"},
+      {"commands":[{"set":"InputType","to":"AudioIn/USB"},{"set":"AudioIn/USBInput","to":"Audio In"}],"name":"Audio In"},
+      {"commands":[{"set":"InputType","to":"AudioIn/USB"},{"set":"AudioIn/USBInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "BTM2280"
+  "model": "BTM2280",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioIn/USBInput": {
+      "next": ["InputAudioIn/Usb"],
+      "values": [
+        {"name":"Audio In"},
+        {"name":"USB"}
+      ]
+    },
+    "FM/BTInput": {
+      "next": ["InputFm/BT"],
+      "values": [
+        {"name":"FM"},
+        {"name":"BT"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"FM/BT","select":[{"commands":["InputFm/BT"],"setType":2}]},
+        {"name":"AudioIn/USB","select":[{"commands":["InputAudioIn/Usb"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

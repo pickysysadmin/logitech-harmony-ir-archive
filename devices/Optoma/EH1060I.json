@@ -2,6 +2,51 @@
   "codeset": "codesets/9b/9b24aad3a202b1bd.json",
   "deviceType": 7,
   "globalDeviceId": 216549,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"SVideo"}],"name":"SVideo"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi 1"}],"name":"Hdmi 1"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi 2"}],"name":"Hdmi 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Optoma",
-  "model": "EH1060I"
+  "model": "EH1060I",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "HdmiInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"Hdmi 1"},
+        {"name":"Hdmi 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Component","select":[{"commands":["InputDvi-D/YPbPr"],"setType":2}]},
+        {"name":"SVideo","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

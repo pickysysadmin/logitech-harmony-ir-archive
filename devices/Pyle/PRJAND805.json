@@ -2,6 +2,41 @@
   "codeset": "codesets/0e/0ecdad125d4429cb.json",
   "deviceType": 7,
   "globalDeviceId": 276140,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"AV"},
+      {"name":"YPbPr"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"PC-RGB"},
+      {"name":"Android"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "Pyle",
-  "model": "PRJAND805"
+  "model": "PRJAND805",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9d09e9ef79a99ff.json",
   "deviceType": 2,
   "globalDeviceId": 40763,
+  "inputs": {
+    "list": [
+      {"commands":["0","2"],"name":"Tuner"},
+      {"commands":["0","0"],"name":"Line In"},
+      {"commands":["0","0"],"name":"Front Line In"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "HR-J460MS"
+  "model": "HR-J460MS",
+  "power": {
+    "off": ["TvVcr","PowerOff"],
+    "on": ["PowerOn","TvVcr"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

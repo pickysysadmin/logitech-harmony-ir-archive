@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 1,
   "globalDeviceId": 95529,
+  "inputs": {
+    "list": [
+      {"name":"Video1"}
+    ],
+    "type": 6
+  },
   "manufacturer": "Gradiente",
-  "model": "HRM-290S"
+  "model": "HRM-290S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDInput": {
+      "next": ["HD 1"],
+      "values": [
+        {"name":"HD1"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"HD","select":[{"commands":["HD 1"],"setType":2}]},
+        {"name":"RGB/PC","select":[{"commands":["RGB/PCToggle"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB/PC1"},
+        {"name":"RGB/PC2"},
+        {"name":"RGB/PC3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

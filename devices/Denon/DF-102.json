@@ -2,6 +2,52 @@
   "codeset": "codesets/c0/c022f3dd2bcdc148.json",
   "deviceType": 21,
   "globalDeviceId": 115915,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"MD"}],"name":"MD"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"CD/HDD"}],"name":"CD/HDD"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Portable IN"}],"name":"Portable IN"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Aux(iPod)"}],"name":"Aux(iPod)"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Denon",
-  "model": "DF-102"
+  "model": "DF-102",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "FunctionInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"CD/HDD"},
+        {"name":"Tuner"},
+        {"name":"Portable IN"},
+        {"name":"Phono"},
+        {"name":"Aux(iPod)"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"MD","select":[{"commands":["InputMd"],"setType":2}]},
+        {"name":"Function","select":[{"commands":["Function"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

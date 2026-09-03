@@ -2,6 +2,35 @@
   "codeset": "codesets/40/401406a99935aba4.json",
   "deviceType": 7,
   "globalDeviceId": 277218,
+  "inputs": {
+    "list": [
+      {"commands":["InputComputer1"],"name":"Computer 1"},
+      {"commands":["InputComputer2"],"name":"Computer 2"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-VZ570"
+  "model": "PT-VZ570",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

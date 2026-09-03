@@ -2,6 +2,53 @@
   "codeset": "codesets/55/554a1b73c1e34c65.json",
   "deviceType": 1,
   "globalDeviceId": 130671,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"AVInput","to":"analog RGB"}],"name":"analog RGB"},
+      {"commands":[{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"AVInput","to":"S Video 1"}],"name":"S Video 1"},
+      {"commands":[{"set":"AVInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"AVInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"AVInput","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Park",
-  "model": "DCS-32006"
+  "model": "DCS-32006",
+  "power": {
+    "toggle": ["InputNext"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "finish": ["Menu"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["ChannelPrev"],
+      "values": [
+        {"name":"analog RGB"},
+        {"name":"AV1"},
+        {"name":"S Video 1"},
+        {"name":"YPbPr"},
+        {"name":"HDMI"},
+        {"name":"TV"},
+        {"name":"2"},
+        {"name":"3"},
+        {"name":"4"},
+        {"name":"5"},
+        {"name":"6"},
+        {"name":"1"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

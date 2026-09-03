@@ -2,6 +2,49 @@
   "codeset": "codesets/1a/1a215ae28ad332da.json",
   "deviceType": 22,
   "globalDeviceId": 150609,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"D-IN"}],"name":"D-IN"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PT660"
+  "model": "SC-PT660",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FM/AMInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"DVD/CD"},
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"AUX"},
+        {"name":"D-IN"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"FM/AM","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

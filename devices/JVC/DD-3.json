@@ -2,6 +2,62 @@
   "codeset": "codesets/f5/f58c8d36b641745c.json",
   "deviceType": 22,
   "globalDeviceId": 151998,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Network"}],"name":"Network","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line1"}],"name":"Line1","ports":["Line In"]},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line2"}],"name":"Line2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"TvSound"}],"name":"TvSound","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line-Digital"}],"name":"Line-Digital","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "DD-3"
+  "model": "DD-3",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":2}]},
+        {"name":"Network","select":[{"commands":["InputNetwork"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputLine"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"Line1"},
+        {"name":"Line2"},
+        {"name":"TvSound"},
+        {"name":"Line-Digital"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

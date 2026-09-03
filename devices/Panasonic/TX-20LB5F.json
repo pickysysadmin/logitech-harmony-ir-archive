@@ -2,6 +2,78 @@
   "codeset": "codesets/e4/e4f4b024b42717bd.json",
   "deviceType": 1,
   "globalDeviceId": 249283,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"},{"set":"MENU","to":"OFF"},{"set":"AV1SCART","to":"ON"},{"set":"AV2SCART","to":"ON"}],"name":"TV"},
+      {"commands":[{"set":"AV1SCART","to":"ON"}],"name":"AV 1"},
+      {"commands":[{"set":"AV2SCART","to":"ON"}],"name":"AV 2"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV 2"},{"set":"AVTWO","to":"AV 2S"},{"set":"MENU","to":"OFF"},{"set":"AV1SCART","to":"OFF"},{"set":"AV2SCART","to":"OFF"}],"name":"AV 2S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-20LB5F"
+  "model": "TX-20LB5F",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"},
+      {"set":"AV1SCART","to":"ON"},
+      {"set":"AV1SCART","to":"ON"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV1SCART": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV 1"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "AV2SCART": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV 2"},{"set":"AVTWO","to":"AV 2"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"AV 2","select":[{"commands":["Green"],"setType":2}]}
+      ]
+    },
+    "AVTWO": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV 2"},
+        {"name":"AV 2S"}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "Tv/Av",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

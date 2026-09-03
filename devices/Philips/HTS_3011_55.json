@@ -2,6 +2,53 @@
   "codeset": "codesets/8d/8d7af203db7f97b4.json",
   "deviceType": 22,
   "globalDeviceId": 210734,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM/MW"}],"name":"AM/MW"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AUX 1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AUX 2"}],"name":"AUX 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS 3011/55"
+  "model": "HTS 3011/55",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX 1"},
+        {"name":"AUX 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM/MW"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

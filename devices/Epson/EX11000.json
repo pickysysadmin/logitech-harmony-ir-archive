@@ -2,6 +2,58 @@
   "codeset": "codesets/a8/a8f3a228cd397a36.json",
   "deviceType": 7,
   "globalDeviceId": 523574,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VedioInput","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Vedio"},{"set":"VedioInput","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Computer1"}],"name":"Computer 1"},
+      {"commands":[{"set":"InputType","to":"LAN"}],"name":"LAN"},
+      {"commands":[{"set":"InputType","to":"ScreenMirroring1"}],"name":"Screen Mirroring 1"},
+      {"commands":[{"set":"InputType","to":"ScreenMirroring2"}],"name":"Screen Mirroring 2"},
+      {"commands":[{"set":"InputType","to":"Vedio"},{"set":"InputType","to":"Vedio"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "EX11000"
+  "model": "EX11000",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":1}]},
+        {"name":"Vedio","select":[{"commands":["InputVedio"],"setType":1}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":1}]}
+      ]
+    },
+    "ScreenMirroringInput": {
+      "next": ["InputScreenMirroring"],
+      "values": [
+        {"name":"ScreenMirroring1"},
+        {"name":"ScreenMirroring2"}
+      ]
+    },
+    "VedioInput": {
+      "next": ["InputVedio"],
+      "values": [
+        {"name":"Vedio","select":[{"commands":["InputVedio"],"setType":1}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

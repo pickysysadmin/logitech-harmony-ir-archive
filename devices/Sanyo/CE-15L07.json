@@ -2,6 +2,34 @@
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 89019,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputTuner","InputNext"],"name":"AV1"},
+      {"commands":["InputTuner","InputNext","InputNext"],"name":"AV2"},
+      {"commands":["InputTuner","InputNext","InputNext","InputNext"],"name":"AV3"},
+      {"commands":["InputTuner","InputNext","InputNext","InputNext","InputNext"],"name":"S-Video"},
+      {"commands":["InputTuner","InputNext","InputNext","InputNext","InputNext","InputNext"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sanyo",
-  "model": "CE-15L07"
+  "model": "CE-15L07",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

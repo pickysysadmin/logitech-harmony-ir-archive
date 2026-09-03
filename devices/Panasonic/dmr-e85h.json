@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/68/686ec70f6e806461.json",
   "deviceType": 34,
   "globalDeviceId": 164731,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputHdd"],"name":"HDD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "dmr-e85h"
+  "model": "dmr-e85h",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"Line1"},
+        {"name":"Line2"},
+        {"name":"Line3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

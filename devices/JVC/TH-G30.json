@@ -2,6 +2,68 @@
   "codeset": "codesets/0e/0ec61ba65cf58940.json",
   "deviceType": 22,
   "globalDeviceId": 163340,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/Radio"},{"set":"DVD/RadioInput","to":"DVD/CD"}],"name":"DVD/CD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"DVD/Radio"},{"set":"DVD/RadioInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"DVD/Radio"},{"set":"DVD/RadioInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX OPT"}],"name":"AUX OPT","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"TV Audio"}],"name":"TV Audio","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Audio in"}],"name":"Audio in","ports":["Aux"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "TH-G30"
+  "model": "TH-G30",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1500}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"USB"},
+        {"name":"AUX"},
+        {"name":"AUX OPT"},
+        {"name":"TV Audio"},
+        {"name":"Audio in"}
+      ]
+    },
+    "DVD/CDInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"DVD/CD"},
+        {"name":"FM"}
+      ]
+    },
+    "DVD/RadioInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"DVD/CD"},
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/Radio","select":[{"commands":["Function"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

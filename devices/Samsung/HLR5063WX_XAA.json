@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 24632,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"AV1 - n/a"},
+      {"commands":["InputVideo","TvVideo"],"name":"AV2 - VCR"},
+      {"commands":["InputVideo","TvVideo","TvVideo"],"name":"AV 3 - GAME"},
+      {"commands":["InputSVideo"],"name":"S-Video 1 - Sat"},
+      {"commands":["InputSVideo","TvVideo"],"name":"S-Video 2 - GAME"},
+      {"commands":["InputSVideo3"],"name":"S-Video 3 - PC"},
+      {"commands":["InputSVideo3","TvVideo"],"name":"DVI - DVD"},
+      {"commands":["InputAntenna"],"name":"Tuner"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HLR5063WX/XAA"
+  "model": "HLR5063WX/XAA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

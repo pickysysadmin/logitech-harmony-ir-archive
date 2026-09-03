@@ -2,6 +2,42 @@
   "codeset": "codesets/ed/ed22bdfb24f10d37.json",
   "deviceType": 5,
   "globalDeviceId": 94322,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleInput","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "H-Tech",
-  "model": "M-996A"
+  "model": "M-996A",
+  "states": {
+    "CycleInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"CD"},
+        {"name":"DVD"},
+        {"name":"AUX"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Cycle","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 1
+  }
 }

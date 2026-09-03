@@ -2,6 +2,34 @@
   "codeset": "codesets/7e/7eff909be3d74f6e.json",
   "deviceType": 1,
   "globalDeviceId": 150252,
+  "inputs": {
+    "list": [
+      {"name":"VIDEO 1"},
+      {"name":"VIDEO 2"},
+      {"name":"VIDEO 3"},
+      {"name":"S-VIDEO"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "CMT-2975"
+  "model": "CMT-2975",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"VIDEO 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

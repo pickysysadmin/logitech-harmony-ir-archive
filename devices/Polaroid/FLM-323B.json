@@ -1,7 +1,46 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/18/182a7de30694699e.json",
   "deviceType": 1,
   "globalDeviceId": 94538,
+  "inputs": {
+    "canSkip": true,
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"HDTV"},
+      {"name":"VIDEO1(Side)"},
+      {"name":"VIDEO2(Rear)"},
+      {"name":"VIDEO3(S-VIDEO)"},
+      {"name":"VIDEO4(YPbPr1)"},
+      {"name":"VIDEO5(YPbPr2)"},
+      {"name":"VIDEO6(HDMI)"},
+      {"name":"COMPUTER(VGA)"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": [
+      {"command":"StartInput","durationMs":2000}
+    ],
+    "type": 4
+  },
   "manufacturer": "Polaroid",
-  "model": "FLM-323B"
+  "model": "FLM-323B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 1
+  }
 }

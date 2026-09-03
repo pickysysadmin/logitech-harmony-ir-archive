@@ -2,6 +2,45 @@
   "codeset": "codesets/ae/ae2ace57c7a083dd.json",
   "deviceType": 5,
   "globalDeviceId": 246141,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Mp3Link"}],"name":"Mp3Link"},
+      {"commands":[{"set":"InputType","to":"Dock"}],"name":"Dock"},
+      {"commands":[{"set":"InputType","to":"FM/DAB"},{"set":"FM/DABInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/DAB"},{"set":"FM/DABInput","to":"DAB"}],"name":"DAB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DCB291/12"
+  "model": "DCB291/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FM/DABInput": {
+      "next": ["InputFm/Dab"],
+      "values": [
+        {"name":"FM"},
+        {"name":"DAB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Mp3Link","select":[{"commands":["InputMp3Link"],"setType":2}]},
+        {"name":"Dock","select":[{"commands":["InputDock"],"setType":2}]},
+        {"name":"FM/DAB","select":[{"commands":["InputFm/Dab"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,47 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/58/584830529e041d6f.json",
   "deviceType": 1,
   "globalDeviceId": 138439,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV 1"},
+      {"name":"AV 2"},
+      {"name":"HDTV 1"},
+      {"name":"HDTV 2"},
+      {"name":"USB"},
+      {"name":"VGA"},
+      {"name":"HDMI 1 (PS3)"},
+      {"name":"HDMI 2 (Apple)"}
+    ],
+    "next": ["ChannelDown"],
+    "start": [
+      "StartInput",
+      {"set":"Input","to":"VGA"}
+    ],
+    "type": 4
+  },
   "manufacturer": "Prima",
-  "model": "LC-52R36"
+  "model": "LC-52R36",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"VGA"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,68 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/2a/2a1886976d51fb36.json",
   "deviceType": 1,
   "globalDeviceId": 181843,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"PC/HDMI"},{"set":"PC/HDMIInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC/HDMI"},{"set":"PC/HDMIInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Westinghouse",
-  "model": "W3223"
+  "model": "W3223",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    },
+    "AvInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"S-Video"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"Av","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"PC/HDMI","select":[{"commands":["InputPC/HDMI"],"setType":2}]}
+      ]
+    },
+    "PC/HDMIInput": {
+      "next": ["InputPC/HDMI"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"HDMI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

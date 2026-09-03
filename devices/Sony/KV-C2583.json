@@ -2,6 +2,45 @@
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 87672,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Input Video1"},
+      {"name":"Input Video2"},
+      {"name":"Input Video3"},
+      {"name":"S1 Video"},
+      {"name":"S2 Video"}
+    ],
+    "next": ["Tv/Video"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KV-C2583"
+  "model": "KV-C2583",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Input Video1"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

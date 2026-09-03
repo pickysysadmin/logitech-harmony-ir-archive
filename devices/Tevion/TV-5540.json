@@ -2,6 +2,33 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 75304,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"S-Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Tevion",
-  "model": "TV-5540"
+  "model": "TV-5540",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputTv"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/40/4079afe417e4834c.json",
   "deviceType": 1,
   "globalDeviceId": 60483,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV-1"},
+      {"name":"AV-2"},
+      {"name":"AV-3"},
+      {"name":"S-Video"},
+      {"name":"Component-1"},
+      {"name":"Component-2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "WS-32A11"
+  "model": "WS-32A11",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

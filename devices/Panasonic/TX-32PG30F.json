@@ -2,6 +2,44 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 58139,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["Red","Red"],"name":"AV 1"},
+      {"commands":["Green","Green"],"name":"AV 2"},
+      {"commands":["Yellow","Yellow","Yellow","Yellow"],"name":"AV 3"},
+      {"commands":["Blue","Blue"],"name":"AV 4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-32PG30F"
+  "model": "TX-32PG30F",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": [
+      "PowerOn",
+      {"delayMs":6000},
+      "TvVideo"
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVMode": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

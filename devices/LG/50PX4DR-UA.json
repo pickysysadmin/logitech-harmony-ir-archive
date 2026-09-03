@@ -2,6 +2,36 @@
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 96279,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnt/Cable"],"name":"Antenna"},
+      {"commands":["InputAnt/Cable","TvVideo"],"name":"CATV Antenna"},
+      {"commands":["InputS-Video"],"name":"Front Video"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["InputComponent2"],"name":"Component 2"},
+      {"commands":["InputRgb/Dtv"],"name":"RGB/DTV"},
+      {"commands":["InputRGB/PC"],"name":"RBG/PC"},
+      {"commands":["InputRGB/PC","TvVideo"],"name":"HDMI 1"},
+      {"commands":["InputRGB/PC","TvVideo","TvVideo"],"name":"HDMI 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "50PX4DR-UA"
+  "model": "50PX4DR-UA",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

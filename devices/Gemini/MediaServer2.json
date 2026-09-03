@@ -2,6 +2,43 @@
   "codeset": "codesets/39/395dc849d7c1493a.json",
   "deviceType": 5,
   "globalDeviceId": 241608,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMIMedia"},{"set":"HDMIMedia","to":"Media"}],"name":"MediaServer"},
+      {"commands":[{"set":"InputType","to":"HDMIMedia"},{"set":"HDMIMedia","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Gemini",
-  "model": "MediaServer2"
+  "model": "MediaServer2",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDMIMedia": {
+      "next": ["InputMedia"],
+      "values": [
+        {"name":"HDMI"},
+        {"name":"Mediaa"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"HDMIMedia","select":[{"commands":["InputMedia"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

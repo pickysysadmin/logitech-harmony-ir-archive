@@ -2,6 +2,49 @@
   "codeset": "codesets/95/95d059d3911c9299.json",
   "deviceType": 19,
   "globalDeviceId": 277437,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HT ByPass"}],"name":"HT ByPass"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Line 2"}],"name":"Line 2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Line 3"}],"name":"Line 3"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Line 4"}],"name":"Line 4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Plinius",
-  "model": "Kaitaki"
+  "model": "Kaitaki",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Phono"},
+        {"name":"Line 1"},
+        {"name":"Line 2"},
+        {"name":"Line 3"},
+        {"name":"Line 4"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HT ByPass","select":[{"commands":["InputHT"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

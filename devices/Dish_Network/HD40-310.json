@@ -2,6 +2,32 @@
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 104278,
+  "inputs": {
+    "list": [
+      {"commands":["InputRgb"],"name":"DVI DISH"},
+      {"commands":[{"delayMs":1500},{"delayMs":1500},"InputRgb","InputNext"],"name":"VID 1"},
+      {"commands":[{"delayMs":1500},{"delayMs":1500},"InputRgb","InputNext","InputNext"],"name":"VID 2"},
+      {"commands":["InputRgb"],"name":"FRNT"},
+      {"commands":["InputSat/Cable"],"name":"CMP 1"},
+      {"commands":["InputSat/Cable"],"name":"CMP 2"},
+      {"commands":[{"delayMs":1500},{"delayMs":1500},"0","3"],"name":"CH 03"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Dish Network",
-  "model": "HD40-310"
+  "model": "HD40-310",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,85 @@
   "codeset": "codesets/e3/e3f5ce6dde87c3de.json",
   "deviceType": 1,
   "globalDeviceId": 161407,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV1"},{"set":"MENU","to":"OFF"}],"name":"AV1"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"AV2Input","to":"AV2"},{"set":"MENU","to":"OFF"}],"name":"AV2"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"AV2Input","to":"AV2S"},{"set":"MENU","to":"OFF"}],"name":"AV2S"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"AV3Input","to":"AV3"},{"set":"MENU","to":"OFF"}],"name":"AV3"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"AV3Input","to":"AV3S"},{"set":"MENU","to":"OFF"}],"name":"AV3S"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV4"},{"set":"AV4Input","to":"AV4"},{"set":"MENU","to":"OFF"}],"name":"AV4"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV4"},{"set":"AV4Input","to":"AV4S"},{"set":"MENU","to":"OFF"}],"name":"AV4S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-33AK10"
+  "model": "TX-33AK10",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1500}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2Input": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "AV3Input": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AV4Input": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4S"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":2}]},
+        {"name":"AV4","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "Tv/Av",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 700,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

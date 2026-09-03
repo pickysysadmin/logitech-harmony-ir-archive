@@ -2,6 +2,39 @@
   "codeset": "codesets/f1/f11234b78a489aea.json",
   "deviceType": 34,
   "globalDeviceId": 167982,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputHdd"],"name":"HDD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "RH-1977"
+  "model": "RH-1977",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"DV IN"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

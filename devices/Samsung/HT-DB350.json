@@ -2,6 +2,55 @@
   "codeset": "codesets/e9/e9610c354892f2e2.json",
   "deviceType": 22,
   "globalDeviceId": 66843,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AuxType"},{"set":"AuxMode","to":"DigitalMode"}],"name":"Digital In"},
+      {"commands":[{"set":"InputType","to":"AuxType"},{"set":"AuxMode","to":"Aux1mode"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"AuxType"},{"set":"AuxMode","to":"Aux2mode"}],"name":"Aux 2"},
+      {"commands":[{"set":"InputType","to":"BandType"},{"set":"BandMode","to":"AMmode"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"BandType"},{"set":"BandMode","to":"FMmode"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"DVDType"}],"name":"DVD/CD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-DB350"
+  "model": "HT-DB350",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxMode": {
+      "next": ["InputAUX"],
+      "values": [
+        {"name":"Digitalmode"},
+        {"name":"Aux1mode"},
+        {"name":"Aux2mode"}
+      ]
+    },
+    "BandMode": {
+      "next": ["BandNext"],
+      "values": [
+        {"name":"AMmode"},
+        {"name":"FMmode"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AuxType","select":[{"commands":["InputAUX"],"setType":2}]},
+        {"name":"BandType","select":[{"commands":["BandNext"],"setType":2}]},
+        {"name":"DVDType","select":[{"commands":["Play"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

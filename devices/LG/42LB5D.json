@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/16/16407aec175dbe84.json",
   "deviceType": 1,
   "globalDeviceId": 151263,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"RGB/PC"}],"name":"RGB/PC"},
+      {"commands":[{"set":"InputType","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"Analog"}],"name":"Analog"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "42LB5D"
+  "model": "42LB5D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AnalogInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"Digital"},
+        {"name":"Analog"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"},
+        {"name":"RGB/PC"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"Analog"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

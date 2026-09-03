@@ -2,6 +2,40 @@
   "codeset": "codesets/5a/5ab83cd50abaee1e.json",
   "deviceType": 1,
   "globalDeviceId": 151846,
+  "inputs": {
+    "list": [
+      {"name":"Component1"},
+      {"name":"Cable"},
+      {"name":"AV2"},
+      {"name":"S-Video1"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "HL-T5705S"
+  "model": "HL-T5705S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["TeletextOff"],"setType":2}]},
+        {"name":"On","select":[{"commands":["TeletextOn"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 3
+  }
 }

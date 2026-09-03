@@ -2,6 +2,38 @@
   "codeset": "codesets/66/6686e987ce70d9b2.json",
   "deviceType": 18,
   "globalDeviceId": 107138,
+  "inputs": {
+    "list": [
+      {"name":"TV/RADIO"},
+      {"name":"TV/SAT"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "AB-Com",
-  "model": "DSR-510SKY"
+  "model": "DSR-510SKY",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

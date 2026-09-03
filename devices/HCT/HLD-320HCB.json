@@ -2,6 +2,39 @@
   "codeset": "codesets/17/1757c7b0baacf057.json",
   "deviceType": 1,
   "globalDeviceId": 174244,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"S-VIDEO"},
+      {"name":"Component"},
+      {"name":"HDMI1"},
+      {"name":"HDMI2"},
+      {"name":"VGA"}
+    ],
+    "next": ["DirectionDown"],
+    "start": [
+      {"set":"Input","to":"TV"},
+      "TvVideo"
+    ],
+    "type": 4
+  },
   "manufacturer": "HCT",
-  "model": "HLD-320HCB"
+  "model": "HLD-320HCB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

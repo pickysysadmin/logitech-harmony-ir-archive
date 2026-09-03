@@ -2,6 +2,85 @@
   "codeset": "codesets/49/4989cd436dcc702f.json",
   "deviceType": 1,
   "globalDeviceId": 124284,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AVLIST"},{"set":"AVLISTInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AVLIST"},{"set":"AVLISTInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AVLIST"},{"set":"AVLISTInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AVLIST"},{"set":"AVLISTInput","to":"AV4"}],"name":"AV4"},
+      {"commands":[{"set":"InputType","to":"AVLIST"},{"set":"AVLISTInput","to":"AV5"}],"name":"AV5"},
+      {"commands":[{"set":"InputType","to":"COMPHDMI"},{"set":"COMPHDMIInput","to":"COMPONENT1"}],"name":"COMPONENT1"},
+      {"commands":[{"set":"InputType","to":"COMPHDMI"},{"set":"COMPHDMIInput","to":"COMPONENT2"}],"name":"COMPONENT2"},
+      {"commands":[{"set":"InputType","to":"COMPHDMI"},{"set":"COMPHDMIInput","to":"COMPONENT3"}],"name":"COMPONENT3"},
+      {"commands":[{"set":"InputType","to":"COMPHDMI"},{"set":"COMPHDMIInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"VGADVI"},{"set":"VGADVIInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"VGADVI"},{"set":"VGADVIInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TUNER"}],"name":"TUNER"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "AT3705W-DTV"
+  "model": "AT3705W-DTV",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVLISTInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"AV4"},
+        {"name":"AV5"}
+      ]
+    },
+    "COMPHDMIInput": {
+      "next": ["InputSat"],
+      "values": [
+        {"name":"COMPONENT1"},
+        {"name":"COMPONENT2"},
+        {"name":"COMPONENT3"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AVLIST","select":[{"commands":["InputVideo",{"set":"AVLISTInput","to":"AV1"}],"setType":2}]},
+        {"name":"COMPHDMI","select":[{"commands":["InputSat",{"set":"COMPHDMIInput","to":"COMPONENT1"}],"setType":2}]},
+        {"name":"VGADVI","select":[{"commands":["InputPC",{"set":"VGADVIInput","to":"VGA"}],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv",{"set":"TVInput","to":"DTV"}],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TUNER"},
+        {"name":"DTV"}
+      ]
+    },
+    "VGADVIInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

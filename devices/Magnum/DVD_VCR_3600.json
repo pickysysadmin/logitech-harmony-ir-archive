@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f2/f24108db7801027e.json",
   "deviceType": 25,
   "globalDeviceId": 143898,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"InputDvd"},
+      {"commands":["InputVcr"],"name":"InputVcr"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Magnum",
-  "model": "DVD VCR 3600"
+  "model": "DVD VCR 3600",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line1"},
+        {"name":"Line2"},
+        {"name":"Line3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,33 @@
   "codeset": "codesets/63/63b873a4fdcc94d6.json",
   "deviceType": 22,
   "globalDeviceId": 137508,
+  "inputs": {
+    "list": [
+      {"name":"CD/DVD"},
+      {"name":"Tuner"},
+      {"name":"TV"},
+      {"name":"SCART"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "SEG",
-  "model": "DVH-650X"
+  "model": "DVH-650X",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"CD/DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 4000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

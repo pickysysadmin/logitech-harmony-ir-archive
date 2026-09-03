@@ -2,6 +2,43 @@
   "codeset": "codesets/5d/5d1597d64126ad19.json",
   "deviceType": 5,
   "globalDeviceId": 349260,
+  "inputs": {
+    "list": [
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Composite","Coaxial"]},
+      {"commands":["InputMediaPlayer"],"name":"Media Player","ports":["HDMI","Composite"]},
+      {"commands":["InputBluray/Dvd"],"name":"Bluray/DVD","ports":["HDMI","Composite"]},
+      {"commands":["InputGame"],"name":"Game","ports":["HDMI"]},
+      {"commands":["InputAux"],"name":"Aux","ports":["HDMI"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputiPod/Usb"],"name":"iPod/USB","ports":["USB"]},
+      {"commands":["InputTvAudio"],"name":"TV Audio","ports":["Optical"]},
+      {"commands":["InputCd"],"name":"CD","ports":["HDMI","Composite"]},
+      {"commands":["InputOnlineMusic"],"name":"Online Music","ports":["Streaming"]},
+      {"commands":["InputBluetooth"],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":["InputInternetRadio"],"name":"Internet Radio","ports":["Streaming"]},
+      {"commands":["SmartSelect1"],"name":"SmartSelect 1","ports":["Streaming"]},
+      {"commands":["SmartSelect2"],"name":"SmartSelect 2","ports":["Streaming"]},
+      {"commands":["SmartSelect3"],"name":"SmartSelect 3","ports":["Streaming"]},
+      {"commands":["SmartSelect4"],"name":"SmartSelect 4","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Marantz",
-  "model": "NR1508"
+  "model": "NR1508",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

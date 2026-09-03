@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/07/07a582c90b53f41a.json",
   "deviceType": 1,
   "globalDeviceId": 110248,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"Input 1"},
+      {"commands":["InputVideo2"],"name":"Input 2"},
+      {"commands":["InputVideo3"],"name":"Input 3"},
+      {"commands":["InputVideo4"],"name":"Input 4"},
+      {"commands":["InputVideo5"],"name":"Input 5"},
+      {"commands":["InputVideo5","InputNext","InputNext","Select"],"name":"Photo Input"},
+      {"commands":["InputAntennaA"],"name":"Cable"},
+      {"commands":["InputAntennaB"],"name":"Air"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hitachi",
-  "model": "42HDT52A"
+  "model": "42HDT52A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

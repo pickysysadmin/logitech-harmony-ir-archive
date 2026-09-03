@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/b2/b2373e1048dcb31f.json",
   "deviceType": 1,
   "globalDeviceId": 425720,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv",{"delayMs":300},"InputTv"],"name":"TV Key","ports":["Antenna"]},
+      {"commands":["InputAnalog",{"delayMs":300},"InputAnalog"],"name":"Analogue","ports":["Antenna"]},
+      {"commands":["InputVideo1","InputNext",{"delayMs":1000},"DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Digital","ports":["Antenna"]},
+      {"commands":["InputVideo1","InputNext",{"delayMs":1000},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"General Satellite","ports":["Antenna"]},
+      {"commands":["InputVideo1","InputNext",{"delayMs":1000},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Preferred Satellite","ports":["Antenna"]},
+      {"commands":["InputVideo1","InputNext",{"delayMs":1000},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"CAM service list","ports":["Others"]},
+      {"commands":["InputVideo2","InputNext",{"delayMs":1000},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Streaming Channels","ports":["Antenna"]},
+      {"commands":["InputHdmi1",{"delayMs":1000},"InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2",{"delayMs":300},"InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3",{"delayMs":300},"InputHdmi3"],"name":"HDMI 3/ARC","ports":["HDMI"]},
+      {"commands":["InputHdmi4",{"delayMs":300},"InputHdmi4"],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":["InputVideo1",{"delayMs":300},"InputVideo1"],"name":"AV","ports":["Composite"]},
+      {"commands":["InputVideo1","InputNext",{"delayMs":500},"DirectionDown","Select"],"name":"Screen Mirroring","ports":["Streaming"]},
+      {"commands":["Back",{"delayMs":500},"Home",{"delayMs":2000},"DirectionDown"],"name":"Android TV","ports":["Streaming"]},
+      {"commands":["GooglePlay",{"delayMs":300},"GooglePlay"],"name":"GooglePlay","ports":["Streaming"]},
+      {"commands":["Netflix",{"delayMs":300},"Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KD-77A1"
+  "model": "KD-77A1",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":300},
+      "PowerOff"
+    ],
+    "on": [
+      "PowerOn",
+      {"delayMs":300},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

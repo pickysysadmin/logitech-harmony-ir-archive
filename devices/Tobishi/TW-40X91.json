@@ -1,7 +1,46 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/36/362eb927ae6329c2.json",
   "deviceType": 1,
   "globalDeviceId": 98085,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"Video3"},
+      {"name":"Colorstream1"},
+      {"name":"Colorstream2"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Tobishi",
-  "model": "TW-40X91"
+  "model": "TW-40X91",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "PicSize": {
+      "next": ["PictureSize"],
+      "values": [
+        {"name":"Standard"},
+        {"name":"Theater Wide"},
+        {"name":"Full"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

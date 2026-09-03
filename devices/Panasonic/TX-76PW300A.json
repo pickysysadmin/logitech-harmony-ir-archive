@@ -2,6 +2,66 @@
   "codeset": "codesets/ef/ef7352f6b40e5d12.json",
   "deviceType": 1,
   "globalDeviceId": 178041,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV1"},{"set":"MENU","to":"OFF"}],"name":"AV1"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"MENU","to":"OFF"}],"name":"AV2"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"MENU","to":"OFF"}],"name":"AV3"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV4AV5"},{"set":"AV4AV5Input","to":"AV4"},{"set":"MENU","to":"OFF"}],"name":"AV4"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV4AV5"},{"set":"AV4AV5Input","to":"AV5"},{"set":"MENU","to":"OFF"}],"name":"AV5"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-76PW300A"
+  "model": "TX-76PW300A",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1500}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AV4AV5Input": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV5"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":2}]},
+        {"name":"AV4AV5","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "InputNext",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["NumberEnter"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

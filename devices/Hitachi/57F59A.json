@@ -2,6 +2,51 @@
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 158297,
+  "inputs": {
+    "finish": ["Select","Exit"],
+    "list": [
+      {"name":"Input1"},
+      {"name":"Input2"},
+      {"name":"Input3"},
+      {"name":"Input4"},
+      {"name":"Input5"},
+      {"name":"AntennaB"},
+      {"name":"AntennaA"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": [
+      {"delayMs":3000},
+      "TvVideo"
+    ],
+    "type": 4
+  },
   "manufacturer": "Hitachi",
-  "model": "57F59A"
+  "model": "57F59A",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2500}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"AntA"},
+        {"name":"AntB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

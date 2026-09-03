@@ -2,6 +2,64 @@
   "codeset": "codesets/ff/ffd95f1354b8212b.json",
   "deviceType": 22,
   "globalDeviceId": 181206,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AUX OPT"}],"name":"AUX OPT","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"TV-Audio"}],"name":"TV-Audio","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"PORTABLE"}],"name":"PORTABLE","ports":["Portable"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI IN"}],"name":"HDMI IN","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"OSD iPOD"}],"name":"OSD iPOD","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"iPOD"}],"name":"iPOD","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"DVD/CD"}],"name":"DVD/CD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HT-903"
+  "model": "HT-903",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FunctionInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"DVD/CD"},
+        {"name":"FM"}
+      ]
+    },
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"AUX OPT"},
+        {"name":"TV-Audio"},
+        {"name":"PORTABLE"},
+        {"name":"HDMI IN"},
+        {"name":"USB"},
+        {"name":"OSD iPOD"},
+        {"name":"iPOD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Function","select":[{"commands":["Function"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

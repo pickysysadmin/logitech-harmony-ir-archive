@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d6/d6de5e9d03afc652.json",
   "deviceType": 34,
   "globalDeviceId": 82071,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV4"}],"name":"AV4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "DME-E85H"
+  "model": "DME-E85H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"AV4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

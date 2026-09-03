@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/65/651128a8b5513233.json",
   "deviceType": 47,
   "globalDeviceId": 158927,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputVcr"],"name":"VCR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "DVRK-898"
+  "model": "DVRK-898",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV 3"},
+        {"name":"DV IN"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

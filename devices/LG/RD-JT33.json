@@ -2,6 +2,35 @@
   "codeset": "codesets/de/de1927577ca303a9.json",
   "deviceType": 7,
   "globalDeviceId": 86642,
+  "inputs": {
+    "list": [
+      {"name":"RGB"},
+      {"name":"DVI"},
+      {"name":"VIDEO"},
+      {"name":"S-VIDEO"}
+    ],
+    "next": ["DirectionRight"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "RD-JT33"
+  "model": "RD-JT33",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":200},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 0,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/57/57614cad602d6200.json",
   "deviceType": 1,
   "globalDeviceId": 414670,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnt/CableIn"],"name":"ANT/Cable IN"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputVideo"],"name":"AV/Component"},
+      {"commands":["Apps"],"name":"Apps"},
+      {"commands":["Devices","Devices",{"delayMs":2000},{"command":"DirectionRight","durationMs":1500},"DirectionLeft","OK"],"name":"Screen Mirroring"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TC-55DS630C"
+  "model": "TC-55DS630C",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 10000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

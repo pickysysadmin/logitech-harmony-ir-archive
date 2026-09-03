@@ -2,6 +2,57 @@
   "codeset": "codesets/2b/2b3996775b8c1021.json",
   "deviceType": 22,
   "globalDeviceId": 132939,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Auxilary"}],"name":"Auxilary"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"FrontMusicPort"}],"name":"FrontMusicPort"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-HT460"
+  "model": "SA-HT460",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Auxilary"},
+        {"name":"FrontMusicPort"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

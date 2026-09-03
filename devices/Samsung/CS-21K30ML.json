@@ -2,6 +2,33 @@
   "codeset": "codesets/b8/b86936165d9ea1bb.json",
   "deviceType": 1,
   "globalDeviceId": 152639,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV 1"},
+      {"name":"AV 2"},
+      {"name":"Component"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "CS-21K30ML"
+  "model": "CS-21K30ML",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

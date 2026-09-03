@@ -2,6 +2,65 @@
   "codeset": "codesets/95/95de1a3f91c58b2b.json",
   "deviceType": 1,
   "globalDeviceId": 124861,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"YPbPr1"}],"name":"YPbPr1"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"YPbPr2"}],"name":"YPbPr2"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"S-VIDEO"}],"name":"S-VIDEO"},
+      {"commands":[{"set":"InputType","to":"DTV/ATV"},{"set":"DTV/ATVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"DTV/ATV"},{"set":"DTV/ATVInput","to":"ATV"}],"name":"ATV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vision Quest",
-  "model": "LVQ3201"
+  "model": "LVQ3201",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV"},
+        {"name":"S-VIDEO"}
+      ]
+    },
+    "DTV/ATVInput": {
+      "next": ["InputDtv/Atv"],
+      "values": [
+        {"name":"DTV"},
+        {"name":"ATV"}
+      ]
+    },
+    "HDInput": {
+      "next": ["InputHd"],
+      "values": [
+        {"name":"YPbPr1"},
+        {"name":"YPbPr2"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VGA","select":[{"commands":["InputVGA"],"setType":2}]},
+        {"name":"HD","select":[{"commands":["InputHd"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"DTV/ATV","select":[{"commands":["InputDtv/Atv"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

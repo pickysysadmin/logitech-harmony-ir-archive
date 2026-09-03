@@ -2,6 +2,34 @@
   "codeset": "codesets/b2/b23c2596b38c1815.json",
   "deviceType": 1,
   "globalDeviceId": 53814,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"EXT1"},
+      {"name":"EXT2"},
+      {"name":"EXT3"}
+    ],
+    "next": ["InputNext"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Philips",
-  "model": "37PF9966"
+  "model": "37PF9966",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

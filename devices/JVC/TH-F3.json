@@ -2,6 +2,57 @@
   "codeset": "codesets/42/423b0cd21c59f87c.json",
   "deviceType": 22,
   "globalDeviceId": 176624,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dvd"}],"name":"Dvd"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital-In"}],"name":"Digital-In"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Audio-In"}],"name":"Audio-In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "TH-F3"
+  "model": "TH-F3",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Digital-In"},
+        {"name":"Audio-In"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dvd","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1200,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

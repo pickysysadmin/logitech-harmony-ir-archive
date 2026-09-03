@@ -2,6 +2,36 @@
   "codeset": "codesets/6c/6c1f0476ad342182.json",
   "deviceType": 19,
   "globalDeviceId": 35960,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputRadio"],"name":"Radio","ports":["Antenna"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Others"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Others"]},
+      {"commands":["InputTape"],"name":"Tape","ports":["BuiltIn"]},
+      {"commands":["InputVcr1"],"name":"VCR 1","ports":["Others"]},
+      {"commands":["InputVcr2"],"name":"VCR 2","ports":["Others"]},
+      {"commands":["InputGame"],"name":"Game","ports":["Others"]},
+      {"commands":["InputSat"],"name":"SAT","ports":["Others"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Aux"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Meridian",
-  "model": "DSP5000"
+  "model": "DSP5000",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputTv"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

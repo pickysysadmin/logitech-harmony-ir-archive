@@ -2,6 +2,54 @@
   "codeset": "codesets/3b/3b060a88d0087f16.json",
   "deviceType": 22,
   "globalDeviceId": 213234,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Optical Digital 1"}],"name":"Optical Digital 1","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Optical Digital 2"}],"name":"Optical Digital 2","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Analog L/R 1"}],"name":"Analog L/R 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Analog L/R 2"}],"name":"Analog L/R 2","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "BDS-5"
+  "model": "BDS-5",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "start": ["InputAux"],
+      "values": [
+        {"name":"Coaxial"},
+        {"name":"Optical Digital 1"},
+        {"name":"Optical Digital 2"},
+        {"name":"Analog L/R 1"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["Dise"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputIpad"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

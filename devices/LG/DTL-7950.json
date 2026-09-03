@@ -2,6 +2,49 @@
   "codeset": "codesets/50/5016aa498ae60ad1.json",
   "deviceType": 32,
   "globalDeviceId": 83745,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dvd"}],"name":"Dvd"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"VCRInput"},{"set":"VCRInputInput","to":"Ant"}],"name":"Ant"},
+      {"commands":[{"set":"InputType","to":"VCRInput"},{"set":"VCRInputInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"VCRInput"},{"set":"VCRInputInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"VCRInput"},{"set":"VCRInputInput","to":"AV 3"}],"name":"AV 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "DTL-7950"
+  "model": "DTL-7950",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Dvd","select":[{"commands":["InputDvd"],"setType":1}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"VCRInput","select":[{"commands":["InputVCR"],"setType":1}]}
+      ]
+    },
+    "VCRInputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Ant"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV 3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

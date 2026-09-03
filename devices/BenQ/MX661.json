@@ -2,6 +2,43 @@
   "codeset": "codesets/de/deb39cc02ad878c1.json",
   "deviceType": 7,
   "globalDeviceId": 448404,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"name":"PC 1/YPbPr-1","ports":["PC"]},
+      {"name":"PC 1/YPbPr-2","ports":["PC"]},
+      {"name":"HDMI 1","ports":["HDMI"]},
+      {"name":"HDMI 2","ports":["HDMI"]},
+      {"name":"Video","ports":["Composite"]},
+      {"name":"S-Video","ports":["S-Video"]},
+      {"name":"Network","ports":["Streaming"]},
+      {"name":"USB Reader","ports":["USB"]},
+      {"name":"USB Display","ports":["USB"]}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "BenQ",
-  "model": "MX661"
+  "model": "MX661",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

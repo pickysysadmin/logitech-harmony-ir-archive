@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2,
+    "greaterTen": [
+      {"delayMs":100},
+      "10+",
+      {"delayMs":100}
+    ]
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 89125,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"Line In 1"},
+      {"commands":["InputVideo2"],"name":"Line In 2"},
+      {"commands":["InputVideo3"],"name":"Line In 3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDF-32FX60B"
+  "model": "KDF-32FX60B",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,57 @@
   "codeset": "codesets/e9/e9934c51f75dc85f.json",
   "deviceType": 5,
   "globalDeviceId": 42922,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1","ports":["Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2","ports":["Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3","ports":["Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Video 4"}],"name":"Video 4","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape","ports":["Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD","ports":["Composite","Coaxial","Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Integra",
-  "model": "DTR-5.5"
+  "model": "DTR-5.5",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"Video 4","select":[{"commands":["InputVideo4"],"setType":1}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":1}]},
+        {"name":"Tape","select":[{"commands":["InputTape1"],"setType":1}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":1}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["9"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 1
+  }
 }

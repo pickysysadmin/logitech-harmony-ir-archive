@@ -2,6 +2,34 @@
   "codeset": "codesets/7e/7ec611b6a55bab3b.json",
   "deviceType": 21,
   "globalDeviceId": 160007,
+  "inputs": {
+    "list": [
+      {"commands":["InputTape"],"name":"Tape","ports":["Composite"]},
+      {"commands":["InputMp"],"name":"MP","ports":["Streaming"]},
+      {"commands":["InputTuner"],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Composite"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Streaming"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "NAD",
-  "model": "C-715"
+  "model": "C-715",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

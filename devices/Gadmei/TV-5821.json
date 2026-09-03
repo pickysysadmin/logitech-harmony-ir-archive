@@ -2,6 +2,34 @@
   "codeset": "codesets/ce/ce1cf2864f6b43ab.json",
   "deviceType": 12,
   "globalDeviceId": 131831,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Video"},
+      {"name":"S-Video"},
+      {"name":"HDD Recorder"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Gadmei",
-  "model": "TV-5821"
+  "model": "TV-5821",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

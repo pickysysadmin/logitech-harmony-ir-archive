@@ -1,7 +1,34 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e3/e3a84c98e26cb980.json",
   "deviceType": 2,
   "globalDeviceId": 30059,
+  "inputs": {
+    "list": [
+      {"name":"L1"}
+    ],
+    "next": ["InputNext"],
+    "type": 6
+  },
   "manufacturer": "Sony",
-  "model": "SLV-ED828ME"
+  "model": "SLV-ED828ME",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

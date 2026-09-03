@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 24866,
+  "inputs": {
+    "list": [
+      {"name":"VID1"},
+      {"name":"VID2"},
+      {"name":"FRNT"},
+      {"name":"CMP1"},
+      {"name":"CMP2"},
+      {"name":"DVI"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "RCA",
-  "model": "D40EW11"
+  "model": "D40EW11",
+  "power": {
+    "toggle": [
+      {"delayMs":5000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["ChannelUp"],
+      "values": [
+        {"name":"Antenna"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["ChannelUp"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VID 1"},
+        {"name":"VID 2"},
+        {"name":"FRNT"},
+        {"name":"CMP 1"},
+        {"name":"CMP 2"},
+        {"name":"DVI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 3
+  }
 }

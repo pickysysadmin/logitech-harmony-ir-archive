@@ -1,7 +1,69 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b4/b4e64e5018d17f31.json",
   "deviceType": 1,
   "globalDeviceId": 139968,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DTT/TV"},{"set":"DTT/TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"DTT/TV"},{"set":"DTT/TVInput","to":"DTT"}],"name":"DTT"},
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AV4"}],"name":"AV4"},
+      {"commands":[{"set":"InputType","to":"AV5"}],"name":"AV5"},
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "55PD9700"
+  "model": "55PD9700",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "DTT/TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTT"}
+      ]
+    },
+    "HdmiInput": {
+      "next": ["InputHdmi1"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DTT/TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV1","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputAv2"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["InputAv3"],"setType":2}]},
+        {"name":"AV4","select":[{"commands":["InputAv4"],"setType":2}]},
+        {"name":"AV5","select":[{"commands":["InputAv5"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi1"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 1
+  }
 }

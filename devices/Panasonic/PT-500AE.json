@@ -2,6 +2,35 @@
   "codeset": "codesets/c0/c0f7c31198088f0a.json",
   "deviceType": 7,
   "globalDeviceId": 52939,
+  "inputs": {
+    "list": [
+      {"name":"Video 1"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-500AE"
+  "model": "PT-500AE",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

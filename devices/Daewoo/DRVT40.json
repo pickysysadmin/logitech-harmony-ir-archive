@@ -2,6 +2,40 @@
   "codeset": "codesets/d7/d72ac657f0b084c6.json",
   "deviceType": 47,
   "globalDeviceId": 158243,
+  "inputs": {
+    "list": [
+      {"commands":["InputDVD"],"name":"DVD"},
+      {"commands":["InputVCR"],"name":"VCR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Daewoo",
-  "model": "DRVT40"
+  "model": "DRVT40",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"FAV"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

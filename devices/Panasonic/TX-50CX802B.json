@@ -1,7 +1,88 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/77/77d8a2f41a2c8d5c.json",
   "deviceType": 1,
   "globalDeviceId": 273947,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"Analog"}],"name":"Analog","ports":["Antenna"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"Freesat"}],"name":"Freesat","ports":["Antenna"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"Freeview"}],"name":"Freeview","ports":["Antenna"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"DVB"}],"name":"DVB","ports":["Antenna"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"Other Sat"}],"name":"Other Sat","ports":["Antenna"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"Satellite"}],"name":"Satellite","ports":["Antenna"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"HDMI1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"HDMI2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"HDMI3"}],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"AV1"}],"name":"AV 1","ports":["Component"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"CompAV"},{"set":"CompAVInput","to":"AV2"}],"name":"AV 2","ports":["Composite"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Screen","to":"CompAV"},{"set":"CompAVInput","to":"Component"}],"name":"Component","ports":["Component"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Screen","to":"Apps"}],"name":"Apps","ports":["Streaming"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Screen","to":"ScreenMirroring"}],"name":"Screen Mirroring","ports":["Streaming"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Screen","to":"Netflix"}],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-50CX802B"
+  "model": "TX-50CX802B",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "CompAVInput": {
+      "finish": ["OK"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"Component"}
+      ]
+    },
+    "Screen": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":1}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":1}]},
+        {"name":"AV1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"CompAV","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"Apps","select":[{"commands":["Apps"],"setType":1}]},
+        {"name":"ScreenMirroring","select":[{"commands":["Devices","Devices",{"delayMs":2000},{"command":"DirectionRight","durationMs":1500},"DirectionLeft","OK"],"setType":1}]}
+      ]
+    },
+    "SmartTV_MENU": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Exit",{"delayMs":500}],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"Freesat"},
+        {"name":"Freeview"},
+        {"name":"DVB"},
+        {"name":"Analog"},
+        {"name":"Other Sat"},
+        {"name":"Satellite"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 10000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

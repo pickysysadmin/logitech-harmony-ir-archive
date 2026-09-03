@@ -1,7 +1,47 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d0/d0c83ec2e16e439a.json",
   "deviceType": 1,
   "globalDeviceId": 60359,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Nordmende",
-  "model": "Spectra ST-63VE"
+  "model": "Spectra ST-63VE",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerOff"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 5,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

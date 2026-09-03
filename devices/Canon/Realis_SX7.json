@@ -2,6 +2,38 @@
   "codeset": "codesets/5e/5eaebf27baf58573.json",
   "deviceType": 7,
   "globalDeviceId": 144005,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Analog PC-1"},
+      {"name":"Analog PC-2"},
+      {"name":"Component"},
+      {"name":"Video"},
+      {"name":"S-Video"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Canon",
-  "model": "Realis SX7"
+  "model": "Realis SX7",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

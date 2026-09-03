@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/c8/c8bd01eb1b23c76c.json",
   "deviceType": 1,
   "globalDeviceId": 163824,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputVideo4"],"name":"Video 4"},
+      {"commands":["InputVideo4","InputNext"],"name":"Component 1"},
+      {"commands":["InputVideo4","InputNext","InputNext"],"name":"Component 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "CT-34WX50"
+  "model": "CT-34WX50",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

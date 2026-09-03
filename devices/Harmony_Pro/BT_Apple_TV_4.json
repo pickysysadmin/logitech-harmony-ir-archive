@@ -2,6 +2,37 @@
   "codeset": "codesets/55/55f80725d28483f1.json",
   "deviceType": 51,
   "globalDeviceId": 492446,
+  "inputs": {
+    "list": [
+      {"commands":["Home",{"delayMs":1000},"Home",{"delayMs":2000},"Home"],"name":"Home","ports":["Antenna"]},
+      {"commands":["Home",{"delayMs":1000},"Home",{"delayMs":2000},"Home",{"delayMs":1000},"Select"],"name":"App 1 Top Row"},
+      {"commands":["Home",{"delayMs":1000},"Home",{"delayMs":2000},"Home",{"delayMs":1000},"DirectionRight",{"delayMs":1000},"Select"],"name":"App 2 Top Row"},
+      {"commands":["Home",{"delayMs":1000},"Home",{"delayMs":2000},"Home",{"delayMs":1000},"DirectionRight","DirectionRight",{"delayMs":1000},"Select"],"name":"App 3 Top Row"},
+      {"commands":["Home",{"delayMs":1000},"Home",{"delayMs":2000},"Home",{"delayMs":1000},"DirectionRight","DirectionRight","DirectionRight",{"delayMs":1000},"Select"],"name":"App 4 Top Row"},
+      {"commands":["Home",{"delayMs":1000},"Home",{"delayMs":2000},"Home",{"delayMs":1000},"DirectionRight","DirectionRight","DirectionRight","DirectionRight",{"delayMs":1000},"Select"],"name":"App 5 Top Row"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Harmony Pro",
-  "model": "BT Apple TV 4"
+  "model": "BT Apple TV 4",
+  "power": {
+    "off": [
+      {"command":"Home","durationMs":2000},
+      {"delayMs":200},
+      "Select"
+    ],
+    "on": ["Home"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 1
+  }
 }

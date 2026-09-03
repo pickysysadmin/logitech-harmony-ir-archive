@@ -2,6 +2,54 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 24122,
+  "inputs": {
+    "list": [
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"DVD1"},
+      {"name":"DVD2"},
+      {"name":"Video 3"}
+    ],
+    "next": ["InputVideo3"],
+    "type": 2
+  },
   "manufacturer": "NEC",
-  "model": "PX-42MP3"
+  "model": "PX-42MP3",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "DVDInput": {
+      "next": ["DVD/HDToggle"],
+      "values": [
+        {"name":"DVD1"},
+        {"name":"DVD2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"DVD/HD","select":[{"commands":["DVD/HDToggle"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VideoAV1"},
+        {"name":"VideoAV2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

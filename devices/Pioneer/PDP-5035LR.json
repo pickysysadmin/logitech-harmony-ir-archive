@@ -2,6 +2,55 @@
   "codeset": "codesets/80/8039178fcda5d107.json",
   "deviceType": 1,
   "globalDeviceId": 135965,
+  "inputs": {
+    "list": [
+      {"name":"Television"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"},
+      {"name":"Video 4"},
+      {"name":"i-Link"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Pioneer",
-  "model": "PDP-5035LR"
+  "model": "PDP-5035LR",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaMode": {
+      "next": ["AntennaA/B"],
+      "values": [
+        {"name":"AntAmode"},
+        {"name":"AntBmode"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input1type","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"Input2type","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"Input3type","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"Input4type","select":[{"commands":["InputVideo4"],"setType":1}]},
+        {"name":"Input5type","select":[{"commands":["InputVideo5"],"setType":1}]},
+        {"name":"InputPCtype","select":[{"commands":["InputPc"],"setType":1}]},
+        {"name":"InputiLinktype","select":[{"commands":["InputiLink"],"setType":1}]},
+        {"name":"InputDTVtype","select":[{"commands":["InputDtv"],"setType":1}]},
+        {"name":"Antennatype","select":[{"commands":["AntennaA/B"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

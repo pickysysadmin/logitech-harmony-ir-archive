@@ -2,6 +2,47 @@
   "codeset": "codesets/a6/a61b88d1eacf4772.json",
   "deviceType": 21,
   "globalDeviceId": 205901,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HC30"
+  "model": "SC-HC30",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":1}]},
+        {"name":"iPod","select":[{"commands":["InputIpod"],"setType":1}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":1}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/a4/a44de4946bcf038e.json",
   "deviceType": 1,
   "globalDeviceId": 124191,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"EXT1"},
+      {"name":"EXT2"},
+      {"name":"EXT3"},
+      {"name":"EXT4"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "46-WH08G"
+  "model": "46-WH08G",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

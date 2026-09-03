@@ -2,6 +2,61 @@
   "codeset": "codesets/af/af83439f29c16188.json",
   "deviceType": 21,
   "globalDeviceId": 415104,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Fm/Cd"},{"set":"Fm/CdInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Fm/Cd"},{"set":"Fm/CdInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Bluetooth/Usb"},{"set":"Bluetooth/UsbInput","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Bluetooth/Usb"},{"set":"Bluetooth/UsbInput","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"AudioIn/Aux"},{"set":"AudioIn/AuxInput","to":"AudioIn"}],"name":"AudioIn"},
+      {"commands":[{"set":"InputType","to":"AudioIn/Aux"},{"set":"AudioIn/AuxInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "BTM5120/12"
+  "model": "BTM5120/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioIn/AuxInput": {
+      "next": ["InputAudioIn/Aux"],
+      "values": [
+        {"name":"AudioIn"},
+        {"name":"Aux"}
+      ]
+    },
+    "Bluetooth/UsbInput": {
+      "next": ["InputBluetooth/Usb"],
+      "values": [
+        {"name":"Bluetooth"},
+        {"name":"Usb"}
+      ]
+    },
+    "Fm/CdInput": {
+      "next": ["InputFm/Cd"],
+      "values": [
+        {"name":"FM"},
+        {"name":"CD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Fm/Cd","select":[{"commands":["InputFm/Cd"],"setType":2}]},
+        {"name":"Bluetooth/Usb","select":[{"commands":["InputBluetooth/Usb"],"setType":2}]},
+        {"name":"AudioIn/Aux","select":[{"commands":["InputAudioIn/Aux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

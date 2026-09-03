@@ -2,6 +2,35 @@
   "codeset": "codesets/88/88588d29173c7c0f.json",
   "deviceType": 19,
   "globalDeviceId": 414524,
+  "inputs": {
+    "list": [
+      {"name":"D.IN"},
+      {"name":"AUX"},
+      {"name":"BT"},
+      {"name":"USB"}
+    ],
+    "next": ["Source"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HW-M369"
+  "model": "HW-M369",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

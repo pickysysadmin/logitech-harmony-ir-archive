@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "finish": ["PowerToggle","InputNext"]
+  },
   "codeset": "codesets/90/9090f104184ef4a6.json",
   "deviceType": 1,
   "globalDeviceId": 124140,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"Tuner"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Hanseatic",
-  "model": "CTV-2092 S-VT"
+  "model": "CTV-2092 S-VT",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle","InputNext"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

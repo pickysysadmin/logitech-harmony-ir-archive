@@ -2,6 +2,39 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 57274,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner","InputVideo1"],"name":"Tuner"},
+      {"commands":[{"set":"AVMode","to":"AV"},"Red"],"name":"AV 1"},
+      {"commands":["Green",{"set":"AVMode","to":"AV"}],"name":"AV 2"},
+      {"commands":["Yellow",{"set":"AVMode","to":"AV"},"Yellow","Yellow"],"name":"AV 3"},
+      {"commands":["Blue",{"set":"AVMode","to":"AV"}],"name":"AV 4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-28PB50D"
+  "model": "TX-28PB50D",
+  "power": {
+    "toggle": ["PowerOn","PowerOff"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVMode": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

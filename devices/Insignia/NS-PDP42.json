@@ -2,6 +2,66 @@
   "codeset": "codesets/5f/5f809b959909c4be.json",
   "deviceType": 1,
   "globalDeviceId": 170966,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Rgb-Pc"}],"name":"Rgb-Pc"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Av1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Av2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi1/dvi"}],"name":"Hdmi1/dvi"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component2"}],"name":"Component2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Insignia",
-  "model": "NS-PDP42"
+  "model": "NS-PDP42",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"}
+      ]
+    },
+    "HdmiInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"Hdmi1/dvi"},
+        {"name":"Hdmi2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Rgb-Pc","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,55 @@
   "codeset": "codesets/18/1867097b5d29340d.json",
   "deviceType": 1,
   "globalDeviceId": 234126,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv/Video"},{"set":"Tv/VideoInput","to":"Av 1(S-Video1)"}],"name":"Av 1(S-Video1)"},
+      {"commands":[{"set":"InputType","to":"TvVideo"},{"set":"Tv/VideoInput","to":"Av 2(S-Video2)"}],"name":"Av 2(S-Video2)"},
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Crosley",
-  "model": "C42HDGB"
+  "model": "C42HDGB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tv/Video","select":[{"commands":["InputTv/Video"],"setType":2}]},
+        {"name":"Multimedia","select":[{"commands":["InputMultimedia"],"setType":2}]}
+      ]
+    },
+    "MultimediaInput": {
+      "next": ["InputMultimedia"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"},
+        {"name":"HDMI"},
+        {"name":"PC"}
+      ]
+    },
+    "Tv/VideoInput": {
+      "next": ["InputTv/Video"],
+      "values": [
+        {"name":"Av 1(S-Video1)"},
+        {"name":"Av 2(S-Video2)"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

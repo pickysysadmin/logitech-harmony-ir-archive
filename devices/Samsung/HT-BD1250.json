@@ -2,6 +2,47 @@
   "codeset": "codesets/88/88bbdbdaa25becb5.json",
   "deviceType": 22,
   "globalDeviceId": 183410,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"BD"}],"name":"BD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"D.In 1"}],"name":"D.In 1","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"D.In 2"}],"name":"D.In 2","ports":["Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-BD1250"
+  "model": "HT-BD1250",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAUX"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"D.In 1"},
+        {"name":"D.In 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"BD","select":[{"commands":["InputBD"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAUX"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,44 @@
   "codeset": "codesets/87/873533d911fc42c0.json",
   "deviceType": 5,
   "globalDeviceId": 273333,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Composite","Coaxial"]},
+      {"commands":["InputStrmBox"],"name":"STRM BOX","ports":["HDMI","Composite","Optical"]},
+      {"commands":["InputGame1"],"name":"Game 1","ports":["HDMI","Composite"]},
+      {"commands":["InputGame2"],"name":"Game 2","ports":["HDMI","Component","Composite"]},
+      {"commands":["InputPc"],"name":"PC","ports":["HDMI","Composite"]},
+      {"commands":["InputAux"],"name":"Aux","ports":["HDMI"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Optical"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputAM"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputFM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputInternetRadio"],"name":"Internet Radio","ports":["Streaming"]},
+      {"commands":["InputMusicServer"],"name":"Music Server","ports":["Streaming"]},
+      {"commands":["InputAirplay"],"name":"iPod","ports":["Dock"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Composite","Optical"]},
+      {"commands":["InputBluetooth"],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":["InputNet"],"name":"NET","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-RZ900"
+  "model": "TX-RZ900",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

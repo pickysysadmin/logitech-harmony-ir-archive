@@ -2,6 +2,49 @@
   "codeset": "codesets/bf/bfe0e4c1e0d38970.json",
   "deviceType": 21,
   "globalDeviceId": 253911,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Phono/AUX"},{"set":"Phono/AUXInput","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"Phono/AUX"},{"set":"Phono/AUXInput","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Phono/AUX"},{"set":"Phono/AUXInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teac",
-  "model": "LP-R500"
+  "model": "LP-R500",
+  "states": {
+    "FM/AMInput": {
+      "next": ["InputFm/Am"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Phono/AUX","select":[{"commands":["InputPhono/Aux"],"setType":2}]},
+        {"name":"FM/AM","select":[{"commands":["InputFm/Am"],"setType":2}]}
+      ]
+    },
+    "Phono/AUXInput": {
+      "next": ["InputPhono/Aux"],
+      "values": [
+        {"name":"Phono"},
+        {"name":"Tape"},
+        {"name":"AUX"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "pressMinRepeats": 1
+  }
 }

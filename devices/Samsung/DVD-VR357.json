@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/85/85d89e0e5c85dbb0.json",
   "deviceType": 47,
   "globalDeviceId": 168071,
+  "inputs": {
+    "list": [
+      {"commands":["InputDVD"],"name":"DVD"},
+      {"commands":["InputVcr"],"name":"VCR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "DVD-VR357"
+  "model": "DVD-VR357",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

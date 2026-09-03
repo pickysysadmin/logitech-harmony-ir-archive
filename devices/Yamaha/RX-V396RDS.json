@@ -2,6 +2,56 @@
   "codeset": "codesets/ba/ba3a1a306b77bec8.json",
   "deviceType": 5,
   "globalDeviceId": 111809,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Sat/Dtv"}],"name":"Sat/Dtv"},
+      {"commands":[{"set":"InputType","to":"MD/Tape"}],"name":"MD/Tape"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"ExtDecoder"}],"name":"ExtDecoder"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"DVD/LD"},{"set":"DVD/LDInput","to":"DVD-Auto"}],"name":"DVD-Auto"},
+      {"commands":[{"set":"InputType","to":"DVD/LD"},{"set":"DVD/LDInput","to":"DVD-Analog"}],"name":"DVD-Analog"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V396RDS"
+  "model": "RX-V396RDS",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVD/LDInput": {
+      "next": ["InputDvd/Ld"],
+      "values": [
+        {"name":"DVD-Auto"},
+        {"name":"DVD-Analog"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Sat/Dtv","select":[{"commands":["InputSat/Dtv"],"setType":2}]},
+        {"name":"MD/Tape","select":[{"commands":["InputMd/Tape"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"ExtDecoder","select":[{"commands":["InputExtDecoder"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD/LD","select":[{"commands":["InputDvd/Ld"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 1
+  }
 }

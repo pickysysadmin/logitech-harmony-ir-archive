@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/7f/7feabaedf03097fb.json",
   "deviceType": 1,
   "globalDeviceId": 234907,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","Exit","InputTv"],"name":"TV"},
+      {"commands":["Exit","Exit","InputUsb"],"name":"USB"},
+      {"commands":["Exit","Exit","InputUsb",{"delayMs":1000},"Source","DirectionRight","OK"],"name":"Network"},
+      {"commands":["Exit","Exit","InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["Exit","Exit","InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["Exit","Exit","InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["Exit","Exit","InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["Exit","Exit","InputHdmi5"],"name":"HDMI 5"},
+      {"commands":["Exit","Exit","InputYPbPr"],"name":"YPbPr"},
+      {"commands":["Exit","Exit","InputScart"],"name":"Scart"},
+      {"commands":["Exit","Exit","InputHdmi5",{"delayMs":1000},"Source","DirectionRight","DirectionRight","OK"],"name":"VGA"},
+      {"commands":["SmartTv"],"name":"Smart TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "55PFL8007T/12"
+  "model": "55PFL8007T/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 14000,
+    "pressMinRepeats": 3
+  }
 }

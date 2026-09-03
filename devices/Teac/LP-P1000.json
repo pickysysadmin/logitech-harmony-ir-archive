@@ -2,6 +2,62 @@
   "codeset": "codesets/4f/4fb5589ed6b457a6.json",
   "deviceType": 21,
   "globalDeviceId": 335091,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Jack"},{"set":"JackInput","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"Jack"},{"set":"JackInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Drive"},{"set":"DriveInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Drive"},{"set":"DriveInput","to":"Bluetooth"}],"name":"Bluetooth"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teac",
-  "model": "LP-P1000"
+  "model": "LP-P1000",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DriveInput": {
+      "next": ["InputCd/Bluetooth"],
+      "values": [
+        {"name":"CD"},
+        {"name":"Bluetooth"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Jack","select":[{"commands":["InputPhono/Aux"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Drive","select":[{"commands":["InputCd/Bluetooth"],"setType":2}]}
+      ]
+    },
+    "JackInput": {
+      "next": ["InputPhono/Aux"],
+      "values": [
+        {"name":"Phono"},
+        {"name":"Aux"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

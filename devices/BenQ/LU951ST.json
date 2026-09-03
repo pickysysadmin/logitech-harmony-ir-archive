@@ -2,6 +2,41 @@
   "codeset": "codesets/37/37fd8b66f59e4730.json",
   "deviceType": 7,
   "globalDeviceId": 498635,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"HDMI 3"},
+      {"name":"S-Video"},
+      {"name":"Video"},
+      {"name":"PC"},
+      {"name":"HDBaseT"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "BenQ",
-  "model": "LU951ST"
+  "model": "LU951ST",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

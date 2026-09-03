@@ -1,7 +1,67 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/90/90ded7e6235ffdd8.json",
   "deviceType": 1,
   "globalDeviceId": 175523,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Av1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"Av2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"SAv2"}],"name":"SAv2"},
+      {"commands":[{"set":"InputType","to":"Av3"}],"name":"Av3"},
+      {"commands":[{"set":"InputType","to":"Av4"}],"name":"Av4"},
+      {"commands":[{"set":"InputType","to":"Av5"}],"name":"Av5"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Rgb"}],"name":"Rgb"},
+      {"commands":[{"set":"InputType","to":"Hdmi"}],"name":"Hdmi"},
+      {"commands":[{"set":"InputType","to":"D/ATv"},{"set":"D/ATvInput","to":"Analogue"}],"name":"Analogue"},
+      {"commands":[{"set":"InputType","to":"D/ATv"},{"set":"D/ATvInput","to":"Digital"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "42PX5D-EB"
+  "model": "42PX5D-EB",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "D/ATvInput": {
+      "next": ["InputD/A"],
+      "values": [
+        {"name":"Analogue"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Av1","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"Av2","select":[{"commands":["InputAv2"],"setType":2}]},
+        {"name":"SAv2","select":[{"commands":["InputSAv2"],"setType":2}]},
+        {"name":"Av3","select":[{"commands":["InputAv3"],"setType":2}]},
+        {"name":"Av4","select":[{"commands":["InputAv4"],"setType":2}]},
+        {"name":"Av5","select":[{"commands":["InputAv5"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"Rgb","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"D/ATv","select":[{"commands":["InputD/A"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

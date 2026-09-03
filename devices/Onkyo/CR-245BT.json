@@ -2,6 +2,48 @@
   "codeset": "codesets/5f/5f4727af5020624e.json",
   "deviceType": 21,
   "globalDeviceId": 301723,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line"}],"name":"Line"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Onkyo",
-  "model": "CR-245BT"
+  "model": "CR-245BT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputBT/Line"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputBT/Line"],
+      "values": [
+        {"name":"Bluetooth"},
+        {"name":"Line"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

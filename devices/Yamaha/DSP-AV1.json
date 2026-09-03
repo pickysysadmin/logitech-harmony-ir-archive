@@ -2,6 +2,62 @@
   "codeset": "codesets/61/6141c38e8e2ab4e5.json",
   "deviceType": 19,
   "globalDeviceId": 60453,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"MonitorInput","to":"Input"},{"set":"InputType","to":"V-Aux"}],"name":"V-Aux"},
+      {"commands":[{"set":"MonitorInput","to":"Input"},{"set":"InputType","to":"V-Aux"}],"name":"Phono"},
+      {"commands":[{"set":"MonitorInput","to":"Input"},{"set":"InputType","to":"Tape 1"}],"name":"Tape 1"},
+      {"commands":[{"set":"MonitorInput","to":"Input"},{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"MonitorInput","to":"Input"},{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"MonitorInput","to":"Input"},{"set":"InputType","to":"DVD/VCR 3"}],"name":"DVD/VCR 3"},
+      {"commands":[{"set":"MonitorInput","to":"Input"},{"set":"InputType","to":"VCR 2"}],"name":"VCR 2"},
+      {"commands":[{"set":"MonitorInput","to":"Input"},{"set":"InputType","to":"VCR 1"}],"name":"VCR 1"},
+      {"commands":[{"set":"MonitorInput","to":"Input"},{"set":"InputType","to":"TV/DBS"}],"name":"TV/DBS"},
+      {"commands":[{"set":"MonitorInput","to":"Input"},{"set":"InputType","to":"LD"}],"name":"LD"},
+      {"commands":[{"set":"MonitorInput","to":"Tape Monitor"}],"name":"Tape Monitor"},
+      {"commands":[{"set":"MonitorInput","to":"External Dec"}],"name":"External Decoder"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "DSP-AV1"
+  "model": "DSP-AV1",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"V-Aux","select":[{"commands":["InputV-Aux"],"setType":2}]},
+        {"name":"Phono","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"Tape 1","select":[{"commands":["InputMd/Tape1"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"DVD/VCR 3","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VCR 2","select":[{"commands":["InputVcr2"],"setType":2}]},
+        {"name":"VCR 1","select":[{"commands":["InputVcr1"],"setType":2}]},
+        {"name":"TV/DBS","select":[{"commands":["InputTv/Dbs"],"setType":2}]},
+        {"name":"LD","select":[{"commands":["InputLd"],"setType":2}]}
+      ]
+    },
+    "MonitorInput": {
+      "next": ["InputTape2/Mon"],
+      "values": [
+        {"name":"Tape Monitor"},
+        {"name":"External Dec"},
+        {"name":"Input"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,48 @@
   "codeset": "codesets/b7/b7bf9558218fa9f0.json",
   "deviceType": 1,
   "globalDeviceId": 77022,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext"],"name":"Tuner"},
+      {"commands":["InputNext"],"name":"AV1"}
+    ],
+    "type": 1
+  },
   "manufacturer": "OVP",
-  "model": "CTV-28MM30"
+  "model": "CTV-28MM30",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"InputType","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVInputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"SVid"},
+        {"name":"AV3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputAntennaCable"],"setType":2}]},
+        {"name":"AVInput","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

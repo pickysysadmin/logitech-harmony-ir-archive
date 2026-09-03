@@ -2,6 +2,36 @@
   "codeset": "codesets/89/89eda77191623b82.json",
   "deviceType": 19,
   "globalDeviceId": 241861,
+  "inputs": {
+    "list": [
+      {"name":"D.In"},
+      {"name":"AUX"},
+      {"name":"HDMI"},
+      {"name":"BT"},
+      {"name":"USB"}
+    ],
+    "next": ["InputNext"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HW-E540"
+  "model": "HW-E540",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 2
+  }
 }

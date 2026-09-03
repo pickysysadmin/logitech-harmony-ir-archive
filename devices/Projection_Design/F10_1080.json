@@ -2,6 +2,35 @@
   "codeset": "codesets/89/89f98a4c904c048e.json",
   "deviceType": 7,
   "globalDeviceId": 151858,
+  "inputs": {
+    "list": [
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputComponent"],"name":"Component 1"},
+      {"commands":["InputComponent2"],"name":"Component 2"},
+      {"commands":["InputDvi"],"name":"DVI"},
+      {"commands":["InputVga"],"name":"VGA"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Projection Design",
-  "model": "F10 1080"
+  "model": "F10 1080",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

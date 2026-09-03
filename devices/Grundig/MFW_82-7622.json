@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/34/3433029b5e201ec7.json",
   "deviceType": 1,
   "globalDeviceId": 92019,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"AV3S"},
+      {"name":"AV4"},
+      {"name":"AV4S"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "MFW 82-7622"
+  "model": "MFW 82-7622",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 2
+  }
 }

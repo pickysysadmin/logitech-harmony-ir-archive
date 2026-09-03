@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/28/2847e3f01e40a0a8.json",
   "deviceType": 37,
   "globalDeviceId": 146940,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"DVD"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV Component"},
+      {"name":"PC Analog"},
+      {"name":"PC Digital"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Magnavox",
-  "model": "26MD255V"
+  "model": "26MD255V",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1200}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

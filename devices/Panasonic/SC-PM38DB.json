@@ -2,6 +2,47 @@
   "codeset": "codesets/3b/3be7db4a88ac214c.json",
   "deviceType": 21,
   "globalDeviceId": 210559,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"DAB"}],"name":"DAB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PM38DB"
+  "model": "SC-PM38DB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":1}]},
+        {"name":"iPod","select":[{"commands":["InputIpod"],"setType":1}]},
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":1}]},
+        {"name":"Radio","select":[{"commands":["InputDab/Fm"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputDab/Fm"],
+      "values": [
+        {"name":"FM"},
+        {"name":"DAB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,79 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/25/25ee135d4e12d8dd.json",
   "deviceType": 1,
   "globalDeviceId": 161828,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"TunerA"}],"name":"TV1"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"TunerB"}],"name":"TV2"},
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"SCART1-RGB"},
+      {"commands":[{"set":"InputType","to":"AV1"},{"set":"AV1Input","to":"Scart1-S"}],"name":"SCART1-S"},
+      {"commands":[{"set":"InputType","to":"AV1"},{"set":"AV1Input","to":"Scart1-Video"}],"name":"SCART1-Video"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"SCART2-RGB"},
+      {"commands":[{"set":"InputType","to":"AV2"},{"set":"AV2Input","to":"Scart2-S"}],"name":"SCART2-S"},
+      {"commands":[{"set":"InputType","to":"AV2"},{"set":"AV2Input","to":"Scart2-Video"}],"name":"SCART2-Video"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"YCbCr"}],"name":"YCbCr"}
+    ],
+    "type": 5
+  },
   "manufacturer": "ViewSonic",
-  "model": "N3000W"
+  "model": "N3000W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV1Input": {
+      "next": ["InputAv1"],
+      "values": [
+        {"name":"Scart1-RGB"},
+        {"name":"Scart1-S"},
+        {"name":"Scart1-Video"}
+      ]
+    },
+    "AV2Input": {
+      "next": ["InputAv2"],
+      "values": [
+        {"name":"Scart2-RGB"},
+        {"name":"Scart2-S"},
+        {"name":"Scart2-Video"}
+      ]
+    },
+    "AntennaInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"TunerA"},
+        {"name":"TunerB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputAV3"],"setType":2}]},
+        {"name":"DVI","select":[{"commands":["InputSVideo1"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputSVideo2"],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputYPbPr"],"setType":2}]},
+        {"name":"YCbCr","select":[{"commands":["InputYCbCr"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["InputTuner",{"set":"AntennaInput","to":"TunerA"}],"setType":2}]},
+        {"name":"AV1","select":[{"commands":["InputAv1",{"set":"AV1Input","to":"Scart1-RGB"}],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputAv2",{"set":"AV2Input","to":"Scart2-RGB"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 7000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

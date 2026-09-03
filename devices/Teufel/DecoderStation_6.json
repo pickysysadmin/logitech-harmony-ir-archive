@@ -2,6 +2,84 @@
   "codeset": "codesets/25/25a26a84b118aecd.json",
   "deviceType": 5,
   "globalDeviceId": 272816,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI TV"}],"name":"HDMI TV"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI2/3/4"},{"set":"HDMI2/3/4Input","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI2/3/4"},{"set":"HDMI2/3/4Input","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"HDMI2/3/4"},{"set":"HDMI2/3/4Input","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"Optical1/2"},{"set":"Optical1/2Input","to":"Optical 1"}],"name":"Optical 1"},
+      {"commands":[{"set":"InputType","to":"Optical1/2"},{"set":"Optical1/2Input","to":"Optical 2"}],"name":"Optical 2"},
+      {"commands":[{"set":"InputType","to":"Coaxial1/2"},{"set":"Coaxial1/2Input","to":"Coaxial 1"}],"name":"Coaxial 1"},
+      {"commands":[{"set":"InputType","to":"Coaxial1/2"},{"set":"Coaxial1/2Input","to":"Coaxial 2"}],"name":"Coaxial 2"},
+      {"commands":[{"set":"InputType","to":"Aux1/2/3"},{"set":"Aux1/2/3Input","to":"Aux 1"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"Aux1/2/3"},{"set":"Aux1/2/3Input","to":"Aux 2"}],"name":"Aux 2"},
+      {"commands":[{"set":"InputType","to":"Aux1/2/3"},{"set":"Aux1/2/3Input","to":"Aux 3"}],"name":"Aux 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teufel",
-  "model": "DecoderStation 6"
+  "model": "DecoderStation 6",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux1/2/3Input": {
+      "next": ["InputAux1/2/3"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"},
+        {"name":"Aux 3"}
+      ]
+    },
+    "Coaxial1/2Input": {
+      "next": ["InputCoaxial1/2"],
+      "values": [
+        {"name":"Coaxial 1"},
+        {"name":"Coaxial 2"}
+      ]
+    },
+    "HDMI2/3/4Input": {
+      "next": ["InputHdmi2/3/4"],
+      "values": [
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"HDMI 4"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDMI TV","select":[{"commands":["InputHdmiTv"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"FM","select":[{"commands":["FM"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2/3/4","select":[{"commands":["InputHdmi2/3/4"],"setType":2}]},
+        {"name":"Optical1/2","select":[{"commands":["InputOptical1/2"],"setType":2}]},
+        {"name":"Coaxial1/2","select":[{"commands":["InputCoaxial1/2"],"setType":2}]},
+        {"name":"Aux1/2/3","select":[{"commands":["InputAux1/2/3"],"setType":2}]}
+      ]
+    },
+    "Optical1/2Input": {
+      "next": ["InputOptical1/2"],
+      "values": [
+        {"name":"Optical 1"},
+        {"name":"Optical 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/a1/a1a1f97d185417af.json",
   "deviceType": 34,
   "globalDeviceId": 163850,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DV"}],"name":"DV"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"SOURCE"},{"set":"SOURCEInput","to":"EXT1"}],"name":"EXT1"},
+      {"commands":[{"set":"InputType","to":"SOURCE"},{"set":"SOURCEInput","to":"CAM1"}],"name":"CAM1"},
+      {"commands":[{"set":"InputType","to":"SOURCE"},{"set":"SOURCEInput","to":"CAM2"}],"name":"CAM2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DVDR-3350H"
+  "model": "DVDR-3350H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HDD","select":[{"commands":["InputHDD"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"DV","select":[{"commands":["InputDV"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"SOURCE","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "SOURCEInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"EXT1"},
+        {"name":"CAM1"},
+        {"name":"CAM2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,41 @@
   "codeset": "codesets/26/2694b73e0979f767.json",
   "deviceType": 1,
   "globalDeviceId": 146800,
+  "inputs": {
+    "canSkip": true,
+    "finish": ["Select","Exit"],
+    "list": [
+      {"name":"Input 1"},
+      {"name":"Input 2"},
+      {"name":"Input 3"},
+      {"name":"Input 4"},
+      {"name":"Input 5"},
+      {"name":"Antenna B"},
+      {"name":"Antenna A"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": [
+      {"delayMs":3000},
+      "InputNext"
+    ],
+    "type": 4
+  },
   "manufacturer": "Hitachi",
-  "model": "57F510"
+  "model": "57F510",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

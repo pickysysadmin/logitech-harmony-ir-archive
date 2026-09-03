@@ -1,7 +1,76 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a5/a558b571138b6b53.json",
   "deviceType": 1,
   "globalDeviceId": 171298,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV1"},{"set":"MENU","to":"OFF"}],"name":"AV1"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"MENU","to":"OFF"}],"name":"AV2"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"MENU","to":"OFF"}],"name":"AV3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-25PX10D"
+  "model": "TX-25PX10D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":2}]}
+      ]
+    },
+    "AvInput": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["Red"],"setType":1}]},
+        {"name":"AV 2","select":[{"commands":["Green"],"setType":1}]},
+        {"name":"AV 3","select":[{"commands":["Yellow"],"setType":1}]}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "Tv/Av",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Blue"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":2}]}
+      ]
+    },
+    "Tuner/AvInput": {
+      "next": ["Tv/Av"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

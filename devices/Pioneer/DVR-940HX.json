@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/90/908b1e891ba89e22.json",
   "deviceType": 34,
   "globalDeviceId": 180441,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Hdd/Dvd"},{"set":"Hdd/DvdInput","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"Hdd/Dvd"},{"set":"Hdd/DvdInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"AV2/L1"}],"name":"AV2/L1"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"L2"}],"name":"L2"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"L3"}],"name":"L3"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"Tuner"}],"name":"Tuner"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "DVR-940HX"
+  "model": "DVR-940HX",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Hdd/DvdInput": {
+      "next": ["Hdd/Dvd"],
+      "values": [
+        {"name":"HDD"},
+        {"name":"DVD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Hdd/Dvd","select":[{"commands":["Hdd/Dvd"],"setType":2}]},
+        {"name":"Inputs","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "InputsInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV2/L1"},
+        {"name":"L2"},
+        {"name":"L3"},
+        {"name":"Tuner"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 13000,
+    "pressMinRepeats": 3
+  }
 }

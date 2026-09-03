@@ -2,6 +2,50 @@
   "codeset": "codesets/11/11ef31efac7d0e9d.json",
   "deviceType": 22,
   "globalDeviceId": 151817,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"D-IN"}],"name":"D-IN"},
+      {"commands":[{"set":"InputType","to":"iPOD"}],"name":"iPOD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PT960P-K"
+  "model": "SC-PT960P-K",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FM/AMInput": {
+      "next": ["FM/AM"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"AUX"},
+        {"name":"D-IN"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"FM/AM","select":[{"commands":["FM/AM"],"setType":2}]},
+        {"name":"iPOD","select":[{"commands":["InputiPod"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

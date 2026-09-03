@@ -2,6 +2,63 @@
   "codeset": "codesets/2c/2cbf81de42113cbe.json",
   "deviceType": 21,
   "globalDeviceId": 349711,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth/Dock"},{"set":"Bluetooth/DockInput","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Bluetooth/Dock"},{"set":"Bluetooth/DockInput","to":"Dock"}],"name":"Dock"},
+      {"commands":[{"set":"InputType","to":"CD/FM/DAB"},{"set":"CD/FM/DABInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"CD/FM/DAB"},{"set":"CD/FM/DABInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"CD/FM/DAB"},{"set":"CD/FM/DABInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"USB/AudioIn"},{"set":"USB/AudioInInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB/AudioIn"},{"set":"USB/AudioInInput","to":"AudioIn"}],"name":"AudioIn"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DTB3185/10"
+  "model": "DTB3185/10",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Bluetooth/DockInput": {
+      "next": ["InputBluetooth/Dock"],
+      "values": [
+        {"name":"Bluetooth"},
+        {"name":"Dock"}
+      ]
+    },
+    "CD/FM/DABInput": {
+      "next": ["InputCd/Fm/Dab"],
+      "values": [
+        {"name":"CD"},
+        {"name":"FM"},
+        {"name":"DAB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth/Dock","select":[{"commands":["InputBluetooth/Dock"],"setType":2}]},
+        {"name":"CD/FM/DAB","select":[{"commands":["InputCd/Fm/Dab"],"setType":2}]},
+        {"name":"USB/AudioIn","select":[{"commands":["InputUsb/AudioIn"],"setType":2}]}
+      ]
+    },
+    "USB/AudioInInput": {
+      "next": ["InputUsb/AudioIn"],
+      "values": [
+        {"name":"USB"},
+        {"name":"AudioIn"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

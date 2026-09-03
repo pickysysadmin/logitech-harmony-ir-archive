@@ -2,6 +2,37 @@
   "codeset": "codesets/fd/fd3e4b779cddfb39.json",
   "deviceType": 19,
   "globalDeviceId": 492447,
+  "inputs": {
+    "list": [
+      {"name":"D.IN","ports":["Optical"]},
+      {"name":"TV Arc","ports":["HDMI"]},
+      {"name":"Aux","ports":["Aux"]},
+      {"name":"HDMI","ports":["HDMI"]},
+      {"name":"BT","ports":["Pairing Input"]},
+      {"name":"USB","ports":["USB"]}
+    ],
+    "next": ["Source"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HW-R50M"
+  "model": "HW-R50M",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

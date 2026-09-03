@@ -2,6 +2,51 @@
   "codeset": "codesets/31/31a5c2f762137673.json",
   "deviceType": 21,
   "globalDeviceId": 203455,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"MusicPort"}],"name":"MusicPort"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-AK280"
+  "model": "SC-AK280",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":1}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":1}]},
+        {"name":"Tape","select":[{"commands":["InputTAPE"],"setType":1}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":1}]},
+        {"name":"MusicPort","select":[{"commands":["InputMusicP"],"setType":1}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

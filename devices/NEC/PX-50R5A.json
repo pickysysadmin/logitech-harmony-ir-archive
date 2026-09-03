@@ -2,6 +2,57 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 98760,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo3"],"name":"VIDEO1"},
+      {"commands":["InputVideo3"],"name":"VIDEO2"},
+      {"commands":["InputVideo3"],"name":"VIDEO3"},
+      {"commands":["HD 3"],"name":"DVD/HD1"},
+      {"commands":["HD 2"],"name":"DVD/HD2"},
+      {"commands":["HD 3"],"name":"DVD/HD3"},
+      {"commands":["RGB/PCToggle"],"name":"PC/RGB"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "PX-50R5A"
+  "model": "PX-50R5A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"VIDEO","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["RGB/PCToggle"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VIDEO1"},
+        {"name":"VIDEO2"},
+        {"name":"VIDEO3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

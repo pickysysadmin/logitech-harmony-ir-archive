@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 35687,
+  "inputs": {
+    "finish": ["TvVideo"],
+    "list": [
+      {"name":"HDVI"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputNext"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Panasonic",
-  "model": "TC-32X20"
+  "model": "TC-32X20",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"HDVI"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

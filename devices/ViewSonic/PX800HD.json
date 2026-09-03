@@ -2,6 +2,33 @@
   "codeset": "codesets/f4/f47656721fd8ad3e.json",
   "deviceType": 7,
   "globalDeviceId": 413550,
+  "inputs": {
+    "list": [
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["InputComponent2"],"name":"Component 2"},
+      {"commands":["InputHdmi"],"name":"HDMI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "ViewSonic",
-  "model": "PX800HD"
+  "model": "PX800HD",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

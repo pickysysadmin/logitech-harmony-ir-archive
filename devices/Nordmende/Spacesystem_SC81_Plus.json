@@ -2,6 +2,44 @@
   "codeset": "codesets/d0/d0c83ec2e16e439a.json",
   "deviceType": 1,
   "globalDeviceId": 66546,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"AV2"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "Nordmende",
-  "model": "Spacesystem SC81 Plus"
+  "model": "Spacesystem SC81 Plus",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "type": "discrete"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["0"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["3"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["0"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

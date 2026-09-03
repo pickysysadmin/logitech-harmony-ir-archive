@@ -2,6 +2,34 @@
   "codeset": "codesets/27/27c502b599174a1e.json",
   "deviceType": 1,
   "globalDeviceId": 176070,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Tuner"},
+      {"commands":["0"],"name":"AV"},
+      {"commands":["InputVideo1"],"name":"E1"},
+      {"commands":["InputVideo2"],"name":"E2"},
+      {"commands":["InputVideo3"],"name":"E3"},
+      {"commands":["InputVideo4"],"name":"E4"},
+      {"commands":["InputVideo4",{"delayMs":3000},"ChannelUp"],"name":"Hdmi"},
+      {"commands":["InputVideo4",{"delayMs":3000},"ChannelUp",{"delayMs":2000},"ChannelUp"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-37R71SU"
+  "model": "LT-37R71SU",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

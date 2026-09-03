@@ -2,6 +2,56 @@
   "codeset": "codesets/c3/c34f8936bb47e046.json",
   "deviceType": 22,
   "globalDeviceId": 183226,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dvd"}],"name":"Dvd"},
+      {"commands":[{"set":"InputType","to":"Fm"}],"name":"Fm"},
+      {"commands":[{"set":"InputType","to":"InputCard/Usb"},{"set":"InputCard/UsbInput","to":"Card"}],"name":"Card"},
+      {"commands":[{"set":"InputType","to":"InputCard/Usb"},{"set":"InputCard/UsbInput","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"InputIPod/Aux"},{"set":"InputIPod/AuxInput","to":"IPod"}],"name":"IPod"},
+      {"commands":[{"set":"InputType","to":"InputIPod/Aux"},{"set":"InputIPod/AuxInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Tevion",
-  "model": "MDVD 294"
+  "model": "MDVD 294",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputCard/UsbInput": {
+      "next": ["InputCard/Usb"],
+      "values": [
+        {"name":"Card"},
+        {"name":"Usb"}
+      ]
+    },
+    "InputIPod/AuxInput": {
+      "next": ["InputIPod/Aux"],
+      "values": [
+        {"name":"IPod"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dvd","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"Fm","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"InputCard/Usb","select":[{"commands":["InputCard/Usb"],"setType":2}]},
+        {"name":"InputIPod/Aux","select":[{"commands":["InputIPod/Aux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,33 @@
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 53937,
+  "inputs": {
+    "list": [
+      {"commands":["5"],"name":"Tuner"},
+      {"commands":["1"],"name":"J-DVD"},
+      {"commands":["2"],"name":"DBox"},
+      {"commands":["3"],"name":"Int-DVD"}
+    ],
+    "start": ["0"],
+    "type": 3
+  },
   "manufacturer": "Grundig",
-  "model": "Cinaro 70 Flat"
+  "model": "Cinaro 70 Flat",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

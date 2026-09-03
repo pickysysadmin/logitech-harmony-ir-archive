@@ -2,6 +2,36 @@
   "codeset": "codesets/a5/a52af05d763e1976.json",
   "deviceType": 12,
   "globalDeviceId": 127156,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV2-S"},
+      {"name":"AV3"},
+      {"name":"AV3-S"}
+    ],
+    "next": ["ChapterNext"],
+    "type": 2
+  },
   "manufacturer": "Nevir",
-  "model": "NVR-2082D"
+  "model": "NVR-2082D",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

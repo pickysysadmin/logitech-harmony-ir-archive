@@ -2,6 +2,36 @@
   "codeset": "codesets/26/260d24699f5f1004.json",
   "deviceType": 7,
   "globalDeviceId": 43646,
+  "inputs": {
+    "list": [
+      {"name":"Composite"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"RGB"},
+      {"name":"DVI"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "RL-JA21"
+  "model": "RL-JA21",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":200},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

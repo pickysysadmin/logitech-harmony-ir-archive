@@ -2,6 +2,55 @@
   "codeset": "codesets/36/36f20212babdcded.json",
   "deviceType": 21,
   "globalDeviceId": 38303,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tapes"},{"set":"TapesInput","to":"Tape 1"}],"name":"Tape 1"},
+      {"commands":[{"set":"InputType","to":"Tapes"},{"set":"TapesInput","to":"Tape 2"}],"name":"Tape 2"},
+      {"commands":[{"set":"InputType","to":"Videos"},{"set":"VideosInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Videos"},{"set":"VideosInput","to":"Video 2"}],"name":"Video 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "RP-9345"
+  "model": "RP-9345",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tapes","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Videos","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "TapesInput": {
+      "next": ["InputTape"],
+      "values": [
+        {"name":"Tape 1"},
+        {"name":"Tape 2"}
+      ]
+    },
+    "VideosInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

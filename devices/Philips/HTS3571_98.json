@@ -2,6 +2,53 @@
   "codeset": "codesets/65/654b70dd511e3cea.json",
   "deviceType": 22,
   "globalDeviceId": 228147,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"AUX 1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"AUX 2"}],"name":"AUX 2"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"COAX IN"}],"name":"COAX IN"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"OPTI IN"}],"name":"OPTI IN"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"MP3 Link"}],"name":"MP3 Link"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS3571/98"
+  "model": "HTS3571/98",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioSourceInput": {
+      "next": ["InputAudioSource"],
+      "values": [
+        {"name":"AUX 1"},
+        {"name":"AUX 2"},
+        {"name":"COAX IN"},
+        {"name":"OPTI IN"},
+        {"name":"MP3 Link"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":2}]},
+        {"name":"AudioSource","select":[{"commands":["InputAudioSource"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

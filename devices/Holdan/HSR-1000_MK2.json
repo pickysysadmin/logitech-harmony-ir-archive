@@ -2,6 +2,81 @@
   "codeset": "codesets/2f/2f137444e7a153ce.json",
   "deviceType": 30,
   "globalDeviceId": 72600,
+  "inputs": {
+    "list": [
+      {"name":"VCR"},
+      {"name":"DVD"},
+      {"name":"SAT 1"},
+      {"name":"SAT 2"},
+      {"name":"Terra"},
+      {"name":"Camera"},
+      {"name":"Game"},
+      {"name":"TV"}
+    ],
+    "next": ["TvDown"],
+    "type": 2
+  },
   "manufacturer": "Holdan",
-  "model": "HSR-1000 MK2"
+  "model": "HSR-1000 MK2",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TvDown"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["VcrDown"],"setType":2}]},
+        {"name":"MOD","select":[{"commands":["ModulatorDown"],"setType":2}]}
+      ]
+    },
+    "ModInput": {
+      "finish": ["Select"],
+      "next": ["ModulatorDown"],
+      "values": [
+        {"name":"Mod-Tv"},
+        {"name":"Mod-Vcr"},
+        {"name":"Mod-Dvd"},
+        {"name":"Mod-Sat1"},
+        {"name":"Mod-Sat2"},
+        {"name":"Mod-Terra"},
+        {"name":"Mod-Cam"}
+      ]
+    },
+    "TvInput": {
+      "finish": ["Select"],
+      "next": ["TvDown"],
+      "values": [
+        {"name":"Tv-Vcr"},
+        {"name":"Tv-Dvd"},
+        {"name":"Tv-Sat1"},
+        {"name":"Tv-Sat2"},
+        {"name":"Tv-Terra"},
+        {"name":"Tv-Cam"},
+        {"name":"Tv-Game"}
+      ]
+    },
+    "VcrInput": {
+      "finish": ["Select"],
+      "next": ["VcrDown"],
+      "values": [
+        {"name":"Vcr-Tv"},
+        {"name":"Vcr-Dvd"},
+        {"name":"Vcr-Sat1"},
+        {"name":"Vcr-Sat2"},
+        {"name":"Vcr-Terra"},
+        {"name":"Vcr-Cam"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

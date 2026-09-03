@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/58/584830529e041d6f.json",
   "deviceType": 1,
   "globalDeviceId": 97009,
+  "inputs": {
+    "canSkip": true,
+    "finish": ["Select"],
+    "list": [
+      {"name":"V"},
+      {"name":"D"},
+      {"name":"C1"},
+      {"name":"C2"},
+      {"name":"AV"}
+    ],
+    "next": ["DirectionRight"],
+    "previous": ["DirectionLeft"],
+    "start": [
+      {"delayMs":4000},
+      "StartInput"
+    ],
+    "type": 4
+  },
   "manufacturer": "Polaroid",
-  "model": "PLA-4205"
+  "model": "PLA-4205",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 3
+  }
 }

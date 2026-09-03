@@ -2,6 +2,63 @@
   "codeset": "codesets/aa/aa5b9b7c3023972b.json",
   "deviceType": 7,
   "globalDeviceId": 253650,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"ComputerIn 1"}],"name":"ComputerIn 1"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"ComputerIn 2"}],"name":"ComputerIn 2"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"LAN"}],"name":"LAN"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"USBType A"}],"name":"USBType A"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"USBType B"}],"name":"USBType B"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "CP-X4021N"
+  "model": "CP-X4021N",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "ComputerInput": {
+      "next": ["InputComputer"],
+      "values": [
+        {"name":"ComputerIn 1"},
+        {"name":"ComputerIn 2"},
+        {"name":"LAN"},
+        {"name":"USBType A"},
+        {"name":"USBType B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"HDMI"},
+        {"name":"Component"},
+        {"name":"S-Video"},
+        {"name":"Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

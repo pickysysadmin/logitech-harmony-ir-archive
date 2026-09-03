@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ff/ff46bd6987397a7b.json",
   "deviceType": 1,
   "globalDeviceId": 92130,
+  "inputs": {
+    "list": [
+      {"commands":["InputComponent1"],"name":"Component1"},
+      {"commands":["InputComponent1","TvVideo"],"name":"Component2"},
+      {"commands":["InputRGB"],"name":"RGB-DTV"},
+      {"commands":["InputDVI"],"name":"DVI-DTV"},
+      {"commands":["InputTuner"],"name":"DTV 2-1"},
+      {"commands":["InputTuner","TvVideo"],"name":"CATV 95-0"},
+      {"commands":["InputVideo1"],"name":"Video1"},
+      {"commands":["InputVideo2"],"name":"Video2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "DU-50PX10"
+  "model": "DU-50PX10",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

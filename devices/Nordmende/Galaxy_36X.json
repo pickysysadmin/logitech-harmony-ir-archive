@@ -2,6 +2,32 @@
   "codeset": "codesets/45/453b6538f9b3c94a.json",
   "deviceType": 1,
   "globalDeviceId": 21865,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenne"],"name":"Antenne"},
+      {"commands":["0"],"name":"Scart"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Nordmende",
-  "model": "Galaxy 36X"
+  "model": "Galaxy 36X",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "onReset": [
+      {"set":"Input","to":"Antenne"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

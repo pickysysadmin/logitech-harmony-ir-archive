@@ -2,6 +2,34 @@
   "codeset": "codesets/ec/eca02cd2d0f2c5a0.json",
   "deviceType": 7,
   "globalDeviceId": 171782,
+  "inputs": {
+    "list": [
+      {"commands":["VGA"],"name":"Computer"},
+      {"commands":["Video"],"name":"Composite Video"},
+      {"commands":["S-Video"],"name":"S-Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "EX-530"
+  "model": "EX-530",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 35000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/33/33a95f4ef8fb806f.json",
   "deviceType": 37,
   "globalDeviceId": 143833,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"s-vhs"}
+    ],
+    "next": ["Display"],
+    "type": 2
+  },
   "manufacturer": "Dantax",
-  "model": "21DVD-V1"
+  "model": "21DVD-V1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["Angle"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Zoom"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/b7/b7c82b18049123f6.json",
   "deviceType": 5,
   "globalDeviceId": 141138,
+  "inputs": {
+    "list": [
+      {"commands":[{"command":"InputTuner","durationMs":2000}],"name":"Tuner"},
+      {"commands":[{"command":"InputTape","durationMs":2000}],"name":"Tape"},
+      {"commands":[{"command":"InputVCR","durationMs":2000}],"name":"VCR"},
+      {"commands":[{"command":"InputCd","durationMs":2000}],"name":"CD"},
+      {"commands":[{"command":"InputTv","durationMs":2000}],"name":"TV"},
+      {"commands":[{"command":"InputDVD","durationMs":2000}],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "FR-951"
+  "model": "FR-951",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": [
+      {"command":"InputTv","durationMs":3000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

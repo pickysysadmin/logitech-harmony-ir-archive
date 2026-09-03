@@ -2,6 +2,33 @@
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 127249,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"VIDEO"},
+      {"name":"S-VIDEO"},
+      {"name":"COMPONENT"}
+    ],
+    "next": ["InputVideo1"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "LS-15S13C"
+  "model": "LS-15S13C",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tv"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

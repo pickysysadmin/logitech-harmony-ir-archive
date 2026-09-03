@@ -2,6 +2,36 @@
   "codeset": "codesets/ca/ca785ed14e8a0261.json",
   "deviceType": 1,
   "globalDeviceId": 91951,
+  "inputs": {
+    "finish": ["0"],
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV2-S"}
+    ],
+    "next": ["InputNext"],
+    "start": ["0"],
+    "type": 4
+  },
   "manufacturer": "Beko",
-  "model": "32426NDS"
+  "model": "32426NDS",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

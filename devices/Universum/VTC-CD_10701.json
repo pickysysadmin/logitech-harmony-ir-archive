@@ -2,6 +2,48 @@
   "codeset": "codesets/3b/3b60dceb0f8f3fd4.json",
   "deviceType": 21,
   "globalDeviceId": 156908,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AUX/USB/SD"},{"set":"AUX/USB/SDInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"AUX/USB/SD"},{"set":"AUX/USB/SDInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"AUX/USB/SD"},{"set":"AUX/USB/SDInput","to":"SD"}],"name":"SD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Universum",
-  "model": "VTC-CD 10701"
+  "model": "VTC-CD 10701",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUX/USB/SDInput": {
+      "next": ["InputAux/Usb/Sd"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"USB"},
+        {"name":"SD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCD"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AUX/USB/SD","select":[{"commands":["InputAux/Usb/Sd"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

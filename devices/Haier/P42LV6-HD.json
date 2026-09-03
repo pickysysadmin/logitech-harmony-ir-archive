@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/eb/eb7df8dc1f0f92a2.json",
   "deviceType": 1,
   "globalDeviceId": 110000,
+  "inputs": {
+    "finish": ["VolumeUp"],
+    "list": [
+      {"name":"TV"},
+      {"name":"SCART1"},
+      {"name":"SCART2"},
+      {"name":"HDTV"},
+      {"name":"PC"},
+      {"name":"HDMIDVI"}
+    ],
+    "next": [
+      {"delayMs":800},
+      "DirectionDown",
+      {"delayMs":600}
+    ],
+    "start": ["Menu"],
+    "type": 4
+  },
   "manufacturer": "Haier",
-  "model": "P42LV6-HD"
+  "model": "P42LV6-HD",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"SCART1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

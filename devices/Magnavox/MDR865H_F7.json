@@ -2,6 +2,38 @@
   "codeset": "codesets/98/98f8547c678d8e42.json",
   "deviceType": 34,
   "globalDeviceId": 280684,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputHdd/Ext.Hdd"],"name":"HDD/Ext.HDD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Magnavox",
-  "model": "MDR865H/F7"
+  "model": "MDR865H/F7",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["Source"],
+      "values": [
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"L3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/d8/d8db58ddb325be3c.json",
   "deviceType": 1,
   "globalDeviceId": 323613,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Antenna"}],"name":"Antenna"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Cable"}],"name":"Cable"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Media Player"}],"name":"Media Player"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TC-32A400L"
+  "model": "TC-32A400L",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["AV"],
+      "values": [
+        {"name":"AV"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["AV"],"setType":2}]},
+        {"name":"Media Player","select":[{"commands":["MediaPlayer"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"Cable"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

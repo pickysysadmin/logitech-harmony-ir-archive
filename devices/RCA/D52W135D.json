@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 37,
   "globalDeviceId": 44767,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"inputType","to":"Tuner"}],"name":"TV"},
+      {"commands":[{"set":"inputType","to":"Video"},{"set":"VidMode","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"inputType","to":"Video"},{"set":"VidMode","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"inputType","to":"Video"},{"set":"VidMode","to":"Dvi"}],"name":"Dvi"},
+      {"commands":[{"set":"inputType","to":"Video"},{"set":"VidMode","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"inputType","to":"Video"},{"set":"VidMode","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"inputType","to":"Video"},{"set":"VidMode","to":"Front"}],"name":"Front"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "D52W135D"
+  "model": "D52W135D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "VidMode": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"},
+        {"name":"Dvi"},
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Front"}
+      ]
+    },
+    "inputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":[{"delayMs":1500},"0","3"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

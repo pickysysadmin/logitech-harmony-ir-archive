@@ -2,6 +2,33 @@
   "codeset": "codesets/0a/0a404eeec29e35b8.json",
   "deviceType": 7,
   "globalDeviceId": 222877,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputRgb"],"name":"RGB"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "CF3D"
+  "model": "CF3D",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

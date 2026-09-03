@@ -2,6 +2,47 @@
   "codeset": "codesets/f4/f46f80649b03f175.json",
   "deviceType": 21,
   "globalDeviceId": 415000,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Innovative Technology",
-  "model": "VTA-750B"
+  "model": "VTA-750B",
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Phono","select":[{"commands":["InputPhono"],"setType":1}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":1}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":1}]},
+        {"name":"Bluetooth","select":[{"commands":["Bluetooth"],"setType":1}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":1}]},
+        {"name":"CD","select":[{"commands":["InputCD"],"setType":1}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "pressMinRepeats": 1
+  }
 }

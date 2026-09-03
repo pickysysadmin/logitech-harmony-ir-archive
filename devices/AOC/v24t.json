@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f9/f903a4c8c6875331.json",
   "deviceType": 1,
   "globalDeviceId": 203462,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Ypbpr"}],"name":"Ypbpr"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Av"}],"name":"Av"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Hdmi/Pc"},{"set":"Hdmi/PcInput","to":"Hdmi"}],"name":"Hdmi"},
+      {"commands":[{"set":"InputType","to":"Hdmi/Pc"},{"set":"Hdmi/PcInput","to":"Pc"}],"name":"Pc"}
+    ],
+    "type": 5
+  },
   "manufacturer": "AOC",
-  "model": "v24t"
+  "model": "v24t",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AvInput": {
+      "next": ["InputAv/S-Video"],
+      "values": [
+        {"name":"Av"},
+        {"name":"S-Video"}
+      ]
+    },
+    "Hdmi/PcInput": {
+      "next": ["InputHdmi/Pc"],
+      "values": [
+        {"name":"Hdmi"},
+        {"name":"Pc"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Ypbpr","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"Av","select":[{"commands":["InputAv/S-Video"],"setType":2}]},
+        {"name":"Hdmi/Pc","select":[{"commands":["InputHdmi/Pc"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

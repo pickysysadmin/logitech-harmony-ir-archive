@@ -2,6 +2,33 @@
   "codeset": "codesets/f6/f662bcd6c94f5edc.json",
   "deviceType": 7,
   "globalDeviceId": 33607,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"Computer"},
+      {"commands":["InputVideo2"],"name":"S-Video/Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "EMP-S1"
+  "model": "EMP-S1",
+  "power": {
+    "off": [
+      {"delayMs":2500},
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

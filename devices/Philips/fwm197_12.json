@@ -2,6 +2,47 @@
   "codeset": "codesets/39/397b692065e6ccfb.json",
   "deviceType": 21,
   "globalDeviceId": 232182,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"AUX/MP3Link"}],"name":"AUX/MP3Link"},
+      {"commands":[{"set":"InputType","to":"TUN"},{"set":"TUNInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"TUN"},{"set":"TUNInput","to":"MW"}],"name":"MW"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "fwm197/12"
+  "model": "fwm197/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"AUX/MP3Link","select":[{"commands":["InputAux/Mp3Link"],"setType":2}]},
+        {"name":"TUN","select":[{"commands":["InputTun"],"setType":2}]}
+      ]
+    },
+    "TUNInput": {
+      "next": ["InputTun"],
+      "values": [
+        {"name":"FM"},
+        {"name":"MW"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

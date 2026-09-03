@@ -2,6 +2,36 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 83817,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"EXT-1"},
+      {"name":"EXT-2"},
+      {"name":"EXT-3"},
+      {"name":"S-VHS EXT2"},
+      {"name":"FRONT-AV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Kendo",
-  "model": "CT-24 HS 7200 RF B"
+  "model": "CT-24 HS 7200 RF B",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

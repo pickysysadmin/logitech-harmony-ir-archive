@@ -2,6 +2,33 @@
   "codeset": "codesets/86/86f3a17e4ba92f5b.json",
   "deviceType": 19,
   "globalDeviceId": 103384,
+  "inputs": {
+    "list": [
+      {"commands":["InputTape"],"name":"Tape1"},
+      {"commands":["InputAux"],"name":"Aux1"},
+      {"commands":["InputAux3"],"name":"Aux2"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputDss2"],"name":"DBS"},
+      {"commands":["InputPhono"],"name":"DAT1"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Marantz",
-  "model": "PM-95"
+  "model": "PM-95",
+  "power": {
+    "off": ["PowerOff 2"],
+    "on": ["InputTuner"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

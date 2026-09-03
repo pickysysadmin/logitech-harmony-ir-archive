@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/fa/fa3f31d214c51fef.json",
   "deviceType": 1,
   "globalDeviceId": 153312,
+  "inputs": {
+    "finish": ["DirectionRight"],
+    "list": [
+      {"name":"CATV"},
+      {"name":"NULL1"},
+      {"name":"NULL2"},
+      {"name":"NULL3"},
+      {"name":"NULL4"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"DTV"},
+      {"name":"RGB"}
+    ],
+    "next": ["ChannelDown"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "SkyWorth",
-  "model": "34-T88HT"
+  "model": "34-T88HT",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"CATV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

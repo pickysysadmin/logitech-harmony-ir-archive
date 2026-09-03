@@ -2,6 +2,61 @@
   "codeset": "codesets/3b/3b9b99d90273f198.json",
   "deviceType": 1,
   "globalDeviceId": 170345,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input 4"}],"name":"Input 4"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input 5"}],"name":"Input 5"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input 6"}],"name":"Input 6"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input 7"}],"name":"Input 7"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input 8"}],"name":"Input 8"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input 9"}],"name":"Input 9"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "CW-21A83N"
+  "model": "CW-21A83N",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputAntenna"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Input 1"},
+        {"name":"Input 2"},
+        {"name":"Input 3"},
+        {"name":"Input 4"},
+        {"name":"Input 5"},
+        {"name":"Input 6"},
+        {"name":"Input 7"},
+        {"name":"Input 8"},
+        {"name":"Input 9"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

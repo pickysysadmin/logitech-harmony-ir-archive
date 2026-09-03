@@ -2,6 +2,60 @@
   "codeset": "codesets/5a/5a700f59f235efa4.json",
   "deviceType": 22,
   "globalDeviceId": 255336,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Test1"},{"set":"Test1Input","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Test1"},{"set":"Test1Input","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Test2"},{"set":"Test2Input","to":"AU 1"}],"name":"AU 1"},
+      {"commands":[{"set":"InputType","to":"Test2"},{"set":"Test2Input","to":"AU 2"}],"name":"AU 2"},
+      {"commands":[{"set":"InputType","to":"Test2"},{"set":"Test2Input","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Test2"},{"set":"Test2Input","to":"AV 1"}],"name":"AV 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Concertone",
-  "model": "ZX700"
+  "model": "ZX700",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"Test1","select":[{"commands":["InputUsb/Sd"],"setType":2}]},
+        {"name":"Test2","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    },
+    "Test1Input": {
+      "next": ["InputUsb/Sd"],
+      "values": [
+        {"name":"USB"},
+        {"name":"SD"}
+      ]
+    },
+    "Test2Input": {
+      "next": ["Input"],
+      "values": [
+        {"name":"AU 1"},
+        {"name":"AU 2"},
+        {"name":"AV 1"},
+        {"name":"AV 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

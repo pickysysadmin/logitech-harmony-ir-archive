@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/b2/b23c2596b38c1815.json",
   "deviceType": 1,
   "globalDeviceId": 8938,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Input 1"},
+      {"name":"Input 2"},
+      {"name":"Input 3"},
+      {"name":"Input 4"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "36PW9618C"
+  "model": "36PW9618C",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

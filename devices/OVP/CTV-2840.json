@@ -2,6 +2,51 @@
   "codeset": "codesets/b7/b7bf9558218fa9f0.json",
   "deviceType": 1,
   "globalDeviceId": 207518,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AVInput"},{"set":"AVInputInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AVInput"},{"set":"AVInputInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AVInput"},{"set":"AVInputInput","to":"SVid"}],"name":"SVid"},
+      {"commands":[{"set":"InputType","to":"AVInput"},{"set":"AVInputInput","to":"AV3"}],"name":"AV3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "OVP",
-  "model": "CTV-2840"
+  "model": "CTV-2840",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"InputType","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVInputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"SVid"},
+        {"name":"AV3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputAntennaCable"],"setType":2}]},
+        {"name":"AVInput","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

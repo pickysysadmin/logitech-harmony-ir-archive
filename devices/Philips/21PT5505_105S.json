@@ -2,6 +2,35 @@
   "codeset": "codesets/b7/b7bf9558218fa9f0.json",
   "deviceType": 1,
   "globalDeviceId": 77975,
+  "inputs": {
+    "list": [
+      {"name":"Normal tele"},
+      {"name":"Digibox"},
+      {"name":"DVD"},
+      {"name":"digibox radio"},
+      {"name":"extra"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "21PT5505/105S"
+  "model": "21PT5505/105S",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Normal tele"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

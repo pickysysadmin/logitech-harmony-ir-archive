@@ -2,6 +2,56 @@
   "codeset": "codesets/6f/6f76872e1522896a.json",
   "deviceType": 22,
   "globalDeviceId": 110699,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"VCR(Ext)"}],"name":"VCR(Ext)"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"VDP(Aux)"}],"name":"VDP(Aux)"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-DV150"
+  "model": "SA-DV150",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"VCR(Ext)"},
+        {"name":"VDP(Aux)"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner",{"set":"TunerInput","to":"FM"}],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux",{"set":"AUXInput","to":"VCR(Ext)"}],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,45 @@
   "codeset": "codesets/0e/0e19357af050a106.json",
   "deviceType": 21,
   "globalDeviceId": 265723,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"USB/AudioIn"},{"set":"USB/AudioInInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB/AudioIn"},{"set":"USB/AudioInInput","to":"AudioIn"}],"name":"AudioIn"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "MCM2150"
+  "model": "MCM2150",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"FM","select":[{"commands":["InputFm"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"USB/AudioIn","select":[{"commands":["InputUsb/audioin"],"setType":2}]}
+      ]
+    },
+    "USB/AudioInInput": {
+      "next": ["InputUsb/audioin"],
+      "values": [
+        {"name":"USB"},
+        {"name":"AudioIn"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

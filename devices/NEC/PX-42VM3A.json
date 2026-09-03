@@ -2,6 +2,33 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 26024,
+  "inputs": {
+    "list": [
+      {"name":"RGB"},
+      {"name":"DVD"},
+      {"name":"VIDEO"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "NEC",
-  "model": "PX-42VM3A"
+  "model": "PX-42VM3A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"VIDEO"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

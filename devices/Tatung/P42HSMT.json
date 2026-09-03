@@ -1,7 +1,67 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/f5/f551a7916886bd26.json",
   "deviceType": 1,
   "globalDeviceId": 44213,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"CATV"}],"name":"CATV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CompositeVideo"}],"name":"CompositeVideo"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YCbCr"}],"name":"YCbCr"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"AnalogRGB"}],"name":"AnalogRGB"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DigitalRGB"}],"name":"DigitalRGB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Tatung",
-  "model": "P42HSMT"
+  "model": "P42HSMT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputAntennaCable"],
+      "values": [
+        {"name":"CATV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["InputAntennaCable"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputAV"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"AnalogRGB"},
+        {"name":"DigitalRGB"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputAV"],
+      "values": [
+        {"name":"CompositeVideo"},
+        {"name":"S-Video"},
+        {"name":"YCbCr"},
+        {"name":"YPbPr"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

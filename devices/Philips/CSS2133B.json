@@ -2,6 +2,47 @@
   "codeset": "codesets/08/08a067ea8657f587.json",
   "deviceType": 19,
   "globalDeviceId": 260320,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"MusiciLink"}],"name":"MusiciLink","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Coax/Opt"},{"set":"Coax/OptInput","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Coax/Opt"},{"set":"Coax/OptInput","to":"Optical"}],"name":"Optical","ports":["Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "CSS2133B"
+  "model": "CSS2133B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Coax/OptInput": {
+      "next": ["InputCoax/Opt"],
+      "values": [
+        {"name":"Coaxial"},
+        {"name":"Optical"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"MusiciLink","select":[{"commands":["InputMusiciLink"],"setType":2}]},
+        {"name":"Coax/Opt","select":[{"commands":["InputCoax/Opt"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

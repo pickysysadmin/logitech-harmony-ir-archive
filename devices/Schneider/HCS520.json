@@ -2,6 +2,31 @@
   "codeset": "codesets/53/5357d6d076b9b471.json",
   "deviceType": 22,
   "globalDeviceId": 63490,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD-Schneider"},
+      {"commands":["InputTuner"],"name":"RADIO"},
+      {"commands":["InputVideo1"],"name":"VIDEO"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Schneider",
-  "model": "HCS520"
+  "model": "HCS520",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"RADIO"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

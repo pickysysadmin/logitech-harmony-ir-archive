@@ -2,6 +2,34 @@
   "codeset": "codesets/a7/a7b29e16f4c822f3.json",
   "deviceType": 1,
   "globalDeviceId": 85611,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"EXT1"},
+      {"name":"EXT2"},
+      {"name":"EXT3"},
+      {"name":"EXT4"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "42WH18P"
+  "model": "42WH18P",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

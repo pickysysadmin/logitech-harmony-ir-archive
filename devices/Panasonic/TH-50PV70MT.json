@@ -1,7 +1,102 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 135981,
+  "inputs": {
+    "finish": ["MenuSelect"],
+    "list": [
+      {"name":"AV 1"},
+      {"name":"AV 2"},
+      {"name":"AV 3"},
+      {"name":"AV 4"},
+      {"name":"PC"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"TV"}
+    ],
+    "next": ["MenuDown"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-50PV70MT"
+  "model": "TH-50PV70MT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVFOUR": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4S"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":[{"set":"PAGE12","to":"PAGE1"},"Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":[{"set":"PAGE12","to":"PAGE1"},"Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":[{"set":"PAGE12","to":"PAGE1"},"Yellow"],"setType":2}]},
+        {"name":"AV4","select":[{"commands":[{"set":"PAGE12","to":"PAGE2"},"Green"],"setType":2}]},
+        {"name":"Component/HDMI","select":[{"commands":[{"set":"PAGE12","to":"PAGE2"},"Yellow"],"setType":2}]}
+      ]
+    },
+    "AVTHREE": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AVTWO": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "Component/HDMI": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"Component"},
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "TvVideo",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Green"],"setType":1}]}
+      ]
+    },
+    "PAGE12": {
+      "values": [
+        {"name":"PAGE1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"PAGE2","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

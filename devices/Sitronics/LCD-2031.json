@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/37/3766b38853051b99.json",
   "deviceType": 1,
   "globalDeviceId": 117874,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Scart"},
+      {"name":"Video"},
+      {"name":"S Video"},
+      {"name":"VGA"},
+      {"name":"Компонентный"}
+    ],
+    "next": ["ChannelDown"],
+    "type": 2
+  },
   "manufacturer": "Sitronics",
-  "model": "LCD-2031"
+  "model": "LCD-2031",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

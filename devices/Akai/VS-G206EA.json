@@ -2,6 +2,44 @@
   "codeset": "codesets/d7/d759e464013ba50a.json",
   "deviceType": 2,
   "globalDeviceId": 143125,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"TV/VCR"},{"set":"TV/VCRInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/VCR"},{"set":"TV/VCRInput","to":"VCR"}],"name":"VCR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Akai",
-  "model": "VS-G206EA"
+  "model": "VS-G206EA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["0","2","ChannelDown"],"setType":2}]},
+        {"name":"TV/VCR","select":[{"commands":["TvVcr"],"setType":2}]}
+      ]
+    },
+    "TV/VCRInput": {
+      "next": ["TvVcr"],
+      "values": [
+        {"name":"TV"},
+        {"name":"VCR"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

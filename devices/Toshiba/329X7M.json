@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/36/362eb927ae6329c2.json",
   "deviceType": 1,
   "globalDeviceId": 30407,
+  "inputs": {
+    "list": [
+      {"name":"Tv"},
+      {"name":"Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "329X7M"
+  "model": "329X7M",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tv"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

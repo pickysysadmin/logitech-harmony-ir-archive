@@ -2,6 +2,47 @@
   "codeset": "codesets/3b/3b8aa134832d81ad.json",
   "deviceType": 22,
   "globalDeviceId": 171120,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"TV/AV"}],"name":"TV/AV"},
+      {"commands":[{"set":"InputType","to":"AUX/DI"},{"set":"AUX/DIInput","to":"AUX-ANA"}],"name":"AUX-ANA"},
+      {"commands":[{"set":"InputType","to":"AUX/DI"},{"set":"AUX/DIInput","to":"AUX-DIG"}],"name":"AUX-DIG"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "LX-3750W"
+  "model": "LX-3750W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUX/DIInput": {
+      "next": ["InputAux/DI"],
+      "values": [
+        {"name":"AUX-ANA"},
+        {"name":"AUX-DIG"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"TV/AV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AUX/DI","select":[{"commands":["InputAux/DI"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

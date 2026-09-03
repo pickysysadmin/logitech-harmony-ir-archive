@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d1/d17560b4dc59d63f.json",
   "deviceType": 1,
   "globalDeviceId": 170527,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"VideoAV"},{"set":"VideoAVInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"VideoAV"},{"set":"VideoAVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"VideoAV"},{"set":"VideoAVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"VideoAV"},{"set":"VideoAVInput","to":"AVS"}],"name":"AVS"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Loewe",
-  "model": "MIMO 28"
+  "model": "MIMO 28",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["1"],"setType":2}]},
+        {"name":"VideoAV","select":[{"commands":["DirectionLeft"],"setType":2}]}
+      ]
+    },
+    "VideoAVInput": {
+      "finish": ["OK"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": [
+        "0",
+        {"delayMs":500}
+      ],
+      "values": [
+        {"name":"Video"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AVS"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

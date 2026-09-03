@@ -2,6 +2,32 @@
   "codeset": "codesets/bc/bce0454e4f8d4520.json",
   "deviceType": 1,
   "globalDeviceId": 101443,
+  "inputs": {
+    "list": [
+      {"commands":["StartInput","VolumeUp"],"name":"TV"},
+      {"commands":[{"delayMs":2500},"StartInput","ChannelDown","VolumeUp"],"name":"Scart 1"},
+      {"commands":["StartInput","ChannelDown","ChannelDown","VolumeUp"],"name":"Scart 2"},
+      {"commands":["StartInput","ChannelDown","ChannelDown","ChannelDown","VolumeUp"],"name":"S-Video"},
+      {"commands":["StartInput","ChannelDown","ChannelDown","ChannelDown","ChannelDown","VolumeUp"],"name":"Component"},
+      {"commands":["StartInput","ChannelDown","ChannelDown","ChannelDown","ChannelDown","ChannelDown","VolumeUp"],"name":"RGB"},
+      {"commands":["StartInput","ChannelDown","ChannelDown","ChannelDown","ChannelDown","ChannelDown","ChannelDown","VolumeUp"],"name":"DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Palladine",
-  "model": "EPD-4200"
+  "model": "EPD-4200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

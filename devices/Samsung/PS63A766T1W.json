@@ -2,6 +2,38 @@
   "codeset": "codesets/1d/1d842d3b47b61062.json",
   "deviceType": 1,
   "globalDeviceId": 176409,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputExt1"],"name":"Ext 1"},
+      {"commands":["InputExt2"],"name":"Ext 2"},
+      {"commands":["InputAv"],"name":"AV"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputHDMI1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi3",{"delayMs":1000},"InputNext"],"name":"HDMI 4"},
+      {"commands":["Wiselink"],"name":"USB"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "PS63A766T1W"
+  "model": "PS63A766T1W",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

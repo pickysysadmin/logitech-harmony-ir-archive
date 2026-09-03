@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/99/997a535a4af602f3.json",
   "deviceType": 34,
   "globalDeviceId": 147676,
+  "inputs": {
+    "list": [
+      {"name":"DVD","ports":["Streaming"]},
+      {"name":"SD","ports":["SD-Card"]},
+      {"name":"USB","ports":["USB"]}
+    ],
+    "next": ["DriveSelect"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-EZ28"
+  "model": "DMR-EZ28",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Input1"},
+        {"name":"Input2"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

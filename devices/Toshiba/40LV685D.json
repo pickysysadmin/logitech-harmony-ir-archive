@@ -1,7 +1,68 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/c3/c3d1b05687107bcd.json",
   "deviceType": 1,
   "globalDeviceId": 168051,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"ATV/DTV"},{"set":"ATV/DTVInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"ATV/DTV"},{"set":"ATV/DTVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"InputSelection"},{"set":"InputSelectionInput","to":"Ext 1"}],"name":"Ext 1"},
+      {"commands":[{"set":"InputType","to":"InputSelection"},{"set":"InputSelectionInput","to":"Ext 2"}],"name":"Ext 2"},
+      {"commands":[{"set":"InputType","to":"InputSelection"},{"set":"InputSelectionInput","to":"Ext 3"}],"name":"Ext 3"},
+      {"commands":[{"set":"InputType","to":"InputSelection"},{"set":"InputSelectionInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"InputSelection"},{"set":"InputSelectionInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"InputSelection"},{"set":"InputSelectionInput","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"InputSelection"},{"set":"InputSelectionInput","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"InputSelection"},{"set":"InputSelectionInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "40LV685D"
+  "model": "40LV685D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ATV/DTVInput": {
+      "next": ["ATV/DTV"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    },
+    "InputSelectionInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Ext 1"},
+        {"name":"Ext 2"},
+        {"name":"Ext 3"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"HDMI 4"},
+        {"name":"PC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ATV/DTV","select":[{"commands":["ATV/DTV"],"setType":2}]},
+        {"name":"InputSelection","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

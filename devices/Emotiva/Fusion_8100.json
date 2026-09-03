@@ -2,6 +2,79 @@
   "codeset": "codesets/b0/b0b12235306c3df7.json",
   "deviceType": 5,
   "globalDeviceId": 261061,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI ARC"}],"name":"HDMI ARC"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Coaxial 1"}],"name":"Coaxial 1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Coaxial 2"}],"name":"Coaxial 2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Optical 1"}],"name":"Optical 1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Optical 2"}],"name":"Optical 2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Analog 1"}],"name":"Analog 1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Analog 2"}],"name":"Analog 2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Analog 3"}],"name":"Analog 3"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Analog 4"}],"name":"Analog 4"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Ext 7.1CH"}],"name":"Ext 7.1CH"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AM/FMInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AM/FMInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Emotiva",
-  "model": "Fusion 8100"
+  "model": "Fusion 8100",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AM/FMInput": {
+      "next": ["InputAM/FM"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"HDMI ARC"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"HDMI 4"},
+        {"name":"Coaxial 1"},
+        {"name":"Coaxial 2"},
+        {"name":"Optical 1"},
+        {"name":"Optical 2"},
+        {"name":"Analog 1"},
+        {"name":"Analog 2"},
+        {"name":"Analog 3"},
+        {"name":"Analog 4"},
+        {"name":"Ext 7.1CH"},
+        {"name":"Bluetooth"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"AM/FM","select":[{"commands":["InputAM/FM"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 1
+  }
 }

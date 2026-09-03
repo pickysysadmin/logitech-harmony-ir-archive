@@ -2,6 +2,39 @@
   "codeset": "codesets/56/561fb7fd17365b3c.json",
   "deviceType": 7,
   "globalDeviceId": 480809,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Computer1/YPbPr1","ports":["PC"]},
+      {"name":"Computer2/YPbPr2","ports":["PC"]},
+      {"name":"HDMI","ports":["HDMI"]},
+      {"name":"Video","ports":["Composite"]},
+      {"name":"S-Video","ports":["S-Video"]}
+    ],
+    "next": ["DirectionUp"],
+    "previous": ["DirectionDown"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "BenQ",
-  "model": "MW814ST"
+  "model": "MW814ST",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

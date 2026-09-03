@@ -2,6 +2,41 @@
   "codeset": "codesets/d3/d3a915aeb1ab9b0b.json",
   "deviceType": 7,
   "globalDeviceId": 336616,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"HDMI 1/MHL"},
+      {"name":"HDMI 2"},
+      {"name":"VGA 1"},
+      {"name":"VGA 2"},
+      {"name":"S-Video"},
+      {"name":"Composite Video"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "Infocus",
-  "model": "IN3138HDA"
+  "model": "IN3138HDA",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

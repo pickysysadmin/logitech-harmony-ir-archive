@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/92/924b2a0d82b8a0f1.json",
   "deviceType": 2,
   "globalDeviceId": 51319,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Mitsubishi",
-  "model": "HS-M54"
+  "model": "HS-M54",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

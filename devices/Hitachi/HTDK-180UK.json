@@ -2,6 +2,34 @@
   "codeset": "codesets/63/63b873a4fdcc94d6.json",
   "deviceType": 22,
   "globalDeviceId": 42553,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"Tuner"},
+      {"name":"Scart"},
+      {"name":"AV"},
+      {"name":"TV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "HTDK-180UK"
+  "model": "HTDK-180UK",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

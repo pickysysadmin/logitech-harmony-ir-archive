@@ -2,6 +2,52 @@
   "codeset": "codesets/a0/a063c430f3a234f1.json",
   "deviceType": 22,
   "globalDeviceId": 141399,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Aux Opt"}],"name":"Aux Opt","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AudioIn"}],"name":"AudioIn","ports":["Aux"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HT762TZ"
+  "model": "HT762TZ",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Aux Opt"},
+        {"name":"AudioIn"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["HDMI"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/d5/d592a9b28b89810f.json",
   "deviceType": 1,
   "globalDeviceId": 271053,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"Cable/Antenna","ports":["Antenna"]},
+      {"commands":["InputHdmi1",{"delayMs":500},"InputNext",{"delayMs":500},"DirectionUp","Select"],"name":"DIREC TV","ports":["Antenna"]},
+      {"commands":["InputVideo1"],"name":"Video 1/Component","ports":["Component","Composite"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputVideo2","InputNext",{"delayMs":500},"DirectionDown","Select"],"name":"Screen Mirroring","ports":["Streaming"]},
+      {"commands":["Home"],"name":"Smart TV","ports":["Streaming"]},
+      {"commands":["Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-40R530C"
+  "model": "KDL-40R530C",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

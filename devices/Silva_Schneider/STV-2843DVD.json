@@ -1,7 +1,50 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/a7/a7019404b7ba11c5.json",
   "deviceType": 1,
   "globalDeviceId": 108864,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Tv"},
+      {"name":"Scart1"},
+      {"name":"Scart2"},
+      {"name":"Video"},
+      {"name":"S-video"},
+      {"name":"Component"},
+      {"name":"RGB DTV"},
+      {"name":"D-sub"},
+      {"name":"HDMI"}
+    ],
+    "next": ["InputNext"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Silva Schneider",
-  "model": "STV-2843DVD"
+  "model": "STV-2843DVD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

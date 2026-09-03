@@ -2,6 +2,63 @@
   "codeset": "codesets/e7/e70e8ea4c3fde9e7.json",
   "deviceType": 21,
   "globalDeviceId": 496860,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Net/Bluetooth"},{"set":"Net/BluetoothInput","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"Net/Bluetooth"},{"set":"Net/BluetoothInput","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Cd/Usb/Aux"},{"set":"Cd/Usb/AuxInput","to":"Cd"}],"name":"Cd"},
+      {"commands":[{"set":"InputType","to":"Cd/Usb/Aux"},{"set":"Cd/Usb/AuxInput","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"Cd/Usb/Aux"},{"set":"Cd/Usb/AuxInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Dab+"}],"name":"Dab+"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HC2020"
+  "model": "SC-HC2020",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Cd/Usb/AuxInput": {
+      "next": ["InputCd/Usb/Aux"],
+      "values": [
+        {"name":"Cd"},
+        {"name":"Usb"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Net/Bluetooth","select":[{"commands":["InputNet/Bluetooth"],"setType":1}]},
+        {"name":"Cd/Usb/Aux","select":[{"commands":["InputCd/Usb/Aux"],"setType":1}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":1}]}
+      ]
+    },
+    "Net/BluetoothInput": {
+      "next": ["InputNet/Bluetooth"],
+      "values": [
+        {"name":"Network"},
+        {"name":"Bluetooth"}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"Dab+"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

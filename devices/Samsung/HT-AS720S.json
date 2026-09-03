@@ -2,6 +2,41 @@
   "codeset": "codesets/4c/4cc1607dc89b3574.json",
   "deviceType": 5,
   "globalDeviceId": 180874,
+  "inputs": {
+    "list": [
+      {"commands":["InputVCR"],"name":"VCR"},
+      {"commands":["InputAux"],"name":"AUX"},
+      {"commands":["Input7.1Ch"],"name":"7.1CH"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputAux",{"delayMs":500},"InputCd",{"delayMs":500},"InputMode"],"name":"CD Analog"},
+      {"commands":["InputAux",{"delayMs":500},"InputCd",{"delayMs":500},"InputMode","InputMode"],"name":"CD Coaxial"},
+      {"commands":["InputAux",{"delayMs":500},"InputDVD",{"delayMs":500},"InputMode"],"name":"DVD HDMI1"},
+      {"commands":["InputAux",{"delayMs":500},"InputDVD",{"delayMs":500},"InputMode","InputMode"],"name":"DVD Analog"},
+      {"commands":["InputAux",{"delayMs":500},"InputDVD",{"delayMs":500},"InputMode","InputMode","InputMode"],"name":"DVD Optical1"},
+      {"commands":["InputAux",{"delayMs":500},"InputSat",{"delayMs":500},"InputMode"],"name":"Sat HDMI2"},
+      {"commands":["InputAux",{"delayMs":500},"InputSat",{"delayMs":500},"InputMode","InputMode"],"name":"Sat Analog"},
+      {"commands":["InputAux",{"delayMs":500},"InputSat",{"delayMs":500},"InputMode","InputMode","InputMode"],"name":"Sat Optical2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HT-AS720S"
+  "model": "HT-AS720S",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"On"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

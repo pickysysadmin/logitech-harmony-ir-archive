@@ -2,6 +2,58 @@
   "codeset": "codesets/c0/c0f7c31198088f0a.json",
   "deviceType": 7,
   "globalDeviceId": 35657,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Videos"},{"set":"VideosInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Videos"},{"set":"VideosInput","to":"SVideo"}],"name":"SVideo"},
+      {"commands":[{"set":"InputType","to":"PCs"},{"set":"PCsInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"PCs"},{"set":"PCsInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-AE700"
+  "model": "TH-AE700",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":200},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"Videos","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"PCs","select":[{"commands":["InputRGB"],"setType":2}]}
+      ]
+    },
+    "PCsInput": {
+      "next": ["InputRGB"],
+      "values": [
+        {"name":"HDMI"},
+        {"name":"PC"}
+      ]
+    },
+    "VideosInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"SVideo"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

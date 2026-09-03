@@ -2,6 +2,35 @@
   "codeset": "codesets/5f/5f62f8f175f3d225.json",
   "deviceType": 7,
   "globalDeviceId": 276665,
+  "inputs": {
+    "list": [
+      {"commands":["InputComputer"],"name":"Computer"},
+      {"commands":["InputDvi-I"],"name":"DVI-I"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputDigitalLink"],"name":"DigitalLink"},
+      {"commands":["InputHdmi"],"name":"HDMI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-RZ370"
+  "model": "PT-RZ370",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

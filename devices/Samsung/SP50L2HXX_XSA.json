@@ -2,6 +2,40 @@
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 26829,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV 1"},
+      {"name":"AV 2"},
+      {"name":"AV 3"},
+      {"name":"AV 4"},
+      {"name":"Component 1"},
+      {"name":"Component 2"},
+      {"name":"PC"},
+      {"name":"DVI"}
+    ],
+    "next": ["DirectionDown 2"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "SP50L2HXX/XSA"
+  "model": "SP50L2HXX/XSA",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,59 @@
   "codeset": "codesets/33/338c818160a1c510.json",
   "deviceType": 22,
   "globalDeviceId": 173240,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AudioIN"}],"name":"AudioIN"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"DigitalIN"}],"name":"DigitalIN"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"TvSound"}],"name":"TvSound"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "NX-BD3"
+  "model": "NX-BD3",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AudioIN"},
+        {"name":"DigitalIN"},
+        {"name":"TvSound"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Network","select":[{"commands":["Network"],"setType":2}]},
+        {"name":"SD","select":[{"commands":["InputSD"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,38 @@
   "codeset": "codesets/a6/a61dc55d1bac2c46.json",
   "deviceType": 5,
   "globalDeviceId": 151550,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputMd/Cdr"],"name":"MD/CD-R"},
+      {"commands":["InputTuner"],"name":"TUNER"},
+      {"commands":["InputDVD"],"name":"DVD"},
+      {"commands":["InputDtv/Cbl"],"name":"DTV/CBL"},
+      {"commands":["InputDvr"],"name":"DVR"},
+      {"commands":["InputV-Aux/Dock"],"name":"V-AUX/DOCK"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V463 (EU/AU) (Zone 2)"
+  "model": "RX-V463 (EU/AU) (Zone 2)",
+  "power": {
+    "off": ["PowerStandby"],
+    "on": [
+      "PowerOn",
+      {"delayMs":500},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

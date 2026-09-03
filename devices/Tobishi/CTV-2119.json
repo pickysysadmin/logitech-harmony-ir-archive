@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/8b/8b5abeab22010d05.json",
   "deviceType": 1,
   "globalDeviceId": 90732,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AV"}],"name":"AV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Tobishi",
-  "model": "CTV-2119"
+  "model": "CTV-2119",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,43 @@
   "codeset": "codesets/d0/d0d0b0e2e1988694.json",
   "deviceType": 34,
   "globalDeviceId": 149087,
+  "inputs": {
+    "list": [
+      {"commands":["InputDVD"],"name":"DVD"},
+      {"commands":["InputHdd"],"name":"HDD"},
+      {"commands":["InputUsb"],"name":"USB"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Targa",
-  "model": "DRH-5700X"
+  "model": "DRH-5700X",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV 1"},
+        {"name":"SV 1"},
+        {"name":"AV 2"},
+        {"name":"SV 2"},
+        {"name":"Scart"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

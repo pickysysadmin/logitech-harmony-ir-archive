@@ -2,6 +2,32 @@
   "codeset": "codesets/a9/a9a4056d09e2d7ab.json",
   "deviceType": 25,
   "globalDeviceId": 54483,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"Video1"},
+      {"name":"Video2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "DVIX-8816W"
+  "model": "DVIX-8816W",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,46 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/4a/4a6fc747c0aeec47.json",
   "deviceType": 1,
   "globalDeviceId": 150443,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Ant A"},
+      {"name":"Ant B"},
+      {"name":"Aux 1 S-Video"},
+      {"name":"Aux 1 Y Pb Pr"},
+      {"name":"Aux 2 Video"},
+      {"name":"Aux 2 Y Pb Pr"},
+      {"name":"Aux 3 Video"},
+      {"name":"Aux 4 HD Y Pb Pr"},
+      {"name":"Aux 5 HD RGB-VGA"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": [
+      {"delayMs":3000},
+      "TvVideo"
+    ],
+    "type": 4
+  },
   "manufacturer": "Philips",
-  "model": "64PP-97"
+  "model": "64PP-97",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

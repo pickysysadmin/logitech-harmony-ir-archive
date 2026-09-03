@@ -2,6 +2,50 @@
   "codeset": "codesets/71/71d8bc4c7ce02d5f.json",
   "deviceType": 5,
   "globalDeviceId": 244629,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"iPod/USB"}],"name":"iPod/USB"},
+      {"commands":[{"set":"InputType","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX 1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX 2"}],"name":"AUX 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teac",
-  "model": "AG-H380"
+  "model": "AG-H380",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux1/2"],
+      "values": [
+        {"name":"AUX 1"},
+        {"name":"AUX 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"iPod/USB","select":[{"commands":["InputiPod/Usb"],"setType":2}]},
+        {"name":"Phono","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux1/2"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

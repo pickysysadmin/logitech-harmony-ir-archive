@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 157090,
+  "inputs": {
+    "list": [
+      {"commands":["3"],"name":"P1"},
+      {"commands":["3",{"command":"InputNext","durationMs":2000}],"name":"AV1"},
+      {"commands":["3",{"command":"InputNext","durationMs":2000},{"command":"InputNext","durationMs":2000}],"name":"AV2"},
+      {"commands":["3",{"command":"InputNext","durationMs":2000},{"command":"InputNext","durationMs":2000},{"command":"InputNext","durationMs":2000}],"name":"AV3"},
+      {"commands":["3",{"command":"InputNext","durationMs":2000},{"command":"InputNext","durationMs":2000},{"command":"InputNext","durationMs":2000},{"command":"InputNext","durationMs":2000},{"command":"InputNext","durationMs":2000}],"name":"AV3S"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Grundig",
-  "model": "ST 70-2015"
+  "model": "ST 70-2015",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":500}
+    ],
+    "on": ["1"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

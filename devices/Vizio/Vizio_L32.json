@@ -2,6 +2,67 @@
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 170958,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RBG"}],"name":"RBG"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV3"}],"name":"AV3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "Vizio L32"
+  "model": "Vizio L32",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputS-Video"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    },
+    "ComponentInput": {
+      "next": ["InputVideo1"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputDVI/DTV"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"RBG","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputAnt/Cable"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputDVI/DTV",{"set":"HDMIInput","to":"HDMI1"}],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputVideo1",{"set":"ComponentInput","to":"Component 1"}],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputS-Video"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

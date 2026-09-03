@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d0/d0c83ec2e16e439a.json",
   "deviceType": 1,
   "globalDeviceId": 94008,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV"}
+    ],
+    "next": ["ChannelUp"],
+    "type": 2
+  },
   "manufacturer": "Nordmende",
-  "model": "Galaxy 36"
+  "model": "Galaxy 36",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["TeleText"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 400,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

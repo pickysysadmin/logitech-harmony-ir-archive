@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 74189,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"AntennaInput","to":"VHF"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Video4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"Video5"}],"name":"Video 5"},
+      {"commands":[{"set":"InputType","to":"Video6"}],"name":"Video 6"},
+      {"commands":[{"set":"InputType","to":"Video7"}],"name":"Video 7"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"AntennaInput","to":"Cable"}],"name":"Cable"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "KDF-42WB655"
+  "model": "KDF-42WB655",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputTuner2"],
+      "values": [
+        {"name":"VHF"},
+        {"name":"Cable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"Video3","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"Video4","select":[{"commands":["InputVideo4"],"setType":1}]},
+        {"name":"Video5","select":[{"commands":["InputVideo5"],"setType":1}]},
+        {"name":"Video6","select":[{"commands":["InputVideo6"],"setType":1}]},
+        {"name":"Video7","select":[{"commands":["InputVideo7"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 3
+  }
 }

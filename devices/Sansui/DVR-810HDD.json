@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a0/a0d2c96c10ffd901.json",
   "deviceType": 34,
   "globalDeviceId": 151932,
+  "inputs": {
+    "list": [
+      {"name":"Disc / Hdd / Usb"},
+      {"name":"TV"},
+      {"name":"AV-R"},
+      {"name":"AV-F"},
+      {"name":"S-Video"},
+      {"name":"DV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sansui",
-  "model": "DVR-810HDD"
+  "model": "DVR-810HDD",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Disc / Hdd / Usb"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 14000,
+    "pressMinRepeats": 1
+  }
 }

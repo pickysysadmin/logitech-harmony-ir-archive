@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f8/f85bada5f8fd15c8.json",
   "deviceType": 1,
   "globalDeviceId": 30185,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Cable"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Cable"},"InputAv4"],"name":"HD"},
+      {"commands":[{"set":"InputType","to":"Cable"},"InputRadio"],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"CVI"}],"name":"CVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "15PF8946/37"
+  "model": "15PF8946/37",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["InputAv4"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Source","select":[{"commands":["InputCable"],"setType":2}]},
+        {"name":"Cable","select":[{"commands":["InputVga"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"CVI"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

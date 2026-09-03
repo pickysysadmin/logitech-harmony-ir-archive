@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/8b/8bbf6e2d558aef03.json",
   "deviceType": 34,
   "globalDeviceId": 123520,
+  "inputs": {
+    "list": [
+      {"name":"AV"},
+      {"name":"S-Video"},
+      {"name":"Tuner"},
+      {"name":"AV Front"},
+      {"name":"SV Front"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "X-View",
-  "model": "DVR-950"
+  "model": "DVR-950",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

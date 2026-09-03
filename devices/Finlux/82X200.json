@@ -2,6 +2,35 @@
   "codeset": "codesets/85/85802a2718306665.json",
   "deviceType": 1,
   "globalDeviceId": 101544,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Input1"},
+      {"name":"Input2"},
+      {"name":"Input3"},
+      {"name":"Input4"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Finlux",
-  "model": "82X200"
+  "model": "82X200",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

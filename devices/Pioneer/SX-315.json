@@ -2,6 +2,51 @@
   "codeset": "codesets/28/28dbe2291abdad56.json",
   "deviceType": 5,
   "globalDeviceId": 124730,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"TAPE/VCR"}],"name":"TAPE/VCR","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"DVD/DVR"}],"name":"DVD/DVR","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"STB"}],"name":"STB","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"DIGITAL"}],"name":"DIGITAL","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "SX-315"
+  "model": "SX-315",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"TAPE/VCR","select":[{"commands":["InputTape/Vcr"],"setType":2}]},
+        {"name":"DVD/DVR","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"STB","select":[{"commands":["InputStb"],"setType":2}]},
+        {"name":"DIGITAL","select":[{"commands":["InputDigital"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

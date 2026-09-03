@@ -2,6 +2,45 @@
   "codeset": "codesets/70/708585bfc15b1f45.json",
   "deviceType": 21,
   "globalDeviceId": 67440,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Am"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "RX-DT37"
+  "model": "RX-DT37",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

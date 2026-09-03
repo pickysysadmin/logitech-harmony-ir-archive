@@ -2,6 +2,49 @@
   "codeset": "codesets/8a/8a8ff5255d04b442.json",
   "deviceType": 34,
   "globalDeviceId": 177650,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dvd"}],"name":"Dvd"},
+      {"commands":[{"set":"InputType","to":"Hdd"}],"name":"Hdd"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"Av1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"Av2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"Av3"}],"name":"Av3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-EX769"
+  "model": "DMR-EX769",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputSelectInput": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Av1"},
+        {"name":"Av2"},
+        {"name":"Av3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dvd","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Hdd","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"InputSelect","select":[{"commands":["InputSelect"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

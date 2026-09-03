@@ -1,7 +1,33 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 41309,
+  "inputs": {
+    "list": [
+      {"commands":["ChannelUp"],"name":"Tuner"},
+      {"commands":["ChannelUp","InputNext"],"name":"V1"},
+      {"commands":["InputSat/Cable"],"name":"V2"},
+      {"commands":["InputS-Video"],"name":"SV1"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "PTK195MA"
+  "model": "PTK195MA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,32 @@
   "codeset": "codesets/6b/6becde494e625a19.json",
   "deviceType": 22,
   "globalDeviceId": 277847,
+  "inputs": {
+    "list": [
+      {"commands":["InputIpod"],"name":"iPod"},
+      {"commands":["InputBdSd"],"name":"BD/DVD/SD"},
+      {"commands":["InputIpod",{"delayMs":1000},"InputTuner"],"name":"FM"},
+      {"commands":["InputIpod",{"delayMs":1000},"InputTuner","InputTuner"],"name":"AM"},
+      {"commands":["InputIpod",{"delayMs":1000},"InputTuner","InputTuner","InputTuner"],"name":"Aux"},
+      {"commands":["InputIpod",{"delayMs":1000},"InputTuner","InputTuner","InputTuner","InputTuner"],"name":"D-In 1"},
+      {"commands":["InputIpod",{"delayMs":1000},"InputTuner","InputTuner","InputTuner","InputTuner","InputTuner"],"name":"D-In 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "Test SA-BT200"
+  "model": "Test SA-BT200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

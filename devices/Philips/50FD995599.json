@@ -2,6 +2,61 @@
   "codeset": "codesets/f8/f85bada5f8fd15c8.json",
   "deviceType": 1,
   "globalDeviceId": 52340,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"VGA"},
+      {"name":"DVI"},
+      {"name":"Y/C"},
+      {"name":"CVBS1"},
+      {"name":"CVBS2"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"AV4"}
+    ],
+    "next": ["NextInput"],
+    "start": ["NextInput"],
+    "type": 4
+  },
   "manufacturer": "Philips",
-  "model": "50FD995599"
+  "model": "50FD995599",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputAV1": {
+      "next": ["InputAV1"],
+      "values": [
+        {"name":"YC"},
+        {"name":"CVBS1"},
+        {"name":"CVBS2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VGA","select":[{"commands":["InputAV3","InputVga",{"set":"InputVGA","to":"vga"}],"setType":1}]},
+        {"name":"AV1","select":[{"commands":["InputAV1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputAV2"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["InputAV3"],"setType":2}]}
+      ]
+    },
+    "InputVGA": {
+      "next": ["InputVga"],
+      "values": [
+        {"name":"vga"},
+        {"name":"dvi"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

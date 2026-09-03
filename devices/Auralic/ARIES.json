@@ -2,6 +2,33 @@
   "codeset": "codesets/fb/fbf0da9e7042c124.json",
   "deviceType": 33,
   "globalDeviceId": 264725,
+  "inputs": {
+    "list": [
+      {"commands":["InputAes/Bbs"],"name":"AES/EBS"},
+      {"commands":["InputCoax"],"name":"COAX"},
+      {"commands":["InputTos"],"name":"TOS"},
+      {"commands":["InputUsb"],"name":"USB"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Auralic",
-  "model": "ARIES"
+  "model": "ARIES",
+  "power": {
+    "toggle": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "OK"
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

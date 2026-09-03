@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/5e/5eb6d675c73ef0f7.json",
   "deviceType": 1,
   "globalDeviceId": 148413,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"DTV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV2RVB"},
+      {"name":"S-Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Grandin",
-  "model": "LC-26TNT"
+  "model": "LC-26TNT",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

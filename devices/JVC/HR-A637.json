@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2d/2d3bfc02a12e23ef.json",
   "deviceType": 2,
   "globalDeviceId": 179891,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AU1"},
+      {"name":"AU2"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "JVC",
-  "model": "HR-A637"
+  "model": "HR-A637",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

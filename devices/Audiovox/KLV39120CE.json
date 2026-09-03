@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/0d/0d85ab2338e85d33.json",
   "deviceType": 37,
   "globalDeviceId": 141125,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Scart"}],"name":"Scart"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Audiovox",
-  "model": "KLV39120CE"
+  "model": "KLV39120CE",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAV"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"Scart"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAV"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,54 @@
   "codeset": "codesets/82/82ad27fc7f62f956.json",
   "deviceType": 21,
   "globalDeviceId": 165826,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Cd"}],"name":"Cd"},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AM/FMInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AM/FMInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"iPod/Aux"},{"set":"iPod/AuxInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"iPod/Aux"},{"set":"iPod/AuxInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Memorex",
-  "model": "MI1200"
+  "model": "MI1200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AM/FMInput": {
+      "next": ["Band"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Cd","select":[{"commands":["Function"],"setType":2}]},
+        {"name":"AM/FM","select":[{"commands":["Band"],"setType":2}]},
+        {"name":"iPod/Aux","select":[{"commands":["iPod"],"setType":2}]}
+      ]
+    },
+    "iPod/AuxInput": {
+      "next": ["iPod"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"Aux"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

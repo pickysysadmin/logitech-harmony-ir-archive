@@ -2,6 +2,65 @@
   "codeset": "codesets/f4/f42f041c00701aaa.json",
   "deviceType": 5,
   "globalDeviceId": 170780,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"DVD/AUX"}],"name":"DVD/AUX"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Aux2"}],"name":"Aux2"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"MD"}],"name":"MD"},
+      {"commands":[{"set":"InputType","to":"Band"},{"set":"BandInput","to":"FM Auto"}],"name":"FM Auto"},
+      {"commands":[{"set":"InputType","to":"Band"},{"set":"BandInput","to":"FM Mono"}],"name":"FM Mono"},
+      {"commands":[{"set":"InputType","to":"Band"},{"set":"BandInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Denon",
-  "model": "DRA-201SA"
+  "model": "DRA-201SA",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "BandInput": {
+      "next": ["Band"],
+      "values": [
+        {"name":"FM Auto"},
+        {"name":"FM Mono"},
+        {"name":"AM"}
+      ]
+    },
+    "FunctionInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"CD"},
+        {"name":"Tuner"},
+        {"name":"DVD/AUX"},
+        {"name":"Phono"},
+        {"name":"Aux2"},
+        {"name":"Tape"},
+        {"name":"MD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Function","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Band","select":[{"commands":["Band"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

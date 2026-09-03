@@ -2,6 +2,47 @@
   "codeset": "codesets/2f/2fcf2345e9ff2ed5.json",
   "deviceType": 22,
   "globalDeviceId": 148784,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Sat"}],"name":"Sat","ports":["Composite","Optical"]},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "DAV-FR10W"
+  "model": "DAV-FR10W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Sat","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/5e/5eb6d675c73ef0f7.json",
   "deviceType": 1,
   "globalDeviceId": 132046,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV1RVB"},
+      {"name":"AV2"},
+      {"name":"AV2RVB"},
+      {"name":"S-Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Vestel",
-  "model": "2115"
+  "model": "2115",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

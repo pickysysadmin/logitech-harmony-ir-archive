@@ -1,7 +1,57 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/2e/2ee2239d3288d0d5.json",
   "deviceType": 34,
   "globalDeviceId": 154582,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InputTuner"}],"name":"InputTuner"},
+      {"commands":[{"set":"InputType","to":"Cam"},{"set":"CamInput","to":"Cam 1"}],"name":"Cam 1"},
+      {"commands":[{"set":"InputType","to":"Cam"},{"set":"CamInput","to":"Cam 2"}],"name":"Cam 2"},
+      {"commands":[{"set":"InputType","to":"Tv/Hdd"},{"set":"Tv/HddInput","to":"Ext 1"}],"name":"Ext 1"},
+      {"commands":[{"set":"InputType","to":"Tv/Hdd"},{"set":"Tv/HddInput","to":"Ext 2"}],"name":"Ext 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DVDR-725H/00"
+  "model": "DVDR-725H/00",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CamInput": {
+      "next": ["CAM"],
+      "values": [
+        {"name":"Cam 1"},
+        {"name":"Cam 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"InputTuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Cam","select":[{"commands":["CAM"],"setType":2}]},
+        {"name":"Tv/Hdd","select":[{"commands":["Tv/Hdd"],"setType":2}]}
+      ]
+    },
+    "Tv/HddInput": {
+      "next": ["Tv/Hdd"],
+      "values": [
+        {"name":"Ext 1"},
+        {"name":"Ext 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

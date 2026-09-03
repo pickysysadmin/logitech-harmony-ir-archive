@@ -2,6 +2,60 @@
   "codeset": "codesets/55/55a46a9a9f2c77f7.json",
   "deviceType": 22,
   "globalDeviceId": 173232,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Dvd/Cd"}],"name":"Dvd/Cd"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Auxopt"}],"name":"Auxopt"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Audioin"}],"name":"Audioin"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HdmiIn"}],"name":"HdmiIn"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"OsdIpod"}],"name":"OsdIpod"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Ipod"}],"name":"Ipod"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "TH-G51"
+  "model": "TH-G51",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FunctionInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"Dvd/Cd"},
+        {"name":"FM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Function","select":[{"commands":["Function"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Auxopt"},
+        {"name":"Audioin"},
+        {"name":"OsdIpod"},
+        {"name":"Ipod"},
+        {"name":"HdmiIn"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

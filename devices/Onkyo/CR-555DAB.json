@@ -2,6 +2,68 @@
   "codeset": "codesets/36/369e22ad565a0b54.json",
   "deviceType": 21,
   "globalDeviceId": 248988,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line 2"}],"name":"Line 2"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"AUX IN"}],"name":"AUX IN"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Coaxial"}],"name":"Coaxial"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM DAB"}],"name":"AM DAB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Onkyo",
-  "model": "CR-555DAB"
+  "model": "CR-555DAB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputDigital"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"Coaxial"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputLine"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDigital"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"Line 1"},
+        {"name":"Line 2"},
+        {"name":"AUX IN"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM DAB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

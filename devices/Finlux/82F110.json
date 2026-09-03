@@ -2,6 +2,32 @@
   "codeset": "codesets/85/85802a2718306665.json",
   "deviceType": 1,
   "globalDeviceId": 53694,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"E1 AVCC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Finlux",
-  "model": "82F110"
+  "model": "82F110",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

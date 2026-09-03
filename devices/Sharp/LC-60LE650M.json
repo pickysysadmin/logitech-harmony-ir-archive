@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/2d/2defb6f32fecfe10.json",
   "deviceType": 1,
   "globalDeviceId": 266187,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","ChannelUp"],"name":"TV"},
+      {"commands":["Exit","Input1"],"name":"HDMI 1"},
+      {"commands":["Exit","Input2"],"name":"HDMI 2"},
+      {"commands":["Exit","Input3"],"name":"HDMI 3"},
+      {"commands":["Exit","Input4"],"name":"HDMI 4"},
+      {"commands":["Exit","Input5"],"name":"Component"},
+      {"commands":["Exit","Input6"],"name":"Video 1"},
+      {"commands":["Exit","Input7"],"name":"Video 2"},
+      {"commands":["Exit","Input8"],"name":"PC IN"},
+      {"commands":["Exit","Input8","Input"],"name":"Home Network(DLNA)"},
+      {"commands":["Exit"],"name":"USB"},
+      {"commands":["SmartCentral",{"delayMs":2000},"Select"],"name":"Smart Central"},
+      {"commands":["Exit","Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-60LE650M"
+  "model": "LC-60LE650M",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 19000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,48 @@
   "codeset": "codesets/c0/c00993b9c9e0675c.json",
   "deviceType": 22,
   "globalDeviceId": 177470,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"BD/DVD"}],"name":"BD/DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"D.IN 1"}],"name":"D.IN 1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"D.IN 2"}],"name":"D.IN 2"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-BD1252"
+  "model": "HT-BD1252",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"D.IN 1"},
+        {"name":"D.IN 2"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"BD/DVD","select":[{"commands":["InputBD"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e7/e79325ac3935ccd3.json",
   "deviceType": 1,
   "globalDeviceId": 80464,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"commands":["DirectionUp"],"name":"VGA"},
+      {"commands":["DirectionDown"],"name":"DVI"},
+      {"commands":["DirectionDown","DirectionDown"],"name":"RF"},
+      {"commands":["DirectionDown","DirectionDown","DirectionDown"],"name":"Video1"},
+      {"commands":["DirectionUp","DirectionUp","DirectionUp"],"name":"Video2"},
+      {"commands":["DirectionUp","DirectionUp"],"name":"SVideo"},
+      {"commands":["DirectionUp"],"name":"YPbPr"}
+    ],
+    "start": ["Menu"],
+    "type": 3
+  },
   "manufacturer": "Polaroid",
-  "model": "FLM-3725"
+  "model": "FLM-3725",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

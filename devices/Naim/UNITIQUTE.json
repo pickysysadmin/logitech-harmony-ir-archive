@@ -2,6 +2,69 @@
   "codeset": "codesets/fd/fd3a04dc35b2e653.json",
   "deviceType": 5,
   "globalDeviceId": 216636,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Digital 1"}],"name":"Digital 1"},
+      {"commands":[{"set":"InputType","to":"Digital 2"}],"name":"Digital 2"},
+      {"commands":[{"set":"InputType","to":"Digital 3"}],"name":"Digital 3"},
+      {"commands":[{"set":"InputType","to":"Digital 4"}],"name":"Digital 4"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"iRadio"}],"name":"iRadio"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"UPnP"}],"name":"UPnP"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"Front"}],"name":"Front"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Naim",
-  "model": "UNITIQUTE"
+  "model": "UNITIQUTE",
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Digital 1","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Digital 2","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"Digital 3","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"Digital 4","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"UPnP"},
+        {"name":"USB"}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"FM"},
+        {"name":"DAB"},
+        {"name":"iRadio"}
+      ]
+    },
+    "iPodInput": {
+      "next": ["InputiPod"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"Front"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

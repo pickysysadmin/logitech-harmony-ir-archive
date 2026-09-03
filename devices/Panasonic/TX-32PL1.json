@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/3a/3a7c0084f77f2aad.json",
   "deviceType": 1,
   "globalDeviceId": 48382,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV1"},{"set":"MENU","to":"OFF"}],"name":"AV1"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV2"},{"set":"MENU","to":"OFF"}],"name":"AV2"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV3"},{"set":"MENU","to":"OFF"}],"name":"AV3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-32PL1"
+  "model": "TX-32PL1",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":2}]}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "TvVideo",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Blue"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

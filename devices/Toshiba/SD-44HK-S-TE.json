@@ -2,6 +2,61 @@
   "codeset": "codesets/24/24de5ce17db1eab6.json",
   "deviceType": 22,
   "globalDeviceId": 226064,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD/DVD"}],"name":"CD/DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Tuner","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Tuner","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"AV1 Opt"}],"name":"AV1 Opt"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"AV1 Coax"}],"name":"AV1 Coax"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"AV2 Opt"}],"name":"AV2 Opt"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"AV2 Coax"}],"name":"AV2 Coax"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "SD-44HK-S-TE"
+  "model": "SD-44HK-S-TE",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD/DVD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputAm/Fm"],"setType":2}]}
+      ]
+    },
+    "Tuner": {
+      "next": ["InputAm/Fm"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "Video": {
+      "next": ["InputVideo1"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV1 Opt"},
+        {"name":"AV1 Coax"},
+        {"name":"AV2 Opt"},
+        {"name":"AV2 Coax"},
+        {"name":"TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

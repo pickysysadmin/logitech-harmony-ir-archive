@@ -2,6 +2,35 @@
   "codeset": "codesets/00/002001708040f7a5.json",
   "deviceType": 7,
   "globalDeviceId": 415072,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputUsb"],"name":"USB"},
+      {"commands":["InputLan"],"name":"LAN"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "EH-TW5400"
+  "model": "EH-TW5400",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

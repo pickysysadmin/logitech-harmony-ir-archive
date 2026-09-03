@@ -2,6 +2,69 @@
   "codeset": "codesets/5a/5ad007f15282efc2.json",
   "deviceType": 22,
   "globalDeviceId": 161558,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Auxillary"},{"set":"AuxillaryInput","to":"TV AUDIO"}],"name":"TV AUDIO"},
+      {"commands":[{"set":"InputType","to":"Auxillary"},{"set":"AuxillaryInput","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "lh-t460tf"
+  "model": "lh-t460tf",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 1 OPT"},
+        {"name":"Video 1 Coax"},
+        {"name":"Video 2"},
+        {"name":"Video 2 Opt"},
+        {"name":"Video Coax"}
+      ]
+    },
+    "AuxillaryInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"TV AUDIO"},
+        {"name":"AUX"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["InputIPod"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["Band"],"setType":2}]},
+        {"name":"Auxillary","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["Band"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

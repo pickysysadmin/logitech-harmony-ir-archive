@@ -1,7 +1,78 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/36/3634e4e42b419000.json",
   "deviceType": 1,
   "globalDeviceId": 261074,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"AV3"}],"name":"AV 3"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"VieraSmartMENU","to":"ON"},{"set":"InputType","to":"SDCard/USB"}],"name":"SD Card/USB"},
+      {"commands":[{"set":"VieraSmartMENU","to":"ON"},{"set":"InputType","to":"VieraSmart"}],"name":"Viera Smart"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-P55ST30K"
+  "model": "TH-P55ST30K",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HomeScreen": {
+      "values": [
+        {"name":"ON","select":[{"commands":["OK"],"setType":1}]},
+        {"name":"OFF","select":[{"commands":["OK"],"setType":1}]}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":1}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":1}]},
+        {"name":"HDMI4","select":[{"commands":["InputHdmi4"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["ChannelUp"],"setType":1}]},
+        {"name":"SDCard/USB","select":[{"commands":["SdCard"],"setType":1}]},
+        {"name":"VieraSmart","select":[{"commands":["VieraConnect"],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["ChannelUp"],
+      "values": [
+        {"name":"Digital"},
+        {"name":"Analog"}
+      ]
+    },
+    "VieraSmartMENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["VieraConnect"],"setType":1}]},
+        {"name":"OFF","select":[{"commands":["Exit"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

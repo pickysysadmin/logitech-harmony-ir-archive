@@ -2,6 +2,55 @@
   "codeset": "codesets/fa/fa90954e62948643.json",
   "deviceType": 22,
   "globalDeviceId": 259168,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"iPod/iPhone"}],"name":"iPod/iPhone"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Internet Radio"}],"name":"Internet Radio"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Optical In"}],"name":"Optical In"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Audio In"}],"name":"Audio In"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI (Arc)"}],"name":"HDMI (Arc)"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTB7250D/12"
+  "model": "HTB7250D/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"iPod/iPhone","select":[{"commands":["InputiPod/iPhone"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Radio"},
+        {"name":"Internet Radio"},
+        {"name":"Optical In"},
+        {"name":"Aux"},
+        {"name":"Audio In"},
+        {"name":"Bluetooth"},
+        {"name":"HDMI (Arc)"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

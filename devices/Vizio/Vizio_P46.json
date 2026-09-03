@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/84/84b035fe368ae2fa.json",
   "deviceType": 1,
   "globalDeviceId": 52882,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YCB/PB CR/PR"}],"name":"YCB/PB CR/PR"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"TV/CATV"}],"name":"TV/CATV"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"RGB1"}],"name":"RGB1"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"RGB2"}],"name":"RGB2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "Vizio P46"
+  "model": "Vizio P46",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"PC","select":[{"commands":["PC Input"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["PC Input"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"S-Video"},
+        {"name":"YCB/PB CR/PR"},
+        {"name":"TV/CATV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

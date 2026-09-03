@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 16918,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Vid1"},
+      {"name":"Vid2"},
+      {"name":"Frnt"},
+      {"name":"video3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "ProScan",
-  "model": "PS36123FM1"
+  "model": "PS36123FM1",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

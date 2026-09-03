@@ -2,6 +2,36 @@
   "codeset": "codesets/70/70925db565789c26.json",
   "deviceType": 7,
   "globalDeviceId": 160737,
+  "inputs": {
+    "list": [
+      {"commands":["InputPc"],"name":"Computer"},
+      {"commands":["InputVideo"],"name":"Composite Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputHdmi"],"name":"HDMI"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["Switch"],"name":"Switch"}
+    ],
+    "type": 1
+  },
   "manufacturer": "DreamVision",
-  "model": "Dream E"
+  "model": "Dream E",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":500},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

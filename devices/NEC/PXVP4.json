@@ -2,6 +2,66 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 24589,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGBType"},{"set":"RGBInput","to":"RGB1"}],"name":"RGB/PC1"},
+      {"commands":[{"set":"InputType","to":"RGBType"},{"set":"RGBInput","to":"RGB2"}],"name":"RGB/PC2"},
+      {"commands":[{"set":"InputType","to":"RGBType"},{"set":"RGBInput","to":"RGB3"}],"name":"RGB/PC3"},
+      {"commands":[{"set":"InputType","to":"HDType"},{"set":"DTVInput","to":"DTV1"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"HDType"},{"set":"DTVInput","to":"DTV2"}],"name":"DTV2"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoInput","to":"Video1"}],"name":"VIDEO1"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoInput","to":"Video2"}],"name":"VIDEO2"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoInput","to":"Video3"}],"name":"VIDEO3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "PXVP4"
+  "model": "PXVP4",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "DTVInput": {
+      "next": ["HD 1"],
+      "values": [
+        {"name":"DTV1"},
+        {"name":"DTV2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDType","select":[{"commands":["HD 1"],"setType":2}]},
+        {"name":"RGBType","select":[{"commands":["RGB/PCToggle"],"setType":2}]},
+        {"name":"VideoType","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

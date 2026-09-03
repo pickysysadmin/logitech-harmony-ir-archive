@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9d09e9ef79a99ff.json",
   "deviceType": 2,
   "globalDeviceId": 34744,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line In"},
+      {"name":"Front Line In"},
+      {"name":"line out"}
+    ],
+    "next": ["InputVcr"],
+    "type": 2
+  },
   "manufacturer": "JVC",
-  "model": "HR-S582"
+  "model": "HR-S582",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

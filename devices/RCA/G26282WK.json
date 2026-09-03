@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/dc/dc6425688f43398b.json",
   "deviceType": 1,
   "globalDeviceId": 204486,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Input 1"},
+      {"name":"Input 2"},
+      {"name":"Input 3"}
+    ],
+    "next": ["ChannelUp"],
+    "type": 2
+  },
   "manufacturer": "RCA",
-  "model": "G26282WK"
+  "model": "G26282WK",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

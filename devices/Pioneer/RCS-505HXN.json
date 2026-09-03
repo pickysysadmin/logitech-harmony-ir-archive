@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/50/50768bb231b636cc.json",
   "deviceType": 35,
   "globalDeviceId": 163483,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVDDVR1"}],"name":"DVDDVR1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVDDVR2"}],"name":"DVDDVR2"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"Digital"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "RCS-505HXN"
+  "model": "RCS-505HXN",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"DVDDVR1"},
+        {"name":"DVDDVR2"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

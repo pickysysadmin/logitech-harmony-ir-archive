@@ -2,6 +2,37 @@
   "codeset": "codesets/f8/f8e814523c099f7c.json",
   "deviceType": 1,
   "globalDeviceId": 173371,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV 1"},
+      {"name":"RGB DVD"},
+      {"name":"VIDEO 2"},
+      {"name":"YC 2"},
+      {"name":"AV 3"},
+      {"name":"YC 3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KV-28WX1E"
+  "model": "KV-28WX1E",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

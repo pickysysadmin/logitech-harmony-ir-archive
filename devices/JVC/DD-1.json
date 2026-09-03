@@ -2,6 +2,61 @@
   "codeset": "codesets/43/43ba5f876091bb11.json",
   "deviceType": 22,
   "globalDeviceId": 135759,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"TVSound"}],"name":"TVSound"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line1"}],"name":"Line1"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line2"}],"name":"Line2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "DD-1"
+  "model": "DD-1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Network","select":[{"commands":["InputNetwork"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputLine"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"TVSound"},
+        {"name":"Digital"},
+        {"name":"Line1"},
+        {"name":"Line2"}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

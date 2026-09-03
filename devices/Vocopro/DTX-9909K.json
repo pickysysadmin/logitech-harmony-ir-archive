@@ -2,6 +2,88 @@
   "codeset": "codesets/6b/6bb51e5e2249f40a.json",
   "deviceType": 5,
   "globalDeviceId": 202481,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Aux3"}],"name":"Aux3"},
+      {"commands":[{"set":"InputType","to":"TunerAuto"}],"name":"TunerAuto"},
+      {"commands":[{"set":"InputType","to":"Tape/Cox1"},{"set":"Tape/Cox1Input","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Tape/Cox1"},{"set":"Tape/Cox1Input","to":"Cox1"}],"name":"Cox1"},
+      {"commands":[{"set":"InputType","to":"Cd/Cox2"},{"set":"Cd/Cox2Input","to":"Cd"}],"name":"Cd"},
+      {"commands":[{"set":"InputType","to":"Cd/Cox2"},{"set":"Cd/Cox2Input","to":"Cox2"}],"name":"Cox2"},
+      {"commands":[{"set":"InputType","to":"Dvd/Opt1"},{"set":"Dvd/Opt1Input","to":"Dvd"}],"name":"Dvd"},
+      {"commands":[{"set":"InputType","to":"Dvd/Opt1"},{"set":"Dvd/Opt1Input","to":"Opt1"}],"name":"Opt1"},
+      {"commands":[{"set":"InputType","to":"Aux2/Cox3"},{"set":"Aux2/Cox3Input","to":"Aux2"}],"name":"Aux2"},
+      {"commands":[{"set":"InputType","to":"Aux2/Cox3"},{"set":"Aux2/Cox3Input","to":"Cox3"}],"name":"Cox3"},
+      {"commands":[{"set":"InputType","to":"Aux1/Opt2"},{"set":"Aux1/Opt2Input","to":"Aux1"}],"name":"Aux1"},
+      {"commands":[{"set":"InputType","to":"Aux1/Opt2"},{"set":"Aux1/Opt2Input","to":"Opt2"}],"name":"Opt2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vocopro",
-  "model": "DTX-9909K"
+  "model": "DTX-9909K",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux1/Opt2Input": {
+      "next": ["Aux1/Opt2"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Opt2"}
+      ]
+    },
+    "Aux2/Cox3Input": {
+      "next": ["Aux2/Cox3"],
+      "values": [
+        {"name":"Aux2"},
+        {"name":"Cox3"}
+      ]
+    },
+    "Cd/Cox2Input": {
+      "next": ["Cd/Cox2"],
+      "values": [
+        {"name":"Cd"},
+        {"name":"Cox2"}
+      ]
+    },
+    "Dvd/Opt1Input": {
+      "next": ["Dvd/Opt1"],
+      "values": [
+        {"name":"Dvd"},
+        {"name":"Opt1"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["Tv"],"setType":2}]},
+        {"name":"Aux3","select":[{"commands":["Aux3"],"setType":2}]},
+        {"name":"TunerAuto","select":[{"commands":["TunerAuto"],"setType":2}]},
+        {"name":"Tape/Cox1","select":[{"commands":["Tape/Cox1"],"setType":2}]},
+        {"name":"Cd/Cox2","select":[{"commands":["Cd/Cox2"],"setType":2}]},
+        {"name":"Dvd/Opt1","select":[{"commands":["Dvd/Opt1"],"setType":2}]},
+        {"name":"Aux2/Cox3","select":[{"commands":["Aux2/Cox3"],"setType":2}]},
+        {"name":"Aux1/Opt2","select":[{"commands":["Aux1/Opt2"],"setType":2}]}
+      ]
+    },
+    "Tape/Cox1Input": {
+      "next": ["Tape/Cox1"],
+      "values": [
+        {"name":"Tape"},
+        {"name":"Cox1"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

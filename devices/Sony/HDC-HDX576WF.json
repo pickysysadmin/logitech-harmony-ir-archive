@@ -2,6 +2,55 @@
   "codeset": "codesets/d5/d54af5d2399451ae.json",
   "deviceType": 22,
   "globalDeviceId": 174739,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"SAT"}],"name":"SAT"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"DM Port 1"}],"name":"DM Port 1"},
+      {"commands":[{"set":"InputType","to":"DM Port 2"}],"name":"DM Port 2"},
+      {"commands":[{"set":"InputType","to":"Audio"}],"name":"Audio"},
+      {"commands":[{"set":"InputType","to":"XM"}],"name":"XM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "HDC-HDX576WF"
+  "model": "HDC-HDX576WF",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"SAT","select":[{"commands":["InputDvd",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500}],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"DM Port 1","select":[{"commands":["InputTv",{"delayMs":500},{"delayMs":500},"InputNext",{"delayMs":500}],"setType":2}]},
+        {"name":"DM Port 2","select":[{"commands":["InputTv",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500}],"setType":2}]},
+        {"name":"Audio","select":[{"commands":["InputTv",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500}],"setType":2}]},
+        {"name":"XM","select":[{"commands":["AmFmToggle",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500}],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

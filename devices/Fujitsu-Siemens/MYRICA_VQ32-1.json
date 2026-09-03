@@ -1,7 +1,65 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/9f/9f3f736066254ebc.json",
   "deviceType": 1,
   "globalDeviceId": 103065,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC DVI"}],"name":"PC DVI"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC RGB"}],"name":"PC RGB"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Scart1"}],"name":"Scart1"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Scart2"}],"name":"Scart2"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"CVBS"}],"name":"CVBS"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"YC"}],"name":"YC"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"YUV"}],"name":"YUV"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Fujitsu-Siemens",
-  "model": "MYRICA VQ32-1"
+  "model": "MYRICA VQ32-1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"VIDEO","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"PC DVI"},
+        {"name":"PC RGB"}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Scart1"},
+        {"name":"Scart2"},
+        {"name":"CVBS"},
+        {"name":"YC"},
+        {"name":"YUV"},
+        {"name":"HDMI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

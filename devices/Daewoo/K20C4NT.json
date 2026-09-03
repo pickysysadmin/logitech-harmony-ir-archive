@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/90/9090f104184ef4a6.json",
   "deviceType": 1,
   "globalDeviceId": 96106,
+  "inputs": {
+    "list": [
+      {"name":"AV"},
+      {"name":"SVHS"},
+      {"name":"TUNER"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Daewoo",
-  "model": "K20C4NT"
+  "model": "K20C4NT",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TUNER"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

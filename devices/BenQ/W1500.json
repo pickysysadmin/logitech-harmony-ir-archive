@@ -2,6 +2,42 @@
   "codeset": "codesets/fa/faaa1b7e149219fa.json",
   "deviceType": 7,
   "globalDeviceId": 256176,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"name":"HDMI 1","ports":["HDMI"]},
+      {"name":"HDMI 2","ports":["HDMI"]},
+      {"name":"Video","ports":["Composite"]},
+      {"name":"S-Video","ports":["S-Video"]},
+      {"name":"Component 1","ports":["Component"]},
+      {"name":"Component 2","ports":["PC"]},
+      {"name":"PC","ports":["PC"]},
+      {"name":"Wireless","ports":["Streaming"]}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "BenQ",
-  "model": "W1500"
+  "model": "W1500",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

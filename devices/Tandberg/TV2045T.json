@@ -2,6 +2,40 @@
   "codeset": "codesets/ab/ab949ed9af78a67c.json",
   "deviceType": 1,
   "globalDeviceId": 139342,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputNext"],"name":"AV-1"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Tandberg",
-  "model": "TV2045T"
+  "model": "TV2045T",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["Exit"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Guide"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 1
+  }
 }

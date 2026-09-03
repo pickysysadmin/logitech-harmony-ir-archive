@@ -2,6 +2,35 @@
   "codeset": "codesets/68/68dd69b8ac5c9eb8.json",
   "deviceType": 7,
   "globalDeviceId": 100833,
+  "inputs": {
+    "list": [
+      {"name":"Computer"},
+      {"name":"S-Video"},
+      {"name":"Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "TPD-S8"
+  "model": "TPD-S8",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":3000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

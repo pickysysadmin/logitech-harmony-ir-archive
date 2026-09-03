@@ -1,7 +1,67 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/00/00dfd2f76db222d2.json",
   "deviceType": 1,
   "globalDeviceId": 82124,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 1"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "AT-2703"
+  "model": "AT-2703",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"}
+      ]
+    },
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

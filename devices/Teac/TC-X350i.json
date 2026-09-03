@@ -2,6 +2,64 @@
   "codeset": "codesets/3b/3b7bcfe5ae06407d.json",
   "deviceType": 21,
   "globalDeviceId": 270386,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM Radio"}],"name":"FM Radio"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM Radio"}],"name":"AM Radio"},
+      {"commands":[{"set":"InputType","to":"USB/iPod"},{"set":"USB/iPodInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB/iPod"},{"set":"USB/iPodInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 1"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 2"}],"name":"Aux 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teac",
-  "model": "TC-X350i"
+  "model": "TC-X350i",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD"},
+        {"name":"Tuner"},
+        {"name":"USB/iPod"},
+        {"name":"Aux"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM Radio"},
+        {"name":"AM Radio"}
+      ]
+    },
+    "USB/iPodInput": {
+      "next": ["InputUsb/iPod"],
+      "values": [
+        {"name":"USB"},
+        {"name":"iPod"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

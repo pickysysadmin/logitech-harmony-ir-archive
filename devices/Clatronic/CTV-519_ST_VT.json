@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "greaterTen": ["NumberEnter"]
+  },
   "codeset": "codesets/ca/ca785ed14e8a0261.json",
   "deviceType": 1,
   "globalDeviceId": 106977,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV2-S"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Clatronic",
-  "model": "CTV-519 ST/VT"
+  "model": "CTV-519 ST/VT",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

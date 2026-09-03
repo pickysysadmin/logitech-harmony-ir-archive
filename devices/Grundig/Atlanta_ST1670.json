@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 80965,
+  "inputs": {
+    "list": [
+      {"commands":["5","Select"],"name":"Tuner"},
+      {"commands":["1","ChannelDown","ChannelDown",{"delayMs":1000},"ChannelDown"],"name":"AV1"},
+      {"commands":["1","ChannelDown","ChannelDown",{"delayMs":1000},{"delayMs":1000}],"name":"AV2"},
+      {"commands":["1","ChannelDown",{"delayMs":1000},{"delayMs":1000},{"delayMs":1000}],"name":"AV3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Grundig",
-  "model": "Atlanta ST1670"
+  "model": "Atlanta ST1670",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,66 @@
   "codeset": "codesets/99/9938f9f72008a5ee.json",
   "deviceType": 5,
   "globalDeviceId": 226606,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"TV/STB"},{"set":"TV/STBInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/STB"},{"set":"TV/STBInput","to":"STB"}],"name":"STB"},
+      {"commands":[{"set":"InputType","to":"HDMI1-3"},{"set":"HDMI1-3Input","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI1-3"},{"set":"HDMI1-3Input","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI1-3"},{"set":"HDMI1-3Input","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"Analog/FM"},{"set":"Analog/FMInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"Analog/FM"},{"set":"Analog/FMInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "SR-301"
+  "model": "SR-301",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Analog/FMInput": {
+      "next": ["InputAnalog/Fm"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"FM"}
+      ]
+    },
+    "HDMI1-3Input": {
+      "next": ["InputHdmi1-3"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":2}]},
+        {"name":"TV/STB","select":[{"commands":["InputTv/Stb"],"setType":2}]},
+        {"name":"HDMI1-3","select":[{"commands":["InputHdmi1-3"],"setType":2}]},
+        {"name":"Analog/FM","select":[{"commands":["InputAnalog/Fm"],"setType":2}]}
+      ]
+    },
+    "TV/STBInput": {
+      "next": ["InputTv/Stb"],
+      "values": [
+        {"name":"TV"},
+        {"name":"STB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

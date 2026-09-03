@@ -1,7 +1,74 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/11/1146549ed19708e3.json",
   "deviceType": 1,
   "globalDeviceId": 170959,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"YPbPr1"}],"name":"YPbPr1"},
+      {"commands":[{"set":"InputType","to":"YPbPr2"}],"name":"YPbPr2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"S-Video"},{"set":"S-VideoInput","to":"S-Video1"}],"name":"S-Video1"},
+      {"commands":[{"set":"InputType","to":"S-Video"},{"set":"S-VideoInput","to":"S-Video2"}],"name":"S-Video2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI2"}],"name":"HDMI2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Westinghouse",
-  "model": "SK-40H520S"
+  "model": "SK-40H520S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Pc","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"YPbPr1","select":[{"commands":["InputYPbPr1"],"setType":2}]},
+        {"name":"YPbPr2","select":[{"commands":["InputYPbPr2"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    },
+    "S-VideoInput": {
+      "next": ["InputS-Video"],
+      "values": [
+        {"name":"S-Video1"},
+        {"name":"S-Video2"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

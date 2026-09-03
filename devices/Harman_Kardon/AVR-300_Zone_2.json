@@ -2,6 +2,56 @@
   "codeset": "codesets/72/72607420d8c96959.json",
   "deviceType": 5,
   "globalDeviceId": 66923,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"VID 1"}],"name":"VID 1"},
+      {"commands":[{"set":"InputType","to":"VID 2"}],"name":"VID 2"},
+      {"commands":[{"set":"InputType","to":"VID 3"}],"name":"VID 3"},
+      {"commands":[{"set":"InputType","to":"VID 4"}],"name":"VID 4"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "AVR-300 (Zone 2)"
+  "model": "AVR-300 (Zone 2)",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AM/FM","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"VID 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"VID 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"VID 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"VID 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

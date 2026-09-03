@@ -2,6 +2,33 @@
   "codeset": "codesets/85/85802a2718306665.json",
   "deviceType": 1,
   "globalDeviceId": 137209,
+  "inputs": {
+    "list": [
+      {"name":"E1"},
+      {"name":"E2"},
+      {"name":"A/V"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "Mascom",
-  "model": "MC-7163"
+  "model": "MC-7163",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"E1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

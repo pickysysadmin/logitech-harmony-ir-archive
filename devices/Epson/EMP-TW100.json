@@ -2,6 +2,35 @@
   "codeset": "codesets/d5/d55b87912eb1e2ff.json",
   "deviceType": 7,
   "globalDeviceId": 23675,
+  "inputs": {
+    "list": [
+      {"commands":["InputComputer"],"name":"Computer"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputA"],"name":"A"},
+      {"commands":["InputB"],"name":"B"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "EMP-TW100"
+  "model": "EMP-TW100",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

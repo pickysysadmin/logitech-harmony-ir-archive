@@ -2,6 +2,82 @@
   "codeset": "codesets/8d/8d20cc39a21471e5.json",
   "deviceType": 5,
   "globalDeviceId": 160785,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InputTuner"},{"set":"InputTunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"InputTuner"},{"set":"InputTunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"InputTV/Blu-Ray"},{"set":"InputTV/Blu-RayInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"InputTV/Blu-Ray"},{"set":"InputTV/Blu-RayInput","to":"Blu-Ray"}],"name":"Blu-Ray"},
+      {"commands":[{"set":"InputType","to":"InputS3/4"},{"set":"InputS3/4Input","to":"3"}],"name":"3"},
+      {"commands":[{"set":"InputType","to":"InputS3/4"},{"set":"InputS3/4Input","to":"4"}],"name":"4"},
+      {"commands":[{"set":"InputType","to":"InputS5/6"},{"set":"InputS5/6Input","to":"5"}],"name":"5"},
+      {"commands":[{"set":"InputType","to":"InputS5/6"},{"set":"InputS5/6Input","to":"6"}],"name":"6"},
+      {"commands":[{"set":"InputType","to":"InputS7/8"},{"set":"InputS7/8Input","to":"7"}],"name":"7"},
+      {"commands":[{"set":"InputType","to":"InputS7/8"},{"set":"InputS7/8Input","to":"8"}],"name":"8"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTR9900"
+  "model": "HTR9900",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputS3/4Input": {
+      "next": ["InputS3/4"],
+      "values": [
+        {"name":"3"},
+        {"name":"4"}
+      ]
+    },
+    "InputS5/6Input": {
+      "next": ["InputS5/6"],
+      "values": [
+        {"name":"5"},
+        {"name":"6"}
+      ]
+    },
+    "InputS7/8Input": {
+      "next": ["InputS7/8"],
+      "values": [
+        {"name":"7"},
+        {"name":"8"}
+      ]
+    },
+    "InputTV/Blu-RayInput": {
+      "next": ["InputTV/Blu-Ray"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Blu-Ray"}
+      ]
+    },
+    "InputTunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"InputTuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"InputTV/Blu-Ray","select":[{"commands":["InputTV/Blu-Ray"],"setType":2}]},
+        {"name":"InputS3/4","select":[{"commands":["InputS3/4"],"setType":2}]},
+        {"name":"InputS5/6","select":[{"commands":["InputS5/6"],"setType":2}]},
+        {"name":"InputS7/8","select":[{"commands":["InputS7/8"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

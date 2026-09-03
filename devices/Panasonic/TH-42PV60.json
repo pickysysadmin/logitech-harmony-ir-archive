@@ -2,6 +2,112 @@
   "codeset": "codesets/fe/fe1eb98e7db5cb64.json",
   "deviceType": 1,
   "globalDeviceId": 177589,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV1"},{"set":"MENU","to":"OFF"}],"name":"AV1","ports":["Scart"]},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"AVTWO","to":"AV2"},{"set":"MENU","to":"OFF"}],"name":"AV2","ports":["Scart"]},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"AVTWO","to":"AV2S"},{"set":"MENU","to":"OFF"}],"name":"AV2S","ports":["S-Video"]},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"AVTHREE","to":"AV3"},{"set":"MENU","to":"OFF"}],"name":"AV3","ports":["Scart"]},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"AVTHREE","to":"AV3S"},{"set":"MENU","to":"OFF"}],"name":"AV3S","ports":["S-Video"]},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV4"},{"set":"AVFOUR","to":"AV4"},{"set":"MENU","to":"OFF"}],"name":"AV4","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV4"},{"set":"AVFOUR","to":"AV4S"},{"set":"MENU","to":"OFF"}],"name":"AV4S","ports":["S-Video"]},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"Component/PC"},{"set":"Component/PC","to":"Component"},{"set":"MENU","to":"OFF"}],"name":"Component","ports":["Component"]},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"Component/PC"},{"set":"Component/PC","to":"PC"},{"set":"MENU","to":"OFF"}],"name":"PC","ports":["PC"]},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"HDMI"},{"set":"HDMI","to":"Hdmi1"},{"set":"MENU","to":"OFF"}],"name":"Hdmi1","ports":["HDMI"]},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"HDMI"},{"set":"HDMI","to":"Hdmi2"},{"set":"MENU","to":"OFF"}],"name":"Hdmi2","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PV60"
+  "model": "TH-42PV60",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVFOUR": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4S"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":[{"set":"Page1/2","to":"Page1"},"InputHdmi1","Red","Red","Red"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":[{"set":"Page1/2","to":"Page1"},"Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":[{"set":"Page1/2","to":"Page1"},"Yellow"],"setType":2}]},
+        {"name":"AV4","select":[{"commands":[{"set":"Page1/2","to":"Page2"},"Green"],"setType":2}]},
+        {"name":"Component/PC","select":[{"commands":[{"set":"Page1/2","to":"Page2"}],"setType":1}]},
+        {"name":"HDMI","select":[{"commands":[{"set":"Page1/2","to":"Page2"}],"setType":1}]}
+      ]
+    },
+    "AVTHREE": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AVTWO": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "Component/PC": {
+      "values": [
+        {"name":"Component","select":[{"commands":["InputPc","Yellow"],"setType":1}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":1}]}
+      ]
+    },
+    "HDMI": {
+      "values": [
+        {"name":"Hdmi1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"Hdmi2","select":[{"commands":["InputHdmi2"],"setType":1}]}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "TvVideo",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "Page1/2": {
+      "values": [
+        {"name":"Page1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"Page2","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 9500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,40 @@
   "codeset": "codesets/b8/b82bdfd3e37518fe.json",
   "deviceType": 7,
   "globalDeviceId": 412922,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"name":"D-Sub/Comp.1"},
+      {"name":"D-Sub/Comp.2"},
+      {"name":"HDMI"},
+      {"name":"Video"},
+      {"name":"S-Video"}
+    ],
+    "next": ["DirectionUp"],
+    "previous": ["DirectionDown"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "ViewSonic",
-  "model": "PJD6235"
+  "model": "PJD6235",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

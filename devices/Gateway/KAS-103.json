@@ -2,6 +2,59 @@
   "codeset": "codesets/df/dfe0e17b5fb23405.json",
   "deviceType": 22,
   "globalDeviceId": 14677,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video Aux"}],"name":"Video Aux"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital Aux"}],"name":"Digital Aux"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Aux Opt"}],"name":"Aux Opt"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Aux Coax"}],"name":"Aux Coax"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Gateway",
-  "model": "KAS-103"
+  "model": "KAS-103",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["Digital"],
+      "values": [
+        {"name":"Aux Opt"},
+        {"name":"Aux Coax"},
+        {"name":"Digital Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["Digital"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video Aux"},
+        {"name":"DVD"},
+        {"name":"Video"},
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

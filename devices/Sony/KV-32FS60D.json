@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 42346,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line In 1"},
+      {"name":"Line In 2"},
+      {"name":"Line In 3"},
+      {"name":"Video2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KV-32FS60D"
+  "model": "KV-32FS60D",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Video2"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,48 @@
   "codeset": "codesets/64/64f22e7fb927223e.json",
   "deviceType": 19,
   "globalDeviceId": 301708,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Coaxial"}],"name":"Coaxial"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Aux/Rca"},{"set":"Aux/RcaInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux/Rca"},{"set":"Aux/RcaInput","to":"Rca"}],"name":"Rca"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Jensen",
-  "model": "JSBW-750"
+  "model": "JSBW-750",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/RcaInput": {
+      "next": ["InputAux/Rca"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Rca"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"Coaxial","select":[{"commands":["InputCoaxial"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Aux/Rca","select":[{"commands":["InputAux/Rca"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/cc/ccd7c2d282b57cbd.json",
   "deviceType": 1,
   "globalDeviceId": 227277,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"Video3"},
+      {"name":"Video4"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "CE-29Q90D"
+  "model": "CE-29Q90D",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

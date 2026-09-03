@@ -2,6 +2,36 @@
   "codeset": "codesets/56/566d13616d35a9fb.json",
   "deviceType": 5,
   "globalDeviceId": 161834,
+  "inputs": {
+    "list": [
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd/Vdp"],"name":"DVD/VDP","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputTv/Dbs"],"name":"TV/DBS","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVcr1"],"name":"VCR 1","ports":["Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputVcr2"],"name":"VCR 2","ports":["Composite","S-Video"]},
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputCdr/Tape"],"name":"CDR/Tape","ports":["Composite","Optical"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-2106"
+  "model": "AVR-2106",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

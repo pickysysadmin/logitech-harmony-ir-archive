@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/88/88de81d84decced1.json",
   "deviceType": 2,
   "globalDeviceId": 33673,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line 1"},
+      {"name":"TV/VCR"}
+    ],
+    "next": ["TvVcr"],
+    "type": 2
+  },
   "manufacturer": "Sharp",
-  "model": "VC-S5420"
+  "model": "VC-S5420",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"},
+      {"set":"Input","to":"Line 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

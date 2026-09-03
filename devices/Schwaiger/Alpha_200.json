@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/73/733dc590e09ac92d.json",
   "deviceType": 12,
   "globalDeviceId": 25511,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"PC"}
+    ],
+    "next": ["Menu"],
+    "type": 2
+  },
   "manufacturer": "Schwaiger",
-  "model": "Alpha 200"
+  "model": "Alpha 200",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

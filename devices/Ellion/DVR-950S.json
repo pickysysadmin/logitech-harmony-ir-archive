@@ -2,6 +2,43 @@
   "codeset": "codesets/21/212d24ce3cb0f8e5.json",
   "deviceType": 34,
   "globalDeviceId": 114561,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"DVD"},
+      {"name":"HDD"}
+    ],
+    "next": ["Dvd/Hdd"],
+    "type": 2
+  },
   "manufacturer": "Ellion",
-  "model": "DVR-950S"
+  "model": "DVR-950S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Rear A/V"},
+        {"name":"Rear S-VIDEO"},
+        {"name":"Front A/V"},
+        {"name":"DV IN"},
+        {"name":"SCART A/V"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

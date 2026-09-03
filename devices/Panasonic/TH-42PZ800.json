@@ -2,6 +2,63 @@
   "codeset": "codesets/99/99197031fdd3b61a.json",
   "deviceType": 1,
   "globalDeviceId": 170031,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Sd Card"}],"name":"Sd Card"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVB"}],"name":"DVB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PZ800"
+  "model": "TH-42PZ800",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Component 1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component 2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"HDMI 4","select":[{"commands":["InputHdmi3","TvVideo","DirectionDown","Select"],"setType":2}]},
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Sd Card","select":[{"commands":["Sd"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DVB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6500,
+    "pressMinRepeats": 1
+  }
 }

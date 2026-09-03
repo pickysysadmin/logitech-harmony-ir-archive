@@ -2,6 +2,30 @@
   "codeset": "codesets/22/22faabffebc57cf5.json",
   "deviceType": 19,
   "globalDeviceId": 270862,
+  "inputs": {
+    "list": [
+      {"commands":["InputAux"],"name":"Aux","ports":["Composite"]},
+      {"commands":["InputLineIn"],"name":"Line In","ports":["Aux"]},
+      {"commands":["InputOptical"],"name":"Optical","ports":["Optical"]},
+      {"commands":["InputBluetooth"],"name":"Bluetooth","ports":["Pairing Input"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "RTS739BWS"
+  "model": "RTS739BWS",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

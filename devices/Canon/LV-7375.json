@@ -2,6 +2,48 @@
   "codeset": "codesets/f7/f7154aef680ff529.json",
   "deviceType": 7,
   "globalDeviceId": 183032,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Computer1"}],"name":"Computer1"},
+      {"commands":[{"set":"InputType","to":"Computer2"},{"set":"Computer2Input","to":"Computer2(Digital)"}],"name":"Computer2(Digital)"},
+      {"commands":[{"set":"InputType","to":"Computer2"},{"set":"Computer2Input","to":"Computer2(Analog)"}],"name":"Computer2(Analog)"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Canon",
-  "model": "LV-7375"
+  "model": "LV-7375",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Computer2Input": {
+      "next": ["InputComputer2"],
+      "values": [
+        {"name":"Computer2(Digital)"},
+        {"name":"Computer2(Analog)"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"Computer1","select":[{"commands":["InputComputer1"],"setType":2}]},
+        {"name":"Computer2","select":[{"commands":["InputComputer2"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

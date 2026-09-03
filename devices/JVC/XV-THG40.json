@@ -2,6 +2,58 @@
   "codeset": "codesets/55/55a46a9a9f2c77f7.json",
   "deviceType": 22,
   "globalDeviceId": 170826,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AuxOptical"}],"name":"AuxOptical"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AudioIn"}],"name":"AudioIn"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"OSDiPOD"}],"name":"OSDiPOD"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"iPOD"}],"name":"iPOD"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Tuner"}],"name":"Tuner"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "XV-THG40"
+  "model": "XV-THG40",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FunctionInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"Tuner"}
+      ]
+    },
+    "InputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"AuxOptical"},
+        {"name":"AudioIn"},
+        {"name":"OSDiPOD"},
+        {"name":"iPOD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Function","select":[{"commands":["Function"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

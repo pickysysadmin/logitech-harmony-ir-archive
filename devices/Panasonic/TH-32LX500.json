@@ -1,7 +1,104 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 175751,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV/AV"},{"set":"TV/AVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"PAGE12","to":"PAGE1"},{"set":"InputType","to":"VIDEO1"}],"name":"AV1"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"PAGE12","to":"PAGE1"},{"set":"InputType","to":"VIDEO2"},{"set":"Video2Input","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"PAGE12","to":"PAGE1"},{"set":"InputType","to":"VIDEO2"},{"set":"Video2Input","to":"AV2S"}],"name":"AV2S"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"PAGE12","to":"PAGE1"},{"set":"InputType","to":"VIDEO3"},{"set":"Video3Input","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"PAGE12","to":"PAGE1"},{"set":"InputType","to":"VIDEO3"},{"set":"Video3Input","to":"AV3S"}],"name":"AV3S"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"PAGE12","to":"PAGE2"},{"set":"InputType","to":"VIDEO4"},{"set":"Video4Input","to":"AV4"}],"name":"AV4"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"PAGE12","to":"PAGE2"},{"set":"InputType","to":"VIDEO4"},{"set":"Video4Input","to":"AV4S"}],"name":"AV4S"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"PAGE12","to":"PAGE2"},{"set":"InputType","to":"DIGITAL"},{"set":"DIGITALInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"PAGE12","to":"PAGE2"},{"set":"InputType","to":"DIGITAL"},{"set":"DIGITALInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"PAGE12","to":"PAGE2"},{"set":"InputType","to":"DIGITAL"},{"set":"DIGITALInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-32LX500"
+  "model": "TH-32LX500",
+  "power": {
+    "onReset": [
+      {"delayMs":2000},
+      {"set":"TV/AVInput","to":"TV"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "DIGITALInput": {
+      "next": [
+        {"delayMs":500},
+        "Yellow"
+      ],
+      "values": [
+        {"name":"Component"},
+        {"name":"PC"},
+        {"name":"Dummy"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV/AV","select":[{"commands":[{"set":"TV/AVInput","to":"TV"}],"setType":2}]},
+        {"name":"VIDEO1","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Red"],"setType":2}]},
+        {"name":"VIDEO2","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Green"],"setType":2}]},
+        {"name":"VIDEO3","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Yellow"],"setType":2}]},
+        {"name":"VIDEO4","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Green"],"setType":2}]},
+        {"name":"DIGITAL","select":[{"commands":["Yellow"],"setType":2}]}
+      ]
+    },
+    "PAGE12": {
+      "values": [
+        {"name":"PAGE1","select":[{"commands":["Red"],"setType":1}]},
+        {"name":"PAGE2","select":[{"commands":["Blue"],"setType":1}]}
+      ]
+    },
+    "TV/AVInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "Video2Input": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "Video3Input": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "Video4Input": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4S"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4500,
+    "pressMinRepeats": 3
+  }
 }

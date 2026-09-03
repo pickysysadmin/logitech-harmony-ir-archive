@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/25/25d7bda4a12d261b.json",
   "deviceType": 34,
   "globalDeviceId": 142002,
+  "inputs": {
+    "list": [
+      {"name":"Input 1"},
+      {"name":"Input 2"},
+      {"name":"Input 3"},
+      {"name":"DV"}
+    ],
+    "next": ["InputSelect"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "HDR-UX5"
+  "model": "HDR-UX5",
+  "power": {
+    "off": ["PowerOff"],
+    "on": [
+      {"delayMs":6000},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

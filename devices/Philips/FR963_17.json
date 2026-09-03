@@ -2,6 +2,38 @@
   "codeset": "codesets/bc/bcb0e93d40d9c7b0.json",
   "deviceType": 5,
   "globalDeviceId": 58703,
+  "inputs": {
+    "list": [
+      {"commands":[{"command":"InputPhono","durationMs":1500}],"name":"Phono"},
+      {"commands":[{"command":"InputTuner","durationMs":1500}],"name":"Tuner"},
+      {"commands":[{"command":"InputCd","durationMs":1500}],"name":"CD"},
+      {"commands":[{"command":"InputCdr/Tape","durationMs":1500}],"name":"CDR/Tape"},
+      {"commands":[{"command":"InputTV","durationMs":1500}],"name":"TV"},
+      {"commands":[{"command":"InputVCR","durationMs":1500}],"name":"VCR"},
+      {"commands":[{"command":"InputSat","durationMs":1500}],"name":"Sat"},
+      {"commands":[{"command":"InputDvd","durationMs":1500}],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "FR963/17"
+  "model": "FR963/17",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":3000}
+    ],
+    "on": [
+      {"command":"InputTuner","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,33 @@
   "codeset": "codesets/ca/ca785ed14e8a0261.json",
   "deviceType": 1,
   "globalDeviceId": 22706,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV2-S"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "United",
-  "model": "UTV-4028XAS"
+  "model": "UTV-4028XAS",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

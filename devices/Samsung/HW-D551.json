@@ -2,6 +2,37 @@
   "codeset": "codesets/1a/1aded81cd18042b3.json",
   "deviceType": 19,
   "globalDeviceId": 219599,
+  "inputs": {
+    "list": [
+      {"name":"DIGI 1","ports":["Optical"]},
+      {"name":"DIGI 2","ports":["Optical"]},
+      {"name":"Analog","ports":["Aux"]},
+      {"name":"W.iPod","ports":["Streaming"]},
+      {"name":"HDMI 1","ports":["HDMI"]},
+      {"name":"HDMI 2","ports":["HDMI"]}
+    ],
+    "next": ["InputNext"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HW-D551"
+  "model": "HW-D551",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 2
+  }
 }

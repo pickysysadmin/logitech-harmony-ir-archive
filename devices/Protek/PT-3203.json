@@ -2,6 +2,42 @@
   "codeset": "codesets/a7/a7019404b7ba11c5.json",
   "deviceType": 1,
   "globalDeviceId": 135020,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"YPbPr"},
+      {"name":"VGA"},
+      {"name":"HDMI"}
+    ],
+    "next": ["StartInput"],
+    "type": 2
+  },
   "manufacturer": "Protek",
-  "model": "PT-3203"
+  "model": "PT-3203",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 1
+  }
 }

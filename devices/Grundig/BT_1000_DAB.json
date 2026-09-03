@@ -2,6 +2,55 @@
   "codeset": "codesets/bc/bc9e6de417d5dff0.json",
   "deviceType": 21,
   "globalDeviceId": 500687,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Cd/Sd/Usb"},{"set":"Cd/Sd/UsbInput","to":"Cd"}],"name":"Cd"},
+      {"commands":[{"set":"InputType","to":"Cd/Sd/Usb"},{"set":"Cd/Sd/UsbInput","to":"Sd"}],"name":"Sd"},
+      {"commands":[{"set":"InputType","to":"Cd/Sd/Usb"},{"set":"Cd/Sd/UsbInput","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"Aux/BT"},{"set":"Aux/BTInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux/BT"},{"set":"Aux/BTInput","to":"BT"}],"name":"BT"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Grundig",
-  "model": "BT 1000 DAB+"
+  "model": "BT 1000 DAB+",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/BTInput": {
+      "next": ["InputAux/BT"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"BT"}
+      ]
+    },
+    "Cd/Sd/UsbInput": {
+      "next": ["InputCd/Sd/Usb"],
+      "values": [
+        {"name":"Cd"},
+        {"name":"Sd"},
+        {"name":"Usb"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":1}]},
+        {"name":"Cd/Sd/Usb","select":[{"commands":["InputCd/Sd/Usb"],"setType":1}]},
+        {"name":"Aux/BT","select":[{"commands":["InputAux/BT"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

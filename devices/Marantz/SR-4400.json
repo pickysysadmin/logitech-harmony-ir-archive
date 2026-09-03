@@ -2,6 +2,37 @@
   "codeset": "codesets/86/86f3a17e4ba92f5b.json",
   "deviceType": 5,
   "globalDeviceId": 4658,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv2"],"name":"TV","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputDVD"],"name":"DVD","ports":["Composite","Coaxial","S-Video","Optical"]},
+      {"commands":["InputVCR"],"name":"VCR1","ports":["Composite","Coaxial","S-Video","Optical"]},
+      {"commands":["InputDss"],"name":"DSS/VCR2","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Others"]},
+      {"commands":["InputMD"],"name":"CDR/MD","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputTape"],"name":"TAPE","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["Input6CH"],"name":"6.1CH","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Marantz",
-  "model": "SR-4400"
+  "model": "SR-4400",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

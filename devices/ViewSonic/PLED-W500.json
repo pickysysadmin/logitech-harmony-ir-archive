@@ -2,6 +2,49 @@
   "codeset": "codesets/bb/bb6e3e5b07fbdf97.json",
   "deviceType": 7,
   "globalDeviceId": 242501,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Sd/Usb"}],"name":"Sd/Usb"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "ViewSonic",
-  "model": "PLED-W500"
+  "model": "PLED-W500",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Sd/Usb","select":[{"commands":["InputSd/Usb"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Composite"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

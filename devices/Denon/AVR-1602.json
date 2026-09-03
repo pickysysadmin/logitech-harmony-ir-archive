@@ -2,6 +2,34 @@
   "codeset": "codesets/15/1558532ccaa3f075.json",
   "deviceType": 5,
   "globalDeviceId": 118821,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputDvd/Vdp"],"name":"DVD/VDP","ports":["Composite","Coaxial","S-Video"]},
+      {"commands":["InputVAux"],"name":"V.AUX","ports":["Composite"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":["InputCdr/Tape"],"name":"CDR/TAPE","ports":["Composite"]},
+      {"commands":["InputTv/Dbs"],"name":"TV/DBS","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-1602"
+  "model": "AVR-1602",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

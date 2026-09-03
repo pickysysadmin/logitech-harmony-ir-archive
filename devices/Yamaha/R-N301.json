@@ -2,6 +2,62 @@
   "codeset": "codesets/6e/6e94ffba95c20d3d.json",
   "deviceType": 5,
   "globalDeviceId": 267216,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Coaxial"}],"name":"Coaxial"},
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Line1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"Line2"}],"name":"Line 2"},
+      {"commands":[{"set":"InputType","to":"Line3"}],"name":"Line 3"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Net"},{"set":"NetInput","to":"MediaServer"}],"name":"Media Server"},
+      {"commands":[{"set":"InputType","to":"Net"},{"set":"NetInput","to":"InternetRadio"}],"name":"Internet Radio"},
+      {"commands":[{"set":"InputType","to":"Net"},{"set":"NetInput","to":"AirPlay"}],"name":"AirPlay"},
+      {"commands":[{"set":"InputType","to":"Net"},{"set":"NetInput","to":"Pandora"}],"name":"Pandora"},
+      {"commands":[{"set":"InputType","to":"Net"},{"set":"NetInput","to":"Spotify"}],"name":"Spotify"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "R-N301"
+  "model": "R-N301",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Coaxial","select":[{"commands":["InputCoaxial"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"Line1","select":[{"commands":["InputLine1"],"setType":2}]},
+        {"name":"Line2","select":[{"commands":["InputLine2"],"setType":2}]},
+        {"name":"Line3","select":[{"commands":["InputLine3"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Net","select":[{"commands":["InputNet"],"setType":2}]}
+      ]
+    },
+    "NetInput": {
+      "next": ["InputNet"],
+      "values": [
+        {"name":"MediaServer"},
+        {"name":"InternetRadio"},
+        {"name":"AirPlay"},
+        {"name":"Spotify"},
+        {"name":"Pandora"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

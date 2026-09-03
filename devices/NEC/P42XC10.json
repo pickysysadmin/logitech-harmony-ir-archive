@@ -2,6 +2,48 @@
   "codeset": "codesets/0e/0efa4470969c5e48.json",
   "deviceType": 13,
   "globalDeviceId": 165294,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"DVD/HD"},{"set":"DVD/HDInput","to":"DVD/HD1"}],"name":"DVD/HD1"},
+      {"commands":[{"set":"InputType","to":"DVD/HD"},{"set":"DVD/HDInput","to":"DVD/HD2"}],"name":"DVD/HD2"},
+      {"commands":[{"set":"InputType","to":"DVD/HD"},{"set":"DVD/HDInput","to":"DVD/HD3"}],"name":"DVD/HD3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "P42XC10"
+  "model": "P42XC10",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "DVD/HDInput": {
+      "next": ["InputDVD/HD"],
+      "values": [
+        {"name":"DVD/HD1"},
+        {"name":"DVD/HD2"},
+        {"name":"DVD/HD3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"DVD/HD","select":[{"commands":["InputDVD/HD"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

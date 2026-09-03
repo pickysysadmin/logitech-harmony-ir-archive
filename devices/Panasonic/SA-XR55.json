@@ -2,6 +2,32 @@
   "codeset": "codesets/f8/f8f221b8f04fbe2e.json",
   "deviceType": 5,
   "globalDeviceId": 68815,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputDvdR"],"name":"DVD Recorder","ports":["Component","Composite","Optical","S-Video"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-XR55"
+  "model": "SA-XR55",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

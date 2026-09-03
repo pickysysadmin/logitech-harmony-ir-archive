@@ -2,6 +2,36 @@
   "codeset": "codesets/c8/c8c5c5005d511549.json",
   "deviceType": 7,
   "globalDeviceId": 153174,
+  "inputs": {
+    "list": [
+      {"commands":["InputD-Sub"],"name":"D-Sub"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputHdmi"],"name":"HDMI"},
+      {"commands":["InputComponent"],"name":"Component"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "HD65"
+  "model": "HD65",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

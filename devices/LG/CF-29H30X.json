@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/30/305731e2cdc6b119.json",
   "deviceType": 1,
   "globalDeviceId": 89719,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"TV"},
+      {"name":"AV 1"},
+      {"name":"AV 2"},
+      {"name":"AV 3"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "CF-29H30X"
+  "model": "CF-29H30X",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

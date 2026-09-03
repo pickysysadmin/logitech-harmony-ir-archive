@@ -2,6 +2,41 @@
   "codeset": "codesets/d5/d5553e535ab2e5a4.json",
   "deviceType": 1,
   "globalDeviceId": 159555,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"SVHS"},
+      {"name":"AV4"},
+      {"name":"PC"},
+      {"name":"DVI"},
+      {"name":"YPBPR"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Grundig",
-  "model": "LXW 68-8510 Top"
+  "model": "LXW 68-8510 Top",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

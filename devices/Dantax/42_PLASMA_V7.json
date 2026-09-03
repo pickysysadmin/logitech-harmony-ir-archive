@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c71c9667b34975.json",
   "deviceType": 1,
   "globalDeviceId": 136267,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"AV3"},
+      {"name":"AV6"},
+      {"name":"Tuner"}
+    ],
+    "next": ["ARC"],
+    "type": 2
+  },
   "manufacturer": "Dantax",
-  "model": "42 PLASMA V7"
+  "model": "42 PLASMA V7",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

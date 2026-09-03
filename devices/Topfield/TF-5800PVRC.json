@@ -2,6 +2,40 @@
   "codeset": "codesets/e0/e0303f91f845854f.json",
   "deviceType": 18,
   "globalDeviceId": 98971,
+  "inputs": {
+    "list": [
+      {"name":"PVR"}
+    ],
+    "next": ["InputNext"],
+    "type": 6
+  },
   "manufacturer": "Topfield",
-  "model": "TF-5800PVRC"
+  "model": "TF-5800PVRC",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 1
+  }
 }

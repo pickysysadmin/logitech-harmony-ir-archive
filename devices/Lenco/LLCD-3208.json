@@ -2,6 +2,36 @@
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 116910,
+  "inputs": {
+    "list": [
+      {"name":"Normal"},
+      {"name":"AV-1"},
+      {"name":"AV-2"},
+      {"name":"AV-3"},
+      {"name":"S-Video"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Lenco",
-  "model": "LLCD-3208"
+  "model": "LLCD-3208",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Normal"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 5000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 2
+  }
 }

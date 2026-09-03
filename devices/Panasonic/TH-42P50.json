@@ -2,6 +2,94 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 92273,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV/AV"},{"set":"TV/AVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"RedBlueInput","to":"Red"},{"set":"InputType","to":"VIDEO1"}],"name":"AV1"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"RedBlueInput","to":"Red"},{"set":"InputType","to":"VIDEO2"}],"name":"AV2"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"RedBlueInput","to":"Red"},{"set":"InputType","to":"VIDEO2"}],"name":"AV2S"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"RedBlueInput","to":"Red"},{"set":"InputType","to":"VIDEO3"}],"name":"AV3"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"RedBlueInput","to":"Red"},{"set":"InputType","to":"VIDEO3"}],"name":"AV3S"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"RedBlueInput","to":"Blue"},{"set":"InputType","to":"VIDEO4"}],"name":"AV4"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"RedBlueInput","to":"Blue"},{"set":"InputType","to":"VIDEO4"}],"name":"AV4S"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"RedBlueInput","to":"Blue"},{"set":"DigitalInput","to":"Componente"}],"name":"Componente"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"RedBlueInput","to":"Blue"},{"set":"DigitalInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"},{"set":"RedBlueInput","to":"Blue"},{"set":"DigitalInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42P50"
+  "model": "TH-42P50",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2/AV2SInput": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "AV3/AV3SInput": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AV4/AV4SInput": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4S"}
+      ]
+    },
+    "DigitalInput": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"Componente"},
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV/AV","select":[{"commands":[{"set":"TV/AVInput","to":"TV"}],"setType":2}]},
+        {"name":"VIDEO1","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Red","Red"],"setType":1}]},
+        {"name":"VIDEO2","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Green","Green"],"setType":2}]},
+        {"name":"VIDEO3","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Yellow","Yellow"],"setType":2}]},
+        {"name":"VIDEO4","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Green"],"setType":2}]}
+      ]
+    },
+    "RedBlueInput": {
+      "values": [
+        {"name":"Red","select":[{"commands":["Red","Red"],"setType":2}]},
+        {"name":"Blue","select":[{"commands":["Blue","Blue"],"setType":2}]}
+      ]
+    },
+    "TV/AVInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

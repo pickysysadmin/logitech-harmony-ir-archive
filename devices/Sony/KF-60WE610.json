@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/9b/9b2c894da0bbf32b.json",
   "deviceType": 1,
   "globalDeviceId": 176884,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"AntennaInput","to":"VHF"}],"name":"Tuner","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video 1","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video 2","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Video3"}],"name":"Video 3","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Video4"}],"name":"Video 4","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Video5"}],"name":"Video 5","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Video6"}],"name":"Video 6","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Video7"}],"name":"Video 7","ports":["Composite","DVI"]},
+      {"commands":[{"set":"InputType","to":"MemoryStick"}],"name":"Memory Stick","ports":["SD-Card"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"AntennaInput","to":"Cable"}],"name":"Cable","ports":["Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "KF-60WE610"
+  "model": "KF-60WE610",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["Antenna"],
+      "values": [
+        {"name":"VHF"},
+        {"name":"Cable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"Video3","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"Video4","select":[{"commands":["InputVideo4"],"setType":1}]},
+        {"name":"Video5","select":[{"commands":["InputVideo5"],"setType":1}]},
+        {"name":"Video6","select":[{"commands":["InputVideo6"],"setType":1}]},
+        {"name":"Video7","select":[{"commands":["InputVideo7"],"setType":1}]},
+        {"name":"MemoryStick","select":[{"commands":["InputMemoryStick"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ea/ea04e4d880cd0e08.json",
   "deviceType": 2,
   "globalDeviceId": 21261,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line 1"}
+    ],
+    "next": ["TvVcr"],
+    "type": 2
+  },
   "manufacturer": "Sharp",
-  "model": "VC-A560"
+  "model": "VC-A560",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

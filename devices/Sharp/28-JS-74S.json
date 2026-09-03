@@ -2,6 +2,72 @@
   "codeset": "codesets/b0/b03c3aae83921f47.json",
   "deviceType": 1,
   "globalDeviceId": 168454,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"},{"set":"ScartScart","to":"ON"},{"set":"AV-1Scart","to":"ON"}],"name":"TV"},
+      {"commands":[{"set":"ScartScart","to":"ON"}],"name":"Scart"},
+      {"commands":[{"set":"AV-1Scart","to":"ON"}],"name":"AV-1"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV-1"},{"set":"AV-1Input","to":"AV-1S"},{"set":"MENU","to":"OFF"},{"set":"ScartScart","to":"OFF"},{"set":"AV-1Scart","to":"OFF"}],"name":"AV-1S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "28-JS-74S"
+  "model": "28-JS-74S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV-1Input": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV-1"},
+        {"name":"AV-1S"}
+      ]
+    },
+    "AV-1Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV-1"},{"set":"AV-1Input","to":"AV-1"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"Scart","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"AV-1","select":[{"commands":["Green"],"setType":2}]}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "InputNext",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "ScartScart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"Scart"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

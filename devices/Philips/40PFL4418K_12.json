@@ -2,6 +2,62 @@
   "codeset": "codesets/3a/3a76d4afa0aafb5b.json",
   "deviceType": 1,
   "globalDeviceId": 334548,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Menu"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Menu"}],"name":"Satellite"},
+      {"commands":[{"set":"InputType","to":"Menu"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Menu"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"Menu"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Menu"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Menu"}],"name":"HDMI Side"},
+      {"commands":[{"set":"InputType","to":"Menu"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"Menu"}],"name":"Scart"},
+      {"commands":[{"set":"InputType","to":"Menu"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Menu"}],"name":"Smart TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "40PFL4418K/12"
+  "model": "40PFL4418K/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Smart","select":[{"commands":["SmartTv"],"setType":2}]},
+        {"name":"Menu","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "MenuInput": {
+      "finish": ["OK"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["Source"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Satellite"},
+        {"name":"USB"},
+        {"name":"Network"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMISide"},
+        {"name":"YPbPr"},
+        {"name":"Scart"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 24000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,39 @@
   "codeset": "codesets/5a/5ab83cd50abaee1e.json",
   "deviceType": 1,
   "globalDeviceId": 156403,
+  "inputs": {
+    "list": [
+      {"name":"AV"},
+      {"name":"AV2"},
+      {"name":"S-VIDEO"},
+      {"name":"COMPONENT1"},
+      {"name":"HDMI1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "PS-42S71H"
+  "model": "PS-42S71H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["TeletextOff"],"setType":2}]},
+        {"name":"On","select":[{"commands":["TeletextOn"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

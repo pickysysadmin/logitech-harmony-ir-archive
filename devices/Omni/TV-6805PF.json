@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/fa/fa3f31d214c51fef.json",
   "deviceType": 1,
   "globalDeviceId": 114256,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"VIDEO1"},
+      {"name":"VIDEO2"},
+      {"name":"SVIDEO"}
+    ],
+    "next": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": 2
+  },
   "manufacturer": "Omni",
-  "model": "TV-6805PF"
+  "model": "TV-6805PF",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 1
+  }
 }

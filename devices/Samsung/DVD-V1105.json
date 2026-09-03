@@ -1,7 +1,34 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/30/30ec9cb54963499c.json",
   "deviceType": 25,
   "globalDeviceId": 132403,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputVcr"],"name":"VCR"},
+      {"commands":["0","1"],"name":"Antenna"},
+      {"commands":["0","1","ChannelDown","ChannelDown"],"name":"Line In 1"},
+      {"commands":["0","1","ChannelDown"],"name":"Line In 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "DVD-V1105"
+  "model": "DVD-V1105",
+  "power": {
+    "toggle": ["PowerToggle 2"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,55 @@
   "codeset": "codesets/c3/c3728be95f13f49a.json",
   "deviceType": 7,
   "globalDeviceId": 38512,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC1"}],"name":"PC1"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC2"}],"name":"PC2"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC3"}],"name":"PC3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"comp"}],"name":"Comp"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "DLA-SX21"
+  "model": "DLA-SX21",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":3500}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["Video"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["Computer"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["Computer"],
+      "values": [
+        {"name":"PC1"},
+        {"name":"PC2"},
+        {"name":"PC3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Video"],
+      "values": [
+        {"name":"video"},
+        {"name":"comp"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

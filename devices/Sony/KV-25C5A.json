@@ -2,6 +2,39 @@
   "codeset": "codesets/73/739b5e84df7e5da6.json",
   "deviceType": 1,
   "globalDeviceId": 69791,
+  "inputs": {
+    "list": [
+      {"name":"Antenne"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KV-25C5A"
+  "model": "KV-25C5A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

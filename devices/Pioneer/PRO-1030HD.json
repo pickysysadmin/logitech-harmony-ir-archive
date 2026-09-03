@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/d0/d0d6f272bb61077f.json",
   "deviceType": 1,
   "globalDeviceId": 75682,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"video1"},
+      {"commands":["InputVideo2"],"name":"video2"},
+      {"commands":["InputVideo3"],"name":"video3"},
+      {"commands":["InputTuner"],"name":"tuner"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Pioneer",
-  "model": "PRO-1030HD"
+  "model": "PRO-1030HD",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "ANTInput": {
+      "next": ["AntennaCable"],
+      "values": [
+        {"name":"ANT A"},
+        {"name":"ANT B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ANT","select":[{"commands":["AntennaCable"],"setType":2}]},
+        {"name":"DTV","select":[{"commands":["InputDtv"],"setType":2}]},
+        {"name":"I LINK","select":[{"commands":["InputiLink"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"INPUT 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"INPUT 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"INPUT 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"INPUT 4","select":[{"commands":["InputVideo4"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

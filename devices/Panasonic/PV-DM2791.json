@@ -1,7 +1,47 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/0d/0d842e3ce5f9b214.json",
   "deviceType": 38,
   "globalDeviceId": 48221,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"TvVcr"},{"set":"TvVcrInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TvVcr"},{"set":"TvVcrInput","to":"VCR"}],"name":"VCR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "PV-DM2791"
+  "model": "PV-DM2791",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"TvVcr","select":[{"commands":["InputTvVcr"],"setType":2}]}
+      ]
+    },
+    "TvVcrInput": {
+      "next": ["InputTvVcr"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DVD"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

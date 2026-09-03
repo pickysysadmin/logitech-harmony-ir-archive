@@ -2,6 +2,38 @@
   "codeset": "codesets/2e/2e6d7ad553a7f1de.json",
   "deviceType": 7,
   "globalDeviceId": 277249,
+  "inputs": {
+    "list": [
+      {"commands":["InputA"],"name":"Input A","ports":["Component"]},
+      {"commands":["InputB"],"name":"Input B","ports":["Scart"]},
+      {"commands":["InputC"],"name":"Input C","ports":["DVI"]},
+      {"commands":["InputD"],"name":"Input D","ports":["HDMI"]},
+      {"commands":["InputE"],"name":"Input E","ports":["Others"]},
+      {"commands":["InputF"],"name":"Input F","ports":["Others"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputS-Video"],"name":"S-Video","ports":["S-Video"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "VPL-FHZ55"
+  "model": "VPL-FHZ55",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

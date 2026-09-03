@@ -2,6 +2,51 @@
   "codeset": "codesets/40/40b6a6f8a1d8b742.json",
   "deviceType": 7,
   "globalDeviceId": 266885,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Optoma",
-  "model": "DX326"
+  "model": "DX326",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

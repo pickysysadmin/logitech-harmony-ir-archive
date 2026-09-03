@@ -2,6 +2,33 @@
   "codeset": "codesets/ec/ec96a395714c14b6.json",
   "deviceType": 22,
   "globalDeviceId": 279268,
+  "inputs": {
+    "list": [
+      {"commands":["InputDisc/Sd",{"delayMs":1000},"InputRadio/Ext-In/iPod","InputRadio/Ext-In/iPod","InputRadio/Ext-In/iPod"],"name":"AUX"},
+      {"commands":["InputDisc/Sd",{"delayMs":1000},"InputRadio/Ext-In/iPod","InputRadio/Ext-In/iPod"],"name":"ARC"},
+      {"commands":["InputDIn",{"delayMs":500},"InputDIn","InputDIn"],"name":"D.IN"},
+      {"commands":["Home","Home",{"delayMs":1000},"DirectionUp","DirectionRight",{"delayMs":500},"OK"],"name":"FM Radio"},
+      {"commands":["Home","Home",{"delayMs":1000},"DirectionDown","OK"],"name":"iPod"},
+      {"commands":["InputDisc/Sd"],"name":"DVD"},
+      {"commands":["Home","Home",{"delayMs":500},"OK","DirectionRight","OK"],"name":"SD Card"},
+      {"commands":["Home","Home",{"delayMs":500},"OK","DirectionLeft","OK"],"name":"USB"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "Test SC-BTT195"
+  "model": "Test SC-BTT195",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

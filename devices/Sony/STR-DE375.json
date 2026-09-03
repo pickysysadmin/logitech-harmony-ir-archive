@@ -2,6 +2,34 @@
   "codeset": "codesets/40/40f9866b0ffcef4a.json",
   "deviceType": 5,
   "globalDeviceId": 9137,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"Video"},
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputTelevision"],"name":"TV"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTuner"],"name":"Tuner"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "STR-DE375"
+  "model": "STR-DE375",
+  "power": {
+    "off": [
+      {"delayMs":3000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

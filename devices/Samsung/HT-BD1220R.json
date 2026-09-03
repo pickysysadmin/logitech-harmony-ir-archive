@@ -2,6 +2,48 @@
   "codeset": "codesets/3b/3bbf32c898a0aa2b.json",
   "deviceType": 22,
   "globalDeviceId": 177380,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"BD"}],"name":"BD"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Din1"}],"name":"DIN1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Din2"}],"name":"DIN2"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-BD1220R"
+  "model": "HT-BD1220R",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Din1"},
+        {"name":"Din2"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"BD","select":[{"commands":["InputBD"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

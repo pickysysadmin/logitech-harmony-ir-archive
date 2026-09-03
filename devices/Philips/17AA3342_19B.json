@@ -2,6 +2,32 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 133171,
+  "inputs": {
+    "list": [
+      {"name":"CH 03"},
+      {"name":"video1"}
+    ],
+    "next": ["InputToggle"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "17AA3342/19B"
+  "model": "17AA3342/19B",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"CH 03"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

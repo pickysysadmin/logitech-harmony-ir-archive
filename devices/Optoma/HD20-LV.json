@@ -2,6 +2,36 @@
   "codeset": "codesets/fb/fb22c367bc078390.json",
   "deviceType": 7,
   "globalDeviceId": 214185,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputDSub"],"name":"VGA"},
+      {"commands":["InputComponent"],"name":"YPbPr"},
+      {"commands":["InputVideo"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "HD20-LV"
+  "model": "HD20-LV",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

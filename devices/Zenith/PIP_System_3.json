@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/72/72c4dacfbb3035c8.json",
   "deviceType": 1,
   "globalDeviceId": 66172,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"name":"Cable"},
+      {"name":"Decoder"},
+      {"name":"Antenna"},
+      {"name":"VCR 1"},
+      {"name":"VCR 2"},
+      {"name":"VCR (Y/C)"},
+      {"name":"SVHS"}
+    ],
+    "next": ["DirectionRight"],
+    "start": ["Menu"],
+    "type": 4
+  },
   "manufacturer": "Zenith",
-  "model": "PIP System 3"
+  "model": "PIP System 3",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"VCR (Y/C)"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

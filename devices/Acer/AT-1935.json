@@ -2,6 +2,79 @@
   "codeset": "codesets/4a/4ac4bdeb18c7f4e5.json",
   "deviceType": 1,
   "globalDeviceId": 166775,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart1"}],"name":"Scart 1"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart2"}],"name":"Scart 2"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Digital"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "AT-1935"
+  "model": "AT-1935",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAV"],
+      "values": [
+        {"name":"Composite"},
+        {"name":"Component"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["InputAV",{"set":"AVInput","to":"Composite"}],"setType":2}]},
+        {"name":"Scart","select":[{"commands":["InputScart",{"set":"ScartInput","to":"Scart1"}],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc",{"set":"PCInput","to":"VGA"}],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv",{"set":"TVInput","to":"Analog"}],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputScart"],
+      "values": [
+        {"name":"Scart1"},
+        {"name":"Scart2"}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Digital"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

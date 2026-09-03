@@ -2,6 +2,47 @@
   "codeset": "codesets/fc/fca9a4e66178d76d.json",
   "deviceType": 21,
   "globalDeviceId": 336199,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"BAT"},{"set":"BATInput","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"BAT"},{"set":"BATInput","to":"Audio In"}],"name":"Audio In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "BM50B"
+  "model": "BM50B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "BATInput": {
+      "next": ["InputBluetooth/AudioIn"],
+      "values": [
+        {"name":"Bluetooth"},
+        {"name":"Audio In"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":1}]},
+        {"name":"FM","select":[{"commands":["InputFm"],"setType":1}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":1}]},
+        {"name":"BAT","select":[{"commands":["InputBluetooth/AudioIn"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

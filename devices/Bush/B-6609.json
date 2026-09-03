@@ -2,6 +2,48 @@
   "codeset": "codesets/66/663e337eb7803f93.json",
   "deviceType": 5,
   "globalDeviceId": 268066,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Aux/Line"},{"set":"Aux/LineInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux/Line"},{"set":"Aux/LineInput","to":"Line"}],"name":"Line"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Bush",
-  "model": "B-6609"
+  "model": "B-6609",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/LineInput": {
+      "next": ["InputAux/Line"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Line"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"FM","select":[{"commands":["FM"],"setType":2}]},
+        {"name":"Aux/Line","select":[{"commands":["InputAux/Line"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

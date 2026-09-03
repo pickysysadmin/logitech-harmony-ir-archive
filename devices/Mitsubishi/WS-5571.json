@@ -1,7 +1,46 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/01/01c8d15763045db3.json",
   "deviceType": 1,
   "globalDeviceId": 81815,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntA"],"name":"Ant A"},
+      {"commands":["InputAntB"],"name":"Ant B"},
+      {"commands":["InputDtv"],"name":"DTV"},
+      {"commands":["Input1"],"name":"Input 1"},
+      {"commands":["Input2"],"name":"Input 2"},
+      {"commands":["Input3"],"name":"Input 3"},
+      {"commands":["Input4"],"name":"Input 4"},
+      {"commands":["InputComp1"],"name":"Component 1"},
+      {"commands":["InputComp2"],"name":"Component 2"},
+      {"commands":["InputSTB"],"name":"STB"},
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["Input5"],"name":"DTV-ANT"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Mitsubishi",
-  "model": "WS-5571"
+  "model": "WS-5571",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

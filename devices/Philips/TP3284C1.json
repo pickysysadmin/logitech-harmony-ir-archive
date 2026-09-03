@@ -2,6 +2,32 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 36364,
+  "inputs": {
+    "list": [
+      {"commands":["0","3"],"name":"TV"},
+      {"commands":["0","3","InputNext"],"name":"AV1"},
+      {"commands":["0","3","InputNext","InputNext"],"name":"AV2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "TP3284C1"
+  "model": "TP3284C1",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

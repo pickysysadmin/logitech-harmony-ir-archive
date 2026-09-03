@@ -2,6 +2,33 @@
   "codeset": "codesets/cd/cda1c4046096d409.json",
   "deviceType": 7,
   "globalDeviceId": 228006,
+  "inputs": {
+    "list": [
+      {"commands":["InputRGB"],"name":"InputRGB"},
+      {"commands":["InputVideo"],"name":"InputVideo"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Plus",
-  "model": "U5-532"
+  "model": "U5-532",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

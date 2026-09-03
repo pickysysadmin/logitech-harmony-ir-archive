@@ -2,6 +2,42 @@
   "codeset": "codesets/2f/2fa938e11ac70008.json",
   "deviceType": 7,
   "globalDeviceId": 302862,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV"},
+      {"name":"Component"},
+      {"name":"Screen Share"},
+      {"name":"USB"},
+      {"name":"RGB-PC"},
+      {"name":"HDMI"}
+    ],
+    "next": ["DirectionRight"],
+    "previous": ["DirectionLeft"],
+    "start": ["Input"],
+    "type": 4
+  },
   "manufacturer": "LG",
-  "model": "PH550"
+  "model": "PH550",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

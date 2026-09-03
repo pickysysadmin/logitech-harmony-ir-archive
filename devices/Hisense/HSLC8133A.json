@@ -2,6 +2,54 @@
   "codeset": "codesets/79/79d070724c9820d6.json",
   "deviceType": 1,
   "globalDeviceId": 180600,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Av1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Av2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"S-Video1"}],"name":"S-Video1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"S-Video2"}],"name":"S-Video2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Tv"}],"name":"Tv"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hisense",
-  "model": "HSLC8133A"
+  "model": "HSLC8133A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"},
+        {"name":"S-Video1"},
+        {"name":"S-Video2"},
+        {"name":"VGA"},
+        {"name":"Tv"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"YPbPr","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

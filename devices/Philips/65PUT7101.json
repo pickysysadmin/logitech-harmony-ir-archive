@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/5a/5a16e1213719bb42.json",
   "deviceType": 1,
   "globalDeviceId": 414382,
+  "inputs": {
+    "list": [
+      {"commands":["Source",{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","OK"],"name":"Satellite"},
+      {"commands":["Source",{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","DirectionDown","OK"],"name":"Antenna"},
+      {"commands":["Source",{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","DirectionDown","DirectionDown","OK"],"name":"USB"},
+      {"commands":["Source",{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","OK"],"name":"Network"},
+      {"commands":["Source",{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","OK"],"name":"Recordings"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["Source",{"delayMs":300},{"command":"DirectionDown","durationMs":2000},"DirectionUp","DirectionUp","OK"],"name":"YPbPr"},
+      {"commands":["InputScart"],"name":"Scart"},
+      {"commands":["Home"],"name":"Android TV"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "65PUT7101"
+  "model": "65PUT7101",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 30000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 1
+  }
 }

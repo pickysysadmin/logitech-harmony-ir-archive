@@ -2,6 +2,33 @@
   "codeset": "codesets/cd/cd56620efc320ee7.json",
   "deviceType": 22,
   "globalDeviceId": 119071,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"AV1"},
+      {"name":"SPDIF IN"},
+      {"name":"TUNER"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Haier",
-  "model": "HV-501DR"
+  "model": "HV-501DR",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

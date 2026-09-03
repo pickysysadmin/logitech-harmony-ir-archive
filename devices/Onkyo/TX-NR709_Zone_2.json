@@ -2,6 +2,38 @@
   "codeset": "codesets/e4/e4b62b4fdeec5d04.json",
   "deviceType": 5,
   "globalDeviceId": 227021,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD"},
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR"},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT"},
+      {"commands":["InputGame"],"name":"GAME"},
+      {"commands":["InputPC"],"name":"PC"},
+      {"commands":["InputTv/Cd"],"name":"TV/CD"},
+      {"commands":["InputPhono"],"name":"PHONO"},
+      {"commands":["InputPort"],"name":"PORT"},
+      {"commands":["InputNet"],"name":"NET"},
+      {"commands":["InputUsb"],"name":"USB"},
+      {"commands":["InputTuner",{"delayMs":500},"InputFm"],"name":"FM"},
+      {"commands":["InputTuner",{"delayMs":500},"InputAm"],"name":"AM"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-NR709 (Zone 2)"
+  "model": "TX-NR709 (Zone 2)",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ce/ce7e0c171a90dbdd.json",
   "deviceType": 1,
   "globalDeviceId": 176492,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo3"],"name":"AV3"},
+      {"commands":["InputVideo4"],"name":"AV4"},
+      {"commands":["InputPC"],"name":"PC"},
+      {"commands":["InputVideo1",{"delayMs":2000},"Blue",{"delayMs":500},"Blue",{"delayMs":500},"Blue"],"name":"HDMI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-32LX50 (AP)"
+  "model": "TX-32LX50 (AP)",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": [
+      "PowerToggle",
+      {"delayMs":600},
+      {"command":"PowerToggle","durationMs":3000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 5,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

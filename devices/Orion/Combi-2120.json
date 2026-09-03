@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/b2/b20ee5516f6f367d.json",
   "deviceType": 15,
   "globalDeviceId": 161669,
+  "inputs": {
+    "list": [
+      {"name":"Tv  TUNER"},
+      {"name":"Av VIDEO"},
+      {"name":"Av1"},
+      {"name":"Av2"},
+      {"name":"Eing 2"}
+    ],
+    "next": ["Blue"],
+    "type": 2
+  },
   "manufacturer": "Orion",
-  "model": "Combi-2120"
+  "model": "Combi-2120",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Av1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

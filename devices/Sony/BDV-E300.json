@@ -2,6 +2,34 @@
   "codeset": "codesets/b3/b3c7b0ce70e63237.json",
   "deviceType": 22,
   "globalDeviceId": 173665,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"BD/DVD","ports":["BuiltIn"]},
+      {"commands":["InputDvd","InputNext"],"name":"TUNER FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd","InputNext","InputNext"],"name":"TUNER AM","ports":["AM Antenna"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Composite","Optical"]},
+      {"commands":["InputTv","InputNext"],"name":"SAT/CABLE","ports":["Coaxial"]},
+      {"commands":["InputTv","InputNext","InputNext"],"name":"DMPORT","ports":["DMPort"]},
+      {"commands":["InputTv","InputNext","InputNext","InputNext"],"name":"AUDIO","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "BDV-E300"
+  "model": "BDV-E300",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

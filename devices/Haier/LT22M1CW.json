@@ -2,6 +2,58 @@
   "codeset": "codesets/df/df30a02d591ff4b6.json",
   "deviceType": 1,
   "globalDeviceId": 182731,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2"}],"name":"Video2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Haier",
-  "model": "LT22M1CW"
+  "model": "LT22M1CW",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Pc","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

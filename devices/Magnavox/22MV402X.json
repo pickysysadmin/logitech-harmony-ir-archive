@@ -2,6 +2,63 @@
   "codeset": "codesets/93/930ba3003ff3faab.json",
   "deviceType": 1,
   "globalDeviceId": 237890,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"SmartTVMenu","to":"OFF"},{"set":"screen","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"SmartTVMenu","to":"OFF"},{"set":"screen","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"SmartTVMenu","to":"OFF"},{"set":"screen","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"SmartTVMenu","to":"OFF"},{"set":"screen","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"SmartTVMenu","to":"OFF"},{"set":"screen","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"SmartTVMenu","to":"OFF"},{"set":"screen","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"SmartTVMenu","to":"ON"},{"set":"Smart_TV","to":"SmartTV"}],"name":"SmartTV"},
+      {"commands":[{"set":"SmartTVMenu","to":"OFF"},{"set":"Smart_TV","to":"Vudu"}],"name":"Vudu"},
+      {"commands":[{"set":"SmartTVMenu","to":"ON"},{"set":"Smart_TV","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Magnavox",
-  "model": "22MV402X"
+  "model": "22MV402X",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "SmartTVMenu": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Back",{"delayMs":5000},"Back",{"delayMs":500}],"setType":2}]}
+      ]
+    },
+    "Smart_TV": {
+      "values": [
+        {"name":"SmartTV","select":[{"commands":["Back","Back","Home"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"Vudu","select":[{"commands":["Vudu"],"setType":1}]}
+      ]
+    },
+    "screen": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["Source"],
+      "values": [
+        {"name":"TV"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"Video"},
+        {"name":"PC"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 45000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

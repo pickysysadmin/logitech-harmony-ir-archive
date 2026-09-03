@@ -2,6 +2,30 @@
   "codeset": "codesets/2f/2fcf2345e9ff2ed5.json",
   "deviceType": 22,
   "globalDeviceId": 169059,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"Video 1","ports":["Composite"]},
+      {"commands":["InputVideo2"],"name":"Video 2","ports":["Composite"]},
+      {"commands":["InputTuner"],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Streaming"]},
+      {"commands":["InputVideo1",{"delayMs":500},"Function"],"name":"SAT","ports":["Composite","Optical"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "DAV-FR8"
+  "model": "DAV-FR8",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

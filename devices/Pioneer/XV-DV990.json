@@ -2,6 +2,47 @@
   "codeset": "codesets/7c/7cf88e9eb7978682.json",
   "deviceType": 22,
   "globalDeviceId": 21644,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line1"}],"name":"Line1"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line2"}],"name":"Line2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "XV-DV990"
+  "model": "XV-DV990",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputLine"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"Line1"},
+        {"name":"Line2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

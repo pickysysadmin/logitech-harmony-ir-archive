@@ -2,6 +2,50 @@
   "codeset": "codesets/ae/ae59d61029f7a243.json",
   "deviceType": 22,
   "globalDeviceId": 263284,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"Source","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"Source","to":"Cd/Mp3/Usb"}],"name":"Cd/Mp3/Usb"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"Source","to":"Dvd"}],"name":"Dvd"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"Source","to":"Aux 1"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"Source","to":"Aux 2"}],"name":"Aux 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Jensen",
-  "model": "AWM968"
+  "model": "AWM968",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "Source": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Cd/Mp3/Usb"},
+        {"name":"Dvd"},
+        {"name":"Aux 1"},
+        {"name":"Aux 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

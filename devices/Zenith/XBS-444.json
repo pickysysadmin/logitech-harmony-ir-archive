@@ -1,7 +1,52 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/5e/5ee7b371c540618c.json",
   "deviceType": 32,
   "globalDeviceId": 43672,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD/DVD"}],"name":"CD/DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"FM/AM"}],"name":"FM/AM"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Zenith",
-  "model": "XBS-444"
+  "model": "XBS-444",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD/DVD","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"FM/AM","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

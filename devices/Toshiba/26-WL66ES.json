@@ -1,7 +1,47 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/36/362eb927ae6329c2.json",
   "deviceType": 1,
   "globalDeviceId": 142201,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"commands":["TvVideo","0"],"name":"Ant1"},
+      {"commands":["TvVideo","1"],"name":"Video1"},
+      {"commands":["TvVideo","2"],"name":"Video2"},
+      {"commands":["TvVideo","3"],"name":"ColorStreamHD1"},
+      {"commands":["TvVideo","4"],"name":"ColorStream HD2"},
+      {"commands":["TvVideo","5"],"name":"HDMI"},
+      {"commands":["TvVideo","6"],"name":"PC"}
+    ],
+    "start": ["TvVideo","4"],
+    "type": 3
+  },
   "manufacturer": "Toshiba",
-  "model": "26-WL66ES"
+  "model": "26-WL66ES",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["ChannelPrev"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

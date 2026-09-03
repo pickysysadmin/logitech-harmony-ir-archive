@@ -2,6 +2,59 @@
   "codeset": "codesets/3a/3af660d44aaa1a2a.json",
   "deviceType": 7,
   "globalDeviceId": 277199,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"LAN/Wifi"}],"name":"LAN/Wifi"},
+      {"commands":[{"set":"InputType","to":"USB B"}],"name":"USB B"},
+      {"commands":[{"set":"InputType","to":"USBAInput"},{"set":"USBAInputInput","to":"USB A1"}],"name":"USB A1"},
+      {"commands":[{"set":"InputType","to":"USBAInput"},{"set":"USBAInputInput","to":"USB A2"}],"name":"USB A2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "P1273n"
+  "model": "P1273n",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi/Dvi"],"setType":2}]},
+        {"name":"LAN/Wifi","select":[{"commands":["InputLan/Wifi"],"setType":2}]},
+        {"name":"USB B","select":[{"commands":["InputUsbB"],"setType":2}]},
+        {"name":"USBAInput","select":[{"commands":["InputSd/UsbA"],"setType":2}]}
+      ]
+    },
+    "USBAInputInput": {
+      "next": ["InputSd/UsbA"],
+      "values": [
+        {"name":"USB A1"},
+        {"name":"USB A2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

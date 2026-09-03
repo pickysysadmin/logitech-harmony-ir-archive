@@ -2,6 +2,79 @@
   "codeset": "codesets/40/40bd32d9169652b5.json",
   "deviceType": 33,
   "globalDeviceId": 275267,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"Analogue 1"}],"name":"Analogue 1"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"Digital 1"}],"name":"Digital 1"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"iRadio"}],"name":"iRadio"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"UPnP"}],"name":"UPnP"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"Spotify"}],"name":"Spotify"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"TIDAL"}],"name":"TIDAL"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Naim",
-  "model": "NAC-N 272"
+  "model": "NAC-N 272",
+  "states": {
+    "CDInput": {
+      "next": ["InputCd"],
+      "values": [
+        {"name":"Analogue 1"},
+        {"name":"Digital 1"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"UPnP"},
+        {"name":"Bluetooth"}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"FM"},
+        {"name":"DAB"},
+        {"name":"iRadio"}
+      ]
+    },
+    "iPodInput": {
+      "next": ["InputiPod"],
+      "values": [
+        {"name":"USB"},
+        {"name":"Spotify"},
+        {"name":"TIDAL"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 0,
+    "pressMinRepeats": 3
+  }
 }

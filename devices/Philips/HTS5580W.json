@@ -2,6 +2,52 @@
   "codeset": "codesets/20/206b94579654bcc2.json",
   "deviceType": 22,
   "globalDeviceId": 211016,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Dock"}],"name":"Dock"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Aux1"}],"name":"Aux1"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Aux2"}],"name":"Aux2"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"MP3Link"}],"name":"MP3Link"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"CoaxIn"}],"name":"CoaxIn"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS5580W"
+  "model": "HTS5580W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioSourceInput": {
+      "next": ["AudioSource"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"},
+        {"name":"MP3Link"},
+        {"name":"CoaxIn"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"Dock","select":[{"commands":["InputDock"],"setType":2}]},
+        {"name":"AudioSource","select":[{"commands":["AudioSource"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

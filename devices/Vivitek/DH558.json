@@ -2,6 +2,37 @@
   "codeset": "codesets/10/10adb04d223068c8.json",
   "deviceType": 7,
   "globalDeviceId": 275944,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"VGA"},
+      {"name":"HDMI/MHL"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "Vivitek",
-  "model": "DH558"
+  "model": "DH558",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

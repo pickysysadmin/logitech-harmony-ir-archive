@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/0b/0b75cf18e4047c5a.json",
   "deviceType": 1,
   "globalDeviceId": 164196,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"Video3"},
+      {"name":"Video4"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "50VJ23P"
+  "model": "50VJ23P",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 1
+  }
 }

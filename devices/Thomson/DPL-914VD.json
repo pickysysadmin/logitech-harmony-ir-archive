@@ -2,6 +2,47 @@
   "codeset": "codesets/9e/9e190af38742bdee.json",
   "deviceType": 22,
   "globalDeviceId": 129998,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"AUX 1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"AUX 2"}],"name":"AUX 2"},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"TV In"}],"name":"TV In"},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"Tuner"}],"name":"Tuner"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Thomson",
-  "model": "DPL-914VD"
+  "model": "DPL-914VD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Toggle","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "ToggleInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AUX 1"},
+        {"name":"AUX 2"},
+        {"name":"TV In"},
+        {"name":"Tuner"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/9a/9ad33bba1bc00611.json",
   "deviceType": 34,
   "globalDeviceId": 158562,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Front AV"},
+      {"name":"Rear AV"},
+      {"name":"Rear SV"},
+      {"name":"SCART"},
+      {"name":"DV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Tevion",
-  "model": "TDRDVD-4000"
+  "model": "TDRDVD-4000",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

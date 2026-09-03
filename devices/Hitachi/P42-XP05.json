@@ -1,7 +1,66 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3,
+    "start": ["NumberEnter"]
+  },
   "codeset": "codesets/63/63ad25779ba7cd04.json",
   "deviceType": 48,
   "globalDeviceId": 496356,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"BS"}],"name":"BS"},
+      {"commands":[{"set":"InputType","to":"CS"}],"name":"CS"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Video1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Video2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Video3"}],"name":"Video 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "P42-XP05"
+  "model": "P42-XP05",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DTV","select":[{"commands":["InputDTV"],"setType":1}]},
+        {"name":"BS","select":[{"commands":["InputBS"],"setType":1}]},
+        {"name":"CS","select":[{"commands":["InputCS"],"setType":1}]},
+        {"name":"Source","select":[{"commands":["InputNext"],"setType":1}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"HDMI4"},
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

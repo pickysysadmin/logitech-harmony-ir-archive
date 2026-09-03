@@ -2,6 +2,31 @@
   "codeset": "codesets/3b/3b38ba503cca7ef9.json",
   "deviceType": 1,
   "globalDeviceId": 97757,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Video"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "28CE1965/75R"
+  "model": "28CE1965/75R",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

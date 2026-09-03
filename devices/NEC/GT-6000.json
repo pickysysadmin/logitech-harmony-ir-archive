@@ -2,6 +2,34 @@
   "codeset": "codesets/2c/2cafbd26c15636ed.json",
   "deviceType": 7,
   "globalDeviceId": 110434,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"RGB 1"},
+      {"commands":["2"],"name":"RGB 2"},
+      {"commands":["3"],"name":"S-video 1"},
+      {"commands":["4"],"name":"S-video 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "GT-6000"
+  "model": "GT-6000",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":6000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":6000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 20000,
+    "pressMinRepeats": 3
+  }
 }

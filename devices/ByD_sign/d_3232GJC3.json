@@ -2,6 +2,40 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 101437,
+  "inputs": {
+    "list": [
+      {"name":"VGA"},
+      {"name":"HDMI"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"TV"},
+      {"name":"AUX"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "ByD:sign",
-  "model": "d:3232GJC3"
+  "model": "d:3232GJC3",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["PowerOn"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Teletext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

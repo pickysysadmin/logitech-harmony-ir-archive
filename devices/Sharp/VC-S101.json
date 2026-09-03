@@ -1,7 +1,34 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/88/88de81d84decced1.json",
   "deviceType": 2,
   "globalDeviceId": 15083,
+  "inputs": {
+    "list": [
+      {"name":"Tuner","ports":["Antenna"]},
+      {"name":"Line In 1","ports":["Line In"]},
+      {"name":"Line In 2","ports":["Line In"]},
+      {"name":"Line In 3","ports":["Line In"]}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sharp",
-  "model": "VC-S101"
+  "model": "VC-S101",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

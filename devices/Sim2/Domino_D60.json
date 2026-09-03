@@ -2,6 +2,32 @@
   "codeset": "codesets/e4/e435ee8dc153201a.json",
   "deviceType": 7,
   "globalDeviceId": 174282,
+  "inputs": {
+    "list": [
+      {"commands":["InputComp1"],"name":"Comp1"},
+      {"commands":["InputComp2"],"name":"Comp2"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputHDMI"],"name":"HDMI"},
+      {"commands":["InputD-SUB"],"name":"D-SUB"},
+      {"commands":["InputS-Video"],"name":"S-Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sim2",
-  "model": "Domino D60"
+  "model": "Domino D60",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

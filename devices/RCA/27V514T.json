@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ba/baa7bd042dddddfd.json",
   "deviceType": 1,
   "globalDeviceId": 182433,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"VID"}],"name":"VID"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"CVID"}],"name":"CVID"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"FRNT"}],"name":"FRNT"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"SVID"}],"name":"SVID"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "27V514T"
+  "model": "27V514T",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputAntenna"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VID"},
+        {"name":"CVID"},
+        {"name":"FRNT"},
+        {"name":"SVID"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["InputAntenna"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

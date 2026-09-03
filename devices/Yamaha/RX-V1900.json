@@ -2,6 +2,43 @@
   "codeset": "codesets/7e/7ede9346b8916233.json",
   "deviceType": 5,
   "globalDeviceId": 172793,
+  "inputs": {
+    "list": [
+      {"commands":["InputMultiChIn"],"name":"MULTI CH INPUT","ports":["Composite"]},
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["Composite","S-Video","Optical"]},
+      {"commands":["InputPhono"],"name":"PHONO","ports":["Composite"]},
+      {"commands":["InputDock"],"name":"DOCK","ports":["Others"]},
+      {"commands":["InputBd/Hd"],"name":"BD/HD DVD","ports":["HDMI","Component","Composite","S-Video","Optical"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","S-Video","Optical"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputMd/Cdr"],"name":"MD/CD-R","ports":["Optical"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Component","Composite","S-Video","Optical"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Composite","Optical"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["HDMI","Composite","Coaxial","S-Video","Optical"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputXm"],"name":"XM","ports":["Others"]},
+      {"commands":["InputSirius"],"name":"SIRIUS","ports":["Others"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V1900"
+  "model": "RX-V1900",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

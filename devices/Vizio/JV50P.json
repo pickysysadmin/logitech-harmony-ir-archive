@@ -2,6 +2,76 @@
   "codeset": "codesets/2c/2cd53ef560f2e470.json",
   "deviceType": 1,
   "globalDeviceId": 176127,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"HDMI3"}],"name":"HDMI3"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Comp1"}],"name":"Comp1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Comp2"}],"name":"Comp2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "JV50P"
+  "model": "JV50P",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"}
+      ]
+    },
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "HdmiInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 1
+  }
 }

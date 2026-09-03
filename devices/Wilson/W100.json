@@ -2,6 +2,32 @@
   "codeset": "codesets/51/51f4093cad23fa5b.json",
   "deviceType": 34,
   "globalDeviceId": 74084,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"TV"},
+      {"name":"AV"}
+    ],
+    "next": ["InputAv"],
+    "type": 2
+  },
   "manufacturer": "Wilson",
-  "model": "W100"
+  "model": "W100",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

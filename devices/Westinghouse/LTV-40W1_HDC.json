@@ -1,7 +1,99 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/d4/d456234c3e02b6e3.json",
   "deviceType": 37,
   "globalDeviceId": 159308,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"YPbPr1"}],"name":"YPbPr1"},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"YPbPr2"}],"name":"YPbPr2"},
+      {"commands":[{"set":"InputType","to":"Video/S-Video"},{"set":"Video/S-VideoInput","to":"S-Video1"}],"name":"S-Video1"},
+      {"commands":[{"set":"InputType","to":"Video/S-Video"},{"set":"Video/S-VideoInput","to":"S-Video2"}],"name":"S-Video2"},
+      {"commands":[{"set":"InputType","to":"Video/S-Video"},{"set":"Video/S-VideoInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video/S-Video"},{"set":"Video/S-VideoInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"Television"},{"set":"TelevisionInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Television"},{"set":"TelevisionInput","to":"HDTV"}],"name":"HDTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Westinghouse",
-  "model": "LTV-40W1 HDC"
+  "model": "LTV-40W1 HDC",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputYPbPr1",{"set":"YPbPrInput","to":"YPbPr1"}],"setType":2}]},
+        {"name":"Video/S-Video","select":[{"commands":["InputS-Video",{"set":"Video/S-VideoInput","to":"S-Video1"}],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi",{"set":"HDMIInput","to":"HDMI1"}],"setType":2}]},
+        {"name":"Television","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "S-VideoInput": {
+      "next": ["InputS-Video"],
+      "values": [
+        {"name":"S-Video1"},
+        {"name":"S-Video2"},
+        {"name":"Video1"},
+        {"name":"Video2"}
+      ]
+    },
+    "TelevisionInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"HDTV"}
+      ]
+    },
+    "TvInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Hdtv"}
+      ]
+    },
+    "Video/S-VideoInput": {
+      "next": ["InputS-Video"],
+      "values": [
+        {"name":"S-Video1"},
+        {"name":"S-Video2"},
+        {"name":"Video1"},
+        {"name":"Video2"}
+      ]
+    },
+    "YPbPrInput": {
+      "next": ["InputYPbPr1"],
+      "values": [
+        {"name":"YPbPr1"},
+        {"name":"YPbPr2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

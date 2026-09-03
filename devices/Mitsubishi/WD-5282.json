@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/97/97df49855c477086.json",
   "deviceType": 1,
   "globalDeviceId": 115846,
+  "inputs": {
+    "list": [
+      {"commands":["Input1"],"name":"Input1"},
+      {"commands":["Input2"],"name":"Input2"},
+      {"commands":["Input3"],"name":"Input3"},
+      {"commands":[{"delayMs":1000},"Input3",{"delayMs":1500},"InputNext","DirectionRight","Select"],"name":"Component1"},
+      {"commands":["InputComp2"],"name":"Component2"},
+      {"commands":["InputDtv"],"name":"DTV"},
+      {"commands":["InputDtv",{"delayMs":1000},"InputNext","DirectionDown","Select"],"name":"PC"},
+      {"commands":[{"delayMs":1500},"InputDtv",{"delayMs":1000},"InputNext","DirectionRight","Select"],"name":"MONO"},
+      {"commands":["InputDtv","InputNext","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Card1"},
+      {"commands":["InputDtv",{"delayMs":1000},"InputNext","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Card2"},
+      {"commands":["InputDtv",{"delayMs":1000},"InputNext","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Card3"},
+      {"commands":["InputDtv",{"delayMs":1000},"InputNext","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Card4"},
+      {"commands":["DeviceMenu"],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Mitsubishi",
-  "model": "WD-5282"
+  "model": "WD-5282",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 20000,
+    "pressMinRepeats": 3
+  }
 }

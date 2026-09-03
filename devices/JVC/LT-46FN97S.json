@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 130269,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Antenna/Cable"}],"name":"Antenna/Cable"},
+      {"commands":[{"set":"InputType","to":"Input 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Input 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Input 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital 1"}],"name":"Digital 1"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital 2"}],"name":"Digital 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "LT-46FN97S"
+  "model": "LT-46FN97S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputDigital In"],
+      "values": [
+        {"name":"Digital 1"},
+        {"name":"Digital 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Antenna/Cable","select":[{"commands":["InputAB"],"setType":2}]},
+        {"name":"Input 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Input 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Input 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDigital In"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

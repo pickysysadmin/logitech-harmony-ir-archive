@@ -2,6 +2,55 @@
   "codeset": "codesets/2f/2f9b47609697bf92.json",
   "deviceType": 21,
   "globalDeviceId": 245877,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Tape"},{"set":"TapeInput","to":"Tape 1"}],"name":"Tape 1"},
+      {"commands":[{"set":"InputType","to":"Tape"},{"set":"TapeInput","to":"Tape 2"}],"name":"Tape 2"},
+      {"commands":[{"set":"InputType","to":"Game/Video"},{"set":"Game/VideoInput","to":"Game"}],"name":"Game"},
+      {"commands":[{"set":"InputType","to":"Game/Video"},{"set":"Game/VideoInput","to":"Video"}],"name":"Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "CD-MPS660H"
+  "model": "CD-MPS660H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Game/VideoInput": {
+      "next": ["InputGame/Video"],
+      "values": [
+        {"name":"Game"},
+        {"name":"Video"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCD"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Game/Video","select":[{"commands":["InputGame/Video"],"setType":2}]}
+      ]
+    },
+    "TapeInput": {
+      "next": ["InputTape"],
+      "values": [
+        {"name":"Tape 1"},
+        {"name":"Tape 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,62 @@
   "codeset": "codesets/4f/4f59b2a124d32c47.json",
   "deviceType": 1,
   "globalDeviceId": 178870,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Ext1"}],"name":"Ext1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Ext2"}],"name":"Ext2"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "LE-40R74B"
+  "model": "LE-40R74B",
+  "power": {
+    "onReset": ["PowerToggle"],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV/DTV","select":[{"commands":["TV/DTV"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Ext1"},
+        {"name":"Ext2"},
+        {"name":"AV"},
+        {"name":"S-Video"},
+        {"name":"Component"},
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    },
+    "TV/DTVInput": {
+      "next": ["TV/DTV"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

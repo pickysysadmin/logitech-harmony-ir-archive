@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ad/ad2989b7e6b2f8a4.json",
   "deviceType": 1,
   "globalDeviceId": 64970,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Channel"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputRGB1"],"name":"Video 1 RGB"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo2","InputNext"],"name":"Video 2S"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputVideo3","InputNext"],"name":"Video 3S"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KV-X2551K"
+  "model": "KV-X2551K",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Channel"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

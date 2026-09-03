@@ -2,6 +2,91 @@
   "codeset": "codesets/90/90c6c77458f178d4.json",
   "deviceType": 1,
   "globalDeviceId": 258161,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"screen","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"screen","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"screen","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"screen","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"screen","to":"Video/Component"}],"name":"Video/Component"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"screen","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"TVApps","to":"ON"},{"set":"Smart_TV","to":"NETTV"}],"name":"Net TV"},
+      {"commands":[{"set":"TVApps","to":"ON"},{"set":"Smart_TV","to":"Vudu"}],"name":"Vudu"},
+      {"commands":[{"set":"TVApps","to":"ON"},{"set":"Smart_TV","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "40PFL4908"
+  "model": "40PFL4908",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"NETTV"},
+        {"name":"Netflix"},
+        {"name":"Vudu"}
+      ]
+    },
+    "MenuInput": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["Source"],
+      "values": [
+        {"name":"TV"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"Video"},
+        {"name":"PC"}
+      ]
+    },
+    "NetflixMenu": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF"}
+      ]
+    },
+    "Smart_TV": {
+      "values": [
+        {"name":"NETTV","select":[{"commands":["Return","Return","NetTv"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"Vudu","select":[{"commands":["Vudu"],"setType":1}]}
+      ]
+    },
+    "TVApps": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Home",{"delayMs":9000},"Return",{"delayMs":500}],"setType":2}]}
+      ]
+    },
+    "screen": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["Source"],
+      "values": [
+        {"name":"TV"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"Video/Component"},
+        {"name":"PC"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 30000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 1
+  }
 }

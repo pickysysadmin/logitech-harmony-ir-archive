@@ -2,6 +2,36 @@
   "codeset": "codesets/3f/3fa30cb68f67a98e.json",
   "deviceType": 19,
   "globalDeviceId": 447741,
+  "inputs": {
+    "list": [
+      {"name":"HDMI","ports":["HDMI"]},
+      {"name":"BT","ports":["Pairing Input"]},
+      {"name":"USB","ports":["USB"]},
+      {"name":"D.IN","ports":["D.IN"]},
+      {"name":"AUX","ports":["Aux"]}
+    ],
+    "next": ["Source"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HW-MM36"
+  "model": "HW-MM36",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

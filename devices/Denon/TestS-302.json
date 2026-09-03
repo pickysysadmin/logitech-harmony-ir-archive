@@ -2,6 +2,56 @@
   "codeset": "codesets/53/535400b6643edd62.json",
   "deviceType": 22,
   "globalDeviceId": 273329,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Screen","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"Screen","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"Screen","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"Screen","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"Screen","to":"Net/USB"}],"name":"Net/USB"},
+      {"commands":[{"set":"Screen","to":"Aux"},{"set":"AuxInput","to":"Aux1"}],"name":"Aux1"},
+      {"commands":[{"set":"Screen","to":"Aux"},{"set":"AuxInput","to":"Aux2"}],"name":"Aux2"},
+      {"commands":[{"set":"Screen","to":"Aux"},{"set":"AuxInput","to":"Aux3"}],"name":"Aux3"},
+      {"commands":[{"set":"Screen","to":"Front IN"}],"name":"Front IN"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Denon",
-  "model": "TestS-302"
+  "model": "TestS-302",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"},
+        {"name":"Aux3"}
+      ]
+    },
+    "Screen": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"AM","select":[{"commands":["AM"],"setType":2}]},
+        {"name":"FM","select":[{"commands":["FM"],"setType":2}]},
+        {"name":"Net/USB","select":[{"commands":["InputNet/Usb"],"setType":2}]},
+        {"name":"Front IN","select":[{"commands":["InputFrontIn"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

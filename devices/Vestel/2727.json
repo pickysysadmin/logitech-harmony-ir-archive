@@ -2,6 +2,37 @@
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 123314,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Tuner"},
+      {"commands":["1",{"delayMs":500},"InputNext"],"name":"Scart 1"},
+      {"commands":["1",{"delayMs":500},"InputNext","InputNext","InputNext"],"name":"Scart 1/RGB"},
+      {"commands":["1",{"delayMs":500},"InputNext","InputNext","InputNext"],"name":"Scart 2"},
+      {"commands":["1",{"delayMs":500},"InputNext","InputNext","InputNext","InputNext"],"name":"Scart2/RGB"},
+      {"commands":["1",{"delayMs":500},"InputNext","InputNext","InputNext","InputNext","InputNext"],"name":"PC"},
+      {"commands":["1",{"delayMs":500},"InputNext","InputNext","InputNext","InputNext","InputNext","InputNext"],"name":"FAV"},
+      {"commands":["1",{"delayMs":500},"InputNext","InputNext","InputNext","InputNext","InputNext","InputNext","InputNext"],"name":"S-VIDEO"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Vestel",
-  "model": "2727"
+  "model": "2727",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

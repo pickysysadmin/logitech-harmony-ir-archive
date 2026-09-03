@@ -2,6 +2,51 @@
   "codeset": "codesets/56/56048a446a858a3d.json",
   "deviceType": 19,
   "globalDeviceId": 275567,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"AudioIn"}],"name":"AudioIn"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Coax/Optical"},{"set":"Coax/OpticalInput","to":"Coaxial"}],"name":"Coaxial"},
+      {"commands":[{"set":"InputType","to":"Coax/Optical"},{"set":"Coax/OpticalInput","to":"Optical"}],"name":"Optical"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTL1193B"
+  "model": "HTL1193B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Coax/OpticalInput": {
+      "next": ["InputCoax/Optical"],
+      "values": [
+        {"name":"Coaxial"},
+        {"name":"Optical"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"AudioIn","select":[{"commands":["InputAudioIn"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Coax/Optical","select":[{"commands":["InputCoax/Optical"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

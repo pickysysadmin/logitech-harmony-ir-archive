@@ -2,6 +2,41 @@
   "codeset": "codesets/dc/dc8f7108cbd12953.json",
   "deviceType": 5,
   "globalDeviceId": 167977,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputDvd/Vdp"],"name":"DVD/VDP","ports":["Composite","Coaxial"]},
+      {"commands":["InputVcr1"],"name":"VCR 1","ports":["Composite"]},
+      {"commands":["InputVcr2"],"name":"VCR 2","ports":["Composite"]},
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["Composite","Optical"]},
+      {"commands":["InputTv/Dbs"],"name":"TV/DBS","ports":["Composite","Optical"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputCd-r/Tape"],"name":"CD-R/Tape","ports":["Composite","Optical"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-1802"
+  "model": "AVR-1802",
+  "power": {
+    "off": ["PowerOff","PowerOff"],
+    "on": [
+      {"command":"PowerOn","durationMs":2000},
+      {"delayMs":1000},
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 700,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 4,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

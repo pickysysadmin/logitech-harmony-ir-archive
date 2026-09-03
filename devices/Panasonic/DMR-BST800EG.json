@@ -2,6 +2,41 @@
   "codeset": "codesets/40/40bd2c780085c438.json",
   "deviceType": 34,
   "globalDeviceId": 222527,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"HDD"},
+      {"name":"BD"},
+      {"name":"SD"},
+      {"name":"USB"}
+    ],
+    "next": ["DriveSelect"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-BST800EG"
+  "model": "DMR-BST800EG",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

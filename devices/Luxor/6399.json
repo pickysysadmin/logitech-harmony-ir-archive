@@ -2,6 +2,35 @@
   "codeset": "codesets/b9/b9612e628bb9ecef.json",
   "deviceType": 1,
   "globalDeviceId": 106565,
+  "inputs": {
+    "list": [
+      {"name":"Ext1"},
+      {"name":"Ext2"},
+      {"name":"ch 01"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "Luxor",
-  "model": "6399"
+  "model": "6399",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":3000}
+    ],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Ext1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

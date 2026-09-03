@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d4/d456234c3e02b6e3.json",
   "deviceType": 1,
   "globalDeviceId": 118157,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"SVideo"}],"name":"SVideo"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"YPbPr 1"}],"name":"YPbPr 1"},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"YPbPr 2"}],"name":"YPbPr 2"}
+    ],
+    "start": [
+      {"delayMs":3000}
+    ],
+    "type": 5
+  },
   "manufacturer": "Westinghouse",
-  "model": "W-4270"
+  "model": "W-4270",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"SVideo","select":[{"commands":["InputAV"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"DVI","select":[{"commands":["InputDVI"],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputYPbPr1"],"setType":1}]}
+      ]
+    },
+    "YPbPrInput": {
+      "next": ["InputYPbPr1"],
+      "values": [
+        {"name":"YPbPr 1"},
+        {"name":"YPbPr 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 5,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

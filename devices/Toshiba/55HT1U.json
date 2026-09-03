@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/fc/fc1768c0f435f2e1.json",
   "deviceType": 1,
   "globalDeviceId": 209555,
+  "inputs": {
+    "list": [
+      {"commands":["0"],"name":"Ant","ports":["Antenna"]},
+      {"commands":["1"],"name":"Video","ports":["Composite"]},
+      {"commands":["2"],"name":"ColorStream HD","ports":["Component"]},
+      {"commands":["3"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["4"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["5"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["6"],"name":"PC","ports":["PC"]}
+    ],
+    "start": ["Input"],
+    "type": 3
+  },
   "manufacturer": "Toshiba",
-  "model": "55HT1U"
+  "model": "55HT1U",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

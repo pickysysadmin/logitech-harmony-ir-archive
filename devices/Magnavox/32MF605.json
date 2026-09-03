@@ -2,6 +2,39 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 13,
   "globalDeviceId": 80487,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3A"},
+      {"name":"AV3B"},
+      {"name":"AV4"},
+      {"name":"AV5"},
+      {"name":"AV6"},
+      {"name":"VGA"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Magnavox",
-  "model": "32MF605"
+  "model": "32MF605",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"AV5"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

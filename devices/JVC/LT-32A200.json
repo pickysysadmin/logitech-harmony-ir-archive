@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/17/177ab796d9881e7a.json",
   "deviceType": 1,
   "globalDeviceId": 167449,
+  "inputs": {
+    "list": [
+      {"commands":["InputTvVideo"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Component 1"},
+      {"commands":["InputVideo4"],"name":"Component 2"},
+      {"commands":["InputVideo5"],"name":"HDMI 1"},
+      {"commands":["InputVideo5",{"delayMs":3000},"InputNext"],"name":"HDMI 2"},
+      {"commands":["InputVideo5",{"delayMs":3000},"InputNext","InputNext"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-32A200"
+  "model": "LT-32A200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

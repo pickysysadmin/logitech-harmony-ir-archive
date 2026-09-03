@@ -2,6 +2,35 @@
   "codeset": "codesets/40/4079afe417e4834c.json",
   "deviceType": 13,
   "globalDeviceId": 119970,
+  "inputs": {
+    "list": [
+      {"name":"DVI"},
+      {"name":"AV"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"PC"},
+      {"name":"BNC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "SM-320PX"
+  "model": "SM-320PX",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVI"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

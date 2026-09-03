@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b1/b133ef525611abad.json",
   "deviceType": 2,
   "globalDeviceId": 1109,
+  "inputs": {
+    "list": [
+      {"name":"Line In"},
+      {"name":"VHF"},
+      {"name":"UHF"}
+    ],
+    "next": ["INPUT"],
+    "type": 2
+  },
   "manufacturer": "General Electric",
-  "model": "9-7500"
+  "model": "9-7500",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

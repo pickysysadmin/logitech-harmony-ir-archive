@@ -2,6 +2,67 @@
   "codeset": "codesets/6e/6e70413f5d17f8fe.json",
   "deviceType": 7,
   "globalDeviceId": 227907,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"USB A"}],"name":"USB A"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"RAM"}],"name":"RAM"},
+      {"commands":[{"set":"InputType","to":"USB B"}],"name":"USB B"},
+      {"commands":[{"set":"InputType","to":"HDMI/VGA"},{"set":"HDMI/VGAInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"HDMI/VGA"},{"set":"HDMI/VGAInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV"}],"name":"AV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "K330"
+  "model": "K330",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"Composite"},
+        {"name":"AV"}
+      ]
+    },
+    "HDMI/VGAInput": {
+      "next": ["InputHdmi/Vga"],
+      "values": [
+        {"name":"HDMI"},
+        {"name":"VGA"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"USB B","select":[{"commands":["InputUsbB"],"setType":2}]},
+        {"name":"Media","select":[{"commands":["InputMedia"],"setType":2}]},
+        {"name":"HDMI/VGA","select":[{"commands":["InputHdmi/Vga"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]}
+      ]
+    },
+    "MediaInput": {
+      "next": ["InputMedia"],
+      "values": [
+        {"name":"USB A"},
+        {"name":"SD"},
+        {"name":"RAM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

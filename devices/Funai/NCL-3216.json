@@ -2,6 +2,37 @@
   "codeset": "codesets/bd/bdac11cec3c27971.json",
   "deviceType": 1,
   "globalDeviceId": 83142,
+  "inputs": {
+    "list": [
+      {"name":"SCART-1"},
+      {"name":"SCART-2"},
+      {"name":"COMPONENT"},
+      {"name":"VGA"},
+      {"name":"HDMI"},
+      {"name":"TV"},
+      {"name":"VIDEO"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Funai",
-  "model": "NCL-3216"
+  "model": "NCL-3216",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 4,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

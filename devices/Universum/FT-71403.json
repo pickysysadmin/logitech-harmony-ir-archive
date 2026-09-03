@@ -2,6 +2,35 @@
   "codeset": "codesets/b9/b9612e628bb9ecef.json",
   "deviceType": 1,
   "globalDeviceId": 26038,
+  "inputs": {
+    "list": [
+      {"name":"E1"},
+      {"name":"E2"}
+    ],
+    "next": ["ChannelUp"],
+    "type": 2
+  },
   "manufacturer": "Universum",
-  "model": "FT-71403"
+  "model": "FT-71403",
+  "power": {
+    "off": ["PowerOff"],
+    "on": [
+      {"delayMs":5000},
+      "PowerOn"
+    ],
+    "onReset": [
+      {"set":"Input","to":"E1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

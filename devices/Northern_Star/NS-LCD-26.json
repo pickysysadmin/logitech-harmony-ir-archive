@@ -2,6 +2,47 @@
   "codeset": "codesets/d3/d392d35d41eed564.json",
   "deviceType": 1,
   "globalDeviceId": 128901,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"Scart 1"},
+      {"name":"Scart 2"},
+      {"name":"S-Video/AV"},
+      {"name":"Component"},
+      {"name":"PC RGB"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Northern Star",
-  "model": "NS-LCD-26"
+  "model": "NS-LCD-26",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 18000,
+    "pressMinRepeats": 1
+  }
 }

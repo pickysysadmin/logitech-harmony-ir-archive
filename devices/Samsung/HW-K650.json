@@ -2,6 +2,36 @@
   "codeset": "codesets/41/41ae57f686b838dd.json",
   "deviceType": 19,
   "globalDeviceId": 279202,
+  "inputs": {
+    "list": [
+      {"name":"TV","ports":["Pairing Input"]},
+      {"name":"D.IN","ports":["Optical"]},
+      {"name":"AUX","ports":["Aux"]},
+      {"name":"HDMI","ports":["HDMI"]},
+      {"name":"BT","ports":["Pairing Input"]}
+    ],
+    "next": ["Source"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HW-K650"
+  "model": "HW-K650",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

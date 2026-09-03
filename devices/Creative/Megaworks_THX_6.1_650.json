@@ -2,6 +2,57 @@
   "codeset": "codesets/41/41dfad2711b526d6.json",
   "deviceType": 19,
   "globalDeviceId": 127505,
+  "inputs": {
+    "list": [
+      {"commands":["InputCoaxial"],"name":"Coaxial"},
+      {"commands":["InputAnalog"],"name":"Analog1"},
+      {"commands":["InputAnalog"],"name":"Analog2"},
+      {"commands":["InputAnalog"],"name":"Analog3"},
+      {"commands":["InputOptical"],"name":"Optical1"},
+      {"commands":["InputOptical"],"name":"Optical2"},
+      {"commands":["InputOptical"],"name":"Optical3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Creative",
-  "model": "Megaworks THX 6.1 650"
+  "model": "Megaworks THX 6.1 650",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AnalogInput": {
+      "next": ["InputAnalog"],
+      "values": [
+        {"name":"analog1"},
+        {"name":"analog2"},
+        {"name":"analog3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Coaxial","select":[{"commands":["InputCoaxial"],"setType":2}]},
+        {"name":"Analog","select":[{"commands":["InputAnalog"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]}
+      ]
+    },
+    "OptInput": {
+      "next": ["InputOptical"],
+      "values": [
+        {"name":"opt1"},
+        {"name":"opt2"},
+        {"name":"opt3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

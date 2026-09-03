@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/76/76eba52a5385a933.json",
   "deviceType": 47,
   "globalDeviceId": 138307,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputVcr"],"name":"VHS"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-ES35V"
+  "model": "DMR-ES35V",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"IN1"},
+        {"name":"IN2"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

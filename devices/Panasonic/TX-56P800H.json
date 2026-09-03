@@ -1,7 +1,81 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ef/ef7352f6b40e5d12.json",
   "deviceType": 1,
   "globalDeviceId": 153024,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo3"],"name":"AV3"},
+      {"commands":["InputVideo4"],"name":"AV4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-56P800H"
+  "model": "TX-56P800H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2Input": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "AV3Input": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AV4Input": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4S"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":2}]},
+        {"name":"AV4","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "InputNext",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

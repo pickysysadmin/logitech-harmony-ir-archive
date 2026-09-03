@@ -2,6 +2,53 @@
   "codeset": "codesets/87/877d90b155bb69fa.json",
   "deviceType": 22,
   "globalDeviceId": 269389,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Input","to":"AV"},{"set":"AV","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"Input","to":"AV"},{"set":"AV","to":"FM Radio"}],"name":"FM Radio"},
+      {"commands":[{"set":"Input","to":"AV"},{"set":"AV","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"Input","to":"AV"},{"set":"AV","to":"ARC"}],"name":"ARC"},
+      {"commands":[{"set":"Input","to":"AV"},{"set":"AV","to":"Digital In"}],"name":"Digital In"},
+      {"commands":[{"set":"Input","to":"AV"},{"set":"AV","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"Input","to":"AV"},{"set":"AV","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"Input","to":"Blueray"}],"name":"Blueray"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-BTT885"
+  "model": "SC-BTT885",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV": {
+      "next": ["Selector"],
+      "values": [
+        {"name":"Bluetooth"},
+        {"name":"FM Radio"},
+        {"name":"AUX"},
+        {"name":"ARC"},
+        {"name":"Digital In"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "Input": {
+      "values": [
+        {"name":"AV","select":[{"commands":["Selector"],"setType":2}]},
+        {"name":"Blueray","select":[{"commands":["Home",{"delayMs":500},"DirectionDown",{"delayMs":500},"OK"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

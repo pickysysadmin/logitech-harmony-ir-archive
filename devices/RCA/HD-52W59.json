@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2b/2bcc0b8740ddb5c8.json",
   "deviceType": 1,
   "globalDeviceId": 182179,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Analog Antenna"}],"name":"Analog Antenna"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Digital Antenna"}],"name":"Digital Antenna"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"Front"}],"name":"Front"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "HD-52W59"
+  "model": "HD-52W59",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Inputs","select":[{"commands":["InputNext",{"set":"InputsInput","to":"Video 1"}],"setType":2}]}
+      ]
+    },
+    "InputsInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Front"},
+        {"name":"Component"},
+        {"name":"DVI"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Analog Antenna"},
+        {"name":"Digital Antenna"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

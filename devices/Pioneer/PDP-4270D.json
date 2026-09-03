@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/80/8039178fcda5d107.json",
   "deviceType": 1,
   "globalDeviceId": 164442,
+  "inputs": {
+    "list": [
+      {"commands":["AntennaA/B"],"name":"Ant"},
+      {"commands":["InputPC"],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"INPUT 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"INPUT 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"INPUT 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"INPUT 4"}],"name":"Input 4"},
+      {"commands":["InputVideo5"],"name":"Input 5(HD)"},
+      {"commands":["InputVideo6"],"name":"Input 6(HD)"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PDP-4270D"
+  "model": "PDP-4270D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "ANTInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"ANT A"},
+        {"name":"ANT B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ANT","select":[{"commands":["InputTv",{"set":"ANTInput","to":"ANT A"}],"setType":2}]},
+        {"name":"I LINK","select":[{"commands":["InputiLink"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"INPUT 1","select":[{"commands":[{"delayMs":1500},"InputVideo1"],"setType":2}]},
+        {"name":"INPUT 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"INPUT 3","select":[{"commands":[{"delayMs":1500},"InputVideo3"],"setType":2}]},
+        {"name":"INPUT 4","select":[{"commands":["InputVideo4"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

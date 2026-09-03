@@ -1,7 +1,48 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 130417,
+  "inputs": {
+    "list": [
+      {"name":"SINTONIZADOR"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"AV4"},
+      {"name":"PC"},
+      {"name":"DVI"},
+      {"name":"FAV"},
+      {"name":"S-VIDEO"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Weltstar",
-  "model": "WTV-2608"
+  "model": "WTV-2608",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

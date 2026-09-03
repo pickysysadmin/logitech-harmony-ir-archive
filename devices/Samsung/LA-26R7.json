@@ -2,6 +2,54 @@
   "codeset": "codesets/73/7306921bf9b60004.json",
   "deviceType": 1,
   "globalDeviceId": 171865,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"Hdmi"}],"name":"Hdmi"},
+      {"commands":[{"set":"InputType","to":"Tv/Dtv"},{"set":"Tv/DtvInput","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Tv/Dtv"},{"set":"Tv/DtvInput","to":"Dtv"}],"name":"Dtv"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "LA-26R7"
+  "model": "LA-26R7",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputSVideo"],"setType":2}]},
+        {"name":"Component1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"Pc","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"Tv/Dtv","select":[{"commands":["TV/DTV"],"setType":2}]}
+      ]
+    },
+    "Tv/DtvInput": {
+      "next": ["TV/DTV"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Dtv"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

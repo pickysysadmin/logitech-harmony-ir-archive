@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/b9/b93d24c32807950e.json",
   "deviceType": 1,
   "globalDeviceId": 74538,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2/SV"},
+      {"name":"TPBPR"},
+      {"name":"VGA"},
+      {"name":"HDMI"}
+    ],
+    "next": ["DirectionRight"],
+    "previous": ["DirectionLeft"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Legend",
-  "model": "LEC-3220"
+  "model": "LEC-3220",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

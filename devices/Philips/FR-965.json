@@ -2,6 +2,38 @@
   "codeset": "codesets/69/698b0eb246dc6a2b.json",
   "deviceType": 5,
   "globalDeviceId": 120586,
+  "inputs": {
+    "list": [
+      {"commands":[{"command":"InputPhono","durationMs":1000}],"name":"Phono","ports":["Composite"]},
+      {"commands":[{"command":"InputTuner","durationMs":1000}],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"command":"InputCd","durationMs":1000}],"name":"CD","ports":["Composite","Coaxial","Optical"]},
+      {"commands":[{"command":"InputCdr/Tape","durationMs":1000}],"name":"CDR/Tape","ports":["Composite","Coaxial","Optical"]},
+      {"commands":[{"command":"InputTv","durationMs":1000}],"name":"TV","ports":["Composite","Coaxial","Optical"]},
+      {"commands":[{"command":"InputVcr","durationMs":1000}],"name":"VCR","ports":["Composite","Coaxial","Optical","S-Video"]},
+      {"commands":[{"command":"InputSat","durationMs":1000}],"name":"Sat","ports":["Composite","Coaxial","Optical","S-Video"]},
+      {"commands":[{"command":"InputDVD","durationMs":1000}],"name":"DVD","ports":["Composite","Coaxial","Optical","S-Video"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "FR-965"
+  "model": "FR-965",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "on": [
+      {"command":"InputTuner","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

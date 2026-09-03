@@ -2,6 +2,35 @@
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 13,
   "globalDeviceId": 132150,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"VIDEO 1"},
+      {"name":"VIDEO 2"},
+      {"name":"VIDEO 3"},
+      {"name":"CH 03"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "400PX"
+  "model": "400PX",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,30 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 97680,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputNext"],"name":"AV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Mark",
-  "model": "TBT-201"
+  "model": "TBT-201",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

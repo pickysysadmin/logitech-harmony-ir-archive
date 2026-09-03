@@ -1,7 +1,66 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 34122,
+  "inputs": {
+    "list": [
+      {"name":"AntA"},
+      {"name":"AntB"},
+      {"name":"Front"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"},
+      {"name":"Video 4"},
+      {"name":"Video 5"},
+      {"name":"Tuner"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "RCA",
-  "model": "HDLP50W151YX3"
+  "model": "HDLP50W151YX3",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaAB": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"A"},
+        {"name":"B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VIDEO","select":[{"commands":["InputNext",{"set":"VideoInput","to":"FRONT"}],"setType":2}]},
+        {"name":"ANT","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FRONT"},
+        {"name":"VIDEO 1"},
+        {"name":"VIDEO 2"},
+        {"name":"VIDEO 3"},
+        {"name":"VIDEO 4"},
+        {"name":"VIDEO 5"},
+        {"name":"TUNER"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

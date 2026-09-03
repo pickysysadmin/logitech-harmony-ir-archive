@@ -2,6 +2,47 @@
   "codeset": "codesets/9b/9bbf1824774a09ba.json",
   "deviceType": 25,
   "globalDeviceId": 168355,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dvd"}],"name":"Dvd"},
+      {"commands":[{"set":"InputType","to":"Vcr"}],"name":"Vcr"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Line 2"}],"name":"Line 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "GoVideo",
-  "model": "VR-2940"
+  "model": "VR-2940",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line 1"},
+        {"name":"Line 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dvd","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Vcr","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

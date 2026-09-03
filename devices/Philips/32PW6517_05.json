@@ -2,6 +2,35 @@
   "codeset": "codesets/2f/2faf1eb0a0d53c8f.json",
   "deviceType": 1,
   "globalDeviceId": 70810,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"EXT 1"},
+      {"name":"EXT 2"},
+      {"name":"SVHS"},
+      {"name":"AV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "32PW6517/05"
+  "model": "32PW6517/05",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

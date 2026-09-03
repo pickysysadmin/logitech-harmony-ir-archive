@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/94/942fd024cca3e665.json",
   "deviceType": 47,
   "globalDeviceId": 206964,
+  "inputs": {
+    "list": [
+      {"name":"HDD"},
+      {"name":"DVD"},
+      {"name":"SD"},
+      {"name":"VHS"}
+    ],
+    "next": ["DriveSelect"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-EX99VEG"
+  "model": "DMR-EX99VEG",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV 3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

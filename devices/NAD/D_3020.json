@@ -2,6 +2,34 @@
   "codeset": "codesets/19/19a3c124fbad3135.json",
   "deviceType": 19,
   "globalDeviceId": 256456,
+  "inputs": {
+    "list": [
+      {"commands":["InputOptical1"],"name":"OPT 1","ports":["Optical"]},
+      {"commands":["InputOptical2"],"name":"OPT 2","ports":["Optical"]},
+      {"commands":["InputCoax1"],"name":"COAX","ports":["Coaxial"]},
+      {"commands":["InputCoax1",{"delayMs":2000},"InputNext"],"name":"USB","ports":["USB"]},
+      {"commands":["InputAux1"],"name":"AUX 1","ports":["Composite"]},
+      {"commands":["InputAux2"],"name":"AUX 2","ports":["Aux"]},
+      {"commands":["InputBluetooth"],"name":"BT","ports":["Pairing Input"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "NAD",
-  "model": "D 3020"
+  "model": "D 3020",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 6500,
+    "pressMinRepeats": 1
+  }
 }

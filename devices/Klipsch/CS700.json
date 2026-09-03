@@ -2,6 +2,52 @@
   "codeset": "codesets/12/12d7e392de77c00e.json",
   "deviceType": 22,
   "globalDeviceId": 160213,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DISC"}],"name":"DISC","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Sat/Cable"}],"name":"Sat/Cable","ports":["HDMI","Component","Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"Aux1"}],"name":"Aux1","ports":["Composite","Coaxial","S-Video","Optical"]},
+      {"commands":[{"set":"InputType","to":"Aux2"}],"name":"Aux2","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AM/FMInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AM/FMInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Klipsch",
-  "model": "CS700"
+  "model": "CS700",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AM/FMInput": {
+      "next": ["InputAm/Fm"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DISC","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Sat/Cable","select":[{"commands":["InputSat/Cab"],"setType":2}]},
+        {"name":"Aux1","select":[{"commands":["InputAux1"],"setType":2}]},
+        {"name":"Aux2","select":[{"commands":["InputAux2"],"setType":2}]},
+        {"name":"AM/FM","select":[{"commands":["InputAm/Fm"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

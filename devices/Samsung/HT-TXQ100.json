@@ -2,6 +2,54 @@
   "codeset": "codesets/f4/f42fde5ab649e59a.json",
   "deviceType": 22,
   "globalDeviceId": 96163,
+  "inputs": {
+    "list": [
+      {"commands":["InputAux"],"name":"D.in"},
+      {"commands":["InputAux"],"name":"AUX"},
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputUsb"],"name":"USB"},
+      {"commands":["InputTuner"],"name":"Tuner"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HT-TXQ100"
+  "model": "HT-TXQ100",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Digi 1"},
+        {"name":"Digi 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

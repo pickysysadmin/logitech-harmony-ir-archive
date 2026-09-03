@@ -2,6 +2,72 @@
   "codeset": "codesets/a4/a425612534a5d4f7.json",
   "deviceType": 1,
   "globalDeviceId": 171097,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 3(S-Video)"}],"name":"Video 3(S-Video)"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Video 4(Ypbpr 1)"}],"name":"Video 4(Ypbpr 1)"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Video 5(Ypbpr 2)"}],"name":"Video 5(Ypbpr 2)"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"Video 6(HDMI 1)"}],"name":"Video 6(HDMI 1)"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"Video 7(HDMI 2)"}],"name":"Video 7(HDMI 2)"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Insignia",
-  "model": "NS-LCD42HD"
+  "model": "NS-LCD42HD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Video 4(Ypbpr 1)"},
+        {"name":"Video 5(Ypbpr 2)"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"Video 6(HDMI 1)"},
+        {"name":"Video 7(HDMI 2)"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    },
+    "TvInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Tv"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Video 3(S-Video)"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 13000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,60 @@
   "codeset": "codesets/6a/6a2b73b1e11f621e.json",
   "deviceType": 1,
   "globalDeviceId": 179626,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv\\Dtv"},{"set":"Tv\\DtvInput","to":"Tv"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tv\\Dtv"},{"set":"Tv\\DtvInput","to":"Dtv"}],"name":"DTV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Ext 1"}],"name":"Ext 1","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"Ext 2"}],"name":"Ext 2","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"Av"}],"name":"Av","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video","ports":["S-Video"]},
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"PC","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "LE-40M87BD"
+  "model": "LE-40M87BD",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Ext 1","select":[{"commands":["InputExt1"],"setType":2}]},
+        {"name":"Ext 2","select":[{"commands":["InputExt2"],"setType":2}]},
+        {"name":"Av","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"Pc","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"Tv\\Dtv","select":[{"commands":["TV/DTV"],"setType":2}]}
+      ]
+    },
+    "Tv\\DtvInput": {
+      "next": ["TV/DTV"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Dtv"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

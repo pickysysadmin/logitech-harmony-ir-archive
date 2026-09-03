@@ -1,7 +1,46 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f7/f7af4dad088168f7.json",
   "deviceType": 37,
   "globalDeviceId": 206202,
+  "inputs": {
+    "canSkip": true,
+    "finish": ["Select"],
+    "list": [
+      {"name":"Tv","ports":["Antenna"]},
+      {"name":"Av","ports":["Composite"]},
+      {"name":"S-Video","ports":["S-Video"]},
+      {"name":"Component 1","ports":["Component"]},
+      {"name":"Component 2","ports":["Component"]},
+      {"name":"Dvd","ports":["Others"]},
+      {"name":"Hdmi1","ports":["HDMI"]},
+      {"name":"Hdmi2","ports":["HDMI"]},
+      {"name":"Hdmi3","ports":["HDMI"]},
+      {"name":"Vga","ports":["PC"]},
+      {"name":"Usb","ports":["USB"]}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Dynex",
-  "model": "DX-26LD150A11"
+  "model": "DX-26LD150A11",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

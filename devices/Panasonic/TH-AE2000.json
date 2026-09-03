@@ -2,6 +2,39 @@
   "codeset": "codesets/c0/c0f7c31198088f0a.json",
   "deviceType": 7,
   "globalDeviceId": 139653,
+  "inputs": {
+    "list": [
+      {"name":"Component 1"},
+      {"name":"Component 2"},
+      {"name":"S-Video"},
+      {"name":"Video"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"HDMI 3"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-AE2000"
+  "model": "TH-AE2000",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":200},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

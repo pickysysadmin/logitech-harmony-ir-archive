@@ -2,6 +2,65 @@
   "codeset": "codesets/16/160d4499683f8af4.json",
   "deviceType": 21,
   "globalDeviceId": 249330,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Network"},{"set":"MiniInput","to":"MusicServer"}],"name":"Music Server"},
+      {"commands":[{"set":"InputType","to":"Network"},{"set":"MiniInput","to":"InternetRadio"}],"name":"Internet Radio"},
+      {"commands":[{"set":"InputType","to":"Network"},{"set":"MiniInput","to":"Favorites"}],"name":"Favorites"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"AudioIn"}],"name":"Audio In"},
+      {"commands":[{"set":"InputType","to":"Line"}],"name":"Line"},
+      {"commands":[{"set":"InputType","to":"BTAudio"}],"name":"BT Audio"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "XC-HM81"
+  "model": "XC-HM81",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Network","select":[{"commands":["InputNetwork"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AudioIn","select":[{"commands":["InputAudioIn"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputLine"],"setType":2}]},
+        {"name":"BTAudio","select":[{"commands":["InputBtAudio"],"setType":2}]}
+      ]
+    },
+    "MiniInput": {
+      "next": ["InputNetwork"],
+      "values": [
+        {"name":"MusicServer"},
+        {"name":"InternetRadio"},
+        {"name":"Favorites"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

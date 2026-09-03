@@ -2,6 +2,70 @@
   "codeset": "codesets/da/dab57fd3de957872.json",
   "deviceType": 22,
   "globalDeviceId": 144630,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AUDIOIN"}],"name":"Audio IN","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"D.INPUT"},{"set":"D.INPUTInput","to":"OPTICAL"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"D.INPUT"},{"set":"D.INPUTInput","to":"COAXIAL"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"XM"}],"name":"XM","ports":["Others"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LHT764"
+  "model": "LHT764",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"AUDIOIN"}
+      ]
+    },
+    "D.INPUTInput": {
+      "next": ["InputDigital"],
+      "values": [
+        {"name":"OPTICAL"},
+        {"name":"COAXIAL"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"D.INPUT","select":[{"commands":["InputDigital"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"XM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/85/85802a2718306665.json",
   "deviceType": 1,
   "globalDeviceId": 81246,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"E1"},
+      {"name":"E2"},
+      {"name":"AV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Nokia",
-  "model": "8751-T"
+  "model": "8751-T",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

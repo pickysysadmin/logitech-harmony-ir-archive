@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/06/0689cf96ade97298.json",
   "deviceType": 1,
   "globalDeviceId": 128952,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"SVideo"},
+      {"name":"Component2"},
+      {"name":"Component1"},
+      {"name":"DVI"},
+      {"name":"VGA"},
+      {"name":"Scart1"},
+      {"name":"Scart2"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Lexsor",
-  "model": "LC-27W18S"
+  "model": "LC-27W18S",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/36/362eb927ae6329c2.json",
   "deviceType": 1,
   "globalDeviceId": 39964,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Ext1"},
+      {"name":"Ext2"},
+      {"name":"Ext3"}
+    ],
+    "next": ["InputNext 2"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "28Z23B"
+  "model": "28Z23B",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

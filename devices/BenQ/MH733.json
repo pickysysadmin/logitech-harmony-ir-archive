@@ -2,6 +2,39 @@
   "codeset": "codesets/cd/cdded2e4e4135a0a.json",
   "deviceType": 7,
   "globalDeviceId": 479784,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"PC/YPbPr","ports":["PC"]},
+      {"name":"HDMI 1","ports":["HDMI"]},
+      {"name":"HDMI 2/MHL","ports":["HDMI"]},
+      {"name":"Network Display","ports":["Streaming"]},
+      {"name":"USB Reader","ports":["USB"]}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "BenQ",
-  "model": "MH733"
+  "model": "MH733",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

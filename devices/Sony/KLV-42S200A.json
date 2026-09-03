@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 121199,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputHD1"],"name":"HD/DVD1"},
+      {"commands":["InputHD2"],"name":"HD/DVD2"},
+      {"commands":["InputHD2","Tv/Video"],"name":"HDMI"},
+      {"commands":["InputRgb1"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KLV-42S200A"
+  "model": "KLV-42S200A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["Menu"],"setType":2}]},
+        {"name":"On","select":[{"commands":["PowerToggle"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

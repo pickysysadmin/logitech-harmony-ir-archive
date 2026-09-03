@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/11/11b856b3bb6e15cf.json",
   "deviceType": 35,
   "globalDeviceId": 126307,
+  "inputs": {
+    "list": [
+      {"name":"My TV"},
+      {"name":"My DVD"},
+      {"name":"My Videos"},
+      {"name":"My Music"},
+      {"name":"My Pictures"}
+    ],
+    "next": ["NextTrack"],
+    "type": 2
+  },
   "manufacturer": "Apple",
-  "model": "MA092LL/A"
+  "model": "MA092LL/A",
+  "power": {
+    "off": [
+      {"command":"Pause","durationMs":3500}
+    ],
+    "on": ["Play"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,54 @@
   "codeset": "codesets/6c/6c5819da323166bd.json",
   "deviceType": 7,
   "globalDeviceId": 275234,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"LANInputs"},{"set":"LANInputsInput","to":"LAN"}],"name":"LAN","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"LANInputs"},{"set":"LANInputsInput","to":"Screen Mirroring"}],"name":"Screen Mirroring","ports":["Streaming"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "EH-TW5350"
+  "model": "EH-TW5350",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"LANInputs","select":[{"commands":["InputLan"],"setType":2}]}
+      ]
+    },
+    "LANInputsInput": {
+      "next": ["InputLan"],
+      "values": [
+        {"name":"LAN"},
+        {"name":"Screen Mirroring"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

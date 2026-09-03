@@ -2,6 +2,40 @@
   "codeset": "codesets/b2/b27b1c4b30753ad2.json",
   "deviceType": 1,
   "globalDeviceId": 104703,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"DTV"},
+      {"name":"Scart 1"},
+      {"name":"Scart 2"},
+      {"name":"AV"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"HDMI"},
+      {"name":"PC"}
+    ],
+    "next": ["ChannelDown"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Gericom",
-  "model": "GTA-37HD HDMI"
+  "model": "GTA-37HD HDMI",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

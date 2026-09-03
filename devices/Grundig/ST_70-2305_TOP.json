@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 84021,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV 1"},
+      {"name":"AV2"}
+    ],
+    "next": ["PipMove"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "ST 70-2305 TOP"
+  "model": "ST 70-2305 TOP",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 4,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

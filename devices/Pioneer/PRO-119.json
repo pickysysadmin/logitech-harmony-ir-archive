@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/d0/d0d6f272bb61077f.json",
   "deviceType": 1,
   "globalDeviceId": 17596,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iAntenna"},{"set":"AntennaInput","to":"A"}],"name":"AntennaA"},
+      {"commands":[{"set":"InputType","to":"iAntenna"},{"set":"AntennaInput","to":"B"}],"name":"AntennaB"},
+      {"commands":[{"set":"InputType","to":"iDVD"}],"name":"LD/DVD"},
+      {"commands":[{"set":"InputType","to":"iVCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"iSAT"}],"name":"SAT"},
+      {"commands":[{"set":"InputType","to":"iVCR F"}],"name":"VCR F"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PRO-119"
+  "model": "PRO-119",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["AntennaCable"],
+      "values": [
+        {"name":"A"},
+        {"name":"B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iAntenna","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"iDVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"iVCR","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"iSAT","select":[{"commands":["InputSat"],"setType":2}]},
+        {"name":"iVCR F","select":[{"commands":["InputVideo2"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

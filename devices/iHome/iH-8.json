@@ -2,6 +2,45 @@
   "codeset": "codesets/c9/c962d4ca3b4829c7.json",
   "deviceType": 5,
   "globalDeviceId": 124568,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Ipod"}],"name":"Ipod"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Am"}],"name":"Am"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm 1"}],"name":"Fm 1"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm 2"}],"name":"Fm 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "iHome",
-  "model": "iH-8"
+  "model": "iH-8",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Ipod","select":[{"commands":["Play"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputRadio"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm 1"},
+        {"name":"Fm 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

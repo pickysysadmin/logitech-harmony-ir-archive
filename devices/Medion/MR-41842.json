@@ -2,6 +2,58 @@
   "codeset": "codesets/84/843ce1e9b31004d0.json",
   "deviceType": 1,
   "globalDeviceId": 60172,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Scart 1"}],"name":"Scart 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Scart 2"}],"name":"Scart 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Y/C"}],"name":"Y/C"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CVB"}],"name":"CVB"},
+      {"commands":[{"set":"InputType","to":"PC/DVI"},{"set":"PC/DVIInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"PC/DVI"},{"set":"PC/DVIInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Medion",
-  "model": "MR-41842"
+  "model": "MR-41842",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["InputSat"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputSat"],"setType":2}]},
+        {"name":"PC/DVI","select":[{"commands":["InputPc"],"setType":2}]}
+      ]
+    },
+    "PC/DVIInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"PC"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputSat"],
+      "values": [
+        {"name":"Scart 1"},
+        {"name":"Scart 2"},
+        {"name":"Y/C"},
+        {"name":"CVB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

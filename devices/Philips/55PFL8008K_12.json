@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/21/217dcb2e129f6291.json",
   "deviceType": 1,
   "globalDeviceId": 252819,
+  "inputs": {
+    "list": [
+      {"commands":["InputUsb",{"delayMs":1000},"Source",{"delayMs":3500},"DirectionLeft","OK"],"name":"TV"},
+      {"commands":["InputNetTv"],"name":"Net TV"},
+      {"commands":["InputMediaServer"],"name":"Network"},
+      {"commands":["InputUsb",{"delayMs":1000},"Source",{"delayMs":3500},"DirectionLeft","DirectionLeft","OK"],"name":"Satellite"},
+      {"commands":["InputUsb"],"name":"USB"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmiSide"],"name":"HDMI Side"},
+      {"commands":["InputScart"],"name":"SCART"},
+      {"commands":["InputYPbPr"],"name":"YPbPr"},
+      {"commands":["Exit","SmartTv"],"name":"Smart TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "55PFL8008K/12"
+  "model": "55PFL8008K/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 14000,
+    "pressMinRepeats": 3
+  }
 }

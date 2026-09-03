@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/76/76fd558fad7b9d4b.json",
   "deviceType": 2,
   "globalDeviceId": 40676,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"VCR"}
+    ],
+    "next": ["TvVcr"],
+    "type": 2
+  },
   "manufacturer": "Magnavox",
-  "model": "VR9363 AT01"
+  "model": "VR9363 AT01",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"VCR"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

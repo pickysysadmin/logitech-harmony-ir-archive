@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/f6/f6b4752ae29cefc9.json",
   "deviceType": 1,
   "globalDeviceId": 157657,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input 1"}],"name":"Input 1","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Input 2"}],"name":"Input 2","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Input 3"}],"name":"Input 3","ports":["HDMI","Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Input 4"}],"name":"Input 4","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Input 5"}],"name":"Input 5","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Input 6"}],"name":"Input 6","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Tv/Dtv"},{"set":"Tv/DtvInput","to":"Tv"}],"name":"Tv","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tv/Dtv"},{"set":"Tv/DtvInput","to":"Dtv"}],"name":"Dtv","ports":["Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PDP-508XDA"
+  "model": "PDP-508XDA",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Input 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Input 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Input 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Input 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"Input 5","select":[{"commands":["InputVideo5"],"setType":2}]},
+        {"name":"Input 6","select":[{"commands":["InputVideo6"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Tv/Dtv","select":[{"commands":["InputTv/Dtv"],"setType":2}]}
+      ]
+    },
+    "Tv/DtvInput": {
+      "next": ["InputTv/Dtv"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Dtv"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

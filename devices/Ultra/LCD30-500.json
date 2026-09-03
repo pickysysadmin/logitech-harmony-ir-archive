@@ -2,6 +2,47 @@
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 103502,
+  "inputs": {
+    "finish": [
+      {"command":"Select","durationMs":1000}
+    ],
+    "list": [
+      {"name":"D"},
+      {"name":"H1"},
+      {"name":"H2"},
+      {"name":"C1"},
+      {"name":"C2"},
+      {"name":"AV"},
+      {"name":"V2"},
+      {"name":"A"},
+      {"name":"TV"}
+    ],
+    "next": [
+      {"command":"DirectionRight","durationMs":1000}
+    ],
+    "previous": [
+      {"command":"DirectionLeft","durationMs":1000}
+    ],
+    "start": [
+      {"delayMs":1000},
+      {"command":"Guide","durationMs":1000}
+    ],
+    "type": 4
+  },
   "manufacturer": "Ultra",
-  "model": "LCD30-500"
+  "model": "LCD30-500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6500,
+    "pressMinRepeats": 3
+  }
 }

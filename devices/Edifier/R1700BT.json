@@ -2,6 +2,39 @@
   "codeset": "codesets/6c/6c911e8837aa3e6d.json",
   "deviceType": 19,
   "globalDeviceId": 273517,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"LineIn"},{"set":"LineInInput","to":"PC"}],"name":"PC","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"LineIn"},{"set":"LineInInput","to":"Aux"}],"name":"Aux","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Edifier",
-  "model": "R1700BT"
+  "model": "R1700BT",
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"LineIn","select":[{"commands":["InputLineIn"],"setType":2}]}
+      ]
+    },
+    "LineInInput": {
+      "next": ["InputLineIn"],
+      "values": [
+        {"name":"PC"},
+        {"name":"Aux"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "pressMinRepeats": 1
+  }
 }

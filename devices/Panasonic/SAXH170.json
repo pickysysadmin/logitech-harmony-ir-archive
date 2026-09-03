@@ -2,6 +2,49 @@
   "codeset": "codesets/d9/d92918facf3f91ab.json",
   "deviceType": 22,
   "globalDeviceId": 239803,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"EXT-IN/Radio"},{"set":"EXT-IN/RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"EXT-IN/Radio"},{"set":"EXT-IN/RadioInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"EXT-IN/Radio"},{"set":"EXT-IN/RadioInput","to":"ARC"}],"name":"ARC"},
+      {"commands":[{"set":"InputType","to":"EXT-IN/Radio"},{"set":"EXT-IN/RadioInput","to":"Digital-In"}],"name":"Digital-In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SAXH170"
+  "model": "SAXH170",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "EXT-IN/RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AUX"},
+        {"name":"ARC"},
+        {"name":"Digital-In"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"EXT-IN/Radio","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

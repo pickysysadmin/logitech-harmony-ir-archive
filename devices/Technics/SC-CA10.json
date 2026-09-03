@@ -2,6 +2,54 @@
   "codeset": "codesets/de/de9ff8dc32cdbeae.json",
   "deviceType": 21,
   "globalDeviceId": 172702,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"EXT"}],"name":"EXT"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"VDP"}],"name":"VDP"},
+      {"commands":[{"set":"InputType","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"Tape"},{"set":"TapeInput","to":"Deck 1"}],"name":"Deck 1"},
+      {"commands":[{"set":"InputType","to":"Tape"},{"set":"TapeInput","to":"Deck 2"}],"name":"Deck 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Technics",
-  "model": "SC-CA10"
+  "model": "SC-CA10",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"EXT","select":[{"commands":["InputExternal"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"VDP","select":[{"commands":["InputVdp"],"setType":2}]},
+        {"name":"Phono","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["TapeDeck1/2"],"setType":2}]}
+      ]
+    },
+    "TapeInput": {
+      "next": ["TapeDeck1/2"],
+      "values": [
+        {"name":"Deck 1"},
+        {"name":"Deck 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

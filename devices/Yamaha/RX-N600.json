@@ -2,6 +2,38 @@
   "codeset": "codesets/f6/f66ceb9282b7c360.json",
   "deviceType": 5,
   "globalDeviceId": 144763,
+  "inputs": {
+    "list": [
+      {"commands":["InputV-Aux/Dock"],"name":"V-Aux/Dock","ports":["Composite"]},
+      {"commands":["InputDtv/Cbl"],"name":"D-TV/CBL","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputMd/Cdr"],"name":"MD/CD-R","ports":["Composite","Optical"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputXm"],"name":"XM","ports":["Streaming"]},
+      {"commands":["InputNet/Usb"],"name":"Net/USB","ports":["USB"]},
+      {"commands":["InputMultiChannel"],"name":"MultiChannel","ports":["Composite"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["Component","Composite","S-Video"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-N600"
+  "model": "RX-N600",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

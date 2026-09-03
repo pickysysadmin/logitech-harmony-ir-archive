@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/51/513a177cbe584a29.json",
   "deviceType": 47,
   "globalDeviceId": 230740,
+  "inputs": {
+    "list": [
+      {"commands":["DVD"],"name":"DVD"},
+      {"commands":["VCR"],"name":"VCR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Toshiba",
-  "model": "dvr620kc"
+  "model": "dvr620kc",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"DV(L3)"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

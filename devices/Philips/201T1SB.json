@@ -2,6 +2,50 @@
   "codeset": "codesets/14/14df6cd1db57d985.json",
   "deviceType": 1,
   "globalDeviceId": 212931,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Scart"}],"name":"Scart"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "201T1SB"
+  "model": "201T1SB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"YPbPr"},
+        {"name":"Composite"},
+        {"name":"Scart"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

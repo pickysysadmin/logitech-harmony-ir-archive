@@ -2,6 +2,57 @@
   "codeset": "codesets/5a/5aeb05b03ea364fa.json",
   "deviceType": 22,
   "globalDeviceId": 173368,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"iPod/Usb"},{"set":"iPod/UsbInput","to":"iPod"}],"name":"iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"iPod/Usb"},{"set":"iPod/UsbInput","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Fm/Ext-In"},{"set":"Fm/Ext-InInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Fm/Ext-In"},{"set":"Fm/Ext-InInput","to":"AV"}],"name":"AV","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"Fm/Ext-In"},{"set":"Fm/Ext-InInput","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Fm/Ext-In"},{"set":"Fm/Ext-InInput","to":"D-IN"}],"name":"D-IN","ports":["Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PT460"
+  "model": "SC-PT460",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Fm/Ext-InInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AV"},
+        {"name":"AUX"},
+        {"name":"D-IN"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"iPod/Usb","select":[{"commands":[{"set":"iPod/UsbInput","to":"iPod"},"InputiPod/USB"],"setType":2}]},
+        {"name":"Fm/Ext-In","select":[{"commands":[{"set":"Fm/Ext-InInput","to":"FM"},"InputTuner"],"setType":2}]}
+      ]
+    },
+    "iPod/UsbInput": {
+      "next": ["InputiPod/USB"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"USB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

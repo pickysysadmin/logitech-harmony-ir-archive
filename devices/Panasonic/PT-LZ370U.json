@@ -2,6 +2,60 @@
   "codeset": "codesets/28/28f7b9cd347707e0.json",
   "deviceType": 7,
   "globalDeviceId": 278248,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"}],"name":"Computer"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Video/S-Video"},{"set":"Video/S-VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video/S-Video"},{"set":"Video/S-VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"HDMI1/2"},{"set":"HDMI1/2Input","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI1/2"},{"set":"HDMI1/2Input","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-LZ370U"
+  "model": "PT-LZ370U",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "HDMI1/2Input": {
+      "next": ["InputHdmi1/2"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"Video/S-Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"HDMI1/2","select":[{"commands":["InputHdmi1/2"],"setType":2}]}
+      ]
+    },
+    "Video/S-VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

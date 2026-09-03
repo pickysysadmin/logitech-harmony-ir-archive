@@ -2,6 +2,60 @@
   "codeset": "codesets/fc/fcca5b26780d30d1.json",
   "deviceType": 13,
   "globalDeviceId": 146007,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video","ports":["S-Video"]},
+      {"commands":[{"set":"InputType","to":"Vga"}],"name":"Vga","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Av"}],"name":"Av","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Ypbpr"},{"set":"YpbprInput","to":"Ypbpr1"}],"name":"Ypbpr1","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Ypbpr"},{"set":"YpbprInput","to":"Ypbpr2"}],"name":"Ypbpr2","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Dvi"},{"set":"DviInput","to":"Dvi1"}],"name":"Dvi1","ports":["DVI"]},
+      {"commands":[{"set":"InputType","to":"Dvi"},{"set":"DviInput","to":"Dvi2"}],"name":"Dvi2","ports":["DVI"]},
+      {"commands":[{"set":"InputType","to":"Dvi"},{"set":"DviInput","to":"Hdmi"}],"name":"Hdmi","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Westinghouse",
-  "model": "LVM-42W2"
+  "model": "LVM-42W2",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DviInput": {
+      "next": ["InputVga"],
+      "values": [
+        {"name":"Dvi1"},
+        {"name":"Dvi2"},
+        {"name":"Hdmi"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"Vga","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"Av","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"Ypbpr","select":[{"commands":["InputYpbpr"],"setType":2}]},
+        {"name":"Dvi","select":[{"commands":["InputDvi"],"setType":2}]}
+      ]
+    },
+    "YpbprInput": {
+      "next": ["InputYpbpr"],
+      "values": [
+        {"name":"Ypbpr1"},
+        {"name":"Ypbpr2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

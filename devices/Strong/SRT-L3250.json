@@ -2,6 +2,46 @@
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 112446,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"SCART1"},
+      {"name":"SCART1 RGB"},
+      {"name":"SCART2"},
+      {"name":"SCART2 RGB"},
+      {"name":"SCART3"},
+      {"name":"SCART4"},
+      {"name":"PC"},
+      {"name":"DVI"},
+      {"name":"FAV"},
+      {"name":"S-Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Strong",
-  "model": "SRT-L3250"
+  "model": "SRT-L3250",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

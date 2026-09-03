@@ -2,6 +2,41 @@
   "codeset": "codesets/5a/5ab83cd50abaee1e.json",
   "deviceType": 1,
   "globalDeviceId": 141115,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"HDMI"},
+      {"name":"DVI"},
+      {"name":"EXT"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "SM-932MW"
+  "model": "SM-932MW",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["TeletextOff"],"setType":2}]},
+        {"name":"On","select":[{"commands":["TeletextOn"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/be/bebe68d8e0b91b9a.json",
   "deviceType": 1,
   "globalDeviceId": 176814,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"HDMI3"}],"name":"HDMI3"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Digital"}],"name":"Digital"}
+    ],
+    "previous": ["DirectionUp"],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "37XV500A"
+  "model": "37XV500A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["ATV/DTV",{"set":"TunerInput","to":"Analog"}],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["ATV/DTV"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Digital"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 9000,
+    "pressMinRepeats": 1
+  }
 }

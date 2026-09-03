@@ -1,7 +1,73 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/eb/eba448826fcbd796.json",
   "deviceType": 1,
   "globalDeviceId": 147555,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Dtv"}],"name":"Dtv"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Av"}],"name":"Av"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"SVideo"}],"name":"SVideo"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Scart1"}],"name":"Scart1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Scart2"}],"name":"Scart2"},
+      {"commands":[{"set":"InputType","to":"HDTV"},{"set":"HDTVInput","to":"Hdtv"}],"name":"Hdtv"},
+      {"commands":[{"set":"InputType","to":"HDTV"},{"set":"HDTVInput","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"HDTV"},{"set":"HDTVInput","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"HDTV"},{"set":"HDTVInput","to":"Hdmi2"}],"name":"Hdmi2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teco",
-  "model": "TA3296RV"
+  "model": "TA3296RV",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["AV/S/SCART"],
+      "values": [
+        {"name":"Av"},
+        {"name":"SVideo"},
+        {"name":"Scart1"},
+        {"name":"Scart2"}
+      ]
+    },
+    "HDTVInput": {
+      "next": ["HDTV/PC/HDMI"],
+      "values": [
+        {"name":"Hdtv"},
+        {"name":"Pc"},
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV/DTV"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["AV/S/SCART"],"setType":2}]},
+        {"name":"HDTV","select":[{"commands":["HDTV/PC/HDMI"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV/DTV"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Dtv"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

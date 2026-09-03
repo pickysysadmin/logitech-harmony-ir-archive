@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/c4/c4c7ce682cde670c.json",
   "deviceType": 32,
   "globalDeviceId": 4647,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Feature","to":"VCR"},{"set":"VcrInput","to":"Television"}],"name":"VCR"},
+      {"commands":[{"set":"Feature","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"Feature","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"Feature","to":"VCR"},{"set":"VcrInput","to":"Television"}],"name":"Television"},
+      {"commands":[{"set":"Feature","to":"VCR"},{"set":"VcrInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"Feature","to":"VCR"},{"set":"VcrInput","to":"AV 2"}],"name":"AV 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Venturer",
-  "model": "RTS-2628V"
+  "model": "RTS-2628V",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Feature": {
+      "next": ["FeatureNext"],
+      "values": [
+        {"name":"VCR"},
+        {"name":"DVD"},
+        {"name":"Radio"}
+      ]
+    },
+    "VcrInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Television"},
+        {"name":"AV 1"},
+        {"name":"AV 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

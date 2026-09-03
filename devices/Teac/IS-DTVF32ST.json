@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b7/b7bf9558218fa9f0.json",
   "deviceType": 1,
   "globalDeviceId": 78785,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"EXT-1"},
+      {"name":"RGB"},
+      {"name":"YCbCr"},
+      {"name":"F-AV"},
+      {"name":"SVHS"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Teac",
-  "model": "IS-DTVF32ST"
+  "model": "IS-DTVF32ST",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

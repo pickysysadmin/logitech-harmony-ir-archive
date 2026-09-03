@@ -2,6 +2,58 @@
   "codeset": "codesets/85/85f2bb67d98b8bd8.json",
   "deviceType": 21,
   "globalDeviceId": 156293,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TUNER"}],"name":"TUNER"},
+      {"commands":[{"set":"InputType","to":"AUX/CDR"}],"name":"AUX/CDR"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"CD 1"}],"name":"CD 1"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"CD 2"}],"name":"CD 2"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"CD 3"}],"name":"CD 3"},
+      {"commands":[{"set":"InputType","to":"TAPE"},{"set":"TAPEInput","to":"TAPE 1"}],"name":"TAPE 1"},
+      {"commands":[{"set":"InputType","to":"TAPE"},{"set":"TAPEInput","to":"TAPE 2"}],"name":"TAPE 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "FW-C330/22"
+  "model": "FW-C330/22",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CDInput": {
+      "next": ["InputCd"],
+      "values": [
+        {"name":"CD 1"},
+        {"name":"CD 2"},
+        {"name":"CD 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TUNER","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AUX/CDR","select":[{"commands":["InputAux/Cdr"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"TAPE","select":[{"commands":["InputTape1/2"],"setType":2}]}
+      ]
+    },
+    "TAPEInput": {
+      "next": ["InputTape1/2"],
+      "values": [
+        {"name":"TAPE 1"},
+        {"name":"TAPE 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

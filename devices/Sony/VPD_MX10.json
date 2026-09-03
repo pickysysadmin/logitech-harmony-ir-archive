@@ -2,6 +2,37 @@
   "codeset": "codesets/8d/8dba09308eb1a9db.json",
   "deviceType": 7,
   "globalDeviceId": 58979,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video 1"},
+      {"commands":["InputS-Video"],"name":"S-Video 1"},
+      {"commands":["InputA"],"name":"Input-A"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputS-Video2"],"name":"S-Video 2"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputComponent","InputNext"],"name":"Digital"},
+      {"commands":["InputComponent","InputNext","InputNext"],"name":"MS"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "VPD MX10"
+  "model": "VPD MX10",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"MS"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 13000,
+    "pressMinRepeats": 3
+  }
 }

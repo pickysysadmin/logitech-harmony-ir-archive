@@ -2,6 +2,50 @@
   "codeset": "codesets/b2/b2070d449f3caeb1.json",
   "deviceType": 22,
   "globalDeviceId": 259116,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"BD/DVD"}],"name":"BD/DVD"},
+      {"commands":[{"set":"InputType","to":"D.IN"}],"name":"D.IN"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"R.iPod"}],"name":"R.iPod"},
+      {"commands":[{"set":"InputType","to":"W.iPod"}],"name":"W.iPod"},
+      {"commands":[{"set":"InputType","to":"H.IN 1"}],"name":"H.IN 1"},
+      {"commands":[{"set":"InputType","to":"H.IN 2"}],"name":"H.IN 2"},
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-D5530K"
+  "model": "HT-D5530K",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "next": ["InputNext"],
+      "start": ["VolumeUp","VolumeDown"],
+      "values": [
+        {"name":"BD/DVD"},
+        {"name":"D.IN"},
+        {"name":"AUX"},
+        {"name":"R.iPod"},
+        {"name":"W.iPod"},
+        {"name":"H.IN 1"},
+        {"name":"H.IN 2"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 2
+  }
 }

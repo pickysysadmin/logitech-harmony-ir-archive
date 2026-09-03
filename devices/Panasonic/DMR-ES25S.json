@@ -1,7 +1,51 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e8/e8aaf81b538863a4.json",
   "deviceType": 34,
   "globalDeviceId": 167573,
+  "inputs": {
+    "list": [
+      {"name":"Line 1"},
+      {"name":"Line 2"},
+      {"name":"DVD"},
+      {"name":"Tuner"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-ES25S"
+  "model": "DMR-ES25S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "L": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Line1"},
+        {"name":"Line2"},
+        {"name":"TP"},
+        {"name":"Tuner"}
+      ]
+    },
+    "Mode": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVCR"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

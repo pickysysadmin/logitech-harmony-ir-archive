@@ -1,7 +1,72 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/ec/ecd9d5611b9c20c6.json",
   "deviceType": 34,
   "globalDeviceId": 179358,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"A-TV"}],"name":"A-TV"},
+      {"commands":[{"set":"InputType","to":"D-TV"}],"name":"D-TV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"FrontCVSB"}],"name":"FrontCVSB"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"FrontS-Video"}],"name":"FrontS-Video"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"RearCVSB"}],"name":"RearCVSB"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"RearS-Video"}],"name":"RearS-Video"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"DV"}],"name":"DV"},
+      {"commands":[{"set":"InputType","to":"File"},{"set":"FileInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"File"},{"set":"FileInput","to":"SDCard"}],"name":"SDCard"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Polaroid",
-  "model": "DRA-01601A"
+  "model": "DRA-01601A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FileInput": {
+      "next": ["File"],
+      "values": [
+        {"name":"USB"},
+        {"name":"SDCard"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"A-TV","select":[{"commands":["AnalogTv"],"setType":2}]},
+        {"name":"D-TV","select":[{"commands":["DigitalTV"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]},
+        {"name":"File","select":[{"commands":["File"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"A-TV"},
+        {"name":"D-TV"},
+        {"name":"FrontCVSB"},
+        {"name":"FrontS-Video"},
+        {"name":"RearCVSB"},
+        {"name":"RearS-Video"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

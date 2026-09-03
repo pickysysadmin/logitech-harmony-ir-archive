@@ -2,6 +2,54 @@
   "codeset": "codesets/98/98eb11f32c71ea0c.json",
   "deviceType": 22,
   "globalDeviceId": 121372,
+  "inputs": {
+    "list": [
+      {"commands":["AmFmToggle"],"name":"TUNER"},
+      {"commands":["InputCd/Dvd"],"name":"CD/DVD"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo1"],"name":"Video 1 OPT"},
+      {"commands":["InputVideo3"],"name":"Video 1 Coax"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo2"],"name":"Video 2 Opt"},
+      {"commands":["InputVideo4"],"name":"Video Coax"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "LH-T761"
+  "model": "LH-T761",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 1 OPT"},
+        {"name":"Video 1 Coax"},
+        {"name":"Video 2"},
+        {"name":"Video 2 Opt"},
+        {"name":"Video Coax"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TUNER","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,60 @@
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 73762,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"AV4"},
+      {"name":"AV5"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "M82-169"
+  "model": "M82-169",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["0"],
+    "type": "discrete"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["0"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"AV4"},
+        {"name":"AV5"}
+      ]
+    },
+    "AVmodeInput": {
+      "next": ["0"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"AV4"},
+        {"name":"AV5"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["1"],"setType":2}]},
+        {"name":"AVmode","select":[{"commands":["0"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

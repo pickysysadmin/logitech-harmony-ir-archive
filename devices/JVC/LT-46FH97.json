@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 158476,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital 1"}],"name":"Digital 1"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital 2"}],"name":"Digital 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "LT-46FH97"
+  "model": "LT-46FH97",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInnInput": {
+      "next": ["InputDigital In"],
+      "values": [
+        {"name":"Digital1"},
+        {"name":"Digital2"}
+      ]
+    },
+    "DigitalInput": {
+      "next": ["InputDigital In"],
+      "values": [
+        {"name":"Digital 1"},
+        {"name":"Digital 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDigital In",{"set":"DigitalInput","to":"Digital 1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

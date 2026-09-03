@@ -2,6 +2,46 @@
   "codeset": "codesets/4f/4f975fae1094e0d1.json",
   "deviceType": 22,
   "globalDeviceId": 107234,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"CD/DVD"}],"name":"CD/DVD"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX 1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX 2"}],"name":"AUX 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Nikkei",
-  "model": "NHTS-300"
+  "model": "NHTS-300",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAUX"],
+      "values": [
+        {"name":"AUX 1"},
+        {"name":"AUX 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD/DVD","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAUX"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

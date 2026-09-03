@@ -2,6 +2,33 @@
   "codeset": "codesets/81/81b556385d1a3a94.json",
   "deviceType": 7,
   "globalDeviceId": 259720,
+  "inputs": {
+    "list": [
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"}
+    ],
+    "next": ["Input"],
+    "type": 2
+  },
   "manufacturer": "JVC",
-  "model": "DLA-RS57"
+  "model": "DLA-RS57",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1500},
+      {"delayMs":2000},
+      {"command":"PowerOff","durationMs":1500}
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

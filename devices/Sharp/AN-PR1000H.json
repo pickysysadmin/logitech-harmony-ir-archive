@@ -2,6 +2,51 @@
   "codeset": "codesets/79/79e54ef16523a96b.json",
   "deviceType": 5,
   "globalDeviceId": 176833,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Digital 1"}],"name":"Digital 1"},
+      {"commands":[{"set":"InputType","to":"Digital 2"}],"name":"Digital 2"},
+      {"commands":[{"set":"InputType","to":"Digital 3"}],"name":"Digital 3"},
+      {"commands":[{"set":"InputType","to":"LINE"},{"set":"LINEInput","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"LINE"},{"set":"LINEInput","to":"Line 2"}],"name":"Line 2"},
+      {"commands":[{"set":"InputType","to":"LINE"},{"set":"LINEInput","to":"Line 3"}],"name":"Line 3"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "AN-PR1000H"
+  "model": "AN-PR1000H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Digital 1","select":[{"commands":["InputDigital1"],"setType":1}]},
+        {"name":"Digital 2","select":[{"commands":["InputDigital2"],"setType":1}]},
+        {"name":"Digital 3","select":[{"commands":["InputDigital3"],"setType":1}]},
+        {"name":"LINE","select":[{"commands":["InputLine"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    },
+    "LINEInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"Line 1"},
+        {"name":"Line 2"},
+        {"name":"Line 3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

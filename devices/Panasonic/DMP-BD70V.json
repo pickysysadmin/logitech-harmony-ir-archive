@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3,
+    "start": ["NumberEnter"]
+  },
   "codeset": "codesets/e3/e31c1e671adb47f1.json",
   "deviceType": 25,
   "globalDeviceId": 177981,
+  "inputs": {
+    "canSkip": true,
+    "finish": ["OK"],
+    "list": [
+      {"name":"BD/DVD/CD"},
+      {"name":"SD"},
+      {"name":"USB"},
+      {"name":"VHS"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["DriveSelect"],
+    "type": 4
+  },
   "manufacturer": "Panasonic",
-  "model": "DMP-BD70V"
+  "model": "DMP-BD70V",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"BD/DVD/CD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

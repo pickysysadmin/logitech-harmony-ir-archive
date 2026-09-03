@@ -2,6 +2,42 @@
   "codeset": "codesets/c7/c7ff144431926511.json",
   "deviceType": 1,
   "globalDeviceId": 179780,
+  "inputs": {
+    "list": [
+      {"name":"Tv"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"Video3"},
+      {"name":"Video4"},
+      {"name":"Pc"},
+      {"name":"Hdmi1"},
+      {"name":"Hdmi2"},
+      {"name":"Hdmi3"},
+      {"name":"Hdmi4"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-P50V11S"
+  "model": "TH-P50V11S",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

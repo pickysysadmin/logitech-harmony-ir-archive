@@ -2,6 +2,54 @@
   "codeset": "codesets/89/8953d95cd817cea8.json",
   "deviceType": 7,
   "globalDeviceId": 142967,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer1"}],"name":"Computer1"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer2"}],"name":"Computer2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "ED-A100"
+  "model": "ED-A100",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "ComputerInput": {
+      "next": ["Computer"],
+      "values": [
+        {"name":"Computer1"},
+        {"name":"Computer2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["Video",{"set":"VideoInput","to":"Component"}],"setType":2}]},
+        {"name":"Computer","select":[{"commands":["Computer",{"set":"ComputerInput","to":"Computer1"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Video"],
+      "values": [
+        {"name":"Component"},
+        {"name":"S-Video"},
+        {"name":"Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,53 @@
   "codeset": "codesets/c0/c0f7c31198088f0a.json",
   "deviceType": 7,
   "globalDeviceId": 3872,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGBType"},{"set":"RGBInput","to":"RGBInput1"}],"name":"RGB1"},
+      {"commands":[{"set":"InputType","to":"RGBType"},{"set":"RGBInput","to":"RGBInput2"}],"name":"RGB2"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoInput","to":"VideoInput1"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoInput","to":"VideoInput2"}],"name":"S-Video"}
+    ],
+    "start": ["InputNext"],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-L720U"
+  "model": "PT-L720U",
+  "power": {
+    "off": ["PowerToggle","Select"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"RGBType","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"VideoType","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["InputRgb"],
+      "values": [
+        {"name":"RGBInput1"},
+        {"name":"RGBInput2"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"VideoInput1"},
+        {"name":"VideoInput2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

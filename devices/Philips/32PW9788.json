@@ -2,6 +2,34 @@
   "codeset": "codesets/a2/a2b78730ec208857.json",
   "deviceType": 1,
   "globalDeviceId": 58446,
+  "inputs": {
+    "list": [
+      {"commands":["ChannelDown"],"name":"TV"},
+      {"commands":["ChannelDown"],"name":"EXT 1"},
+      {"commands":["ChannelDown","ChannelDown"],"name":"EXT 2"},
+      {"commands":["ChannelDown","ChannelDown","ChannelDown"],"name":"EXT 3"},
+      {"commands":["ChannelUp"],"name":"Front"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "32PW9788"
+  "model": "32PW9788",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 13000,
+    "pressMinRepeats": 3
+  }
 }

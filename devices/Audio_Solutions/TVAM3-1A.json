@@ -2,6 +2,44 @@
   "codeset": "codesets/41/4153d7aa4a17ee49.json",
   "deviceType": 19,
   "globalDeviceId": 260316,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Opt/Coax"},{"set":"Opt/CoaxInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Opt/Coax"},{"set":"Opt/CoaxInput","to":"Coaxial"}],"name":"Coaxial"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Audio Solutions",
-  "model": "TVAM3-1A"
+  "model": "TVAM3-1A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Opt/Coax","select":[{"commands":["InputOpt/Coax"],"setType":2}]}
+      ]
+    },
+    "Opt/CoaxInput": {
+      "next": ["InputOpt/Coax"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"Coaxial"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

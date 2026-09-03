@@ -2,6 +2,31 @@
   "codeset": "codesets/ff/ffd160e82a24d7c0.json",
   "deviceType": 7,
   "globalDeviceId": 24611,
+  "inputs": {
+    "list": [
+      {"commands":["InputComp1"],"name":"Comp 1","ports":["Component"]},
+      {"commands":["InputComp2"],"name":"Comp 2","ports":["Component"]},
+      {"commands":["InputEasyMP"],"name":"EasyMP","ports":["Others"]},
+      {"commands":["InputSVideo"],"name":"SVideo","ports":["S-Video"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "EMP-835"
+  "model": "EMP-835",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 90605,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext"],"name":"av 1"},
+      {"commands":["InputNext"],"name":"av2"},
+      {"commands":["InputNext"],"name":"av3"},
+      {"commands":["InputNext"],"name":"dvd"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "WS-32Z4HF"
+  "model": "WS-32Z4HF",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputAntenna"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext",{"set":"VideoInput","to":"Ext 1"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Ext 1"},
+        {"name":"Ext 2"},
+        {"name":"Ext 3"},
+        {"name":"Komp"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

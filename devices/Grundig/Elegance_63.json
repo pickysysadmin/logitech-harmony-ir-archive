@@ -2,6 +2,34 @@
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 137997,
+  "inputs": {
+    "list": [
+      {"name":"VCR1"},
+      {"name":"DVD"},
+      {"name":"CAM"},
+      {"name":"TV"}
+    ],
+    "next": ["InputNext"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Grundig",
-  "model": "Elegance 63"
+  "model": "Elegance 63",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

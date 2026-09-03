@@ -2,6 +2,41 @@
   "codeset": "codesets/72/72d7c7c6ff963d70.json",
   "deviceType": 34,
   "globalDeviceId": 169194,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputHdd"],"name":"HDD"},
+      {"commands":["InputUSB"],"name":"USB"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "DVD-SH876"
+  "model": "DVD-SH876",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"PROG"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV 3"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

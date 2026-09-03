@@ -2,6 +2,38 @@
   "codeset": "codesets/09/09a678264f95356f.json",
   "deviceType": 1,
   "globalDeviceId": 144016,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Scart1"},
+      {"name":"Scart2"},
+      {"name":"TV"},
+      {"name":"VCR"},
+      {"name":"SVHS"},
+      {"name":"RGB"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["0"],
+    "type": 4
+  },
   "manufacturer": "Arena",
-  "model": "CT70-50"
+  "model": "CT70-50",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 3
+  }
 }

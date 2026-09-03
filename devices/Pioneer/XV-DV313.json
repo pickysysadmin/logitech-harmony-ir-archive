@@ -2,6 +2,56 @@
   "codeset": "codesets/d9/d98d97bfcfc50e7b.json",
   "deviceType": 22,
   "globalDeviceId": 132260,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line 1"}],"name":"Line 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line 2"}],"name":"Line 2","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "XV-DV313"
+  "model": "XV-DV313",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputLine"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"Line 1"},
+        {"name":"Line 2"}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/4f/4f1cc084ab18cb7e.json",
   "deviceType": 1,
   "globalDeviceId": 98424,
+  "inputs": {
+    "list": [
+      {"commands":["InputVGA"],"name":"VGA"},
+      {"commands":["InputDVI"],"name":"DVI"},
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["InputComponent2"],"name":"Component 2"},
+      {"commands":["InputAv1"],"name":"AV 1"},
+      {"commands":["InputAv2"],"name":"AV 2"},
+      {"commands":["InputTV"],"name":"TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NuVision",
-  "model": "NVX-47HDUM"
+  "model": "NVX-47HDUM",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

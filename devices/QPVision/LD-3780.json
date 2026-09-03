@@ -1,7 +1,52 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b2/b27b1c4b30753ad2.json",
   "deviceType": 1,
   "globalDeviceId": 147967,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"DTV"},
+      {"name":"SCART1"},
+      {"name":"SCART2"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"DVI"},
+      {"name":"PC"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["InputTv","StartInput"],
+    "type": 4
+  },
   "manufacturer": "QPVision",
-  "model": "LD-3780"
+  "model": "LD-3780",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"SCART1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,40 @@
   "codeset": "codesets/0d/0d2b9607cb441ca5.json",
   "deviceType": 7,
   "globalDeviceId": 495507,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV"},
+      {"name":"VGA"},
+      {"name":"USB1"},
+      {"name":"USB2"},
+      {"name":"HDMI1"},
+      {"name":"HDMI2"},
+      {"name":"YPbPr"}
+    ],
+    "next": ["Source"],
+    "type": 2
+  },
   "manufacturer": "Excelvan",
-  "model": "BL-59"
+  "model": "BL-59",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

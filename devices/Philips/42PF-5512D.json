@@ -2,6 +2,39 @@
   "codeset": "codesets/43/4367ccd2caf1d401.json",
   "deviceType": 1,
   "globalDeviceId": 129640,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Ext1"},
+      {"name":"Ext2"},
+      {"name":"Ext3"},
+      {"name":"HDMI1"},
+      {"name":"HDMI2"},
+      {"name":"VGA"},
+      {"name":"SIDE"},
+      {"name":"AV3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "42PF-5512D"
+  "model": "42PF-5512D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"AV3"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 3
+  }
 }

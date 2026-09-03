@@ -2,6 +2,52 @@
   "codeset": "codesets/fd/fde8fee3583c3f65.json",
   "deviceType": 5,
   "globalDeviceId": 3963,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tape2"}],"name":"Tape2"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Tape1"}],"name":"Tape1"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Phono"}],"name":"Phono"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Kenwood",
-  "model": "KR-V6080"
+  "model": "KR-V6080",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Tape1"},
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"CD"},
+        {"name":"Phono"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tape2","select":[{"commands":["InputTape2"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,66 @@
   "codeset": "codesets/97/97897c1da1c7a9b4.json",
   "deviceType": 22,
   "globalDeviceId": 173669,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType ","to":"iPod"},{"set":"iPodInput","to":"RemoteiPod"}],"name":"RemoteiPod"},
+      {"commands":[{"set":"InputType ","to":"iPod"},{"set":"iPodInput","to":"OSDiPod"}],"name":"OSDiPod"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Portable"}],"name":"Portable"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Coaxial"}],"name":"Coaxial"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HB954PA"
+  "model": "HB954PA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"AUX"},
+        {"name":"Portable"},
+        {"name":"Optical"},
+        {"name":"Coaxial"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["Menu"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["iPod"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    },
+    "iPodInput": {
+      "next": ["iPod"],
+      "values": [
+        {"name":"RemoteiPod"},
+        {"name":"OSDiPod"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

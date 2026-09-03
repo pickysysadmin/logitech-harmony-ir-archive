@@ -2,6 +2,43 @@
   "codeset": "codesets/50/50708251bfaa4b6b.json",
   "deviceType": 25,
   "globalDeviceId": 117705,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputVcr"],"name":"VIDEO"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "RDR-VX-50"
+  "model": "RDR-VX-50",
+  "power": {
+    "type": "toggle"
+  },
+  "states": {
+    "DVDs": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"ANT/TV"},
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"DVD1"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

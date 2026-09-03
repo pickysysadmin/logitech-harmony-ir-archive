@@ -2,6 +2,59 @@
   "codeset": "codesets/8a/8aa2a505003f3e05.json",
   "deviceType": 13,
   "globalDeviceId": 102239,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"S-VIDEO"}],"name":"S-VIDEO"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"YPBPR"},{"set":"YPBPRInput","to":"YPBPR1"}],"name":"YPBPR1"},
+      {"commands":[{"set":"InputType","to":"YPBPR"},{"set":"YPBPRInput","to":"YPBPR2"}],"name":"YPBPR2"},
+      {"commands":[{"set":"InputType","to":"DVI/HDMI"},{"set":"DVI/HDMIInput","to":"DVI1"}],"name":"DVI1"},
+      {"commands":[{"set":"InputType","to":"DVI/HDMI"},{"set":"DVI/HDMIInput","to":"DVI2"}],"name":"DVI2"},
+      {"commands":[{"set":"InputType","to":"DVI/HDMI"},{"set":"DVI/HDMIInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Westinghouse",
-  "model": "LVM-42W42"
+  "model": "LVM-42W42",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVI/HDMIInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"DVI1"},
+        {"name":"DVI2"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"S-VIDEO","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"YPBPR","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"DVI/HDMI","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "YPBPRInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"YPBPR1"},
+        {"name":"YPBPR2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ca/ca785ed14e8a0261.json",
   "deviceType": 1,
   "globalDeviceId": 136171,
+  "inputs": {
+    "list": [
+      {"commands":["0"],"name":"AntennaCable"},
+      {"commands":["1"],"name":"AV1"},
+      {"commands":["2"],"name":"AV2"},
+      {"commands":["3"],"name":"AV2-S"},
+      {"commands":["4"],"name":"AV3"},
+      {"commands":["5"],"name":"AV4"},
+      {"commands":["Blue"],"name":"card"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Lenco",
-  "model": "DVT-1901"
+  "model": "DVT-1901",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Green"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

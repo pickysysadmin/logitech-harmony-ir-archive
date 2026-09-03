@@ -2,6 +2,56 @@
   "codeset": "codesets/67/67b2d3fcae1b4d9b.json",
   "deviceType": 5,
   "globalDeviceId": 94916,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/VDP"}],"name":"DVD/VDP"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"CDR/Tape"}],"name":"CDR/Tape"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"V-Aux"}],"name":"V-Aux"},
+      {"commands":[{"set":"InputType","to":"TV/DBS"}],"name":"TV/DBS"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Denon",
-  "model": "AVR-1702"
+  "model": "AVR-1702",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD/VDP","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCD"],"setType":2}]},
+        {"name":"CDR/Tape","select":[{"commands":["InputTape1"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr1"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputV-Aux"],"setType":2}]},
+        {"name":"V-Aux","select":[{"commands":["InputV-Aux"],"setType":2}]},
+        {"name":"TV/DBS","select":[{"commands":["InputTV"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

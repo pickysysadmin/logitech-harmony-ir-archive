@@ -1,7 +1,72 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/49/4989cd436dcc702f.json",
   "deviceType": 1,
   "globalDeviceId": 111822,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Comp1"}],"name":"Comp1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Comp2"}],"name":"Comp2"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC/Vga"}],"name":"PC/Vga"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC/Dvi"}],"name":"PC/Dvi"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "AL-2671"
+  "model": "AL-2671",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    },
+    "ComponentInput": {
+      "next": ["InputSat"],
+      "values": [
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputSat"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"PC/Vga"},
+        {"name":"PC/Dvi"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

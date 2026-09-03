@@ -2,6 +2,56 @@
   "codeset": "codesets/29/293f373129a9dfbc.json",
   "deviceType": 5,
   "globalDeviceId": 160161,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Cambridge Audio",
-  "model": "Azur 540R-B"
+  "model": "Azur 540R-B",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1300}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "FM/AMInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape/MD/CDR"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd/Aux"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"FM/AM","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4500,
+    "pressMinRepeats": 1
+  }
 }

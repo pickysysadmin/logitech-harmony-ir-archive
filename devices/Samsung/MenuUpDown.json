@@ -2,6 +2,36 @@
   "codeset": "codesets/75/75a50646849662be.json",
   "deviceType": 1,
   "globalDeviceId": 230850,
+  "inputs": {
+    "finish": ["DirectionRight"],
+    "list": [
+      {"name":"Antenna A"},
+      {"name":"Antenna B"},
+      {"name":"AM"}
+    ],
+    "next": ["ChannelUp"],
+    "previous": ["DirectionDown"],
+    "start": ["ChannelDown"],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "MenuUpDown"
+  "model": "MenuUpDown",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaB"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

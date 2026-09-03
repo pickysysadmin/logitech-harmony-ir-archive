@@ -2,6 +2,34 @@
   "codeset": "codesets/b5/b512355ebdbb25b8.json",
   "deviceType": 7,
   "globalDeviceId": 167068,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputPc"],"name":"Computer"},
+      {"commands":["InputDVI"],"name":"DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hitachi",
-  "model": "PJ-TX100"
+  "model": "PJ-TX100",
+  "power": {
+    "off": ["PowerOff","PowerOff"],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 31000,
+    "pressMinRepeats": 1
+  }
 }

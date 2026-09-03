@@ -2,6 +2,63 @@
   "codeset": "codesets/81/8183f9a2559df968.json",
   "deviceType": 5,
   "globalDeviceId": 178382,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"DVD/LD"}],"name":"DVD/LD"},
+      {"commands":[{"set":"InputType","to":"TV/SAT"}],"name":"TV/SAT"},
+      {"commands":[{"set":"InputType","to":"MD/DAT"}],"name":"MD/DAT"},
+      {"commands":[{"set":"InputType","to":"CD/SACD"}],"name":"CD/SACD"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"MultiChannel"},{"set":"MultiChannelInput","to":"MultiCh1"}],"name":"MultiCh1"},
+      {"commands":[{"set":"InputType","to":"MultiChannel"},{"set":"MultiChannelInput","to":"MultiCh2"}],"name":"MultiCh2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "STR-DE985"
+  "model": "STR-DE985",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"DVD/LD","select":[{"commands":["InputDvd/Ld"],"setType":2}]},
+        {"name":"TV/SAT","select":[{"commands":["InputTv/Sat"],"setType":2}]},
+        {"name":"MD/DAT","select":[{"commands":["InputMd/Dat"],"setType":2}]},
+        {"name":"CD/SACD","select":[{"commands":["InputCd/Sacd"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Phono","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"MultiChannel","select":[{"commands":["InputMultiCh"],"setType":2}]}
+      ]
+    },
+    "MultiChannelInput": {
+      "next": ["InputMultiCh"],
+      "values": [
+        {"name":"MultiCh1"},
+        {"name":"MultiCh2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,66 @@
   "codeset": "codesets/ff/ff4205b8cc39b497.json",
   "deviceType": 5,
   "globalDeviceId": 248625,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Coaxial1"}],"name":"Coaxial 1"},
+      {"commands":[{"set":"InputType","to":"Coaxial2"}],"name":"Coaxial 2"},
+      {"commands":[{"set":"InputType","to":"AUX1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"AUX2/3"},{"set":"AuxInput","to":"AUX2"}],"name":"AUX 2"},
+      {"commands":[{"set":"InputType","to":"AUX2/3"},{"set":"AuxInput","to":"AUX3"}],"name":"AUX 3"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"TunerInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teufel",
-  "model": "DecoderStation 7"
+  "model": "DecoderStation 7",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux2/3"],
+      "values": [
+        {"name":"AUX2"},
+        {"name":"AUX3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"Coaxial1","select":[{"commands":["InputCoax1"],"setType":2}]},
+        {"name":"Coaxial2","select":[{"commands":["InputCoax2"],"setType":2}]},
+        {"name":"AUX1","select":[{"commands":["InputAux1"],"setType":2}]},
+        {"name":"AUX2/3","select":[{"commands":["InputAux2/3"],"setType":2}]},
+        {"name":"FM/AM","select":[{"commands":["InputFm/Am"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputFm/Am"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

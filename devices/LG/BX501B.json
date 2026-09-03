@@ -2,6 +2,40 @@
   "codeset": "codesets/22/227b36513ef2e719.json",
   "deviceType": 7,
   "globalDeviceId": 333936,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"RGB 1"},
+      {"name":"RGB 2"},
+      {"name":"HDMI"},
+      {"name":"Video"},
+      {"name":"S-Video"}
+    ],
+    "next": ["DirectionRight"],
+    "previous": ["DirectionLeft"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "LG",
-  "model": "BX501B"
+  "model": "BX501B",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

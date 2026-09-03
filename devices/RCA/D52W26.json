@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/9b/9bd79ef1d8701abc.json",
   "deviceType": 1,
   "globalDeviceId": 166120,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VID 1"}],"name":"VID 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VID 2"}],"name":"VID 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"FRNT"}],"name":"FRNT"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CMP 1"}],"name":"CMP 1"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "D52W26"
+  "model": "D52W26",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["ChannelUp"],
+      "values": [
+        {"name":"Antenna"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["ChannelUp"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VID 1"},
+        {"name":"VID 2"},
+        {"name":"FRNT"},
+        {"name":"CMP 1"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

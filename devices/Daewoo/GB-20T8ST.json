@@ -2,6 +2,35 @@
   "codeset": "codesets/2f/2faf1eb0a0d53c8f.json",
   "deviceType": 1,
   "globalDeviceId": 115338,
+  "inputs": {
+    "list": [
+      {"name":"Tuner A"},
+      {"name":"Tuner B"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Daewoo",
-  "model": "GB-20T8ST"
+  "model": "GB-20T8ST",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Tuner A"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

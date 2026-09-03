@@ -2,6 +2,64 @@
   "codeset": "codesets/9e/9e7746b585dc2750.json",
   "deviceType": 22,
   "globalDeviceId": 226914,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"iPod/USB"},{"set":"iPod/USBInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"iPod/USB"},{"set":"iPod/USBInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX 1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX 2"}],"name":"AUX 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teac",
-  "model": "DR-H358i"
+  "model": "DR-H358i",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX 1"},
+        {"name":"AUX 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"iPod/USB","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "iPod/USBInput": {
+      "next": ["InputiPod"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"USB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

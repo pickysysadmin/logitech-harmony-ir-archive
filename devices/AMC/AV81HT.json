@@ -2,6 +2,34 @@
   "codeset": "codesets/0a/0ad101a5679edf98.json",
   "deviceType": 19,
   "globalDeviceId": 65789,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputTape"],"name":"Tape1"},
+      {"commands":["InputTape2"],"name":"Tape2"},
+      {"commands":["InputLaserdisc"],"name":"LD"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputVcr"],"name":"VCR1"},
+      {"commands":["InputVcr2"],"name":"VCR2"},
+      {"commands":[{"delayMs":1000},"Input6CH"],"name":"Dolby Digital"}
+    ],
+    "type": 1
+  },
   "manufacturer": "AMC",
-  "model": "AV81HT"
+  "model": "AV81HT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,61 @@
   "codeset": "codesets/a9/a9bae959ee892b24.json",
   "deviceType": 5,
   "globalDeviceId": 167148,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"FM/AM"}],"name":"FM/AM"},
+      {"commands":[{"set":"InputType","to":"XM"}],"name":"XM"},
+      {"commands":[{"set":"InputType","to":"SIRIUS"}],"name":"SIRIUS"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Digital 1"}],"name":"Digital 1"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Digital 2"}],"name":"Digital 2"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Front Audio In"}],"name":"Front Audio In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "HTS-LX70"
+  "model": "HTS-LX70",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"FM/AM","select":[{"commands":["FM/AM"],"setType":2}]},
+        {"name":"XM","select":[{"commands":["InputXm"],"setType":2}]},
+        {"name":"SIRIUS","select":[{"commands":["InputSirius"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputLine"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"Digital 1"},
+        {"name":"Digital 2"},
+        {"name":"Analog"},
+        {"name":"iPod"},
+        {"name":"Front Audio In"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

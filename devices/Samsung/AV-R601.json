@@ -2,6 +2,50 @@
   "codeset": "codesets/67/670f5262f7021fed.json",
   "deviceType": 5,
   "globalDeviceId": 73196,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Aux 1"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Aux 2"}],"name":"Aux 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Digital 1"}],"name":"Digital 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Digital 2"}],"name":"Digital 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "AV-R601"
+  "model": "AV-R601",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"},
+        {"name":"Digital 1"},
+        {"name":"Digital 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 700,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4500,
+    "pressMinRepeats": 1
+  }
 }

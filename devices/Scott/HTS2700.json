@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b7/b7c5179a5f262c27.json",
   "deviceType": 1,
   "globalDeviceId": 71049,
+  "inputs": {
+    "list": [
+      {"name":"CableTV"},
+      {"name":"V1"},
+      {"name":"V2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Scott",
-  "model": "HTS2700"
+  "model": "HTS2700",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"V2"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

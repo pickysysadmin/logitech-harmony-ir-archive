@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/88/887ea1031a42aa19.json",
   "deviceType": 1,
   "globalDeviceId": 87630,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"Foxtel"},
+      {"name":"DVD Player"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Konka",
-  "model": "KP-2992EXT1"
+  "model": "KP-2992EXT1",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

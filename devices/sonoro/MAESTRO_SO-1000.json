@@ -2,6 +2,58 @@
   "codeset": "codesets/43/43857335e4774690.json",
   "deviceType": 21,
   "globalDeviceId": 500352,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"Internet Radio"}],"name":"Internet Radio"},
+      {"commands":[{"set":"InputType","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"My Music"}],"name":"My Music"},
+      {"commands":[{"set":"InputType","to":"Aux1/2"},{"set":"Aux1/2Input","to":"Aux 1"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"Aux1/2"},{"set":"Aux1/2Input","to":"Aux 2"}],"name":"Aux 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "sonoro",
-  "model": "MAESTRO SO-1000"
+  "model": "MAESTRO SO-1000",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux1/2Input": {
+      "next": ["InputAux1/2"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"FM","select":[{"commands":["InputFm"],"setType":1}]},
+        {"name":"DAB","select":[{"commands":["InputDab"],"setType":1}]},
+        {"name":"Internet Radio","select":[{"commands":["InputInternetRadio"],"setType":1}]},
+        {"name":"Phono","select":[{"commands":["InputPhono"],"setType":1}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":1}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":1}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"My Music","select":[{"commands":["InputMyMusic"],"setType":1}]},
+        {"name":"Aux1/2","select":[{"commands":["InputAux1/2"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

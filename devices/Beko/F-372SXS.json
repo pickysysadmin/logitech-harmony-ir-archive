@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ca/ca785ed14e8a0261.json",
   "deviceType": 1,
   "globalDeviceId": 122179,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Av1"},
+      {"name":"av2"},
+      {"name":"AntennaCable"}
+    ],
+    "next": ["InputNext"],
+    "start": [
+      {"set":"Input","to":"Av1"},
+      "Select"
+    ],
+    "type": 4
+  },
   "manufacturer": "Beko",
-  "model": "F-372SXS"
+  "model": "F-372SXS",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

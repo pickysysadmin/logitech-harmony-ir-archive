@@ -2,6 +2,92 @@
   "codeset": "codesets/2f/2f137444e7a153ce.json",
   "deviceType": 30,
   "globalDeviceId": 55275,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"Tv-Vcr"}],"name":"TV- VCR"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"Tv-Dvd"}],"name":"TV- DVD"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"Tv-Sat1"}],"name":"TV- Sat1"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"Tv-Sat2"}],"name":"TV- Sat2"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"Tv-Terra"}],"name":"TV- Terra"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"Tv-Cam"}],"name":"TV- Camera"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"Tv-Game"}],"name":"TV- Game"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VcrInput","to":"Vcr-Tv"}],"name":"VCR- TV"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VcrInput","to":"Vcr-Dvd"}],"name":"VCR- DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VcrInput","to":"Vcr-Sat1"}],"name":"VCR- Sat1"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VcrInput","to":"Vcr-Sat2"}],"name":"VCR- Sat2"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VcrInput","to":"Vcr-Terra"}],"name":"VCR- Terra"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VcrInput","to":"Vcr-Cam"}],"name":"VCR- Camera"},
+      {"commands":[{"set":"InputType","to":"MOD"},{"set":"ModInput","to":"Mod-Tv"}],"name":"MOD- TV"},
+      {"commands":[{"set":"InputType","to":"MOD"},{"set":"ModInput","to":"Mod-Vcr"}],"name":"MOD- VCR"},
+      {"commands":[{"set":"InputType","to":"MOD"},{"set":"ModInput","to":"Mod-Dvd"}],"name":"MOD- DVD"},
+      {"commands":[{"set":"InputType","to":"MOD"},{"set":"ModInput","to":"Mod-Sat1"}],"name":"MOD- Sat1"},
+      {"commands":[{"set":"InputType","to":"MOD"},{"set":"ModInput","to":"Mod-Sat2"}],"name":"MOD- Sat2"},
+      {"commands":[{"set":"InputType","to":"MOD"},{"set":"ModInput","to":"Mod-Terra"}],"name":"MOD- Terra"},
+      {"commands":[{"set":"InputType","to":"MOD"},{"set":"ModInput","to":"Mod-Cam"}],"name":"MOD- Camera"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Holdan",
-  "model": "HSR-1000"
+  "model": "HSR-1000",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TvDown"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["VcrDown"],"setType":2}]},
+        {"name":"MOD","select":[{"commands":["ModulatorDown"],"setType":2}]}
+      ]
+    },
+    "ModInput": {
+      "finish": ["Select"],
+      "next": ["ModulatorDown"],
+      "values": [
+        {"name":"Mod-Tv"},
+        {"name":"Mod-Vcr"},
+        {"name":"Mod-Dvd"},
+        {"name":"Mod-Sat1"},
+        {"name":"Mod-Sat2"},
+        {"name":"Mod-Terra"},
+        {"name":"Mod-Cam"}
+      ]
+    },
+    "TvInput": {
+      "finish": ["Select"],
+      "next": ["TvDown"],
+      "values": [
+        {"name":"Tv-Vcr"},
+        {"name":"Tv-Dvd"},
+        {"name":"Tv-Sat1"},
+        {"name":"Tv-Sat2"},
+        {"name":"Tv-Terra"},
+        {"name":"Tv-Cam"},
+        {"name":"Tv-Game"}
+      ]
+    },
+    "VcrInput": {
+      "finish": ["Select"],
+      "next": ["VcrDown"],
+      "values": [
+        {"name":"Vcr-Tv"},
+        {"name":"Vcr-Dvd"},
+        {"name":"Vcr-Sat1"},
+        {"name":"Vcr-Sat2"},
+        {"name":"Vcr-Terra"},
+        {"name":"Vcr-Cam"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

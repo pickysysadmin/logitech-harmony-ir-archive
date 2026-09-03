@@ -2,6 +2,72 @@
   "codeset": "codesets/12/121678f5ac247320.json",
   "deviceType": 22,
   "globalDeviceId": 163747,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Television"},{"set":"TelevisionInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Television"},{"set":"TelevisionInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OpticalInput","to":"OPT"}],"name":"OPT"},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OpticalInput","to":"COAX"}],"name":"COAX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Jamo",
-  "model": "DMR-61"
+  "model": "DMR-61",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputDvd"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Television","select":[{"commands":["InputTv",{"set":"TelevisionInput","to":"TV"}],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["AmFmToggle",{"set":"TunerInput","to":"FM"}],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDvd",{"set":"DigitalInput","to":"DVD"}],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical",{"set":"OpticalInput","to":"OPT"}],"setType":2}]}
+      ]
+    },
+    "OpticalInput": {
+      "next": ["InputOptical"],
+      "values": [
+        {"name":"OPT"},
+        {"name":"COAX"}
+      ]
+    },
+    "TelevisionInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AUX"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

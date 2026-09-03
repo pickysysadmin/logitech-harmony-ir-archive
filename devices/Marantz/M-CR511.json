@@ -2,6 +2,51 @@
   "codeset": "codesets/68/6885e0a86d96ab37.json",
   "deviceType": 33,
   "globalDeviceId": 278132,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InternetRadio"}],"name":"InternetRadio"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"MusicServer"}],"name":"MusicServer"},
+      {"commands":[{"set":"InputType","to":"FrontUSB"}],"name":"FrontUSB"},
+      {"commands":[{"set":"InputType","to":"RearUSB"}],"name":"RearUSB"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"OpticalIn"}],"name":"OpticalIn"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AnalogIn"}],"name":"AnalogIn"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Marantz",
-  "model": "M-CR511"
+  "model": "M-CR511",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"OpticalIn"},
+        {"name":"AnalogIn"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"InternetRadio","select":[{"commands":["InputInternetRadio"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"MusicServer","select":[{"commands":["InputMusicServer"],"setType":1}]},
+        {"name":"FrontUSB","select":[{"commands":["InputFrontUSB"],"setType":1}]},
+        {"name":"RearUSB","select":[{"commands":["InputRearUSB"],"setType":1}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

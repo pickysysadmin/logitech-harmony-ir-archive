@@ -1,7 +1,57 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 95298,
+  "inputs": {
+    "list": [
+      {"name":"front input"},
+      {"name":"hdmi"},
+      {"name":"tuner"},
+      {"name":"Input 1"},
+      {"name":"Input 2"},
+      {"name":"Input 3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "RCA",
-  "model": "HDLP50"
+  "model": "HDLP50",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Antenna A"},
+        {"name":"Antenna B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"Front","select":[{"commands":["InputFront"],"setType":1}]},
+        {"name":"Video 1","select":[{"commands":["InputS-Video"],"setType":1}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"Video 3","select":[{"commands":["InputSat/Cable"],"setType":1}]},
+        {"name":"Video 4","select":[{"commands":["InputVideo4"],"setType":1}]},
+        {"name":"Video 5","select":[{"commands":["InputRgb"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 900,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

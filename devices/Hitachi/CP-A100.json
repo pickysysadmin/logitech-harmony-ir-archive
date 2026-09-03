@@ -2,6 +2,57 @@
   "codeset": "codesets/96/966887ae3f7d16e9.json",
   "deviceType": 7,
   "globalDeviceId": 158724,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"BNC"}],"name":"BNC"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"M1-D"}],"name":"M1-D"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"RGB-VGA"}],"name":"RGB-VGA"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "CP-A100"
+  "model": "CP-A100",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "AnalogInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"S-Video"},
+        {"name":"Video"},
+        {"name":"Component"}
+      ]
+    },
+    "DigitalInput": {
+      "next": ["InputRGB"],
+      "values": [
+        {"name":"BNC"},
+        {"name":"M1-D"},
+        {"name":"RGB-VGA"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Analog","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputRGB"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 1
+  }
 }

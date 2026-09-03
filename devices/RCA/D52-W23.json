@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2b/2bcc0b8740ddb5c8.json",
   "deviceType": 1,
   "globalDeviceId": 166928,
+  "inputs": {
+    "list": [
+      {"name":"VID 1"},
+      {"name":"VID 2"},
+      {"name":"FRNT"},
+      {"name":"CMP 1"},
+      {"name":"DVI"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "RCA",
-  "model": "D52-W23"
+  "model": "D52-W23",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["ChannelUp"],
+      "values": [
+        {"name":"Antenna"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["ChannelUp"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VID 1"},
+        {"name":"VID 2"},
+        {"name":"FRNT"},
+        {"name":"CMP 1"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

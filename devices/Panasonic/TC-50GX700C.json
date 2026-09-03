@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/4d/4d5683d828c39f9c.json",
   "deviceType": 1,
   "globalDeviceId": 495242,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnt/CableIn"],"name":"ANT/Cable IN"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputVideo"],"name":"AV/Component"},
+      {"commands":["Apps"],"name":"Apps"},
+      {"commands":["Devices","Devices",{"delayMs":2000},{"command":"DirectionRight","durationMs":1500},"DirectionLeft","OK"],"name":"Screen Mirroring"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TC-50GX700C"
+  "model": "TC-50GX700C",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 10000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

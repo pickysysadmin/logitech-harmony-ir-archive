@@ -2,6 +2,31 @@
   "codeset": "codesets/66/664b615150a0e4b9.json",
   "deviceType": 7,
   "globalDeviceId": 1268,
+  "inputs": {
+    "list": [
+      {"commands":["InputRgb1"],"name":"Computer"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputSVideo"],"name":"S-Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "LT-150"
+  "model": "LT-150",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":3000}
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

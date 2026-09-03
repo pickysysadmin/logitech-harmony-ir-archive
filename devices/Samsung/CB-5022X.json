@@ -2,6 +2,31 @@
   "codeset": "codesets/95/950eb03f51bf18a8.json",
   "deviceType": 1,
   "globalDeviceId": 138514,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"AntennaCable"},
+      {"commands":["InputNext"],"name":"AV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "CB-5022X"
+  "model": "CB-5022X",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

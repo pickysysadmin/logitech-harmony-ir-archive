@@ -2,6 +2,48 @@
   "codeset": "codesets/c6/c675fd24d8657ce4.json",
   "deviceType": 33,
   "globalDeviceId": 336276,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Wireless/Ethernet"},{"set":"Wireless/EthernetInput","to":"Wireless"}],"name":"Wireless"},
+      {"commands":[{"set":"InputType","to":"Wireless/Ethernet"},{"set":"Wireless/EthernetInput","to":"Ethernet"}],"name":"Ethernet"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Martin Logan",
-  "model": "Crescendo"
+  "model": "Crescendo",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Wireless/Ethernet","select":[{"commands":["InputWireless/Ethernet"],"setType":2}]}
+      ]
+    },
+    "Wireless/EthernetInput": {
+      "next": ["InputWireless/Ethernet"],
+      "values": [
+        {"name":"Wireless"},
+        {"name":"Ethernet"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

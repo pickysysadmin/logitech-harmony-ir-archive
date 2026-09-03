@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/e4/e4dabfec2359b7a7.json",
   "deviceType": 1,
   "globalDeviceId": 265838,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv","Exit","DirectionRight","Select",{"delayMs":2500},"Exit","Exit","InputTv"],"name":"TV"},
+      {"commands":["InputAv1","Exit","DirectionRight","Select",{"delayMs":2500},"Exit","Exit","InputAv1"],"name":"AV"},
+      {"commands":["InputComponent","Exit","DirectionRight","Select",{"delayMs":2500},"Exit","Exit","InputComponent"],"name":"Component"},
+      {"commands":["InputHdmi1","Exit","DirectionRight","Select",{"delayMs":2500},"Exit","Exit","InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2","Exit","DirectionRight","Select",{"delayMs":2500},"Exit","Exit","InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3","Exit","DirectionRight","Select",{"delayMs":2500},"Exit","Exit","InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["Exit",{"delayMs":1000},"Exit",{"delayMs":2000},"SmartHub",{"delayMs":1000},"Select"],"name":"Smart Hub"},
+      {"commands":["Ambient"],"name":"Ambient"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UA40H5500AK"
+  "model": "UA40H5500AK",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

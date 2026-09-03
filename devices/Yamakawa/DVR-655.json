@@ -2,6 +2,34 @@
   "codeset": "codesets/50/50e7a78f689a018d.json",
   "deviceType": 34,
   "globalDeviceId": 129379,
+  "inputs": {
+    "list": [
+      {"name":"HDD"},
+      {"name":"DVD"},
+      {"name":"DV/USB"},
+      {"name":"Monitor"}
+    ],
+    "next": ["Menu"],
+    "type": 2
+  },
   "manufacturer": "Yamakawa",
-  "model": "DVR-655"
+  "model": "DVR-655",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Monitor"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,39 @@
   "codeset": "codesets/c4/c478b5c9b077bd5c.json",
   "deviceType": 47,
   "globalDeviceId": 117013,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputHDD"],"name":"HDD"},
+      {"commands":["InputVCR"],"name":"VCR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Toshiba",
-  "model": "RD-XV45KF"
+  "model": "RD-XV45KF",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Line"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV 3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

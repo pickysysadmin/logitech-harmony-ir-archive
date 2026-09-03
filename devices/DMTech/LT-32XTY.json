@@ -2,6 +2,42 @@
   "codeset": "codesets/53/53eae4237b102405.json",
   "deviceType": 37,
   "globalDeviceId": 146587,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"RGB"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"Video3"},
+      {"name":"S-Video"},
+      {"name":"DVD"},
+      {"name":"Component"},
+      {"name":"PC"},
+      {"name":"DVI"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["Menu"],
+    "type": 4
+  },
   "manufacturer": "DMTech",
-  "model": "LT-32XTY"
+  "model": "LT-32XTY",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

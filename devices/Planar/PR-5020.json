@@ -2,6 +2,36 @@
   "codeset": "codesets/94/940ffe163099d48a.json",
   "deviceType": 7,
   "globalDeviceId": 167742,
+  "inputs": {
+    "list": [
+      {"name":"RGB"},
+      {"name":"DVI"},
+      {"name":"Component"},
+      {"name":"Composite"},
+      {"name":"S-Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Planar",
-  "model": "PR-5020"
+  "model": "PR-5020",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 7500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

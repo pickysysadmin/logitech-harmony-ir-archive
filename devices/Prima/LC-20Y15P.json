@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/e7/e79325ac3935ccd3.json",
   "deviceType": 1,
   "globalDeviceId": 148113,
+  "inputs": {
+    "list": [
+      {"name":"VGA"},
+      {"name":"DVI"},
+      {"name":"YPB PR1"},
+      {"name":"YPB PR2"},
+      {"name":"Video"},
+      {"name":"TV"}
+    ],
+    "next": ["PipToggle"],
+    "type": 2
+  },
   "manufacturer": "Prima",
-  "model": "LC-20Y15P"
+  "model": "LC-20Y15P",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["PowerToggle","PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

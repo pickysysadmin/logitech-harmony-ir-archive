@@ -2,6 +2,66 @@
   "codeset": "codesets/eb/eb90b471055f36a3.json",
   "deviceType": 1,
   "globalDeviceId": 150223,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DigitalVideoBroasCasting"}],"name":"DigitalVideoBroasCasting"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"AnalagueMode"}],"name":"AnalagueMode"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2/S"}],"name":"AV2/S"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV3/S"}],"name":"AV3/S"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI3"}],"name":"HDMI3"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-D32LN83F"
+  "model": "TX-D32LN83F",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["AV"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2/S"},
+        {"name":"AV3/S"},
+        {"name":"Component"},
+        {"name":"Pc"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"TV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["AV"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"DigitalVideoBroasCasting"},
+        {"name":"AnalagueMode"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

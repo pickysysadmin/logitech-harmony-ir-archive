@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f8/f85bada5f8fd15c8.json",
   "deviceType": 1,
   "globalDeviceId": 66886,
+  "inputs": {
+    "list": [
+      {"name":"Antenna A"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video3"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "DSE",
-  "model": "G3812"
+  "model": "G3812",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Antenna A"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

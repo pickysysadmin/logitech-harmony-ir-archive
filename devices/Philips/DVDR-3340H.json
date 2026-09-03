@@ -2,6 +2,33 @@
   "codeset": "codesets/15/156a220356b4a081.json",
   "deviceType": 34,
   "globalDeviceId": 93181,
+  "inputs": {
+    "list": [
+      {"commands":["Tuner"],"name":"CH001"},
+      {"commands":["Dvd"],"name":"Video1"},
+      {"commands":["Hdd"],"name":"Video2"},
+      {"commands":["Usb/Dv"],"name":"Front av"},
+      {"commands":["Usb/Dv"],"name":"Back AV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "DVDR-3340H"
+  "model": "DVDR-3340H",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"ch001"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 3
+  }
 }

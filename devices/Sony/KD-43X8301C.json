@@ -1,7 +1,50 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/f1/f161b9be0431837f.json",
   "deviceType": 1,
   "globalDeviceId": 271378,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnalog",{"delayMs":300},"InputAnalog"],"name":"Analog"},
+      {"commands":["InputDigital",{"delayMs":300},"InputDigital"],"name":"Digital"},
+      {"commands":["InputVideo1",{"delayMs":300},"InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2",{"delayMs":300},"InputVideo2"],"name":"Video 2/Component"},
+      {"commands":["InputHdmi1",{"delayMs":300},"InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2",{"delayMs":300},"InputHdmi2"],"name":"HDMI 2/MHL"},
+      {"commands":["InputHdmi3",{"delayMs":300},"InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4",{"delayMs":300},"InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["InputVideo2","InputNext",{"delayMs":500},"DirectionDown","Select"],"name":"Screen Mirroring"},
+      {"commands":["Home",{"delayMs":3000},"Home"],"name":"Android TV"},
+      {"commands":["Netflix",{"delayMs":300},"Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KD-43X8301C"
+  "model": "KD-43X8301C",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":300},
+      "PowerOff"
+    ],
+    "on": [
+      "PowerOn",
+      {"delayMs":300},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 45000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

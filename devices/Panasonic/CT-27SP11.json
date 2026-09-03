@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 175599,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo2"],"name":"Tuner"},
+      {"commands":["InputVideo3"],"name":"Video1"},
+      {"commands":["InputVideo4"],"name":"Video2"},
+      {"commands":["InputVideo1"],"name":"Video3"},
+      {"commands":["InputVideo2"],"name":"Front"},
+      {"commands":["PowerOn"],"name":"Component"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "CT-27SP11"
+  "model": "CT-27SP11",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Video1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

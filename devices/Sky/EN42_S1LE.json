@@ -2,6 +2,38 @@
   "codeset": "codesets/6d/6dfa92e80374d473.json",
   "deviceType": 1,
   "globalDeviceId": 55141,
+  "inputs": {
+    "finish": ["VolumeUp","VolumeDown"],
+    "list": [
+      {"name":"TV"},
+      {"name":"Scart 1"},
+      {"name":"Scart 2"},
+      {"name":"Video"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"RGB"},
+      {"name":"DVI"}
+    ],
+    "next": ["ChannelDown","ChannelUp"],
+    "type": 4
+  },
   "manufacturer": "Sky",
-  "model": "EN42/S1LE"
+  "model": "EN42/S1LE",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

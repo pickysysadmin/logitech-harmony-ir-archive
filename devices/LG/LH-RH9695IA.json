@@ -2,6 +2,54 @@
   "codeset": "codesets/d1/d11914ce910fb562.json",
   "deviceType": 35,
   "globalDeviceId": 174871,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"AV2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "LH-RH9695IA"
+  "model": "LH-RH9695IA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CycleInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"Optical"},
+        {"name":"AV3"},
+        {"name":"AV4"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"Cycle","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 40000,
+    "pressMinRepeats": 3
+  }
 }

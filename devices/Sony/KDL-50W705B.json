@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/4a/4a974a36da78b992.json",
   "deviceType": 1,
   "globalDeviceId": 264115,
+  "inputs": {
+    "list": [
+      {"commands":["Home",{"delayMs":500},"Return","InputAnalog"],"name":"Analog"},
+      {"commands":["Home",{"delayMs":500},"Return","InputDigital"],"name":"Digital"},
+      {"commands":["Home","Return","InputVideo1"],"name":"AV 1"},
+      {"commands":["Home","Return","InputVideo2"],"name":"AV 2/Component"},
+      {"commands":["Home","Return","InputHdmi1"],"name":"HDMI 1/MHL"},
+      {"commands":["Home","Return","InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["Home","Return","InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["Home","Return","InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["Return","Return","Return","SEN"],"name":"SEN"},
+      {"commands":["Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-50W705B"
+  "model": "KDL-50W705B",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,56 @@
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 123658,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnt/Cable"],"name":"Antenna"},
+      {"commands":["InputAnt/Cable"],"name":"Cable"},
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component 2"}],"name":"Component 2"},
+      {"commands":["InputRGB/PC"],"name":"RGB-PC"},
+      {"commands":[{"set":"InputType","to":"Tuners"},{"set":"TunersInput","to":"TV"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "56DC1D-UC"
+  "model": "56DC1D-UC",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Component 1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component 2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"HDMI/DVI","select":[{"commands":["InputDVI/DTV"],"setType":2}]},
+        {"name":"RGB/DTV","select":[{"commands":["InputRgb/Dtv"],"setType":2}]},
+        {"name":"RGB/PC","select":[{"commands":["InputRGB/PC"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Front","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Tuners","select":[{"commands":["InputAnt/Cable"],"setType":2}]}
+      ]
+    },
+    "TunersInput": {
+      "next": ["InputAnt/Cable"],
+      "values": [
+        {"name":"TV"},
+        {"name":"CATV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 1
+  }
 }

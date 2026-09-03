@@ -1,7 +1,90 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/aa/aa4ffbea2535731a.json",
   "deviceType": 1,
   "globalDeviceId": 334017,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVB-C"}],"name":"DVB-C"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVB-T"}],"name":"DVB-T"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"CompVideo"},{"set":"CompVideoInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"CompVideo"},{"set":"CompVideoInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"VieraSmartMENU","to":"ON"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"Internet"}],"name":"Internet"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"MediaPlayer"}],"name":"MediaPlayer"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-LR47E5"
+  "model": "TX-LR47E5",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "CompVideoInput": {
+      "finish": ["OK"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["OK","AV"],
+      "values": [
+        {"name":"AV 2"},
+        {"name":"Component"}
+      ]
+    },
+    "HomeScreen": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["OK"],"setType":2}]}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["ChannelUp"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":1}]},
+        {"name":"HDMI4","select":[{"commands":["InputHdmi4"],"setType":1}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":1}]},
+        {"name":"AV 1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"CompVideo","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"Internet","select":[{"commands":["Internet"],"setType":1}]},
+        {"name":"MediaPlayer","select":[{"commands":["MediaPlayer"],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"DVB-C"},
+        {"name":"DVB-T"},
+        {"name":"Analog"}
+      ]
+    },
+    "VieraSmartMENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Internet"],"setType":1}]},
+        {"name":"OFF","select":[{"commands":["Exit"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

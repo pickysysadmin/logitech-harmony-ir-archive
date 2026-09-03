@@ -2,6 +2,33 @@
   "codeset": "codesets/68/68dd69b8ac5c9eb8.json",
   "deviceType": 7,
   "globalDeviceId": 99811,
+  "inputs": {
+    "list": [
+      {"name":"PC"},
+      {"name":"Video"},
+      {"name":"USB"}
+    ],
+    "next": [
+      {"delayMs":1500},
+      "InputNext"
+    ],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "TDP-FF1"
+  "model": "TDP-FF1",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 4000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

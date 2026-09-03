@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 164354,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"Ext1"},
+      {"commands":["InputVideo2"],"name":"Ext2"},
+      {"commands":["InputVideo3"],"name":"Ext3"},
+      {"commands":["Input 4"],"name":"Ext4"},
+      {"commands":["Input 4",{"delayMs":3500},"InputNext"],"name":"HDMI1"},
+      {"commands":["Input 4",{"delayMs":3500},"InputNext","InputNext"],"name":"HDMI2"},
+      {"commands":["Input 4",{"delayMs":3500},"InputNext","InputNext","InputNext"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-26X70B"
+  "model": "LT-26X70B",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 2
+  }
 }

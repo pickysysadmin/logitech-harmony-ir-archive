@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/f5/f5d1d735a9df89eb.json",
   "deviceType": 34,
   "globalDeviceId": 149511,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"DVD"},
+      {"name":"DV"},
+      {"name":"Video2"},
+      {"name":"Tuner"},
+      {"name":"Video1"},
+      {"name":"S-Video"}
+    ],
+    "next": ["DirectionRight"],
+    "previous": ["DirectionRight"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "CyberHome",
-  "model": "CH-DVR1600"
+  "model": "CH-DVR1600",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

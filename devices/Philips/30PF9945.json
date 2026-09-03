@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2f/2faf1eb0a0d53c8f.json",
   "deviceType": 1,
   "globalDeviceId": 36815,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"AV4-HDD"}],"name":"AV4-HDD"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"AV4-HDA"}],"name":"AV4-HDA"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "30PF9945"
+  "model": "30PF9945",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"VIDEO","select":[{"commands":["InputAV4"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputAv1",{"delayMs":1500},"0","3"],"setType":2}]},
+        {"name":"AV1","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputAV2"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["InputAv3"],"setType":2}]}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputAV4"],
+      "values": [
+        {"name":"AV4-HDD"},
+        {"name":"AV4-HDA"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

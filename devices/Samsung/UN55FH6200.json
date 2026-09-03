@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/d2/d26666c5fd162924.json",
   "deviceType": 1,
   "globalDeviceId": 257363,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputAv","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputAv"],"name":"AV","ports":["Composite"]},
+      {"commands":["InputComponent","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputHdmi1","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputHdmi1"],"name":"HDMI 1/DVI","ports":["HDMI"]},
+      {"commands":["InputHdmi2","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["Exit","SmartHub"],"name":"Smart Hub","ports":["Streaming"]},
+      {"commands":["Ambient"],"name":"Ambient"},
+      {"commands":["Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UN55FH6200"
+  "model": "UN55FH6200",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 55000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

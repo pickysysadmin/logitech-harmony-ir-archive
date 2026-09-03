@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/9f/9f0ba3b01c828028.json",
   "deviceType": 1,
   "globalDeviceId": 136788,
+  "inputs": {
+    "list": [
+      {"name":"Antenna"},
+      {"name":"AV1"},
+      {"name":"SVHS"},
+      {"name":"AV2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Konka",
-  "model": "K-1473EZ"
+  "model": "K-1473EZ",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

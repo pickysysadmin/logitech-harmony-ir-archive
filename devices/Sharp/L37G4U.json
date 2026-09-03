@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/51/51a5e0a754b17271.json",
   "deviceType": 1,
   "globalDeviceId": 31309,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"Input 1"},
+      {"name":"Input 2"},
+      {"name":"Input 4"},
+      {"name":"Input 5"},
+      {"name":"PC"}
+    ],
+    "next": [
+      {"delayMs":800},
+      "InputNext"
+    ],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Sharp",
-  "model": "L37G4U"
+  "model": "L37G4U",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

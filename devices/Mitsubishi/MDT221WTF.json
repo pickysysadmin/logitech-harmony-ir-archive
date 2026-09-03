@@ -2,6 +2,61 @@
   "codeset": "codesets/20/20cae03e42c5f351.json",
   "deviceType": 1,
   "globalDeviceId": 183164,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"BS"}],"name":"BS"},
+      {"commands":[{"set":"InputType","to":"CS"}],"name":"CS"},
+      {"commands":[{"set":"InputType","to":"D-Sub"}],"name":"D-Sub"},
+      {"commands":[{"set":"InputType","to":"Dvi-D"}],"name":"Dvi-D"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI2"}],"name":"HDMI2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Mitsubishi",
-  "model": "MDT221WTF"
+  "model": "MDT221WTF",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"BS","select":[{"commands":["BS"],"setType":2}]},
+        {"name":"CS","select":[{"commands":["CS"],"setType":2}]},
+        {"name":"D-Sub","select":[{"commands":["InputD-Sub"],"setType":2}]},
+        {"name":"Dvi-D","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

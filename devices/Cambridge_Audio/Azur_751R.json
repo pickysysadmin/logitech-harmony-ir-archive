@@ -2,6 +2,61 @@
   "codeset": "codesets/31/317ee74b9852a4d5.json",
   "deviceType": 5,
   "globalDeviceId": 240892,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Exp"}],"name":"Exp"},
+      {"commands":[{"set":"InputType","to":"BD/DVD"}],"name":"BD/DVD"},
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Rec 1"}],"name":"Rec 1"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Video 3/MP3"}],"name":"Video 3/MP3"},
+      {"commands":[{"set":"InputType","to":"Rec 2"}],"name":"Rec 2"},
+      {"commands":[{"set":"InputType","to":"Aux/TV"},{"set":"Aux/TVInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux/TV"},{"set":"Aux/TVInput","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Cambridge Audio",
-  "model": "Azur 751R"
+  "model": "Azur 751R",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/TVInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"TV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Exp","select":[{"commands":["InputExp"],"setType":2}]},
+        {"name":"BD/DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Rec 1","select":[{"commands":["InputRec1"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Video 3/MP3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Rec 2","select":[{"commands":["InputRec2"],"setType":2}]},
+        {"name":"Aux/TV","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

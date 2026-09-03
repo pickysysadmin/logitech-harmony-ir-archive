@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/03/03df0d50f0f27be7.json",
   "deviceType": 1,
   "globalDeviceId": 256268,
+  "inputs": {
+    "list": [
+      {"commands":["InputUsb",{"delayMs":1000},"Source",{"delayMs":3500},"DirectionLeft","OK"],"name":"TV"},
+      {"commands":["InputUsb",{"delayMs":1000},"Source",{"delayMs":3500},"DirectionLeft","DirectionLeft","OK"],"name":"SAT"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["InputScart"],"name":"Scart"},
+      {"commands":["InputYPbPr"],"name":"YPbPr"},
+      {"commands":["InputNetwork"],"name":"Network"},
+      {"commands":["InputUsb"],"name":"USB"},
+      {"commands":["Exit","SmartTv"],"name":"Smart TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "60PFL8708S/12"
+  "model": "60PFL8708S/12",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 24000,
+    "pressMinRepeats": 3
+  }
 }

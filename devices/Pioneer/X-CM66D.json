@@ -2,6 +2,59 @@
   "codeset": "codesets/94/949da4bbcc0cdb02.json",
   "deviceType": 21,
   "globalDeviceId": 392218,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"AudioIn"}],"name":"AudioIn"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"NET"},{"set":"NETInput","to":"Spotify"}],"name":"Spotify"},
+      {"commands":[{"set":"InputType","to":"NET"},{"set":"NETInput","to":"TuneIn"}],"name":"TuneIn"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "X-CM66D"
+  "model": "X-CM66D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"AudioIn","select":[{"commands":["InputAudioIn"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"NET","select":[{"commands":["InputNet"],"setType":2}]}
+      ]
+    },
+    "NETInput": {
+      "next": ["InputNet"],
+      "values": [
+        {"name":"Spotify"},
+        {"name":"TuneIn"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"DAB"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

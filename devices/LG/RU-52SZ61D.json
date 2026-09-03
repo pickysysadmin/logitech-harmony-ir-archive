@@ -2,6 +2,103 @@
   "codeset": "codesets/38/388ffe1e9bd2a2e4.json",
   "deviceType": 1,
   "globalDeviceId": 130367,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"Antenna"}],"name":"Antenna"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"Front Video"}],"name":"Front Video"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"RGB-DTV"}],"name":"RGB-DTV"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"RGB-PC"}],"name":"RGB-PC"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"DVI-DTV"}],"name":"DVI-DTV"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"DVI-PC"}],"name":"DVI-PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "RU-52SZ61D"
+  "model": "RU-52SZ61D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVIInput": {
+      "next": ["InputDVI"],
+      "values": [
+        {"name":"DVI-DTV"},
+        {"name":"DVI-PC"}
+      ]
+    },
+    "DVIS": {
+      "next": ["InputDVI"],
+      "values": [
+        {"name":"DVI-DTV"},
+        {"name":"DVI-PC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Component 1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component 2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"TV/Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRGB"],"setType":2}]},
+        {"name":"DVI","select":[{"commands":["InputDVI"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["InputRGB"],
+      "values": [
+        {"name":"RGB-DTV"},
+        {"name":"RGB-PC"}
+      ]
+    },
+    "RGBS": {
+      "next": ["InputRGB"],
+      "values": [
+        {"name":"RGB-DTV"},
+        {"name":"RGB-PC"}
+      ]
+    },
+    "TV/VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Front Video"},
+        {"name":"Component 1"},
+        {"name":"Component 2"},
+        {"name":"RGB-DTV"},
+        {"name":"RGB-PC"},
+        {"name":"DVI-DTV"},
+        {"name":"DVI-PC"}
+      ]
+    },
+    "TvVideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Front"},
+        {"name":"Component1"},
+        {"name":"Component2"},
+        {"name":"RGB"},
+        {"name":"DVI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 1
+  }
 }

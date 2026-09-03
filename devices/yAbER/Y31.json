@@ -2,6 +2,38 @@
   "codeset": "codesets/69/698e4c850127b2ce.json",
   "deviceType": 7,
   "globalDeviceId": 493541,
+  "inputs": {
+    "list": [
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"USB 1"},
+      {"name":"USB 2"},
+      {"name":"VGA"},
+      {"name":"AV"}
+    ],
+    "next": ["Source"],
+    "type": 2
+  },
   "manufacturer": "yAbER",
-  "model": "Y31"
+  "model": "Y31",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,37 @@
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 106424,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Digital TV"},
+      {"name":"Sat"},
+      {"name":"DVD"},
+      {"name":"EXT 4"},
+      {"name":"EXT 4-S"},
+      {"name":"EXT 5"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Medion",
-  "model": "MD-30094"
+  "model": "MD-30094",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Digital TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

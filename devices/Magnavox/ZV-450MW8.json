@@ -1,7 +1,50 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/91/912f68cbff2bd0f5.json",
   "deviceType": 47,
   "globalDeviceId": 182173,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"TvDtv"},{"set":"TvDtvInput","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"TvDtv"},{"set":"TvDtvInput","to":"Dtv"}],"name":"Dtv"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Magnavox",
-  "model": "ZV-450MW8"
+  "model": "ZV-450MW8",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"TvDtv","select":[{"commands":["TvDtv"],"setType":2}]}
+      ]
+    },
+    "TvDtvInput": {
+      "next": ["TvDtv"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Dtv"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

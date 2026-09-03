@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/68/684351843bd7c004.json",
   "deviceType": 47,
   "globalDeviceId": 168775,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"ModeTypes","to":"DVDInput"},{"set":"DVDInput","to":"DVDTuner"}],"name":"DVDTuner"},
+      {"commands":[{"set":"ModeTypes","to":"DVDInput"},{"set":"DVDInput","to":"DVDLine1"}],"name":"DVDLine1"},
+      {"commands":[{"set":"ModeTypes","to":"DVDInput"},{"set":"DVDInput","to":"DVDLine2"}],"name":"DVDLine2"},
+      {"commands":[{"set":"ModeTypes","to":"VCRInput"},{"set":"VCRInput","to":"VCRTuner"}],"name":"VCRTuner"},
+      {"commands":[{"set":"ModeTypes","to":"VCRInput"},{"set":"VCRInput","to":"VCRLine1"}],"name":"VCRLine1"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-EZ485VPK"
+  "model": "DMR-EZ485VPK",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDInput": {
+      "next": ["DVDInputNext"],
+      "values": [
+        {"name":"DVDTuner"},
+        {"name":"DVDLine1"},
+        {"name":"DVDLine2"}
+      ]
+    },
+    "ModeTypes": {
+      "next": ["DVD/VHS"],
+      "values": [
+        {"name":"DVDInput"},
+        {"name":"VCRInput"}
+      ]
+    },
+    "VCRInput": {
+      "next": ["DVDInputNext"],
+      "values": [
+        {"name":"VCRTuner"},
+        {"name":"VCRLine1"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 700,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

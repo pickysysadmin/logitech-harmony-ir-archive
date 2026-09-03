@@ -2,6 +2,59 @@
   "codeset": "codesets/6b/6becde494e625a19.json",
   "deviceType": 22,
   "globalDeviceId": 182387,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"BD/SD"},{"set":"BD/SDInput","to":"BD/DVD/CD"}],"name":"BD/DVD/CD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"BD/SD"},{"set":"BD/SDInput","to":"SD"}],"name":"SD","ports":["SD-Card"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Din1"}],"name":"Din1","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Din2"}],"name":"Din2","ports":["Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-BT200"
+  "model": "SC-BT200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "BD/SDInput": {
+      "next": ["InputBdSd"],
+      "values": [
+        {"name":"BD/DVD/CD"},
+        {"name":"SD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["InputIpod"],"setType":2}]},
+        {"name":"BD/SD","select":[{"commands":["InputBdSd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"Aux"},
+        {"name":"Din1"},
+        {"name":"Din2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 32000,
+    "pressMinRepeats": 3
+  }
 }

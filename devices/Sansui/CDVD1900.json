@@ -2,6 +2,31 @@
   "codeset": "codesets/50/5069f7254d44d287.json",
   "deviceType": 37,
   "globalDeviceId": 13962,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"DVD"}
+    ],
+    "next": ["TvDvd"],
+    "type": 2
+  },
   "manufacturer": "Sansui",
-  "model": "CDVD1900"
+  "model": "CDVD1900",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

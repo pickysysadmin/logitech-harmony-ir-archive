@@ -2,6 +2,59 @@
   "codeset": "codesets/78/78f5491c770ed4b3.json",
   "deviceType": 22,
   "globalDeviceId": 182649,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"BD/SD"},{"set":"BD/SDInput","to":"BD"}],"name":"BD"},
+      {"commands":[{"set":"InputType","to":"BD/SD"},{"set":"BD/SDInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"D-IN1"}],"name":"D-IN1"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"D-IN2"}],"name":"D-IN2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-BT300"
+  "model": "SC-BT300",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "BD/SDInput": {
+      "next": ["InputBdSd"],
+      "values": [
+        {"name":"BD"},
+        {"name":"SD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["InputIpod",{"delayMs":3000}],"setType":2}]},
+        {"name":"BD/SD","select":[{"commands":["InputBdSd",{"delayMs":3000}],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner",{"delayMs":3000}],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"Aux"},
+        {"name":"D-IN1"},
+        {"name":"D-IN2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

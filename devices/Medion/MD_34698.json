@@ -2,6 +2,51 @@
   "codeset": "codesets/cc/cc8e300629bce10a.json",
   "deviceType": 1,
   "globalDeviceId": 181599,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Scart 1"}],"name":"Scart 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Scart 2"}],"name":"Scart 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CVBS"}],"name":"CVBS"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YC"}],"name":"YC"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YUV"}],"name":"YUV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Medion",
-  "model": "MD 34698"
+  "model": "MD 34698",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Scart 1"},
+        {"name":"Scart 2"},
+        {"name":"CVBS"},
+        {"name":"YC"},
+        {"name":"YUV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

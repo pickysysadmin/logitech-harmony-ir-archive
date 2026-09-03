@@ -2,6 +2,39 @@
   "codeset": "codesets/77/77a41ea37bdc616b.json",
   "deviceType": 5,
   "globalDeviceId": 171259,
+  "inputs": {
+    "list": [
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputTv/Cbl"],"name":"TV/CBL","ports":["Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite","S-Video","Optical"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["Composite","S-Video","Optical"]},
+      {"commands":["InputV-Aux"],"name":"V.AUX","ports":["Composite","S-Video","Optical"]},
+      {"commands":["InputSat"],"name":"SAT","ports":["Composite","S-Video","Optical"]},
+      {"commands":["InputHdp"],"name":"HDP","ports":["HDMI","Component","Composite","S-Video"]},
+      {"commands":["InputiPod"],"name":"iPod","ports":["Dock"]},
+      {"commands":["InputSatTu"],"name":"SAT TU","ports":["Others"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-988"
+  "model": "AVR-988",
+  "power": {
+    "off": ["PowerOff-MainZone"],
+    "on": ["PowerOn-MainZone"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

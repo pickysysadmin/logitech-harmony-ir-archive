@@ -2,6 +2,31 @@
   "codeset": "codesets/b9/b9c71c9667b34975.json",
   "deviceType": 1,
   "globalDeviceId": 141423,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Curtis",
-  "model": "2501VT"
+  "model": "2501VT",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

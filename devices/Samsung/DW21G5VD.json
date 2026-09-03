@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 37,
   "globalDeviceId": 105266,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"1"},
+      {"name":"2"},
+      {"name":"LINEIN"}
+    ],
+    "next": ["InputNext","Screen16:9","Menu","Sound Mode"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "DW21G5VD"
+  "model": "DW21G5VD",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

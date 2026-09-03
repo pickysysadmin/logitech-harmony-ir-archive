@@ -1,7 +1,75 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d4/d456234c3e02b6e3.json",
   "deviceType": 37,
   "globalDeviceId": 145415,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"YPbPr 1"}],"name":"YPbPr 1"},
+      {"commands":[{"set":"InputType","to":"YPbPr 2"}],"name":"YPbPr 2"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"S-Video"},{"set":"S-VideoInput","to":"S-Video 1"}],"name":"S-Video 1"},
+      {"commands":[{"set":"InputType","to":"S-Video"},{"set":"S-VideoInput","to":"S-Video 2"}],"name":"S-Video 2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Westinghouse",
-  "model": "SK-32H590D"
+  "model": "SK-32H590D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"YPbPr 1","select":[{"commands":["InputYPbPr1"],"setType":2}]},
+        {"name":"YPbPr 2","select":[{"commands":["InputYPbPr2"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    },
+    "S-VideoInput": {
+      "next": ["InputS-Video"],
+      "values": [
+        {"name":"S-Video 1"},
+        {"name":"S-Video 2"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

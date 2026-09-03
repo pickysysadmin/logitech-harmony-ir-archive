@@ -2,6 +2,34 @@
   "codeset": "codesets/e6/e63bd37615ae98c7.json",
   "deviceType": 5,
   "globalDeviceId": 155800,
+  "inputs": {
+    "list": [
+      {"commands":[{"command":"InputTuner","durationMs":2000}],"name":"Tuner"},
+      {"commands":[{"command":"InputCd","durationMs":2000}],"name":"CD"},
+      {"commands":[{"command":"InputCdr/Tape","durationMs":2000}],"name":"CDR/Tape"},
+      {"commands":[{"command":"InputVcr","durationMs":2000}],"name":"VCR"},
+      {"commands":[{"command":"InputTV","durationMs":2000}],"name":"TV"},
+      {"commands":[{"command":"InputDvd/6Ch","durationMs":2000}],"name":"DVD/6CH"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "FR760"
+  "model": "FR760",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": [
+      {"command":"InputTuner","durationMs":2000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

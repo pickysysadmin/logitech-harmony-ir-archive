@@ -2,6 +2,47 @@
   "codeset": "codesets/e7/e7ba5c512afb57ba.json",
   "deviceType": 21,
   "globalDeviceId": 54183,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Tape1/2"},{"set":"Tape1/2Input","to":"Tape1"}],"name":"Tape1"},
+      {"commands":[{"set":"InputType","to":"Tape1/2"},{"set":"Tape1/2Input","to":"Tape2"}],"name":"Tape2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "FW 850C/22"
+  "model": "FW 850C/22",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Tape1/2","select":[{"commands":["InputTape"],"setType":2}]}
+      ]
+    },
+    "Tape1/2Input": {
+      "next": ["InputTape"],
+      "values": [
+        {"name":"Tape1"},
+        {"name":"Tape2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

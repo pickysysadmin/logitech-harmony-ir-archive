@@ -2,6 +2,47 @@
   "codeset": "codesets/b8/b835bd6e6799b0d1.json",
   "deviceType": 21,
   "globalDeviceId": 252656,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Ext-In/Radio"},{"set":"Ext-In/RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Ext-In/Radio"},{"set":"Ext-In/RadioInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Ext-In/Radio"},{"set":"Ext-In/RadioInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Ext-In/Radio"},{"set":"Ext-In/RadioInput","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HC15"
+  "model": "SC-HC15",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Ext-In/RadioInput": {
+      "next": ["InputExtIn/Radio"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"USB"},
+        {"name":"AUX"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Ext-In/Radio","select":[{"commands":["InputExtIn/Radio"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

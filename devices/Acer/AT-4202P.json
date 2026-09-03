@@ -2,6 +2,50 @@
   "codeset": "codesets/49/4989cd436dcc702f.json",
   "deviceType": 1,
   "globalDeviceId": 95138,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Av"}],"name":"Av"},
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart1"}],"name":"Scart1"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart2"}],"name":"Scart2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "AT-4202P"
+  "model": "AT-4202P",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Av","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Pc","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"Scart","select":[{"commands":["InputSat",{"set":"ScartInput","to":"Scart1"}],"setType":2}]}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputSat"],
+      "values": [
+        {"name":"Scart1"},
+        {"name":"Scart2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

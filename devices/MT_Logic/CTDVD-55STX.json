@@ -2,6 +2,33 @@
   "codeset": "codesets/4a/4a90ce9fcd1b2ac0.json",
   "deviceType": 1,
   "globalDeviceId": 159194,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"AV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "MT Logic",
-  "model": "CTDVD-55STX"
+  "model": "CTDVD-55STX",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

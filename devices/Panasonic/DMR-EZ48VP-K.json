@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d6/d6de5e9d03afc652.json",
   "deviceType": 47,
   "globalDeviceId": 168600,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"Tuner"}],"name":"DVDTuner"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"Input1"}],"name":"DVDInput1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"Input2"}],"name":"DVDInput2"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"DV"}],"name":"DVDDV"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"Tuner"}],"name":"VCRTuner"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"Input1"}],"name":"VCRInput1"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"Input2"}],"name":"VCRInput2"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"DV"}],"name":"VCRDV"},
+      {"commands":[{"set":"InputType","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-EZ48VP-K"
+  "model": "DMR-EZ48VP-K",
+  "power": {
+    "toggle": [
+      {"delayMs":1500},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "next": ["DriveSelect"],
+      "values": [
+        {"name":"VCR"},
+        {"name":"DVD"},
+        {"name":"SD"},
+        {"name":"USB"}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Input1"},
+        {"name":"Input2"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/02/02735a71f1b37248.json",
   "deviceType": 1,
   "globalDeviceId": 480379,
+  "inputs": {
+    "list": [
+      {"commands":["Input",{"command":"DirectionLeft","durationMs":3000},"OK"],"name":"DTV"},
+      {"commands":["Input",{"command":"DirectionLeft","durationMs":3000},{"delayMs":500},"DirectionRight","OK"],"name":"ATV"},
+      {"commands":["Input",{"command":"DirectionLeft","durationMs":3000},{"delayMs":500},"DirectionRight","DirectionRight","OK"],"name":"AV"},
+      {"commands":["Input",{"command":"DirectionLeft","durationMs":3000},{"delayMs":500},"DirectionRight","DirectionRight","DirectionRight","OK"],"name":"YPbPr"},
+      {"commands":["Input",{"command":"DirectionLeft","durationMs":3000},{"delayMs":500},"DirectionRight","DirectionRight","DirectionRight","DirectionRight","OK"],"name":"VGA"},
+      {"commands":["Input",{"command":"DirectionRight","durationMs":3000},{"delayMs":500},"DirectionLeft","DirectionLeft","DirectionLeft","OK"],"name":"HDMI1"},
+      {"commands":["Input",{"command":"DirectionRight","durationMs":3000},{"delayMs":500},"DirectionLeft","DirectionLeft","OK"],"name":"HDMI2"},
+      {"commands":["Input",{"command":"DirectionRight","durationMs":3000},{"delayMs":500},"DirectionLeft","OK"],"name":"HDMI3"},
+      {"commands":["Input",{"command":"DirectionRight","durationMs":3000},"OK"],"name":"HDMI4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Harmony Beta",
-  "model": "TestKogan"
+  "model": "TestKogan",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

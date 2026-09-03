@@ -2,6 +2,50 @@
   "codeset": "codesets/b1/b1dde109163dc4a6.json",
   "deviceType": 19,
   "globalDeviceId": 302728,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Coaxial"}],"name":"Coaxial"},
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Extension Port"}],"name":"Extension Port"},
+      {"commands":[{"set":"InputType","to":"AnalogInputs"},{"set":"AnalogInputsInput","to":"AES"}],"name":"AES"},
+      {"commands":[{"set":"InputType","to":"AnalogInputs"},{"set":"AnalogInputsInput","to":"Analog"}],"name":"Analog"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NuPrime",
-  "model": "DAC-9"
+  "model": "DAC-9",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AnalogInputsInput": {
+      "next": ["InputA5"],
+      "values": [
+        {"name":"AES"},
+        {"name":"Analog"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Coaxial","select":[{"commands":["InputC1"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputO2"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputU3"],"setType":2}]},
+        {"name":"Extension Port","select":[{"commands":["InputE4"],"setType":2}]},
+        {"name":"AnalogInputs","select":[{"commands":["InputA5"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

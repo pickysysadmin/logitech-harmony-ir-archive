@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/d6/d6a19dd046f58de7.json",
   "deviceType": 1,
   "globalDeviceId": 168581,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "KZ-42TS1U"
+  "model": "KZ-42TS1U",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

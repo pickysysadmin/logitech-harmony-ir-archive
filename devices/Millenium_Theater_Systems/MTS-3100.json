@@ -2,6 +2,55 @@
   "codeset": "codesets/8c/8cd80f132e6cf813.json",
   "deviceType": 22,
   "globalDeviceId": 68457,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/Radio"},{"set":"DvdRadioInput","to":"Dvd"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVD/Radio"},{"set":"DvdRadioInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AuxInput","to":"S1"}],"name":"S1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AuxInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AuxInput","to":"Aux1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AuxInput","to":"Aux2"}],"name":"AUX 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Millenium Theater Systems",
-  "model": "MTS-3100"
+  "model": "MTS-3100",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"S1"},
+        {"name":"TV"},
+        {"name":"Aux1"},
+        {"name":"Aux2"}
+      ]
+    },
+    "DvdRadioInput": {
+      "next": ["InputDvd/Radio"],
+      "values": [
+        {"name":"Dvd"},
+        {"name":"Radio"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/Radio","select":[{"commands":["InputDvd/Radio"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

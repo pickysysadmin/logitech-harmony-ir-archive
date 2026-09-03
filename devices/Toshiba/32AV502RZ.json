@@ -2,6 +2,42 @@
   "codeset": "codesets/98/980db2551b40468c.json",
   "deviceType": 1,
   "globalDeviceId": 164730,
+  "inputs": {
+    "finish": [
+      "Select",
+      {"delayMs":2000},
+      {"delayMs":1000},
+      "Exit"
+    ],
+    "list": [
+      {"commands":["0"],"name":"AntennaCable"},
+      {"commands":["1"],"name":"Video 1"},
+      {"commands":["2"],"name":"Video 2"},
+      {"commands":["3"],"name":"ColorStream HD1"},
+      {"commands":["4"],"name":"ColorStream HD2"},
+      {"commands":["5"],"name":"HDMI 1"},
+      {"commands":["6"],"name":"HDMI 2"},
+      {"commands":["7"],"name":"PC"}
+    ],
+    "start": ["InputNext"],
+    "type": 3
+  },
   "manufacturer": "Toshiba",
-  "model": "32AV502RZ"
+  "model": "32AV502RZ",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 1
+  }
 }

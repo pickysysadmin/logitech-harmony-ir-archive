@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/52/52b9fd5eba957bd8.json",
   "deviceType": 1,
   "globalDeviceId": 104435,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"S.Video"}],"name":"S.Video"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Comp 1"}],"name":"Comp 1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Comp 2"}],"name":"Comp 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "WinBook",
-  "model": "40D1"
+  "model": "40D1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Comp 1"},
+        {"name":"Comp 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"S.Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo",{"set":"VideoInput","to":"AV 1"}],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent",{"set":"ComponentInput","to":"Comp 1"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 14000,
+    "pressMinRepeats": 1
+  }
 }

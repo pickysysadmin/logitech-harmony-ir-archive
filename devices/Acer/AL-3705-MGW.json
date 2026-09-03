@@ -2,6 +2,84 @@
   "codeset": "codesets/49/4989cd436dcc702f.json",
   "deviceType": 1,
   "globalDeviceId": 146470,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Comp 1"}],"name":"Comp 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Comp 2"}],"name":"Comp 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart1"}],"name":"Scart1"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart2"}],"name":"Scart2"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart3"}],"name":"Scart3"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart4"}],"name":"Scart4"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Digital"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "AL-3705-MGW"
+  "model": "AL-3705-MGW",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"Comp 1"},
+        {"name":"Comp 2"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["InputVideo",{"set":"AVInput","to":"AV1"}],"setType":2}]},
+        {"name":"Scart","select":[{"commands":["InputSat",{"set":"ScartInput","to":"Scart1"}],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc",{"set":"PCInput","to":"VGA"}],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTV",{"set":"TVInput","to":"Analog"}],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputSat"],
+      "values": [
+        {"name":"Scart1"},
+        {"name":"Scart2"},
+        {"name":"Scart3"},
+        {"name":"Scart4"}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTV"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Digital"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

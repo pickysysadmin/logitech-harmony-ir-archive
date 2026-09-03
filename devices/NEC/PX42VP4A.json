@@ -2,6 +2,58 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 29035,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"RGB1"}],"name":"RGB/PC1"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"RGB2"}],"name":"RGB/PC2"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"RGB3"}],"name":"RGB/PC3"},
+      {"commands":[{"set":"InputType","to":"HD"}],"name":"DVD/HD"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"VIDEO1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2"}],"name":"VIDEO2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video3"}],"name":"VIDEO3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "PX42VP4A"
+  "model": "PX42VP4A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["RGB/PCToggle"],"setType":2}]},
+        {"name":"HD","select":[{"commands":["HD 1"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

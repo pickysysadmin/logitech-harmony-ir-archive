@@ -2,6 +2,40 @@
   "codeset": "codesets/d7/d79c55eb8fbe4b29.json",
   "deviceType": 34,
   "globalDeviceId": 139582,
+  "inputs": {
+    "list": [
+      {"commands":["HDDList"],"name":"HDDList","ports":["Others"]},
+      {"commands":["LiveTv"],"name":"LiveTV","ports":["Streaming"]},
+      {"commands":["CAM"],"name":"CAM","ports":["Composite"]},
+      {"commands":["USB"],"name":"USB","ports":["USB"]},
+      {"commands":["Disc"],"name":"Disc","ports":["Others"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "DVDR3595H"
+  "model": "DVDR3595H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["ChannelDown"],
+      "values": [
+        {"name":"EXT 1"},
+        {"name":"EXT 2"},
+        {"name":"CAM 1"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

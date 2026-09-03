@@ -2,6 +2,46 @@
   "codeset": "codesets/41/411dc37cc4f4285d.json",
   "deviceType": 22,
   "globalDeviceId": 111187,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Auxiliary"}],"name":"Aux1"},
+      {"commands":[{"set":"InputType","to":"Auxiliary"}],"name":"Aux2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "FW-C870/37"
+  "model": "FW-C870/37",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxiliaryInput": {
+      "next": ["InputAUX"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Auxiliary","select":[{"commands":["InputAUX"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 1
+  }
 }

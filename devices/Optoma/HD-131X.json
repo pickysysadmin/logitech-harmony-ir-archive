@@ -2,6 +2,36 @@
   "codeset": "codesets/4e/4e7b99c01dee1158.json",
   "deviceType": 7,
   "globalDeviceId": 249361,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputVga1"],"name":"VGA 1","ports":["PC"]},
+      {"commands":["InputVga2"],"name":"VGA 2","ports":["PC"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "HD-131X"
+  "model": "HD-131X",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

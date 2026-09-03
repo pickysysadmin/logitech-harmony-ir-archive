@@ -1,7 +1,70 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/67/675c101dec33937c.json",
   "deviceType": 1,
   "globalDeviceId": 149780,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component 1"}],"name":"Component 1","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component 2"}],"name":"Component 2","ports":["Component"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "VX-37LHDTV10A"
+  "model": "VX-37LHDTV10A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"}
+      ]
+    },
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv",{"set":"AVInput","to":"AV1"}],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi",{"set":"HDMIInput","to":"HDMI 1"}],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent",{"set":"ComponentInput","to":"Component 1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,59 @@
   "codeset": "codesets/6b/6b360aedce8cff82.json",
   "deviceType": 22,
   "globalDeviceId": 262540,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI ARC"}],"name":"HDMI ARC","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Audio IN"}],"name":"Audio IN","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"YouTube"}],"name":"YouTube","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Netflix"}],"name":"Netflix","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Vudu"}],"name":"Vudu","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Home"}],"name":"Home","ports":["Streaming"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTB3525B"
+  "model": "HTB3525B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["Bluetooth"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]},
+        {"name":"YouTube","select":[{"commands":["YouTube"],"setType":2}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":2}]},
+        {"name":"Vudu","select":[{"commands":["Vudu"],"setType":2}]},
+        {"name":"Home","select":[{"commands":["Home"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"HDMI ARC"},
+        {"name":"AUX"},
+        {"name":"Audio IN"},
+        {"name":"FM"},
+        {"name":"Optical"},
+        {"name":"Coaxial"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

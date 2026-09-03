@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/36/362eb927ae6329c2.json",
   "deviceType": 1,
   "globalDeviceId": 30237,
+  "inputs": {
+    "finish": ["Exit"],
+    "list": [
+      {"commands":["0"],"name":"Tuner"},
+      {"commands":["1"],"name":"Video 1"},
+      {"commands":["2"],"name":"Video 2"},
+      {"commands":["3"],"name":"Video 3"},
+      {"commands":["4"],"name":"Video 4"},
+      {"commands":["5"],"name":"ColorStream"}
+    ],
+    "start": ["InputNext"],
+    "type": 3
+  },
   "manufacturer": "Toshiba",
-  "model": "40PW03"
+  "model": "40PW03",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

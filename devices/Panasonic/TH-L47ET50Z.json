@@ -1,7 +1,83 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/87/87dd55606b75cf29.json",
   "deviceType": 1,
   "globalDeviceId": 241564,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DigitalTV"}],"name":"Digital TV"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"AnalogueTV"}],"name":"Analogue TV"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"CompAV"},{"set":"CompAVInput","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"CompAV"},{"set":"CompAVInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"HDMI4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"MediaPlayer"}],"name":"Media Player"},
+      {"commands":[{"set":"VieraSmartMENU","to":"ON"},{"set":"InputType","to":"VieraSmart"}],"name":"Viera Smart"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-L47ET50Z"
+  "model": "TH-L47ET50Z",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CompAVInput": {
+      "finish": ["Ok"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"Component"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV","Ok"],"setType":1}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1","Ok"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2","Ok"],"setType":1}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3","Ok"],"setType":1}]},
+        {"name":"HDMI4","select":[{"commands":["InputHdmi4","Ok"],"setType":1}]},
+        {"name":"PC","select":[{"commands":["InputPc","Ok"],"setType":1}]},
+        {"name":"AV1","select":[{"commands":["InputVideo1","Ok"],"setType":1}]},
+        {"name":"CompAV","select":[{"commands":["InputVideo2","Ok"],"setType":1}]},
+        {"name":"MediaPlayer","select":[{"commands":["MediaPlayer","Ok"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"VieraSmart","select":[{"commands":["Internet"],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"DigitalTV"},
+        {"name":"AnalogueTV"}
+      ]
+    },
+    "VieraSmartMENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Internet"],"setType":1}]},
+        {"name":"OFF","select":[{"commands":["Exit"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

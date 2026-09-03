@@ -2,6 +2,51 @@
   "codeset": "codesets/6c/6cd3a47f38fa1c97.json",
   "deviceType": 22,
   "globalDeviceId": 219516,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"M-XP"}],"name":"M-XP"},
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"iPod/Usb1"}],"name":"iPod/Usb1"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX 1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX 2"}],"name":"AUX 2"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX 3"}],"name":"AUX 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Marantz",
-  "model": "M-ER803"
+  "model": "M-ER803",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX 1"},
+        {"name":"AUX 2"},
+        {"name":"AUX 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"M-XP","select":[{"commands":["InputM-Xp"],"setType":2}]},
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"iPod/Usb1","select":[{"commands":["InputiPod/Usb"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

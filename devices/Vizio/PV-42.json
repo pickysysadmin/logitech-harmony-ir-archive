@@ -1,7 +1,80 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 119246,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"Component 1"},
+      {"name":"Component 2"},
+      {"name":"RGB"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"}
+    ],
+    "next": ["InputTv"],
+    "type": 2
+  },
   "manufacturer": "Vizio",
-  "model": "PV-42"
+  "model": "PV-42",
+  "states": {
+    "AVInput": {
+      "next": ["InputS-Video"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    },
+    "AnalogHDInput": {
+      "next": ["InputVideo1"],
+      "values": [
+        {"name":"AnalogHD1"},
+        {"name":"AnalogHD2"}
+      ]
+    },
+    "DigiHDInput": {
+      "next": ["InputDVI/DTV"],
+      "values": [
+        {"name":"DigitalHD"},
+        {"name":"DTV"}
+      ]
+    },
+    "DigitalHDInput": {
+      "next": [
+        {"command":"InputDVI/DTV","durationMs":1000}
+      ],
+      "start": [
+        {"delayMs":3000},
+        "InputDVI/DTV"
+      ],
+      "values": [
+        {"name":"Digital HD1"},
+        {"name":"Digital HD2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputAnt/Cable"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRGB"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputS-Video",{"set":"AVInput","to":"AV1"}],"setType":2}]},
+        {"name":"DigiHD","select":[{"commands":["InputDVI/DTV",{"set":"DigiHDInput","to":"DigitalHD"}],"setType":2}]},
+        {"name":"AnalogHD","select":[{"commands":["InputVideo1",{"set":"AnalogHDInput","to":"AnalogHD1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1300,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

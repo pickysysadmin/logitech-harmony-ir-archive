@@ -2,6 +2,48 @@
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 223958,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"Scart1 DVD"},
+      {"name":"Scart2 VDR"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Minerva",
-  "model": "7030M/TXT"
+  "model": "7030M/TXT",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["0"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AntennaCable","select":[{"commands":["0"],"setType":1}]},
+        {"name":"Scart1VCR","select":[{"commands":["1"],"setType":1}]},
+        {"name":"Scart2SAT","select":[{"commands":["A/V"],"setType":1}]},
+        {"name":"InputScartToggle","select":[{"commands":["InputComponent",{"set":"ScartInput","to":"Scart3DVD"}],"setType":1}]}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Scart3DVD"},
+        {"name":"Scart4"},
+        {"name":"Scart5"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 0,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,56 @@
   "codeset": "codesets/87/872fc07ec2894c2f.json",
   "deviceType": 1,
   "globalDeviceId": 213468,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"SCART"},{"set":"SCARTInput","to":"SCART 1"}],"name":"SCART 1"},
+      {"commands":[{"set":"InputType","to":"SCART"},{"set":"SCARTInput","to":"SCART 2"}],"name":"SCART 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "AT 4221"
+  "model": "AT 4221",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV"},
+        {"name":"HDMI 1"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"SCART","select":[{"commands":["InputScart"],"setType":2}]}
+      ]
+    },
+    "SCARTInput": {
+      "next": ["InputScart"],
+      "values": [
+        {"name":"SCART 1"},
+        {"name":"SCART 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

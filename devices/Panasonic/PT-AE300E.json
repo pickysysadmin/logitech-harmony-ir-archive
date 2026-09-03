@@ -2,6 +2,64 @@
   "codeset": "codesets/f0/f00db6c832b09ada.json",
   "deviceType": 7,
   "globalDeviceId": 13967,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-AE300E"
+  "model": "PT-AE300E",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"YPbPr"},
+        {"name":"AV1"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"SD","select":[{"commands":["InputSD"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"PC"},
+        {"name":"DVI"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

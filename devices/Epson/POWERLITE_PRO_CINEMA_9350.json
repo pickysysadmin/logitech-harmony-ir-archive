@@ -2,6 +2,36 @@
   "codeset": "codesets/9d/9d2c47ec4a63b956.json",
   "deviceType": 7,
   "globalDeviceId": 211065,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputS-Video"],"name":"S-Video","ports":["S-Video"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputPC"],"name":"PC","ports":["PC"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "POWERLITE PRO CINEMA 9350"
+  "model": "POWERLITE PRO CINEMA 9350",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

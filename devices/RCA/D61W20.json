@@ -2,6 +2,57 @@
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 20505,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VID 1"}],"name":"VID1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VID 2"}],"name":"VID2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"FRNT"}],"name":"FRNT"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CMP 1"}],"name":"CMP1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CMP 2"}],"name":"CMP2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Antenna"}],"name":"Antenna"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "D61W20"
+  "model": "D61W20",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["ChannelUp"],
+      "values": [
+        {"name":"Antenna"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["ChannelUp"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VID 1"},
+        {"name":"VID 2"},
+        {"name":"FRNT"},
+        {"name":"CMP 1"},
+        {"name":"CMP 2"},
+        {"name":"DVI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

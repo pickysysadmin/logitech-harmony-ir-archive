@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/25/25385a31928b4371.json",
   "deviceType": 1,
   "globalDeviceId": 171908,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputComposite"],"name":"Composite"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputHdmi"],"name":"HDMI"},
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["InputDigital"],"name":"Digital"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Pantel",
-  "model": "PAN-320"
+  "model": "PAN-320",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 9000,
+    "pressMinRepeats": 1
+  }
 }

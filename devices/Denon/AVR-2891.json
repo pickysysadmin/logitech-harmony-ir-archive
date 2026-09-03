@@ -2,6 +2,40 @@
   "codeset": "codesets/6c/6c4991df8597c770.json",
   "deviceType": 5,
   "globalDeviceId": 133112,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputVdp"],"name":"VDP"},
+      {"commands":["InputVAux"],"name":"V.AUX"},
+      {"commands":["InputVcr1"],"name":"VCR-1"},
+      {"commands":["InputVcr2"],"name":"VCR-2"},
+      {"commands":["InputTv/Dbs"],"name":"TV"},
+      {"commands":["InputExtIn"],"name":"DBS"},
+      {"commands":["InputMd/Tape1"],"name":"CDR/TAPE"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-2891"
+  "model": "AVR-2891",
+  "power": {
+    "off": ["PowerOff"],
+    "on": [
+      {"delayMs":2000},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

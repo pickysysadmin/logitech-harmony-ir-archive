@@ -2,6 +2,60 @@
   "codeset": "codesets/d4/d467d57aad52b6d8.json",
   "deviceType": 7,
   "globalDeviceId": 89112,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Comp1"}],"name":"Comp1"},
+      {"commands":[{"set":"InputType","to":"Comp2"}],"name":"Comp2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"DVI/PC"},{"set":"DVI/PC","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"DVI/PC"},{"set":"DVI/PC","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Liesegang",
-  "model": "E.motion 4100"
+  "model": "E.motion 4100",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":2000},
+      "Select"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "DVI/PC": {
+      "next": ["InputDvi/Pc"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"PC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Comp1","select":[{"commands":["Input1"],"setType":1}]},
+        {"name":"Comp2","select":[{"commands":["Input2"],"setType":1}]},
+        {"name":"Video","select":[{"commands":["Input4",{"set":"Video","to":"Video"}],"setType":2}]},
+        {"name":"DVI/PC","select":[{"commands":["InputDvi/Pc","InputDvi/Pc"],"setType":2}]}
+      ]
+    },
+    "Video": {
+      "next": ["Input4"],
+      "values": [
+        {"name":"Video"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 20000,
+    "pressMinRepeats": 3
+  }
 }

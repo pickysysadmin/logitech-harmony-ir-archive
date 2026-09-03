@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/82/8200dea33900bd49.json",
   "deviceType": 1,
   "globalDeviceId": 113020,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Video1"},
+      {"name":"Video2"}
+    ],
+    "next": ["Red"],
+    "type": 2
+  },
   "manufacturer": "Salora",
-  "model": "21N80"
+  "model": "21N80",
+  "power": {
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

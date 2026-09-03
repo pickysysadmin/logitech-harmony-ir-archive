@@ -2,6 +2,34 @@
   "codeset": "codesets/ab/abc52c03e0752e43.json",
   "deviceType": 1,
   "globalDeviceId": 112248,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"TV Program"},
+      {"name":"AV2"},
+      {"name":"S-Video"},
+      {"name":"YCbCr"}
+    ],
+    "next": ["InputAv1"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "CLE-956"
+  "model": "CLE-956",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV Program"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,57 @@
   "codeset": "codesets/78/78f5491c770ed4b3.json",
   "deviceType": 22,
   "globalDeviceId": 177341,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"BD/SD"},{"set":"BD/SDInput","to":"BD/DVD/CD"}],"name":"BD/DVD/CD"},
+      {"commands":[{"set":"InputType","to":"BD/SD"},{"set":"BD/SDInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"Din1"}],"name":"Din1"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"Din2"}],"name":"Din2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-BTX70"
+  "model": "SA-BTX70",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "BD/SDInput": {
+      "next": ["InputBdSd"],
+      "values": [
+        {"name":"BD/DVD/CD"},
+        {"name":"SD"}
+      ]
+    },
+    "Ext-InInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"Aux"},
+        {"name":"Din1"},
+        {"name":"Din2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["InputIpod"],"setType":2}]},
+        {"name":"BD/SD","select":[{"commands":["InputBdSd"],"setType":2}]},
+        {"name":"Ext-In","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

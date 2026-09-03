@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/34/34ef560faa639de5.json",
   "deviceType": 1,
   "globalDeviceId": 256377,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv","Exit","DirectionRight","Select",{"delayMs":500},"Exit","Exit","InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputAv","Exit","DirectionRight","Select",{"delayMs":500},"Exit","Exit","InputAv"],"name":"AV","ports":["Composite"]},
+      {"commands":["InputComponent","Exit","DirectionRight","Select",{"delayMs":500},"Exit","Exit","InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputHdmi1","Exit","DirectionRight","Select",{"delayMs":500},"Exit","Exit","Exit","InputHdmi1"],"name":"HDMI 1/DVI","ports":["HDMI"]},
+      {"commands":["InputHdmi2","Exit","DirectionRight","Select",{"delayMs":500},"Exit","Exit","InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3","Exit","DirectionRight","Select",{"delayMs":500},"Exit","Exit","InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputUsb","Exit","DirectionRight","Select",{"delayMs":500},"Exit","Exit","InputUsb"],"name":"USB","ports":["USB"]},
+      {"commands":["Exit","SmartHub"],"name":"Smart Hub","ports":["Streaming"]},
+      {"commands":["Ambient"],"name":"Ambient"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UA32F5500AM"
+  "model": "UA32F5500AM",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

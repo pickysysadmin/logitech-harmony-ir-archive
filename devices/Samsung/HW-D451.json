@@ -2,6 +2,35 @@
   "codeset": "codesets/1a/1aded81cd18042b3.json",
   "deviceType": 19,
   "globalDeviceId": 218688,
+  "inputs": {
+    "list": [
+      {"name":"DigitalIn 1"},
+      {"name":"DigitalIn 2"},
+      {"name":"Analog"},
+      {"name":"W.iPod"}
+    ],
+    "next": ["InputNext"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HW-D451"
+  "model": "HW-D451",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 2
+  }
 }

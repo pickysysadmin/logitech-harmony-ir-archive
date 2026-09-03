@@ -2,6 +2,36 @@
   "codeset": "codesets/30/308e3826bd4ab834.json",
   "deviceType": 1,
   "globalDeviceId": 143940,
+  "inputs": {
+    "list": [
+      {"name":"AV-1"},
+      {"name":"AV-2"},
+      {"name":"F-AV"},
+      {"name":"RGB"},
+      {"name":"SVHS"},
+      {"name":"TV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Basic Line",
-  "model": "BL-2181R"
+  "model": "BL-2181R",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

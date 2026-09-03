@@ -2,6 +2,48 @@
   "codeset": "codesets/d6/d6de5e9d03afc652.json",
   "deviceType": 34,
   "globalDeviceId": 94601,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Input 1"},
+      {"name":"Input 2"},
+      {"name":"Input 3"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-E60EG"
+  "model": "DMR-E60EG",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDDInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Input 1"},
+        {"name":"Input 2"},
+        {"name":"Input 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDD","select":[{"commands":["InputHDD"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

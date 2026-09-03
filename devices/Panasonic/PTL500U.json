@@ -2,6 +2,58 @@
   "codeset": "codesets/c0/c0f7c31198088f0a.json",
   "deviceType": 7,
   "globalDeviceId": 38718,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Videotype"},{"set":"VideoInput","to":"Video"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Videotype"},{"set":"VideoInput","to":"SVideo"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Componenttype"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"RGBtype"},{"set":"RGBInput","to":"PCInput"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"RGBtype"},{"set":"RGBInput","to":"DVIInput"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "PTL500U"
+  "model": "PTL500U",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Videotype","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Componenttype","select":[{"commands":["InputComponent"],"setType":1}]},
+        {"name":"RGBtype","select":[{"commands":["InputRgb"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["InputRgb"],
+      "values": [
+        {"name":"PCInput"},
+        {"name":"DVIInput"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"SVideo"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 6000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

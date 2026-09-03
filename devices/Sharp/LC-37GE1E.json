@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/9b/9b4cca2297aa7d1a.json",
   "deviceType": 1,
   "globalDeviceId": 161672,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext","Select"],"name":"TV"},
+      {"commands":["InputNext","DirectionDown","Select"],"name":"DTV"},
+      {"commands":["InputPC","ChannelDown","ChannelDown","ChannelDown"],"name":"EXT1"},
+      {"commands":["InputPC","ChannelDown","ChannelDown"],"name":"EXT2"},
+      {"commands":["InputPC","ChannelDown"],"name":"EXT3"},
+      {"commands":["InputPC"],"name":"EXT4"},
+      {"commands":["InputPC","ChannelUp"],"name":"EXT5"},
+      {"commands":["InputPC","ChannelUp","ChannelUp"],"name":"EXT6"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-37GE1E"
+  "model": "LC-37GE1E",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

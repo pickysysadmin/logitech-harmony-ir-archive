@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/bf/bfea79650737ced0.json",
   "deviceType": 1,
   "globalDeviceId": 106294,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"S-VHS"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Magnasonic",
-  "model": "MCT-2051"
+  "model": "MCT-2051",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,35 @@
   "codeset": "codesets/bf/bfaa934b298daa0a.json",
   "deviceType": 1,
   "globalDeviceId": 140194,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"AntennaCable"},
+      {"name":"AV4"},
+      {"name":"AV4-S"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Arcelik",
-  "model": "TV-4582"
+  "model": "TV-4582",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV1"}
+    ],
+    "toggle": ["PowerOff"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

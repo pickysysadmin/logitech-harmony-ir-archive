@@ -1,7 +1,67 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/7b/7bf2a6c8b27b7b52.json",
   "deviceType": 1,
   "globalDeviceId": 153762,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Daewoo",
-  "model": "DSC-34W70N"
+  "model": "DSC-34W70N",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"set":"DTVMode","to":"OFF"}
+    ],
+    "on": [
+      "PowerToggle",
+      {"delayMs":8000},
+      {"set":"DTVMode","to":"ON"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "DTVMode": {
+      "values": [
+        {"name":"OFF","select":[{"commands":["0"],"setType":1}]},
+        {"name":"ON","select":[{"commands":["InputDTV"],"setType":1}]}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DTV","select":[{"commands":["InputDTV"],"setType":1}]},
+        {"name":"Video","select":[{"commands":["TvVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"},
+        {"name":"DVD"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

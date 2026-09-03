@@ -2,6 +2,49 @@
   "codeset": "codesets/46/46d2c2bf7f692411.json",
   "deviceType": 22,
   "globalDeviceId": 159177,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux1"}],"name":"Aux1","ports":["Composite","Optical"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux2"}],"name":"Aux2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Front IN"}],"name":"Front IN","ports":["Others"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Denon",
-  "model": "S-102"
+  "model": "S-102",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"},
+        {"name":"Front IN"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputFm/Am"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

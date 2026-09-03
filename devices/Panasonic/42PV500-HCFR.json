@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 157211,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"commands":["TvVideo"],"name":"Tuner"},
+      {"commands":["Red","Red"],"name":"Video 1"},
+      {"commands":["Red","Green"],"name":"Video 2"},
+      {"commands":["Yellow"],"name":"Video 3"},
+      {"commands":["Blue","Green"],"name":"Video 4"},
+      {"commands":["Blue","Yellow"],"name":"Composite"}
+    ],
+    "start": ["Red"],
+    "type": 3
+  },
   "manufacturer": "Panasonic",
-  "model": "42PV500-HCFR"
+  "model": "42PV500-HCFR",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Tv"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVS": {
+      "start": ["Blue"],
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":1}]}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["TvVideo",{"delayMs":300}],"setType":2}]},
+        {"name":"Av","select":[{"commands":["TvVideo",{"delayMs":500}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

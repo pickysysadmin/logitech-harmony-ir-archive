@@ -2,6 +2,34 @@
   "codeset": "codesets/b2/b23c2596b38c1815.json",
   "deviceType": 1,
   "globalDeviceId": 105746,
+  "inputs": {
+    "list": [
+      {"commands":["4"],"name":"TV"},
+      {"commands":["4","InputNext"],"name":"EXT1"},
+      {"commands":["4","InputNext","InputNext"],"name":"EXT2"},
+      {"commands":["4","InputNext","InputNext","InputNext"],"name":"EXT3"},
+      {"commands":["4","InputNext","InputNext","InputNext","InputNext"],"name":"Front"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "28PW9525/12"
+  "model": "28PW9525/12",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["4"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

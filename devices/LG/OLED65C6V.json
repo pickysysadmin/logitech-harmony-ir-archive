@@ -1,7 +1,67 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/b8/b866e08eda18b309.json",
   "deviceType": 1,
   "globalDeviceId": 279860,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"Screen","to":"AV"}],"name":"AV","ports":["Composite"]},
+      {"commands":[{"set":"Screen","to":"Component"}],"name":"Component","ports":["Component"]},
+      {"commands":[{"set":"Screen","to":"HDMI1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"Screen","to":"HDMI2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"Screen","to":"HDMI3"}],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":[{"set":"Screen","to":"HDMI4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"Screen","to":"SmartTV"}],"name":"Smart TV","ports":["Streaming"]},
+      {"commands":[{"set":"Screen","to":"Amazon"}],"name":"Amazon"},
+      {"commands":[{"set":"Screen","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "OLED65C6V"
+  "model": "OLED65C6V",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Screen": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["Exit","Exit","InputTv"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["Exit","Exit","InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["Exit","Exit","InputHdmi2"],"setType":2}]},
+        {"name":"HDMI3","select":[{"commands":["Exit","Exit","InputHdmi3"],"setType":2}]},
+        {"name":"HDMI4","select":[{"commands":["Exit","Exit","InputHdmi4"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["Exit","Exit","InputAv1"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["Exit","Exit","InputComponent1"],"setType":2}]},
+        {"name":"SmartTV","select":[{"commands":["Exit","Home"],"setType":2}]},
+        {"name":"Amazon","select":[{"commands":["Amazon"],"setType":2}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"},
+        {"name":"Radio"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 30000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

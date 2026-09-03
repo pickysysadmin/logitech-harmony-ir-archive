@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6a/6a6adeef9f25831a.json",
   "deviceType": 34,
   "globalDeviceId": 60610,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"P001"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"CVBS(Rear)"},
+      {"name":"S-Video(Rear)"},
+      {"name":"CVBS(Front)"},
+      {"name":"DV"},
+      {"name":"AV2 Y/C"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "GDR-5400"
+  "model": "GDR-5400",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

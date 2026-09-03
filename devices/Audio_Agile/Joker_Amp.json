@@ -2,6 +2,33 @@
   "codeset": "codesets/5a/5af41a1aeabccc84.json",
   "deviceType": 19,
   "globalDeviceId": 35332,
+  "inputs": {
+    "list": [
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputCDR/Tape"],"name":"CDR/Tape"},
+      {"commands":["InputTelevision"],"name":"TV"},
+      {"commands":["InputVCR"],"name":"VCR"},
+      {"commands":["InputSat"],"name":"SAT"},
+      {"commands":[{"delayMs":1000},"InputDvd"],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Audio Agile",
-  "model": "Joker Amp"
+  "model": "Joker Amp",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

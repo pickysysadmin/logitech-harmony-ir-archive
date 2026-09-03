@@ -2,6 +2,60 @@
   "codeset": "codesets/03/0364f17ddb8e04bd.json",
   "deviceType": 5,
   "globalDeviceId": 446606,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Cd/Dvd"}],"name":"Cd/Dvd"},
+      {"commands":[{"set":"InputType","to":"iPod/Mp3/BT"},{"set":"iPod/Mp3/BTInput","to":"BT"}],"name":"BT"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Aux/Usb"},{"set":"Aux/UsbInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux/Usb"},{"set":"Aux/UsbInput","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"iPod/Mp3/BT"},{"set":"iPod/Mp3/BTInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"iPod/Mp3/BT"},{"set":"iPod/Mp3/BTInput","to":"Mp3"}],"name":"Mp3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pyle",
-  "model": "PT272AUBT"
+  "model": "PT272AUBT",
+  "states": {
+    "Aux/UsbInput": {
+      "next": ["InputAux/Usb"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Usb"}
+      ]
+    },
+    "Aux/UsbInputv": {
+      "next": ["InputAux/Usb"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Usb"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Cd/Dvd","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Aux/Usb","select":[{"commands":["InputAux/Usb"],"setType":2}]},
+        {"name":"iPod/Mp3/BT","select":[{"commands":["InputiPod/Mp3/BT"],"setType":2}]}
+      ]
+    },
+    "iPod/Mp3/BTInput": {
+      "next": ["InputiPod/Mp3/BT"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"Mp3"},
+        {"name":"BT"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "pressMinRepeats": 1
+  }
 }

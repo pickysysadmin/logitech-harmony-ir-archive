@@ -2,6 +2,37 @@
   "codeset": "codesets/e9/e978d84a143ade07.json",
   "deviceType": 7,
   "globalDeviceId": 336274,
+  "inputs": {
+    "list": [
+      {"commands":["InputRgb1"],"name":"RGB 1","ports":["PC"]},
+      {"commands":["InputRgb2"],"name":"RGB 2","ports":["PC"]},
+      {"commands":["InputDvi-D"],"name":"DVI-D","ports":["DVI"]},
+      {"commands":["InputDigitalLink"],"name":"Digital Link","ports":["Streaming"]},
+      {"commands":["InputDisplayPort"],"name":"Display Port","ports":["DisplayPort"]},
+      {"commands":["InputHdmi"],"name":"HDMI","ports":["HDMI"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-EZ770"
+  "model": "PT-EZ770",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

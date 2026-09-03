@@ -1,7 +1,68 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/fb/fbe6181c41db62a2.json",
   "deviceType": 34,
   "globalDeviceId": 83932,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"DV/USB"},{"set":"DvUsbInput","to":"DV"}],"name":"DV"},
+      {"commands":[{"set":"InputType","to":"DV/USB"},{"set":"DvUsbInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"RearAv"}],"name":"Rear AV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"RearSvid"}],"name":"Rear S-Vid"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"DvSource"}],"name":"DV Source"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Scart"}],"name":"Scart"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"DVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Astar",
-  "model": "DVR-2100"
+  "model": "DVR-2100",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DvUsbInput": {
+      "next": ["InputDv/Usb"],
+      "values": [
+        {"name":"DV"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"DV/USB","select":[{"commands":["InputDv/Usb"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"RearAv"},
+        {"name":"RearSvid"},
+        {"name":"DvSource"},
+        {"name":"Scart"},
+        {"name":"DVD"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

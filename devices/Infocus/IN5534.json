@@ -2,6 +2,44 @@
   "codeset": "codesets/46/462e8a9bb83e5dab.json",
   "deviceType": 7,
   "globalDeviceId": 267225,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"DisplayLink"},
+      {"name":"VGA 1"},
+      {"name":"VGA 2"},
+      {"name":"RGBHV"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"Component"},
+      {"name":"S-Video"},
+      {"name":"Composite"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "Infocus",
-  "model": "IN5534"
+  "model": "IN5534",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

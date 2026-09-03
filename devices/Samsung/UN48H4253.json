@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/61/61f62386de533f28.json",
   "deviceType": 1,
   "globalDeviceId": 495187,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputTv"],"name":"TV"},
+      {"commands":["InputAv","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputAv"],"name":"AV"},
+      {"commands":["InputComponent","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputComponent"],"name":"Component"},
+      {"commands":["InputHdmi1","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputHdmi1"],"name":"HDMI 1/DVI"},
+      {"commands":["InputHdmi2","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["Exit",{"delayMs":1000},"Exit",{"delayMs":2000},"SmartHub","Select"],"name":"Smart Hub"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UN48H4253"
+  "model": "UN48H4253",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

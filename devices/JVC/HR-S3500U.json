@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/0a/0a2a5394e72380d6.json",
   "deviceType": 2,
   "globalDeviceId": 146761,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line In"}
+    ],
+    "next": ["TvVcr"],
+    "type": 2
+  },
   "manufacturer": "JVC",
-  "model": "HR-S3500U"
+  "model": "HR-S3500U",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

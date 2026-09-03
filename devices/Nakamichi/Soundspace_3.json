@@ -2,6 +2,33 @@
   "codeset": "codesets/b5/b52c701fe1b9471e.json",
   "deviceType": 21,
   "globalDeviceId": 133732,
+  "inputs": {
+    "list": [
+      {"name":"CD"},
+      {"name":"MD"},
+      {"name":"Aux"},
+      {"name":"FM Radio"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Nakamichi",
-  "model": "Soundspace 3"
+  "model": "Soundspace 3",
+  "power": {
+    "off": [
+      {"command":"InputNext","durationMs":2000}
+    ],
+    "on": ["InputNext"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

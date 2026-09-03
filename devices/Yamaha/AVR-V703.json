@@ -2,6 +2,53 @@
   "codeset": "codesets/b8/b8db576dcb1eab08.json",
   "deviceType": 5,
   "globalDeviceId": 98605,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"TUNER"}],"name":"TUNER"},
+      {"commands":[{"set":"InputType","to":"TAPE"}],"name":"TAPE"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"TVDBSMODE"},{"set":"TVDBSMODEInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TVDBSMODE"},{"set":"TVDBSMODEInput","to":"DBS"}],"name":"DBS"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "AVR-V703"
+  "model": "AVR-V703",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd/Ld"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd/Md"],"setType":2}]},
+        {"name":"TUNER","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"TAPE","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr1"],"setType":2}]},
+        {"name":"TVDBSMODE","select":[{"commands":["InputTv/Dbs"],"setType":2}]}
+      ]
+    },
+    "TVDBSMODEInput": {
+      "next": ["InputTv/Dbs"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DBS"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,38 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 143320,
+  "inputs": {
+    "list": [
+      {"commands":["InputScart1"],"name":"AntennaCable"},
+      {"commands":["InputScart1"],"name":"EXT1"},
+      {"commands":["InputScart2"],"name":"EXT2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "29PT912A/13"
+  "model": "29PT912A/13",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

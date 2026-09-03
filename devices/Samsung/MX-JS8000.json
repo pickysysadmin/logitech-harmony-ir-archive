@@ -2,6 +2,59 @@
   "codeset": "codesets/18/18e58dd62c1fcc4f.json",
   "deviceType": 21,
   "globalDeviceId": 414548,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Tuner/Aux"},{"set":"AuxInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Tuner/Aux"},{"set":"AuxInput","to":"Aux 1"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"Tuner/Aux"},{"set":"AuxInput","to":"Aux 2"}],"name":"Aux 2"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB 1"}],"name":"USB 1"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB 2"}],"name":"USB 2"},
+      {"commands":[{"set":"InputType","to":"TV SoundConnect"}],"name":"TV SoundConnect"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "MX-JS8000"
+  "model": "MX-JS8000",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputTuner/Aux"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Aux 1"},
+        {"name":"Aux 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":1}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":1}]},
+        {"name":"Tuner/Aux","select":[{"commands":["InputTuner/Aux"],"setType":1}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":1}]},
+        {"name":"TV SoundConnect","select":[{"commands":["TvSoundConnect"],"setType":1}]}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputUsb"],
+      "values": [
+        {"name":"USB 1"},
+        {"name":"USB 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,30 @@
   "codeset": "codesets/77/7750a7ee0ba0c9fd.json",
   "deviceType": 7,
   "globalDeviceId": 77244,
+  "inputs": {
+    "list": [
+      {"name":"Computer"},
+      {"name":"TV"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputSelect"],
+    "type": 2
+  },
   "manufacturer": "Canon",
-  "model": "LV-X4"
+  "model": "LV-X4",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

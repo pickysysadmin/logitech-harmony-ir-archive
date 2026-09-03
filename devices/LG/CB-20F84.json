@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2,
+    "greaterTen": ["Enter"]
+  },
   "codeset": "codesets/e2/e2085909d8734a46.json",
   "deviceType": 1,
   "globalDeviceId": 60278,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "CB-20F84"
+  "model": "CB-20F84",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": [
+      {"command":"ChannelUp","durationMs":1500}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

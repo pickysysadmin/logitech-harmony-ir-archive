@@ -2,6 +2,52 @@
   "codeset": "codesets/d1/d1d8a14165499eb1.json",
   "deviceType": 13,
   "globalDeviceId": 152248,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC1"}],"name":"PC1"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC2"}],"name":"PC2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI2"}],"name":"HDMI2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Eizo",
-  "model": "HD-2442W"
+  "model": "HD-2442W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"PC1"},
+        {"name":"PC2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

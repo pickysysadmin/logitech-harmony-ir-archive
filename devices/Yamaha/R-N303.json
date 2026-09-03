@@ -2,6 +2,41 @@
   "codeset": "codesets/ae/ae2846c008204c9b.json",
   "deviceType": 5,
   "globalDeviceId": 413144,
+  "inputs": {
+    "list": [
+      {"commands":["InputCoaxial"],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":["InputBluetooth"],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":["InputOptical"],"name":"Optical","ports":["Optical"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputLine1"],"name":"Line 1","ports":["Composite"]},
+      {"commands":["InputLine2"],"name":"Line 2","ports":["Composite"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputNet"],"name":"NET","ports":["Streaming"]},
+      {"commands":["InputPandora"],"name":"Pandora","ports":["Streaming"]},
+      {"commands":["InputSpotify"],"name":"Spotify","ports":["Streaming"]},
+      {"commands":["InputSiriusXM"],"name":"SiriusXM","ports":["Streaming"]},
+      {"commands":["InputAirplay"],"name":"Airplay","ports":["Streaming"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputFM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputAM"],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "R-N303"
+  "model": "R-N303",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

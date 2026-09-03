@@ -1,7 +1,80 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/f1/f110bf687085a32f.json",
   "deviceType": 1,
   "globalDeviceId": 110838,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompInput","to":"YpbPr1"}],"name":"YpbPr1"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompInput","to":"YpbPr2"}],"name":"YpbPr2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"SVideo 1"}],"name":"SVideo 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"SVideo 2"}],"name":"SVideo 2"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"NTSC"}],"name":"NTSC"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"ATSC"}],"name":"ATSC"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Emprex",
-  "model": "HD-3201AE"
+  "model": "HD-3201AE",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CompInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"YpbPr1"},
+        {"name":"YpbPr2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Comp","select":[{"commands":["InputComponent",{"delayMs":1000},"InputComponent"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["TvVideo"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"NTSC"},
+        {"name":"ATSC"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"SVideo 1"},
+        {"name":"Video 2"},
+        {"name":"SVideo 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 1
+  }
 }

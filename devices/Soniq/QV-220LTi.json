@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/45/4555538b96720885.json",
   "deviceType": 37,
   "globalDeviceId": 183260,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"InputTv"},{"set":"InputTvInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"InputTv"},{"set":"InputTvInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"DVD/iPod"},{"set":"DVD/iPodInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVD/iPod"},{"set":"DVD/iPodInput","to":"iPod"}],"name":"iPod"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Soniq",
-  "model": "QV-220LTi"
+  "model": "QV-220LTi",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVD/iPodInput": {
+      "next": ["InputDVD"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"iPod"}
+      ]
+    },
+    "InputTvInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"InputTv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"DVD/iPod","select":[{"commands":["InputDVD"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

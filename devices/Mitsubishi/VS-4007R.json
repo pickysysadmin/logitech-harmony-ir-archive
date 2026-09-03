@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/01/01c8d15763045db3.json",
   "deviceType": 1,
   "globalDeviceId": 19455,
+  "inputs": {
+    "list": [
+      {"name":"Antenna A"},
+      {"name":"Antenna B"},
+      {"name":"VCS S-Video"},
+      {"name":"Aux"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Mitsubishi",
-  "model": "VS-4007R"
+  "model": "VS-4007R",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna A"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,47 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 110413,
+  "inputs": {
+    "list": [
+      {"name":"Antenna A"},
+      {"name":"Input 1"},
+      {"name":"Input 2"},
+      {"name":"Input 3"},
+      {"name":"Input 4"},
+      {"name":"Front Input"},
+      {"name":"HDMI"},
+      {"name":"Input 6"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "RCA",
-  "model": "HD-50LPW166YX2"
+  "model": "HD-50LPW166YX2",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaAB": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"A"},
+        {"name":"B"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 4000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 16000,
+    "pressMinRepeats": 3
+  }
 }

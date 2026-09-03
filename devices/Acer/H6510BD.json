@@ -2,6 +2,36 @@
   "codeset": "codesets/5b/5b0b82bf412b05cc.json",
   "deviceType": 7,
   "globalDeviceId": 246226,
+  "inputs": {
+    "list": [
+      {"commands":["InputVga"],"name":"VGA","ports":["PC"]},
+      {"commands":["InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputS-Video"],"name":"S-Video","ports":["S-Video"]},
+      {"commands":["InputHdmi"],"name":"HDMI","ports":["HDMI"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Acer",
-  "model": "H6510BD"
+  "model": "H6510BD",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

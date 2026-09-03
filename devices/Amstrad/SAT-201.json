@@ -2,6 +2,32 @@
   "codeset": "codesets/d5/d54975476ecc6c6f.json",
   "deviceType": 16,
   "globalDeviceId": 64769,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Satellite"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Amstrad",
-  "model": "SAT-201"
+  "model": "SAT-201",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

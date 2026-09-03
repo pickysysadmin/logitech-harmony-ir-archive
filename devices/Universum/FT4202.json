@@ -2,6 +2,35 @@
   "codeset": "codesets/d0/d08497fe3da74b2f.json",
   "deviceType": 1,
   "globalDeviceId": 69307,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"SVHS"},
+      {"name":"SVHS2"},
+      {"name":"VIDEO"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Universum",
-  "model": "FT4202"
+  "model": "FT4202",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV1"}
+    ],
+    "toggle": ["PowerOn"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

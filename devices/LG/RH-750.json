@@ -2,6 +2,57 @@
   "codeset": "codesets/02/0204caf82bbc639b.json",
   "deviceType": 34,
   "globalDeviceId": 64906,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TUNER"},{"set":"RadioMode","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"TUNER"},{"set":"RadioMode","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"CD/DVD"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"VideoMode","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"VideoMode","to":"Video1opt"}],"name":"Video1opt"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"VideoMode","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"VideoMode","to":"Video2opt"}],"name":"Video2opt"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "RH-750"
+  "model": "RH-750",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TUNER","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "RadioMode": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "VideoMode": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video1opt"},
+        {"name":"Video2"},
+        {"name":"Video2opt"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

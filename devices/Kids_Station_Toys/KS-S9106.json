@@ -2,6 +2,33 @@
   "codeset": "codesets/17/1796ecbb6e619104.json",
   "deviceType": 37,
   "globalDeviceId": 136540,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"DVD"},
+      {"name":"AV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Kids Station Toys",
-  "model": "KS-S9106"
+  "model": "KS-S9106",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 37,
   "globalDeviceId": 35751,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"inputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"inputType","to":"Tuner"},{"set":"inputType","to":"vid"},{"set":"VidMode","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"inputType","to":"Tuner"},{"set":"inputType","to":"vid"},{"set":"VidMode","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"inputType","to":"Tuner"},{"set":"inputType","to":"vid"},{"set":"VidMode","to":"Dvi"}],"name":"DVI"},
+      {"commands":[{"set":"inputType","to":"Tuner"},{"set":"inputType","to":"vid"},{"set":"VidMode","to":"video1"}],"name":"Video 1"},
+      {"commands":[{"set":"inputType","to":"Tuner"},{"set":"inputType","to":"vid"},{"set":"VidMode","to":"video2"}],"name":"Video 2"},
+      {"commands":[{"set":"inputType","to":"Tuner"},{"set":"inputType","to":"vid"},{"set":"VidMode","to":"front"}],"name":"Front"},
+      {"commands":[{"set":"inputType","to":"inputDVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "D52W135"
+  "model": "D52W135",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "VidMode": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"},
+        {"name":"Dvi"},
+        {"name":"video1"},
+        {"name":"video2"},
+        {"name":"front"}
+      ]
+    },
+    "inputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["0","3"],"setType":2}]},
+        {"name":"vid","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"inputDVD","select":[{"commands":["InputSat/Cable"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

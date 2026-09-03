@@ -2,6 +2,38 @@
   "codeset": "codesets/e4/e49bad6c85ea131e.json",
   "deviceType": 5,
   "globalDeviceId": 171860,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Optical"]},
+      {"commands":["InputMd/Cdr"],"name":"MD/CD-R","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":10000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputDtv/Cbl"],"name":"DTV/CBL","ports":["HDMI","Component","Composite","Optical"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["Component","Composite"]},
+      {"commands":["InputV-Aux/Dock"],"name":"V-AUX/DOCK","ports":["Composite"]},
+      {"commands":["InputXm"],"name":"XM","ports":["Others"]},
+      {"commands":["InputSirius"],"name":"SIRIUS","ports":["Others"]},
+      {"commands":["InputMultiChIn"],"name":"MultiChannel","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "HTR-6140"
+  "model": "HTR-6140",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

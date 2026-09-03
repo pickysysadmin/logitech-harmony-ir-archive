@@ -2,6 +2,51 @@
   "codeset": "codesets/1d/1daf228f98b7591c.json",
   "deviceType": 22,
   "globalDeviceId": 104980,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Cable"}],"name":"Cable"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Bose",
-  "model": "AV-16 Media Center"
+  "model": "AV-16 Media Center",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Cable","select":[{"commands":["InputCbl/Sat"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputAm/Fm"],"setType":2}]}
+      ]
+    },
+    "TurnerInput": {
+      "next": ["InputAm/Fm"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

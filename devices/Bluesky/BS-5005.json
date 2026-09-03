@@ -2,6 +2,46 @@
   "codeset": "codesets/6d/6dfa92e80374d473.json",
   "deviceType": 1,
   "globalDeviceId": 125420,
+  "inputs": {
+    "finish": ["VolumeDown","Menu","Menu"],
+    "list": [
+      {"name":"TV"},
+      {"name":"Péritel 1"},
+      {"name":"Péritel 2"},
+      {"name":"Vidéo"},
+      {"name":"S-Vidéo"},
+      {"name":"Component"},
+      {"name":"RGB"},
+      {"name":"DVI"}
+    ],
+    "next": ["ChannelDown"],
+    "start": ["Input","ChannelDown"],
+    "type": 4
+  },
   "manufacturer": "Bluesky",
-  "model": "BS-5005"
+  "model": "BS-5005",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

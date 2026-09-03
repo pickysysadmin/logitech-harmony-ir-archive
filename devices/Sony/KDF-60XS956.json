@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 62410,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"},
+      {"name":"Video 4"},
+      {"name":"Video 5"},
+      {"name":"Video 6"},
+      {"name":"Video 7"},
+      {"name":"Video 8"},
+      {"name":"Memory Stick"}
+    ],
+    "next": ["PipInput"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KDF-60XS956"
+  "model": "KDF-60XS956",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Video 3"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6500,
+    "pressMinRepeats": 3
+  }
 }

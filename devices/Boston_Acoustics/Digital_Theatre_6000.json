@@ -2,6 +2,45 @@
   "codeset": "codesets/14/144194201b24fdc3.json",
   "deviceType": 19,
   "globalDeviceId": 171316,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Audio"}],"name":"Audio","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"DssDvd"},{"set":"DssDvdInput","to":"DSS"}],"name":"DSS","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"DssDvd"},{"set":"DssDvdInput","to":"DVD"}],"name":"DVD","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Boston Acoustics",
-  "model": "Digital Theatre 6000"
+  "model": "Digital Theatre 6000",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DssDvdInput": {
+      "next": ["InputDvd"],
+      "values": [
+        {"name":"DSS"},
+        {"name":"DVD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"Audio","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"DssDvd","select":[{"commands":["InputDvd"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,55 @@
   "codeset": "codesets/d5/d5f04eb28d1e70bf.json",
   "deviceType": 7,
   "globalDeviceId": 28011,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputY/C"],"name":"Y/C"},
+      {"commands":["InputPC1"],"name":"PC 1"},
+      {"commands":["InputPC2"],"name":"PC 2"},
+      {"commands":["InputDVI"],"name":"PC 3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "DLA HX1-U"
+  "model": "DLA HX1-U",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"PC","select":[{"commands":["Computer"],"setType":1}]},
+        {"name":"Video","select":[{"commands":["Video"],"setType":1}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["Computer"],
+      "values": [
+        {"name":"PC 1"},
+        {"name":"PC 2"},
+        {"name":"PC 3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Video"],
+      "values": [
+        {"name":"Video"},
+        {"name":"Y/C"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/2c/2c92ee32a8ed9d5b.json",
   "deviceType": 1,
   "globalDeviceId": 236058,
+  "inputs": {
+    "list": [
+      {"commands":["InputUsb",{"delayMs":1000},"Source",{"delayMs":3500},"DirectionLeft","OK"],"name":"TV"},
+      {"commands":["InputUsb",{"delayMs":1000},"Source",{"delayMs":3500},"DirectionLeft","DirectionLeft","OK"],"name":"SAT"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmiSide"],"name":"HDMI Side"},
+      {"commands":["InputScart"],"name":"Scart"},
+      {"commands":["InputYpbPr"],"name":"YPbPr"},
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["InputUsb"],"name":"USB"},
+      {"commands":["Exit","SmartTv"],"name":"Smart TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "42PFL6907K/12"
+  "model": "42PFL6907K/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 14000,
+    "pressMinRepeats": 3
+  }
 }

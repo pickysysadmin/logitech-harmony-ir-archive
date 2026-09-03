@@ -2,6 +2,41 @@
   "codeset": "codesets/38/388ffe1e9bd2a2e4.json",
   "deviceType": 1,
   "globalDeviceId": 138983,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"AV4"},
+      {"name":"AV5"},
+      {"name":"Component"},
+      {"name":"RGB"},
+      {"name":"HDMI"},
+      {"name":"SVideo2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "42P5XD"
+  "model": "42P5XD",
+  "power": {
+    "off": [
+      {"delayMs":1500},
+      {"command":"PowerToggle","durationMs":1500}
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

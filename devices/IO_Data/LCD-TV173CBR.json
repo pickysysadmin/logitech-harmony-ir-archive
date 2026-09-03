@@ -2,6 +2,53 @@
   "codeset": "codesets/90/9007bfd19418faa8.json",
   "deviceType": 1,
   "globalDeviceId": 133227,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "IO Data",
-  "model": "LCD-TV173CBR"
+  "model": "LCD-TV173CBR",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"PC","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo4"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputVideo1"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Digital"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo4"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Video"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

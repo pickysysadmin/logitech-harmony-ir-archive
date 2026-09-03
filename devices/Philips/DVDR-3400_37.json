@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/9e/9e7df7ab5e1c51e3.json",
   "deviceType": 34,
   "globalDeviceId": 118233,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Cam 1"},
+      {"name":"Cam 2"},
+      {"name":"Cam 3"},
+      {"name":"DV"},
+      {"name":"Ext 1"},
+      {"name":"Ext 2"},
+      {"name":"Ext 3"}
+    ],
+    "next": ["Source"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "DVDR-3400/37"
+  "model": "DVDR-3400/37",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

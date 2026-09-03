@@ -2,6 +2,37 @@
   "codeset": "codesets/14/1422d0df94c68742.json",
   "deviceType": 1,
   "globalDeviceId": 272627,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputTv",{"delayMs":1000},"InputTv","InputVideo"],"name":"AV 1"},
+      {"commands":["InputTv",{"delayMs":1000},"InputTv","InputVideo","InputVideo"],"name":"AV 2"},
+      {"commands":["InputTv",{"delayMs":1000},"InputTv","InputVideo","InputVideo","InputVideo"],"name":"S-Video 1"},
+      {"commands":["InputTv",{"delayMs":1000},"InputTv","InputVideo","InputVideo","InputVideo","InputVideo"],"name":"S-Video 2"},
+      {"commands":["InputTv",{"delayMs":1000},"InputTv","InputComponent"],"name":"Component 1"},
+      {"commands":["InputTv",{"delayMs":1000},"InputTv","InputComponent","InputComponent"],"name":"Component 2"},
+      {"commands":["InputTv",{"delayMs":1000},"InputTv","InputHdmi"],"name":"HDMI 1"},
+      {"commands":["InputTv",{"delayMs":1000},"InputTv","InputHdmi","InputHdmi"],"name":"HDMI 2"},
+      {"commands":["InputTv",{"delayMs":1000},"InputTv","InputHdmi","InputHdmi","InputHdmi"],"name":"HDMI 3"},
+      {"commands":["InputVga"],"name":"VGA"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Dynex",
-  "model": "TestDynex"
+  "model": "TestDynex",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

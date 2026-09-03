@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/1b/1bc1bb1e6ed53af2.json",
   "deviceType": 1,
   "globalDeviceId": 117809,
+  "inputs": {
+    "list": [
+      {"name":"Antenna"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"}
+    ],
+    "next": ["StartInput"],
+    "type": 2
+  },
   "manufacturer": "Advent",
-  "model": "Q-1435A"
+  "model": "Q-1435A",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

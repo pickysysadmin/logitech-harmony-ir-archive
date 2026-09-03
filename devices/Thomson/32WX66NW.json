@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/c0/c08fdc61e8eaab82.json",
   "deviceType": 1,
   "globalDeviceId": 21352,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Tuner"},
+      {"commands":["InputNext"],"name":"AV1"},
+      {"commands":["InputNext","InputNext"],"name":"AV2"},
+      {"commands":["InputNext","InputNext","InputNext"],"name":"AV3"}
+    ],
+    "start": ["InputNext"],
+    "type": 3
+  },
   "manufacturer": "Thomson",
-  "model": "32WX66NW"
+  "model": "32WX66NW",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

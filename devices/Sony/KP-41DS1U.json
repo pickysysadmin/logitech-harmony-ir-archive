@@ -2,6 +2,33 @@
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 37741,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"DVD"},
+      {"commands":["InputRgb1"],"name":"RGB"},
+      {"commands":["InputVideo2"],"name":"SAT"},
+      {"commands":["InputVideo2"],"name":"YC2"},
+      {"commands":["InputVideo3"],"name":"VIDEO"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KP-41DS1U"
+  "model": "KP-41DS1U",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 3
+  }
 }

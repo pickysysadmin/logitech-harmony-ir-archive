@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3,
+    "start": ["Greater100"]
+  },
   "codeset": "codesets/3d/3d9f0b93f187c680.json",
   "deviceType": 1,
   "globalDeviceId": 98101,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"AvMulti"},{"set":"AvMultiInput","to":"AV Multi RGB"}],"name":"AV Multi RGB"},
+      {"commands":[{"set":"InputType","to":"AvMulti"},{"set":"AvMultiInput","to":"AV Multi Y/Cb/Cr"}],"name":"AV Multi Y/Cb/Cr"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "KDL-L32RX2"
+  "model": "KDL-L32RX2",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AvMultiInput": {
+      "next": ["InputAvMulti"],
+      "values": [
+        {"name":"AV Multi RGB"},
+        {"name":"AV Multi Y/Cb/Cr"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Component 1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component 2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"AvMulti","select":[{"commands":["InputAvMulti"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

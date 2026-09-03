@@ -2,6 +2,70 @@
   "codeset": "codesets/15/15fd537bd03a2520.json",
   "deviceType": 1,
   "globalDeviceId": 181847,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"InputAv1"}],"name":"InputAv1"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"InputAv2"}],"name":"InputAv2"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"InputComponent1"}],"name":"InputComponent1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"InputComponent2"}],"name":"InputComponent2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"InputHdmi1"}],"name":"InputHdmi1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"InputHdmi2"}],"name":"InputHdmi2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"InputHdmi3"}],"name":"InputHdmi3"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"InputHdmi4"}],"name":"InputHdmi4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "SV470M-C"
+  "model": "SV470M-C",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AvInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"InputAv1"},
+        {"name":"InputAv2"}
+      ]
+    },
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"InputComponent1"},
+        {"name":"InputComponent2"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"InputHdmi1"},
+        {"name":"InputHdmi2"},
+        {"name":"InputHdmi3"},
+        {"name":"InputHdmi4"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"Av","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 1
+  }
 }

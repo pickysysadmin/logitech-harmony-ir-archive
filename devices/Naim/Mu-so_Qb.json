@@ -2,6 +2,45 @@
   "codeset": "codesets/5d/5d26bf94ac0e047c.json",
   "deviceType": 33,
   "globalDeviceId": 280884,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iRadio"}],"name":"iRadio"},
+      {"commands":[{"set":"InputType","to":"Naim"},{"set":"NaimInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"Naim"},{"set":"NaimInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Naim"},{"set":"NaimInput","to":"USB/iPod"}],"name":"USB/iPod"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Naim",
-  "model": "Mu-so Qb"
+  "model": "Mu-so Qb",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"iRadio","select":[{"commands":["PresetNext"],"setType":2}]},
+        {"name":"Naim","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "NaimInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Digital"},
+        {"name":"USB/iPod"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

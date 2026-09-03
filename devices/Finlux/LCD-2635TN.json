@@ -2,6 +2,39 @@
   "codeset": "codesets/3b/3ba1b9ab64fef621.json",
   "deviceType": 1,
   "globalDeviceId": 99040,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Side AV"},
+      {"name":"S-Video"},
+      {"name":"Y Pb Pr"},
+      {"name":"HD-YPbPr"},
+      {"name":"PC"},
+      {"name":"DVI"},
+      {"name":"Scart1"},
+      {"name":"Scart2"},
+      {"name":"Scart3"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "Finlux",
-  "model": "LCD-2635TN"
+  "model": "LCD-2635TN",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

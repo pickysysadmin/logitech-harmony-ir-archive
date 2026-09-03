@@ -2,6 +2,71 @@
   "codeset": "codesets/a9/a945915fef76e057.json",
   "deviceType": 1,
   "globalDeviceId": 170197,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video4"}],"name":"Video4"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI3"}],"name":"HDMI3"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "ViewSonic",
-  "model": "N-3290W"
+  "model": "N-3290W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["YPbPr"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["HDMI"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"PC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["AV"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["YPbPr"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["HDMI"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["AV"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"},
+        {"name":"Video4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 13000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,64 @@
   "codeset": "codesets/da/da1c3ee0d368959d.json",
   "deviceType": 5,
   "globalDeviceId": 159074,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VDP"}],"name":"VDP"},
+      {"commands":[{"set":"InputType","to":"TV/DBS"}],"name":"TV/DBS"},
+      {"commands":[{"set":"InputType","to":"PHONO"}],"name":"PHONO"},
+      {"commands":[{"set":"InputType","to":"VCR1"}],"name":"VCR 1"},
+      {"commands":[{"set":"InputType","to":"VCR2"}],"name":"VCR 2"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"MD/Tape"}],"name":"MD/TAPE"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"AUX2"}],"name":"AUX2"},
+      {"commands":[{"set":"InputType","to":"AM/FM/XM"},{"set":"AM/FM/XMInput","to":"XM"}],"name":"XM"},
+      {"commands":[{"set":"InputType","to":"AM/FM/XM"},{"set":"AM/FM/XMInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"AM/FM/XM"},{"set":"AM/FM/XMInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Denon",
-  "model": "AVR-1517"
+  "model": "AVR-1517",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AM/FM/XMInput": {
+      "next": ["Am/Fm"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"XM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"VDP","select":[{"commands":["InputVdp"],"setType":2}]},
+        {"name":"TV/DBS","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"PHONO","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"VCR1","select":[{"commands":["InputVcr1"],"setType":2}]},
+        {"name":"VCR2","select":[{"commands":["InputVcr2"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"MD/Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputV-Aux"],"setType":2}]},
+        {"name":"AUX2","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"AM/FM/XM","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

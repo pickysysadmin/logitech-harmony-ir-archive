@@ -2,6 +2,33 @@
   "codeset": "codesets/07/0793ecb38ef4fd2f.json",
   "deviceType": 21,
   "globalDeviceId": 134668,
+  "inputs": {
+    "list": [
+      {"commands":["InputMD1"],"name":"MD"},
+      {"commands":[{"delayMs":1500},"InputMD1","InputTape"],"name":"Tape A"},
+      {"commands":[{"delayMs":1500},"InputMD1","InputTape","InputTape"],"name":"Tape B"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputMD1"],"name":"MD Walkman"},
+      {"commands":["InputOptical"],"name":"Optical In"},
+      {"commands":["InputMD"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "MHC-MG110"
+  "model": "MHC-MG110",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

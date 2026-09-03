@@ -2,6 +2,84 @@
   "codeset": "codesets/eb/eb90b471055f36a3.json",
   "deviceType": 1,
   "globalDeviceId": 166495,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV2"},{"set":"AV2Input","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV2"},{"set":"AV2Input","to":"AV2S"}],"name":"AV2S"},
+      {"commands":[{"set":"InputType","to":"AV3"},{"set":"AV3Input","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AV3"},{"set":"AV3Input","to":"AV3S"}],"name":"AV3S"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"HDMI3"}],"name":"HDMI3"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVB"}],"name":"DVB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-32LXD81FV"
+  "model": "TX-32LXD81FV",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": [
+      {"set":"Input","to":"TV"},
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AV2Input": {
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "AV3Input": {
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputVideo3","DirectionDown","OK"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":1}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"HDMI3","select":[{"commands":["InputHDMI3"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DVB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

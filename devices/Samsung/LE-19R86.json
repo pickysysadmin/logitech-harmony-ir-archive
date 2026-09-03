@@ -1,7 +1,57 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/97/97bcbc5c936a89bd.json",
   "deviceType": 1,
   "globalDeviceId": 179570,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Ext"}],"name":"Ext"},
+      {"commands":[{"set":"InputType","to":"Av"}],"name":"Av"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"Hdmi"}],"name":"Hdmi"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "LE-19R86"
+  "model": "LE-19R86",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Ext","select":[{"commands":["InputExt"],"setType":2}]},
+        {"name":"Av","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputSVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"Pc","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv/Dtv"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv/Dtv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

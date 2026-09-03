@@ -2,6 +2,60 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 136234,
+  "inputs": {
+    "list": [
+      {"commands":["RGB/PCToggle"],"name":"RGB/PC1"},
+      {"commands":["RGB/PCToggle"],"name":"RGB/PC2"},
+      {"commands":["RGB/PCToggle"],"name":"RGB/PC3"},
+      {"commands":["Video 1"],"name":"VIDEO1"},
+      {"commands":["InputNext"],"name":"VIDEO2"},
+      {"commands":["S-Video"],"name":"VIDEO3"},
+      {"commands":["DVD/HDToggle"],"name":"DVD"},
+      {"commands":["HD 2"],"name":"HD2"},
+      {"commands":["HD 1"],"name":"DVD1"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "PlasmaSync 42XM5G"
+  "model": "PlasmaSync 42XM5G",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["RGB/PCToggle"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["HD 1"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

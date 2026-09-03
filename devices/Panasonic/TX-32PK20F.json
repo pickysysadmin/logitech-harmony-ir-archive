@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 16486,
+  "inputs": {
+    "finish": ["Return"],
+    "list": [
+      {"commands":["Return"],"name":"TV"},
+      {"commands":["Red"],"name":"AV1"},
+      {"commands":["Green"],"name":"AV2"},
+      {"commands":["Yellow"],"name":"AV3"},
+      {"commands":["Blue"],"name":"AV4"}
+    ],
+    "start": ["InputNext"],
+    "type": 3
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-32PK20F"
+  "model": "TX-32PK20F",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 5,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

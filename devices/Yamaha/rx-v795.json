@@ -2,6 +2,58 @@
   "codeset": "codesets/84/84849ca99268bb4d.json",
   "deviceType": 5,
   "globalDeviceId": 41145,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"EXT.DEC","to":"Off"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"TUNER"},{"set":"EXT.DEC","to":"Off"}],"name":"TUNER"},
+      {"commands":[{"set":"InputType","to":"TAPE/MD"},{"set":"EXT.DEC","to":"Off"}],"name":"TAPE/MD"},
+      {"commands":[{"set":"InputType","to":"DVD/LD"},{"set":"EXT.DEC","to":"Off"}],"name":"DVD/LD"},
+      {"commands":[{"set":"InputType","to":"TV/DBS"},{"set":"EXT.DEC","to":"Off"}],"name":"TV/DBS"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"EXT.DEC","to":"Off"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"PHONO"},{"set":"EXT.DEC","to":"Off"}],"name":"PHONO"},
+      {"commands":[{"set":"InputType","to":"V-AUX"},{"set":"EXT.DEC","to":"Off"}],"name":"V-AUX"},
+      {"commands":[{"set":"EXT.DEC","to":"On"}],"name":"EXT.DEC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "rx-v795"
+  "model": "rx-v795",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "EXT.DEC": {
+      "next": ["InputExternalDecoder"],
+      "values": [
+        {"name":"On"},
+        {"name":"Off"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"TUNER","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"TAPE/MD","select":[{"commands":["InputTape/Md"],"setType":2}]},
+        {"name":"DVD/LD","select":[{"commands":["InputDvd/Ld"],"setType":2}]},
+        {"name":"TV/DBS","select":[{"commands":["InputTv/Dbs"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"PHONO","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"V-AUX","select":[{"commands":["InputV-Aux"],"setType":2}]},
+        {"name":"EXT.DEC","select":[{"commands":["InputExternalDecoder"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

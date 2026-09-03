@@ -2,6 +2,61 @@
   "codeset": "codesets/de/de7273d629bc0008.json",
   "deviceType": 7,
   "globalDeviceId": 277173,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"X-PORT 1"}],"name":"X-PORT 1"},
+      {"commands":[{"set":"InputType","to":"X-PORT 2"}],"name":"X-PORT 2"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"BNC"}],"name":"BNC"},
+      {"commands":[{"set":"InputType","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"C-Video"}],"name":"C-Video"},
+      {"commands":[{"set":"InputType","to":"DVI/HDMI"},{"set":"DVI/HDMIInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"DVI/HDMI"},{"set":"DVI/HDMIInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Projection Design",
-  "model": "F32"
+  "model": "F32",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "DVI/HDMIInput": {
+      "next": ["InputDvi/Hdmi"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"X-PORT 1","select":[{"commands":["InputX-Port1"],"setType":2}]},
+        {"name":"X-PORT 2","select":[{"commands":["InputX-Port2"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"BNC","select":[{"commands":["InputBnc"],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputYPbPr"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"C-Video","select":[{"commands":["InputC-Video"],"setType":2}]},
+        {"name":"DVI/HDMI","select":[{"commands":["InputDvi/Hdmi"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

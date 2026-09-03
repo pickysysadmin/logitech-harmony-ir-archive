@@ -2,6 +2,46 @@
   "codeset": "codesets/b4/b4d4c8af428af768.json",
   "deviceType": 22,
   "globalDeviceId": 224803,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Audio"}],"name":"Audio"},
+      {"commands":[{"set":"InputType","to":"DVD/USB"},{"set":"DVD/USBInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVD/USB"},{"set":"DVD/USBInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Dual",
-  "model": "DVD-MS 110"
+  "model": "DVD-MS 110",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVD/USBInput": {
+      "next": ["InputDvd/Usb"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"FM","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Audio","select":[{"commands":["InputAudio"],"setType":2}]},
+        {"name":"DVD/USB","select":[{"commands":["InputDvd/Usb"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

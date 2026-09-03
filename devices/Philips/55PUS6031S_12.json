@@ -2,6 +2,66 @@
   "codeset": "codesets/67/670b5c3401996324.json",
   "deviceType": 1,
   "globalDeviceId": 348580,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Discreteinput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"AVMENU","to":"EXT1"}],"name":"EXT1"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"AVMENU","to":"Back AV"}],"name":"Back AV"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"AVMENU","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"AVMENU","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"AVMENU","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"AVMENU","to":"VGA/PC"}],"name":"VGA/PC"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"AVMENU","to":"Wireless Display"}],"name":"Wireless Display"},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Discreteinput","to":"SmartTV"}],"name":"SmartTV"},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Discreteinput","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "55PUS6031S/12"
+  "model": "55PUS6031S/12",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AVMENU": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["Source"],
+      "values": [
+        {"name":"EXT1"},
+        {"name":"Back AV"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"YPbPr"},
+        {"name":"VGA/PC"},
+        {"name":"Wireless Display"}
+      ]
+    },
+    "Discreteinput": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":1}]},
+        {"name":"SmartTV","select":[{"commands":["SmartTv"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]}
+      ]
+    },
+    "SmartTV_MENU": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Exit",{"delayMs":500}],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 30000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

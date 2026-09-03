@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/01/016e24d27c97aa44.json",
   "deviceType": 1,
   "globalDeviceId": 206733,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputVideo1"],"name":"Video/Component 1","ports":["Component","Composite"]},
+      {"commands":["InputVideo2"],"name":"Component 2","ports":["Component"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputPc"],"name":"PC","ports":["PC"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-32BX300"
+  "model": "KDL-32BX300",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

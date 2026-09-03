@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/88/8852c395614af0aa.json",
   "deviceType": 34,
   "globalDeviceId": 134938,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"Tuner"},
+      {"name":"Front AV"},
+      {"name":"Rear AV"},
+      {"name":"Rear SV"},
+      {"name":"DV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Soniq",
-  "model": "QMR-301B"
+  "model": "QMR-301B",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

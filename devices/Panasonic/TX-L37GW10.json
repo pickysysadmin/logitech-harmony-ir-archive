@@ -2,6 +2,92 @@
   "codeset": "codesets/8c/8c112b0f972eb95f.json",
   "deviceType": 1,
   "globalDeviceId": 176320,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV2"},{"set":"AV2Input","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV2"},{"set":"AV2Input","to":"AV2S"}],"name":"AV2S"},
+      {"commands":[{"set":"InputType","to":"AV3"},{"set":"AV3Input","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AV3"},{"set":"AV3Input","to":"AV3S"}],"name":"AV3S"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"Hdmi3"}],"name":"Hdmi3"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVB-S"}],"name":"DVB-S"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVB-C"}],"name":"DVB-C"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVB-T"}],"name":"DVB-T"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Analog"}],"name":"Analog"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-L37GW10"
+  "model": "TX-L37GW10",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AV2Input": {
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "AV3Input": {
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"Component","select":[{"commands":["InputPc","AV","DirectionUp","OK"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":1}]},
+        {"name":"Hdmi1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"Hdmi2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"Hdmi3","select":[{"commands":["InputHDMI3"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["TV"],
+      "values": [
+        {"name":"DVB-S"},
+        {"name":"DVB-C"},
+        {"name":"DVB-T"},
+        {"name":"Analog"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 9500,
+    "pressMinRepeats": 3
+  }
 }

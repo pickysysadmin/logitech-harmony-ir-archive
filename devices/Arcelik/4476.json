@@ -2,6 +2,40 @@
   "codeset": "codesets/90/90049928a11d2d09.json",
   "deviceType": 1,
   "globalDeviceId": 137219,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Tv"},
+      {"name":"Scart1"},
+      {"name":"Scart2"},
+      {"name":"Scart3"},
+      {"name":"SVHS"},
+      {"name":"AV"},
+      {"name":"PC"},
+      {"name":"DVI"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Arcelik",
-  "model": "4476"
+  "model": "4476",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["PowerToggle"],
+    "onReset": [
+      {"set":"Input","to":"Tv"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

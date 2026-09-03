@@ -2,6 +2,53 @@
   "codeset": "codesets/9a/9a9a6ae3d0521775.json",
   "deviceType": 1,
   "globalDeviceId": 79577,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Av1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Av2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Av3"}],"name":"AV 3"},
+      {"commands":[{"set":"InputType","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"YCbCr"}],"name":"YCbCr"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hisense",
-  "model": "LCD-3203"
+  "model": "LCD-3203",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputYPbPr"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"YCbCr","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"},
+        {"name":"Av3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

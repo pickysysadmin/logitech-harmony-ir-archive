@@ -2,6 +2,56 @@
   "codeset": "codesets/a0/a0a69640cc0a1d7e.json",
   "deviceType": 21,
   "globalDeviceId": 171849,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"PORTABLE"}],"name":"PORTABLE"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"IPOD"}],"name":"IPOD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "FA163"
+  "model": "FA163",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FunctionInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"CD"}
+      ]
+    },
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"USB"},
+        {"name":"PORTABLE"},
+        {"name":"IPOD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Function","select":[{"commands":["Function"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,41 @@
   "codeset": "codesets/77/77d5a73d56c19283.json",
   "deviceType": 1,
   "globalDeviceId": 493257,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"Ant/Cable","ports":["Antenna"]},
+      {"commands":["InputComposite"],"name":"Composite","ports":["Composite"]},
+      {"commands":["InputHdmi1"],"name":"HDMI1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI3","ports":["HDMI"]},
+      {"commands":["Youtube"],"name":"YouTube","ports":["Streaming"]},
+      {"commands":["Amazon"],"name":"Amazon","ports":["Streaming"]},
+      {"commands":["Vudu"],"name":"Vudu","ports":["Streaming"]},
+      {"commands":["HiSmart"],"name":"HiSmart","ports":["Streaming"]},
+      {"commands":["Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hisense",
-  "model": "65H6570F"
+  "model": "65H6570F",
+  "power": {
+    "off": ["Sleep"],
+    "on": [
+      "PowerOff",
+      {"delayMs":2000},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 45000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

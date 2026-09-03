@@ -2,6 +2,33 @@
   "codeset": "codesets/a2/a2b78730ec208857.json",
   "deviceType": 1,
   "globalDeviceId": 159249,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"TV"},
+      {"commands":["InputExt2","ChannelDown"],"name":"Ext1"},
+      {"commands":["InputExt2"],"name":"Ext2"},
+      {"commands":["InputExt2","ChannelUp"],"name":"Side"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "28PW9309"
+  "model": "28PW9309",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

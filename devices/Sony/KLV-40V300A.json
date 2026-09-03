@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/07/07abc234b9f4ffb0.json",
   "deviceType": 1,
   "globalDeviceId": 162330,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputHd/Dvd1"],"name":"HD/DVD 1"},
+      {"commands":["InputHd/Dvd2"],"name":"HD/DVD 2"},
+      {"commands":["InputHd/Dvd2",{"delayMs":1000},{"command":"InputNext","durationMs":500},{"delayMs":500},{"command":"DirectionDown","durationMs":500},{"delayMs":500},{"command":"Select","durationMs":500}],"name":"HDMI 1"},
+      {"commands":["InputHd/Dvd2",{"delayMs":1000},{"command":"InputNext","durationMs":500},{"delayMs":500},{"command":"DirectionDown","durationMs":500},{"delayMs":500},{"command":"DirectionDown","durationMs":500},{"delayMs":500},{"command":"Select","durationMs":500}],"name":"HDMI 2"},
+      {"commands":["InputPc"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KLV-40V300A"
+  "model": "KLV-40V300A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

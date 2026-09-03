@@ -2,6 +2,38 @@
   "codeset": "codesets/ed/ed144b6f18ee78b5.json",
   "deviceType": 1,
   "globalDeviceId": 84789,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"VCR"},
+      {"name":"Scart1"},
+      {"name":"Scart2"},
+      {"name":"SVHS"},
+      {"name":"RGB"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["0"],
+    "type": 4
+  },
   "manufacturer": "Schneider",
-  "model": "STV-700"
+  "model": "STV-700",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 3
+  }
 }

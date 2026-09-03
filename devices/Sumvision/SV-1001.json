@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/ee/eee2a18fc1d1343d.json",
   "deviceType": 34,
   "globalDeviceId": 89319,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"Rear CVBS"},
+      {"name":"Rear S-Video"},
+      {"name":"Scart"}
+    ],
+    "next": ["InputAv1"],
+    "type": 2
+  },
   "manufacturer": "Sumvision",
-  "model": "SV-1001"
+  "model": "SV-1001",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

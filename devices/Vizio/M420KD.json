@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/19/198662da84bfb46a.json",
   "deviceType": 1,
   "globalDeviceId": 231788,
+  "inputs": {
+    "list": [
+      {"commands":["InputTV","Exit","DirectionRight","Ok",{"delayMs":2500},"InputTV"],"name":"TV"},
+      {"commands":["InputAv","Exit","DirectionRight","Ok",{"delayMs":2500},"InputAv"],"name":"AV"},
+      {"commands":["InputComponent1","Exit","DirectionRight","Ok","2500","InputComponent1"],"name":"Component 1"},
+      {"commands":["InputComponent2","Exit","DirectionRight","Ok",{"delayMs":2500},"InputComponent2"],"name":"Component 2"},
+      {"commands":["InputHdmi1","Exit","DirectionRight","Ok","2500","InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2","Exit","DirectionRight","Ok","2500","InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3","Exit","DirectionRight","Ok",{"delayMs":2500},"InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4","Exit","DirectionRight","Ok","2500","InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["InputRGB","Exit","DirectionRight","Ok","2500","InputRGB"],"name":"RGB"},
+      {"commands":["VUDU"],"name":"Vudu"},
+      {"commands":["VIA","VIA"],"name":"Vizio Internet Apps"},
+      {"commands":["InputMedia"],"name":"Media"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Vizio",
-  "model": "M420KD"
+  "model": "M420KD",
+  "power": {
+    "off": ["Exit","PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 20000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 20000,
+    "pressMinRepeats": 1
+  }
 }

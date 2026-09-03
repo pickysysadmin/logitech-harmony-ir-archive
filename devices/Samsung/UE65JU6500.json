@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/c1/c1e1e93f6ca61b10.json",
   "deviceType": 1,
   "globalDeviceId": 270296,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputAv"],"name":"AV"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputTv",{"delayMs":4000},"Source",{"delayMs":500},"DirectionRight","Select"],"name":"HDMI 4(only HDMI 4 Active)"},
+      {"commands":["InputHdmi1",{"delayMs":4000},"Source",{"delayMs":500},"DirectionRight","Select"],"name":"HDMI 4(with HDMI 1,HDMI 4 Active)"},
+      {"commands":["InputHdmi2",{"delayMs":4000},"Source",{"delayMs":500},"DirectionRight","Select"],"name":"HDMI 4(with HDMI 1,HDMI 2,HDMI 4 Active)"},
+      {"commands":["InputHdmi3",{"delayMs":4000},"Source",{"delayMs":500},"DirectionRight","Select"],"name":"HDMI 4(with HDMI 1,HDMI 2,HDMI 3,HDMI 4 Active)"},
+      {"commands":["Exit","SmartHub"],"name":"Smart Hub"},
+      {"commands":["Ambient"],"name":"Ambient"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UE65JU6500"
+  "model": "UE65JU6500",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

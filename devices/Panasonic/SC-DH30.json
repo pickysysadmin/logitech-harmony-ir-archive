@@ -2,6 +2,45 @@
   "codeset": "codesets/70/708585bfc15b1f45.json",
   "deviceType": 21,
   "globalDeviceId": 76019,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"FM"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTape"],"name":"Tape"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-DH30"
+  "model": "SC-DH30",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

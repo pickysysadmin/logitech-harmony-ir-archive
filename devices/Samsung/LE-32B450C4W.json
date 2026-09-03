@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/9e/9e671ce84851ed4a.json",
   "deviceType": 1,
   "globalDeviceId": 160570,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputExt1"],"name":"Ext","ports":["Scart"]},
+      {"commands":["Source","InputExt1","DirectionDown","Select"],"name":"AV","ports":["Composite"]},
+      {"commands":["InputComponent1"],"name":"Component","ports":["Component"]},
+      {"commands":["InputPC"],"name":"Pc","ports":["PC"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "LE-32B450C4W"
+  "model": "LE-32B450C4W",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

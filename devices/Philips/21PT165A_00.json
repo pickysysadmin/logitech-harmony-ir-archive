@@ -2,6 +2,34 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 78519,
+  "inputs": {
+    "list": [
+      {"name":"Antenne"},
+      {"name":"EXT1"},
+      {"name":"EXT2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "21PT165A/00"
+  "model": "21PT165A/00",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"Antenne"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

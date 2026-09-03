@@ -1,7 +1,47 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 143654,
+  "inputs": {
+    "list": [
+      {"name":"Tv"},
+      {"name":"Scart1"},
+      {"name":"Scart1RGB"},
+      {"name":"Scart2"},
+      {"name":"Scart2RGB"},
+      {"name":"PC"},
+      {"name":"DVI"},
+      {"name":"FAV"},
+      {"name":"Svid"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "SEG",
-  "model": "Mythos 32"
+  "model": "Mythos 32",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["TeletextStop"],"setType":2}]},
+        {"name":"On","select":[{"commands":["TeletextReveal"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

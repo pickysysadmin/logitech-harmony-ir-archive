@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/80/805c3902aafca0de.json",
   "deviceType": 34,
   "globalDeviceId": 182250,
+  "inputs": {
+    "list": [
+      {"commands":["DVD"],"name":"DVD"},
+      {"commands":["HDD"],"name":"HDD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "RDR-HX722"
+  "model": "RDR-HX722",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"L3"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

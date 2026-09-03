@@ -2,6 +2,61 @@
   "codeset": "codesets/65/659bbd4b7d06909f.json",
   "deviceType": 22,
   "globalDeviceId": 164666,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Mp3LineIn"}],"name":"Mp3LineIn","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"Disc"}],"name":"Disc","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"Usb"}],"name":"Usb","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Dock"}],"name":"Dock","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux1"}],"name":"Aux1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux2"}],"name":"Aux2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"DigitalIn"}],"name":"DigitalIn","ports":["Coaxial"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS-6600"
+  "model": "HTS-6600",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAUX/DI"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"},
+        {"name":"DigitalIn"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv"},
+        {"name":"Radio"},
+        {"name":"Mp3LineIn"},
+        {"name":"Dock"},
+        {"name":"USB"},
+        {"name":"Aux"}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputUSB/Disc"],
+      "values": [
+        {"name":"Disc"},
+        {"name":"Usb"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

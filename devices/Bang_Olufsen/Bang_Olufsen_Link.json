@@ -2,6 +2,30 @@
   "codeset": "codesets/e5/e57d18d42327711b.json",
   "deviceType": 5,
   "globalDeviceId": 492556,
+  "inputs": {
+    "list": [
+      {"commands":["InputRadio"],"name":"Radio","ports":["FM Antenna"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputTape"],"name":"Tape","ports":["Composite"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Bang & Olufsen",
-  "model": "Bang & Olufsen Link"
+  "model": "Bang & Olufsen Link",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputCd"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/27/27c502b599174a1e.json",
   "deviceType": 1,
   "globalDeviceId": 136009,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"Tuner"},
+      {"commands":["InputVideo3"],"name":"Component"},
+      {"commands":["InputVideo4"],"name":"Ext4"},
+      {"commands":["InputVideo1"],"name":"Ext1"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-42DP8"
+  "model": "LT-42DP8",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["Teletext"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Teletext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

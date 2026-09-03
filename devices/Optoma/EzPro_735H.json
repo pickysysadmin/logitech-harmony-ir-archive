@@ -2,6 +2,36 @@
   "codeset": "codesets/03/03203511924f683e.json",
   "deviceType": 7,
   "globalDeviceId": 133450,
+  "inputs": {
+    "list": [
+      {"name":"Computer"},
+      {"name":"Composite Video"},
+      {"name":"S-Video"},
+      {"name":"component"}
+    ],
+    "next": ["InputYPbPr"],
+    "type": 2
+  },
   "manufacturer": "Optoma",
-  "model": "EzPro 735H"
+  "model": "EzPro 735H",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

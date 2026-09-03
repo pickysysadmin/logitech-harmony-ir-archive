@@ -2,6 +2,42 @@
   "codeset": "codesets/3c/3c4ba07b481a46bb.json",
   "deviceType": 1,
   "globalDeviceId": 150838,
+  "inputs": {
+    "list": [
+      {"commands":["TV"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo2","AV","DirectionRight","OK"],"name":"AV2S"},
+      {"commands":["InputVideo3"],"name":"AV3"},
+      {"commands":["InputVideo3","AV","DirectionRight","OK"],"name":"AV3S"},
+      {"commands":["InputPC","AV","DirectionUp","OK"],"name":"Component"},
+      {"commands":["InputPC"],"name":"PC"},
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["InputHdmi3"],"name":"HDMI3"},
+      {"commands":["SdCard"],"name":"SD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-R32LX85"
+  "model": "TX-R32LX85",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1500}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2500}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 3
+  }
 }

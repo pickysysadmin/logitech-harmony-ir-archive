@@ -2,6 +2,38 @@
   "codeset": "codesets/69/698b0eb246dc6a2b.json",
   "deviceType": 5,
   "globalDeviceId": 90245,
+  "inputs": {
+    "list": [
+      {"commands":[{"command":"InputTuner","durationMs":1500}],"name":"Tuner"},
+      {"commands":[{"command":"InputPhono","durationMs":1500}],"name":"Phono"},
+      {"commands":[{"command":"InputCd","durationMs":1500}],"name":"CD"},
+      {"commands":[{"command":"InputCdr/Tape","durationMs":1500}],"name":"CDR/Tape"},
+      {"commands":[{"command":"InputTv","durationMs":1500}],"name":"TV"},
+      {"commands":[{"command":"InputVcr","durationMs":1500}],"name":"VCR"},
+      {"commands":[{"command":"InputSat","durationMs":1500}],"name":"Satellite"},
+      {"commands":[{"command":"InputDvd","durationMs":1500}],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "FR-996/00S"
+  "model": "FR-996/00S",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":3000}
+    ],
+    "on": [
+      {"command":"InputTuner","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

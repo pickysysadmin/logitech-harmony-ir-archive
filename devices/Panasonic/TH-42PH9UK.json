@@ -2,6 +2,47 @@
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 157529,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video2"},{"set":"Video2Input","to":"Video2a"}],"name":"Video2a"},
+      {"commands":[{"set":"InputType","to":"Video2"},{"set":"Video2Input","to":"Video2b"}],"name":"Video2b"},
+      {"commands":[{"set":"InputType","to":"Video3"}],"name":"Video3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PH9UK"
+  "model": "TH-42PH9UK",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video3","select":[{"commands":["InputVideo3"],"setType":2}]}
+      ]
+    },
+    "Video2Input": {
+      "next": ["InputVideo2"],
+      "values": [
+        {"name":"Video2a"},
+        {"name":"Video2b"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

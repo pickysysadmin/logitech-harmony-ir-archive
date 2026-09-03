@@ -2,6 +2,31 @@
   "codeset": "codesets/f6/f6933aec9351ab9a.json",
   "deviceType": 22,
   "globalDeviceId": 137142,
+  "inputs": {
+    "list": [
+      {"commands":["InputDVD"],"name":"DVD"},
+      {"commands":["InputAM"],"name":"AM"},
+      {"commands":["InputFM"],"name":"FM"},
+      {"commands":["InputFM","InputNext"],"name":"SATELLITE RADIO"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "KD-DV4200"
+  "model": "KD-DV4200",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,69 @@
   "codeset": "codesets/4f/4fe2b8f93acda9b2.json",
   "deviceType": 1,
   "globalDeviceId": 269284,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompInput","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompInput","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"PC/HDMI"},{"set":"PC/HDMIInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC/HDMI"},{"set":"PC/HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"PC/HDMI"},{"set":"PC/HDMIInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"PC/HDMI"},{"set":"PC/HDMIInput","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"PC/HDMI"},{"set":"PC/HDMIInput","to":"HDMI 4"}],"name":"HDMI 4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "E551"
+  "model": "E551",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CompInput": {
+      "next": ["InputComp"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Comp","select":[{"commands":["InputComp"],"setType":2}]},
+        {"name":"PC/HDMI","select":[{"commands":["InputPc/Hdmi"],"setType":2}]}
+      ]
+    },
+    "PC/HDMIInput": {
+      "next": ["InputPc/Hdmi"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"HDMI 4"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

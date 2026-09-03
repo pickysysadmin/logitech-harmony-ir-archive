@@ -2,6 +2,60 @@
   "codeset": "codesets/7e/7e6f5cd5df2908b8.json",
   "deviceType": 1,
   "globalDeviceId": 252179,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Vudu"}],"name":"Vudu","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Vizio Internet Apps"}],"name":"Vizio Internet Apps","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"AV"}],"name":"AV","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"Component"}],"name":"Component","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"HDMI 3"}],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Netflix"}],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "E390i-A1"
+  "model": "E390i-A1",
+  "power": {
+    "off": ["Exit","PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":2}]},
+        {"name":"Vudu","select":[{"commands":["Vudu"],"setType":2}]},
+        {"name":"Vizio Internet Apps","select":[{"commands":["VIA"],"setType":2}]},
+        {"name":"Toggle","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    },
+    "ToggleInput": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["Input"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"},
+        {"name":"Component"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 20000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 18000,
+    "pressMinRepeats": 1
+  }
 }

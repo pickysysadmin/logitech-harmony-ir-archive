@@ -1,7 +1,68 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ef/efc40609b5fb8bed.json",
   "deviceType": 1,
   "globalDeviceId": 147598,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":[{"set":"VIDEOInput","to":"Video4"}],"name":"Video 4"},
+      {"commands":["InputS-Video1"],"name":"S-Video 1"},
+      {"commands":["InputS-Video2"],"name":"S-Video 2"},
+      {"commands":[{"delayMs":3000},"InputAntenna"],"name":"Cable"},
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["InputComponent2"],"name":"Component 2"},
+      {"commands":["InputHDMI"],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "TX-R3081WH"
+  "model": "TX-R3081WH",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "COMPONENTInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"},
+        {"name":"HDMI"},
+        {"name":"Cable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VIDEO","select":[{"commands":["Source"],"setType":2}]},
+        {"name":"COMPONENT","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"},
+        {"name":"Video4"},
+        {"name":"S-Video1"},
+        {"name":"S-Video2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 700,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

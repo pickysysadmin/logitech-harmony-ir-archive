@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/34/34a1dae73d9cc362.json",
   "deviceType": 34,
   "globalDeviceId": 166920,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"ExtInputs"},{"set":"ExtInputsInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"ExtInputs"},{"set":"ExtInputsInput","to":"AV1-Front"}],"name":"AV1-Front"},
+      {"commands":[{"set":"InputType","to":"ExtInputs"},{"set":"ExtInputsInput","to":"SCART"}],"name":"SCART"},
+      {"commands":[{"set":"InputType","to":"ExtInputs"},{"set":"ExtInputsInput","to":"DV"}],"name":"DV"},
+      {"commands":[{"set":"InputType","to":"HDD/DVD"},{"set":"HDD/DVDInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD/DVD"},{"set":"HDD/DVDInput","to":"HDD"}],"name":"HDD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Targa",
-  "model": "DRH-5500X"
+  "model": "DRH-5500X",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ExtInputsInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV1-Front"},
+        {"name":"SCART"},
+        {"name":"DV"}
+      ]
+    },
+    "HDD/DVDInput": {
+      "next": ["HDD/DVD"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"HDD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ExtInputs","select":[{"commands":["Source"],"setType":2}]},
+        {"name":"HDD/DVD","select":[{"commands":["HDD/DVD"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

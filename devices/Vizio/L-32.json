@@ -1,7 +1,72 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/9a/9ae9300a0b6c2731.json",
   "deviceType": 1,
   "globalDeviceId": 147737,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AnalogHD"},{"set":"AnalogHDInput","to":"Analog HD 1"}],"name":"Analog HD 1"},
+      {"commands":[{"set":"InputType","to":"AnalogHD"},{"set":"AnalogHDInput","to":"Analog HD 2"}],"name":"Analog HD 2"},
+      {"commands":[{"set":"InputType","to":"DigitalHD"},{"set":"DigitalHDInput","to":"Digital HD 1"}],"name":"Digital HD 1"},
+      {"commands":[{"set":"InputType","to":"DigitalHD"},{"set":"DigitalHDInput","to":"Digital HD 2"}],"name":"Digital HD 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 3"}],"name":"AV 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "L-32"
+  "model": "L-32",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputS-Video"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV 3"}
+      ]
+    },
+    "AnalogHDInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Analog HD 1"},
+        {"name":"Analog HD 2"}
+      ]
+    },
+    "DigitalHDInput": {
+      "next": ["InputDVI/DTV"],
+      "values": [
+        {"name":"Digital HD 1"},
+        {"name":"Digital HD 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AnalogHD","select":[{"commands":["InputVideo",{"set":"AnalogHDInput","to":"Analog HD 1"}],"setType":2}]},
+        {"name":"DigitalHD","select":[{"commands":["InputDVI/DTV"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputS-Video",{"set":"AVInput","to":"AV 1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

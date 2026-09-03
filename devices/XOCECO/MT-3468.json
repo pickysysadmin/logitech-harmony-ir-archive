@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/b9/b93d24c32807950e.json",
   "deviceType": 1,
   "globalDeviceId": 73234,
+  "inputs": {
+    "finish": ["VolumeUp"],
+    "list": [
+      {"name":"VGA"},
+      {"name":"YPBPR"},
+      {"name":"AV3"},
+      {"name":"AV2"},
+      {"name":"AV1"},
+      {"name":"TV"}
+    ],
+    "next": ["ChannelDown"],
+    "previous": ["DirectionLeft"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "XOCECO",
-  "model": "MT-3468"
+  "model": "MT-3468",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

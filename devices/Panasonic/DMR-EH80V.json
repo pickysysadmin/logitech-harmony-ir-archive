@@ -1,7 +1,46 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/af/af92562c62adae39.json",
   "deviceType": 47,
   "globalDeviceId": 158180,
+  "inputs": {
+    "list": [
+      {"commands":["InputVhs"],"name":"VHS"},
+      {"commands":["InputHdd"],"name":"HDD"},
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputSd"],"name":"SD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-EH80V"
+  "model": "DMR-EH80V",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV 3"},
+        {"name":"TP(DVD)"},
+        {"name":"DC(VHS)"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

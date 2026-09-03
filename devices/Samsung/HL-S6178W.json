@@ -2,6 +2,61 @@
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 13,
   "globalDeviceId": 84008,
+  "inputs": {
+    "list": [
+      {"commands":["InputHDMI1"],"name":"HDMI 1 (Cable)"},
+      {"commands":["InputHDMI2V2"],"name":"HDMI 2 (DVD)"},
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo3"],"name":"AV3"},
+      {"commands":["InputSVideo"],"name":"S-Video1"},
+      {"commands":["InputSVideo2"],"name":"S-Video2"},
+      {"commands":["InputComponent 1"],"name":"Component1"},
+      {"commands":["InputComponent 2"],"name":"Component2"},
+      {"commands":["InputDvi"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HL-S6178W"
+  "model": "HL-S6178W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent 1"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"},
+        {"name":"CompAnt"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["TvVideo",{"set":"VideoInput","to":"VideoSVideo"}],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent 1",{"set":"ComponentInput","to":"Component1"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"VideoSVideo"},
+        {"name":"VideoAntenna"},
+        {"name":"VideoAv1"},
+        {"name":"VideoAv2"},
+        {"name":"VideoAv3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

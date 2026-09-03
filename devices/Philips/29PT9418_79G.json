@@ -2,6 +2,35 @@
   "codeset": "codesets/a2/a2b78730ec208857.json",
   "deviceType": 1,
   "globalDeviceId": 91179,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"S Video"},
+      {"name":"Input 2"},
+      {"name":"Composite"},
+      {"name":"Front"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "29PT9418/79G"
+  "model": "29PT9418/79G",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

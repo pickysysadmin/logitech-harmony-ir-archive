@@ -2,6 +2,38 @@
   "codeset": "codesets/15/15945804f4c66687.json",
   "deviceType": 7,
   "globalDeviceId": 155419,
+  "inputs": {
+    "list": [
+      {"name":"Input 1"},
+      {"name":"Input 2"},
+      {"name":"Input 3"}
+    ],
+    "next": ["Input"],
+    "type": 2
+  },
   "manufacturer": "Sanyo",
-  "model": "PLC-XP41"
+  "model": "PLC-XP41",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1500},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Input 1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 38000,
+    "pressMinRepeats": 1
+  }
 }

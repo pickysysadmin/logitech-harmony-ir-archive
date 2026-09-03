@@ -2,6 +2,50 @@
   "codeset": "codesets/b7/b72a2d16f6058af9.json",
   "deviceType": 1,
   "globalDeviceId": 115201,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"HDTV"}],"name":"HDTV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "GVA",
-  "model": "GVA-PDP421"
+  "model": "GVA-PDP421",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVI","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputYCbCr"],"setType":2}]},
+        {"name":"HDTV","select":[{"commands":["InputYPbPr"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

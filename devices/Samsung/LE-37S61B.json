@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/c7/c7c0202f8145629d.json",
   "deviceType": 1,
   "globalDeviceId": 165551,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Tuner"},
+      {"name":"EXT1"},
+      {"name":"EXT2"},
+      {"name":"AV"},
+      {"name":"S-Video"},
+      {"name":"Comp1"},
+      {"name":"PC"},
+      {"name":"HDMI"}
+    ],
+    "next": ["InputNext"],
+    "start": ["Menu"],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "LE-37S61B"
+  "model": "LE-37S61B",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

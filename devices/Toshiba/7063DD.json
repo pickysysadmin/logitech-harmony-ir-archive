@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/bf/bfea79650737ced0.json",
   "deviceType": 1,
   "globalDeviceId": 62836,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"EXT1"},
+      {"name":"EXT2"},
+      {"name":"EXT3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "7063DD"
+  "model": "7063DD",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

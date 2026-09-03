@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/b9/b93d24c32807950e.json",
   "deviceType": 1,
   "globalDeviceId": 77144,
+  "inputs": {
+    "finish": ["VolumeUp"],
+    "list": [
+      {"name":"VGA"},
+      {"name":"HDMI"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"TV"},
+      {"name":"HDTV1"},
+      {"name":"HDTV2"}
+    ],
+    "next": ["ChannelDown"],
+    "previous": ["DirectionLeft"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Prima",
-  "model": "LC-23Y25"
+  "model": "LC-23Y25",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

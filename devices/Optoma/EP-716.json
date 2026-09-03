@@ -2,6 +2,34 @@
   "codeset": "codesets/5b/5b9c36d971391ac1.json",
   "deviceType": 7,
   "globalDeviceId": 103044,
+  "inputs": {
+    "list": [
+      {"commands":["InputVga"],"name":"VGA 1"},
+      {"commands":["InputVga"],"name":"VGA 2"},
+      {"commands":["InputS-Video"],"name":"S-VIDEO"},
+      {"commands":["InputComposite"],"name":"COMPOSIT"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "EP-716"
+  "model": "EP-716",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

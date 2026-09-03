@@ -2,6 +2,55 @@
   "codeset": "codesets/f5/f5ede49baed7403b.json",
   "deviceType": 22,
   "globalDeviceId": 172673,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM/AM"}],"name":"FM/AM"},
+      {"commands":[{"set":"InputType","to":"DriveSelect"},{"set":"DriveSelectInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DriveSelect"},{"set":"DriveSelectInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"FrontMusicP"}],"name":"FrontMusicP"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"RearMusicP"}],"name":"RearMusicP"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-RT50"
+  "model": "SC-RT50",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"FrontMusicP"},
+        {"name":"RearMusicP"},
+        {"name":"Aux"}
+      ]
+    },
+    "DriveSelectInput": {
+      "next": ["InputDvd"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"SD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"FM/AM","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DriveSelect","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

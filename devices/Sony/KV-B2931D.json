@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 93984,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo5","InputNext"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"AV 1"},
+      {"commands":["InputRgb1"],"name":"RGB"},
+      {"commands":["InputVideo2"],"name":"AV 2"},
+      {"commands":["InputVideo4"],"name":"YC 2"},
+      {"commands":["InputVideo3"],"name":"AV 3"},
+      {"commands":["InputVideo5"],"name":"YC 3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KV-B2931D"
+  "model": "KV-B2931D",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

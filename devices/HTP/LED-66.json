@@ -2,6 +2,41 @@
   "codeset": "codesets/2b/2bfbbce8d6c64739.json",
   "deviceType": 7,
   "globalDeviceId": 274762,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV"},
+      {"name":"S-Video"},
+      {"name":"YPbPr"},
+      {"name":"VGA"},
+      {"name":"HDMI"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "HTP",
-  "model": "LED-66"
+  "model": "LED-66",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

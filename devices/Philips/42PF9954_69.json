@@ -2,6 +2,39 @@
   "codeset": "codesets/f8/f85bada5f8fd15c8.json",
   "deviceType": 1,
   "globalDeviceId": 118013,
+  "inputs": {
+    "list": [
+      {"commands":["InputAV2"],"name":"AntennaCable"},
+      {"commands":["InputVga"],"name":"vga"},
+      {"commands":["InputAv1"],"name":"av1"},
+      {"commands":["InputAV2"],"name":"av2"},
+      {"commands":["InputAv3"],"name":"av3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "42PF9954/69"
+  "model": "42PF9954/69",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

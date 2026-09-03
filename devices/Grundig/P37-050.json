@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/16/16acfb6410d2af6c.json",
   "deviceType": 1,
   "globalDeviceId": 66462,
+  "inputs": {
+    "list": [
+      {"name":"TUNER"},
+      {"name":"AV"}
+    ],
+    "next": ["AV"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "P37-050"
+  "model": "P37-050",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TUNER"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

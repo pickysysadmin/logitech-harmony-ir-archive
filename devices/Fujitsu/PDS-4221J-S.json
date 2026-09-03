@@ -2,6 +2,55 @@
   "codeset": "codesets/e5/e5ba270b912efcdf.json",
   "deviceType": 13,
   "globalDeviceId": 107782,
+  "inputs": {
+    "list": [
+      {"name":"RGB1"},
+      {"name":"RGB2"},
+      {"name":"Video"},
+      {"name":"S-Video"},
+      {"name":"Component Video"}
+    ],
+    "next": ["Menu","PowerOn","PowerOff"],
+    "type": 2
+  },
   "manufacturer": "Fujitsu",
-  "model": "PDS-4221J-S"
+  "model": "PDS-4221J-S",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputList": {
+      "values": [
+        {"name":"RGB","select":[{"commands":["InputRGB1"],"setType":2}]},
+        {"name":"VIDEO","select":[{"commands":["InputSVideo"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["InputRGB1"],
+      "values": [
+        {"name":"rgb1"},
+        {"name":"rgb2"}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputSVideo"],
+      "values": [
+        {"name":"component"},
+        {"name":"composite"},
+        {"name":"s-video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

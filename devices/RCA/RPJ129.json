@@ -2,6 +2,40 @@
   "codeset": "codesets/47/470beec1c2368f4e.json",
   "deviceType": 7,
   "globalDeviceId": 448203,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"PC-RGB","ports":["PC"]},
+      {"name":"HDMI","ports":["HDMI"]},
+      {"name":"AV","ports":["Composite"]},
+      {"name":"USB","ports":["USB"]},
+      {"name":"TF","ports":["SD-Card"]}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "RCA",
-  "model": "RPJ129"
+  "model": "RPJ129",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

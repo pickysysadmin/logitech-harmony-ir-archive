@@ -2,6 +2,31 @@
   "codeset": "codesets/12/126cc0647911de67.json",
   "deviceType": 7,
   "globalDeviceId": 480292,
+  "inputs": {
+    "list": [
+      {"commands":["Input",{"delayMs":500},"OK"],"name":"USB","ports":["USB"]},
+      {"commands":["Input",{"delayMs":500},"DirectionLeft",{"delayMs":500},"OK"],"name":"AV","ports":["Composite"]},
+      {"commands":["Input",{"delayMs":500},"DirectionLeft","DirectionLeft",{"delayMs":500},"OK"],"name":"VGA","ports":["PC"]},
+      {"commands":["Input",{"delayMs":500},"DirectionDown",{"delayMs":500},"OK"],"name":"SD","ports":["SD-Card"]},
+      {"commands":["Input",{"delayMs":500},"DirectionDown","DirectionLeft",{"delayMs":500},"OK"],"name":"HDMI","ports":["HDMI"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "ABOX",
-  "model": "T22"
+  "model": "T22",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

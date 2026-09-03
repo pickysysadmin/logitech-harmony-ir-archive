@@ -2,6 +2,38 @@
   "codeset": "codesets/de/de1927577ca303a9.json",
   "deviceType": 7,
   "globalDeviceId": 86645,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"RGB"}
+    ],
+    "next": ["DirectionRight"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "LG",
-  "model": "RL-JA10"
+  "model": "RL-JA10",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":2500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

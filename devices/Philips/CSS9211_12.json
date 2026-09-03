@@ -2,6 +2,53 @@
   "codeset": "codesets/90/904427ebded9ddb9.json",
   "deviceType": 19,
   "globalDeviceId": 232595,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iLink"}],"name":"iLink"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX1"}],"name":"AUX1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX2"}],"name":"AUX2"},
+      {"commands":[{"set":"InputType","to":"Coaxial/Optical"},{"set":"Coaxial/OpticalInput","to":"CoaxialIn"}],"name":"CoaxialIn"},
+      {"commands":[{"set":"InputType","to":"Coaxial/Optical"},{"set":"Coaxial/OpticalInput","to":"OpticalIn"}],"name":"OpticalIn"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "CSS9211/12"
+  "model": "CSS9211/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX1"},
+        {"name":"AUX2"}
+      ]
+    },
+    "Coaxial/OpticalInput": {
+      "next": ["InputCoaxial"],
+      "values": [
+        {"name":"CoaxialIn"},
+        {"name":"OpticalIn"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iLink","select":[{"commands":["InputMusiciLink"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Coaxial/Optical","select":[{"commands":["InputCoaxial"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

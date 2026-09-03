@@ -2,6 +2,31 @@
   "codeset": "codesets/a0/a07d7c5a58924205.json",
   "deviceType": 22,
   "globalDeviceId": 177001,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":["InputTv",{"delayMs":500},"InputNext"],"name":"Sat/Cable","ports":["Composite"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputTv",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext"],"name":"Dmport","ports":["DMPort"]},
+      {"commands":["InputTv",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext"],"name":"Audio","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputTuner"],"name":"Tuner","ports":["FM Antenna","AM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "DAV-HDX576WF"
+  "model": "DAV-HDX576WF",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

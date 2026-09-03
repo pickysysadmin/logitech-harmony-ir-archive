@@ -2,6 +2,61 @@
   "codeset": "codesets/5a/5adb1b44b1cccbfa.json",
   "deviceType": 1,
   "globalDeviceId": 206154,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AV 3"}],"name":"AV 3"},
+      {"commands":[{"set":"InputType","to":"AV 4"}],"name":"AV 4"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"MediaServer"}],"name":"MediaServer"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Analog"}],"name":"Analog"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-P50VT20A"
+  "model": "TH-P50VT20A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"AV 2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"AV 3","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"AV 4","select":[{"commands":["InputVideo4"],"setType":1}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":1}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":1}]},
+        {"name":"HDMI 4","select":[{"commands":["InputHdmi3","InputNext","DirectionDown","Select"],"setType":2}]},
+        {"name":"MediaServer","select":[{"commands":["InputVideo1","InputNext","DirectionUp","Select"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Digital"},
+        {"name":"Analog"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

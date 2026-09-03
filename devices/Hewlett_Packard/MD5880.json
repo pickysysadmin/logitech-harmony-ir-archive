@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ae/ae86bb7cff781dcf.json",
   "deviceType": 1,
   "globalDeviceId": 84920,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner1"],"name":"Cable"},
+      {"commands":["InputTuner2"],"name":"Antenna"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputComponent1"],"name":"Comp 1"},
+      {"commands":["InputComponent2"],"name":"Comp 2"},
+      {"commands":["InputHDMI1"],"name":"HDMI 1"},
+      {"commands":["InputHDMI2"],"name":"HDMI 2"},
+      {"commands":["InputVGA1"],"name":"VGA"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hewlett Packard",
-  "model": "MD5880"
+  "model": "MD5880",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

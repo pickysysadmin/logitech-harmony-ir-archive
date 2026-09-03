@@ -2,6 +2,62 @@
   "codeset": "codesets/ed/ed749417843c4dd2.json",
   "deviceType": 1,
   "globalDeviceId": 202689,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"SCART"},{"set":"SCARTInput","to":"SCART 1"}],"name":"SCART 1"},
+      {"commands":[{"set":"InputType","to":"SCART"},{"set":"SCARTInput","to":"SCART 2"}],"name":"SCART 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Side AV"}],"name":"Side AV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI 3"}],"name":"HDMI 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "LC-42SB55RU"
+  "model": "LC-42SB55RU",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"SCART","select":[{"commands":["InputScart"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "SCARTInput": {
+      "next": ["InputScart"],
+      "values": [
+        {"name":"SCART 1"},
+        {"name":"SCART 2"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"YPbPr"},
+        {"name":"Side AV"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

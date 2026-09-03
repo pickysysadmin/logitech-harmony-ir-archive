@@ -2,6 +2,42 @@
   "codeset": "codesets/01/01c8d15763045db3.json",
   "deviceType": 1,
   "globalDeviceId": 128924,
+  "inputs": {
+    "list": [
+      {"name":"ANT-1"},
+      {"name":"ANT-2"},
+      {"name":"INPUT-1"},
+      {"name":"INPUT-2"},
+      {"name":"COMP-1"},
+      {"name":"COMP-2"},
+      {"name":"PC"},
+      {"name":"HDMI-1"},
+      {"name":"HDMI-2"},
+      {"name":"CARD-1"},
+      {"name":"CARD-2"},
+      {"name":"CARD-3"},
+      {"name":"CARD-4"}
+    ],
+    "next": ["DeviceMenu"],
+    "type": 2
+  },
   "manufacturer": "Mitsubishi",
-  "model": "LT-3200"
+  "model": "LT-3200",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"ANT-1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

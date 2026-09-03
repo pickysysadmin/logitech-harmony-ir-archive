@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f8/f84476b9df458a0a.json",
   "deviceType": 1,
   "globalDeviceId": 101338,
+  "inputs": {
+    "list": [
+      {"name":"Scart 1"},
+      {"name":"Scart 2"},
+      {"name":"PC"},
+      {"name":"FAV"},
+      {"name":"S Video"},
+      {"name":"Tuner"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "TechLine",
-  "model": "TL-20LC09"
+  "model": "TL-20LC09",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Scart 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

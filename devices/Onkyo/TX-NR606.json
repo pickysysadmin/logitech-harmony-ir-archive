@@ -2,6 +2,41 @@
   "codeset": "codesets/35/35290bcdb31c3eff.json",
   "deviceType": 5,
   "globalDeviceId": 252459,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD"},
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR"},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT"},
+      {"commands":["InputGame"],"name":"Game"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputAux"],"name":"AUX"},
+      {"commands":["InputTv/Cd"],"name":"TV/CD"},
+      {"commands":["InputPort"],"name":"Port"},
+      {"commands":["InputNet"],"name":"NET"},
+      {"commands":["InputUsb"],"name":"USB"},
+      {"commands":["InputInternetRadio"],"name":"Internet Radio"},
+      {"commands":["InputMusicServer"],"name":"Music Server"},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM"},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-NR606"
+  "model": "TX-NR606",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

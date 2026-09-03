@@ -2,6 +2,48 @@
   "codeset": "codesets/fa/fa5ace744f894c29.json",
   "deviceType": 5,
   "globalDeviceId": 174991,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"DVD/DVR1"}],"name":"DVD/DVR1"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"DVD/DVR2"}],"name":"DVD/DVR2"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"DIGITAL"}],"name":"DIGITAL"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"ANALOG"}],"name":"ANALOG"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "SX-SW515"
+  "model": "SX-SW515",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioInput": {
+      "next": ["AudioIn"],
+      "values": [
+        {"name":"DVD/DVR1"},
+        {"name":"DVD/DVR2"},
+        {"name":"DIGITAL"},
+        {"name":"ANALOG"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["FM/AM"],"setType":2}]},
+        {"name":"Audio","select":[{"commands":["AudioIn"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

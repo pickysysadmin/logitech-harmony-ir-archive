@@ -2,6 +2,64 @@
   "codeset": "codesets/2c/2cecb4a02ddad7af.json",
   "deviceType": 1,
   "globalDeviceId": 168519,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"NTSC"}],"name":"NTSC"},
+      {"commands":[{"set":"InputType","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Y/Cb/Cr"}],"name":"Y/Cb/Cr"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Y/Pb/Pr"}],"name":"Y/Pb/Pr"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "42HDF52"
+  "model": "42HDF52",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"PC"},
+      {"set":"PCInput","to":"RGB"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"NTSC","select":[{"commands":["InputNtsc"],"setType":2}]},
+        {"name":"DTV","select":[{"commands":["InputDtv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo",{"set":"VideoInput","to":"Composite"}],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc",{"set":"PCInput","to":"RGB"}],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"RGB"},
+        {"name":"DVI"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Composite"},
+        {"name":"S-Video"},
+        {"name":"Y/Cb/Cr"},
+        {"name":"Y/Pb/Pr"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

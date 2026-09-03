@@ -2,6 +2,48 @@
   "codeset": "codesets/49/4989cd436dcc702f.json",
   "deviceType": 1,
   "globalDeviceId": 151801,
+  "inputs": {
+    "list": [
+      {"commands":["InputTV"],"name":"TV (Digital)"},
+      {"commands":["InputTV"],"name":"TV (Analogue)"},
+      {"commands":["InputVideo"],"name":"AV1"},
+      {"commands":["InputVideo"],"name":"AV2"},
+      {"commands":["InputVideo"],"name":"AV3"},
+      {"commands":["InputSat"],"name":"Component1"},
+      {"commands":["InputSat"],"name":"Component2"},
+      {"commands":["InputSat"],"name":"Component3"},
+      {"commands":["InputPc"],"name":"VGA"},
+      {"commands":["InputPc"],"name":"HDMI 1"},
+      {"commands":["InputPc"],"name":"HDMI 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Acer",
-  "model": "AT-3730B"
+  "model": "AT-3730B",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["Teletext"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Teletext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

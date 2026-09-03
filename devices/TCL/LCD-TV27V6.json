@@ -1,7 +1,47 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/71/716253ade74cf1c5.json",
   "deviceType": 1,
   "globalDeviceId": 119109,
+  "inputs": {
+    "finish": ["DirectionRight"],
+    "list": [
+      {"name":"TV"},
+      {"name":"PC"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV2-S"},
+      {"name":"AV3"},
+      {"name":"AV3-S"},
+      {"name":"CMP"},
+      {"name":"HDMI"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["TvVideo"],
+    "type": 4
+  },
   "manufacturer": "TCL",
-  "model": "LCD-TV27V6"
+  "model": "LCD-TV27V6",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV3-S"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

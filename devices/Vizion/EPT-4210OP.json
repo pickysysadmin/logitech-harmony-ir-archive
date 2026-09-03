@@ -2,6 +2,39 @@
   "codeset": "codesets/ae/ae2735dee8e2eaa5.json",
   "deviceType": 1,
   "globalDeviceId": 156190,
+  "inputs": {
+    "finish": ["DirectionRight"],
+    "list": [
+      {"name":"TV"},
+      {"name":"SCART 1"},
+      {"name":"SCART 2"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"RGB"},
+      {"name":"DVI"}
+    ],
+    "next": ["DirectionDown"],
+    "start": [
+      {"set":"Input","to":"TV"},
+      "StartInput"
+    ],
+    "type": 4
+  },
   "manufacturer": "Vizion",
-  "model": "EPT-4210OP"
+  "model": "EPT-4210OP",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 1
+  }
 }

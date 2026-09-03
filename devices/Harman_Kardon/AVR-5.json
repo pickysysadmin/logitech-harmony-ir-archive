@@ -2,6 +2,60 @@
   "codeset": "codesets/b3/b33d4214a7073656.json",
   "deviceType": 5,
   "globalDeviceId": 83944,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tape 1"}],"name":"Tape 1"},
+      {"commands":[{"set":"InputType","to":"Tape 2 Mon"}],"name":"Tape 2 Mon"},
+      {"commands":[{"set":"InputType","to":"VCR 1"}],"name":"VCR 1"},
+      {"commands":[{"set":"InputType","to":"VCR 2"}],"name":"VCR 2"},
+      {"commands":[{"set":"InputType","to":"TV/Aux"}],"name":"TV/Aux"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Input6Ch"}],"name":"Input6Ch"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "AVR-5"
+  "model": "AVR-5",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tape 1","select":[{"commands":["InputTape1"],"setType":2}]},
+        {"name":"Tape 2 Mon","select":[{"commands":["InputTape2"],"setType":2}]},
+        {"name":"VCR 1","select":[{"commands":["InputVcr1"],"setType":2}]},
+        {"name":"VCR 2","select":[{"commands":["InputVcr2"],"setType":2}]},
+        {"name":"TV/Aux","select":[{"commands":["InputTv2"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Phono","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Input6Ch","select":[{"commands":["Input6Ch"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

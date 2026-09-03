@@ -2,6 +2,30 @@
   "codeset": "codesets/e8/e84ef4cdeb4bcae9.json",
   "deviceType": 5,
   "globalDeviceId": 61522,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputAux2"],"name":"Aux"},
+      {"commands":["InputTape"],"name":"Tape"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Grundig",
-  "model": "Fine-Arts M100R"
+  "model": "Fine-Arts M100R",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["InputTuner"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

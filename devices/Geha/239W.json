@@ -2,6 +2,31 @@
   "codeset": "codesets/ff/ff04f2e33a874faa.json",
   "deviceType": 7,
   "globalDeviceId": 112351,
+  "inputs": {
+    "list": [
+      {"name":"Video 1"}
+    ],
+    "type": 6
+  },
   "manufacturer": "Geha",
-  "model": "239W"
+  "model": "239W",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

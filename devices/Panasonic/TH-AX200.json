@@ -2,6 +2,30 @@
   "codeset": "codesets/c2/c266994b00ea7c5f.json",
   "deviceType": 7,
   "globalDeviceId": 141128,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext"],"name":"HDMI"},
+      {"commands":["InputRgb","InputNext","InputNext"],"name":"SVideo"},
+      {"commands":["InputRgb","InputNext","InputNext","InputNext"],"name":"YPB/PR"},
+      {"commands":["InputRgb"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-AX200"
+  "model": "TH-AX200",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

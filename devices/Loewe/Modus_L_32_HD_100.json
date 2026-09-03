@@ -2,6 +2,39 @@
   "codeset": "codesets/cf/cfab459b5c5631de.json",
   "deviceType": 1,
   "globalDeviceId": 156168,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"TV"},
+      {"commands":["InputComponent"],"name":"COMP.IN"},
+      {"commands":["InputDVI/HDMI","0","DirectionUp","Select"],"name":"Hdmi2/DVI"},
+      {"commands":["InputDVI/HDMI"],"name":"Hdmi1/DVI"},
+      {"commands":["InputVGA"],"name":"PCIN"},
+      {"commands":["InputAVS"],"name":"AVS"},
+      {"commands":["InputAV2V2"],"name":"AV2"},
+      {"commands":["InputAV1"],"name":"AV1"},
+      {"commands":["InputAV1","0","DirectionDown","Select"],"name":"VIDEO"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Loewe",
-  "model": "Modus L 32 HD+ 100"
+  "model": "Modus L 32 HD+ 100",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

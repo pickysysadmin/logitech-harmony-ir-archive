@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/90/90ead03cf6c9625c.json",
   "deviceType": 37,
   "globalDeviceId": 210813,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"DVD/iPod"},{"set":"DVD/iPodInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVD/iPod"},{"set":"DVD/iPodInput","to":"iPod"}],"name":"iPod"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Soniq",
-  "model": "QV-173LTI"
+  "model": "QV-173LTI",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVD/iPodInput": {
+      "next": ["InputDvd/iPod"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"iPod"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"TV/DTV","select":[{"commands":["InputTv/Dtv"],"setType":2}]},
+        {"name":"DVD/iPod","select":[{"commands":["InputDvd/iPod"],"setType":2}]}
+      ]
+    },
+    "TV/DTVInput": {
+      "next": ["InputTv/Dtv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

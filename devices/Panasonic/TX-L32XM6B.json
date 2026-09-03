@@ -1,7 +1,74 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/9b/9bdac6546b512809.json",
   "deviceType": 1,
   "globalDeviceId": 255044,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV2"},{"set":"AV2Input","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AV2"},{"set":"AV2Input","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVB"}],"name":"DVB"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-L32XM6B"
+  "model": "TX-L32XM6B",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AV2Input": {
+      "finish": ["Ok"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"Component"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["SdCard/Usb"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"DVB"},
+        {"name":"TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

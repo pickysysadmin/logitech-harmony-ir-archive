@@ -2,6 +2,48 @@
   "codeset": "codesets/74/74aae7fc49479339.json",
   "deviceType": 21,
   "globalDeviceId": 211762,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"iPod/Aux"},{"set":"iPod/AuxInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"iPod/Aux"},{"set":"iPod/AuxInput","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "AX-M709E"
+  "model": "AX-M709E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"iPod/Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "iPod/AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"AUX"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

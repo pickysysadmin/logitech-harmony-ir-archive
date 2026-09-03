@@ -2,6 +2,40 @@
   "codeset": "codesets/46/465b8608c3cab7e2.json",
   "deviceType": 5,
   "globalDeviceId": 167384,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Optical"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd/Hdp"],"name":"DVD/HDP","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputTv/Cbl"],"name":"TV/CBL","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputVCR"],"name":"VCR","ports":["Component","Composite","S-Video","Optical"]},
+      {"commands":["InputV-Aux"],"name":"V.Aux","ports":["Composite"]},
+      {"commands":["InputCd-r/Tape"],"name":"CD-R/Tape","ports":["Composite"]},
+      {"commands":["InputAux"],"name":"Aux","ports":["Composite"]},
+      {"commands":["InputiPod"],"name":"iPod","ports":["Dock"]},
+      {"commands":["InputSatTu"],"name":"SAT TU","ports":["Others"]},
+      {"commands":["QuickSelect1"],"name":"QuickSelect 1","ports":["Streaming"]},
+      {"commands":["QuickSelect2"],"name":"QuickSelect 2","ports":["Streaming"]},
+      {"commands":["QuickSelect3"],"name":"QuickSelect 3","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-788"
+  "model": "AVR-788",
+  "power": {
+    "off": ["PowerOff-MainZone"],
+    "on": ["PowerOn-MainZone"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

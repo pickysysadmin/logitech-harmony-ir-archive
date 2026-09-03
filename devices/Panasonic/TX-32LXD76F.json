@@ -2,6 +2,44 @@
   "codeset": "codesets/86/860e4247e91f726d.json",
   "deviceType": 1,
   "globalDeviceId": 169285,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo2","InputNext","DirectionRight","Select"],"name":"AV2S"},
+      {"commands":["InputVideo3"],"name":"AV3"},
+      {"commands":["InputVideo3","InputNext","DirectionRight","Select"],"name":"AV3S"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["InputTv"],"name":"TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-32LXD76F"
+  "model": "TX-32LXD76F",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

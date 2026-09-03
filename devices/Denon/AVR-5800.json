@@ -2,6 +2,40 @@
   "codeset": "codesets/e3/e383f17dc05d9742.json",
   "deviceType": 5,
   "globalDeviceId": 36498,
+  "inputs": {
+    "list": [
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"Cd","ports":["Composite","Coaxial"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd"],"name":"Dvd","ports":["Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputVDP"],"name":"Vdp","ports":["Composite","Coaxial","S-Video"]},
+      {"commands":["InputTv"],"name":"Tv","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputDbs/Sat"],"name":"Dbs/Sat","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVcr1"],"name":"Vcr1","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputVcr2"],"name":"Vcr2","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputVcr3"],"name":"Vcr3","ports":["Composite","S-Video"]},
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["Composite","S-Video"]},
+      {"commands":["InputTape1"],"name":"Tape1","ports":["Composite","Optical"]},
+      {"commands":["InputTape2"],"name":"Tape2","ports":["Composite","Optical"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-5800"
+  "model": "AVR-5800",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,82 @@
   "codeset": "codesets/02/02095dea629a2b70.json",
   "deviceType": 1,
   "globalDeviceId": 166655,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InputTV"},{"set":"InputReset","to":"InputTV"},{"set":"TVInput","to":"TV"}],"name":"InputTV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"InputTV"},{"set":"InputReset","to":"InputTV"},{"set":"TVInput","to":"DTV"}],"name":"InputDTV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"InputRGB"}],"name":"InputRGB","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"InputReset","to":"Digital"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"InputReset","to":"Digital"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI","Composite"]},
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"InputReset","to":"Analog"},{"set":"AnalogInput","to":"Component 1"}],"name":"Component 1","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"InputReset","to":"Analog"},{"set":"AnalogInput","to":"Component 2"}],"name":"Component 2","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"InputReset","to":"Video"},{"set":"VideoInput","to":"AV 1"}],"name":"AV 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"InputReset","to":"Video"},{"set":"VideoInput","to":"AV 2"}],"name":"AV 2","ports":["Composite","S-Video"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "VIZIO VP-42HDTV"
+  "model": "VIZIO VP-42HDTV",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AnalogInput": {
+      "next": ["InputAnalogHd"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputDigitalHd"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputReset": {
+      "values": [
+        {"name":"InputTV","select":[{"commands":[{"set":"TVInput","to":"TV"}],"setType":2}]},
+        {"name":"Digital","select":[{"commands":[{"set":"HDMIInput","to":"HDMI 1"}],"setType":2}]},
+        {"name":"Analog","select":[{"commands":[{"set":"AnalogInput","to":"Component 1"}],"setType":2}]},
+        {"name":"Video","select":[{"commands":[{"set":"VideoInput","to":"AV 1"}],"setType":2}]}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"InputTV","select":[{"commands":["InputTv"],"setType":1}]},
+        {"name":"InputRGB","select":[{"commands":["InputRgb"],"setType":1}]},
+        {"name":"Digital","select":[{"commands":["InputDigitalHd"],"setType":1}]},
+        {"name":"Analog","select":[{"commands":["InputAnalogHd"],"setType":1}]},
+        {"name":"Video","select":[{"commands":["InputAv"],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,45 @@
   "codeset": "codesets/9f/9f39a06302242665.json",
   "deviceType": 22,
   "globalDeviceId": 98940,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Audio/Video"},{"set":"Audio/VideoInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Audio/Video"},{"set":"Audio/VideoInput","to":"AV 2"}],"name":"AV 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Insignia",
-  "model": "IS-HTIB101071-2"
+  "model": "IS-HTIB101071-2",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Audio/VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Audio/Video","select":[{"commands":["InputNext",{"set":"Audio/VideoInput","to":"AV 1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

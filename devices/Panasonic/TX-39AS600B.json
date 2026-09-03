@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/f7/f710892a3abcdd5e.json",
   "deviceType": 1,
   "globalDeviceId": 262002,
+  "inputs": {
+    "list": [
+      {"commands":["TV","OK"],"name":"TV"},
+      {"commands":["InputHdmi1","OK"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2","OK"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3","OK"],"name":"HDMI 3"},
+      {"commands":["InputVideo1","OK"],"name":"AV 1"},
+      {"commands":["InputVideo2","OK"],"name":"CompAV"},
+      {"commands":["Apps"],"name":"Viera Smart"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-39AS600B"
+  "model": "TX-39AS600B",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 10000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

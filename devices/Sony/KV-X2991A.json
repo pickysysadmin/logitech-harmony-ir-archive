@@ -2,6 +2,39 @@
   "codeset": "codesets/73/739b5e84df7e5da6.json",
   "deviceType": 1,
   "globalDeviceId": 121915,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"RGB"},
+      {"name":"AV2"},
+      {"name":"YC2"},
+      {"name":"AV3"},
+      {"name":"YC3"},
+      {"name":"AV4"},
+      {"name":"YC4"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KV-X2991A"
+  "model": "KV-X2991A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

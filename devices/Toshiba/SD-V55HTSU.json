@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5d/5d2cea18931fce10.json",
   "deviceType": 32,
   "globalDeviceId": 96012,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Tuner","to":"Am"}],"name":"Fm"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Tuner","to":"Fm"}],"name":"Am"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"Line 2"}],"name":"Line 2"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "SD-V55HTSU"
+  "model": "SD-V55HTSU",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputFM/AM"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]}
+      ]
+    },
+    "Tuner": {
+      "next": ["InputFM/AM"],
+      "values": [
+        {"name":"Fm"},
+        {"name":"Am"}
+      ]
+    },
+    "Video": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line 1"},
+        {"name":"Line 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

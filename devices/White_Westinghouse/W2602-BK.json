@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d5/d52542d35062aa07.json",
   "deviceType": 1,
   "globalDeviceId": 166832,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input Av"}],"name":"Input Av"},
+      {"commands":[{"set":"InputType","to":"Input S-Video"}],"name":"Input S-Video"},
+      {"commands":[{"set":"InputType","to":"Input Tv"}],"name":"Input Tv"},
+      {"commands":[{"set":"InputType","to":"YPBPR"},{"set":"YPBPRInput","to":"YPBPR 1"}],"name":"YPBPR 1"},
+      {"commands":[{"set":"InputType","to":"YPBPR"},{"set":"YPBPRInput","to":"YPBPR 2"}],"name":"YPBPR 2"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "White Westinghouse",
-  "model": "W2602-BK"
+  "model": "W2602-BK",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Input Av","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"Input S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"Input Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"YPBPR","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputDvi"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputDvi"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"}
+      ]
+    },
+    "YPBPRInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"YPBPR 1"},
+        {"name":"YPBPR 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

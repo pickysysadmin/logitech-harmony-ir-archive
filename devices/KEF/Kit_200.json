@@ -2,6 +2,35 @@
   "codeset": "codesets/4c/4cd1a567b45aa3c7.json",
   "deviceType": 22,
   "globalDeviceId": 134891,
+  "inputs": {
+    "list": [
+      {"commands":["InputCbl/Sat"],"name":"SAT"},
+      {"commands":["InputVcr"],"name":"VCR"},
+      {"commands":["InputTuner"],"name":"FM"},
+      {"commands":["InputTuner"],"name":"AM"},
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputTv"],"name":"TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "KEF",
-  "model": "Kit 200"
+  "model": "Kit 200",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

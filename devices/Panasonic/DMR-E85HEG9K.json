@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/d6/d6de5e9d03afc652.json",
   "deviceType": 34,
   "globalDeviceId": 117064,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Input1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Input2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Input3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-E85HEG9K"
+  "model": "DMR-E85HEG9K",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Input1"},
+        {"name":"Input2"},
+        {"name":"Input3"},
+        {"name":"Tuner"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Audio","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

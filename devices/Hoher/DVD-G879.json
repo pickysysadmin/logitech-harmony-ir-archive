@@ -2,6 +2,32 @@
   "codeset": "codesets/c2/c24d407bcdfbfc65.json",
   "deviceType": 34,
   "globalDeviceId": 137789,
+  "inputs": {
+    "list": [
+      {"name":"Radio"},
+      {"name":"CD"},
+      {"name":"DVD"}
+    ],
+    "next": ["VolumeUp"],
+    "type": 2
+  },
   "manufacturer": "Hoher",
-  "model": "DVD-G879"
+  "model": "DVD-G879",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Radio"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

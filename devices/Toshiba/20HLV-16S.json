@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e2/e2dcd59536761dd8.json",
   "deviceType": 37,
   "globalDeviceId": 88172,
+  "inputs": {
+    "finish": ["InputDvd"],
+    "list": [
+      {"commands":["0"],"name":"Antenna"},
+      {"commands":["1"],"name":"Video 1"},
+      {"commands":["2"],"name":"Video 2"},
+      {"commands":["3"],"name":"ColorStream HD"},
+      {"commands":["4"],"name":"HDMI"},
+      {"commands":["5"],"name":"PC"}
+    ],
+    "start": ["TvVideo"],
+    "type": 3
+  },
   "manufacturer": "Toshiba",
-  "model": "20HLV-16S"
+  "model": "20HLV-16S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

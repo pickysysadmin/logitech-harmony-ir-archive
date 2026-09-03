@@ -2,6 +2,57 @@
   "codeset": "codesets/94/94189a8ac0006409.json",
   "deviceType": 19,
   "globalDeviceId": 228583,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Optical In"}],"name":"Optical In"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Coaxial In"}],"name":"Coaxial In"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Music iLink"}],"name":"Music iLink"},
+      {"commands":[{"set":"InputType","to":"HdmiSource"},{"set":"HdmiSourceInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HdmiSource"},{"set":"HdmiSourceInput","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS7111"
+  "model": "HTS7111",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioSourceInput": {
+      "next": ["InputAudioSource"],
+      "values": [
+        {"name":"Optical In"},
+        {"name":"Coaxial In"},
+        {"name":"AUX"},
+        {"name":"Music iLink"}
+      ]
+    },
+    "HdmiSourceInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"AudioSource","select":[{"commands":["InputAudioSource"],"setType":2}]},
+        {"name":"HdmiSource","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

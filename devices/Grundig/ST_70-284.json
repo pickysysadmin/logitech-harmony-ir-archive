@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/44/4425b94422151b8a.json",
   "deviceType": 1,
   "globalDeviceId": 133205,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Tuner"},
+      {"commands":["0",{"delayMs":1500},"InputNext"],"name":"AV1"},
+      {"commands":["0",{"delayMs":1500},"InputNext",{"delayMs":500},"InputNext"],"name":"AV2"},
+      {"commands":["0",{"delayMs":1500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext"],"name":"AV3"},
+      {"commands":["0",{"delayMs":1500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext"],"name":"AV4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Grundig",
-  "model": "ST 70-284"
+  "model": "ST 70-284",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

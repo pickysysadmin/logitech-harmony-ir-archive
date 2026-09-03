@@ -2,6 +2,50 @@
   "codeset": "codesets/5e/5e78bea4e0d3150a.json",
   "deviceType": 1,
   "globalDeviceId": 83065,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AVs"},{"set":"AVsInput","to":"Scart"}],"name":"Scart"},
+      {"commands":[{"set":"InputType","to":"AVs"},{"set":"AVsInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AVs"},{"set":"AVsInput","to":"AV1-Svideo"}],"name":"AV1-Svideo"},
+      {"commands":[{"set":"InputType","to":"AVs"},{"set":"AVsInput","to":"AV2"}],"name":"AV2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "32HW-53E"
+  "model": "32HW-53E",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVsInput": {
+      "next": ["ChannelDown"],
+      "values": [
+        {"name":"Scart"},
+        {"name":"AV1"},
+        {"name":"AV1-Svideo"},
+        {"name":"AV2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputNext","Red"],"setType":2}]},
+        {"name":"AVs","select":[{"commands":["InputNext","Green",{"set":"AVsInput","to":"Scart"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

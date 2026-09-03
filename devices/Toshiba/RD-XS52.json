@@ -2,6 +2,50 @@
   "codeset": "codesets/a7/a7fb4e0428dbd275.json",
   "deviceType": 34,
   "globalDeviceId": 180019,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"L-1"}],"name":"L-1"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"L-2"}],"name":"L-2"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"L-3"}],"name":"L-3"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"L-U"}],"name":"L-U"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "RD-XS52"
+  "model": "RD-XS52",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputSelectInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"L-1"},
+        {"name":"L-2"},
+        {"name":"L-3"},
+        {"name":"L-U"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"InputSelect","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

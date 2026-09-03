@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5d/5d57792813f2710a.json",
   "deviceType": 1,
   "globalDeviceId": 161119,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Air"}],"name":"Air"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Cable"}],"name":"Cable"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HP-R5052"
+  "model": "HP-R5052",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputAntenna"],
+      "values": [
+        {"name":"Air"},
+        {"name":"Cable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputSVideo"],"setType":2}]},
+        {"name":"Component1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["InputAntenna"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

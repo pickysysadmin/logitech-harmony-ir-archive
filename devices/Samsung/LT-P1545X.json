@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 205138,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenna"],"name":"Ant"},
+      {"commands":["InputVideo"],"name":"AV 1"},
+      {"commands":["InputVideo","TvVideo"],"name":"AV 2"},
+      {"commands":["InputVideo","TvVideo","TvVideo"],"name":"AV 3"},
+      {"commands":["InputSVideo"],"name":"S Video"},
+      {"commands":["InputComponent 1"],"name":"Component 1"},
+      {"commands":["InputComponent 2"],"name":"Component 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "LT-P1545X"
+  "model": "LT-P1545X",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,65 @@
   "codeset": "codesets/52/52e5a04edaf1ab88.json",
   "deviceType": 13,
   "globalDeviceId": 79809,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV/AV"},{"set":"TvAvInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/AV"},{"set":"TvAvInput","to":"CVBS"}],"name":"CVBS"},
+      {"commands":[{"set":"InputType","to":"TV/AV"},{"set":"TvAvInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompInput","to":"Comp1"}],"name":"Comp 1"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompInput","to":"Comp2"}],"name":"Comp 2"},
+      {"commands":[{"set":"InputType","to":"Photo"}],"name":"Photo"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PcInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PcInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Monivision",
-  "model": "LWX-30MMS-3"
+  "model": "LWX-30MMS-3",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CompInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV/AV","select":[{"commands":["InputTv/Av"],"setType":2}]},
+        {"name":"Comp","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"Photo","select":[{"commands":["InputPhoto"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]}
+      ]
+    },
+    "PcInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"}
+      ]
+    },
+    "TvAvInput": {
+      "next": ["InputTv/Av"],
+      "values": [
+        {"name":"TV"},
+        {"name":"CVBS"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

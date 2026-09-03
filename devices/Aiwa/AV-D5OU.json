@@ -2,6 +2,53 @@
   "codeset": "codesets/f6/f6fc1012f3e57805.json",
   "deviceType": 5,
   "globalDeviceId": 10535,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tunertype"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Phonotype"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"CDtype"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Auxtype"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"5CHtype"},{"set":"VideoMode","to":"Video1mode"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video2type"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Video3type"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"5CHtype"},{"set":"VideoMode","to":"5CHmode"}],"name":"5CH"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Aiwa",
-  "model": "AV-D5OU"
+  "model": "AV-D5OU",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tunertype","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"Phonotype","select":[{"commands":["InputPhono"],"setType":1}]},
+        {"name":"CDtype","select":[{"commands":["InputCd"],"setType":1}]},
+        {"name":"Auxtype","select":[{"commands":["InputAux"],"setType":1}]},
+        {"name":"Video2type","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"Video3type","select":[{"commands":["InputVideo2","InputNext"],"setType":1}]},
+        {"name":"5CHtype","select":[{"commands":["InputVideo1"],"setType":2}]}
+      ]
+    },
+    "VideoMode": {
+      "next": ["InputVideo1"],
+      "values": [
+        {"name":"Video1mode"},
+        {"name":"5CHmode"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

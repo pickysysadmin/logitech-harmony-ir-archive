@@ -2,6 +2,92 @@
   "codeset": "codesets/c4/c41ca5209ac53977.json",
   "deviceType": 5,
   "globalDeviceId": 241321,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"MD"}],"name":"MD","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"DVD/CD"},{"set":"DVD/CDInput","to":"DVD"}],"name":"DVD","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"DVD/CD"},{"set":"DVD/CDInput","to":"CD"}],"name":"CD","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"DigitalIn"},{"set":"DigitalInInput","to":"Coax 1"}],"name":"Coax 1","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"DigitalIn"},{"set":"DigitalInInput","to":"Coax 2"}],"name":"Coax 2","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"DigitalIn"},{"set":"DigitalInInput","to":"Opt 1"}],"name":"Opt 1","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"DigitalIn"},{"set":"DigitalInInput","to":"Opt 2"}],"name":"Opt 2","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Tape/Phono"},{"set":"Tape/PhonoInput","to":"Tape"}],"name":"Tape","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Tape/Phono"},{"set":"Tape/PhonoInput","to":"Phono"}],"name":"Phono","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"StereoLineIn"},{"set":"StereoLineInInput","to":"iPod"}],"name":"iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"StereoLineIn"},{"set":"StereoLineInInput","to":"Line In"}],"name":"Line In","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Aux1/Aux2"},{"set":"Aux1/Aux2Input","to":"Aux 1"}],"name":"Aux 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux1/Aux2"},{"set":"Aux1/Aux2Input","to":"Aux 2"}],"name":"Aux 2","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pyle",
-  "model": "pt-990a"
+  "model": "pt-990a",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux1/Aux2Input": {
+      "next": ["InputAux1/Aux2"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"}
+      ]
+    },
+    "DVD/CDInput": {
+      "next": ["InputDvd/Cd"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"CD"}
+      ]
+    },
+    "DigitalInInput": {
+      "next": ["InputDigitalIn"],
+      "values": [
+        {"name":"Coax 1"},
+        {"name":"Coax 2"},
+        {"name":"Opt 1"},
+        {"name":"Opt 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"MD","select":[{"commands":["InputMd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"DigitalIn","select":[{"commands":["InputDigitalIn"],"setType":2}]},
+        {"name":"Tape/Phono","select":[{"commands":["InputTape/Phono"],"setType":2}]},
+        {"name":"StereoLineIn","select":[{"commands":["InputStereoLineIn"],"setType":2}]},
+        {"name":"Aux1/Aux2","select":[{"commands":["InputAux1/Aux2"],"setType":2}]}
+      ]
+    },
+    "StereoLineInInput": {
+      "next": ["InputStereoLineIn"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"Line In"}
+      ]
+    },
+    "Tape/PhonoInput": {
+      "next": ["InputTape/Phono"],
+      "values": [
+        {"name":"Tape"},
+        {"name":"Phono"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

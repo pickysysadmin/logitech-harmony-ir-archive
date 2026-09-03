@@ -2,6 +2,59 @@
   "codeset": "codesets/e7/e7319b8e1402a150.json",
   "deviceType": 21,
   "globalDeviceId": 239335,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Internet Radio"}],"name":"Internet Radio","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Online Music"}],"name":"Online Music","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Music Server"}],"name":"Music Server","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Digital In"}],"name":"Digital In","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Analog In"},{"set":"AnalogInInput","to":"Analog In 1"}],"name":"Analog In 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Analog In"},{"set":"AnalogInInput","to":"Analog In 2"}],"name":"Analog In 2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Analog In"},{"set":"AnalogInInput","to":"Portable In"}],"name":"Portable In","ports":["Portable"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Denon",
-  "model": "RCD N8"
+  "model": "RCD N8",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AnalogInInput": {
+      "next": ["InputAnalogIn"],
+      "values": [
+        {"name":"Analog In 1"},
+        {"name":"Analog In 2"},
+        {"name":"Portable In"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Internet Radio","select":[{"commands":["InputInternetRadio"],"setType":2}]},
+        {"name":"Online Music","select":[{"commands":["InputOnlineMusic"],"setType":2}]},
+        {"name":"Music Server","select":[{"commands":["InputMusicServer"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Digital In","select":[{"commands":["InputDigitalIn"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Analog In","select":[{"commands":["InputAnalogIn"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

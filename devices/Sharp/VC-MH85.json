@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/88/88de81d84decced1.json",
   "deviceType": 2,
   "globalDeviceId": 28141,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"L1"},
+      {"name":"L2"},
+      {"name":"L3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sharp",
-  "model": "VC-MH85"
+  "model": "VC-MH85",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"L1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

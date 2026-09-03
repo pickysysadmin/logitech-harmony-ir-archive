@@ -2,6 +2,36 @@
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 67824,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"RGB"},
+      {"name":"AV2"},
+      {"name":"AV2-S"},
+      {"name":"AV3"},
+      {"name":"AV3-S"},
+      {"name":"1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "CP2837TAN"
+  "model": "CP2837TAN",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 123241,
+  "inputs": {
+    "finish": ["Exit"],
+    "list": [
+      {"name":"Tuner"},
+      {"name":"VCR"},
+      {"name":"Scart1"},
+      {"name":"Scart2"},
+      {"name":"Scart3"},
+      {"name":"RGB"},
+      {"name":"C-AV"}
+    ],
+    "next": ["TvVideo"],
+    "start": ["TvVideo"],
+    "type": 4
+  },
   "manufacturer": "Schneider",
-  "model": "Scenaro 20A001"
+  "model": "Scenaro 20A001",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

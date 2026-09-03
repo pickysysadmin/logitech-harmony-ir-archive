@@ -2,6 +2,36 @@
   "codeset": "codesets/42/4283ed095c3fdbf8.json",
   "deviceType": 5,
   "globalDeviceId": 40481,
+  "inputs": {
+    "list": [
+      {"commands":["InputTape Deck"],"name":"Tape"},
+      {"commands":[{"delayMs":4000},"InputTuner"],"name":"Tuner"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":[{"delayMs":4000},"InputCd"],"name":"CD"},
+      {"commands":["InputVideo 1/DAT"],"name":"Aux/TV"},
+      {"commands":[{"delayMs":4000},"InputVideo2/Aux"],"name":"Video 1"},
+      {"commands":[{"delayMs":4000},"InputVideo2"],"name":"Video 2"},
+      {"commands":[{"delayMs":4000},"InputVideo3"],"name":"Video 3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Aiwa",
-  "model": "AV-X120U"
+  "model": "AV-X120U",
+  "power": {
+    "toggle": [
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

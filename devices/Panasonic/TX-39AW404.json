@@ -1,7 +1,70 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/b8/b8ca528634f97845.json",
   "deviceType": 1,
   "globalDeviceId": 272190,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Media Player"}],"name":"Media Player"},
+      {"commands":[{"set":"InputType","to":"TVToggle"},{"set":"TVToggleInput","to":"DVB-S"}],"name":"DVB-S"},
+      {"commands":[{"set":"InputType","to":"TVToggle"},{"set":"TVToggleInput","to":"DVB-C"}],"name":"DVB-C"},
+      {"commands":[{"set":"InputType","to":"TVToggle"},{"set":"TVToggleInput","to":"DVB-T"}],"name":"DVB-T"},
+      {"commands":[{"set":"InputType","to":"TVToggle"},{"set":"TVToggleInput","to":"Analogue"}],"name":"Analogue"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-39AW404"
+  "model": "TX-39AW404",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["AV"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Media Player","select":[{"commands":["MediaPlayer"],"setType":2}]},
+        {"name":"TVToggle","select":[{"commands":["TV"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["AV"],"setType":2}]}
+      ]
+    },
+    "TVToggleInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"DVB-S"},
+        {"name":"DVB-C"},
+        {"name":"DVB-T"},
+        {"name":"Analogue"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

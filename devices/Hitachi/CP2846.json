@@ -2,6 +2,36 @@
   "codeset": "codesets/b0/b0bde47f92aa2ba7.json",
   "deviceType": 1,
   "globalDeviceId": 59874,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"RGB"},
+      {"name":"AV2"},
+      {"name":"SAV2"},
+      {"name":"AV3"},
+      {"name":"SAV3"},
+      {"name":"Tuner"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "CP2846"
+  "model": "CP2846",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV2"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

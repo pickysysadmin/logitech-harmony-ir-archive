@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/b4/b4408a06253f83a4.json",
   "deviceType": 1,
   "globalDeviceId": 179668,
+  "inputs": {
+    "list": [
+      {"commands":["Analog"],"name":"Analog","ports":["Antenna"]},
+      {"commands":["Digital"],"name":"Digital","ports":["Antenna"]},
+      {"commands":["InputVideo1"],"name":"AV 1","ports":["Scart"]},
+      {"commands":["InputVideo2"],"name":"AV 2","ports":["Scart"]},
+      {"commands":["InputVideo3"],"name":"AV 3","ports":["Component"]},
+      {"commands":["InputVideo4"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputVideo5"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputVideo6"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputVideo6",{"delayMs":1000},"InputNext","InputNext"],"name":"AV 6","ports":["Composite","S-Video"]},
+      {"commands":["InputPc"],"name":"PC","ports":["PC"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-32D3000"
+  "model": "KDL-32D3000",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

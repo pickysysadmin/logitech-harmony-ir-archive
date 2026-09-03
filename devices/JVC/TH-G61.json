@@ -2,6 +2,58 @@
   "codeset": "codesets/af/af9167366eba2b32.json",
   "deviceType": 22,
   "globalDeviceId": 161773,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Dvd/Cd"}],"name":"Dvd/Cd"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Fm"}],"name":"Fm"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AuxOpt"}],"name":"AuxOpt"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AudioIn"}],"name":"AudioIn"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"OsdIpod"}],"name":"OsdIpod"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Ipod"}],"name":"Ipod"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "TH-G61"
+  "model": "TH-G61",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FunctionInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"Dvd/Cd"},
+        {"name":"Fm"}
+      ]
+    },
+    "InputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"AuxOpt"},
+        {"name":"AudioIn"},
+        {"name":"OsdIpod"},
+        {"name":"Ipod"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Function","select":[{"commands":["Function"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

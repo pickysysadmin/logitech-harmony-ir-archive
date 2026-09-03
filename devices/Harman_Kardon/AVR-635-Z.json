@@ -2,6 +2,68 @@
   "codeset": "codesets/4b/4b89253ca32171fd.json",
   "deviceType": 5,
   "globalDeviceId": 128475,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Video 4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":["Input6/8Ch"],"name":"6/8 Channel"},
+      {"commands":[{"set":"InputType","to":"AmFm"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"AmFm"}],"name":"AM"},
+      {"commands":["InputTuner"],"name":"AVR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "AVR-635-Z"
+  "model": "AVR-635-Z",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "6or8ChInput": {
+      "next": ["Input6/8Ch"],
+      "values": [
+        {"name":"6 Channel"},
+        {"name":"6 Ch Direct"},
+        {"name":"8 Channel"},
+        {"name":"8 Ch Direct"}
+      ]
+    },
+    "AmFmInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Video 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"6or8Ch","select":[{"commands":["Input6/8Ch"],"setType":2}]},
+        {"name":"AmFm","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

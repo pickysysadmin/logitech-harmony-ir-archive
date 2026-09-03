@@ -2,6 +2,58 @@
   "codeset": "codesets/46/46f04bdd6c829bf0.json",
   "deviceType": 37,
   "globalDeviceId": 133689,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"DVB"}],"name":"DVB"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"SCART"}],"name":"SCART"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"COMPOSITE"}],"name":"COMPOSITE"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"S-VIDEO"}],"name":"S-VIDEO"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"COMPONENT"}],"name":"COMPONENT"}
+    ],
+    "type": 5
+  },
   "manufacturer": "ODYS",
-  "model": "MULTIFLAT 19"
+  "model": "MULTIFLAT 19",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"DVB","select":[{"commands":["InputDvb"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"SCART"},
+        {"name":"COMPOSITE"},
+        {"name":"S-VIDEO"},
+        {"name":"COMPONENT"},
+        {"name":"VGA"},
+        {"name":"DVD"},
+        {"name":"DVB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

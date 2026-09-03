@@ -2,6 +2,53 @@
   "codeset": "codesets/81/81b02a0abb314b1d.json",
   "deviceType": 22,
   "globalDeviceId": 178545,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Dvd/Cd"}],"name":"Dvd/Cd","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Aux Opt"}],"name":"Aux Opt","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Audio In"}],"name":"Audio In","ports":["Aux"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "TH-G31"
+  "model": "TH-G31",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FunctionInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"Dvd/Cd"},
+        {"name":"FM"}
+      ]
+    },
+    "InputInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Aux Opt"},
+        {"name":"Audio In"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Function","select":[{"commands":["Function"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

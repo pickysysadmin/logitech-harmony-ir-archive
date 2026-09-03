@@ -2,6 +2,49 @@
   "codeset": "codesets/e3/e3465aa8cc950f43.json",
   "deviceType": 22,
   "globalDeviceId": 446933,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"BD/SD"}],"name":"BD/SD"},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In"},{"set":"Radio/Ext-InInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In"},{"set":"Radio/Ext-InInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In"},{"set":"Radio/Ext-InInput","to":"D-In1"}],"name":"D-In1"},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In"},{"set":"Radio/Ext-InInput","to":"D-In2"}],"name":"D-In2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Gemini",
-  "model": "Test SA-BT200"
+  "model": "Test SA-BT200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"BD/SD","select":[{"commands":["InputBd/sd"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputIpod"],"setType":2}]},
+        {"name":"Radio/Ext-In","select":[{"commands":[{"set":"Radio/Ext-InInput","to":"FM"},"InputTuner"],"setType":2}]}
+      ]
+    },
+    "Radio/Ext-InInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"Aux"},
+        {"name":"D-In1"},
+        {"name":"D-In2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

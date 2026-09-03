@@ -2,6 +2,39 @@
   "codeset": "codesets/f9/f9d4ed9d0c0ee441.json",
   "deviceType": 5,
   "globalDeviceId": 159590,
+  "inputs": {
+    "list": [
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR"},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT"},
+      {"commands":["InputGame/Tv"],"name":"Game/TV"},
+      {"commands":["InputAux1"],"name":"AUX 1"},
+      {"commands":["InputAux2"],"name":"AUX 2"},
+      {"commands":["InputNet/Usb"],"name":"Net/USB"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputTuner",{"delayMs":500},"InputFM"],"name":"FM"},
+      {"commands":["InputTuner",{"delayMs":500},"InputAm"],"name":"AM"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-NR906"
+  "model": "TX-NR906",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

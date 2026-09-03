@@ -2,6 +2,34 @@
   "codeset": "codesets/45/45e7d738e4c2871f.json",
   "deviceType": 5,
   "globalDeviceId": 168985,
+  "inputs": {
+    "list": [
+      {"commands":["InputDVD"],"name":"DVD"},
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM"},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SV373"
+  "model": "TX-SV373",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

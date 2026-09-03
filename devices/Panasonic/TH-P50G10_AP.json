@@ -2,6 +2,57 @@
   "codeset": "codesets/ad/ada8d8f86def2588.json",
   "deviceType": 1,
   "globalDeviceId": 163104,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV 1"}],"name":"AV 1","ports":["Component","Composite"]},
+      {"commands":[{"set":"InputType","to":"AV 2"}],"name":"AV 2","ports":["Component","Composite"]},
+      {"commands":[{"set":"InputType","to":"AV 3"}],"name":"AV 3","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"AV 4"}],"name":"AV 4","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVB"}],"name":"DVB","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV"}],"name":"TV","ports":["Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-P50G10 (AP)"
+  "model": "TH-P50G10 (AP)",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"AV 2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"AV 3","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"AV 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":1}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"DVB"},
+        {"name":"TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

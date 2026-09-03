@@ -2,6 +2,42 @@
   "codeset": "codesets/36/36a951cd35edac3d.json",
   "deviceType": 5,
   "globalDeviceId": 261688,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD","ports":["HDMI"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Component","Composite"]},
+      {"commands":["InputStb/Dvr"],"name":"STB/DVR","ports":["HDMI","Composite"]},
+      {"commands":["InputGame"],"name":"Game","ports":["HDMI","Composite"]},
+      {"commands":["InputPc"],"name":"PC","ports":["HDMI"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["HDMI"]},
+      {"commands":["InputTv/Cd"],"name":"TV/CD","ports":["Composite","Optical"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputMusicServer"],"name":"Music Server","ports":["Streaming"]},
+      {"commands":["InputInternetRadio"],"name":"Internet Radio","ports":["Streaming"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]},
+      {"commands":["InputBluetooth"],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":["InputNet"],"name":"NET","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-NR737"
+  "model": "TX-NR737",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

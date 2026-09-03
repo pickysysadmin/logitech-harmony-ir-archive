@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 33059,
+  "inputs": {
+    "list": [
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Component 1"},
+      {"name":"Component 2"},
+      {"name":"RGB"},
+      {"name":"DVI"},
+      {"name":"TV"}
+    ],
+    "next": ["TvVideo"],
+    "start": [
+      {"delayMs":3500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Zenith",
-  "model": "P42W42X"
+  "model": "P42W42X",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 5000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 5,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

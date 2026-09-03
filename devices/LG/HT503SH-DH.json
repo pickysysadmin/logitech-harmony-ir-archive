@@ -2,6 +2,58 @@
   "codeset": "codesets/a9/a98a556bacc13887.json",
   "deviceType": 22,
   "globalDeviceId": 154376,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"INPUT"},{"set":"INPUTInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"INPUT"},{"set":"INPUTInput","to":"AUX OPT"}],"name":"AUX OPT"},
+      {"commands":[{"set":"InputType","to":"INPUT"},{"set":"INPUTInput","to":"Tv-Audio"}],"name":"Tv-Audio"},
+      {"commands":[{"set":"InputType","to":"INPUT"},{"set":"INPUTInput","to":"Portable"}],"name":"Portable"},
+      {"commands":[{"set":"InputType","to":"INPUT"},{"set":"INPUTInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"FUNCTION"},{"set":"FUNCTIONInput","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"FUNCTION"},{"set":"FUNCTIONInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HT503SH-DH"
+  "model": "HT503SH-DH",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FUNCTIONInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"DVD/CD"},
+        {"name":"FM"}
+      ]
+    },
+    "INPUTInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"AUX OPT"},
+        {"name":"Tv-Audio"},
+        {"name":"Portable"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"INPUT","select":[{"commands":["Input"],"setType":2}]},
+        {"name":"FUNCTION","select":[{"commands":["Function"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

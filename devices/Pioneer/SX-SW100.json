@@ -2,6 +2,49 @@
   "codeset": "codesets/d2/d2e7bbd74d16d83e.json",
   "deviceType": 5,
   "globalDeviceId": 124154,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/DVR1"}],"name":"DVD/DVR1"},
+      {"commands":[{"set":"InputType","to":"DVD/DVR1"}],"name":"DVD/DVR2"},
+      {"commands":[{"set":"InputType","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "SX-SW100"
+  "model": "SX-SW100",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD/DVR1","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"DVD/DVR2","select":[{"commands":["InputXBox"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDigital"],"setType":2}]},
+        {"name":"Analog","select":[{"commands":["InputAnalog"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

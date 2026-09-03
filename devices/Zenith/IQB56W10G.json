@@ -2,6 +2,57 @@
   "codeset": "codesets/72/72c4dacfbb3035c8.json",
   "deviceType": 1,
   "globalDeviceId": 105349,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Front"}],"name":"Front"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"ANT A"}],"name":"ANT A"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"ANT B"}],"name":"ANT B"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"VGA"}],"name":"VGA"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Zenith",
-  "model": "IQB56W10G"
+  "model": "IQB56W10G",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"ANT A"},
+        {"name":"ANT B"},
+        {"name":"VGA"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputComp 3"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo2"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Front"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,45 @@
   "codeset": "codesets/72/72c4dacfbb3035c8.json",
   "deviceType": 1,
   "globalDeviceId": 114592,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"AntennaList"},{"set":"AntennaListInput","to":"Ant1"}],"name":"Ant1"},
+      {"commands":[{"set":"InputType","to":"AntennaList"},{"set":"AntennaListInput","to":"Ant2"}],"name":"Ant2"},
+      {"commands":[{"set":"InputType","to":"AntennaList"},{"set":"AntennaListInput","to":"DVDANT"}],"name":"DVDANT"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Zenith",
-  "model": "IQB64W10W"
+  "model": "IQB64W10W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaListInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Ant1"},
+        {"name":"Ant2"},
+        {"name":"DVDANT"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputComp 3"],"setType":2}]},
+        {"name":"AntennaList","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

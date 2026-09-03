@@ -1,7 +1,49 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/41/418f3c95dc07e63d.json",
   "deviceType": 1,
   "globalDeviceId": 38763,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Display"},{"set":"Display","to":"CA"}],"name":"CA"},
+      {"commands":[{"set":"InputType","to":"Display"},{"set":"Display","to":"CB"}],"name":"CB"},
+      {"commands":[{"set":"InputType","to":"Display"},{"set":"Display","to":"CH"}],"name":"CH"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video A"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "AV-3189S"
+  "model": "AV-3189S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Display": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"CA"},
+        {"name":"CB"},
+        {"name":"CH"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Display","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideoA"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

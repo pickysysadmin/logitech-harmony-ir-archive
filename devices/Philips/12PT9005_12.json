@@ -2,6 +2,33 @@
   "codeset": "codesets/df/df2aba1840fa05e8.json",
   "deviceType": 1,
   "globalDeviceId": 107300,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Video RGB"},
+      {"name":"EXT2 Y/C"},
+      {"name":"Front Y/C"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "12PT9005/12"
+  "model": "12PT9005/12",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

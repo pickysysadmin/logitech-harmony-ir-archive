@@ -2,6 +2,35 @@
   "codeset": "codesets/ad/ad2989b7e6b2f8a4.json",
   "deviceType": 1,
   "globalDeviceId": 48857,
+  "inputs": {
+    "list": [
+      {"commands":["Input1"],"name":"Tuner"},
+      {"commands":["InputVideo1/MD"],"name":"AV1"},
+      {"commands":["InputRGB1"],"name":"RGB"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputYc"],"name":"YC2"},
+      {"commands":["InputVideo3"],"name":"AV3"},
+      {"commands":["InputVideo3","InputNext"],"name":"YC3"},
+      {"commands":["InputVideo4"],"name":"AV4"},
+      {"commands":["InputVideo4","InputNext"],"name":"YC4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KL-37W1"
+  "model": "KL-37W1",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["GuideOff"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,51 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/1d/1d4ef95575c83a74.json",
   "deviceType": 1,
   "globalDeviceId": 180475,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"AirVideo","to":"Air"}],"name":"Air"},
+      {"commands":[{"set":"AirVideo","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"AirVideo","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"AirVideo","to":"Video"},{"set":"VideoInput","to":"Video 3"}],"name":"Video 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-29PS1D"
+  "model": "TX-29PS1D",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":3000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AirVideo": {
+      "next": ["TV/AV"],
+      "values": [
+        {"name":"Air"},
+        {"name":"Video"}
+      ]
+    },
+    "VideoInput": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":["Red"],"setType":1}]},
+        {"name":"Video 2","select":[{"commands":["Green"],"setType":1}]},
+        {"name":"Video 3","select":[{"commands":["Yellow"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

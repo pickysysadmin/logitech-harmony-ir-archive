@@ -2,6 +2,60 @@
   "codeset": "codesets/53/532f27f8d265075c.json",
   "deviceType": 22,
   "globalDeviceId": 175384,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dvd"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Xm"}],"name":"XM"},
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 1"}],"name":"Aux1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 2"}],"name":"Aux2"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Digital"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-TQ25N"
+  "model": "HT-TQ25N",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"},
+        {"name":"HDMI"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dvd","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner",{"set":"TunerInput","to":"Fm"}],"setType":2}]},
+        {"name":"Usb","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux",{"set":"AuxInput","to":"Aux 1"}],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Xm"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

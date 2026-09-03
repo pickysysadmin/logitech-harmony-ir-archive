@@ -2,6 +2,37 @@
   "codeset": "codesets/b7/b7241229da086d22.json",
   "deviceType": 47,
   "globalDeviceId": 150382,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputVcr"],"name":"VCR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Cinevision",
-  "model": "RV-4000"
+  "model": "RV-4000",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["Input"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line1"},
+        {"name":"Line2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

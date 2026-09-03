@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/cc/ccd7c2d282b57cbd.json",
   "deviceType": 1,
   "globalDeviceId": 92351,
+  "inputs": {
+    "list": [
+      {"name":"TUNER"},
+      {"name":"AV1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Radiotone",
-  "model": "TV-2051VT"
+  "model": "TV-2051VT",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TUNER"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

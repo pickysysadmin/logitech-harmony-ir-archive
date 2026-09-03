@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e8/e8e67b6136144786.json",
   "deviceType": 1,
   "globalDeviceId": 62907,
+  "inputs": {
+    "list": [
+      {"name":"Antenna"},
+      {"name":"AUX"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Ultra",
-  "model": "TCQ-2033F"
+  "model": "TCQ-2033F",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

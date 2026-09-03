@@ -2,6 +2,53 @@
   "codeset": "codesets/bb/bb66122adbcc1ead.json",
   "deviceType": 34,
   "globalDeviceId": 167309,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"DV"}],"name":"DV"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"AV Front"}],"name":"AV Front"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Daewoo",
-  "model": "DHR-8414"
+  "model": "DHR-8414",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ExtInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV Front"},
+        {"name":"S-Video"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"DV","select":[{"commands":["InputDv"],"setType":2}]},
+        {"name":"Ext","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

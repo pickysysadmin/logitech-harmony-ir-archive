@@ -2,6 +2,39 @@
   "codeset": "codesets/8c/8c8fb4a225b1db6e.json",
   "deviceType": 1,
   "globalDeviceId": 124605,
+  "inputs": {
+    "list": [
+      {"commands":["0"],"name":"Video0"},
+      {"commands":["1"],"name":"Video1"},
+      {"commands":["2"],"name":"Video2"},
+      {"commands":["ChannelUp"],"name":"Tuner"}
+    ],
+    "start": ["0"],
+    "type": 3
+  },
   "manufacturer": "Hitachi",
-  "model": "CS-2840TA"
+  "model": "CS-2840TA",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelDown"],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Teletext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

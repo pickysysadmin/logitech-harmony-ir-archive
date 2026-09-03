@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2,
+    "greaterHundred": ["GreaterHundred"]
+  },
   "codeset": "codesets/b9/b9de4ac05c956834.json",
   "deviceType": 2,
   "globalDeviceId": 168291,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line1"}
+    ],
+    "next": ["Input"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "OMNIVISION PV-V4524S"
+  "model": "OMNIVISION PV-V4524S",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

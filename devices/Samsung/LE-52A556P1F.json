@@ -2,6 +2,60 @@
   "codeset": "codesets/fc/fc056eb9a6e642dc.json",
   "deviceType": 1,
   "globalDeviceId": 156905,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"EXT1"}],"name":"EXT1"},
+      {"commands":[{"set":"InputType","to":"EXT2"}],"name":"EXT2"},
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"HDMI3"}],"name":"HDMI3"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "LE-52A556P1F"
+  "model": "LE-52A556P1F",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"EXT1","select":[{"commands":["InputExt1"],"setType":2}]},
+        {"name":"EXT2","select":[{"commands":["InputExt2"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputSVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"TV/DTV","select":[{"commands":["TV/DTV"],"setType":2}]}
+      ]
+    },
+    "TV/DTVInput": {
+      "next": ["TV/DTV"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

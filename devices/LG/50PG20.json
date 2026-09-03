@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ce/ce59745d1289275c.json",
   "deviceType": 1,
   "globalDeviceId": 169986,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputVideo1"],"name":"AV1","ports":["Composite","S-Video"]},
+      {"commands":["InputVideo2"],"name":"AV2","ports":["Composite"]},
+      {"commands":["InputComponent1"],"name":"Component1","ports":["Component"]},
+      {"commands":["InputComponent2"],"name":"Component2","ports":["Component"]},
+      {"commands":["InputRGB/PC"],"name":"RGB/PC","ports":["PC"]},
+      {"commands":["InputHdmi1"],"name":"HDMI1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI3","ports":["HDMI"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "50PG20"
+  "model": "50PG20",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

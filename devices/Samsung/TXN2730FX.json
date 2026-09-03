@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 47188,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"S-Video"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "TXN2730FX"
+  "model": "TXN2730FX",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputToggle"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"},
+        {"name":"CompAnt"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext",{"set":"VideoInput","to":"VideoSVideo"}],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputToggle",{"set":"ComponentInput","to":"Component1"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VideoSVideo"},
+        {"name":"VideoAntenna"},
+        {"name":"VideoAv1"},
+        {"name":"VideoAv2"},
+        {"name":"VideoAv3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

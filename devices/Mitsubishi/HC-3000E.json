@@ -2,6 +2,35 @@
   "codeset": "codesets/a5/a5cea61fad34479a.json",
   "deviceType": 7,
   "globalDeviceId": 223384,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvi-D"],"name":"HDMI"},
+      {"commands":["InputComputer"],"name":"PC"},
+      {"commands":["InputComponent"],"name":"COMP"},
+      {"commands":["InputVideo1"],"name":"VIDEO"},
+      {"commands":["InputVideo2"],"name":"S-VIDEO"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Mitsubishi",
-  "model": "HC-3000E"
+  "model": "HC-3000E",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":500},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 400,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

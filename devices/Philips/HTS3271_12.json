@@ -2,6 +2,53 @@
   "codeset": "codesets/d0/d0399750426f9813.json",
   "deviceType": 22,
   "globalDeviceId": 231690,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Optical In"}],"name":"Optical In"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Coaxial In"}],"name":"Coaxial In"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"AUX 1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"AUX 2"}],"name":"AUX 2"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Music iLink"}],"name":"Music iLink"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS3271/12"
+  "model": "HTS3271/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioSourceInput": {
+      "next": ["InputAudioSource"],
+      "values": [
+        {"name":"Optical In"},
+        {"name":"Coaxial In"},
+        {"name":"AUX 1"},
+        {"name":"AUX 2"},
+        {"name":"Music iLink"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputDock"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"AudioSource","select":[{"commands":["InputAudioSource"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

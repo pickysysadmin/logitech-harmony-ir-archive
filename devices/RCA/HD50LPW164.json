@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 97102,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Antenna"},
+      {"commands":["InputTuner","InputNext"],"name":"Input 1"},
+      {"commands":["InputTuner","InputNext","InputNext"],"name":"Input 2"},
+      {"commands":["InputS-Video"],"name":"Input 3"},
+      {"commands":["InputSat/Cable"],"name":"Input 4"},
+      {"commands":["InputSat/Cable","InputNext"],"name":"Front Input"},
+      {"commands":["InputSat/Cable","InputNext","InputNext"],"name":"HDMI/DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "HD50LPW164"
+  "model": "HD50LPW164",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 16000,
+    "pressMinRepeats": 3
+  }
 }

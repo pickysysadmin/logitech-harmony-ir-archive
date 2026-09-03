@@ -2,6 +2,37 @@
   "codeset": "codesets/74/7498777259ffc39a.json",
   "deviceType": 5,
   "globalDeviceId": 219754,
+  "inputs": {
+    "list": [
+      {"commands":["InputAv5"],"name":"AV 5","ports":["Composite"]},
+      {"commands":["InputAv6"],"name":"AV 6","ports":["Composite"]},
+      {"commands":["InputVAux"],"name":"V-Aux","ports":["HDMI","Composite"]},
+      {"commands":["InputAudio1"],"name":"Audio 1","ports":["Composite"]},
+      {"commands":["InputAudio2"],"name":"Audio 2","ports":["Composite"]},
+      {"commands":["InputDock"],"name":"Dock","ports":["Dock"]},
+      {"commands":["InputSirius"],"name":"Sirius","ports":["Others"]},
+      {"commands":["InputNet"],"name":"NET","ports":["Streaming"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V671 (Zone 2)"
+  "model": "RX-V671 (Zone 2)",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

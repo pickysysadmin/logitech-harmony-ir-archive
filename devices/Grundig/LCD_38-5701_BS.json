@@ -2,6 +2,44 @@
   "codeset": "codesets/34/3433029b5e201ec7.json",
   "deviceType": 1,
   "globalDeviceId": 160490,
+  "inputs": {
+    "list": [
+      {"name":"Ch 1"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"AV4"},
+      {"name":"AV5"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "LCD 38-5701 BS"
+  "model": "LCD 38-5701 BS",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Ch 1"}
+    ],
+    "toggle": ["PowerOff"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

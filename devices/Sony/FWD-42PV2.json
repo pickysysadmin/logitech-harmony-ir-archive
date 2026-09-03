@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 126045,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"ComponentInput","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"ComponentInput","to":"COMPONENT1"}],"name":"COMPONENT1"},
+      {"commands":[{"set":"VideoInput","to":"SVIDEO"}],"name":"SVIDEO"},
+      {"commands":[{"set":"VideoInput","to":"VIDEO1"}],"name":"VIDEO1"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"OPTION1"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "FWD-42PV2"
+  "model": "FWD-42PV2",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": [
+        {"delayMs":1500},
+        "InputRgb2"
+      ],
+      "values": [
+        {"name":"RGB"},
+        {"name":"COMPONENT1"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Component","select":[{"commands":[{"delayMs":1500},"InputRgb2"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo2"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo2"],
+      "values": [
+        {"name":"SVIDEO"},
+        {"name":"VIDEO1"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

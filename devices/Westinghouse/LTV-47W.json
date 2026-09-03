@@ -1,7 +1,71 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/8a/8aa2a505003f3e05.json",
   "deviceType": 1,
   "globalDeviceId": 152945,
+  "inputs": {
+    "list": [
+      {"name":"AV 1"},
+      {"name":"AV 2"},
+      {"name":"YPBPR 1"},
+      {"name":"YPBPR 2"},
+      {"name":"DVI"},
+      {"name":"VGA"},
+      {"name":"TV"},
+      {"name":"S-Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Westinghouse",
-  "model": "LTV-47W"
+  "model": "LTV-47W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"YPBPR 1"},
+        {"name":"YPBPR 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"PC","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputAV"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputDvi"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"VGA"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputAV"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

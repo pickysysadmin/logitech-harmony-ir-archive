@@ -2,6 +2,33 @@
   "codeset": "codesets/d5/d5553e535ab2e5a4.json",
   "deviceType": 1,
   "globalDeviceId": 66351,
+  "inputs": {
+    "list": [
+      {"name":"Antenna"},
+      {"name":"AV1"},
+      {"name":"AV2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "ST 55-2502 TOP"
+  "model": "ST 55-2502 TOP",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

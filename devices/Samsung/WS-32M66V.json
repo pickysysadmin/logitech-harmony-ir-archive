@@ -2,6 +2,33 @@
   "codeset": "codesets/6a/6a5d64d519ddbc66.json",
   "deviceType": 1,
   "globalDeviceId": 178568,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV-1"},
+      {"name":"AV-2"},
+      {"name":"S-Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "WS-32M66V"
+  "model": "WS-32M66V",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

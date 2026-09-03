@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/95/950eb03f51bf18a8.json",
   "deviceType": 1,
   "globalDeviceId": 110194,
+  "inputs": {
+    "list": [
+      {"name":"video 1"},
+      {"name":"video 2"},
+      {"name":"video 3"}
+    ],
+    "next": ["InputTv"],
+    "type": 2
+  },
   "manufacturer": "TechniSat",
-  "model": "TV72-5004"
+  "model": "TV72-5004",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"video 2"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

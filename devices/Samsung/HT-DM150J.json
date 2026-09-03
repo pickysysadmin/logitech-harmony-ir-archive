@@ -2,6 +2,47 @@
   "codeset": "codesets/e9/e9610c354892f2e2.json",
   "deviceType": 22,
   "globalDeviceId": 69318,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Digital Line In"}],"name":"Digital Line In"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 1"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 2"}],"name":"Aux 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-DM150J"
+  "model": "HT-DM150J",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAUX"],
+      "values": [
+        {"name":"Digital Line In"},
+        {"name":"Aux 1"},
+        {"name":"Aux 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Aux","select":[{"commands":["InputAUX"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

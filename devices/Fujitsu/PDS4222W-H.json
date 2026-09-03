@@ -2,6 +2,48 @@
   "codeset": "codesets/5b/5b7bd16d42299491.json",
   "deviceType": 13,
   "globalDeviceId": 83156,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"RGB1"}],"name":"RGB1"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"RGB2"}],"name":"RGB2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Fujitsu",
-  "model": "PDS4222W-H"
+  "model": "PDS4222W-H",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Composite","select":[{"commands":["InputComposite"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRGB2"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["InputRGB2"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

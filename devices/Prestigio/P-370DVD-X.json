@@ -2,6 +2,58 @@
   "codeset": "codesets/e2/e2a31efbd3bcc778.json",
   "deviceType": 37,
   "globalDeviceId": 205506,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Prestigio",
-  "model": "P-370DVD-X"
+  "model": "P-370DVD-X",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"RGB"},
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Video 3"},
+        {"name":"S-Video"},
+        {"name":"Component"},
+        {"name":"DVI"},
+        {"name":"PC"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

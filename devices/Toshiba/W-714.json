@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5a/5ac3d7d463c088d3.json",
   "deviceType": 2,
   "globalDeviceId": 45687,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line In 1"},
+      {"name":"Line In 2"}
+    ],
+    "next": ["InputSelect"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "W-714"
+  "model": "W-714",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"},
+      {"set":"AntennaOutput","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

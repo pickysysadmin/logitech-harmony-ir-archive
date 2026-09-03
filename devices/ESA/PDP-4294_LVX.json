@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 46953,
+  "inputs": {
+    "list": [
+      {"commands":["TvVideo"],"name":"Tuner"},
+      {"commands":["InputComponent 1"],"name":"COMPONENT1"},
+      {"commands":["InputComponent 2"],"name":"COMPONENT2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "ESA",
-  "model": "PDP-4294 LVX"
+  "model": "PDP-4294 LVX",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

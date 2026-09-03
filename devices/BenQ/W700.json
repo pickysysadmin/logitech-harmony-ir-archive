@@ -2,6 +2,37 @@
   "codeset": "codesets/d5/d5695e771e79f0a7.json",
   "deviceType": 7,
   "globalDeviceId": 225787,
+  "inputs": {
+    "list": [
+      {"commands":["InputComp"],"name":"Component","ports":["Component"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputS-Video"],"name":"S-Video","ports":["S-Video"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputPC"],"name":"PC","ports":["PC"]},
+      {"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "BenQ",
-  "model": "W700"
+  "model": "W700",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

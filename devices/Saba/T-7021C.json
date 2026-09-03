@@ -2,6 +2,43 @@
   "codeset": "codesets/e7/e7d506f489013faf.json",
   "deviceType": 1,
   "globalDeviceId": 82389,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Input","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"Input","to":"AV"},{"set":"AV","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"Input","to":"AV"},{"set":"AV","to":"AV2"}],"name":"AV 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Saba",
-  "model": "T-7021C"
+  "model": "T-7021C",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"}
+      ]
+    },
+    "Input": {
+      "values": [
+        {"name":"TV","select":[{"commands":["0"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/1c/1c5b4d08f445197f.json",
   "deviceType": 34,
   "globalDeviceId": 156017,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"Tuner"},
+      {"name":"FrontCVBS"},
+      {"name":"RearCVBS"},
+      {"name":"RearS-Vid"},
+      {"name":"DVIn"},
+      {"name":"YUV"},
+      {"name":"Scart"}
+    ],
+    "next": ["InputTv/Monitor"],
+    "type": 2
+  },
   "manufacturer": "Denver",
-  "model": "DHD-161"
+  "model": "DHD-161",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

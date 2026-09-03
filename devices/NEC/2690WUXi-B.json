@@ -2,6 +2,57 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 157089,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VideoAV1"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VideoAV2"}],"name":"DirecTV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VideoAV3"}],"name":"Polycom"},
+      {"commands":[{"set":"InputType","to":"RGB/PC"},{"set":"RGBInput","to":"RGB1"}],"name":"Computer"},
+      {"commands":[{"set":"InputType","to":"RGB/PC"},{"set":"RGBInput","to":"RGB2"}],"name":"NEC Room"},
+      {"commands":[{"set":"InputType","to":"RGB/PC"},{"set":"RGBInput","to":"RGB3"}],"name":"DVI Connection"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "2690WUXi-B"
+  "model": "2690WUXi-B",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["Video 1"],"setType":2}]},
+        {"name":"RGB/PC","select":[{"commands":["RGB/PCToggle"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Video 1"],
+      "values": [
+        {"name":"VideoAV1"},
+        {"name":"VideoAV2"},
+        {"name":"VideoAV3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,39 @@
   "codeset": "codesets/34/3433029b5e201ec7.json",
   "deviceType": 1,
   "globalDeviceId": 107369,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"SVHS"},
+      {"name":"AV3"},
+      {"name":"PC"},
+      {"name":"DVI"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Grundig",
-  "model": "Xephia 42 PXW110-6615"
+  "model": "Xephia 42 PXW110-6615",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerOff"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 5,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/da/da94c427b42286e3.json",
   "deviceType": 19,
   "globalDeviceId": 122160,
+  "inputs": {
+    "list": [
+      {"name":"L1"},
+      {"name":"L2"},
+      {"name":"L3"},
+      {"name":"L4"}
+    ],
+    "next": ["InputDown"],
+    "previous": ["InputUp"],
+    "type": 2
+  },
   "manufacturer": "ISEM",
-  "model": "Xtasis"
+  "model": "Xtasis",
+  "power": {
+    "off": [
+      {"command":"Power","durationMs":3000}
+    ],
+    "on": ["Power"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

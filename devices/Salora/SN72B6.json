@@ -2,6 +2,31 @@
   "codeset": "codesets/85/85802a2718306665.json",
   "deviceType": 1,
   "globalDeviceId": 218751,
+  "inputs": {
+    "list": [
+      {"commands":["0","0"],"name":"e2"},
+      {"commands":["0"],"name":"e1"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Salora",
-  "model": "SN72B6"
+  "model": "SN72B6",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"e2"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

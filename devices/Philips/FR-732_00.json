@@ -2,6 +2,38 @@
   "codeset": "codesets/03/0383cadd6a8f8056.json",
   "deviceType": 5,
   "globalDeviceId": 26751,
+  "inputs": {
+    "list": [
+      {"commands":[{"command":"InputTuner","durationMs":2000}],"name":"Tuner"},
+      {"commands":[{"command":"InputTape","durationMs":2000}],"name":"Tape"},
+      {"commands":[{"command":"InputTv","durationMs":2000}],"name":"Tv"},
+      {"commands":[{"command":"InputV-CD","durationMs":2000}],"name":"Vcd"},
+      {"commands":[{"command":"InputCd","durationMs":2000}],"name":"Cd"},
+      {"commands":[{"command":"InputDcc","durationMs":2000}],"name":"DCC"},
+      {"commands":[{"command":"InputVcr1","durationMs":2000}],"name":"Vcr1"},
+      {"commands":[{"command":"InputVcr2","durationMs":2000}],"name":"Vcr2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "FR-732/00"
+  "model": "FR-732/00",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "on": [
+      {"command":"InputTuner","durationMs":2000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

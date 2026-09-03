@@ -1,7 +1,49 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 108417,
+  "inputs": {
+    "list": [
+      {"name":"Euro/AV- (FBAS)"},
+      {"name":"Euro/AV-"},
+      {"name":"Antenne"},
+      {"name":"Toonsignaal-Uitgang"},
+      {"name":"Toon-/Beeldsignaal-Ingang"},
+      {"name":"Beeldsignaal_Ingang S-VHS"},
+      {"name":"Netsignaal"},
+      {"name":"VGA Aansluit voor PC"},
+      {"name":"Koptelefoonaansluiting (3,5 mm)"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "STF 55-3232/7 top"
+  "model": "STF 55-3232/7 top",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

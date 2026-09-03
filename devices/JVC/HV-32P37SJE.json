@@ -2,6 +2,36 @@
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 25957,
+  "inputs": {
+    "list": [
+      {"name":"E1"},
+      {"name":"E2"},
+      {"name":"E3"},
+      {"name":"E4"},
+      {"name":"E5"},
+      {"name":"AV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "JVC",
-  "model": "HV-32P37SJE"
+  "model": "HV-32P37SJE",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"Input","to":"AV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

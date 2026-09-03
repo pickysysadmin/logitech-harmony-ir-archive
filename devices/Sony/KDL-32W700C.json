@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/ba/ba5f57da2c23af77.json",
   "deviceType": 1,
   "globalDeviceId": 271736,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnalog"],"name":"Analog"},
+      {"commands":["InputDigital"],"name":"Digital"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2/Component"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1/MHL"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["InputVideo2","InputNext",{"delayMs":500},"DirectionDown","Select"],"name":"Screen Mirroring"},
+      {"commands":["Home"],"name":"Smart TV"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-32W700C"
+  "model": "KDL-32W700C",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

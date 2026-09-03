@@ -2,6 +2,50 @@
   "codeset": "codesets/52/52c8ef2a4a90f53d.json",
   "deviceType": 22,
   "globalDeviceId": 174299,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"External"},{"set":"ExternalInput","to":"MusicP"}],"name":"MusicP"},
+      {"commands":[{"set":"InputType","to":"External"},{"set":"ExternalInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"External"},{"set":"ExternalInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"External"},{"set":"ExternalInput","to":"D-In"}],"name":"D-In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HT895"
+  "model": "SC-HT895",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ExternalInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"MusicP"},
+        {"name":"TV"},
+        {"name":"Aux"},
+        {"name":"D-In"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"External","select":[{"commands":["InputAux",{"set":"ExternalInput","to":"MusicP"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 0,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

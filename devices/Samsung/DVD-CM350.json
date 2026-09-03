@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ff/ffc2a56e63ffc1b5.json",
   "deviceType": 32,
   "globalDeviceId": 180998,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Av1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Av2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "DVD-CM350"
+  "model": "DVD-CM350",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputFM/AM"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputFM/AM"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

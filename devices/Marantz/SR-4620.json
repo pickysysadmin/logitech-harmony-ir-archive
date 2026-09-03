@@ -2,6 +2,60 @@
   "codeset": "codesets/86/86f3a17e4ba92f5b.json",
   "deviceType": 5,
   "globalDeviceId": 128575,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VCR1"}],"name":"VCR1"},
+      {"commands":[{"set":"InputType","to":"VCR2"}],"name":"VCR2"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DSS"}],"name":"DSS"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"CDR/MD"}],"name":"CDR/MD"},
+      {"commands":[{"set":"InputType","to":"AUX1"}],"name":"AUX1"},
+      {"commands":[{"set":"InputType","to":"AUX2"}],"name":"AUX2"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Marantz",
-  "model": "SR-4620"
+  "model": "SR-4620",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"VCR1","select":[{"commands":["InputVcr1"],"setType":2}]},
+        {"name":"VCR2","select":[{"commands":["Input1"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd2"],"setType":2}]},
+        {"name":"DSS","select":[{"commands":["InputDss"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCD"],"setType":2}]},
+        {"name":"CDR/MD","select":[{"commands":["InputMD"],"setType":2}]},
+        {"name":"AUX1","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"AUX2","select":[{"commands":["InputAux3"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv2"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

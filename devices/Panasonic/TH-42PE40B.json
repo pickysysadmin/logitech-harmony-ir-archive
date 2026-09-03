@@ -2,6 +2,97 @@
   "codeset": "codesets/a8/a8547d18fe86ba3f.json",
   "deviceType": 1,
   "globalDeviceId": 151859,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"},{"set":"AV1Scart","to":"ON"},{"set":"AV2Scart","to":"ON"},{"set":"AV3Scart","to":"ON"}],"name":"TV"},
+      {"commands":[{"set":"AV1Scart","to":"ON"},{"set":"AV2Scart","to":"OFF"},{"set":"AV3Scart","to":"OFF"}],"name":"AV1"},
+      {"commands":[{"set":"AV2Scart","to":"ON"},{"set":"AV1Scart","to":"OFF"},{"set":"AV3Scart","to":"OFF"}],"name":"AV2"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"AVTWO","to":"AV2S"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"AV3Scart","to":"OFF"}],"name":"AV2S"},
+      {"commands":[{"set":"AV3Scart","to":"ON"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"}],"name":"AV3"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"AVTHREE","to":"AV3S"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"AV3Scart","to":"OFF"}],"name":"AV3S"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"Component"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"AV3Scart","to":"OFF"}],"name":"Component"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PE40B"
+  "model": "TH-42PE40B",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"},
+      {"set":"MENU","to":"OFF"},
+      {"set":"AV1Scart","to":"ON"},
+      {"set":"AV2Scart","to":"ON"},
+      {"set":"AV3Scart","to":"ON"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV1Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV1"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "AV2Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "AV3Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"AVTHREE","to":"AV3"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    },
+    "AVTHREE": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AVTWO": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "TvVideo",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

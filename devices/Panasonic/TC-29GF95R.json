@@ -2,6 +2,33 @@
   "codeset": "codesets/a8/a8547d18fe86ba3f.json",
   "deviceType": 1,
   "globalDeviceId": 138987,
+  "inputs": {
+    "list": [
+      {"name":"PC"},
+      {"name":"Input1 Spare"},
+      {"name":"Tuner"},
+      {"name":"DVD"}
+    ],
+    "next": ["PowerToggle"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "TC-29GF95R"
+  "model": "TC-29GF95R",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Input1 Spare"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

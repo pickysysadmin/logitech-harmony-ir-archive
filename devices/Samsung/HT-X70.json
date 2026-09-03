@@ -2,6 +2,33 @@
   "codeset": "codesets/c0/c007b4ae2c4b66de.json",
   "deviceType": 22,
   "globalDeviceId": 147539,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD/CD","ports":["Streaming"]},
+      {"commands":["InputDvd",{"delayMs":1500},"InputTuner"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd",{"delayMs":1500},"InputTuner","InputTuner"],"name":"XM","ports":["Others"]},
+      {"commands":["InputUsb",{"delayMs":1500},"InputAux","InputAux"],"name":"Digital.IN","ports":["Optical"]},
+      {"commands":["InputUsb",{"delayMs":1500},"InputAux","InputAux","InputAux"],"name":"Aux1","ports":["Aux"]},
+      {"commands":["InputUsb",{"delayMs":1500},"InputAux","InputAux","InputAux","InputAux"],"name":"Aux2","ports":["Composite"]},
+      {"commands":["InputUsb",{"delayMs":1500},"InputAux"],"name":"HDMI IN","ports":["HDMI"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HT-X70"
+  "model": "HT-X70",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

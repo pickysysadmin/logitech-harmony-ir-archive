@@ -2,6 +2,33 @@
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 90442,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Ext. 1"},
+      {"name":"Ext. 2"},
+      {"name":"AV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "PS-42V4SX"
+  "model": "PS-42V4SX",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Ext. 2"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 13000,
+    "pressMinRepeats": 3
+  }
 }

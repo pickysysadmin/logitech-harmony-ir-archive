@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 124552,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputNext"],"name":"AV-1"},
+      {"commands":["InputNext","InputNext"],"name":"AV-2"},
+      {"commands":["InputNext","InputNext","InputNext"],"name":"AV-F"},
+      {"commands":["InputNext","InputNext","InputNext","InputNext"],"name":"RGB"},
+      {"commands":["InputNext","InputNext","InputNext","InputNext","InputNext"],"name":"S-VHS"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Skantic",
-  "model": "32-WB/3"
+  "model": "32-WB/3",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["ChannelUp"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,68 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/75/75c6a8f1a496021b.json",
   "deviceType": 1,
   "globalDeviceId": 165261,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV/SV"},{"set":"AV/SVInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"AV/SV"},{"set":"AV/SVInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"YPbPr1"}],"name":"YPbPr1"},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"YPbPr2"}],"name":"YPbPr2"},
+      {"commands":[{"set":"InputType","to":"PC/HDMI"},{"set":"PC/HDMIInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"PC/HDMI"},{"set":"PC/HDMIInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "WinBook",
-  "model": "32T1"
+  "model": "32T1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV/SVInput": {
+      "next": ["InputAV/SV"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV/SV","select":[{"commands":["InputAV/SV"],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputYPbPr"],"setType":2}]},
+        {"name":"PC/HDMI","select":[{"commands":["InputPC/HDMI"],"setType":2}]}
+      ]
+    },
+    "PC/HDMIInput": {
+      "next": ["InputPC/HDMI"],
+      "values": [
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    },
+    "YPbPrInput": {
+      "next": ["InputYPbPr"],
+      "values": [
+        {"name":"YPbPr1"},
+        {"name":"YPbPr2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

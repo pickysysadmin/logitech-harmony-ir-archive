@@ -2,6 +2,30 @@
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 207786,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenna"],"name":"Antenna/Cable"},
+      {"commands":["InputVideo"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "CB-21F3MJ"
+  "model": "CB-21F3MJ",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna/Cable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,38 @@
   "codeset": "codesets/b1/b17322f9af10fe35.json",
   "deviceType": 34,
   "globalDeviceId": 167508,
+  "inputs": {
+    "list": [
+      {"commands":["DVD"],"name":"DVD"},
+      {"commands":["HDD"],"name":"HDD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Pioneer",
-  "model": "DVR-450HS"
+  "model": "DVR-450HS",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"L3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

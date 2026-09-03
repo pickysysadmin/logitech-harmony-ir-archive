@@ -1,7 +1,50 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 49420,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"AVMode","to":"TV"}],"name":"Tuner"},
+      {"commands":[{"set":"AVMode","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"AVMode","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"AVMode","to":"AV"},{"set":"AVInput","to":"AV3"}],"name":"AV 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX80V02A"
+  "model": "TX80V02A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    },
+    "AVMode": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

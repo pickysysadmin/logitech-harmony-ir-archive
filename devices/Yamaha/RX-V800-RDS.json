@@ -2,6 +2,40 @@
   "codeset": "codesets/5e/5e4e2e7532262f47.json",
   "deviceType": 5,
   "globalDeviceId": 113363,
+  "inputs": {
+    "list": [
+      {"commands":["InputCD"],"name":"CD","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputMd/Tape"],"name":"MD/Tape","ports":["Composite"]},
+      {"commands":["InputDVD"],"name":"DVD","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputD-Tv/Ld"],"name":"D-TV/LD","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVcr1"],"name":"VCR 1","ports":["Composite","S-Video"]},
+      {"commands":["InputCd-r"],"name":"CD-R","ports":["Composite","Optical"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["Composite","Coaxial","S-Video"]},
+      {"commands":["InputVcr2/Dvr"],"name":"VCR 2/DVR","ports":["Composite","S-Video"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["Input6CH"],"name":"6Ch","ports":["Composite"]},
+      {"commands":["InputV-Aux"],"name":"V-Aux","ports":["Composite","Optical","S-Video"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V800-RDS"
+  "model": "RX-V800-RDS",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

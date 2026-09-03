@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5e/5e78bea4e0d3150a.json",
   "deviceType": 1,
   "globalDeviceId": 107549,
+  "inputs": {
+    "list": [
+      {"commands":["ChannelUp"],"name":"TV"},
+      {"commands":["ChannelUp",{"delayMs":200},"InputNext",{"delayMs":500},"InputNext"],"name":"Input 1"},
+      {"commands":["Input2"],"name":"Input 2"},
+      {"commands":["Input3"],"name":"Input 3"},
+      {"commands":["Input4"],"name":"Input 4"},
+      {"commands":["InputPC"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-37HV40"
+  "model": "LC-37HV40",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

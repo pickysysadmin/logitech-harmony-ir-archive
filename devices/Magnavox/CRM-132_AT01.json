@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b1/b133ef525611abad.json",
   "deviceType": 15,
   "globalDeviceId": 53175,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Magnavox",
-  "model": "CRM-132/AT01"
+  "model": "CRM-132/AT01",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

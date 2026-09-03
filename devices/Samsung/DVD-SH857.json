@@ -2,6 +2,55 @@
   "codeset": "codesets/e1/e17251010a809b6b.json",
   "deviceType": 34,
   "globalDeviceId": 167815,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DTT"}],"name":"DTT"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"External"},{"set":"ExternalInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"External"},{"set":"ExternalInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"External"},{"set":"ExternalInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"External"},{"set":"ExternalInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"External"},{"set":"ExternalInput","to":"DV"}],"name":"DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "DVD-SH857"
+  "model": "DVD-SH857",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ExternalInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DTT","select":[{"commands":["Dtv/Analog"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["Tv/Dvd"],"setType":2}]},
+        {"name":"External","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

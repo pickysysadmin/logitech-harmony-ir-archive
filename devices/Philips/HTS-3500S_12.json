@@ -2,6 +2,48 @@
   "codeset": "codesets/b8/b805226e2cdd015a.json",
   "deviceType": 22,
   "globalDeviceId": 79580,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DISC"}],"name":"DISC"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Digital"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS-3500S/12"
+  "model": "HTS-3500S/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DISC","select":[{"commands":["InputDisc"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":1}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

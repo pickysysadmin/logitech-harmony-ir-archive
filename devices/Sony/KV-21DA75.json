@@ -2,6 +2,35 @@
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 70441,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputComponent1"],"name":"D Video 1"},
+      {"commands":["InputComponent2"],"name":"D Video 2"},
+      {"commands":["InputAv2"],"name":"AV 1"},
+      {"commands":["InputAv2"],"name":"AV 2"},
+      {"commands":["InputVideo4"],"name":"Video 4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KV-21DA75"
+  "model": "KV-21DA75",
+  "power": {
+    "off": ["InputTuner","PowerOff"],
+    "on": ["PowerOn","InputTuner"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

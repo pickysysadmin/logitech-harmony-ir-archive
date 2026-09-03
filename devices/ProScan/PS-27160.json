@@ -1,7 +1,34 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 134058,
+  "inputs": {
+    "list": [
+      {"commands":["InputS-Video","InputNext","InputNext"],"name":"TV"},
+      {"commands":["InputSat/Cable"],"name":"Video 1"},
+      {"commands":["InputS-Video"],"name":"Video 2"},
+      {"commands":["InputS-Video","InputNext"],"name":"Front"}
+    ],
+    "type": 1
+  },
   "manufacturer": "ProScan",
-  "model": "PS-27160"
+  "model": "PS-27160",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

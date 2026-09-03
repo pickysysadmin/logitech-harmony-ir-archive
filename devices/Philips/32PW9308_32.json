@@ -2,6 +2,40 @@
   "codeset": "codesets/a2/a2b78730ec208857.json",
   "deviceType": 1,
   "globalDeviceId": 100006,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"EXT1"},
+      {"name":"EXT2"},
+      {"name":"SIDE"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "32PW9308/32"
+  "model": "32PW9308/32",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 1
+  }
 }

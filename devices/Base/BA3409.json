@@ -2,6 +2,35 @@
   "codeset": "codesets/ef/efb6da82c5bc0b1a.json",
   "deviceType": 1,
   "globalDeviceId": 168578,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"YCrCb"},
+      {"name":"AV2"},
+      {"name":"SVHS"},
+      {"name":"TUNER"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Base",
-  "model": "BA3409"
+  "model": "BA3409",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TUNER"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

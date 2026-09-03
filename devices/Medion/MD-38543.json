@@ -2,6 +2,60 @@
   "codeset": "codesets/73/7333d3ac18fe9455.json",
   "deviceType": 1,
   "globalDeviceId": 225738,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Scart1"}],"name":"Scart1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Scart2"}],"name":"Scart2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YC"}],"name":"YC"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CVBS"}],"name":"CVBS"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YUV"}],"name":"YUV"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Medion",
-  "model": "MD-38543"
+  "model": "MD-38543",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputTv"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"RGB"},
+        {"name":"DVI"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Scart1"},
+        {"name":"Scart2"},
+        {"name":"YC"},
+        {"name":"CVBS"},
+        {"name":"YUV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

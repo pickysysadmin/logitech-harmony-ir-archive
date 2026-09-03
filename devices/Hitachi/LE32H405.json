@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/b0/b02602e74e4c6ed6.json",
   "deviceType": 1,
   "globalDeviceId": 231032,
+  "inputs": {
+    "list": [
+      {"commands":["InputComponent","Input","Input"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputComponent","Input","Input"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputAv"],"name":"AV","ports":["Composite"]},
+      {"commands":["InputRgb"],"name":"RGB","ports":["PC"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hitachi",
-  "model": "LE32H405"
+  "model": "LE32H405",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

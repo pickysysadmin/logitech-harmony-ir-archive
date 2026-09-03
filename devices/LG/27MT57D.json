@@ -2,6 +2,55 @@
   "codeset": "codesets/0c/0c023fce46324ec3.json",
   "deviceType": 1,
   "globalDeviceId": 280844,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"Screen","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"Screen","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"Screen","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"Screen","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"Screen","to":"RGB(PC)"}],"name":"RGB(PC)"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "27MT57D"
+  "model": "27MT57D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Screen": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["InputTv",{"delayMs":2000}],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"RGB(PC)","select":[{"commands":["InputRgb"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"},
+        {"name":"Radio"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

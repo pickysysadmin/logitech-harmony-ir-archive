@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/d8/d85aec73278bcbea.json",
   "deviceType": 1,
   "globalDeviceId": 278577,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","Exit","InputTv"],"name":"TV"},
+      {"commands":["Exit","Exit","Input1"],"name":"HDMI 1"},
+      {"commands":["Exit","Exit","Input2"],"name":"HDMI 2"},
+      {"commands":["Exit","Exit","Input3"],"name":"HDMI 3"},
+      {"commands":["Exit","Exit","Input5"],"name":"Component"},
+      {"commands":["Exit","Exit","Input6"],"name":"Video 1"},
+      {"commands":["Exit","Exit","Input7"],"name":"Video 2"},
+      {"commands":["Exit","Exit","Input8"],"name":"PC IN"},
+      {"commands":["Exit","Exit","Input8","Input"],"name":"Home Network(DLNA)"},
+      {"commands":["Exit","Exit","Input8","Input","Input"],"name":"USB"},
+      {"commands":["Exit","Exit","SmartCentral",{"delayMs":2000},"SmartCentral"],"name":"SmartCentral"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-70EQ30U"
+  "model": "LC-70EQ30U",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

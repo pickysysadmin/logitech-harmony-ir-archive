@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 12459,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenna"],"name":"Tuner"},
+      {"commands":["InputVideo"],"name":"Video1"},
+      {"commands":["InputVideo","InputNext"],"name":"Video2"},
+      {"commands":["InputVideo","InputNext","InputNext"],"name":"Video3"},
+      {"commands":["InputSVideo1"],"name":"S-Video"},
+      {"commands":["InputComponent 2"],"name":"Component1"},
+      {"commands":["InputComponent 1"],"name":"Component2"},
+      {"commands":["InputDVI 1"],"name":"DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "TX-P3275H"
+  "model": "TX-P3275H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "COMPONENTInput": {
+      "next": ["InputToggle"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"},
+        {"name":"DVI"},
+        {"name":"Cable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VIDEO","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"COMPONENT","select":[{"commands":["InputToggle"],"setType":2}]}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"},
+        {"name":"S-Video"},
+        {"name":"Cable"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,32 @@
   "codeset": "codesets/95/95b3cdbc50859030.json",
   "deviceType": 33,
   "globalDeviceId": 412796,
+  "inputs": {
+    "list": [
+      {"commands":["InputInternetRadio"],"name":"Internet Radio"},
+      {"commands":["InputInternetRadio",{"delayMs":500},"Mode"],"name":"Spotify"},
+      {"commands":["Media"],"name":"Music Player"},
+      {"commands":["InputDab"],"name":"DAB"},
+      {"commands":["InputFm"],"name":"FM"},
+      {"commands":["InputAux"],"name":"Aux In"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hama",
-  "model": "DIR3600MBT"
+  "model": "DIR3600MBT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

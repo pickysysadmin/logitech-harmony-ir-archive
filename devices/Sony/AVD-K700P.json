@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5f/5f80a92bb0607ef6.json",
   "deviceType": 32,
   "globalDeviceId": 30860,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"L1 Opt"}],"name":"L1 Opt"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line 2"}],"name":"Line 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "AVD-K700P"
+  "model": "AVD-K700P",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputSelect"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"L1 Opt"},
+        {"name":"Line 1"},
+        {"name":"Line 2"},
+        {"name":"Tuner"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

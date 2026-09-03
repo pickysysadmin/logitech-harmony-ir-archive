@@ -2,6 +2,31 @@
   "codeset": "codesets/d7/d7f5b172731ae148.json",
   "deviceType": 1,
   "globalDeviceId": 85380,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"Video1"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "ST 72-3202"
+  "model": "ST 72-3202",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

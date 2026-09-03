@@ -2,6 +2,39 @@
   "codeset": "codesets/b2/b23c2596b38c1815.json",
   "deviceType": 1,
   "globalDeviceId": 170974,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"EXT1"},
+      {"name":"EXT2"},
+      {"name":"EXT3"},
+      {"name":"HDMI"},
+      {"name":"SIDE"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Philips",
-  "model": "32PF9956"
+  "model": "32PF9956",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 14000,
+    "pressMinRepeats": 3
+  }
 }

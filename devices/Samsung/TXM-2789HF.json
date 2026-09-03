@@ -2,6 +2,58 @@
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 13,
   "globalDeviceId": 115505,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Ant3"}],"name":"Ant3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"SVideo"}],"name":"SVideo"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Comp1"}],"name":"Comp1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Comp2"}],"name":"Comp2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "TXM-2789HF"
+  "model": "TXM-2789HF",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"Ant3"},
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext",{"set":"VideoInput","to":"SVideo"}],"setType":2}]},
+        {"name":"Component","select":[{"commands":["TvVideo",{"set":"ComponentInput","to":"Comp1"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Ant3"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"SVideo"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/66/664b615150a0e4b9.json",
   "deviceType": 7,
   "globalDeviceId": 92724,
+  "inputs": {
+    "list": [
+      {"commands":["InputRgb1"],"name":"Computer"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputSVideo"],"name":"S-Video"},
+      {"commands":["InputRgb1"],"name":"RGB"},
+      {"commands":[{"set":"Input","to":"Computer1"}],"name":"Computer1"},
+      {"commands":[{"set":"Input","to":"Computer2"}],"name":"Computer2"},
+      {"commands":[{"set":"Input","to":"Computer3"}],"name":"Computer3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "NP-2000"
+  "model": "NP-2000",
+  "power": {
+    "off": ["PowerOff","PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,33 @@
   "codeset": "codesets/06/06b2fbe3e9b67eab.json",
   "deviceType": 7,
   "globalDeviceId": 493375,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputLan"],"name":"LAN","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "Home Cinema 3200"
+  "model": "Home Cinema 3200",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

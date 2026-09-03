@@ -2,6 +2,51 @@
   "codeset": "codesets/e3/e3ac64ffcabeab50.json",
   "deviceType": 22,
   "globalDeviceId": 278034,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc/USB"},{"set":"Disc/USBInput","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Disc/USB"},{"set":"Disc/USBInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"FM/AUX"},{"set":"FM/AUXInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/AUX"},{"set":"FM/AUXInput","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "MCD2160/12"
+  "model": "MCD2160/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Disc/USBInput": {
+      "next": ["InputDisc/Usb"],
+      "values": [
+        {"name":"Disc"},
+        {"name":"USB"}
+      ]
+    },
+    "FM/AUXInput": {
+      "next": ["InputFm/Aux"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AUX"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc/USB","select":[{"commands":["InputDisc/Usb"],"setType":2}]},
+        {"name":"FM/AUX","select":[{"commands":["InputFm/Aux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

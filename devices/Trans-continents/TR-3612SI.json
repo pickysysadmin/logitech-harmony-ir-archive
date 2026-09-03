@@ -2,6 +2,38 @@
   "codeset": "codesets/2f/2faf1eb0a0d53c8f.json",
   "deviceType": 1,
   "globalDeviceId": 105468,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"Satellite"},
+      {"name":"VCR"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Trans-continents",
-  "model": "TR-3612SI"
+  "model": "TR-3612SI",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

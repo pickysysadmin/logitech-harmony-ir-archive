@@ -2,6 +2,57 @@
   "codeset": "codesets/20/205f98bb48599c7c.json",
   "deviceType": 1,
   "globalDeviceId": 67610,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"YCbCr"}],"name":"YCbCr"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PcInput","to":"Rgb"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PcInput","to":"Dvi"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Tatung",
-  "model": "WM-42HDMT"
+  "model": "WM-42HDMT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"VIDEO","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]}
+      ]
+    },
+    "PcInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"Rgb"},
+        {"name":"Dvi"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"Composite"},
+        {"name":"S-Video"},
+        {"name":"YCbCr"},
+        {"name":"YPbPr"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,32 @@
   "codeset": "codesets/e5/e5ba270b912efcdf.json",
   "deviceType": 13,
   "globalDeviceId": 101325,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"s-video"},
+      {"commands":["InputVideo"],"name":"video"},
+      {"commands":["InputRGB1 (DVI)"],"name":"rgb1"},
+      {"commands":["InputRGB1 (DVI)"],"name":"rgb2"}
+    ],
+    "start": ["InputVideo","InputRGB1 (DVI)"],
+    "type": 3
+  },
   "manufacturer": "Fujitsu",
-  "model": "P42VCA20WH"
+  "model": "P42VCA20WH",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 4,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

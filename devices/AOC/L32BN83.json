@@ -2,6 +2,68 @@
   "codeset": "codesets/9c/9c972e589ec844c6.json",
   "deviceType": 1,
   "globalDeviceId": 173259,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompInput","to":"Comp1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompInput","to":"Comp2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PcInput","to":"Vga"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PcInput","to":"Hdmi"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "AOC",
-  "model": "L32BN83"
+  "model": "L32BN83",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CompInput": {
+      "next": ["Comp"],
+      "values": [
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["Tv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["Video"],"setType":2}]},
+        {"name":"Comp","select":[{"commands":["Comp"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["Pc/Hdmi"],"setType":2}]}
+      ]
+    },
+    "PcInput": {
+      "next": ["Pc/Hdmi"],
+      "values": [
+        {"name":"Vga"},
+        {"name":"Hdmi"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Video"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"},
+        {"name":"Video4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

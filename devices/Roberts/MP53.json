@@ -2,6 +2,58 @@
   "codeset": "codesets/78/783b97d3b2b7fc25.json",
   "deviceType": 21,
   "globalDeviceId": 209848,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Roberts",
-  "model": "MP53"
+  "model": "MP53",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Media","select":[{"commands":["InputMedia"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]}
+      ]
+    },
+    "MediaInput": {
+      "next": ["InputMedia"],
+      "values": [
+        {"name":"CD"},
+        {"name":"iPod"},
+        {"name":"SD"},
+        {"name":"USB"}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"DAB"},
+        {"name":"FM"},
+        {"name":"AUX"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

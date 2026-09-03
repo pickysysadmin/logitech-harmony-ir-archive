@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/59/593239cb7432a34c.json",
   "deviceType": 1,
   "globalDeviceId": 269654,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputAv"],"name":"AV"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2/DVI"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputTv",{"delayMs":4000},"Source",{"delayMs":500},"DirectionRight","Select"],"name":"HDMI 4(only HDMI 4 Active)"},
+      {"commands":["InputHdmi1",{"delayMs":4000},"Source",{"delayMs":500},"DirectionRight","Select"],"name":"HDMI 4(with HDMI 1,HDMI 4 Active)"},
+      {"commands":["InputHdmi2",{"delayMs":4000},"Source",{"delayMs":500},"DirectionRight","Select"],"name":"HDMI 4(with HDMI 1,HDMI 2,HDMI 4 Active)"},
+      {"commands":["InputHdmi3",{"delayMs":4000},"Source",{"delayMs":500},"DirectionRight","Select"],"name":"HDMI 4(with HDMI 1,HDMI 2,HDMI 3,HDMI 4 Active)"},
+      {"commands":["Exit","SmartHub"],"name":"Smart Hub"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UE75JU6400U"
+  "model": "UE75JU6400U",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

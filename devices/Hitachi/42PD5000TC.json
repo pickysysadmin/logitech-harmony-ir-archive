@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 68448,
+  "inputs": {
+    "list": [
+      {"commands":["0","0"],"name":"TV"},
+      {"commands":["0","0","InputNext"],"name":"AV1"},
+      {"commands":["0","0","0","InputNext","InputNext"],"name":"AV2/DVB"},
+      {"commands":["0","0","0","InputNext","InputNext","InputNext"],"name":"AV3/DVD"},
+      {"commands":["0","0","0","InputNext","InputNext","InputNext","InputNext"],"name":"AV4/Front"},
+      {"commands":["0","0","0","InputNext","InputNext","InputNext","InputNext","InputNext"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hitachi",
-  "model": "42PD5000TC"
+  "model": "42PD5000TC",
+  "power": {
+    "toggle": ["PowerToggle","0"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

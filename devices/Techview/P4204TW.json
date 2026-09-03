@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ae/ae2735dee8e2eaa5.json",
   "deviceType": 1,
   "globalDeviceId": 136356,
+  "inputs": {
+    "finish": ["VolumeUp"],
+    "list": [
+      {"name":"TV"},
+      {"name":"Scart 1"},
+      {"name":"Scart 2"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"RGB"},
+      {"name":"DVI"}
+    ],
+    "next": ["ChannelDown"],
+    "previous": ["ChannelUp"],
+    "start": [
+      {"set":"Input","to":"TV"},
+      "StartInput"
+    ],
+    "type": 4
+  },
   "manufacturer": "Techview",
-  "model": "P4204TW"
+  "model": "P4204TW",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

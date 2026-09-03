@@ -2,6 +2,61 @@
   "codeset": "codesets/c7/c74557635e0ca32e.json",
   "deviceType": 22,
   "globalDeviceId": 171817,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscOffReset","to":"OFF"}],"name":"Disc","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"Inputs","to":"FM"},{"set":"DiscOffReset","to":"ON"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"Inputs","to":"AM"},{"set":"DiscOffReset","to":"ON"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"Inputs","to":"Aux"},{"set":"DiscOffReset","to":"ON"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"Inputs","to":"Portable"},{"set":"DiscOffReset","to":"ON"}],"name":"Portable","ports":["Portable"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"Inputs","to":"Optical"},{"set":"DiscOffReset","to":"ON"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"Inputs","to":"Coaxial"},{"set":"DiscOffReset","to":"ON"}],"name":"Coaxial","ports":["Coaxial"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LHB953"
+  "model": "LHB953",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"ON"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DiscOffReset": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"Inputs","to":"FM"}],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["Home"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "Inputs": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"Coaxial"},
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"Aux"},
+        {"name":"Portable"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 1
+  }
 }

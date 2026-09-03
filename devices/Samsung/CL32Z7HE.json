@@ -2,6 +2,60 @@
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 154590,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Av1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Av2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Av3"}],"name":"Av3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-video"}],"name":"S-video"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompInput","to":"comp1"}],"name":"comp1"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompInput","to":"comp2"}],"name":"comp2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "CL32Z7HE"
+  "model": "CL32Z7HE",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "CompInput": {
+      "next": ["InputComponent1"],
+      "values": [
+        {"name":"comp1"},
+        {"name":"comp2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["TvVideo",{"set":"VideoInput","to":"Tuner"}],"setType":2}]},
+        {"name":"Comp","select":[{"commands":["InputComponent1",{"set":"CompInput","to":"comp1"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Av1"},
+        {"name":"Av2"},
+        {"name":"Av3"},
+        {"name":"S-video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

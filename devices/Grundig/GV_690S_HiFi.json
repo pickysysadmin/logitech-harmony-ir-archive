@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2c/2c8f7c04208aa295.json",
   "deviceType": 2,
   "globalDeviceId": 46178,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenna"],"name":"Antenna"},
+      {"commands":["InputLineIn"],"name":"Line In"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Grundig",
-  "model": "GV 690S HiFi"
+  "model": "GV 690S HiFi",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["Play"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,65 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5a/5ae71a39033b2d26.json",
   "deviceType": 1,
   "globalDeviceId": 129077,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AV4"}],"name":"AV4"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"RGB-PC"}],"name":"RGB-PC"},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"D/A"},{"set":"D/AInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"D/A"},{"set":"D/AInput","to":"ATV"}],"name":"ATV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "37LB1DB"
+  "model": "37LB1DB",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "D/AInput": {
+      "next": ["Digital/Analog"],
+      "values": [
+        {"name":"DTV"},
+        {"name":"ATV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"AV4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"RGB-PC","select":[{"commands":["InputRgb-Pc"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"D/A","select":[{"commands":["Digital/Analog"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

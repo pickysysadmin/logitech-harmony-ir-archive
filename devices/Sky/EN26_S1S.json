@@ -2,6 +2,38 @@
   "codeset": "codesets/6d/6dfa92e80374d473.json",
   "deviceType": 1,
   "globalDeviceId": 123289,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Video"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"RGB"},
+      {"name":"DVI"},
+      {"name":"AV1"},
+      {"name":"AV2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sky",
-  "model": "EN26/S1S"
+  "model": "EN26/S1S",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,79 @@
   "codeset": "codesets/a4/a4a53e4f69248f4e.json",
   "deviceType": 5,
   "globalDeviceId": 275365,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Cable/Sat"}],"name":"Cable/Sat"},
+      {"commands":[{"set":"InputType","to":"STB"}],"name":"STB"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Server"}],"name":"Server"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Audio"}],"name":"Audio"},
+      {"commands":[{"set":"InputType","to":"Game"}],"name":"Game"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Network"},{"set":"NetworkInput","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"Network"},{"set":"NetworkInput","to":"vTuner"}],"name":"vTuner"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "AVR 1510S"
+  "model": "AVR 1510S",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Cable/Sat","select":[{"commands":["InputCable/Sat"],"setType":2}]},
+        {"name":"STB","select":[{"commands":["InputStb"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Server","select":[{"commands":["InputServer"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Audio","select":[{"commands":["InputAudio"],"setType":2}]},
+        {"name":"Game","select":[{"commands":["InputGame"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Network","select":[{"commands":["InputNetwork"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]}
+      ]
+    },
+    "NetworkInput": {
+      "next": ["InputNetwork"],
+      "values": [
+        {"name":"Network"},
+        {"name":"vTuner"}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputUsb"],
+      "values": [
+        {"name":"USB"},
+        {"name":"iPod"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

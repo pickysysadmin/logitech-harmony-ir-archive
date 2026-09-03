@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/6f/6fc7b8f418dc8ca9.json",
   "deviceType": 1,
   "globalDeviceId": 143319,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"SVideo 1"}],"name":"SVideo 1"},
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Antenna"}],"name":"Antenna"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Cable"}],"name":"Cable"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HLT-5676SX"
+  "model": "HLT-5676SX",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HDMI 1","select":[{"commands":["InputHDMI2V2"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHDMI2v3"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHDMI2v3",{"delayMs":1000},"InputNext"],"setType":2}]},
+        {"name":"Component 1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component 2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"SVideo 1","select":[{"commands":["InputSVideo"],"setType":2}]},
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2V2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo3V2"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputAntenna"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputAB"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"Cable"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 28000,
+    "pressMinRepeats": 3
+  }
 }

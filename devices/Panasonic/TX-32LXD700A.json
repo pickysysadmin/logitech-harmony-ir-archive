@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/3e/3edbad7c9f4b8490.json",
   "deviceType": 1,
   "globalDeviceId": 173406,
+  "inputs": {
+    "list": [
+      {"commands":["TV"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputVideo1"],"name":"AV1","ports":["Component","Composite","S-Video"]},
+      {"commands":["InputVideo2"],"name":"AV2","ports":["Component","Composite"]},
+      {"commands":["InputVideo3"],"name":"AV3","ports":["Component","Composite"]},
+      {"commands":["InputVideo4"],"name":"AV4","ports":["Composite","S-Video"]},
+      {"commands":["InputPc"],"name":"PC","ports":["PC"]},
+      {"commands":["InputHdmi1"],"name":"HDMI1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI2","ports":["HDMI"]},
+      {"commands":["SdCard"],"name":"SD","ports":["SD-Card"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-32LXD700A"
+  "model": "TX-32LXD700A",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1500}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2500}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 3
+  }
 }

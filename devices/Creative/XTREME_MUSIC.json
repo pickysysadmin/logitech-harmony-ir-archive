@@ -2,6 +2,36 @@
   "codeset": "codesets/31/316df52749eb8755.json",
   "deviceType": 35,
   "globalDeviceId": 113737,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Now Playing"},
+      {"name":"My Music"},
+      {"name":"My Computer"},
+      {"name":"Settings"},
+      {"name":"Power"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Creative",
-  "model": "XTREME MUSIC"
+  "model": "XTREME MUSIC",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Now Playing"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

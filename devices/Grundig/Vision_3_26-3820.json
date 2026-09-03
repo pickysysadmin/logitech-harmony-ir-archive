@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/02/02a9987ad4d7529c.json",
   "deviceType": 1,
   "globalDeviceId": 152048,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"S-Video"},
+      {"name":"PC"},
+      {"name":"HDMI"},
+      {"name":"YPBPR"}
+    ],
+    "next": ["ChannelDown"],
+    "previous": ["ChannelUp"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Grundig",
-  "model": "Vision 3 26-3820"
+  "model": "Vision 3 26-3820",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

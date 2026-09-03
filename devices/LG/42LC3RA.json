@@ -2,6 +2,60 @@
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 109069,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Casema"},
+      {"name":"PVR"},
+      {"name":"SVideo"},
+      {"name":"Camera"},
+      {"name":"AV4"},
+      {"name":"Component"},
+      {"name":"RGB"},
+      {"name":"HDMI1"},
+      {"name":"HDMI2"}
+    ],
+    "next": ["InputTv","DirectionDown","DirectionDown","DirectionDown","DirectionDown"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "42LC3RA"
+  "model": "42LC3RA",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Component 1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component 2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"HDMI/DVI","select":[{"commands":["InputDVI/DTV"],"setType":2}]},
+        {"name":"RGB/DTV","select":[{"commands":["InputRgb/Dtv"],"setType":2}]},
+        {"name":"RGB/PC","select":[{"commands":["InputRGB/PC"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Front","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Tuners","select":[{"commands":["InputAnt/Cable"],"setType":2}]}
+      ]
+    },
+    "TunersInput": {
+      "next": ["InputAnt/Cable"],
+      "values": [
+        {"name":"TV"},
+        {"name":"CATV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

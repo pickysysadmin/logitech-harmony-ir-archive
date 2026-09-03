@@ -2,6 +2,38 @@
   "codeset": "codesets/e0/e0fb3835bfe228e5.json",
   "deviceType": 5,
   "globalDeviceId": 171730,
+  "inputs": {
+    "list": [
+      {"commands":["InputSat"],"name":"SAT","ports":["HDMI","Coaxial","Optical"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Optical"]},
+      {"commands":["InputBd"],"name":"BD","ports":["HDMI"]},
+      {"commands":["InputTV"],"name":"TV","ports":["Composite","Optical"]},
+      {"commands":["InputDmPort"],"name":"DMPORT","ports":["DMPort"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "SA-WCT100"
+  "model": "SA-WCT100",
+  "power": {
+    "off": ["PowerOff","PowerOff","PowerOff"],
+    "on": [
+      {"delayMs":5000},
+      "PowerOn",
+      {"delayMs":2000},
+      "PowerOn",
+      {"delayMs":2000},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 3
+  }
 }

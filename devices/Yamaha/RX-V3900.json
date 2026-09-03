@@ -2,6 +2,44 @@
   "codeset": "codesets/c8/c88b124647fed7a4.json",
   "deviceType": 5,
   "globalDeviceId": 170616,
+  "inputs": {
+    "list": [
+      {"commands":["InputMultiChIn"],"name":"MULTICHANNEL","ports":["Composite"]},
+      {"commands":["InputVAux"],"name":"V-AUX","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputPhono"],"name":"PHONO","ports":["Composite"]},
+      {"commands":["InputDock"],"name":"DOCK","ports":["Dock"]},
+      {"commands":["InputBd/Hd"],"name":"BD/HD","ports":["HDMI","Component","Composite","Optical","S-Video"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputMd/Cdr"],"name":"MD/CD-R","ports":["Composite","Optical"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Component","Composite","Optical","S-Video"]},
+      {"commands":["InputTV"],"name":"TV","ports":["Composite","Optical"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["HDMI","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputXm"],"name":"XM","ports":["Others"]},
+      {"commands":["InputSirius"],"name":"SIRIUS","ports":["Others"]},
+      {"commands":["InputNet/Usb"],"name":"NET/USB","ports":["USB"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V3900"
+  "model": "RX-V3900",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

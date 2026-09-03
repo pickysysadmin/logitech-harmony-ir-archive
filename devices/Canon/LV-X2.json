@@ -2,6 +2,34 @@
   "codeset": "codesets/15/15945804f4c66687.json",
   "deviceType": 7,
   "globalDeviceId": 34777,
+  "inputs": {
+    "list": [
+      {"commands":["InputComputer"],"name":"Computer"},
+      {"commands":["Input"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Canon",
-  "model": "LV-X2"
+  "model": "LV-X2",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "on": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

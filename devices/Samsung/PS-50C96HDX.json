@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/9d/9dad4eb9c781dec4.json",
   "deviceType": 1,
   "globalDeviceId": 181788,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"EXT1"}],"name":"EXT1"},
+      {"commands":[{"set":"InputType","to":"EXT2"}],"name":"EXT2"},
+      {"commands":[{"set":"InputType","to":"Av"}],"name":"Av"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"HDMI3"}],"name":"HDMI3"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "PS-50C96HDX"
+  "model": "PS-50C96HDX",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"EXT1","select":[{"commands":["InputExt1"],"setType":2}]},
+        {"name":"EXT2","select":[{"commands":["InputExt2"],"setType":2}]},
+        {"name":"Av","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputSVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"Pc","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"TV/DTV","select":[{"commands":["InputTv/Dtv"],"setType":2}]}
+      ]
+    },
+    "TV/DTVInput": {
+      "next": ["InputTv/Dtv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

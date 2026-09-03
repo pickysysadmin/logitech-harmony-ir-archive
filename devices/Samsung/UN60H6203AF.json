@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/a4/a409015798bcae63.json",
   "deviceType": 1,
   "globalDeviceId": 263102,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputAv1","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputAv1"],"name":"AV","ports":["Composite"]},
+      {"commands":["InputComponent","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputHdmi1","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["Exit",{"delayMs":1000},"Exit",{"delayMs":2000},"SmartHub","Select"],"name":"Smart Hub","ports":["Streaming"]},
+      {"commands":["Ambient"],"name":"Ambient"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UN60H6203AF"
+  "model": "UN60H6203AF",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

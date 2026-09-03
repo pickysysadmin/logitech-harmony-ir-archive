@@ -2,6 +2,43 @@
   "codeset": "codesets/6d/6d5d0b77b2cf261c.json",
   "deviceType": 5,
   "globalDeviceId": 207147,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputHdmi4"],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":["InputAv1"],"name":"AV 1","ports":["Component"]},
+      {"commands":["InputAv2"],"name":"AV 2","ports":["Component"]},
+      {"commands":["InputAv3"],"name":"AV 3","ports":["Composite"]},
+      {"commands":["InputAv4"],"name":"AV 4","ports":["Composite"]},
+      {"commands":["InputAv5"],"name":"AV 5","ports":["Composite"]},
+      {"commands":["InputAv6"],"name":"AV 6","ports":["Composite"]},
+      {"commands":["InputAudio1"],"name":"Audio 1","ports":["Composite"]},
+      {"commands":["InputAudio2"],"name":"Audio 2","ports":["Composite"]},
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["Composite","Aux"]},
+      {"commands":["InputDock"],"name":"Dock","ports":["Dock"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V567"
+  "model": "RX-V567",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2250,
+    "pressMinRepeats": 1
+  }
 }

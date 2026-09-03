@@ -2,6 +2,39 @@
   "codeset": "codesets/ab/ab58fe319250f145.json",
   "deviceType": 5,
   "globalDeviceId": 153259,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV","ports":["Component","Composite","S-Video"]},
+      {"commands":["InputDbs"],"name":"DBS","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputPhono"],"name":"PHONO","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputVdp"],"name":"VDP","ports":["HDMI","Composite","Optical","S-Video"]},
+      {"commands":["InputV-Aux"],"name":"V.AUX","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputVcr1"],"name":"VCR1","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputVcr2"],"name":"VCR2","ports":["Composite","S-Video"]},
+      {"commands":["InputCdr/Tape"],"name":"TAPE","ports":["Composite","Optical"]},
+      {"commands":["InputXM"],"name":"XM","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-3806"
+  "model": "AVR-3806",
+  "power": {
+    "off": ["PowerOff(Zone-1)"],
+    "on": ["PowerOn(Zone-1)"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

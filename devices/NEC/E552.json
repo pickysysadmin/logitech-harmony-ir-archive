@@ -2,6 +2,60 @@
   "codeset": "codesets/1e/1e289e283db67f76.json",
   "deviceType": 1,
   "globalDeviceId": 231060,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"HDMI/PC"},{"set":"HDMI/PCInput","to":"PC In"}],"name":"PC In"},
+      {"commands":[{"set":"InputType","to":"HDMI/PC"},{"set":"HDMI/PCInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI/PC"},{"set":"HDMI/PCInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI/PC"},{"set":"HDMI/PCInput","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "E552"
+  "model": "E552",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDMI/PCInput": {
+      "next": ["InputHdmi/Pc"],
+      "values": [
+        {"name":"PC In"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"HDMI/PC","select":[{"commands":["InputHdmi/Pc"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

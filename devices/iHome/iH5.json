@@ -2,6 +2,44 @@
   "codeset": "codesets/15/1510e916ae080359.json",
   "deviceType": 5,
   "globalDeviceId": 60878,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"AmFmInput","to":"Am"}],"name":"Am"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"AmFmInput","to":"Fm"}],"name":"Fm"}
+    ],
+    "type": 5
+  },
   "manufacturer": "iHome",
-  "model": "iH5"
+  "model": "iH5",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AmFmInput": {
+      "next": ["AmFm"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["iPod"],"setType":1}]},
+        {"name":"Radio","select":[{"commands":["Radio"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

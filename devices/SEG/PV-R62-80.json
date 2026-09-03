@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/a7/a787212f386dbcb0.json",
   "deviceType": 18,
   "globalDeviceId": 131866,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"}
+    ],
+    "type": 6
+  },
   "manufacturer": "SEG",
-  "model": "PV-R62-80"
+  "model": "PV-R62-80",
+  "power": {
+    "toggle": ["Tv/Radio"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

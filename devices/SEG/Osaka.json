@@ -2,6 +2,38 @@
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 98510,
+  "inputs": {
+    "list": [
+      {"name":"Tuner1"},
+      {"name":"Scart 1"},
+      {"name":"Scart 1 RGB"},
+      {"name":"Scart 2"},
+      {"name":"Scart 2 RGB"},
+      {"name":"PC"},
+      {"name":"DVI"},
+      {"name":"Fav"},
+      {"name":"S-Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "SEG",
-  "model": "Osaka"
+  "model": "Osaka",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Scart 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

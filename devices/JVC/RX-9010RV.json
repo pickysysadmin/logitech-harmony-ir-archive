@@ -2,6 +2,61 @@
   "codeset": "codesets/d5/d5a8b4ee00337f17.json",
   "deviceType": 5,
   "globalDeviceId": 143686,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD Digital"}],"name":"DVD Digital"},
+      {"commands":[{"set":"InputType","to":"DVD Multi"}],"name":"DVD Multi"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"TV/DBS"}],"name":"TV/DBS"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"VCR2"}],"name":"VCR2"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"CDR"}],"name":"CDR"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "RX-9010RV"
+  "model": "RX-9010RV",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputAM/FM"],"setType":2}]},
+        {"name":"DVD Digital","select":[{"commands":["InputDvd"],"setType":1}]},
+        {"name":"DVD Multi","select":[{"commands":["InputDvdMulti"],"setType":1}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":1}]},
+        {"name":"Phono","select":[{"commands":["InputPhono"],"setType":1}]},
+        {"name":"TV/DBS","select":[{"commands":["InputTV/DBS"],"setType":1}]},
+        {"name":"VCR","select":[{"commands":["InputVCR"],"setType":1}]},
+        {"name":"VCR2","select":[{"commands":["InputVcr2"],"setType":1}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":1}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"CDR","select":[{"commands":["InputCdr"],"setType":1}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputAM/FM"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

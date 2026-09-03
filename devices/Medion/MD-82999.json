@@ -2,6 +2,40 @@
   "codeset": "codesets/df/df44350ca4486258.json",
   "deviceType": 34,
   "globalDeviceId": 170174,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"HDD"}
+    ],
+    "next": ["HDD/DVD"],
+    "type": 2
+  },
   "manufacturer": "Medion",
-  "model": "MD-82999"
+  "model": "MD-82999",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"FrontAV"},
+        {"name":"Scart"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

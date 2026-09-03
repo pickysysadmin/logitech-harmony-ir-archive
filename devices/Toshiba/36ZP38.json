@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6d/6db85f3210cb9a6d.json",
   "deviceType": 1,
   "globalDeviceId": 117446,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"EXT 1"},
+      {"name":"EXT 2"},
+      {"name":"EXT 3"},
+      {"name":"EXT 4"},
+      {"name":"EXT 5"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "36ZP38"
+  "model": "36ZP38",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

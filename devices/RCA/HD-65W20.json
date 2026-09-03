@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 39297,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Ant A"}],"name":"Ant A"},
+      {"commands":[{"set":"InputType","to":"Ant B"}],"name":"Ant B"},
+      {"commands":[{"set":"InputType","to":"Videos"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Videos"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Videos"},{"set":"VideoInput","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Videos"},{"set":"VideoInput","to":"Front"}],"name":"Front"},
+      {"commands":[{"set":"InputType","to":"Videos"},{"set":"VideoInput","to":"Component"}],"name":"Component"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "HD-65W20"
+  "model": "HD-65W20",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Ant A","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"Ant B","select":[{"commands":["InputAntennaB"],"setType":2}]},
+        {"name":"Videos","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Video 3"},
+        {"name":"Front"},
+        {"name":"Component"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

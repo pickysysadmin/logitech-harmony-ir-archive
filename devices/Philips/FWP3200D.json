@@ -2,6 +2,45 @@
   "codeset": "codesets/47/47861950ae5f7a3c.json",
   "deviceType": 5,
   "globalDeviceId": 272374,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"SourceA"},{"set":"SourceAInput","to":"iPod/Phone"}],"name":"iPod/Phone"},
+      {"commands":[{"set":"InputType","to":"SourceA"},{"set":"SourceAInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"SourceA"},{"set":"SourceAInput","to":"Mp3Link"}],"name":"Mp3Link"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "FWP3200D"
+  "model": "FWP3200D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"FM","select":[{"commands":["InputFM"],"setType":2}]},
+        {"name":"SourceA","select":[{"commands":["InputSourceA"],"setType":2}]}
+      ]
+    },
+    "SourceAInput": {
+      "next": ["InputSourceA"],
+      "values": [
+        {"name":"iPod/Phone"},
+        {"name":"USB"},
+        {"name":"Mp3Link"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,47 @@
   "codeset": "codesets/a9/a92b813b5be25f60.json",
   "deviceType": 22,
   "globalDeviceId": 242052,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD/DVD"}],"name":"CD/DVD"},
+      {"commands":[{"set":"InputType","to":"iPod/iPhone"}],"name":"iPod/iPhone"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Tuner/Aux"},{"set":"Tuner/AuxInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Tuner/Aux"},{"set":"Tuner/AuxInput","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Kenwood",
-  "model": "M-616DV"
+  "model": "M-616DV",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD/DVD","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"iPod/iPhone","select":[{"commands":["InputiPod/iPhone"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Tuner/Aux","select":[{"commands":["InputTuner/Aux"],"setType":2}]}
+      ]
+    },
+    "Tuner/AuxInput": {
+      "next": ["InputTuner/Aux"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AUX"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

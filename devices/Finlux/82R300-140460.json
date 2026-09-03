@@ -2,6 +2,44 @@
   "codeset": "codesets/85/85802a2718306665.json",
   "deviceType": 1,
   "globalDeviceId": 140460,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"E2 DVD"},
+      {"name":"E3 Playstation"},
+      {"name":"A/V CAMERA"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Finlux",
-  "model": "82R300++"
+  "model": "82R300++",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Guide"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 5,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

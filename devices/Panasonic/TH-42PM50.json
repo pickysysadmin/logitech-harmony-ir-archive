@@ -2,6 +2,51 @@
   "codeset": "codesets/a8/a8547d18fe86ba3f.json",
   "deviceType": 1,
   "globalDeviceId": 15120,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Tuner/AvInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"Tuner/AvInput","to":"AV"},{"set":"AvInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"Tuner/AvInput","to":"AV"},{"set":"AvInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"Tuner/AvInput","to":"AV"},{"set":"AvInput","to":"AV 3"}],"name":"AV 3"},
+      {"commands":[{"set":"Tuner/AvInput","to":"AV"},{"set":"AvInput","to":"Comp"}],"name":"Component"},
+      {"commands":[{"set":"Tuner/AvInput","to":"AV"},{"set":"AvInput","to":"SCART"}],"name":"SCART"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PM50"
+  "model": "TH-42PM50",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":3500}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AvInput": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["Red"],"setType":1}]},
+        {"name":"AV 2","select":[{"commands":["Green"],"setType":1}]},
+        {"name":"AV 3","select":[{"commands":["Yellow"],"setType":1}]},
+        {"name":"Comp","select":[{"commands":["Blue"],"setType":1}]},
+        {"name":"SCART","select":[{"commands":["TvVideo"],"setType":1}]}
+      ]
+    },
+    "Tuner/AvInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,61 @@
   "codeset": "codesets/64/64fb5bbf670941a7.json",
   "deviceType": 7,
   "globalDeviceId": 242491,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"M1-D"}],"name":"M1-D"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"BNC"}],"name":"BNC"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Video"}],"name":"Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "TLP-X4500"
+  "model": "TLP-X4500",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"VIDEO","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["InputRgb"],
+      "values": [
+        {"name":"M1-D"},
+        {"name":"RGB"},
+        {"name":"BNC"}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Component"},
+        {"name":"S-Video"},
+        {"name":"Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

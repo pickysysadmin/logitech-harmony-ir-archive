@@ -2,6 +2,37 @@
   "codeset": "codesets/3d/3d45a77f43ccf420.json",
   "deviceType": 7,
   "globalDeviceId": 169091,
+  "inputs": {
+    "list": [
+      {"commands":["InputSVideo"],"name":"S-VIDEO"},
+      {"commands":["InputVideo"],"name":"Composite Video"},
+      {"commands":["InputDVI"],"name":"DVI"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputHdmi1"],"name":"Hdmi 1"},
+      {"commands":["InputHdmi2"],"name":"Hdmi 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "HD-8000"
+  "model": "HD-8000",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle",
+      "Select"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

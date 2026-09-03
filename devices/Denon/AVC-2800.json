@@ -2,6 +2,49 @@
   "codeset": "codesets/47/474fe302fa1dc909.json",
   "deviceType": 5,
   "globalDeviceId": 19250,
+  "inputs": {
+    "list": [
+      {"commands":["InputVDP/TV"],"name":"VDP / TV"},
+      {"commands":["InputPhono"],"name":"PHONO"},
+      {"commands":["InputTuner"],"name":"TUNER"},
+      {"commands":["InputVcr"],"name":"VCR 1"},
+      {"commands":["InputVcr2"],"name":"VCR 2"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputVAux"],"name":"V.AUX / GAME"},
+      {"commands":["InputDat/Tape"],"name":"DAT / TAPE"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVC-2800"
+  "model": "AVC-2800",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "SurroundMode": {
+      "next": ["SoundMode"],
+      "values": [
+        {"name":"Dolby Pro Logic"},
+        {"name":"Widescreen"},
+        {"name":"Live Surround"},
+        {"name":"Super Stadium"},
+        {"name":"Mono Movie"},
+        {"name":"Rock Arena"},
+        {"name":"Jazz Club"},
+        {"name":"Classic Concert"},
+        {"name":"Matrix"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

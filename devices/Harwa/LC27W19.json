@@ -2,6 +2,43 @@
   "codeset": "codesets/06/0689cf96ade97298.json",
   "deviceType": 1,
   "globalDeviceId": 156692,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV Tuner"},
+      {"name":"Video"},
+      {"name":"S-Video"},
+      {"name":"Scart1"},
+      {"name":"Scart2 AV"},
+      {"name":"Scart2 Y/C"},
+      {"name":"YPbPr"},
+      {"name":"D-Sub"},
+      {"name":"HDMI"}
+    ],
+    "next": ["DirectionDown"],
+    "start": [
+      {"set":"Input","to":"TV Tuner"},
+      "StartInput"
+    ],
+    "type": 4
+  },
   "manufacturer": "Harwa",
-  "model": "LC27W19"
+  "model": "LC27W19",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b0/b0bde47f92aa2ba7.json",
   "deviceType": 1,
   "globalDeviceId": 59594,
+  "inputs": {
+    "list": [
+      {"name":"Antenna 1"},
+      {"name":"AV1"},
+      {"name":"RGB"},
+      {"name":"AV2"},
+      {"name":"SAV2"},
+      {"name":"AV3"},
+      {"name":"SAV3"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "CL-55WP910TAN"
+  "model": "CL-55WP910TAN",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

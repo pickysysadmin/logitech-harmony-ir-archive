@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/7b/7bbeee4ea6af8875.json",
   "deviceType": 1,
   "globalDeviceId": 258102,
+  "inputs": {
+    "list": [
+      {"commands":["InputNetwork"],"name":"Network","ports":["Streaming"]},
+      {"commands":["InputUsb",{"delayMs":1000},"Source",{"delayMs":500},"DirectionLeft","DirectionLeft","OK"],"name":"SAT","ports":["Antenna"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]},
+      {"commands":["InputHdmiSide",{"delayMs":1000},"Source",{"delayMs":500},"DirectionLeft","DirectionLeft","OK"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmiSide",{"delayMs":1000},"Source",{"delayMs":500},"DirectionLeft","OK"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmiSide"],"name":"HDMI Side","ports":["HDMI"]},
+      {"commands":["InputHdmiSide",{"delayMs":1000},"Source",{"delayMs":500},"DirectionRight","DirectionRight","OK"],"name":"Scart","ports":["Scart"]},
+      {"commands":["InputHdmiSide",{"delayMs":1000},"Source",{"delayMs":500},"DirectionRight","OK"],"name":"YPbPr","ports":["Component"]},
+      {"commands":["SmartTv"],"name":"Smart TV","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "55PFL4508K/12"
+  "model": "55PFL4508K/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 14000,
+    "pressMinRepeats": 3
+  }
 }

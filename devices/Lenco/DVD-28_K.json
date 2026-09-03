@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/38/38e19e909d81cd92.json",
   "deviceType": 34,
   "globalDeviceId": 107453,
+  "inputs": {
+    "finish": ["InputDVD"],
+    "list": [
+      {"commands":["InputDVD","InputDVD","InputDVD","InputDVD"],"name":"Tuner"},
+      {"commands":["InputDVD"],"name":"DVD"},
+      {"commands":["InputDVD","InputDVD","InputDVD","InputDVD"],"name":"Video1"},
+      {"commands":["InputDVD","InputDVD","InputDVD"],"name":"Video2"}
+    ],
+    "start": ["InputDVD"],
+    "type": 3
+  },
   "manufacturer": "Lenco",
-  "model": "DVD-28 K"
+  "model": "DVD-28 K",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

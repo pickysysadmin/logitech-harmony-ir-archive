@@ -1,7 +1,51 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/79/79085bb76966e1da.json",
   "deviceType": 25,
   "globalDeviceId": 147449,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"AuxInput"},{"set":"AuxInputInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AuxInput"},{"set":"AuxInputInput","to":"Line1"}],"name":"Line1"},
+      {"commands":[{"set":"InputType","to":"AuxInput"},{"set":"AuxInputInput","to":"Line2"}],"name":"Line2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "PV-D4743"
+  "model": "PV-D4743",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line1"},
+        {"name":"Line2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["DVD"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["VCR"],"setType":2}]},
+        {"name":"AuxInput","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

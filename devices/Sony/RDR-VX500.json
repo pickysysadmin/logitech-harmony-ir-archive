@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/50/50708251bfaa4b6b.json",
   "deviceType": 47,
   "globalDeviceId": 144670,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"Tuner"}],"name":"DVD Tuner","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"Line 1"}],"name":"DVD Line 1","ports":["Line In"]},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"Line 2"}],"name":"DVD Line 2","ports":["Line In"]},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DV"}],"name":"DVD DV","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"Tuner"}],"name":"VCR Tuner","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"Line 1"}],"name":"VCR Line 1","ports":["Line In"]},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"Line 2"}],"name":"VCR Line 2","ports":["Line In"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "RDR-VX500"
+  "model": "RDR-VX500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line 1"},
+        {"name":"Line 2"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":1}]},
+        {"name":"DVD","select":[{"commands":[{"set":"DVDInput","to":"DV"},"InputDvd"],"setType":1}]}
+      ]
+    },
+    "VCRInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line 1"},
+        {"name":"Line 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

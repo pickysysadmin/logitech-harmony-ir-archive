@@ -1,7 +1,52 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/78/786dd820558472cf.json",
   "deviceType": 1,
   "globalDeviceId": 153206,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"EXT-1"}],"name":"EXT-1"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"EXT-2"}],"name":"EXT-2"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"EXT-3"}],"name":"EXT-3"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"EXT-4"}],"name":"EXT-4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "AV28H20EU"
+  "model": "AV28H20EU",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVS": {
+      "next": ["ChannelUp"],
+      "previous": ["ChannelDown"],
+      "values": [
+        {"name":"EXT-1"},
+        {"name":"EXT-2"},
+        {"name":"EXT-3"},
+        {"name":"EXT-4"}
+      ]
+    },
+    "INPUTMODE": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4500,
+    "pressMinRepeats": 3
+  }
 }

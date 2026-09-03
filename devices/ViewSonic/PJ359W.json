@@ -2,6 +2,58 @@
   "codeset": "codesets/58/58e4e1a0d5799d26.json",
   "deviceType": 7,
   "globalDeviceId": 468871,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"COMPUTERInput","to":"Computer 1"}],"name":"Computer In 1","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"COMPUTERInput","to":"Computer 2"}],"name":"Computer In 2","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"COMPUTERInput","to":"HDMI"}],"name":"HDMI","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VIDEOInput","to":"S-Video"}],"name":"S-Video","ports":["S-Video"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VIDEOInput","to":"Video"}],"name":"Video","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "ViewSonic",
-  "model": "PJ359W"
+  "model": "PJ359W",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "COMPUTERInput": {
+      "next": ["InputComputer"],
+      "values": [
+        {"name":"Computer In 1"},
+        {"name":"Computer In 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":1}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":1}]}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"S-Video"},
+        {"name":"Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

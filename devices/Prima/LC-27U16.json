@@ -1,7 +1,46 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/58/584830529e041d6f.json",
   "deviceType": 1,
   "globalDeviceId": 98514,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"VGA"},
+      {"name":"DVI"},
+      {"name":"RF"},
+      {"name":"Vid 1"},
+      {"name":"Vid 2"},
+      {"name":"S-Video"},
+      {"name":"Component 1"},
+      {"name":"Component 2"}
+    ],
+    "next": ["ChannelDown"],
+    "start": [
+      "StartInput",
+      {"set":"Input","to":"VGA"}
+    ],
+    "type": 4
+  },
   "manufacturer": "Prima",
-  "model": "LC-27U16"
+  "model": "LC-27U16",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"VGA"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

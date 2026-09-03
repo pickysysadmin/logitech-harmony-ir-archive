@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/7f/7f61c9705879fbfe.json",
   "deviceType": 25,
   "globalDeviceId": 131309,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"name":"DVD"},
+      {"name":"VCR"},
+      {"name":"Input 2"}
+    ],
+    "next": ["2"],
+    "start": [
+      {"set":"Input","to":"DVD"},
+      "InputNext"
+    ],
+    "type": 4
+  },
   "manufacturer": "LiteOn",
-  "model": "LCV-9018G"
+  "model": "LCV-9018G",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

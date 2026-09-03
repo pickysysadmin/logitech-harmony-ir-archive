@@ -2,6 +2,67 @@
   "codeset": "codesets/eb/ebcd03e197508cdd.json",
   "deviceType": 22,
   "globalDeviceId": 225588,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Bridge"}],"name":"Bridge","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Optical 2"}],"name":"Optical 2","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Optical 1"}],"name":"Optical 1","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"StereoL/R 1"}],"name":"StereoL/R 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"StereoL/R 2"}],"name":"StereoL/R 2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"HDMI ARC"}],"name":"HDMI ARC","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "BDS 470"
+  "model": "BDS 470",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Disc"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Coaxial"},
+        {"name":"Optical 2"},
+        {"name":"Optical 1"},
+        {"name":"StereoL/R 1"},
+        {"name":"StereoL/R 2"},
+        {"name":"HDMI ARC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Bridge","select":[{"commands":["InputBridge"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

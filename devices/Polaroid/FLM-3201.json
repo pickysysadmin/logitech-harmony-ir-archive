@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/58/584830529e041d6f.json",
   "deviceType": 1,
   "globalDeviceId": 173295,
+  "inputs": {
+    "list": [
+      {"commands":["StartInput","Select"],"name":"VGA"},
+      {"commands":["StartInput","DirectionDown","Select"],"name":"DVI"},
+      {"commands":[{"delayMs":500},"StartInput","DirectionDown","DirectionDown","Select"],"name":"RF"},
+      {"commands":["StartInput","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Video1"},
+      {"commands":["StartInput","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Video2"},
+      {"commands":["StartInput","DirectionUp","DirectionUp","DirectionUp","Select"],"name":"S-Video"},
+      {"commands":[{"delayMs":500},"StartInput","DirectionUp","DirectionUp","Select"],"name":"YPbPr1"},
+      {"commands":["StartInput","DirectionUp","Select"],"name":"YPbPr2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Polaroid",
-  "model": "FLM-3201"
+  "model": "FLM-3201",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

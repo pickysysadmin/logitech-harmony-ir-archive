@@ -2,6 +2,55 @@
   "codeset": "codesets/a8/a8b52ce5a79d5d41.json",
   "deviceType": 7,
   "globalDeviceId": 164252,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"RGB 1"}],"name":"RGB 1"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"RGB 2"}],"name":"RGB 2"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"USB Storage"}],"name":"USB Storage"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "ViewSonic",
-  "model": "PJ-358"
+  "model": "PJ-358",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["InputRgb"],
+      "values": [
+        {"name":"RGB 1"},
+        {"name":"RGB 2"},
+        {"name":"USB Storage"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"S-Video"},
+        {"name":"Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/b0/b0bde47f92aa2ba7.json",
   "deviceType": 1,
   "globalDeviceId": 61075,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"AV1"},
+      {"name":"RGB"},
+      {"name":"AV2"},
+      {"name":"SAV2"},
+      {"name":"AV3"},
+      {"name":"SAV3"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "C2886TN"
+  "model": "C2886TN",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

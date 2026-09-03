@@ -2,6 +2,38 @@
   "codeset": "codesets/34/340d7b7875c67285.json",
   "deviceType": 5,
   "globalDeviceId": 119361,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["Component","Composite","S-Video"]},
+      {"commands":["InputDtv"],"name":"DTV/CBL","ports":["HDMI","Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputCd/Md"],"name":"MD/CD-R","ports":["Composite","Optical"]},
+      {"commands":["InputXm"],"name":"XM","ports":["Streaming"]},
+      {"commands":["InputVAux"],"name":"V-AUX","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputMultiChannel"],"name":"MultiChannel","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V861"
+  "model": "RX-V861",
+  "power": {
+    "off": ["Zone1Off"],
+    "on": ["Zone1On"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,40 @@
   "codeset": "codesets/e4/e44d45b4948c346e.json",
   "deviceType": 7,
   "globalDeviceId": 492632,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"name":"VGA 1","ports":["PC"]},
+      {"name":"VGA 2","ports":["PC"]},
+      {"name":"Composite Video","ports":["Composite"]},
+      {"name":"HDMI","ports":["HDMI"]},
+      {"name":"S-Video","ports":["S-Video"]}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "Promethean",
-  "model": "PRM-45"
+  "model": "PRM-45",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

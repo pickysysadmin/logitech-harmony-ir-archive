@@ -2,6 +2,60 @@
   "codeset": "codesets/fa/fa269905cf50678f.json",
   "deviceType": 1,
   "globalDeviceId": 177457,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"Input1Input","to":"S-Video 1"}],"name":"S-Video 1"},
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"Input1Input","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"Input1Input","to":"S-Video 2"}],"name":"S-Video 2"},
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"Input1Input","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"Input1Input","to":"YCBCR"}],"name":"YCBCR"},
+      {"commands":[{"set":"InputType","to":"Input2"},{"set":"Input2Input","to":"D-SUB"}],"name":"D-SUB"},
+      {"commands":[{"set":"InputType","to":"Input2"},{"set":"Input2Input","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"Input2"},{"set":"Input2Input","to":"YPBPR"}],"name":"YPBPR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Optima",
-  "model": "PPMA42HD10"
+  "model": "PPMA42HD10",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Input1Input": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"S-Video 1"},
+        {"name":"AV 1"},
+        {"name":"S-Video 2"},
+        {"name":"AV 2"},
+        {"name":"YCBCR"}
+      ]
+    },
+    "Input2Input": {
+      "next": ["InputGraphic"],
+      "valueDelay": 2500,
+      "values": [
+        {"name":"D-SUB"},
+        {"name":"DVI"},
+        {"name":"YPBPR"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input1","select":[{"commands":["InputNext",{"set":"Input1Input","to":"S-Video 1"}],"setType":2}]},
+        {"name":"Input2","select":[{"commands":["InputGraphic",{"set":"Input2Input","to":"D-SUB"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

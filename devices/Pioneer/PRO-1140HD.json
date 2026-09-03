@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/8d/8d0b9c2ab52bd431.json",
   "deviceType": 1,
   "globalDeviceId": 169827,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANT A"}],"name":"Antenna A"},
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANT B"}],"name":"Antenna B"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"INPUT1"}],"name":"Input1"},
+      {"commands":[{"set":"InputType","to":"INPUT2"}],"name":"Input2"},
+      {"commands":[{"set":"InputType","to":"INPUT3"}],"name":"Input3"},
+      {"commands":[{"set":"InputType","to":"INPUT4"}],"name":"Input4"},
+      {"commands":[{"set":"InputType","to":"INPUT5"}],"name":"Input5"},
+      {"commands":[{"set":"InputType","to":"INPUT6"}],"name":"Input6"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PRO-1140HD"
+  "model": "PRO-1140HD",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "ANTInput": {
+      "next": ["InputAntenna"],
+      "values": [
+        {"name":"ANT A"},
+        {"name":"ANT B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ANT","select":[{"commands":["InputAntenna"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"INPUT1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"INPUT2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"INPUT3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"INPUT4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"INPUT5","select":[{"commands":["InputVideo5"],"setType":2}]},
+        {"name":"INPUT6","select":[{"commands":["InputVideo6"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

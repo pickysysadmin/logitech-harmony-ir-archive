@@ -2,6 +2,56 @@
   "codeset": "codesets/f4/f48d19619407a896.json",
   "deviceType": 22,
   "globalDeviceId": 181730,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"DigitalIn"}],"name":"DigitalIn"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Aux1"}],"name":"Aux1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Aux2"}],"name":"Aux2"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-TP33"
+  "model": "HT-TP33",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"DigitalIn"},
+        {"name":"Aux1"},
+        {"name":"Aux2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,33 @@
   "codeset": "codesets/88/88d2d21932c70e29.json",
   "deviceType": 5,
   "globalDeviceId": 12443,
+  "inputs": {
+    "list": [
+      {"commands":["InputVCR"],"name":"VCR"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputCd"],"name":"CD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "RV-9950A"
+  "model": "RV-9950A",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

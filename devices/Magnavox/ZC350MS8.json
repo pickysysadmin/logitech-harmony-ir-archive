@@ -2,6 +2,52 @@
   "codeset": "codesets/b9/b95ed3cd94cc5efe.json",
   "deviceType": 34,
   "globalDeviceId": 236161,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DTV/TV"},{"set":"DTV/TVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"DTV/TV"},{"set":"DTV/TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"E1(Rear)"}],"name":"E1(Rear)"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"E2(Front)"}],"name":"E2(Front)"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Magnavox",
-  "model": "ZC350MS8"
+  "model": "ZC350MS8",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DTV/TVInput": {
+      "next": ["Dtv/Tv"],
+      "values": [
+        {"name":"DTV"},
+        {"name":"TV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DTV/TV","select":[{"commands":["Dtv/Tv"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"E1(Rear)"},
+        {"name":"E2(Front)"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,88 @@
   "codeset": "codesets/7b/7b9d5d4a04f597de.json",
   "deviceType": 22,
   "globalDeviceId": 160044,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DISC"}],"name":"DISC"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"MW"}],"name":"MW"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Digital In"}],"name":"Digital In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS-3450/77"
+  "model": "HTS-3450/77",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AM/FMInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "AUXInput": {
+      "next": ["InputAUX"],
+      "values": [
+        {"name":"AUX1"},
+        {"name":"AUX2"}
+      ]
+    },
+    "AuxInput": {
+      "next": ["InputAUX"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"Digital In"}
+      ]
+    },
+    "GameInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"PC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DISC","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAUX"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM/MW"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"MW"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

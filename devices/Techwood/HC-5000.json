@@ -2,6 +2,34 @@
   "codeset": "codesets/33/33a95f4ef8fb806f.json",
   "deviceType": 22,
   "globalDeviceId": 78441,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"Tuner"},
+      {"name":"Scart"},
+      {"name":"AV"},
+      {"name":"TV"}
+    ],
+    "next": ["Mode"],
+    "type": 2
+  },
   "manufacturer": "Techwood",
-  "model": "HC-5000"
+  "model": "HC-5000",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

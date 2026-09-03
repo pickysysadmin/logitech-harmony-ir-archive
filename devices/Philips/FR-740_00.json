@@ -2,6 +2,36 @@
   "codeset": "codesets/e6/e63bd37615ae98c7.json",
   "deviceType": 5,
   "globalDeviceId": 90609,
+  "inputs": {
+    "list": [
+      {"commands":[{"command":"InputTuner","durationMs":1500}],"name":"Tuner"},
+      {"commands":[{"command":"InputCd","durationMs":1500}],"name":"CD"},
+      {"commands":[{"command":"InputCdr/Tape","durationMs":1500}],"name":"CDR/Tape"},
+      {"commands":[{"command":"InputVcr","durationMs":1500}],"name":"VCR"},
+      {"commands":[{"command":"InputTv","durationMs":1500}],"name":"TV"},
+      {"commands":[{"command":"InputDvd/6Ch","durationMs":1500}],"name":"DVD/6CH"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "FR-740/00"
+  "model": "FR-740/00",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "on": [
+      {"command":"InputTuner","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

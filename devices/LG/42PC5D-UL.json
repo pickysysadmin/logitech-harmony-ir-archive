@@ -2,6 +2,57 @@
   "codeset": "codesets/25/2561f6bad8b17f5b.json",
   "deviceType": 1,
   "globalDeviceId": 205656,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"RGB-PC"}],"name":"RGB-PC"},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Antenna"}],"name":"Antenna"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Cable"}],"name":"Cable"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "42PC5D-UL"
+  "model": "42PC5D-UL",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"Cable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputAv2"],"setType":2}]},
+        {"name":"Component1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"RGB-PC","select":[{"commands":["InputRgb-Pc"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

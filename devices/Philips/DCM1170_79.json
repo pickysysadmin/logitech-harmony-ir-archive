@@ -2,6 +2,53 @@
   "codeset": "codesets/35/35db4dfb9d9a1d9c.json",
   "deviceType": 21,
   "globalDeviceId": 381409,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dock"}],"name":"Dock"},
+      {"commands":[{"set":"InputType","to":"FM/CD"},{"set":"FM/CDInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/CD"},{"set":"FM/CDInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"AudioIn/USB"},{"set":"AudioIn/USBInput","to":"AudioIn"}],"name":"AudioIn"},
+      {"commands":[{"set":"InputType","to":"AudioIn/USB"},{"set":"AudioIn/USBInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DCM1170/79"
+  "model": "DCM1170/79",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioIn/USBInput": {
+      "next": ["InputAudioIn/Usb"],
+      "values": [
+        {"name":"AudioIn"},
+        {"name":"USB"}
+      ]
+    },
+    "FM/CDInput": {
+      "next": ["InputFm/CD"],
+      "values": [
+        {"name":"FM"},
+        {"name":"CD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dock","select":[{"commands":["InputDock"],"setType":2}]},
+        {"name":"FM/CD","select":[{"commands":["InputFm/CD"],"setType":2}]},
+        {"name":"AudioIn/USB","select":[{"commands":["InputAudioIn/Usb"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

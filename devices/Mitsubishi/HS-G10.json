@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/02/027a975015db5093.json",
   "deviceType": 2,
   "globalDeviceId": 145690,
+  "inputs": {
+    "list": [
+      {"name":"Tuner","ports":["FM Antenna"]},
+      {"name":"Line","ports":["Line In"]}
+    ],
+    "next": ["TvVcr"],
+    "type": 2
+  },
   "manufacturer": "Mitsubishi",
-  "model": "HS-G10"
+  "model": "HS-G10",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,31 @@
   "codeset": "codesets/ef/ef3549e77169328c.json",
   "deviceType": 15,
   "globalDeviceId": 80601,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"EXT 1"}
+    ],
+    "next": ["TvVcr"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "20PV164/02"
+  "model": "20PV164/02",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

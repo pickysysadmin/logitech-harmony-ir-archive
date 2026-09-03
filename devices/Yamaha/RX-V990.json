@@ -2,6 +2,58 @@
   "codeset": "codesets/b8/b8db576dcb1eab08.json",
   "deviceType": 5,
   "globalDeviceId": 88511,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Tape 1"}],"name":"Tape 1"},
+      {"commands":[{"set":"InputType","to":"Tape 2 MON"}],"name":"Tape 2 MON"},
+      {"commands":[{"set":"InputType","to":"VCR1"}],"name":"VCR1"},
+      {"commands":[{"set":"InputType","to":"VCR2"}],"name":"VCR2"},
+      {"commands":[{"set":"InputType","to":"V-Aux"}],"name":"V-Aux"},
+      {"commands":[{"set":"InputType","to":"LD/TV"},{"set":"LD/TVInput","to":"LD/TV"}],"name":"LD/TV"},
+      {"commands":[{"set":"InputType","to":"LD/TV"},{"set":"LD/TVInput","to":"LD/TV CH Discrt"}],"name":"LD/TV CH Discrt"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V990"
+  "model": "RX-V990",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Phono","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd/Md"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Tape 1","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Tape 2 MON","select":[{"commands":["InputTape2"],"setType":2}]},
+        {"name":"VCR1","select":[{"commands":["InputVcr1"],"setType":2}]},
+        {"name":"VCR2","select":[{"commands":["InputVcr2"],"setType":2}]},
+        {"name":"V-Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"LD/TV","select":[{"commands":["InputDvd/Ld"],"setType":2}]}
+      ]
+    },
+    "LD/TVInput": {
+      "next": ["InputDvd/Ld"],
+      "values": [
+        {"name":"LD/TV"},
+        {"name":"LD/TV CH Discrt"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

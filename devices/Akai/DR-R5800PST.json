@@ -2,6 +2,66 @@
   "codeset": "codesets/1e/1e55a46fd0663582.json",
   "deviceType": 22,
   "globalDeviceId": 104700,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"TV/RADIO"},{"set":"TV/RADIOInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/RADIO"},{"set":"TV/RADIOInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1ANALOG"}],"name":"AV1ANALOG"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1DIGITAL"}],"name":"AV1DIGITAL"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2ANALOG"}],"name":"AV2ANALOG"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2DIGITAL"}],"name":"AV2DIGITAL"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV4"}],"name":"AV4"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"S-VIDEO"}],"name":"S-VIDEO"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Akai",
-  "model": "DR-R5800PST"
+  "model": "DR-R5800PST",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAV"],
+      "values": [
+        {"name":"AV1ANALOG"},
+        {"name":"AV1DIGITAL"},
+        {"name":"AV2ANALOG"},
+        {"name":"AV2DIGITAL"},
+        {"name":"AV3"},
+        {"name":"AV4"},
+        {"name":"S-VIDEO"},
+        {"name":"DVI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"TV/RADIO","select":[{"commands":["InputTV/Radio",{"set":"TV/RADIOInput","to":"TV"}],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAV",{"set":"AVInput","to":"AV1ANALOG"}],"setType":2}]}
+      ]
+    },
+    "TV/RADIOInput": {
+      "next": ["InputTV/Radio"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Radio"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

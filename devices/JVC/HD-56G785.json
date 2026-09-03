@@ -2,6 +2,53 @@
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 105446,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Antenna/Cable"}],"name":"Antenna/Cable"},
+      {"commands":[{"set":"InputType","to":"Input 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Input 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Input 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"Input 4"}],"name":"Input 4"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital-In 1"}],"name":"Digital-In 1"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital-In 2"}],"name":"Digital-In 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "HD-56G785"
+  "model": "HD-56G785",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputDigital In"],
+      "values": [
+        {"name":"Digital-In 1"},
+        {"name":"Digital-In 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Antenna/Cable","select":[{"commands":["ChannelUp"],"setType":2}]},
+        {"name":"Input 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Input 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Input 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Input 4","select":[{"commands":["Input 4"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDigital In"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

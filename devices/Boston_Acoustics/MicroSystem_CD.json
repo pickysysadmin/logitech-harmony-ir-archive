@@ -2,6 +2,50 @@
   "codeset": "codesets/b4/b4591ef595d56d84.json",
   "deviceType": 22,
   "globalDeviceId": 31983,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX1"}],"name":"AUX1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX2"}],"name":"AUX2"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX3"}],"name":"AUX3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Boston Acoustics",
-  "model": "MicroSystem CD"
+  "model": "MicroSystem CD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX1"},
+        {"name":"AUX2"},
+        {"name":"AUX3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"FM","select":[{"commands":["InputFm"],"setType":2}]},
+        {"name":"AM","select":[{"commands":["InputAm"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCD"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,48 @@
   "codeset": "codesets/96/964fdb3f931aac85.json",
   "deviceType": 1,
   "globalDeviceId": 201396,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Hdmi"}],"name":"Hdmi"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart1"}],"name":"Scart1"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart2"}],"name":"Scart2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Polaroid",
-  "model": "tlu-03223b"
+  "model": "tlu-03223b",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"Scart","select":[{"commands":["InputScart"],"setType":2}]}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputScart"],
+      "values": [
+        {"name":"Scart1"},
+        {"name":"Scart2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

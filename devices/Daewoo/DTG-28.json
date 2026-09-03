@@ -2,6 +2,33 @@
   "codeset": "codesets/65/65a6e01fea91e6f5.json",
   "deviceType": 1,
   "globalDeviceId": 179145,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"SVHS"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Daewoo",
-  "model": "DTG-28"
+  "model": "DTG-28",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

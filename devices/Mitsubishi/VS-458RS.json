@@ -2,6 +2,46 @@
   "codeset": "codesets/01/01c8d15763045db3.json",
   "deviceType": 1,
   "globalDeviceId": 229478,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"AntInput","to":"AntennaA"}],"name":"AntennaA"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"AntInput","to":"AntennaB"}],"name":"AntennaB"},
+      {"commands":[{"set":"InputType","to":"EX1"}],"name":"EX1"},
+      {"commands":[{"set":"InputType","to":"EX2"}],"name":"EX2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Mitsubishi",
-  "model": "VS-458RS"
+  "model": "VS-458RS",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntInput": {
+      "next": ["InputPrev"],
+      "values": [
+        {"name":"AntennaA"},
+        {"name":"AntennaB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"EX1","select":[{"commands":["InputExt1"],"setType":2}]},
+        {"name":"EX2","select":[{"commands":["InputExt2"],"setType":2}]},
+        {"name":"Ant","select":[{"commands":["InputPrev"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

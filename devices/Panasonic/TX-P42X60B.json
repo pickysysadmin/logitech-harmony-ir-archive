@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/ac/ac306726f79f1b4d.json",
   "deviceType": 1,
   "globalDeviceId": 253106,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"MediaPlayer"}],"name":"Media Player"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVB"}],"name":"DVB"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Analogue"}],"name":"Analogue"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-P42X60B"
+  "model": "TX-P42X60B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["AV"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"TV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"MediaPlayer","select":[{"commands":["SdCard/Usb"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["AV"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"DVB"},
+        {"name":"Analogue"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

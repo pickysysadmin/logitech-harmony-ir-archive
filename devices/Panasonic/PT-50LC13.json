@@ -2,6 +2,61 @@
   "codeset": "codesets/dc/dcad04dcf545b6ab.json",
   "deviceType": 1,
   "globalDeviceId": 167096,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"Component3"}],"name":"Component3"},
+      {"commands":[{"set":"InputType","to":"Component4"}],"name":"Component4"},
+      {"commands":[{"set":"InputType","to":"DigitalIn"}],"name":"DigitalIn"},
+      {"commands":[{"set":"InputType","to":"Card"}],"name":"Card"},
+      {"commands":[{"set":"InputType","to":"Pc"},{"set":"PcInput","to":"RGB1"}],"name":"RGB1"},
+      {"commands":[{"set":"InputType","to":"Pc"},{"set":"PcInput","to":"RGB2"}],"name":"RGB2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-50LC13"
+  "model": "PT-50LC13",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Component1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"Component3","select":[{"commands":["InputComponent2","TvVideo"],"setType":2}]},
+        {"name":"Component4","select":[{"commands":["InputComponent2","TvVideo","TvVideo"],"setType":2}]},
+        {"name":"DigitalIn","select":[{"commands":["InputDigital-In"],"setType":2}]},
+        {"name":"Card","select":[{"commands":["InputCard"],"setType":2}]},
+        {"name":"Pc","select":[{"commands":["InputPc"],"setType":2}]}
+      ]
+    },
+    "PcInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

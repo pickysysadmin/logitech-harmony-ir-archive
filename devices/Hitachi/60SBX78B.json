@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 107124,
+  "inputs": {
+    "list": [
+      {"name":"Antenna A"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"},
+      {"name":"Antenna B"}
+    ],
+    "next": [
+      "InputNext",
+      {"delayMs":2000}
+    ],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "60SBX78B"
+  "model": "60SBX78B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

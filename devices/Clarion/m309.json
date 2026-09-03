@@ -2,6 +2,37 @@
   "codeset": "codesets/1e/1ed5c2231ec72601.json",
   "deviceType": 21,
   "globalDeviceId": 252030,
+  "inputs": {
+    "list": [
+      {"name":"Radio"},
+      {"name":"SIRIUS"},
+      {"name":"XM"},
+      {"name":"CD/MP3/WMA/AAC"},
+      {"name":"USB/MTP/iPod"},
+      {"name":"CD Changer"},
+      {"name":"AUX 1"},
+      {"name":"AUX 2"}
+    ],
+    "next": ["Source"],
+    "type": 2
+  },
   "manufacturer": "Clarion",
-  "model": "m309"
+  "model": "m309",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

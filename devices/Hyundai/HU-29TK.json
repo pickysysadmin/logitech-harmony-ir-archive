@@ -2,6 +2,32 @@
   "codeset": "codesets/b6/b62685872b3bb86d.json",
   "deviceType": 1,
   "globalDeviceId": 124482,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"Video 1"},
+      {"name":"Video 2"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Hyundai",
-  "model": "HU-29TK"
+  "model": "HU-29TK",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna/Cable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

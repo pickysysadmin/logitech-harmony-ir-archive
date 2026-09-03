@@ -2,6 +2,38 @@
   "codeset": "codesets/6e/6ef18eb80909a6b1.json",
   "deviceType": 47,
   "globalDeviceId": 158126,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputVCR"],"name":"VCR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "DVD-R3545V/37"
+  "model": "DVD-R3545V/37",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"E1"},
+        {"name":"E2"},
+        {"name":"DV IN"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

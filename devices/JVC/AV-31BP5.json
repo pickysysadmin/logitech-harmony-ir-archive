@@ -1,7 +1,33 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 58896,
+  "inputs": {
+    "list": [
+      {"commands":[{"delayMs":1500},"InputTV"],"name":"TV"},
+      {"commands":["InputVideo1",{"delayMs":500},"InputVideo1","InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "AV-31BP5"
+  "model": "AV-31BP5",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

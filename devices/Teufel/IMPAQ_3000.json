@@ -2,6 +2,66 @@
   "codeset": "codesets/96/96679cf8e1b434ec.json",
   "deviceType": 22,
   "globalDeviceId": 212221,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"AvSource"},{"set":"AvSourceInput","to":"Disc/USB"}],"name":"Disc/USB","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"AvSource"},{"set":"AvSourceInput","to":"HDMI1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"AvSource"},{"set":"AvSourceInput","to":"HDMI2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"AuxIn1"}],"name":"AuxIn 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"AuxIn2"}],"name":"AuxIn 2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"AuxIn3"}],"name":"AuxIn 3","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teufel",
-  "model": "IMPAQ 3000"
+  "model": "IMPAQ 3000",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioSourceInput": {
+      "next": [
+        {"command":"InputAudio","durationMs":3000}
+      ],
+      "values": [
+        {"name":"Coaxial"},
+        {"name":"Optical"},
+        {"name":"AuxIn1"},
+        {"name":"AuxIn2"},
+        {"name":"AuxIn3"}
+      ]
+    },
+    "AvSourceInput": {
+      "next": [
+        {"command":"InputAV","durationMs":3000}
+      ],
+      "values": [
+        {"name":"Disc/USB"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":[{"command":"InputTuner","durationMs":3000}],"setType":2}]},
+        {"name":"AvSource","select":[{"commands":[{"command":"InputAV","durationMs":3000}],"setType":2}]},
+        {"name":"AudioSource","select":[{"commands":[{"command":"InputAudio","durationMs":3000}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

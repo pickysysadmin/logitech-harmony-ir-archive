@@ -2,6 +2,67 @@
   "codeset": "codesets/31/31ee402f4de370d3.json",
   "deviceType": 1,
   "globalDeviceId": 145913,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompInput","to":"Comp1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompInput","to":"Comp2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PcInput","to":"Vga"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PcInput","to":"Hdmi"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Heavenstar",
-  "model": "98LR7SW-2BE-F"
+  "model": "98LR7SW-2BE-F",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CompInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Comp","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]}
+      ]
+    },
+    "PcInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"Vga"},
+        {"name":"Hdmi"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"},
+        {"name":"Video4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

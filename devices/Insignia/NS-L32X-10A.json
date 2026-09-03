@@ -2,6 +2,91 @@
   "codeset": "codesets/ef/ef8c7d04619be055.json",
   "deviceType": 1,
   "globalDeviceId": 179837,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InputTv"}],"name":"InputTv"},
+      {"commands":[{"set":"InputType","to":"InputVideo"},{"set":"InputVideoInput","to":"A/V1"}],"name":"A/V1"},
+      {"commands":[{"set":"InputType","to":"InputVideo"},{"set":"InputVideoInput","to":"A/V2"}],"name":"A/V2"},
+      {"commands":[{"set":"InputType","to":"InputComponent"},{"set":"InputComponentInput","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"InputComponent"},{"set":"InputComponentInput","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"InputHdmi"},{"set":"InputHdmiInput","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"InputHdmi"},{"set":"InputHdmiInput","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"InputHdmi"},{"set":"InputHdmiInput","to":"Hdmi3"}],"name":"Hdmi3"},
+      {"commands":[{"set":"InputType","to":"InputHdmi"},{"set":"InputHdmiInput","to":"Hdmi4"}],"name":"Hdmi4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Insignia",
-  "model": "NS-L32X-10A"
+  "model": "NS-L32X-10A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"}
+      ]
+    },
+    "HdmiInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"},
+        {"name":"Hdmi3"},
+        {"name":"Hdmi4"}
+      ]
+    },
+    "InputComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"}
+      ]
+    },
+    "InputHdmiInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"},
+        {"name":"Hdmi3"},
+        {"name":"Hdmi4"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"InputTv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"InputVideo","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"InputComponent","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"InputHdmi","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    },
+    "InputVideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"A/V1"},
+        {"name":"A/V2"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"A/V1"},
+        {"name":"A/V2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

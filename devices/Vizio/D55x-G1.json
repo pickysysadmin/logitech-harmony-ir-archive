@@ -2,6 +2,36 @@
   "codeset": "codesets/45/458bb58f25b0552b.json",
   "deviceType": 1,
   "globalDeviceId": 479146,
+  "inputs": {
+    "list": [
+      {"commands":["InputCast"],"name":"SmartCast"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["InputComposite"],"name":"Composite"},
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["Exit",{"delayMs":2000},"Amazon"],"name":"Amazon"},
+      {"commands":["Exit",{"delayMs":2000},"Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Vizio",
-  "model": "D55x-G1"
+  "model": "D55x-G1",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 20000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 1
+  }
 }

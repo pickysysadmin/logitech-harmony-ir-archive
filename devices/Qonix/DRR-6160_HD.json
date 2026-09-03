@@ -2,6 +2,36 @@
   "codeset": "codesets/bc/bc5ebf153681db14.json",
   "deviceType": 34,
   "globalDeviceId": 178947,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Front Input"},
+      {"name":"Rear Input"},
+      {"name":"S-Video"},
+      {"name":"Scart"},
+      {"name":"USB"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Qonix",
-  "model": "DRR-6160 HD"
+  "model": "DRR-6160 HD",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

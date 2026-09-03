@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/e2/e2aaff8015855a30.json",
   "deviceType": 25,
   "globalDeviceId": 164241,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line In"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "RC-6900B"
+  "model": "RC-6900B",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"},
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

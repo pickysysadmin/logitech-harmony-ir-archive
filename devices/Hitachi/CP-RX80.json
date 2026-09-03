@@ -2,6 +2,49 @@
   "codeset": "codesets/e1/e1c832dc5d0af5d7.json",
   "deviceType": 7,
   "globalDeviceId": 468821,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"}],"name":"Computer","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video","ports":["S-Video"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "CP-RX80"
+  "model": "CP-RX80",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":1}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":1}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"S-Video"},
+        {"name":"Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

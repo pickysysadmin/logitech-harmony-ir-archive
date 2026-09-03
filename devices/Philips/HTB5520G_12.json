@@ -2,6 +2,51 @@
   "codeset": "codesets/f4/f4ee89fd2ef6cd55.json",
   "deviceType": 22,
   "globalDeviceId": 265085,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI ARC"}],"name":"HDMI ARC"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Coaxial"}],"name":"Coaxial"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Audio IN"}],"name":"Audio IN"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTB5520G/12"
+  "model": "HTB5520G/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["Bluetooth"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Radio"},
+        {"name":"HDMI ARC"},
+        {"name":"Aux"},
+        {"name":"Optical"},
+        {"name":"Coaxial"},
+        {"name":"Audio IN"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

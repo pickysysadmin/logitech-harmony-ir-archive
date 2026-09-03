@@ -2,6 +2,31 @@
   "codeset": "codesets/30/3066aa019918c9a8.json",
   "deviceType": 22,
   "globalDeviceId": 165213,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD","ports":["Streaming"]},
+      {"commands":["InputNext","InputDvd"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd","InputNext","InputNext"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputVideo1"],"name":"Video 1 (SAT 1)","ports":["Composite","Coaxial"]},
+      {"commands":["InputVideo2"],"name":"Video 2 (SAT 2)","ports":["Composite","Coaxial"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Composite","Coaxial"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "HCD-X1"
+  "model": "HCD-X1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

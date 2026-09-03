@@ -2,6 +2,35 @@
   "codeset": "codesets/2c/2ce844161e120eaa.json",
   "deviceType": 1,
   "globalDeviceId": 128695,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"commands":["1"],"name":"Input 1"},
+      {"commands":["4"],"name":"AVSF"},
+      {"commands":["5"],"name":"AVSB"},
+      {"commands":["2"],"name":"Input 2"},
+      {"commands":["0"],"name":"Ant"},
+      {"commands":["3"],"name":"Comp"}
+    ],
+    "start": ["InputNext"],
+    "type": 3
+  },
   "manufacturer": "ILO",
-  "model": "DTV-2785"
+  "model": "DTV-2785",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

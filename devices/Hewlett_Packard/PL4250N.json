@@ -2,6 +2,59 @@
   "codeset": "codesets/4d/4dbce3f67e2e0134.json",
   "deviceType": 1,
   "globalDeviceId": 44840,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"SDTV"}],"name":"SDTV"},
+      {"commands":[{"set":"InputType","to":"ATSC"}],"name":"ATSC"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"YCbCr"}],"name":"YCbCr"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PcInput","to":"Rgb"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PcInput","to":"Dvi"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hewlett Packard",
-  "model": "PL4250N"
+  "model": "PL4250N",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"SDTV","select":[{"commands":["InputSdtv"],"setType":2}]},
+        {"name":"ATSC","select":[{"commands":["InputAtsc"],"setType":2}]},
+        {"name":"VIDEO","select":[{"commands":["InputVideo",{"set":"VideoInput","to":"Composite"}],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC",{"set":"PcInput","to":"Rgb"}],"setType":2}]}
+      ]
+    },
+    "PcInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"Rgb"},
+        {"name":"Dvi"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Composite"},
+        {"name":"S-Video"},
+        {"name":"YCbCr"},
+        {"name":"YPbPr"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/f8/f85bada5f8fd15c8.json",
   "deviceType": 1,
   "globalDeviceId": 56650,
+  "inputs": {
+    "list": [
+      {"commands":["ChannelDown"],"name":"Tuner"},
+      {"commands":["ChannelDown","ChannelDown","ChannelDown"],"name":"AV1"},
+      {"commands":["ChannelDown","ChannelDown"],"name":"CVI"},
+      {"commands":["ChannelDown"],"name":"AV2"},
+      {"commands":["2","ChannelDown"],"name":"REAR"},
+      {"commands":["InputAV4"],"name":"HD-D"},
+      {"commands":["InputVga"],"name":"PC"},
+      {"commands":["InputRadio"],"name":"Radio"}
+    ],
+    "start": ["InputTuner A"],
+    "type": 3
+  },
   "manufacturer": "Philips",
-  "model": "26PF9966/37"
+  "model": "26PF9966/37",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,43 @@
   "codeset": "codesets/c6/c6480887da55269b.json",
   "deviceType": 34,
   "globalDeviceId": 202414,
+  "inputs": {
+    "list": [
+      {"commands":["InputDVD"],"name":"Dvd"},
+      {"commands":["InputHdd"],"name":"Hdd"},
+      {"commands":["InputDv/Usb"],"name":"Dv/Usb"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Manta",
-  "model": "DVD-037"
+  "model": "DVD-037",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"FrontCvbs"},
+        {"name":"FrontS-Video"},
+        {"name":"RearCvbs"},
+        {"name":"RearS-Video"},
+        {"name":"DV"},
+        {"name":"Scart"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

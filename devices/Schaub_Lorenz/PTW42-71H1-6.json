@@ -2,6 +2,39 @@
   "codeset": "codesets/90/90049928a11d2d09.json",
   "deviceType": 1,
   "globalDeviceId": 151978,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"SCARD 1"},
+      {"name":"SCART 2"},
+      {"name":"SVHS"},
+      {"name":"AV"},
+      {"name":"PC"},
+      {"name":"DVI"},
+      {"name":"YPB"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Schaub Lorenz",
-  "model": "PTW42-71H1-6"
+  "model": "PTW42-71H1-6",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

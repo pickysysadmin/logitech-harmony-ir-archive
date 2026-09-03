@@ -1,7 +1,46 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/8b/8b5abeab22010d05.json",
   "deviceType": 1,
   "globalDeviceId": 146449,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AV"}],"name":"AV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "29JZ5"
+  "model": "29JZ5",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

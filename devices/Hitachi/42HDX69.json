@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 110456,
+  "inputs": {
+    "list": [
+      {"commands":["Input 5","InputNext","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Cable"},
+      {"commands":["Input 5","InputNext","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Air"},
+      {"commands":["Input 1"],"name":"Input 1"},
+      {"commands":["Input 2"],"name":"Input 2"},
+      {"commands":["Input 3"],"name":"Input 3"},
+      {"commands":["Input 4"],"name":"Input 4"},
+      {"commands":["Input 5"],"name":"Input 5"},
+      {"commands":["Input 5","InputNext","DirectionDown","Select"],"name":"Photo Input"},
+      {"commands":["Input 5","InputNext","DirectionDown","DirectionDown","Select"],"name":"IEEE1394"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hitachi",
-  "model": "42HDX69"
+  "model": "42HDX69",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "ANTInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"ANT A"},
+        {"name":"ANT B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ANT","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

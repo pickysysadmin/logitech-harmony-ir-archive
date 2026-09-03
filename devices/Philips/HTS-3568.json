@@ -2,6 +2,52 @@
   "codeset": "codesets/56/562dd6a78ef67cd4.json",
   "deviceType": 22,
   "globalDeviceId": 171320,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Dvd"}],"name":"Dvd"},
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Scart"}],"name":"Scart"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Di"}],"name":"Di"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Mp3"}],"name":"Mp3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS-3568"
+  "model": "HTS-3568",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Scart"},
+        {"name":"Aux"},
+        {"name":"Di"},
+        {"name":"Mp3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"Dvd","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Usb","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Audio","select":[{"commands":["InputAux",{"set":"AudioInput","to":"Scart"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

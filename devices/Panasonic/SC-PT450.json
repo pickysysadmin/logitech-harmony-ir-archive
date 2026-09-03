@@ -2,6 +2,45 @@
   "codeset": "codesets/c3/c34bf14ad0aad685.json",
   "deviceType": 22,
   "globalDeviceId": 159190,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"MusicP"}],"name":"Music P","ports":["Aux"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PT450"
+  "model": "SC-PT450",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "EXT-INInput": {
+      "next": ["InputExtIn"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"MusicP"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"FM","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"EXT-IN","select":[{"commands":["InputExtIn",{"set":"EXT-INInput","to":"AUX"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,63 @@
   "codeset": "codesets/cf/cf7e61312cc0fc38.json",
   "deviceType": 22,
   "globalDeviceId": 12349,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Band"}],"name":"Band","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"DvdCd"},{"set":"DvdInput","to":"DVD"}],"name":"DVD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"DvdCd"},{"set":"DvdInput","to":"CD"}],"name":"CD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"TV"}],"name":"TV","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"Digital"}],"name":"Digital","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"Aux"}],"name":"Aux","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "XV-HTD510"
+  "model": "XV-HTD510",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DvdInput": {
+      "next": ["DVD"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"CD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DvdCd","select":[{"commands":["DVD"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["FM/AM"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["Video1"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["FM/AM"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Band"}
+      ]
+    },
+    "TvInput": {
+      "next": ["Video1"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Digital"},
+        {"name":"Aux"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

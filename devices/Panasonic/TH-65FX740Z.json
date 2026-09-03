@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/ff/fff61d26acee8581.json",
   "deviceType": 1,
   "globalDeviceId": 448038,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV","ports":["Component","Composite"]},
+      {"commands":[{"set":"InputType","to":"Apps"}],"name":"Apps","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Screen Mirroring"}],"name":"Screen Mirroring","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Analogue TV"}],"name":"Analogue TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Digital TV"}],"name":"Digital TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Satellite TV"}],"name":"Satellite TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Netflix"}],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-65FX740Z"
+  "model": "TH-65FX740Z",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":1}]},
+        {"name":"AV","select":[{"commands":["AV"],"setType":1}]},
+        {"name":"Apps","select":[{"commands":["Apps"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"Screen Mirroring","select":[{"commands":["Devices","Devices",{"delayMs":2000},{"command":"DirectionRight","durationMs":1500},"DirectionLeft","OK"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["TV"],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"Analogue TV"},
+        {"name":"Digital TV"},
+        {"name":"Satellite TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 10000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

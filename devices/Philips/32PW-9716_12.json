@@ -2,6 +2,45 @@
   "codeset": "codesets/a2/a2b78730ec208857.json",
   "deviceType": 1,
   "globalDeviceId": 128295,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1 Ext 1 FBAS"},
+      {"name":"AV2 Ext 2 FBAS"},
+      {"name":"AV3 Ext 3 FBAS"},
+      {"name":"AV4 Ext 4 FBAS"},
+      {"name":"AV5 Front"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "32PW-9716/12"
+  "model": "32PW-9716/12",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

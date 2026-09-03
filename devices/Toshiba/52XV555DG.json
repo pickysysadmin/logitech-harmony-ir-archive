@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/be/bef84322a7404ca4.json",
   "deviceType": 1,
   "globalDeviceId": 211608,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Scart 1"}],"name":"Scart 1"},
+      {"commands":[{"set":"InputType","to":"Scart 2"}],"name":"Scart 2"},
+      {"commands":[{"set":"InputType","to":"3C"}],"name":"3C"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "52XV555DG"
+  "model": "52XV555DG",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Scart 1","select":[{"commands":["InputScart1"],"setType":2}]},
+        {"name":"Scart 2","select":[{"commands":["InputScart2"],"setType":2}]},
+        {"name":"3C","select":[{"commands":["Input3c"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Tv","select":[{"commands":["ATV/DTV"],"setType":2}]}
+      ]
+    },
+    "TvInput": {
+      "next": ["ATV/DTV"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

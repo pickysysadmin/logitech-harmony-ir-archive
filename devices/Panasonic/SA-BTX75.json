@@ -2,6 +2,59 @@
   "codeset": "codesets/e3/e3503213e8f20cfc.json",
   "deviceType": 22,
   "globalDeviceId": 208428,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"BD/SD"},{"set":"BD/SDInput","to":"BD"}],"name":"BD"},
+      {"commands":[{"set":"InputType","to":"BD/SD"},{"set":"BD/SDInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"Digital In1"}],"name":"Digital In1"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"Digital In2"}],"name":"Digital In2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-BTX75"
+  "model": "SA-BTX75",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "BD/SDInput": {
+      "next": ["InputBd/Sd"],
+      "values": [
+        {"name":"BD"},
+        {"name":"SD"}
+      ]
+    },
+    "Ext-InInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"USB"},
+        {"name":"AUX"},
+        {"name":"Digital In1"},
+        {"name":"Digital In2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"BD/SD","select":[{"commands":["InputBd/Sd"],"setType":2}]},
+        {"name":"Ext-In","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

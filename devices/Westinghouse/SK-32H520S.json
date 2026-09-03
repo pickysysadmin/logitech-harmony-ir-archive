@@ -2,6 +2,71 @@
   "codeset": "codesets/45/456f7b36345bfe61.json",
   "deviceType": 1,
   "globalDeviceId": 177552,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"YPbPr 1"}],"name":"YPbPr 1"},
+      {"commands":[{"set":"InputType","to":"YPbPr 2"}],"name":"YPbPr 2"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"S-VIDEO"},{"set":"S-VIDEOInput","to":"S-VIDEO 1"}],"name":"S-VIDEO 1"},
+      {"commands":[{"set":"InputType","to":"S-VIDEO"},{"set":"S-VIDEOInput","to":"S-VIDEO 2"}],"name":"S-VIDEO 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Westinghouse",
-  "model": "SK-32H520S"
+  "model": "SK-32H520S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"YPbPr 1","select":[{"commands":["InputYPbPr1"],"setType":2}]},
+        {"name":"YPbPr 2","select":[{"commands":["InputYPbPr2"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"DVI","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"S-VIDEO","select":[{"commands":["InputS-Video"],"setType":2}]}
+      ]
+    },
+    "S-VIDEOInput": {
+      "next": ["InputS-Video"],
+      "values": [
+        {"name":"S-VIDEO 1"},
+        {"name":"S-VIDEO 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

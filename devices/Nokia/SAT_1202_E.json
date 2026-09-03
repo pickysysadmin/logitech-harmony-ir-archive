@@ -2,6 +2,32 @@
   "codeset": "codesets/4b/4bc4c61c64d54e38.json",
   "deviceType": 16,
   "globalDeviceId": 45487,
+  "inputs": {
+    "list": [
+      {"name":"Satellite"},
+      {"name":"TV"}
+    ],
+    "next": ["Tv/Sat"],
+    "type": 2
+  },
   "manufacturer": "Nokia",
-  "model": "SAT 1202 E"
+  "model": "SAT 1202 E",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["Tv/Sat"],
+    "onReset": [
+      {"set":"Input","to":"Satellite"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

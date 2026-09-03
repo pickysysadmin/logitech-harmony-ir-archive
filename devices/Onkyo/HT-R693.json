@@ -2,6 +2,42 @@
   "codeset": "codesets/a6/a6ad952b6e7615ef.json",
   "deviceType": 5,
   "globalDeviceId": 265912,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD","ports":["HDMI","Composite","Coaxial"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputStb/Dvr"],"name":"STB/DVR","ports":["HDMI","Composite"]},
+      {"commands":["InputGame"],"name":"Game","ports":["HDMI","Composite"]},
+      {"commands":["InputPc"],"name":"PC","ports":["HDMI","Composite"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["HDMI"]},
+      {"commands":["InputTv/Cd"],"name":"TV/CD","ports":["Composite","Optical"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]},
+      {"commands":["InputBluetooth"],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":["InputMusicServer"],"name":"Music Server","ports":["Streaming"]},
+      {"commands":["InputInternetRadio"],"name":"Internet Radio","ports":["Streaming"]},
+      {"commands":["InputNet"],"name":"NET","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "HT-R693"
+  "model": "HT-R693",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

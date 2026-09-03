@@ -1,7 +1,48 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/20/205f855924d7f949.json",
   "deviceType": 38,
   "globalDeviceId": 146170,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"TvVcr-DvdInput","to":"TvVcr"},{"set":"VideoInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"TvVcr-DvdInput","to":"TvVcr"},{"set":"VideoInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"TvVcr-DvdInput","to":"DVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "CXM-2785TP"
+  "model": "CXM-2785TP",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "TvVcr-DvdInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TvVcr"},
+        {"name":"DVD"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["AVToggle"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

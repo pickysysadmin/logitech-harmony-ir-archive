@@ -2,6 +2,58 @@
   "codeset": "codesets/f8/f8dddc2ee3768689.json",
   "deviceType": 1,
   "globalDeviceId": 201491,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InputHdmi"},{"set":"InputHdmiInput","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"InputHdmi"},{"set":"InputHdmiInput","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Video4"}],"name":"Video4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Uniden",
-  "model": "TL32TX1-AW"
+  "model": "TL32TX1-AW",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputHdmiInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"}
+      ]
+    },
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"},
+        {"name":"Video4"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"InputHdmi","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

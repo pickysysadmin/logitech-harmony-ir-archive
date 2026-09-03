@@ -1,7 +1,57 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 97095,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"ANT A"}],"name":"ANT A"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"ANT B"}],"name":"ANT B"},
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Video 4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"Video 5"}],"name":"Video 5"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "57SWX20B"
+  "model": "57SWX20B",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"ANT A"},
+        {"name":"ANT B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Video 1","select":[{"commands":["Input 1"],"setType":1}]},
+        {"name":"Video 2","select":[{"commands":["Input 2"],"setType":1}]},
+        {"name":"Video 3","select":[{"commands":["Input 3"],"setType":1}]},
+        {"name":"Video 4","select":[{"commands":["Input 4"],"setType":1}]},
+        {"name":"Video 5","select":[{"commands":["Input 5"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

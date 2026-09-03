@@ -2,6 +2,64 @@
   "codeset": "codesets/77/77b3bbedb5bb45e2.json",
   "deviceType": 1,
   "globalDeviceId": 172566,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InputTv"},{"set":"InputTvInput","to":"ANTENNA/CABLE"}],"name":"ANTENNA/CABLE"},
+      {"commands":[{"set":"InputType","to":"InputTv"},{"set":"InputTvInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AV 3"}],"name":"AV 3"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"COMPONENT"}],"name":"COMPONENT"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI 3"}],"name":"HDMI 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "32LB75-ZB"
+  "model": "32LB75-ZB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV 3"},
+        {"name":"COMPONENT"},
+        {"name":"RGB"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"}
+      ]
+    },
+    "InputTvInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"ANTENNA/CABLE"},
+        {"name":"DTV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"InputTv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

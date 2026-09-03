@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/c5/c5a596af0cb1b4b6.json",
   "deviceType": 1,
   "globalDeviceId": 166523,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANTA"}],"name":"ANTA"},
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANTB"}],"name":"ANTB"},
+      {"commands":[{"set":"InputType","to":"Input 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Input 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Input 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"Input 4"}],"name":"Input 4"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"i.LINK"}],"name":"i.LINK"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PDP-AR05U"
+  "model": "PDP-AR05U",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "ANTInput": {
+      "next": ["AntennaA/B"],
+      "values": [
+        {"name":"ANTA"},
+        {"name":"ANTB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ANT","select":[{"commands":["AntennaA/B"],"setType":2}]},
+        {"name":"Input 1","select":[{"commands":["InputVideo1",{"delayMs":500},"InputVideo1"],"setType":2}]},
+        {"name":"Input 2","select":[{"commands":["InputVideo2",{"delayMs":500},"InputVideo2"],"setType":2}]},
+        {"name":"Input 3","select":[{"commands":["InputVideo3",{"delayMs":500},"InputVideo3"],"setType":2}]},
+        {"name":"Input 4","select":[{"commands":["InputVideo4",{"delayMs":500},"InputVideo4"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC",{"delayMs":500},"InputPC"],"setType":2}]},
+        {"name":"i.LINK","select":[{"commands":["InputiLink",{"delayMs":500},"InputiLink"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

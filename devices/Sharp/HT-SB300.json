@@ -2,6 +2,46 @@
   "codeset": "codesets/5c/5c4b63206efa2343.json",
   "deviceType": 19,
   "globalDeviceId": 160556,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Digital 1"}],"name":"Digital 1","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Digital 2"}],"name":"Digital 2","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"LineIn 1"}],"name":"LineIn 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"LineIn 2"}],"name":"LineIn 2","ports":["Aux"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "HT-SB300"
+  "model": "HT-SB300",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Digital 1","select":[{"commands":["InputDigital1"],"setType":2}]},
+        {"name":"Digital 2","select":[{"commands":["InputDigital2"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputLine"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"LineIn 1"},
+        {"name":"LineIn 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,31 @@
   "codeset": "codesets/c0/c0f7c31198088f0a.json",
   "deviceType": 7,
   "globalDeviceId": 10033,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video 1"},
+      {"commands":["InputVideo"],"name":"S-Video"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputRGB"],"name":"PC"},
+      {"commands":["InputRGB"],"name":"DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-300"
+  "model": "PT-300",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

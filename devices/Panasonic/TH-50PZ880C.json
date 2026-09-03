@@ -2,6 +2,92 @@
   "codeset": "codesets/c0/c02b4179b047f679.json",
   "deviceType": 1,
   "globalDeviceId": 176425,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV1"},{"set":"AV1Input","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV1"},{"set":"AV1Input","to":"AV1S"}],"name":"AV1S"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AV4"},{"set":"AV4Input","to":"AV4"}],"name":"AV4"},
+      {"commands":[{"set":"InputType","to":"AV4"},{"set":"AV4Input","to":"AV4S"}],"name":"AV4S"},
+      {"commands":[{"set":"InputType","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"Hdmi3"}],"name":"Hdmi3"},
+      {"commands":[{"set":"InputType","to":"Hdmi4"}],"name":"Hdmi4"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVB"}],"name":"DVB"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-50PZ880C"
+  "model": "TH-50PZ880C",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "onReset": [
+      {"set":"InputType","to":"TV"},
+      {"set":"TVInput","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AV1Input": {
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["InputNext"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV1S"}
+      ]
+    },
+    "AV4Input": {
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["InputNext"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4S"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"AV4","select":[{"commands":["InputVideo3","DirectionDown","Select"],"setType":2}]},
+        {"name":"Component1","select":[{"commands":["InputComponent1"],"setType":1}]},
+        {"name":"Component2","select":[{"commands":["InputComponent2"],"setType":1}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":1}]},
+        {"name":"Hdmi1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"Hdmi2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"Hdmi3","select":[{"commands":["InputHDMI3"],"setType":1}]},
+        {"name":"Hdmi4","select":[{"commands":["InputHDMI3","DirectionDown","Select"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"DVB"},
+        {"name":"TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 9500,
+    "pressMinRepeats": 3
+  }
 }

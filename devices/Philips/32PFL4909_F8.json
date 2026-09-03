@@ -1,7 +1,67 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/de/dee60a0dcc5339d6.json",
   "deviceType": 1,
   "globalDeviceId": 496498,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"Screen","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"Screen","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"Screen","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"Screen","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"Screen","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"TVApps","to":"OFF"},{"set":"Screen","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"TVApps","to":"ON"},{"set":"Smart_TV","to":"NET TV"}],"name":"NET TV"},
+      {"commands":[{"set":"TVApps","to":"ON"},{"set":"Smart_TV","to":"Netflix"}],"name":"Netflix"},
+      {"commands":[{"set":"TVApps","to":"ON"},{"set":"Smart_TV","to":"Vudu"}],"name":"Vudu"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "32PFL4909/F8"
+  "model": "32PFL4909/F8",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Screen": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["Source"],
+      "values": [
+        {"name":"TV"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"Video"},
+        {"name":"PC"}
+      ]
+    },
+    "Smart_TV": {
+      "values": [
+        {"name":"NET TV","select":[{"commands":["Back","Back","NetTv"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"Vudu","select":[{"commands":["Vudu"],"setType":1}]}
+      ]
+    },
+    "TVApps": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Home",{"delayMs":9000},"Back",{"delayMs":500}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 30000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 3
+  }
 }

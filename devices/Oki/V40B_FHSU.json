@@ -2,6 +2,64 @@
   "codeset": "codesets/7d/7db6a6fccac5c386.json",
   "deviceType": 1,
   "globalDeviceId": 164593,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"EXT-1"}],"name":"EXT-1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"EXT-2"}],"name":"EXT-2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"FAV"}],"name":"FAV"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"YPBPR"}],"name":"YPBPR"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"PC-VGA"}],"name":"PC-VGA"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Oki",
-  "model": "V40B FHSU"
+  "model": "V40B FHSU",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"},
+        {"name":"EXT-1"},
+        {"name":"EXT-2"},
+        {"name":"FAV"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"YPBPR"},
+        {"name":"PC-VGA"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV/DTV","select":[{"commands":["TV/DTV"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "TV/DTVInput": {
+      "next": ["TV/DTV"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

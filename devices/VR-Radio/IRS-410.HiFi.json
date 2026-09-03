@@ -2,6 +2,46 @@
   "codeset": "codesets/0b/0b7018bd30bd4283.json",
   "deviceType": 33,
   "globalDeviceId": 272490,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Music Player"}],"name":"Music Player"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Internet Radio"}],"name":"Internet Radio"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "VR-Radio",
-  "model": "IRS-410.HiFi"
+  "model": "IRS-410.HiFi",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Music Player","select":[{"commands":["InputMusicPlayer"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"Internet Radio"},
+        {"name":"DAB"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

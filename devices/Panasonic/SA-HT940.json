@@ -2,6 +2,55 @@
   "codeset": "codesets/18/18ab657d6f237e66.json",
   "deviceType": 22,
   "globalDeviceId": 156426,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Front"}],"name":"Front","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"TV"}],"name":"TV","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-HT940"
+  "model": "SA-HT940",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Aux"},
+        {"name":"Front"}
+      ]
+    },
+    "FM/AMInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux",{"set":"AUXInput","to":"Front"}],"setType":2}]},
+        {"name":"FM/AM","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

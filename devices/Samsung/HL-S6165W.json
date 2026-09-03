@@ -2,6 +2,64 @@
   "codeset": "codesets/46/46c7fc8336bff5a1.json",
   "deviceType": 1,
   "globalDeviceId": 95618,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AV 3"}],"name":"AV 3"},
+      {"commands":[{"set":"InputType","to":"S-Video 1"}],"name":"S-Video 1"},
+      {"commands":[{"set":"InputType","to":"S-Video 2"}],"name":"S-Video 2"},
+      {"commands":[{"set":"InputType","to":"S-Video 3"}],"name":"S-Video 3"},
+      {"commands":[{"set":"InputType","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Air"}],"name":"Air"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Cable"}],"name":"Cable"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HL-S6165W"
+  "model": "HL-S6165W",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputAntenna"],
+      "values": [
+        {"name":"Air"},
+        {"name":"Cable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"AV 2","select":[{"commands":["InputAv2"],"setType":2}]},
+        {"name":"AV 3","select":[{"commands":["InputAv3"],"setType":2}]},
+        {"name":"S-Video 1","select":[{"commands":["InputSVideo1"],"setType":2}]},
+        {"name":"S-Video 2","select":[{"commands":["InputSVideo2"],"setType":2}]},
+        {"name":"S-Video 3","select":[{"commands":["InputSVideo3"],"setType":2}]},
+        {"name":"Component 1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component 2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["InputAntenna"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

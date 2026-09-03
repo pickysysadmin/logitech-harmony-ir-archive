@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ce/ced98d06a3a50af4.json",
   "deviceType": 1,
   "globalDeviceId": 236528,
+  "inputs": {
+    "finish": ["VolumeUp"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV"},
+      {"name":"Component"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"VGA"}
+    ],
+    "next": ["ChannelDown"],
+    "previous": ["ChannelUp"],
+    "start": ["Input"],
+    "type": 4
+  },
   "manufacturer": "Apex",
-  "model": "LE1912"
+  "model": "LE1912",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

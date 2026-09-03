@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a4/a44de4946bcf038e.json",
   "deviceType": 1,
   "globalDeviceId": 112273,
+  "inputs": {
+    "list": [
+      {"commands":["0"],"name":"Tuner"},
+      {"commands":["0",{"delayMs":1000},"InputNext"],"name":"Ext1"},
+      {"commands":["0",{"delayMs":1000},"InputNext","InputNext"],"name":"Ext2"},
+      {"commands":["0",{"delayMs":1000},"InputNext","InputNext","InputNext"],"name":"Ext3"},
+      {"commands":["0",{"delayMs":1000},"InputNext","InputNext","InputNext","InputNext"],"name":"Ext4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Grundig",
-  "model": "MFW 102-6110MV"
+  "model": "MFW 102-6110MV",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,49 @@
   "codeset": "codesets/e4/e4bfa20e99f7523f.json",
   "deviceType": 22,
   "globalDeviceId": 129655,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"MP3LineIn"}],"name":"MP3LineIn"},
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Aux/Di"},{"set":"Aux/DiInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux/Di"},{"set":"Aux/DiInput","to":"Digital In"}],"name":"Digital In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS3548W/98"
+  "model": "HTS3548W/98",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/DiInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Digital In"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"MP3LineIn","select":[{"commands":["InputMp3LineIn"],"setType":2}]},
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Aux/Di","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

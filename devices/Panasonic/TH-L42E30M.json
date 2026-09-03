@@ -1,7 +1,97 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/73/73c068abde336bdd.json",
   "deviceType": 1,
   "globalDeviceId": 260089,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"CompVideo"},{"set":"CompVideoInput","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"CompVideo"},{"set":"CompVideoInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"AV3"}],"name":"AV 3"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"SDCard/USB"}],"name":"Media Player"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"VieraSmartMENU","to":"ON"},{"set":"InputType","to":"VieraSmart"}],"name":"Viera Smart"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-L42E30M"
+  "model": "TH-L42E30M",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "CompVideoInput": {
+      "finish": ["OK"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["OK","AV"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"Component"}
+      ]
+    },
+    "HomeScreen": {
+      "values": [
+        {"name":"ON","select":[{"commands":["VieraConnect"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Exit"],"setType":2}]}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CompVideo","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"HDMI4","select":[{"commands":["InputHdmi4"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["ChannelUp"],"setType":2}]},
+        {"name":"SDCard/USB","select":[{"commands":["SdCard"],"setType":2}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":2}]},
+        {"name":"VieraSmart","select":[{"commands":["VieraConnect"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"Digital"},
+        {"name":"Analog"}
+      ]
+    },
+    "VieraSmartMENU": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 10000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

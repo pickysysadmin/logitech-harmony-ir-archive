@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/58/584830529e041d6f.json",
   "deviceType": 1,
   "globalDeviceId": 112783,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"VGA"},
+      {"name":"HDMI"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"RF"},
+      {"name":"HDTV1"},
+      {"name":"HDTV2"},
+      {"name":"USB"}
+    ],
+    "next": ["ChannelDown"],
+    "start": [
+      "StartInput",
+      {"set":"Input","to":"VGA"}
+    ],
+    "type": 4
+  },
   "manufacturer": "Prima",
-  "model": "LC-42R268S"
+  "model": "LC-42R268S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

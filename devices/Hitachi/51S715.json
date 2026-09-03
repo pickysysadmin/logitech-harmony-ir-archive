@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/3e/3e916ddb9f1f4282.json",
   "deviceType": 1,
   "globalDeviceId": 147567,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1",{"delayMs":1500},"InputNext","DirectionUp","DirectionUp","Select"],"name":"Antenna B"},
+      {"commands":["InputVideo1",{"delayMs":1500},"InputNext","DirectionUp","Select"],"name":"Antenna A"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputVideo4"],"name":"Video 4"},
+      {"commands":["InputVideo5"],"name":"Video 5"},
+      {"commands":["InputVideo5","InputNext","DirectionDown","Select"],"name":"Photo"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hitachi",
-  "model": "51S715"
+  "model": "51S715",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 1
+  }
 }

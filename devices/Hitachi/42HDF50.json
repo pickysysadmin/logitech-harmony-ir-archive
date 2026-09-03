@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/35/35d2a77874cd2f03.json",
   "deviceType": 1,
   "globalDeviceId": 205170,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"NTSC"}],"name":"NTSC"},
+      {"commands":[{"set":"InputType","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YCbCr"}],"name":"YCbCr"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "42HDF50"
+  "model": "42HDF50",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"NTSC","select":[{"commands":["InputNtsc"],"setType":2}]},
+        {"name":"DTV","select":[{"commands":["InputDtv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputRgb/Dvi"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputRgb/Dvi"],
+      "values": [
+        {"name":"RGB"},
+        {"name":"DVI"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Composite"},
+        {"name":"S-Video"},
+        {"name":"YCbCr"},
+        {"name":"YPbPr"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

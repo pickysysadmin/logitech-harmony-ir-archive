@@ -2,6 +2,51 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 213596,
+  "inputs": {
+    "list": [
+      {"commands":["Video 1"],"name":"VIDEO1"},
+      {"commands":["InputVideo2"],"name":"VIDEO2"},
+      {"commands":["InputVideo3"],"name":"VIDEO3"},
+      {"commands":["InputRGB1"],"name":"PC1"},
+      {"commands":["InputRGB2"],"name":"PC2"},
+      {"commands":["InputRGB3"],"name":"PC3"},
+      {"commands":["DVD/HDToggle"],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "42VG4P/S"
+  "model": "42VG4P/S",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

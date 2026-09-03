@@ -2,6 +2,32 @@
   "codeset": "codesets/36/362eb927ae6329c2.json",
   "deviceType": 1,
   "globalDeviceId": 53837,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"EXT 1"},
+      {"name":"EXT 2"}
+    ],
+    "next": ["InputNext 2"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "50PH18P"
+  "model": "50PH18P",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna/Cable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

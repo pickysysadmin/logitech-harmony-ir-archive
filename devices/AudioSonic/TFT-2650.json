@@ -2,6 +2,59 @@
   "codeset": "codesets/90/90049928a11d2d09.json",
   "deviceType": 1,
   "globalDeviceId": 111826,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"AVMODE"},{"set":"AVMODEInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AVMODE"},{"set":"AVMODEInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AVMODE"},{"set":"AVMODEInput","to":"AV2S"}],"name":"AV2S"},
+      {"commands":[{"set":"InputType","to":"AVMODE"},{"set":"AVMODEInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AVMODE"},{"set":"AVMODEInput","to":"AV3S"}],"name":"AV3S"},
+      {"commands":[{"set":"InputType","to":"AVMODE"},{"set":"AVMODEInput","to":"COMPUTER"}],"name":"Computer"},
+      {"commands":[{"set":"InputType","to":"AVMODE"},{"set":"AVMODEInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "AudioSonic",
-  "model": "TFT-2650"
+  "model": "TFT-2650",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVMODEInput": {
+      "next": ["StartInput"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV2S"},
+        {"name":"AV3"},
+        {"name":"AV3S"},
+        {"name":"COMPUTER"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"AVMODE","select":[{"commands":["StartInput",{"set":"AVMODEInput","to":"AV1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

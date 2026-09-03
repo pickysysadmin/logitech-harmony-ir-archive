@@ -2,6 +2,34 @@
   "codeset": "codesets/4a/4a6fc747c0aeec47.json",
   "deviceType": 1,
   "globalDeviceId": 45689,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"EXT1"},
+      {"name":"EXT2"},
+      {"name":"SVHS2"},
+      {"name":"AV"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "28PT550B"
+  "model": "28PT550B",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,70 @@
   "codeset": "codesets/a4/a4d695c433337705.json",
   "deviceType": 1,
   "globalDeviceId": 166960,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVB/Analogue"},{"set":"DVB/AnalogueInput","to":"DVB"}],"name":"DVB"},
+      {"commands":[{"set":"InputType","to":"DVB/Analogue"},{"set":"DVB/AnalogueInput","to":"Analogue"}],"name":"Analogue"},
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Av1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Av2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Av3/S-video"}],"name":"Av3/S-video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Daewoo",
-  "model": "DLT-32G1"
+  "model": "DLT-32G1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Av1"},
+        {"name":"Av2"},
+        {"name":"Av3/S-video"}
+      ]
+    },
+    "DVB/AnalogueInput": {
+      "next": ["DVB/Analog"],
+      "values": [
+        {"name":"DVB"},
+        {"name":"Analogue"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVB/Analogue","select":[{"commands":["DVB/Analog"],"setType":2}]},
+        {"name":"Multimedia","select":[{"commands":["Multimedia"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "MultimediaInput": {
+      "next": ["Multimedia"],
+      "values": [
+        {"name":"Component"},
+        {"name":"PC"},
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

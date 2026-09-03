@@ -2,6 +2,34 @@
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 113036,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Scart 1"},
+      {"name":"Scart 2"},
+      {"name":"Scart 3"},
+      {"name":"SVHS"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Vistron",
-  "model": "VISO32"
+  "model": "VISO32",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Scart 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

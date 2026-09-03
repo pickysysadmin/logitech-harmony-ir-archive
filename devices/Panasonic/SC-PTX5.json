@@ -2,6 +2,57 @@
   "codeset": "codesets/61/61fd9a8f3580b8e6.json",
   "deviceType": 22,
   "globalDeviceId": 169196,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm/Am"}],"name":"Fm/Am","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Xm"}],"name":"Xm","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"MusicP"}],"name":"MusicP","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"D-In"}],"name":"D-In","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"Option"}],"name":"Option","ports":["Dock"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PTX5"
+  "model": "SC-PTX5",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Ext-InInput": {
+      "next": ["InputExtIn"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"D-In"},
+        {"name":"Option"},
+        {"name":"MusicP"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Ext-In","select":[{"commands":["InputExtIn",{"set":"Ext-InInput","to":"Aux"}],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Fm/Am"},
+        {"name":"Xm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

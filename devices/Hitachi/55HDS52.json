@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/c2/c2e2170e026d957d.json",
   "deviceType": 1,
   "globalDeviceId": 123209,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi 1"}],"name":"Hdmi 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi 2"}],"name":"Hdmi 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi 3"}],"name":"Hdmi 3","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "55HDS52"
+  "model": "55HDS52",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HdmiInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"Hdmi 1"},
+        {"name":"Hdmi 2"},
+        {"name":"Hdmi 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputAV",{"delayMs":500},"InputNext",{"delayMs":500},"DirectionUp",{"delayMs":500},"Select"],"setType":1}]},
+        {"name":"AV","select":[{"commands":["InputAV"],"setType":1}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":1}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":1}]},
+        {"name":"USB","select":[{"commands":["InputPC",{"delayMs":500},"InputNext",{"delayMs":500},"DirectionDown",{"delayMs":500},"Select"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

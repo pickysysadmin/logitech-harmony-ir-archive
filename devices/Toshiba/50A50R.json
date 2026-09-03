@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/36/362eb927ae6329c2.json",
   "deviceType": 1,
   "globalDeviceId": 14122,
+  "inputs": {
+    "finish": ["Exit"],
+    "list": [
+      {"commands":["0"],"name":"TV"},
+      {"commands":["1"],"name":"Video1"},
+      {"commands":["2"],"name":"Video2"},
+      {"commands":["3"],"name":"Video3"},
+      {"commands":["4"],"name":"ColorStream"}
+    ],
+    "start": ["TvVideo"],
+    "type": 3
+  },
   "manufacturer": "Toshiba",
-  "model": "50A50R"
+  "model": "50A50R",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

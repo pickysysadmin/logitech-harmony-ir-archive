@@ -2,6 +2,73 @@
   "codeset": "codesets/70/702cb1bea5ad380a.json",
   "deviceType": 1,
   "globalDeviceId": 180248,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"AnalogHD"},{"set":"AnalogHDInput","to":"AnalogHD1"}],"name":"Analog HD1"},
+      {"commands":[{"set":"InputType","to":"AnalogHD"},{"set":"AnalogHDInput","to":"AnalogHD2"}],"name":"Analog HD2"},
+      {"commands":[{"set":"InputType","to":"DigitalHD"},{"set":"DigitalHDInput","to":"DigitalHD1"}],"name":"Digital HD1"},
+      {"commands":[{"set":"InputType","to":"DigitalHD"},{"set":"DigitalHDInput","to":"DigitalHD2"}],"name":"Digital HD2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1S-Video"}],"name":"AV1 S-Video"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1Video"}],"name":"AV1 Video"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2S-Video"}],"name":"AV2 S-Video"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2Video"}],"name":"AV2 Video"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "VIZIO P50HD"
+  "model": "VIZIO P50HD",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV1S-Video"},
+        {"name":"AV1Video"},
+        {"name":"AV2S-Video"},
+        {"name":"AV2Video"}
+      ]
+    },
+    "AnalogHDInput": {
+      "next": ["InputAnalogHd"],
+      "values": [
+        {"name":"AnalogHD1"},
+        {"name":"AnalogHD2"}
+      ]
+    },
+    "DigitalHDInput": {
+      "next": ["InputDigitalHd"],
+      "values": [
+        {"name":"DigitalHD1"},
+        {"name":"DigitalHD2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"DigitalHD","select":[{"commands":["InputDigitalHd"],"setType":1}]},
+        {"name":"AnalogHD","select":[{"commands":["InputAnalogHd"],"setType":1}]},
+        {"name":"AV","select":[{"commands":[{"set":"AVInput","to":"AV1S-Video"},"InputAv"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"DTV","select":[{"commands":["InputDigitalHd"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 0,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2a/2af186c4257c828d.json",
   "deviceType": 1,
   "globalDeviceId": 222116,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Digital"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "RCAL32WD12"
+  "model": "RCAL32WD12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputAntenna"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video"},
+        {"name":"S-Video"},
+        {"name":"Component 1"},
+        {"name":"Component 2"},
+        {"name":"VGA"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["InputAntenna"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d0/d08497fe3da74b2f.json",
   "deviceType": 1,
   "globalDeviceId": 108473,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"Video 1"}
+    ],
+    "next": ["ChannelUp"],
+    "type": 2
+  },
   "manufacturer": "Loewe",
-  "model": "58457"
+  "model": "58457",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"Input","to":"Video 1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

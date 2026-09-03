@@ -2,6 +2,39 @@
   "codeset": "codesets/6c/6c4991df8597c770.json",
   "deviceType": 5,
   "globalDeviceId": 45005,
+  "inputs": {
+    "list": [
+      {"commands":["InputPhono"],"name":"PHONO","ports":["Composite"]},
+      {"commands":["InputCD"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputVdp"],"name":"VDP","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputVAux"],"name":"V.AUX","ports":["Composite","S-Video","Optical"]},
+      {"commands":["InputVcr1"],"name":"VCR1","ports":["Composite","S-Video","Optical"]},
+      {"commands":["InputVcr2"],"name":"VCR2","ports":["Composite","S-Video","Optical"]},
+      {"commands":["InputDbs"],"name":"DBS","ports":["Composite","S-Video"]},
+      {"commands":["InputMd/Tape1"],"name":"TAPE","ports":["Composite"]},
+      {"commands":["InputTv/Dbs"],"name":"TV","ports":["HDMI","Component","Composite","S-Video","Optical"]},
+      {"commands":["InputAnalog"],"name":"AUX","ports":["Others"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-4806"
+  "model": "AVR-4806",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

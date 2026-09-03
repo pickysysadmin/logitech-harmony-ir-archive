@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/f6/f6f6df550c312c34.json",
   "deviceType": 1,
   "globalDeviceId": 251794,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","ChannelUp"],"name":"TV"},
+      {"commands":["Exit","Input1"],"name":"HDMI 1"},
+      {"commands":["Exit","Input2"],"name":"HDMI 2"},
+      {"commands":["Exit","Input3"],"name":"HDMI 3"},
+      {"commands":["Exit","Input4"],"name":"HDMI 4"},
+      {"commands":["Exit","Input5"],"name":"Component"},
+      {"commands":["Exit","Input6"],"name":"Video 1"},
+      {"commands":["Exit","Input7"],"name":"Video 2"},
+      {"commands":["Exit","Input8"],"name":"PC IN"},
+      {"commands":["Exit","Input8","Input","Input"],"name":"Home Network(DLNA)"},
+      {"commands":["Exit","Input8","Input","Input","Input"],"name":"USB"},
+      {"commands":["Apps",{"delayMs":2000},"Select"],"name":"Smart Central"},
+      {"commands":["Exit","Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-70LE857"
+  "model": "LC-70LE857",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

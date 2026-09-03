@@ -2,6 +2,35 @@
   "codeset": "codesets/ad/adc72e101854e2b9.json",
   "deviceType": 1,
   "globalDeviceId": 251673,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnalog"],"name":"Analog","ports":["Antenna"]},
+      {"commands":["InputDigital"],"name":"Digital","ports":["Antenna"]},
+      {"commands":["InputVideo1"],"name":"Video 1","ports":["Composite"]},
+      {"commands":["InputVideo2"],"name":"Video 2/Component","ports":["Component"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputHdmi4"],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":["Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-46W905A"
+  "model": "KDL-46W905A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 45000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

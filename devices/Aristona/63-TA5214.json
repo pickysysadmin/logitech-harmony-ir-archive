@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/4a/4a6fc747c0aeec47.json",
   "deviceType": 1,
   "globalDeviceId": 106776,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Ext 1"},
+      {"name":"SvHs 2"},
+      {"name":"Ext 2"},
+      {"name":"SvGs 3"},
+      {"name":"Ext 3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Aristona",
-  "model": "63-TA5214"
+  "model": "63-TA5214",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

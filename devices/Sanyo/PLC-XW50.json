@@ -2,6 +2,28 @@
   "codeset": "codesets/dc/dcd39b83fef18c1a.json",
   "deviceType": 7,
   "globalDeviceId": 115143,
+  "inputs": {
+    "list": [
+      {"commands":["InputPC1"],"name":"Computer"},
+      {"commands":["InputVideo"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sanyo",
-  "model": "PLC-XW50"
+  "model": "PLC-XW50",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,35 @@
   "codeset": "codesets/b0/b0956c14f900bd04.json",
   "deviceType": 19,
   "globalDeviceId": 36925,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Phono"},
+      {"name":"Tape-1"},
+      {"name":"Tape-2"},
+      {"name":"CD"},
+      {"name":"DVD"}
+    ],
+    "next": ["Mute"],
+    "type": 2
+  },
   "manufacturer": "Denon",
-  "model": "PMA95CR"
+  "model": "PMA95CR",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

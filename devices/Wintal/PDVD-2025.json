@@ -3,5 +3,36 @@
   "deviceType": 4,
   "globalDeviceId": 70401,
   "manufacturer": "Wintal",
-  "model": "PDVD-2025"
+  "model": "PDVD-2025",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"S1"},
+        {"name":"TV"},
+        {"name":"Aux1"},
+        {"name":"Aux2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/Radio","select":[{"commands":["InputDvd/Radio"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

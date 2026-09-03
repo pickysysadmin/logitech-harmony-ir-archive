@@ -2,6 +2,42 @@
   "codeset": "codesets/3c/3c94f29b4c1a7b0f.json",
   "deviceType": 1,
   "globalDeviceId": 148012,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"PC"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"TV"},
+      {"name":"YPbPr"},
+      {"name":"AV"},
+      {"name":"S-video"},
+      {"name":"SCART 1"},
+      {"name":"SCART 2"},
+      {"name":"SCART 2SV"}
+    ],
+    "next": ["DirectionRight"],
+    "start": [
+      {"set":"Input","to":"TV"},
+      "InputNext"
+    ],
+    "type": 4
+  },
   "manufacturer": "Hanns-G",
-  "model": "XV32 JT01-32"
+  "model": "XV32 JT01-32",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

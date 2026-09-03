@@ -2,6 +2,37 @@
   "codeset": "codesets/f5/f56f953e8481536f.json",
   "deviceType": 7,
   "globalDeviceId": 348380,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"PC"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "BenQ",
-  "model": "W11000"
+  "model": "W11000",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

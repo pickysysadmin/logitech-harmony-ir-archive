@@ -2,6 +2,33 @@
   "codeset": "codesets/e6/e6400112c90da7a1.json",
   "deviceType": 1,
   "globalDeviceId": 182002,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"E2 DVD"},
+      {"name":"E3 Playstation"},
+      {"name":"A/V CAMERA"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Finlux",
-  "model": "GW82X8"
+  "model": "GW82X8",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerOff"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

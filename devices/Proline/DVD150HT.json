@@ -2,6 +2,34 @@
   "codeset": "codesets/35/35f7240b459f1441.json",
   "deviceType": 22,
   "globalDeviceId": 4300,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"Tuner"},
+      {"name":"AmFm"},
+      {"name":"AV1"},
+      {"name":"AV2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Proline",
-  "model": "DVD150HT"
+  "model": "DVD150HT",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

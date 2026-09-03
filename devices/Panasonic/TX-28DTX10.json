@@ -1,7 +1,91 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/15/151cf3daa72c0f48.json",
   "deviceType": 1,
   "globalDeviceId": 157438,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"},{"set":"TvInput","to":"TV"},{"set":"AV1Scart","to":"ON"},{"set":"AV2Scart","to":"ON"}],"name":"TV"},
+      {"commands":[{"set":"INPUTMODE","to":"TV"},{"set":"TvInput","to":"DVB"},{"set":"AV1Scart","to":"ON"},{"set":"AV2Scart","to":"ON"}],"name":"DVB"},
+      {"commands":[{"set":"AV1Scart","to":"ON"}],"name":"AV1"},
+      {"commands":[{"set":"AV2Scart","to":"ON"}],"name":"AV2"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"AV2Input","to":"AV2S"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"}],"name":"AV2S"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"AV3Input","to":"AV3"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"}],"name":"AV3"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"AV3Input","to":"AV3S"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"}],"name":"AV3S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-28DTX10"
+  "model": "TX-28DTX10",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV1Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV1"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "AV2Input": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "AV2Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"AV2Input","to":"AV2"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "AV3Input": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":2}]}
+      ]
+    },
+    "INPUTMODE": {
+      "values": [
+        {"name":"TV","select":[{"commands":["Mode"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["TvVideo",{"set":"MENU","to":"ON"}],"setType":2}]}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "TvInput": {
+      "next": ["Mode"],
+      "values": [
+        {"name":"DVB"},
+        {"name":"TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

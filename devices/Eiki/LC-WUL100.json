@@ -2,6 +2,73 @@
   "codeset": "codesets/68/6853d02e9fe09ba1.json",
   "deviceType": 7,
   "globalDeviceId": 252631,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"Input1Input","to":"RGB (PC Analog)"}],"name":"RGB (PC Analog)"},
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"Input1Input","to":"RGB (Scart)"}],"name":"RGB (Scart)"},
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"Input1Input","to":"RGB (PC Digital)"}],"name":"RGB (PC Digital)"},
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"Input1Input","to":"RGB (AV HDCP)"}],"name":"RGB (AV HDCP)"},
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"Input1Input","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Input2"},{"set":"Input2Input","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Input2"},{"set":"Input2Input","to":"Y,Pb/Cb,Pr/Cr 1"}],"name":"Y,Pb/Cb,Pr/Cr 1"},
+      {"commands":[{"set":"InputType","to":"Input2"},{"set":"Input2Input","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"Input3"},{"set":"Input3Input","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Input3"},{"set":"Input3Input","to":"Y,Pb/Cb,Pr/Cr 2"}],"name":"Y,Pb/Cb,Pr/Cr 2"},
+      {"commands":[{"set":"InputType","to":"Input3"},{"set":"Input3Input","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Eiki",
-  "model": "LC-WUL100"
+  "model": "LC-WUL100",
+  "power": {
+    "off": ["PowerOff","PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Input1Input": {
+      "next": ["Input1"],
+      "values": [
+        {"name":"RGB (PC Analog)"},
+        {"name":"RGB (Scart)"},
+        {"name":"RGB (PC Digital)"},
+        {"name":"RGB (AV HDCP)"},
+        {"name":"HDMI"}
+      ]
+    },
+    "Input2Input": {
+      "next": ["Input2"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Y,Pb/Cb,Pr/Cr 1"},
+        {"name":"RGB"}
+      ]
+    },
+    "Input3Input": {
+      "next": ["Input3"],
+      "values": [
+        {"name":"Video 2"},
+        {"name":"Y,Pb/Cb,Pr/Cr 2"},
+        {"name":"S-Video"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input1","select":[{"commands":["Input1"],"setType":2}]},
+        {"name":"Input2","select":[{"commands":["Input2"],"setType":2}]},
+        {"name":"Input3","select":[{"commands":["Input3"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

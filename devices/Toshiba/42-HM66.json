@@ -2,6 +2,68 @@
   "codeset": "codesets/f5/f5f5c7bac185a626.json",
   "deviceType": 1,
   "globalDeviceId": 181837,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"SVideo"}],"name":"SVideo"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"Colorstream"},{"set":"ColorstreamInput","to":"Colorstream 1"}],"name":"Colorstream 1"},
+      {"commands":[{"set":"InputType","to":"Colorstream"},{"set":"ColorstreamInput","to":"Colorstream 2"}],"name":"Colorstream 2"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "42-HM66"
+  "model": "42-HM66",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"}
+      ]
+    },
+    "ColorstreamInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Colorstream 1"},
+        {"name":"Colorstream 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"SVideo","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"Colorstream","select":[{"commands":["InputComponent",{"set":"ColorstreamInput","to":"Colorstream 1"}],"setType":2}]},
+        {"name":"TV/DTV","select":[{"commands":["InputTuner",{"set":"TV/DTVInput","to":"TV"}],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputVideo",{"set":"AVInput","to":"AV1"}],"setType":2}]}
+      ]
+    },
+    "TV/DTVInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

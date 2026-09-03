@@ -2,6 +2,35 @@
   "codeset": "codesets/b2/b233c611e3cda33f.json",
   "deviceType": 1,
   "globalDeviceId": 88277,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputAV1"],"name":"AV1"},
+      {"commands":["InputAV2"],"name":"AV2"},
+      {"commands":["InputAV3"],"name":"AV3"},
+      {"commands":["InputYpbpr"],"name":"Ypbpr"},
+      {"commands":["InputVGA"],"name":"VGA"},
+      {"commands":["InputDVI"],"name":"DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Niko",
-  "model": "OTP-3211W"
+  "model": "OTP-3211W",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

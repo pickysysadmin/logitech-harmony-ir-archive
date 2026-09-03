@@ -1,7 +1,66 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/10/102a2b54a87e3a1f.json",
   "deviceType": 1,
   "globalDeviceId": 150065,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"S-Video1"}],"name":"S-Video1"},
+      {"commands":[{"set":"InputType","to":"S-Video2"}],"name":"S-Video2"},
+      {"commands":[{"set":"InputType","to":"S-Video3"}],"name":"S-Video3"},
+      {"commands":[{"set":"InputType","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"HDMI/DVI"}],"name":"HDMI/DVI"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Air"}],"name":"Air"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Cable"}],"name":"Cable"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HL-R5667W"
+  "model": "HL-R5667W",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputAntenna"],
+      "values": [
+        {"name":"Air"},
+        {"name":"Cable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputAv2"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["InputAv3"],"setType":2}]},
+        {"name":"S-Video1","select":[{"commands":["InputSVideo1"],"setType":2}]},
+        {"name":"S-Video2","select":[{"commands":["InputSVideo2"],"setType":2}]},
+        {"name":"S-Video3","select":[{"commands":["InputSVideo3"],"setType":2}]},
+        {"name":"Component1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"HDMI/DVI","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["InputAntenna"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

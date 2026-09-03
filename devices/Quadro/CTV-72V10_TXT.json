@@ -2,6 +2,35 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 212706,
+  "inputs": {
+    "list": [
+      {"name":"TUNER"},
+      {"name":"AV-1"},
+      {"name":"AV-2"},
+      {"name":"AV-3"},
+      {"name":"S-VHS"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Quadro",
-  "model": "CTV-72V10 TXT"
+  "model": "CTV-72V10 TXT",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"TUNER"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

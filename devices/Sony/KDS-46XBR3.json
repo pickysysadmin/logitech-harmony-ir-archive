@@ -1,7 +1,68 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/d4/d456234c3e02b6e3.json",
   "deviceType": 1,
   "globalDeviceId": 134390,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"},
+      {"name":"Video 4"},
+      {"name":"Video 5"},
+      {"name":"Video 6"},
+      {"name":"Video 7"},
+      {"name":"Video 8"},
+      {"name":"Video 9"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KDS-46XBR3"
+  "model": "KDS-46XBR3",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AvInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"YPbPr 1","select":[{"commands":["InputYPbPr1"],"setType":2}]},
+        {"name":"YPbPr 2","select":[{"commands":["InputYPbPr2"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"DVI","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    },
+    "TvInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Hdtv"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

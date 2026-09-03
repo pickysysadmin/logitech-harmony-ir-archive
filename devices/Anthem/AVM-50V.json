@@ -2,6 +2,96 @@
   "codeset": "codesets/79/7925a6132bf8d01c.json",
   "deviceType": 5,
   "globalDeviceId": 161217,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"2-Ch"}],"name":"2-Ch"},
+      {"commands":[{"set":"InputType","to":"6-Ch"}],"name":"6-Ch"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"FM1"}],"name":"FM1"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"FM2"}],"name":"FM2"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"FM3"}],"name":"FM3"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD1"}],"name":"DVD1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD2"}],"name":"DVD2"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD3"}],"name":"DVD3"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD4"}],"name":"DVD4"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV1"}],"name":"TV1"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV2"}],"name":"TV2"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV3"}],"name":"TV3"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV4"}],"name":"TV4"},
+      {"commands":[{"set":"InputType","to":"SAT"},{"set":"SATInput","to":"SAT1"}],"name":"SAT1"},
+      {"commands":[{"set":"InputType","to":"SAT"},{"set":"SATInput","to":"SAT2"}],"name":"SAT2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Anthem",
-  "model": "AVM-50V"
+  "model": "AVM-50V",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "DVDInput": {
+      "next": ["InputDvd"],
+      "values": [
+        {"name":"DVD1"},
+        {"name":"DVD2"},
+        {"name":"DVD3"},
+        {"name":"DVD4"}
+      ]
+    },
+    "FM/AMInput": {
+      "next": ["InputAmFm"],
+      "values": [
+        {"name":"FM1"},
+        {"name":"FM2"},
+        {"name":"FM3"},
+        {"name":"AM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"2-Ch","select":[{"commands":["Input2Channel"],"setType":2}]},
+        {"name":"6-Ch","select":[{"commands":["Input6Channel"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"FM/AM","select":[{"commands":["InputAmFm"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"SAT","select":[{"commands":["InputSat"],"setType":2}]}
+      ]
+    },
+    "SATInput": {
+      "next": ["InputSat"],
+      "values": [
+        {"name":"SAT1"},
+        {"name":"SAT2"}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV1"},
+        {"name":"TV2"},
+        {"name":"TV3"},
+        {"name":"TV4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

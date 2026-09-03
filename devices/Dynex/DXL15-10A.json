@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/93/930cbd9eb9e97360.json",
   "deviceType": 1,
   "globalDeviceId": 163237,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Comp"}],"name":"Comp"},
+      {"commands":[{"set":"InputType","to":"Hdmi"}],"name":"Hdmi"},
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Av1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Av2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Dynex",
-  "model": "DXL15-10A"
+  "model": "DXL15-10A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Comp","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

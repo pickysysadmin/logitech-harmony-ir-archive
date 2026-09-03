@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5b/5b06708526cea6f3.json",
   "deviceType": 1,
   "globalDeviceId": 178874,
+  "inputs": {
+    "list": [
+      {"commands":["0"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"Video-1"},
+      {"commands":["InputVideo2"],"name":"Video-2"},
+      {"commands":["InputVideo3"],"name":"Video-3"},
+      {"commands":["InputDigital-In"],"name":"DigitalIn"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-40X776"
+  "model": "LT-40X776",
+  "power": {
+    "off": ["PowerOff"],
+    "on": [
+      {"command":"PowerToggle","durationMs":1500}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

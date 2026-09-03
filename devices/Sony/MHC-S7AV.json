@@ -2,6 +2,60 @@
   "codeset": "codesets/07/0793ecb38ef4fd2f.json",
   "deviceType": 21,
   "globalDeviceId": 70713,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tape A"}],"name":"Tape A"},
+      {"commands":[{"set":"InputType","to":"Tape B"}],"name":"Tape B"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"MD"}],"name":"MD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "MHC-S7AV"
+  "model": "MHC-S7AV",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputTape"],
+      "values": [
+        {"name":"Video"},
+        {"name":"MD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tape A","select":[{"commands":["InputTape A"],"setType":2}]},
+        {"name":"Tape B","select":[{"commands":["InputTape B"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd1"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputTuner","InputTape","InputTape"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

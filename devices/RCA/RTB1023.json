@@ -2,6 +2,44 @@
   "codeset": "codesets/b7/b7cbe86f708b2ac9.json",
   "deviceType": 22,
   "globalDeviceId": 210162,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"BD/USB"},{"set":"BD/USBInput","to":"BD"}],"name":"BD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"BD/USB"},{"set":"BD/USBInput","to":"USB"}],"name":"USB","ports":["USB"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "RTB1023"
+  "model": "RTB1023",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "BD/USBInput": {
+      "next": ["InputBd/Usb"],
+      "values": [
+        {"name":"BD"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"BD/USB","select":[{"commands":["InputBd/Usb"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

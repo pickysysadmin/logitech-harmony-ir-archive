@@ -1,7 +1,72 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/d3/d35711898c721afc.json",
   "deviceType": 1,
   "globalDeviceId": 263660,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Cable"}],"name":"Cable"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Antenna"}],"name":"Antenna"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-32A400E"
+  "model": "TX-32A400E",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVInput": {
+      "finish": ["Ok"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["AV"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"USB","select":[{"commands":["MediaPlayer"],"setType":0}]},
+        {"name":"TV","select":[{"commands":["TV"],"setType":0}]},
+        {"name":"AV","select":[{"commands":["AV"],"setType":0}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"Cable"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

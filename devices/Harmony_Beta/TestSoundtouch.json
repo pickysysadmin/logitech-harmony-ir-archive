@@ -2,6 +2,51 @@
   "codeset": "codesets/80/80bdc6c81ed4bb83.json",
   "deviceType": 5,
   "globalDeviceId": 491571,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CBL-SAT"}],"name":"CBL-SAT","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"BD-DVD"}],"name":"BD-DVD","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"GAME"}],"name":"GAME","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"SoundTouch/Bluetooth"},{"set":"SoundTouch/BluetoothInput","to":"SoundTouch"}],"name":"SoundTouch","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"SoundTouch/Bluetooth"},{"set":"SoundTouch/BluetoothInput","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harmony Beta",
-  "model": "TestSoundtouch"
+  "model": "TestSoundtouch",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CBL-SAT","select":[{"commands":["InputCbl-Sat"],"setType":1}]},
+        {"name":"BD-DVD","select":[{"commands":["InputBd-Dvd"],"setType":1}]},
+        {"name":"GAME","select":[{"commands":["InputGame"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":1}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":1}]},
+        {"name":"SoundTouch/Bluetooth","select":[{"commands":["InputSoundTouch/Bluetooth"],"setType":1}]}
+      ]
+    },
+    "SoundTouch/BluetoothInput": {
+      "next": ["InputSoundTouch/Bluetooth"],
+      "values": [
+        {"name":"SoundTouch"},
+        {"name":"Bluetooth"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

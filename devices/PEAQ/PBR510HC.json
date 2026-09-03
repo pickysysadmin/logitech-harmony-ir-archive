@@ -2,6 +2,70 @@
   "codeset": "codesets/15/154c9f69c895e14f.json",
   "deviceType": 22,
   "globalDeviceId": 241056,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AVSource"},{"set":"AVSourceInput","to":"DISC/USB"}],"name":"DISC/USB"},
+      {"commands":[{"set":"InputType","to":"AVSource"},{"set":"AVSourceInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"AVSource"},{"set":"AVSourceInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM Radio"}],"name":"FM Radio"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM Radio"}],"name":"AM Radio"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"COAX IN"}],"name":"COAX IN"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"OPTI IN"}],"name":"OPTI IN"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"AUX IN 1"}],"name":"AUX IN 1"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"AUX IN 2"}],"name":"AUX IN 2"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"AUX IN 3"}],"name":"AUX IN 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "PEAQ",
-  "model": "PBR510HC"
+  "model": "PBR510HC",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVSourceInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"DISC/USB"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "AudioSourceInput": {
+      "next": ["InputAudio"],
+      "values": [
+        {"name":"COAX IN"},
+        {"name":"OPTI IN"},
+        {"name":"AUX IN 1"},
+        {"name":"AUX IN 2"},
+        {"name":"AUX IN 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AVSource","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"AudioSource","select":[{"commands":["InputAudio"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"FM Radio"},
+        {"name":"AM Radio"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,35 @@
   "codeset": "codesets/92/92acccdf0ad33c52.json",
   "deviceType": 7,
   "globalDeviceId": 204078,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi"],"name":"HDMI"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"SVideo"},
+      {"commands":["InputVGA"],"name":"vga"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "EH1020"
+  "model": "EH1020",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

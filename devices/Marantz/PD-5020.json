@@ -2,6 +2,54 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 41213,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoMode","to":"Video1mode"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoMode","to":"Video2mode"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoMode","to":"Svideomode"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"HDType"},{"set":"HDMode","to":"HD1mode"}],"name":"HD1"},
+      {"commands":[{"set":"InputType","to":"HDType"},{"set":"HDMode","to":"HD2mode"}],"name":"HD2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Marantz",
-  "model": "PD-5020"
+  "model": "PD-5020",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "HDMode": {
+      "next": ["HD 1"],
+      "values": [
+        {"name":"HD1mode"},
+        {"name":"HD2mode"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VideoType","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"HDType","select":[{"commands":["HD 1"],"setType":2}]}
+      ]
+    },
+    "VideoMode": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1mode"},
+        {"name":"Video2mode"},
+        {"name":"Svideomode"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

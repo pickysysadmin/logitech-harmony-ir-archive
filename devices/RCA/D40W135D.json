@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 37,
   "globalDeviceId": 44636,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"CycleInputs"},{"set":"CycleInputsInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"CycleInputs"},{"set":"CycleInputsInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"CycleInputs"},{"set":"CycleInputsInput","to":"Front"}],"name":"Front"},
+      {"commands":[{"set":"InputType","to":"CycleInputs"},{"set":"CycleInputsInput","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"CycleInputs"},{"set":"CycleInputsInput","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"CycleInputs"},{"set":"CycleInputsInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "D40W135D"
+  "model": "D40W135D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "CycleInputsInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Front"},
+        {"name":"Component 1"},
+        {"name":"Component 2"},
+        {"name":"DVI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["ChannelUp"],"setType":2}]},
+        {"name":"CycleInputs","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 18000,
+    "pressMinRepeats": 3
+  }
 }

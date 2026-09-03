@@ -2,6 +2,40 @@
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 88205,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"SCART1"},
+      {"name":"SCART1 RGB"},
+      {"name":"SCART2"},
+      {"name":"SCART2 RGB"},
+      {"name":"SCART3"},
+      {"name":"SCART4"},
+      {"name":"PC"},
+      {"name":"DVI"},
+      {"name":"FAV"},
+      {"name":"S-Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Bluesky",
-  "model": "BS-3605TX"
+  "model": "BS-3605TX",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

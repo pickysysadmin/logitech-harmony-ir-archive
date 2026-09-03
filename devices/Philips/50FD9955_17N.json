@@ -2,6 +2,57 @@
   "codeset": "codesets/6d/6ddf5ddc18d5ddef.json",
   "deviceType": 13,
   "globalDeviceId": 12953,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VGA"},{"set":"InputVGA","to":"vga"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"VGA"},{"set":"InputVGA","to":"dvi"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"AV1"},{"set":"InputAV1","to":"YC"}],"name":"Y/C"},
+      {"commands":[{"set":"InputType","to":"AV1"},{"set":"InputAV1","to":"CVBS1"}],"name":"CVBS1"},
+      {"commands":[{"set":"InputType","to":"AV1"},{"set":"InputAV1","to":"CVBS2"}],"name":"CVBS2"},
+      {"commands":[{"set":"InputType","to":"AV2"},"InputAv2"],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV3"},"InputAV3"],"name":"AV3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "50FD9955/17N"
+  "model": "50FD9955/17N",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputAV1": {
+      "next": ["InputAv1"],
+      "values": [
+        {"name":"YC"},
+        {"name":"CVBS1"},
+        {"name":"CVBS2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VGA","select":[{"commands":["InputAV3","InputVga",{"set":"InputVGA","to":"vga"}],"setType":1}]},
+        {"name":"AV1","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputAv2"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["InputAV3"],"setType":2}]}
+      ]
+    },
+    "InputVGA": {
+      "next": ["InputVga"],
+      "values": [
+        {"name":"vga"},
+        {"name":"dvi"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

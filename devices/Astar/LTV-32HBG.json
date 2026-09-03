@@ -1,7 +1,75 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b2/b27a6e2dd1989d32.json",
   "deviceType": 1,
   "globalDeviceId": 161209,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"ATV/DTV"},{"set":"ATV/DTVInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"ATV/DTV"},{"set":"ATV/DTVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"S-VIDEO"}],"name":"S-VIDEO"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"YPBPR1"}],"name":"YPBPR1"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"YPBPR2"}],"name":"YPBPR2"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"VGA"},{"set":"VGAInput","to":"VGA"}],"name":"VGA"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Astar",
-  "model": "LTV-32HBG"
+  "model": "LTV-32HBG",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ATV/DTVInput": {
+      "next": ["DTV/ATV"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    },
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV"},
+        {"name":"S-VIDEO"}
+      ]
+    },
+    "HDInput": {
+      "next": ["InputHd"],
+      "values": [
+        {"name":"YPBPR1"},
+        {"name":"YPBPR2"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ATV/DTV","select":[{"commands":["DTV/ATV"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"HD","select":[{"commands":["InputHd"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVGA"],"setType":2}]}
+      ]
+    },
+    "VGAInput": {
+      "next": ["InputVGA"],
+      "values": [
+        {"name":"VGA"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,96 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/84/84a7de3039a2d20c.json",
   "deviceType": 1,
   "globalDeviceId": 235256,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVBC"}],"name":"DVB-C"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVBT"}],"name":"DVB-T"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"CompVideo"},{"set":"CompVideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"CompVideo"},{"set":"CompVideoInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"SD Card/USB"}],"name":"SD Card/USB"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"VieraSmartMENU","to":"ON"},{"set":"InputType","to":"VieraSmart"}],"name":"Viera Smart"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-L47ET5Y"
+  "model": "TX-L47ET5Y",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "CompVideoInput": {
+      "finish": ["OK"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["OK","AV"],
+      "values": [
+        {"name":"Video"},
+        {"name":"Component"}
+      ]
+    },
+    "HomeScreen": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["OK"],"setType":2}]}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["ChannelUp"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":1}]},
+        {"name":"HDMI4","select":[{"commands":["InputHdmi4"],"setType":1}]},
+        {"name":"CompVideo","select":[{"commands":["AV"],"setType":1}]},
+        {"name":"SD Card/USB","select":[{"commands":["SdCard/Usb"],"setType":1}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"VieraSmart","select":[{"commands":["Internet"],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"DVBC"},
+        {"name":"DVBT"},
+        {"name":"Analog"}
+      ]
+    },
+    "VieraSmartMENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Internet"],"setType":1}]},
+        {"name":"OFF","select":[{"commands":["Exit"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

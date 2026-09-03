@@ -2,6 +2,35 @@
   "codeset": "codesets/3d/3d8780e00c946c11.json",
   "deviceType": 34,
   "globalDeviceId": 78037,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"CVBS Rear"},
+      {"name":"SVID Rear"},
+      {"name":"CVBS Front"},
+      {"name":"DV-I"},
+      {"name":"SCART"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sencor",
-  "model": "SHR-8216"
+  "model": "SHR-8216",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

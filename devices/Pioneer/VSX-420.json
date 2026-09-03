@@ -2,6 +2,35 @@
   "codeset": "codesets/c5/c5c28d5adb5b3ca6.json",
   "deviceType": 5,
   "globalDeviceId": 207801,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd"],"name":"BD","ports":["HDMI","Component","Composite","Optical"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Optical"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["Composite"]},
+      {"commands":["InputMultiChIn"],"name":"MultiIn","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputCD-R"],"name":"CD-R","ports":["Composite"]},
+      {"commands":["InputPortable"],"name":"Portable","ports":["Aux"]},
+      {"commands":["InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputFm"],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Pioneer",
-  "model": "VSX-420"
+  "model": "VSX-420",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,28 @@
   "codeset": "codesets/09/0941f96b9c1ebf5a.json",
   "deviceType": 13,
   "globalDeviceId": 211728,
+  "inputs": {
+    "list": [
+      {"commands":["InputSat"],"name":"SAT Receiver"},
+      {"commands":["InputPc"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Medion",
-  "model": "MD-20094"
+  "model": "MD-20094",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["InputSat"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

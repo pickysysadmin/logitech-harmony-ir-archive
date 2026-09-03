@@ -2,6 +2,52 @@
   "codeset": "codesets/0c/0ce1a1084c8d0a24.json",
   "deviceType": 1,
   "globalDeviceId": 178865,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Av1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Av2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Av3"}],"name":"AV 3"},
+      {"commands":[{"set":"InputType","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"YCbCr"}],"name":"YCbCr"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Firstline",
-  "model": "FS-3201MHI"
+  "model": "FS-3201MHI",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputYPbPr"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"YCbCr","select":[{"commands":["InputYCbCr"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"},
+        {"name":"Av3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

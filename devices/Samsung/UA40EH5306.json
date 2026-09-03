@@ -2,6 +2,35 @@
   "codeset": "codesets/d2/d26cc69bf2b70c67.json",
   "deviceType": 1,
   "globalDeviceId": 232741,
+  "inputs": {
+    "list": [
+      {"commands":["Source",{"delayMs":3000},"InputTv"],"name":"TV"},
+      {"commands":["Source",{"delayMs":3000},"InputAv"],"name":"AV"},
+      {"commands":["Source",{"delayMs":3000},"InputComponent"],"name":"Component"},
+      {"commands":["Source",{"delayMs":3000},"InputHdmi1"],"name":"HDMI 1/DVI"},
+      {"commands":["Source",{"delayMs":3000},"InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["Source",{"delayMs":3000},"InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["Source",{"delayMs":3000},"InputUsb"],"name":"USB"},
+      {"commands":["Exit","SmartHub"],"name":"Smart Hub"},
+      {"commands":["Ambient"],"name":"Ambient"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UA40EH5306"
+  "model": "UA40EH5306",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

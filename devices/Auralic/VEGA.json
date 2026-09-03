@@ -2,6 +2,52 @@
   "codeset": "codesets/1a/1a0966f6a4961695.json",
   "deviceType": 19,
   "globalDeviceId": 263246,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"AES"}],"name":"AES","ports":["AES/EBU"]},
+      {"commands":[{"set":"InputType","to":"TOS"}],"name":"TOS","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"COAX"},{"set":"COAXInput","to":"Coax1"}],"name":"Coax1","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"COAX"},{"set":"COAXInput","to":"Coax2"}],"name":"Coax2","ports":["Coaxial"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Auralic",
-  "model": "VEGA"
+  "model": "VEGA",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "OK"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "COAXInput": {
+      "next": ["InputCoax"],
+      "values": [
+        {"name":"Coax1"},
+        {"name":"Coax2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"AES","select":[{"commands":["InputAES"],"setType":2}]},
+        {"name":"TOS","select":[{"commands":["InputTOS"],"setType":2}]},
+        {"name":"COAX","select":[{"commands":["InputCoax"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

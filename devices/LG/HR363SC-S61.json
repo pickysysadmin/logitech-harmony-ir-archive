@@ -2,6 +2,40 @@
   "codeset": "codesets/9a/9a79db16af817e76.json",
   "deviceType": 34,
   "globalDeviceId": 203320,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"DVD"}
+    ],
+    "next": ["Tv/Dvd"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "HR363SC-S61"
+  "model": "HR363SC-S61",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,47 @@
   "codeset": "codesets/3b/3ba1b9ab64fef621.json",
   "deviceType": 1,
   "globalDeviceId": 121153,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Side AV"},
+      {"name":"S-Video"},
+      {"name":"Y Pb Pr"},
+      {"name":"PC"},
+      {"name":"DVI"},
+      {"name":"Scart1"},
+      {"name":"Scart2"},
+      {"name":"HDMI"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "Salora",
-  "model": "LCD-3236TN"
+  "model": "LCD-3236TN",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Scart1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

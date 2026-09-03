@@ -2,6 +2,40 @@
   "codeset": "codesets/a4/a44de4946bcf038e.json",
   "deviceType": 1,
   "globalDeviceId": 87443,
+  "inputs": {
+    "list": [
+      {"name":"ATV"},
+      {"name":"AV1"},
+      {"name":"AV1 RGB"},
+      {"name":"AV2"},
+      {"name":"AV2 RGB"},
+      {"name":"DTV"},
+      {"name":"PC RGB/TPbPr"},
+      {"name":"DVI-D"},
+      {"name":"AV3"},
+      {"name":"AV3s"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "20WLT56"
+  "model": "20WLT56",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"ATV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 2
+  }
 }

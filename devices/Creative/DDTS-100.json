@@ -2,6 +2,58 @@
   "codeset": "codesets/b3/b3f5c0bcba98e84c.json",
   "deviceType": 19,
   "globalDeviceId": 140629,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"analog1"}],"name":"Analog1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"analog2"}],"name":"Analog2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"analog3"}],"name":"Analog3","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OptInput","to":"opt1"}],"name":"Optical1","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OptInput","to":"opt2"}],"name":"Optical2","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OptInput","to":"opt3"}],"name":"Optical3","ports":["Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Creative",
-  "model": "DDTS-100"
+  "model": "DDTS-100",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AnalogInput": {
+      "next": ["InputAnalog"],
+      "values": [
+        {"name":"analog1"},
+        {"name":"analog2"},
+        {"name":"analog3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Coaxial","select":[{"commands":["InputCoaxial"],"setType":2}]},
+        {"name":"Analog","select":[{"commands":["InputAnalog"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]}
+      ]
+    },
+    "OptInput": {
+      "next": ["InputOptical"],
+      "values": [
+        {"name":"opt1"},
+        {"name":"opt2"},
+        {"name":"opt3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

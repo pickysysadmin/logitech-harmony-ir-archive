@@ -2,6 +2,33 @@
   "codeset": "codesets/14/14c6c8501a0cbef8.json",
   "deviceType": 7,
   "globalDeviceId": 499010,
+  "inputs": {
+    "list": [
+      {"commands":["InputVga"],"name":"Computer"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "ViewSonic",
-  "model": "PX701-4K"
+  "model": "PX701-4K",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

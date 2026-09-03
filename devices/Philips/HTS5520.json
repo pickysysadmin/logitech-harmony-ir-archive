@@ -2,6 +2,49 @@
   "codeset": "codesets/15/155ef55087905aa4.json",
   "deviceType": 22,
   "globalDeviceId": 208620,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"Usb","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Aux In/Audio In"}],"name":"Aux In/Audio In","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Coaxial In/Digital In"}],"name":"Coaxial In/Digital In","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"MP3/Line In"}],"name":"MP3/Line In","ports":["Line In"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS5520"
+  "model": "HTS5520",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioSourceInput": {
+      "next": ["AudioSource"],
+      "values": [
+        {"name":"Aux In/Audio In"},
+        {"name":"Coaxial In/Digital In"},
+        {"name":"MP3/Line In"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Usb","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"AudioSource","select":[{"commands":["AudioSource"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

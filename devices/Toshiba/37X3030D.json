@@ -2,6 +2,54 @@
   "codeset": "codesets/7f/7f0c14311a533e38.json",
   "deviceType": 1,
   "globalDeviceId": 164561,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "37X3030D"
+  "model": "37X3030D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video1","select":[{"commands":["InputScart1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputScart2"],"setType":2}]},
+        {"name":"Video3","select":[{"commands":["Input3c"],"setType":2}]},
+        {"name":"Hdmi1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"Hdmi2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"Pc","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"Tv","select":[{"commands":["A/D"],"setType":2}]}
+      ]
+    },
+    "TvInput": {
+      "next": ["A/D"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 1
+  }
 }

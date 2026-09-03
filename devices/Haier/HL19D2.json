@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/e5/e54b024d78449df4.json",
   "deviceType": 1,
   "globalDeviceId": 241507,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"PC/HDMI"},{"set":"PC/HDMIInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"PC/HDMI"},{"set":"PC/HDMIInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Haier",
-  "model": "HL19D2"
+  "model": "HL19D2",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"PC/HDMI","select":[{"commands":["InputPc/Hdmi"],"setType":2}]}
+      ]
+    },
+    "PC/HDMIInput": {
+      "next": ["InputPc/Hdmi"],
+      "values": [
+        {"name":"HDMI"},
+        {"name":"PC"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

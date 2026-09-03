@@ -2,6 +2,38 @@
   "codeset": "codesets/0d/0dcba4c2da584f41.json",
   "deviceType": 7,
   "globalDeviceId": 414051,
+  "inputs": {
+    "list": [
+      {"name":"LAN"},
+      {"name":"Computer In"},
+      {"name":"HDMI 1/MHL"},
+      {"name":"HDMI 2"},
+      {"name":"HDBase T"},
+      {"name":"Video"}
+    ],
+    "next": ["Input"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "CP-WU5505"
+  "model": "CP-WU5505",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

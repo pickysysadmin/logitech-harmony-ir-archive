@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/27/2759f601cd7513fd.json",
   "deviceType": 1,
   "globalDeviceId": 64222,
+  "inputs": {
+    "list": [
+      {"commands":["0","9"],"name":"Tv"},
+      {"commands":["0","0"],"name":"Cinema"},
+      {"commands":["0","1"],"name":"Foxtel"},
+      {"commands":["4","0"],"name":"VCR"},
+      {"commands":["5","0"],"name":"Video Games"},
+      {"commands":["6","0"],"name":"GameCube"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Loewe",
-  "model": "Calida 5063"
+  "model": "Calida 5063",
+  "power": {
+    "toggle": [
+      "PowerToggle",
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

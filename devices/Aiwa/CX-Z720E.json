@@ -2,6 +2,56 @@
   "codeset": "codesets/38/38fcd07d1689bd37.json",
   "deviceType": 21,
   "globalDeviceId": 154852,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"MD"}],"name":"MD"},
+      {"commands":[{"set":"InputType","to":"Video/Aux"},{"set":"Video/AuxInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Video/Aux"},{"set":"Video/AuxInput","to":"Video"}],"name":"Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Aiwa",
-  "model": "CX-Z720E"
+  "model": "CX-Z720E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxMode": {
+      "next": ["InputVideo/Aux"],
+      "values": [
+        {"name":"Video"},
+        {"name":"5.1ch"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"MD","select":[{"commands":["InputMD"],"setType":2}]},
+        {"name":"Video/Aux","select":[{"commands":["InputVideo/Aux"],"setType":2}]}
+      ]
+    },
+    "Video/AuxInput": {
+      "next": ["InputVideo/Aux"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

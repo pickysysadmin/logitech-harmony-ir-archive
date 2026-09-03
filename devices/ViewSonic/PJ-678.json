@@ -2,6 +2,36 @@
   "codeset": "codesets/d5/d5870a5e94a8dd4f.json",
   "deviceType": 7,
   "globalDeviceId": 167774,
+  "inputs": {
+    "list": [
+      {"name":"DVI"},
+      {"name":"VGA"},
+      {"name":"S-Video"},
+      {"name":"Video"},
+      {"name":"Component"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "ViewSonic",
-  "model": "PJ-678"
+  "model": "PJ-678",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "onReset": [
+      {"set":"Input","to":"VGA"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

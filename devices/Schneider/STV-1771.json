@@ -2,6 +2,35 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 116804,
+  "inputs": {
+    "list": [
+      {"name":"TUNER"},
+      {"name":"VCR"},
+      {"name":"SCART 1"},
+      {"name":"SCART 2"},
+      {"name":"SVHS"},
+      {"name":"RGB"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "Schneider",
-  "model": "STV-1771"
+  "model": "STV-1771",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TUNER"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

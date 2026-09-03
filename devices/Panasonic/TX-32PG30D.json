@@ -2,6 +2,38 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 28107,
+  "inputs": {
+    "list": [
+      {"commands":["TvVideo"],"name":"Tuner"},
+      {"commands":["Red"],"name":"AV1"},
+      {"commands":["Red","Red"],"name":"AV5"},
+      {"commands":["Green"],"name":"AV2"},
+      {"commands":["Green","Green"],"name":"AV2S"},
+      {"commands":["Yellow"],"name":"AV3"},
+      {"commands":["Yellow","Yellow"],"name":"AV3S"},
+      {"commands":["Blue"],"name":"AV4"},
+      {"commands":["Blue","Blue"],"name":"AV4S"},
+      {"commands":["Blue","Blue","Blue"],"name":"AV4C"}
+    ],
+    "start": ["TvVideo"],
+    "type": 3
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-32PG30D"
+  "model": "TX-32PG30D",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

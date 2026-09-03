@@ -2,6 +2,65 @@
   "codeset": "codesets/37/3791390db74bc6ec.json",
   "deviceType": 21,
   "globalDeviceId": 10999,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tape"},{"set":"TapeInput","to":"Tape 1"}],"name":"Tape 1"},
+      {"commands":[{"set":"InputType","to":"Tape"},{"set":"TapeInput","to":"Tape 2"}],"name":"Tape 2"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Other"},{"set":"OtherInput","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"Other"},{"set":"OtherInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Other"},{"set":"OtherInput","to":"6CH"}],"name":"6CH"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Technics",
-  "model": "SC-EH760"
+  "model": "SC-EH760",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Other","select":[{"commands":[{"set":"OtherInput","to":"VCR"},"InputOther"],"setType":2}]}
+      ]
+    },
+    "OtherInput": {
+      "next": ["InputOther"],
+      "values": [
+        {"name":"VCR"},
+        {"name":"Aux"},
+        {"name":"6CH"}
+      ]
+    },
+    "TapeInput": {
+      "next": ["InputTape"],
+      "values": [
+        {"name":"Tape 1"},
+        {"name":"Tape 2"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

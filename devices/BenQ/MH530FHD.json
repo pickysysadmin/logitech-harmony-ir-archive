@@ -2,6 +2,41 @@
   "codeset": "codesets/bb/bb327cfca306eb53.json",
   "deviceType": 7,
   "globalDeviceId": 381448,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"PC 1/YPbPr-1"},
+      {"name":"PC 2/YPbPr-2"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"Video"},
+      {"name":"S-Video"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "BenQ",
-  "model": "MH530FHD"
+  "model": "MH530FHD",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 1
+  }
 }

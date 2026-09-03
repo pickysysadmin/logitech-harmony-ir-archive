@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 37,
   "globalDeviceId": 28822,
+  "inputs": {
+    "finish": ["MenuSelect"],
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo3"],"name":"Video"},
+      {"commands":["InputFront"],"name":"Front"},
+      {"commands":["InputSat/Cable"],"name":"dvd"},
+      {"commands":["InputVideo4"],"name":"vcr2"},
+      {"commands":["InputAux"],"name":"aux"},
+      {"commands":["InputS-Video"],"name":"sat-cable"},
+      {"commands":["InputVideo3"],"name":"vcr1"}
+    ],
+    "start": ["InputTuner"],
+    "type": 3
+  },
   "manufacturer": "RCA",
-  "model": "15L500TD"
+  "model": "15L500TD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

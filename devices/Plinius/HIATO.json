@@ -2,6 +2,49 @@
   "codeset": "codesets/95/95d059d3911c9299.json",
   "deviceType": 19,
   "globalDeviceId": 261644,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HT"}],"name":"HT"},
+      {"commands":[{"set":"InputType","to":"Next"},{"set":"NextInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Next"},{"set":"NextInput","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"Next"},{"set":"NextInput","to":"Line 2"}],"name":"Line 2"},
+      {"commands":[{"set":"InputType","to":"Next"},{"set":"NextInput","to":"Line 3"}],"name":"Line 3"},
+      {"commands":[{"set":"InputType","to":"Next"},{"set":"NextInput","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Plinius",
-  "model": "HIATO"
+  "model": "HIATO",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HT","select":[{"commands":["InputHT"],"setType":2}]},
+        {"name":"Next","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "NextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"CD"},
+        {"name":"Line 1"},
+        {"name":"Line 2"},
+        {"name":"Line 3"},
+        {"name":"AUX"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

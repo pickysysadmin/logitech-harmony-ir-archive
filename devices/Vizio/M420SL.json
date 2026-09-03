@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/b8/b86f2c8642c3aa29.json",
   "deviceType": 1,
   "globalDeviceId": 232162,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv","Exit","DirectionRight","Ok",{"delayMs":2500},"InputTv"],"name":"TV"},
+      {"commands":["InputComponent","Exit","DirectionRight","Ok",{"delayMs":2500},"InputComponent"],"name":"Comp"},
+      {"commands":["InputAv","Exit","DirectionRight","Ok",{"delayMs":2500},"InputAv"],"name":"AV"},
+      {"commands":["InputHdmi1","Exit","DirectionRight","Ok",{"delayMs":2500},"InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2","Exit","DirectionRight","Ok",{"delayMs":2500},"InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3","Exit","DirectionRight","Ok",{"delayMs":2500},"InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4","Exit","DirectionRight","Ok",{"delayMs":2500},"InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["InputRgb","Exit","DirectionRight","Ok","2500","InputRgb"],"name":"RGB/Comp"},
+      {"commands":["VUDU"],"name":"Vudu"},
+      {"commands":["VIA","VIA"],"name":"Vizio Internet Apps"},
+      {"commands":["InputMedia"],"name":"Media"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Vizio",
-  "model": "M420SL"
+  "model": "M420SL",
+  "power": {
+    "off": ["Exit","PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 20000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 20000,
+    "pressMinRepeats": 1
+  }
 }

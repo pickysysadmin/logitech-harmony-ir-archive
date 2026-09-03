@@ -2,6 +2,34 @@
   "codeset": "codesets/d9/d9662f8fb649a231.json",
   "deviceType": 7,
   "globalDeviceId": 114571,
+  "inputs": {
+    "list": [
+      {"commands":["Input 5"],"name":"Input 1"},
+      {"commands":["Input 6"],"name":"Input 2"},
+      {"commands":["Input 4"],"name":"Input 3"},
+      {"commands":["Input 7"],"name":"Input 4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "XR-10S-L"
+  "model": "XR-10S-L",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":2000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

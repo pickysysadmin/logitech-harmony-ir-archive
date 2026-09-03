@@ -2,6 +2,74 @@
   "codeset": "codesets/64/64533129cca360dd.json",
   "deviceType": 21,
   "globalDeviceId": 262846,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Bridge"}],"name":"Bridge"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB A"}],"name":"USB A"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB B"}],"name":"USB B"},
+      {"commands":[{"set":"InputType","to":"LineIn"},{"set":"LineInInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"LineIn"},{"set":"LineInInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"LineIn"},{"set":"LineInInput","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"DigitalIn"},{"set":"DigitalInInput","to":"Coaxial 1"}],"name":"Coaxial 1"},
+      {"commands":[{"set":"InputType","to":"DigitalIn"},{"set":"DigitalInInput","to":"Coaxial 2"}],"name":"Coaxial 2"},
+      {"commands":[{"set":"InputType","to":"DigitalIn"},{"set":"DigitalInInput","to":"Optical 1"}],"name":"Optical 1"},
+      {"commands":[{"set":"InputType","to":"DigitalIn"},{"set":"DigitalInInput","to":"Optical 2"}],"name":"Optical 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "MAS 111"
+  "model": "MAS 111",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInInput": {
+      "next": ["InputDigitalIn"],
+      "values": [
+        {"name":"Coaxial 1"},
+        {"name":"Coaxial 2"},
+        {"name":"Optical 1"},
+        {"name":"Optical 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Bridge","select":[{"commands":["InputBridge"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"LineIn","select":[{"commands":["InputLineIn"],"setType":2}]},
+        {"name":"DigitalIn","select":[{"commands":["InputDigitalIn"],"setType":2}]}
+      ]
+    },
+    "LineInInput": {
+      "next": ["InputLineIn"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Aux"},
+        {"name":"Phono"}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputUsb"],
+      "values": [
+        {"name":"USB A"},
+        {"name":"USB B"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

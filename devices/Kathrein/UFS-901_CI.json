@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/ea/ea2732a81faf7a1a.json",
   "deviceType": 16,
   "globalDeviceId": 125481,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"}
+    ],
+    "type": 6
+  },
   "manufacturer": "Kathrein",
-  "model": "UFS-901 CI"
+  "model": "UFS-901 CI",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

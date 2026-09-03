@@ -2,6 +2,34 @@
   "codeset": "codesets/74/749337cf7363a217.json",
   "deviceType": 1,
   "globalDeviceId": 232143,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputAv"],"name":"AV","ports":["Composite"]},
+      {"commands":["InputYPbPr"],"name":"YPbPr","ports":["Component"]},
+      {"commands":[{"command":"InputHdmi1","durationMs":1000}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi1","Source","DirectionDown","Select"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputPc"],"name":"PC","ports":["PC"]},
+      {"commands":["USB"],"name":"Media","ports":["USB"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sceptre",
-  "model": "X409BV-FHD"
+  "model": "X409BV-FHD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 5,
+    "powerOnDelay": 18000,
+    "pressMinRepeats": 3
+  }
 }

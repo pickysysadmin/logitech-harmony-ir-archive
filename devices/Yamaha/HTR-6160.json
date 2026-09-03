@@ -2,6 +2,39 @@
   "codeset": "codesets/9c/9c827ad523cc5c9c.json",
   "deviceType": 5,
   "globalDeviceId": 159021,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputXm"],"name":"XM","ports":["Streaming"]},
+      {"commands":["InputSirius"],"name":"Sirius","ports":["Streaming"]},
+      {"commands":["InputV-Aux/Dock"],"name":"V-Aux/Dock","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputDtv/Cbl"],"name":"DTV/CBL","ports":["HDMI","Component","Composite","Optical","S-Video"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputMd/Cdr"],"name":"MD/CD-R","ports":["Composite","Optical"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["Component","Composite","S-Video"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":["InputMultiChIn"],"name":"Multi Ch In","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "HTR-6160"
+  "model": "HTR-6160",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

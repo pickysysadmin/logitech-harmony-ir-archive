@@ -2,6 +2,58 @@
   "codeset": "codesets/0e/0e8294caa036fa0c.json",
   "deviceType": 22,
   "globalDeviceId": 182960,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"D-IN"}],"name":"D-IN"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"iPod"}],"name":"iPod"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PT875"
+  "model": "SC-PT875",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "EXT-INInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"AUX"},
+        {"name":"D-IN"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"EXT-IN","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod/USB"],"setType":2}]}
+      ]
+    },
+    "iPodInput": {
+      "next": ["InputiPod/USB"],
+      "values": [
+        {"name":"USB"},
+        {"name":"iPod"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 136455,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"EXT1"}],"name":"EXT1"},
+      {"commands":[{"set":"InputType","to":"EXT2"}],"name":"EXT2"},
+      {"commands":[{"set":"InputType","to":"COMPONENT"}],"name":"COMPONENT"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Digital"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "LE32R74BDX/XEU"
+  "model": "LE32R74BDX/XEU",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"EXT1","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"EXT2","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"COMPONENT","select":[{"commands":["InputComponent 1"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Digital"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

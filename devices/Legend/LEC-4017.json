@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/b9/b93d24c32807950e.json",
   "deviceType": 1,
   "globalDeviceId": 173112,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext","FinishInput"],"name":"PC"},
+      {"commands":["InputNext","ChannelDown","FinishInput"],"name":"DVI"},
+      {"commands":["InputNext","ChannelDown","ChannelDown","FinishInput"],"name":"RF"},
+      {"commands":["InputNext","ChannelDown","ChannelDown","ChannelDown","FinishInput"],"name":"Video1"},
+      {"commands":["InputNext","ChannelDown","ChannelDown","ChannelDown","ChannelDown","FinishInput"],"name":"Video2"},
+      {"commands":["InputNext","ChannelDown","ChannelDown","ChannelDown","ChannelDown","ChannelDown","FinishInput"],"name":"YPBPR1"},
+      {"commands":["InputNext","ChannelDown","ChannelDown","ChannelDown","ChannelDown","ChannelDown","ChannelDown","FinishInput"],"name":"YPBPR2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Legend",
-  "model": "LEC-4017"
+  "model": "LEC-4017",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":100}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a4/a44de4946bcf038e.json",
   "deviceType": 1,
   "globalDeviceId": 147554,
+  "inputs": {
+    "list": [
+      {"name":"PC"},
+      {"name":"HDMI2"},
+      {"name":"HDMI1"},
+      {"name":"EXT3C"},
+      {"name":"EXT2"},
+      {"name":"EXT1"},
+      {"name":"TV"}
+    ],
+    "next": ["PowerToggle"],
+    "previous": ["DirectionUp"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "32C3001"
+  "model": "32C3001",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

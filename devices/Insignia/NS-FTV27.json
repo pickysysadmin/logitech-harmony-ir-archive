@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/2c/2ce844161e120eaa.json",
   "deviceType": 1,
   "globalDeviceId": 80440,
+  "inputs": {
+    "finish": ["Exit"],
+    "list": [
+      {"commands":["0"],"name":"ANT"},
+      {"commands":["1"],"name":"VIDEO 1"},
+      {"commands":["2"],"name":"VIDEO 2"},
+      {"commands":["3"],"name":"COMPONENT"}
+    ],
+    "start": ["InputNext"],
+    "type": 3
+  },
   "manufacturer": "Insignia",
-  "model": "NS-FTV27"
+  "model": "NS-FTV27",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

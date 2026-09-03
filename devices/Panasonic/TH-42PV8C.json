@@ -2,6 +2,46 @@
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 175888,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo2","TvVideo","DirectionRight","Select"],"name":"AV2S"},
+      {"commands":["InputVideo3"],"name":"AV3"},
+      {"commands":["InputVideo3","TvVideo","DirectionRight","Select"],"name":"AV3S"},
+      {"commands":["InputPc","TvVideo","DirectionUp","Select"],"name":"Component"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["InputHDMI3"],"name":"HDMI3"},
+      {"commands":["InputSD"],"name":"SD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PV8C"
+  "model": "TH-42PV8C",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": [
+      {"set":"Input","to":"TV"},
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

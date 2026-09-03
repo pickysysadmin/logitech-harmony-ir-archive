@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e1/e17ef37982bd004a.json",
   "deviceType": 1,
   "globalDeviceId": 151066,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"TV","ports":["Antenna"]},
+      {"name":"Composite 1","ports":["Composite","S-Video"]},
+      {"name":"Composite 2","ports":["Composite","S-Video"]},
+      {"name":"Component 1","ports":["Component"]},
+      {"name":"Component 2","ports":["Component"]},
+      {"name":"VGA","ports":["PC"]},
+      {"name":"HDMI 1","ports":["HDMI"]},
+      {"name":"HDMI 2","ports":["HDMI"]}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Input"],
+    "type": 4
+  },
   "manufacturer": "Insignia",
-  "model": "NS-LCD32"
+  "model": "NS-LCD32",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 1
+  }
 }

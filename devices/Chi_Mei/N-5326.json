@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/bd/bdac11cec3c27971.json",
   "deviceType": 1,
   "globalDeviceId": 145246,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"HDMI"},
+      {"name":"YPBPR1"},
+      {"name":"YPBRP2"},
+      {"name":"VGA"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Chi Mei",
-  "model": "N-5326"
+  "model": "N-5326",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 4,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

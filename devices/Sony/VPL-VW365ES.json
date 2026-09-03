@@ -2,6 +2,36 @@
   "codeset": "codesets/83/83d4eba7c78a0822.json",
   "deviceType": 7,
   "globalDeviceId": 278873,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"HDMI 1","ports":["HDMI"]},
+      {"name":"HDMI 2","ports":["HDMI"]}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Input"],
+    "type": 4
+  },
   "manufacturer": "Sony",
-  "model": "VPL-VW365ES"
+  "model": "VPL-VW365ES",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 200,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 37500,
+    "pressMinRepeats": 3
+  }
 }

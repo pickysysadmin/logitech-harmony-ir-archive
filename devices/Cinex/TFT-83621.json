@@ -2,6 +2,37 @@
   "codeset": "codesets/3b/3ba1b9ab64fef621.json",
   "deviceType": 1,
   "globalDeviceId": 112368,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"SCART 1"},
+      {"name":"SCART 2"},
+      {"name":"SCART 3"},
+      {"name":"S Video"},
+      {"name":"DVI"},
+      {"name":"PC IMPUT"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Cinex",
-  "model": "TFT-83621"
+  "model": "TFT-83621",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

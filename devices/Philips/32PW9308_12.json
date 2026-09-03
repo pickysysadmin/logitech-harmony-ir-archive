@@ -2,6 +2,42 @@
   "codeset": "codesets/47/479cd6861d47fa31.json",
   "deviceType": 1,
   "globalDeviceId": 170357,
+  "inputs": {
+    "canSkip": true,
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"EXT1"},
+      {"name":"EXT2 (Free)"},
+      {"name":"SIDE"},
+      {"name":"Dummy 1"},
+      {"name":"Dummy 2"},
+      {"name":"Dummy 3"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Philips",
-  "model": "32PW9308/12"
+  "model": "32PW9308/12",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

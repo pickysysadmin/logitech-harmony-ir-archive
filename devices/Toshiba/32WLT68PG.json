@@ -1,7 +1,49 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a4/a44de4946bcf038e.json",
   "deviceType": 1,
   "globalDeviceId": 130232,
+  "inputs": {
+    "list": [
+      {"name":"ATV"},
+      {"name":"DTV"},
+      {"name":"SCART 1"},
+      {"name":"SCART 2"},
+      {"name":"Component"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"HDMI 3"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "32WLT68PG"
+  "model": "32WLT68PG",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 1
+  }
 }

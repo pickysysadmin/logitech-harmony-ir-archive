@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 38584,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["InputRgb"],"name":"RGB"},
+      {"commands":["InputS-Video"],"name":"HDMI"}
+    ],
+    "start": ["InputAnt/Cable"],
+    "type": 3
+  },
   "manufacturer": "LG",
-  "model": "32LP1"
+  "model": "32LP1",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,38 @@
   "codeset": "codesets/af/af764a9180db3e84.json",
   "deviceType": 5,
   "globalDeviceId": 152436,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputVc/rDvr"],"name":"VCR/DVR"},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT"},
+      {"commands":["InputGame/Tv"],"name":"Game/TV"},
+      {"commands":["InputAux1"],"name":"AUX 1"},
+      {"commands":["InputAux2"],"name":"AUX 2"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputTuner",{"delayMs":500},"InputFm"],"name":"FM"},
+      {"commands":["InputTuner",{"delayMs":500},"InputAm"],"name":"AM"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SR805 (Zone 3)"
+  "model": "TX-SR805 (Zone 3)",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

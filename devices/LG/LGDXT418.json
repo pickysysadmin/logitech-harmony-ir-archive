@@ -2,6 +2,57 @@
   "codeset": "codesets/98/98eb11f32c71ea0c.json",
   "deviceType": 22,
   "globalDeviceId": 226565,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"AV1"},{"set":"AV1Input","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV1"},{"set":"AV1Input","to":"AV1Opt"}],"name":"AV1Opt"},
+      {"commands":[{"set":"InputType","to":"AV1"},{"set":"AV1Input","to":"AV1Coax"}],"name":"AV1Coax"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LGDXT418"
+  "model": "LGDXT418",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV1Input": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV1Opt"},
+        {"name":"AV1Coax"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"DVD/CD","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"AV1","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

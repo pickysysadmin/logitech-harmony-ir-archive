@@ -2,6 +2,54 @@
   "codeset": "codesets/c0/c0f7c31198088f0a.json",
   "deviceType": 7,
   "globalDeviceId": 50652,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"S-Video"},{"set":"S-Video","to":"Video"},{"set":"S-Video","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"S-Video"},{"set":"S-Video","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGB","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGB","to":"PC"},{"set":"RGB","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "AU-700"
+  "model": "AU-700",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"S-Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":[{"command":"InputComponent","durationMs":1000}],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]}
+      ]
+    },
+    "RGB": {
+      "next": ["InputRgb"],
+      "values": [
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    },
+    "S-Video": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

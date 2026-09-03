@@ -2,6 +2,57 @@
   "codeset": "codesets/64/64d47d97279aa0b7.json",
   "deviceType": 34,
   "globalDeviceId": 151128,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VideoInput","to":"Tuner"},{"set":"InputType","to":"DVD"}],"name":"DVDTuner"},
+      {"commands":[{"set":"VideoInput","to":"L1"},{"set":"InputType","to":"DVD"}],"name":"DVDL1"},
+      {"commands":[{"set":"VideoInput","to":"L2"},{"set":"InputType","to":"DVD"}],"name":"DVDL2"},
+      {"commands":[{"set":"VideoInput","to":"L3"},{"set":"InputType","to":"DVD"}],"name":"DVDL3"},
+      {"commands":[{"set":"VideoInput","to":"L4"},{"set":"InputType","to":"DVD"}],"name":"DVDL4"},
+      {"commands":[{"set":"VideoInput","to":"DV"},{"set":"InputType","to":"DVD"}],"name":"DVDDV"},
+      {"commands":[{"set":"VideoInput","to":"Tuner"},{"set":"InputType","to":"HDD"}],"name":"HDDTuner"},
+      {"commands":[{"set":"VideoInput","to":"L1"},{"set":"InputType","to":"HDD"}],"name":"HDDL1"},
+      {"commands":[{"set":"VideoInput","to":"L2"},{"set":"InputType","to":"HDD"}],"name":"HDDL2"},
+      {"commands":[{"set":"VideoInput","to":"L3"},{"set":"InputType","to":"HDD"}],"name":"HDDL3"},
+      {"commands":[{"set":"VideoInput","to":"L4"},{"set":"InputType","to":"HDD"}],"name":"HDDL4"},
+      {"commands":[{"set":"VideoInput","to":"DV"},{"set":"InputType","to":"HDD"}],"name":"HDDDV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "RDR-HX910S"
+  "model": "RDR-HX910S",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["DVD"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["HDD"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"L3"},
+        {"name":"L4"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

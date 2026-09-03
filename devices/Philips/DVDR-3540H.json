@@ -2,6 +2,34 @@
   "codeset": "codesets/15/156a220356b4a081.json",
   "deviceType": 34,
   "globalDeviceId": 127311,
+  "inputs": {
+    "list": [
+      {"name":"ch001"},
+      {"name":"CAM1"},
+      {"name":"CAM2"},
+      {"name":"Front av"},
+      {"name":"Back AV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "DVDR-3540H"
+  "model": "DVDR-3540H",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"ch001"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 21000,
+    "pressMinRepeats": 3
+  }
 }

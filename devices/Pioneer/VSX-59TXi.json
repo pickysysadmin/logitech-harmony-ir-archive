@@ -2,6 +2,36 @@
   "codeset": "codesets/eb/eb501f77c3515b11.json",
   "deviceType": 5,
   "globalDeviceId": 31757,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"Dvd"},
+      {"commands":["InputTV"],"name":"Tv"},
+      {"commands":["InputSat"],"name":"Sat"},
+      {"commands":["InputVcr"],"name":"Vcr1"},
+      {"commands":["InputVcr2"],"name":"Vcr2"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputCd"],"name":"Cd"},
+      {"commands":["InputCdr"],"name":"Cd-r"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":[{"delayMs":1500},"InputI.link"],"name":"I.link"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Pioneer",
-  "model": "VSX-59TXi"
+  "model": "VSX-59TXi",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

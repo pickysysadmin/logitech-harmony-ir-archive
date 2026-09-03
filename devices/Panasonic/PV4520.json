@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2,
+    "greaterHundred": ["NumberEnter"]
+  },
   "codeset": "codesets/3c/3c9d4ddfc6ed2e36.json",
   "deviceType": 2,
   "globalDeviceId": 168279,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "PV4520"
+  "model": "PV4520",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

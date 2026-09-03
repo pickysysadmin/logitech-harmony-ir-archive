@@ -2,6 +2,57 @@
   "codeset": "codesets/98/98eb11f32c71ea0c.json",
   "deviceType": 22,
   "globalDeviceId": 39899,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TUNER"},{"set":"RadioMode","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"TUNER"},{"set":"RadioMode","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"CD/DVD"}],"name":"CD/DVD"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"VideoMode","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"VideoMode","to":"Video1opt"}],"name":"Video1opt"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"VideoMode","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"VideoMode","to":"Video2opt"}],"name":"Video2opt"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LH-W6200"
+  "model": "LH-W6200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TUNER","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"CD/DVD","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "RadioMode": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "VideoMode": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video1opt"},
+        {"name":"Video2"},
+        {"name":"Video2opt"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

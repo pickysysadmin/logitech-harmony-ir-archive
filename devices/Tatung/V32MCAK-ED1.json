@@ -2,6 +2,69 @@
   "codeset": "codesets/c6/c614284de6c07b45.json",
   "deviceType": 1,
   "globalDeviceId": 209319,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"PC/HD"},{"set":"PC/HDInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC/HD"},{"set":"PC/HDInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"PC/HD"},{"set":"PC/HDInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CVBS"}],"name":"CVBS"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YUV"}],"name":"YUV"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart 1"}],"name":"Scart 1"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart 2"}],"name":"Scart 2"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart 2S"}],"name":"Scart 2S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Tatung",
-  "model": "V32MCAK-ED1"
+  "model": "V32MCAK-ED1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"PC/HD","select":[{"commands":["InputPc/Hd"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Scart","select":[{"commands":["InputScart"],"setType":2}]}
+      ]
+    },
+    "PC/HDInput": {
+      "next": ["InputPc/Hd"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputScart"],
+      "values": [
+        {"name":"Scart 1"},
+        {"name":"Scart 2"},
+        {"name":"Scart 2S"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"CVBS"},
+        {"name":"S-Video"},
+        {"name":"YUV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

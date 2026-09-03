@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/e2/e2dcd59536761dd8.json",
   "deviceType": 37,
   "globalDeviceId": 170640,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"ANT"}],"name":"ANT"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"Line 2"}],"name":"Line 2"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"Line 3"}],"name":"Line 3"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"Line 4"}],"name":"Line 4"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TvInput","to":"Line 5"}],"name":"Line 5"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "20HLV86"
+  "model": "20HLV86",
+  "power": {
+    "toggle": [
+      "PowerToggle",
+      {"set":"InputType","to":"TV"}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "next": ["TvDvd"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DVD"}
+      ]
+    },
+    "TvInput": {
+      "start": ["TvVideo"],
+      "values": [
+        {"name":"ANT","select":[{"commands":["0"],"setType":1}]},
+        {"name":"DTV","select":[{"commands":["1"],"setType":1}]},
+        {"name":"Line 2","select":[{"commands":["2"],"setType":1}]},
+        {"name":"Line 3","select":[{"commands":["3"],"setType":1}]},
+        {"name":"Line 4","select":[{"commands":["4"],"setType":1}]},
+        {"name":"Line 5","select":[{"commands":["5"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

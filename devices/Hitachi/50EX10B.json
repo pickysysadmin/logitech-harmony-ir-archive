@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 35725,
+  "inputs": {
+    "finish": ["Exit"],
+    "list": [
+      {"commands":["0"],"name":"TV"},
+      {"commands":["1"],"name":"Video1"},
+      {"commands":["2"],"name":"Video2"},
+      {"commands":["3"],"name":"Video3"},
+      {"commands":["4"],"name":"ColorStream"}
+    ],
+    "start": ["TvVideo"],
+    "type": 3
+  },
   "manufacturer": "Hitachi",
-  "model": "50EX10B"
+  "model": "50EX10B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

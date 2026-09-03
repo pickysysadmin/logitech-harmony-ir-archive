@@ -2,6 +2,34 @@
   "codeset": "codesets/e2/e2085909d8734a46.json",
   "deviceType": 1,
   "globalDeviceId": 64515,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"video2S"},
+      {"name":"Video3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Akai",
-  "model": "CT-B284NTF-E1"
+  "model": "CT-B284NTF-E1",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

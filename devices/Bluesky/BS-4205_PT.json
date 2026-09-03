@@ -2,6 +2,39 @@
   "codeset": "codesets/8e/8eca8b2bd536d61c.json",
   "deviceType": 1,
   "globalDeviceId": 71911,
+  "inputs": {
+    "finish": ["DirectionRight"],
+    "list": [
+      {"name":"TV"},
+      {"name":"SCART1"},
+      {"name":"SCART 2"},
+      {"name":"VIDEO"},
+      {"name":"SVIDEO"},
+      {"name":"COMPOSANT"},
+      {"name":"HD"},
+      {"name":"YUV"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["Menu"],
+    "type": 4
+  },
   "manufacturer": "Bluesky",
-  "model": "BS-4205 PT"
+  "model": "BS-4205 PT",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

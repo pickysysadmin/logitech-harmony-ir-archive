@@ -2,6 +2,48 @@
   "codeset": "codesets/a8/a8bc3ac34180e526.json",
   "deviceType": 5,
   "globalDeviceId": 100803,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTape1"],"name":"Tape"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputVideo1"],"name":"Video1"},
+      {"commands":["InputVideo2"],"name":"Video2"},
+      {"commands":["InputVideo3"],"name":"Video3"},
+      {"commands":["InputVideo4"],"name":"Video4"},
+      {"commands":["InputVideo5"],"name":"Video5"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SR604B"
+  "model": "TX-SR604B",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "SoundMode": {
+      "next": ["SurroundToggle"],
+      "values": [
+        {"name":"NeoMovie"},
+        {"name":"NeoMusic"},
+        {"name":"ProLogic2Movie"},
+        {"name":"ProLogic2Music"},
+        {"name":"NeoCinema"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

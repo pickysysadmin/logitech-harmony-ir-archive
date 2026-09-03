@@ -2,6 +2,41 @@
   "codeset": "codesets/30/309d5f46fef5497c.json",
   "deviceType": 1,
   "globalDeviceId": 215008,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputExt1"],"name":"Ext 1"},
+      {"commands":["InputExt2"],"name":"Ext 2"},
+      {"commands":["InputExt3"],"name":"Ext 3"},
+      {"commands":["InputHdmi1"],"name":"Hdmi 1"},
+      {"commands":["InputHdmi2"],"name":"Hdmi 2"},
+      {"commands":["InputHdmi3"],"name":"Hdmi 3"},
+      {"commands":["InputHdmi3","Source"],"name":"Hdmi 4"},
+      {"commands":["InputHdmiSide"],"name":"HdmiSide"},
+      {"commands":["InputSide"],"name":"Side"},
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["NetTv"],"name":"NetTV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "56PFL9954H/12B"
+  "model": "56PFL9954H/12B",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 24000,
+    "pressMinRepeats": 3
+  }
 }

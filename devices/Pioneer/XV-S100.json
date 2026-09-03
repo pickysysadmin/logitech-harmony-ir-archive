@@ -2,6 +2,49 @@
   "codeset": "codesets/01/01e185de50f8c3e1.json",
   "deviceType": 22,
   "globalDeviceId": 46012,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoMode","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoMode","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoMode","to":"Video 3"}],"name":"Video 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "XV-S100"
+  "model": "XV-S100",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":1}]},
+        {"name":"DVD/CD","select":[{"commands":["InputDvd"],"setType":1}]},
+        {"name":"VideoType","select":[{"commands":["InputLine1"],"setType":2}]}
+      ]
+    },
+    "VideoMode": {
+      "next": ["InputLine1"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Video 3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,32 @@
   "codeset": "codesets/b9/b9c71c9667b34975.json",
   "deviceType": 1,
   "globalDeviceId": 127669,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV-1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Bush",
-  "model": "AK30"
+  "model": "AK30",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"AV-1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

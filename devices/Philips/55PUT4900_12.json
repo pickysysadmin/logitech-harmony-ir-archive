@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/99/9900179aaa168f47.json",
   "deviceType": 1,
   "globalDeviceId": 276380,
+  "inputs": {
+    "list": [
+      {"commands":["Source",{"delayMs":200},{"command":"DirectionLeft","durationMs":2000},{"delayMs":200},"OK"],"name":"TV"},
+      {"commands":["Source",{"delayMs":200},{"command":"DirectionLeft","durationMs":2000},{"delayMs":200},"DirectionRight","OK"],"name":"CVBS"},
+      {"commands":["Source",{"delayMs":200},{"command":"DirectionLeft","durationMs":2000},{"delayMs":200},"DirectionRight","DirectionRight","OK"],"name":"YPbPr"},
+      {"commands":["Source",{"delayMs":200},{"command":"DirectionLeft","durationMs":2000},{"delayMs":200},"DirectionRight","DirectionRight","DirectionRight","OK"],"name":"HDMI 1"},
+      {"commands":["Source",{"delayMs":200},{"command":"DirectionRight","durationMs":2000},{"delayMs":200},"DirectionLeft","DirectionLeft","OK"],"name":"HDMI 2"},
+      {"commands":["Source",{"delayMs":200},{"command":"DirectionRight","durationMs":2000},{"delayMs":200},"DirectionLeft","OK"],"name":"HDMI 3"},
+      {"commands":["Source",{"delayMs":200},{"command":"DirectionRight","durationMs":2000},{"delayMs":200},"OK"],"name":"USB"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "55PUT4900/12"
+  "model": "55PUT4900/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 24000,
+    "pressMinRepeats": 3
+  }
 }

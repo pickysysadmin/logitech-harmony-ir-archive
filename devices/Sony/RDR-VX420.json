@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/cc/cc8558b45cdcb47d.json",
   "deviceType": 47,
   "globalDeviceId": 175632,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"DVD"},
+      {"name":"Programm 1"},
+      {"name":"Line1"},
+      {"name":"Line2"},
+      {"name":"Line3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "RDR-VX420"
+  "model": "RDR-VX420",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Line1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

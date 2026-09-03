@@ -2,6 +2,77 @@
   "codeset": "codesets/e0/e02f0db71924f1a4.json",
   "deviceType": 1,
   "globalDeviceId": 120240,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"PC/HD"},{"set":"PC/HDInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC/HD"},{"set":"PC/HDInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"PC/HD"},{"set":"PC/HDInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CVBS"}],"name":"CVBS"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YUV"}],"name":"YUV"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart1"}],"name":"Scart1"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart2"}],"name":"Scart2"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart2S"}],"name":"Scart2S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Tatung",
-  "model": "V32-MCGI"
+  "model": "V32-MCGI",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"PC/HD","select":[{"commands":["InputPc/Hd"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Scart","select":[{"commands":["InputScart"],"setType":2}]}
+      ]
+    },
+    "PC/HDInput": {
+      "next": ["InputPc/Hd"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"},
+        {"name":"HDMI"}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputScart"],
+      "values": [
+        {"name":"Scart1"},
+        {"name":"Scart2"},
+        {"name":"Scart2S"}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"CVBS"},
+        {"name":"S-Video"},
+        {"name":"YUV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

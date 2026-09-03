@@ -2,6 +2,36 @@
   "codeset": "codesets/7f/7f3aef3bbec2bdd5.json",
   "deviceType": 19,
   "globalDeviceId": 302115,
+  "inputs": {
+    "list": [
+      {"name":"D.IN","ports":["Optical"]},
+      {"name":"AUX","ports":["Aux"]},
+      {"name":"HDMI 1","ports":["HDMI"]},
+      {"name":"HDMI 2","ports":["HDMI"]},
+      {"name":"BT","ports":["Pairing Input"]}
+    ],
+    "next": ["Source"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HW-K850"
+  "model": "HW-K850",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

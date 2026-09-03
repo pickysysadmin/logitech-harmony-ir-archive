@@ -2,6 +2,41 @@
   "codeset": "codesets/f7/f7bed5bd81e5b652.json",
   "deviceType": 1,
   "globalDeviceId": 96324,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV 1"},
+      {"name":"AV 2"},
+      {"name":"AV 3"},
+      {"name":"SVHS"},
+      {"name":"PC"},
+      {"name":"DVI"},
+      {"name":"HDMI"},
+      {"name":"YPBPR"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Grundig",
-  "model": "PXW 130-9625"
+  "model": "PXW 130-9625",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 3
+  }
 }

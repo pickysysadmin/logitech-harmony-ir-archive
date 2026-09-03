@@ -2,6 +2,58 @@
   "codeset": "codesets/db/db234901d5d5d704.json",
   "deviceType": 22,
   "globalDeviceId": 182087,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Mp3LineIn"}],"name":"Mp3LineIn","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscInput","to":"Disc"}],"name":"Disc","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscInput","to":"Usb"}],"name":"Usb","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"DigitalIn"}],"name":"DigitalIn","ports":["Coaxial"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS3357"
+  "model": "HTS3357",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAUX"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"DigitalIn"}
+      ]
+    },
+    "DiscInput": {
+      "next": ["InputDvd"],
+      "values": [
+        {"name":"Disc"},
+        {"name":"Usb"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Mp3LineIn","select":[{"commands":["InputMp3LineIn"],"setType":2}]},
+        {"name":"Disc","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAUX"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

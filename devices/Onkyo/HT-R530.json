@@ -2,6 +2,35 @@
   "codeset": "codesets/39/3954d279b4728e6c.json",
   "deviceType": 5,
   "globalDeviceId": 174232,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"Video 1","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVideo2"],"name":"Video 2","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVideo3"],"name":"Video 3","ports":["Composite","Optical"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputTape"],"name":"Tape","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "HT-R530"
+  "model": "HT-R530",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

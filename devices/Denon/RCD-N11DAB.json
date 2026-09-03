@@ -2,6 +2,63 @@
   "codeset": "codesets/6f/6f3d2f35a411117f.json",
   "deviceType": 21,
   "globalDeviceId": 499152,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Internet Radio"}],"name":"Internet Radio"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Music Server"}],"name":"Music Server"},
+      {"commands":[{"set":"InputType","to":"Analog In"}],"name":"Analog In"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Dab"}],"name":"Dab"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm"}],"name":"Fm"},
+      {"commands":[{"set":"InputType","to":"OpticalIn"},{"set":"OpticalInInput","to":"Optical 1"}],"name":"Optical 1"},
+      {"commands":[{"set":"InputType","to":"OpticalIn"},{"set":"OpticalInInput","to":"Optical 2"}],"name":"Optical 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Denon",
-  "model": "RCD-N11DAB"
+  "model": "RCD-N11DAB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Internet Radio","select":[{"commands":["InputInternetRadio"],"setType":1}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":1}]},
+        {"name":"Music Server","select":[{"commands":["InputMusicServer"],"setType":1}]},
+        {"name":"Analog In","select":[{"commands":["InputAnalogIn"],"setType":1}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":1}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":1}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"OpticalIn","select":[{"commands":["InputOpticalIn"],"setType":1}]}
+      ]
+    },
+    "OpticalInInput": {
+      "next": ["InputOpticalIn"],
+      "values": [
+        {"name":"Optical 1"},
+        {"name":"Optical 2"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Dab"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

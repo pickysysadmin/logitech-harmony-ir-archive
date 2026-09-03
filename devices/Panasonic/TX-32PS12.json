@@ -2,6 +2,119 @@
   "codeset": "codesets/a8/a8547d18fe86ba3f.json",
   "deviceType": 1,
   "globalDeviceId": 96976,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV1"},{"set":"MENU","to":"OFF"}],"name":"AV1"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV2"},{"set":"MENU","to":"OFF"}],"name":"AV2"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV2"},{"set":"AVTWO","to":"AV2SVHS"},{"set":"MENU","to":"OFF"}],"name":"AV2SVHS"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV3"},{"set":"MENU","to":"OFF"}],"name":"AV3"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV3"},{"set":"AVTHREE","to":"AV3SVHS"},{"set":"MENU","to":"OFF"}],"name":"AV3SVHS"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV4"},{"set":"MENU","to":"OFF"}],"name":"AV4"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV4"},{"set":"AVFOUR","to":"AV4SVHS"},{"set":"MENU","to":"OFF"}],"name":"AV4SVHS"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-32PS12"
+  "model": "TX-32PS12",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1200}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2Input": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2s"}
+      ]
+    },
+    "AV3Input": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3s"}
+      ]
+    },
+    "AVFOUR": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4SVHS"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":1}]},
+        {"name":"AV4","select":[{"commands":["Blue"],"setType":1}]}
+      ]
+    },
+    "AVTHREE": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3SVHS"},
+        {"name":"AV3VGA"}
+      ]
+    },
+    "AVTWO": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2SVHS"}
+      ]
+    },
+    "AVType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Yellow"],"setType":2}]}
+      ]
+    },
+    "ColorMenu": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":2}]}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "TvVideo",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext",{"set":"ColorMenu","to":"ON"}],"setType":2}]}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

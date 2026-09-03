@@ -2,6 +2,51 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 128621,
+  "inputs": {
+    "list": [
+      {"commands":["Video 1"],"name":"VIDEO1"},
+      {"commands":[{"set":"VideoInput","to":"Video2"}],"name":"VIDEO2"},
+      {"commands":[{"set":"VideoInput","to":"Video3"}],"name":"VIDEO3"},
+      {"commands":["DVD/HDToggle"],"name":"DTV1"},
+      {"commands":["DVD/HDToggle"],"name":"DTV2"},
+      {"commands":[{"set":"RGBInput","to":"RGB3"}],"name":"RGB3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "50-XM6"
+  "model": "50-XM6",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

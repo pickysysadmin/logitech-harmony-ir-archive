@@ -2,6 +2,68 @@
   "codeset": "codesets/c0/c0b5e2b3f730e45b.json",
   "deviceType": 7,
   "globalDeviceId": 237370,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Dvi-D/Hdmi"}],"name":"Dvi-D/Hdmi"},
+      {"commands":[{"set":"InputType","to":"Bnc"}],"name":"Bnc"},
+      {"commands":[{"set":"InputType","to":"Comp1/2"},{"set":"Comp1/2Input","to":"Computer1"}],"name":"Computer1"},
+      {"commands":[{"set":"InputType","to":"Comp1/2"},{"set":"Comp1/2Input","to":"Computer2"}],"name":"Computer2"},
+      {"commands":[{"set":"InputType","to":"Video1/2"},{"set":"Video1/2Input","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video1/2"},{"set":"Video1/2Input","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Lan/Usb"},{"set":"Lan/UsbInput","to":"LAN"}],"name":"LAN"},
+      {"commands":[{"set":"InputType","to":"Lan/Usb"},{"set":"Lan/UsbInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "PowerLite Pro G5650W"
+  "model": "PowerLite Pro G5650W",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "Comp1/2Input": {
+      "next": ["InputComp1/2"],
+      "values": [
+        {"name":"Computer1"},
+        {"name":"Computer2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"Dvi-D/Hdmi","select":[{"commands":["InputDvi-D/Hdmi"],"setType":2}]},
+        {"name":"Bnc","select":[{"commands":["InputBnc"],"setType":2}]},
+        {"name":"Comp1/2","select":[{"commands":["InputComp1/2"],"setType":2}]},
+        {"name":"Video1/2","select":[{"commands":["InputVideo1/2"],"setType":2}]},
+        {"name":"Lan/Usb","select":[{"commands":["InputLan/Usb"],"setType":2}]}
+      ]
+    },
+    "Lan/UsbInput": {
+      "next": ["InputLan/Usb"],
+      "values": [
+        {"name":"LAN"},
+        {"name":"USB"}
+      ]
+    },
+    "Video1/2Input": {
+      "next": ["InputVideo1/2"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

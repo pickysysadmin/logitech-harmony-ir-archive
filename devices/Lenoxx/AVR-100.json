@@ -2,6 +2,67 @@
   "codeset": "codesets/b0/b0b7b14f09793882.json",
   "deviceType": 5,
   "globalDeviceId": 105238,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VCR 1"}],"name":"VCR 1"},
+      {"commands":[{"set":"InputType","to":"VCR 2"}],"name":"VCR 2"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Coaxial 1"}],"name":"Coaxial 1"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Coaxial 2"}],"name":"Coaxial 2"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Optical"}],"name":"Optical"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Lenoxx",
-  "model": "AVR-100"
+  "model": "AVR-100",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputDigital"],
+      "values": [
+        {"name":"Coaxial 1"},
+        {"name":"Coaxial 2"},
+        {"name":"Optical"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VCR 1","select":[{"commands":["InputVcr1"],"setType":2}]},
+        {"name":"VCR 2","select":[{"commands":["InputVcr2"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDigital"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

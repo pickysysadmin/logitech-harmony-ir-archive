@@ -1,7 +1,49 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/c7/c7453800a85f5161.json",
   "deviceType": 34,
   "globalDeviceId": 212904,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"BD/DVD"},{"set":"BD/DVDInput","to":"BD"}],"name":"BD"},
+      {"commands":[{"set":"InputType","to":"BD/DVD"},{"set":"BD/DVDInput","to":"DVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-BR570"
+  "model": "DMR-BR570",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "BD/DVDInput": {
+      "next": ["InputBd/Dvd"],
+      "values": [
+        {"name":"BD"},
+        {"name":"DVD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"SD","select":[{"commands":["InputSd"],"setType":2}]},
+        {"name":"BD/DVD","select":[{"commands":["InputBd/Dvd"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

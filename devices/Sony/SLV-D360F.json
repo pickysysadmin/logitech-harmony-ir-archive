@@ -1,7 +1,51 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f0/f08fb91b53ed5967.json",
   "deviceType": 25,
   "globalDeviceId": 78087,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dvd"}],"name":"Dvd"},
+      {"commands":[{"set":"InputType","to":"Vcr"}],"name":"Vcr"},
+      {"commands":[{"set":"InputType","to":"AuxInput"},{"set":"AuxInputInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AuxInput"},{"set":"AuxInputInput","to":"Line1"}],"name":"Line1"},
+      {"commands":[{"set":"InputType","to":"AuxInput"},{"set":"AuxInputInput","to":"Line2"}],"name":"Line2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "SLV-D360F"
+  "model": "SLV-D360F",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line1"},
+        {"name":"Line2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dvd","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Vcr","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"AuxInput","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 700,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

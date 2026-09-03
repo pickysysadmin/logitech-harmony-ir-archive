@@ -1,7 +1,69 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/24/24de5ce17db1eab6.json",
   "deviceType": 32,
   "globalDeviceId": 70007,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"L1"}],"name":"Aux L1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"L1 Opt"}],"name":"Aux L1 Optical"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"Tuner"}],"name":"VCR Tuner"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"L1"}],"name":"VCR L1"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"L2"}],"name":"VCR L2"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Am"}],"name":"Am"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm"}],"name":"Fm"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "SD-V55HT-SC"
+  "model": "SD-V55HT-SC",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"L1"},
+        {"name":"L1 Opt"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd/Cd"],"setType":1}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":1}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputAm/Fm"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputAm/Fm"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    },
+    "VCRInput": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"L1"},
+        {"name":"L2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

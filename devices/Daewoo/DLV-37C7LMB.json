@@ -2,6 +2,65 @@
   "codeset": "codesets/79/791ca2fcea53a263.json",
   "deviceType": 1,
   "globalDeviceId": 179207,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dtv/Atv"},{"set":"Dtv/AtvInput","to":"Dtv"}],"name":"Dtv"},
+      {"commands":[{"set":"InputType","to":"Dtv/Atv"},{"set":"Dtv/AtvInput","to":"Atv"}],"name":"Atv"},
+      {"commands":[{"set":"InputType","to":"Av/Comp"},{"set":"Av/CompInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Av/Comp"},{"set":"Av/CompInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Av/Comp"},{"set":"Av/CompInput","to":"Comp1"}],"name":"Comp1"},
+      {"commands":[{"set":"InputType","to":"Av/Comp"},{"set":"Av/CompInput","to":"Comp2"}],"name":"Comp2"},
+      {"commands":[{"set":"InputType","to":"Hdmi/Pc"},{"set":"Hdmi/PcInput","to":"Hdmi"}],"name":"Hdmi"},
+      {"commands":[{"set":"InputType","to":"Hdmi/Pc"},{"set":"Hdmi/PcInput","to":"Pc"}],"name":"Pc"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Daewoo",
-  "model": "DLV-37C7LMB"
+  "model": "DLV-37C7LMB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Av/CompInput": {
+      "next": ["InputAV/COMP"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "Dtv/AtvInput": {
+      "next": ["InputDTV/ATV"],
+      "values": [
+        {"name":"Dtv"},
+        {"name":"Atv"}
+      ]
+    },
+    "Hdmi/PcInput": {
+      "next": ["InputHDMI/PC"],
+      "values": [
+        {"name":"Hdmi"},
+        {"name":"Pc"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dtv/Atv","select":[{"commands":["InputDTV/ATV"],"setType":2}]},
+        {"name":"Av/Comp","select":[{"commands":["InputAV/COMP"],"setType":2}]},
+        {"name":"Hdmi/Pc","select":[{"commands":["InputHDMI/PC"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

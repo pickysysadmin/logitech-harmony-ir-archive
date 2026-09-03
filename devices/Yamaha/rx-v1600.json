@@ -2,6 +2,40 @@
   "codeset": "codesets/07/07df1c86b591a464.json",
   "deviceType": 5,
   "globalDeviceId": 165568,
+  "inputs": {
+    "list": [
+      {"commands":["InputXm"],"name":"XM","ports":["Others"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputV-Aux"],"name":"V-Aux","ports":["Composite","S-Video","Optical"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/Sat","ports":["HDMI","Component","Composite","S-Video","Optical"]},
+      {"commands":["InputMd/Tape"],"name":"MD/Tape","ports":["Composite"]},
+      {"commands":["InputCd-r"],"name":"CD-R","ports":["Composite"]},
+      {"commands":["InputDtv"],"name":"D-TV/LD","ports":["Component","Composite","S-Video","Optical"]},
+      {"commands":["InputVcr1"],"name":"VCR1","ports":["Composite","S-Video"]},
+      {"commands":["InputDvr/Vcr2"],"name":"DVR/VCR2","ports":["Composite","Coaxial","S-Video"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","S-Video","Optical"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "rx-v1600"
+  "model": "rx-v1600",
+  "power": {
+    "off": ["PowerOff-Zone1"],
+    "on": ["PowerOn-Zone1"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

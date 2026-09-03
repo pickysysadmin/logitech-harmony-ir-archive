@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d4/d456234c3e02b6e3.json",
   "deviceType": 1,
   "globalDeviceId": 142821,
+  "inputs": {
+    "list": [
+      {"commands":["InputAV"],"name":"Video 1"},
+      {"commands":["InputS-Video"],"name":"SVideo"},
+      {"commands":["InputHdmi"],"name":"HDMI"},
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["InputDvi"],"name":"DVI"},
+      {"commands":["InputYPbPr1"],"name":"YPbPr 1"},
+      {"commands":["InputYPbPr2"],"name":"YPbPr 2"}
+    ],
+    "start": [
+      {"delayMs":2000}
+    ],
+    "type": 3
+  },
   "manufacturer": "Westinghouse",
-  "model": "27W3207"
+  "model": "27W3207",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

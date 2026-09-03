@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/65/6502783c4d386f83.json",
   "deviceType": 1,
   "globalDeviceId": 170299,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"E1"},
+      {"commands":["InputVideo2"],"name":"E2"},
+      {"commands":["InputVideo3"],"name":"E3"},
+      {"commands":["InputVideo4"],"name":"E4"},
+      {"commands":["InputVideo4",{"delayMs":3000},"InputNext","DirectionDown","Select"],"name":"Hdmi1"},
+      {"commands":["InputVideo4",{"delayMs":3000},"InputNext","DirectionDown","DirectionDown","Select"],"name":"Hdmi2"},
+      {"commands":["InputVideo4",{"delayMs":3000},"InputNext","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Hdmi3"},
+      {"commands":["InputVideo4",{"delayMs":3000},"InputNext","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-42V80BU"
+  "model": "LT-42V80BU",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

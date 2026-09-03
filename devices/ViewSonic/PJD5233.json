@@ -2,6 +2,48 @@
   "codeset": "codesets/ce/cee598704dff543f.json",
   "deviceType": 7,
   "globalDeviceId": 228690,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer IN 1"}],"name":"Computer IN 1"},
+      {"commands":[{"set":"InputType","to":"Computer IN 2"}],"name":"Computer IN 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "ViewSonic",
-  "model": "PJD5233"
+  "model": "PJD5233",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Computer IN 1","select":[{"commands":["InputComputer1"],"setType":2}]},
+        {"name":"Computer IN 2","select":[{"commands":["InputComputer2"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Composite"},
+        {"name":"S-Video"},
+        {"name":"HDMI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 60000,
+    "pressMinRepeats": 3
+  }
 }

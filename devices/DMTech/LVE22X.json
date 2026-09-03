@@ -2,6 +2,56 @@
   "codeset": "codesets/bf/bfc1a69ba0d8ff6b.json",
   "deviceType": 37,
   "globalDeviceId": 142764,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"SCART"}],"name":"SCART"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "DMTech",
-  "model": "LVE22X"
+  "model": "LVE22X",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["AV"],
+      "values": [
+        {"name":"SCART"},
+        {"name":"DVD"},
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"S-Video"},
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":1}]},
+        {"name":"AV","select":[{"commands":["AV",{"set":"AVInput","to":"DVD"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

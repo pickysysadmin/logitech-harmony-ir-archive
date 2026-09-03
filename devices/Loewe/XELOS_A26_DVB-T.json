@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/27/2759f601cd7513fd.json",
   "deviceType": 1,
   "globalDeviceId": 96804,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"Video3"}
+    ],
+    "next": ["InputCompVideo1"],
+    "start": ["0"],
+    "type": 4
+  },
   "manufacturer": "Loewe",
-  "model": "XELOS A26 DVB-T"
+  "model": "XELOS A26 DVB-T",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

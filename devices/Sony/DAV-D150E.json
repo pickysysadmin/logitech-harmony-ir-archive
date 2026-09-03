@@ -2,6 +2,60 @@
   "codeset": "codesets/8e/8e08e81d98693cbe.json",
   "deviceType": 32,
   "globalDeviceId": 181966,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"AV3 OPT"}],"name":"AV3 OPT"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "DAV-D150E"
+  "model": "DAV-D150E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputSelectInput": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"AV3 OPT"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"InputSelect","select":[{"commands":["InputSelect"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

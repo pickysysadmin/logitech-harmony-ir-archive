@@ -2,6 +2,46 @@
   "codeset": "codesets/2a/2a2ba4ed6f398836.json",
   "deviceType": 5,
   "globalDeviceId": 206983,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"Hdmi1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"Hdmi2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"Hdmi3","ports":["HDMI"]},
+      {"commands":["InputHdmi4"],"name":"Hdmi4","ports":["HDMI"]},
+      {"commands":["InputHdmi5"],"name":"Hdmi5","ports":["HDMI"]},
+      {"commands":["InputAv1"],"name":"Av1","ports":["Component"]},
+      {"commands":["InputAv2"],"name":"Av2","ports":["Component"]},
+      {"commands":["InputAv3"],"name":"Av3","ports":["Composite"]},
+      {"commands":["InputAv4"],"name":"Av4","ports":["Composite"]},
+      {"commands":["InputAv5"],"name":"Av5","ports":["Composite"]},
+      {"commands":["InputAv6"],"name":"Av6","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDock"],"name":"Dock","ports":["Dock"]},
+      {"commands":["InputSirius"],"name":"Sirius","ports":["Streaming"]},
+      {"commands":["InputMultiCh"],"name":"Multi","ports":["Composite"]},
+      {"commands":["InputAudio1"],"name":"Audio1","ports":["Composite"]},
+      {"commands":["InputAudio2"],"name":"Audio2","ports":["Composite"]},
+      {"commands":["InputV-Aux"],"name":"V-Aux","ports":["HDMI","Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RXV-667"
+  "model": "RXV-667",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2600,
+    "pressMinRepeats": 1
+  }
 }

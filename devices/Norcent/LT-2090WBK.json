@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/71/716253ade74cf1c5.json",
   "deviceType": 1,
   "globalDeviceId": 92471,
+  "inputs": {
+    "finish": ["DirectionRight"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"SVIDEO"},
+      {"name":"Component"},
+      {"name":"PC"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["TvVideo"],
+    "type": 4
+  },
   "manufacturer": "Norcent",
-  "model": "LT-2090WBK"
+  "model": "LT-2090WBK",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

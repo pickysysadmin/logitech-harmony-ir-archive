@@ -2,6 +2,51 @@
   "codeset": "codesets/f9/f9f775ae925f453c.json",
   "deviceType": 7,
   "globalDeviceId": 257387,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"HDMI/DVI"}],"name":"HDMI/DVI"},
+      {"commands":[{"set":"InputType","to":"SD/USBA"},{"set":"SD/USBAInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"SD/USBA"},{"set":"SD/USBAInput","to":"USB A"}],"name":"USB A"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "P3251"
+  "model": "P3251",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"HDMI/DVI","select":[{"commands":["InputHdmi/Dvi"],"setType":2}]},
+        {"name":"SD/USBA","select":[{"commands":["InputSD/USBA"],"setType":2}]}
+      ]
+    },
+    "SD/USBAInput": {
+      "next": ["InputSD/USBA"],
+      "values": [
+        {"name":"SD"},
+        {"name":"USB A"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

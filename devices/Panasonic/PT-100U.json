@@ -2,6 +2,54 @@
   "codeset": "codesets/c0/c0f7c31198088f0a.json",
   "deviceType": 7,
   "globalDeviceId": 154117,
+  "inputs": {
+    "list": [
+      {"name":"Component"},
+      {"name":"HDMI"},
+      {"name":"PC"},
+      {"name":"Video"},
+      {"name":"S-Video"}
+    ],
+    "next": ["Auto Setup"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-100U"
+  "model": "PT-100U",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":1}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["InputRgb"],
+      "values": [
+        {"name":"HDMI"},
+        {"name":"PC"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

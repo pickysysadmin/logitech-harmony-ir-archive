@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/01/01c8d15763045db3.json",
   "deviceType": 1,
   "globalDeviceId": 96896,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntA"],"name":"AntA"},
+      {"commands":["InputAntB"],"name":"AntB"},
+      {"commands":["Input1"],"name":"Input1"},
+      {"commands":["Input2"],"name":"Input2"},
+      {"commands":["Input3"],"name":"Input3"},
+      {"commands":["Input4"],"name":"Input4"},
+      {"commands":["InputComp1"],"name":"Component1"},
+      {"commands":["InputComp2"],"name":"Component2"},
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["InputDtv"],"name":"DTV"},
+      {"commands":["InputSTB"],"name":"STB"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Mitsubishi",
-  "model": "WS-65918"
+  "model": "WS-65918",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,57 @@
   "codeset": "codesets/a8/a8bc3ac34180e526.json",
   "deviceType": 5,
   "globalDeviceId": 133248,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tape 1"}],"name":"Tape 1"},
+      {"commands":[{"set":"InputType","to":"Tape 2"}],"name":"Tape 2"},
+      {"commands":[{"set":"InputType","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"SatRadio"}],"name":"SatRadio"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Am"}],"name":"Am"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm"}],"name":"Fm"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-8222B"
+  "model": "TX-8222B",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["1"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["2"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["3"],"setType":2}]},
+        {"name":"Tape 1","select":[{"commands":["4"],"setType":2}]},
+        {"name":"Tape 2","select":[{"commands":["5"],"setType":2}]},
+        {"name":"Phono","select":[{"commands":["6"],"setType":2}]},
+        {"name":"SatRadio","select":[{"commands":["7"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["8"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["8"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

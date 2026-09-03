@@ -1,7 +1,87 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/52/527d8d54839063fa.json",
   "deviceType": 1,
   "globalDeviceId": 262443,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DigitalTV"}],"name":"Digital TV"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"AnalogueTV"}],"name":"Analogue TV"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"HDMI4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"DisplayPort"}],"name":"Display Port"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"CompVideo"},{"set":"CompVideoInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"HomeScreen","to":"OFF"},{"set":"InputType","to":"CompVideo"},{"set":"CompVideoInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"MediaPlayer"}],"name":"Media Player"},
+      {"commands":[{"set":"VieraSmartMENU","to":"ON"},{"set":"InputType","to":"VieraSmart"}],"name":"Viera Smart"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-L65WT600Z"
+  "model": "TH-L65WT600Z",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CompVideoInput": {
+      "finish": ["OK"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["OK","AV"],
+      "values": [
+        {"name":"AV"},
+        {"name":"Component"}
+      ]
+    },
+    "HomeScreen": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["OK"],"setType":2}]}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["ChannelUp"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":1}]},
+        {"name":"HDMI4","select":[{"commands":["InputHdmi4"],"setType":1}]},
+        {"name":"DisplayPort","select":[{"commands":["InputHdmi4","AV","DirectionDown","OK"],"setType":2}]},
+        {"name":"CompVideo","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"VieraSmart","select":[{"commands":["Apps"],"setType":2}]},
+        {"name":"MediaPlayer","select":[{"commands":["SdCard/Usb"],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"DigitalTV"},
+        {"name":"AnalogueTV"}
+      ]
+    },
+    "VieraSmartMENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Apps"],"setType":1}]},
+        {"name":"OFF","select":[{"commands":["Apps"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

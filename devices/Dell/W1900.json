@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a7/a75db0d39276ac7f.json",
   "deviceType": 1,
   "globalDeviceId": 132608,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"VGA"},
+      {"name":"DVI"},
+      {"name":"TV"},
+      {"name":"AV1 (COMPOSITE 1)"},
+      {"name":"AV2 (S-VIDEO)"},
+      {"name":"AV3 (COMPONENT 1)"},
+      {"name":"AV4 (COMPONENT 2)"},
+      {"name":"ShowInput"},
+      {"name":"Exit"}
+    ],
+    "next": ["ChannelDown"],
+    "previous": ["ChannelUp"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Dell",
-  "model": "W1900"
+  "model": "W1900",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4500,
+    "pressMinRepeats": 3
+  }
 }

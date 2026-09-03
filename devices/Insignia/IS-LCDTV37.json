@@ -1,7 +1,46 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/96/9644cd2796c30e97.json",
   "deviceType": 1,
   "globalDeviceId": 141263,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"VGA"},
+      {"name":"DVI"},
+      {"name":"RF"},
+      {"name":"Vid 1"},
+      {"name":"Vid 2"},
+      {"name":"S-Video"},
+      {"name":"Component 1"},
+      {"name":"Component 2"}
+    ],
+    "next": ["ChannelDown"],
+    "start": [
+      "InputNext",
+      {"set":"Input","to":"VGA"}
+    ],
+    "type": 4
+  },
   "manufacturer": "Insignia",
-  "model": "IS-LCDTV37"
+  "model": "IS-LCDTV37",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"VGA"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

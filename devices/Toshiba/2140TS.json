@@ -2,6 +2,46 @@
   "codeset": "codesets/e2/e2dcd59536761dd8.json",
   "deviceType": 38,
   "globalDeviceId": 84535,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Antenna","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Antenna","to":"L1"}],"name":"L1"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Antenna","to":"L2"}],"name":"L2"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "2140TS"
+  "model": "2140TS",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Antenna": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"L1"},
+        {"name":"L2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

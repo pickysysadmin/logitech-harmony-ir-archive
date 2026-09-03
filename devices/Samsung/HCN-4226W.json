@@ -1,7 +1,57 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 116481,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Ant"},{"set":"AntennasInput","to":"Antenna A"}],"name":"Antenna A"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Ant"},{"set":"AntennasInput","to":"Antenna B"}],"name":"Antenna B"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Ant"}],"name":"Ant"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HCN-4226W"
+  "model": "HCN-4226W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennasInput": {
+      "next": ["InputAB"],
+      "values": [
+        {"name":"Antenna A"},
+        {"name":"Antenna B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Antennas","select":[{"commands":["InputAB"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Ant"},
+        {"name":"Video 1"},
+        {"name":"Video 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 20000,
+    "pressMinRepeats": 3
+  }
 }

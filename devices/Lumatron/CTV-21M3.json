@@ -2,6 +2,42 @@
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 97891,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"DVD"},
+      {"name":"PARABOL"},
+      {"name":"FORSTERKER"},
+      {"name":"CD-SPILLER"}
+    ],
+    "next": ["Red"],
+    "type": 2
+  },
   "manufacturer": "Lumatron",
-  "model": "CTV-21M3"
+  "model": "CTV-21M3",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["Yellow"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

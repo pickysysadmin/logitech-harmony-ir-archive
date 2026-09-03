@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ba/badcdc1242ae6751.json",
   "deviceType": 34,
   "globalDeviceId": 179071,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"HDDInput","to":"L1"}],"name":"L1"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"HDDInput","to":"L2"}],"name":"L2"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"HDDInput","to":"L3"}],"name":"L3"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"HDDInput","to":"DV"}],"name":"DV"},
+      {"commands":[{"set":"InputType","to":"SD/PC"},{"set":"SD/PCInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"SD/PC"},{"set":"SD/PCInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-E500H"
+  "model": "DMR-E500H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDDInput": {
+      "next": ["InputHdd"],
+      "values": [
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"L3"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"SD/PC","select":[{"commands":["InputSd/Pc"],"setType":2}]}
+      ]
+    },
+    "SD/PCInput": {
+      "next": ["InputSd/Pc"],
+      "values": [
+        {"name":"SD"},
+        {"name":"PC"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,33 @@
   "codeset": "codesets/06/062cf784f4c0307d.json",
   "deviceType": 7,
   "globalDeviceId": 260979,
+  "inputs": {
+    "list": [
+      {"commands":["InputComponent"],"name":"Input Component"},
+      {"commands":["InputComputer1"],"name":"Input Computer 1"},
+      {"commands":["InputComputer2"],"name":"Input Computer 2"},
+      {"commands":["InputHdmi"],"name":"Input Hdmi"},
+      {"commands":["InputS-Video"],"name":"Input S-Video"},
+      {"commands":["InputVideo"],"name":"Input Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Promethean",
-  "model": "PRM-30"
+  "model": "PRM-30",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 1
+  }
 }

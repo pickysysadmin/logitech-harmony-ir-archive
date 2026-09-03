@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/b9/b98dc99843587438.json",
   "deviceType": 1,
   "globalDeviceId": 480048,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv","Exit","Exit",{"delayMs":2000},"InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputHdmi1","Exit","Exit",{"delayMs":2000},"InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2","Exit","Exit",{"delayMs":2000},"InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3","Exit","Exit",{"delayMs":2000},"InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputAv","Exit","Exit",{"delayMs":2000},"InputAv"],"name":"AV","ports":["Composite"]},
+      {"commands":["InputComponent","Exit","Exit",{"delayMs":2000},"InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["Exit",{"delayMs":2000},"Home","DirectionRight","DirectionRight","DirectionRight","DirectionRight"],"name":"SmartHub","ports":["Streaming"]},
+      {"commands":["Amazon"],"name":"Amazon","ports":["Streaming"]},
+      {"commands":["Ambient"],"name":"Ambient"},
+      {"commands":["Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UN49KU6300F"
+  "model": "UN49KU6300F",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,70 @@
   "codeset": "codesets/6e/6e1e67f83e9a8841.json",
   "deviceType": 1,
   "globalDeviceId": 41402,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"S-Video 1"}],"name":"S-Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"S-Video 2"}],"name":"S-Video 2"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"Component","to":"Comp1"}],"name":"Comp1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"Component","to":"Comp2"}],"name":"Comp2"},
+      {"commands":[{"set":"InputType","to":"DVI"},{"set":"DVI","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"DVI"},{"set":"DVI","to":"VGA"}],"name":"VGA"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hewlett Packard",
-  "model": "PE4240N"
+  "model": "PE4240N",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "Component": {
+      "next": ["InputComposite"],
+      "values": [
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "DVI": {
+      "next": ["InputDvi/Rgb"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"VGA"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":1}]},
+        {"name":"Video","select":[{"commands":["InputNext",{"delayMs":1000}],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComposite",{"delayMs":1000}],"setType":2}]},
+        {"name":"DVI","select":[{"commands":["InputDvi/Rgb",{"delayMs":1000}],"setType":2}]}
+      ]
+    },
+    "Video": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"S-Video 1"},
+        {"name":"Video 2"},
+        {"name":"S-Video 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 9000,
+    "pressMinRepeats": 3
+  }
 }

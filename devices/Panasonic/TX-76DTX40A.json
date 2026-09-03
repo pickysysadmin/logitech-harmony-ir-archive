@@ -2,6 +2,107 @@
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 157902,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"},{"set":"AV1Scart","to":"ON"},{"set":"AV2Scart","to":"ON"},{"set":"AV4Scart","to":"ON"}],"name":"TV"},
+      {"commands":[{"set":"AV1Scart","to":"ON"},{"set":"AV2Scart","to":"OFF"},{"set":"AV4Scart","to":"OFF"}],"name":"AV1"},
+      {"commands":[{"set":"AV2Scart","to":"ON"},{"set":"AV1Scart","to":"OFF"},{"set":"AV4Scart","to":"OFF"}],"name":"AV2"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"AVTWO","to":"AV2S"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"AV4Scart","to":"OFF"}],"name":"AV2S"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"AVTHREE","to":"AV3"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"AV4Scart","to":"OFF"}],"name":"AV3"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"AVTHREE","to":"AV3S"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"AV4Scart","to":"OFF"}],"name":"AV3S"},
+      {"commands":[{"set":"AV4Scart","to":"ON"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"}],"name":"AV4"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV4"},{"set":"AVFOUR","to":"AV4S"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"}],"name":"AV4S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-76DTX40A"
+  "model": "TX-76DTX40A",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"},
+      {"set":"MENU","to":"OFF"},
+      {"set":"AV1Scart","to":"ON"},
+      {"set":"AV2Scart","to":"ON"},
+      {"set":"AV4Scart","to":"ON"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AV1Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV1"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":1}]}
+      ]
+    },
+    "AV2Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":1}]}
+      ]
+    },
+    "AV4Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV4"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":1}]}
+      ]
+    },
+    "AVFOUR": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4S"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":2}]},
+        {"name":"AV4","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    },
+    "AVTHREE": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AVTWO": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "TvVideo",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

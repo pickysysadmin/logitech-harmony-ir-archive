@@ -2,6 +2,51 @@
   "codeset": "codesets/43/433ef5b3f30aa0a7.json",
   "deviceType": 1,
   "globalDeviceId": 302797,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"Screen","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"Screen","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"Screen","to":"Component"}],"name":"Component"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "24MT55D"
+  "model": "24MT55D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Screen": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent1"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"},
+        {"name":"Radio"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

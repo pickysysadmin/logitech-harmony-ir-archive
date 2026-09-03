@@ -2,6 +2,33 @@
   "codeset": "codesets/89/8917d4fd7d26261c.json",
   "deviceType": 2,
   "globalDeviceId": 73743,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"Line In"},
+      {"name":"Euro AV2"},
+      {"name":"Euro AV1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "MG-23"
+  "model": "MG-23",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

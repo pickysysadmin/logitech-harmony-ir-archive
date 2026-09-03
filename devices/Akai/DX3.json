@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b2/b21c54e38b3430f4.json",
   "deviceType": 2,
   "globalDeviceId": 62599,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"Line In"}
+    ],
+    "next": ["ChannelUp","Stop","Play"],
+    "type": 2
+  },
   "manufacturer": "Akai",
-  "model": "DX3"
+  "model": "DX3",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna/Cable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

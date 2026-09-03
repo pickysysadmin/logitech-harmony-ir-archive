@@ -2,6 +2,38 @@
   "codeset": "codesets/35/35e3ba53359469c1.json",
   "deviceType": 5,
   "globalDeviceId": 32403,
+  "inputs": {
+    "list": [
+      {"commands":[{"command":"InputTuner","durationMs":1500}],"name":"Tuner"},
+      {"commands":[{"command":"InputTape","durationMs":1500}],"name":"Tape"},
+      {"commands":[{"command":"InputTv","durationMs":1500}],"name":"Tv"},
+      {"commands":[{"command":"InputV-Cd","durationMs":1500}],"name":"Vcd"},
+      {"commands":[{"command":"InputCd","durationMs":1500}],"name":"Cd"},
+      {"commands":[{"command":"InputDcc","durationMs":1500}],"name":"DCC"},
+      {"commands":[{"command":"InputVcr1","durationMs":1500}],"name":"Vcr 1"},
+      {"commands":[{"command":"InputVcr2","durationMs":1500}],"name":"Vcr 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "FR 731"
+  "model": "FR 731",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "on": [
+      {"command":"InputTuner","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/75/75bcb68153da0970.json",
   "deviceType": 1,
   "globalDeviceId": 167437,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"YCbCr"}],"name":"YCbCr"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"SVideo"}],"name":"SVideo"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Emprex",
-  "model": "HD-3201"
+  "model": "HD-3201",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"YCbCr"},
+        {"name":"YPbPr"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"SVideo"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

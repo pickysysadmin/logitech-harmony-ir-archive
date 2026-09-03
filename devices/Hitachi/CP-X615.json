@@ -2,6 +2,55 @@
   "codeset": "codesets/a1/a17171787e5e294b.json",
   "deviceType": 7,
   "globalDeviceId": 256783,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"RGB 1"}],"name":"RGB 1","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"RGB 2"}],"name":"RGB 2","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"HDMI"}],"name":"HDMI","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Component"}],"name":"Component","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video","ports":["S-Video"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "CP-X615"
+  "model": "CP-X615",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "RGBInput": {
+      "next": ["InputRgb"],
+      "values": [
+        {"name":"RGB 1"},
+        {"name":"RGB 2"},
+        {"name":"HDMI"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Component"},
+        {"name":"S-Video"},
+        {"name":"Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

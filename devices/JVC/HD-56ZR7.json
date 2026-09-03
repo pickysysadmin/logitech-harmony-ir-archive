@@ -2,6 +2,37 @@
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 94765,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"SCART1"},
+      {"name":"SCART2"},
+      {"name":"SCART3"},
+      {"name":"YUV"},
+      {"name":"composite"},
+      {"name":"HDMI"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "JVC",
-  "model": "HD-56ZR7"
+  "model": "HD-56ZR7",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 22000,
+    "pressMinRepeats": 3
+  }
 }

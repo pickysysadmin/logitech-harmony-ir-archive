@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ae/ae1cf84c73c76572.json",
   "deviceType": 34,
   "globalDeviceId": 177071,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VideoInput","to":"Tuner"},{"set":"InputType","to":"DVD"}],"name":"DVDTuner"},
+      {"commands":[{"set":"VideoInput","to":"Input1"},{"set":"InputType","to":"DVD"}],"name":"DVDInput1"},
+      {"commands":[{"set":"VideoInput","to":"Input2"},{"set":"InputType","to":"DVD"}],"name":"DVDInput2"},
+      {"commands":[{"set":"VideoInput","to":"Input3"},{"set":"InputType","to":"DVD"}],"name":"DVDInput3"},
+      {"commands":[{"set":"VideoInput","to":"DV"},{"set":"InputType","to":"DVD"}],"name":"DVDDV"},
+      {"commands":[{"set":"VideoInput","to":"Tuner"},{"set":"InputType","to":"HDD"}],"name":"HDDTuner"},
+      {"commands":[{"set":"VideoInput","to":"Input1"},{"set":"InputType","to":"HDD"}],"name":"HDDInput1"},
+      {"commands":[{"set":"VideoInput","to":"Input2"},{"set":"InputType","to":"HDD"}],"name":"HDDInput2"},
+      {"commands":[{"set":"VideoInput","to":"Input3"},{"set":"InputType","to":"HDD"}],"name":"HDDInput3"},
+      {"commands":[{"set":"VideoInput","to":"DV"},{"set":"InputType","to":"HDD"}],"name":"HDDDV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "DVR-630H-S"
+  "model": "DVR-630H-S",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["Dvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["Hdd"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Input1"},
+        {"name":"Input2"},
+        {"name":"Input3"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

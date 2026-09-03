@@ -2,6 +2,57 @@
   "codeset": "codesets/e1/e17251010a809b6b.json",
   "deviceType": 34,
   "globalDeviceId": 164321,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DTT"}],"name":"DTT"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"External"},{"set":"ExternalInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"External"},{"set":"ExternalInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"External"},{"set":"ExternalInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"External"},{"set":"ExternalInput","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"External"},{"set":"ExternalInput","to":"DV"}],"name":"DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "DVD-SH855M"
+  "model": "DVD-SH855M",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ExternalInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DTT","select":[{"commands":["Dtv/Analog"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["TV/DVD"],"setType":2}]},
+        {"name":"External","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

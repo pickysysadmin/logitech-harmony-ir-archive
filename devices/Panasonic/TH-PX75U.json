@@ -2,6 +2,39 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 169646,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntA"],"name":"ANTENNA"},
+      {"commands":["InputComponent1",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext"],"name":"HDMI1"},
+      {"commands":["InputComponent1",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext"],"name":"HDMI2"},
+      {"commands":["InputComponent1"],"name":"Component1"},
+      {"commands":["InputComponent1"],"name":"Component2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-PX75U"
+  "model": "TH-PX75U",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":500},
+      "PowerOff"
+    ],
+    "on": [
+      "PowerOn",
+      {"delayMs":500},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

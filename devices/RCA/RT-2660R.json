@@ -2,6 +2,34 @@
   "codeset": "codesets/13/1394e7516b49787e.json",
   "deviceType": 5,
   "globalDeviceId": 8175,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputSat"],"name":"SAT"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVCR"],"name":"VCR1"},
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputAux"],"name":"VCR2"},
+      {"commands":["InputTape"],"name":"TAPE"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "RT-2660R"
+  "model": "RT-2660R",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

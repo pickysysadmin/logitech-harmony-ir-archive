@@ -2,6 +2,31 @@
   "codeset": "codesets/30/30ec9cb54963499c.json",
   "deviceType": 2,
   "globalDeviceId": 75061,
+  "inputs": {
+    "list": [
+      {"name":"Antenna"},
+      {"name":"Line IN"}
+    ],
+    "next": ["Mode"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "SV-80K"
+  "model": "SV-80K",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

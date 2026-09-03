@@ -2,6 +2,36 @@
   "codeset": "codesets/d6/d68f2c5079aa7f95.json",
   "deviceType": 5,
   "globalDeviceId": 154099,
+  "inputs": {
+    "list": [
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Composite"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputTape"],"name":"Tape","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Optical"]},
+      {"commands":["InputMultiCh"],"name":"Multi-CH","ports":["Aux"]},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SR505"
+  "model": "TX-SR505",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

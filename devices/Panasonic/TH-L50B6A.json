@@ -1,7 +1,65 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/a4/a40a09c88b762269.json",
   "deviceType": 1,
   "globalDeviceId": 257291,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AV 1"},{"set":"AV1Input","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"AV 1"},{"set":"AV1Input","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Digital TV"}],"name":"Digital TV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Analogue TV"}],"name":"Analogue TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-L50B6A"
+  "model": "TH-L50B6A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV1Input": {
+      "finish": ["OK"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"Video"},
+        {"name":"Component"}
+      ]
+    },
+    "InputType": {
+      "next": ["AV"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"AV1"},
+        {"name":"AV 2"},
+        {"name":"TV"}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"Digital TV"},
+        {"name":"Analogue TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/05/053c2c25f93fca2c.json",
   "deviceType": 1,
   "globalDeviceId": 269525,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","Exit","InputTv"],"name":"TV"},
+      {"commands":["Exit","Exit","InputExt1"],"name":"Ext 1"},
+      {"commands":["Exit","Exit","InputExt2"],"name":"Ext 2"},
+      {"commands":["Exit","Exit","InputExt3"],"name":"HDMI 1"},
+      {"commands":["Exit","Exit","InputExt4"],"name":"HDMI 2"},
+      {"commands":["Exit","Exit","InputExt5"],"name":"HDMI 3"},
+      {"commands":["Exit","Exit","InputExt6"],"name":"HDMI 4"},
+      {"commands":["Exit","Exit","InputExt7"],"name":"PC"},
+      {"commands":["Exit","Exit","InputExt7","Input"],"name":"Home Network(DLNA)"},
+      {"commands":["Exit","Exit","InputExt7","Input","Input"],"name":"USB"},
+      {"commands":["Exit","Exit","Home",{"delayMs":2000},"Home"],"name":"SmartCentral"},
+      {"commands":["Exit","Exit","Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-70UD20EN"
+  "model": "LC-70UD20EN",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,37 @@
   "codeset": "codesets/97/97d1c9d11eaf2852.json",
   "deviceType": 1,
   "globalDeviceId": 180978,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo2",{"delayMs":500},"InputAv",{"delayMs":500},"DirectionDown","Select"],"name":"AV3"},
+      {"commands":["InputVideo2",{"delayMs":500},"InputAv",{"delayMs":500},"DirectionDown","DirectionDown","Select"],"name":"AV4"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi2",{"delayMs":500},"InputAv",{"delayMs":500},"DirectionDown","Select"],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PV70H"
+  "model": "TH-42PV70H",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,45 @@
   "codeset": "codesets/7a/7a5215e20f81eb97.json",
   "deviceType": 34,
   "globalDeviceId": 103950,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DV"}],"name":"DV"},
+      {"commands":[{"set":"InputType","to":"AVinput"},{"set":"AVinputInput","to":"PR01"}],"name":"PR01"},
+      {"commands":[{"set":"InputType","to":"AVinput"},{"set":"AVinputInput","to":"CVBS-H"}],"name":"CVBS-H"},
+      {"commands":[{"set":"InputType","to":"AVinput"},{"set":"AVinputInput","to":"S-VIDEO"}],"name":"S-VIDEO"},
+      {"commands":[{"set":"InputType","to":"AVinput"},{"set":"AVinputInput","to":"CVBS-F"}],"name":"CVBS-F"},
+      {"commands":[{"set":"InputType","to":"AVinput"},{"set":"AVinputInput","to":"EuroAV"}],"name":"EuroAV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Ellion",
-  "model": "DTR-850D"
+  "model": "DTR-850D",
+  "states": {
+    "AVinputInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"PR01"},
+        {"name":"CVBS-H"},
+        {"name":"S-VIDEO"},
+        {"name":"CVBS-F"},
+        {"name":"EuroAV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DV","select":[{"commands":["InputDv"],"setType":2}]},
+        {"name":"AVinput","select":[{"commands":["InputAv",{"set":"AVinputInput","to":"PR01"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

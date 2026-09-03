@@ -2,6 +2,36 @@
   "codeset": "codesets/1c/1c5b4d08f445197f.json",
   "deviceType": 34,
   "globalDeviceId": 86466,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"FrontComp"},
+      {"name":"FrontSV"},
+      {"name":"RearComp"},
+      {"name":"RearSV"},
+      {"name":"SCART"},
+      {"name":"DV"}
+    ],
+    "next": ["InputTv/Monitor"],
+    "type": 2
+  },
   "manufacturer": "Audix",
-  "model": "HDV-7080"
+  "model": "HDV-7080",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

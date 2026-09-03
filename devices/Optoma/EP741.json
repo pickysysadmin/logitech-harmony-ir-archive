@@ -2,6 +2,33 @@
   "codeset": "codesets/91/91cd3eda51a0d996.json",
   "deviceType": 7,
   "globalDeviceId": 56952,
+  "inputs": {
+    "list": [
+      {"commands":["InputVGA"],"name":"Computer"},
+      {"commands":["InputVideo"],"name":"Composite Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "EP741"
+  "model": "EP741",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

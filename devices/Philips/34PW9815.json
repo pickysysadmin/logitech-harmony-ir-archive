@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f8/f85bada5f8fd15c8.json",
   "deviceType": 1,
   "globalDeviceId": 55638,
+  "inputs": {
+    "list": [
+      {"commands":["InputHDTV","ChannelUp"],"name":"Tuner"},
+      {"commands":["InputHDTV","ChannelUp","InputCable","InputCable"],"name":"Side"},
+      {"commands":["InputHDTV","ChannelUp","InputCable","InputCable","InputCable"],"name":"AV1"},
+      {"commands":["InputHDTV","ChannelUp","InputCable","InputCable","InputCable","InputCable","InputCable","InputCable"],"name":"AV2"},
+      {"commands":["InputDvd"],"name":"AV3"},
+      {"commands":["InputHDTV"],"name":"AV4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "34PW9815"
+  "model": "34PW9815",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,69 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 51518,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Antenna A"}],"name":"Antenna A"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Antenna B"}],"name":"Antenna B"},
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"S-Video 1"}],"name":"S-Video 1"},
+      {"commands":[{"set":"InputType","to":"S-Video 2"}],"name":"S-Video 2"},
+      {"commands":[{"set":"InputType","to":"S-Video 3"}],"name":"S-Video 3"},
+      {"commands":[{"set":"InputType","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HL-P5674WX"
+  "model": "HL-P5674WX",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "finish": ["Exit"],
+      "next": ["DirectionDown"],
+      "start": ["Menu","DirectionDown","DirectionDown","DirectionDown","Select","Select"],
+      "values": [
+        {"name":"Antenna A"},
+        {"name":"Antenna B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["InputAntenna"],"setType":2}]},
+        {"name":"AV1","select":[{"commands":["InputVideo"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["InputVideo","TvVideo"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":["InputVideo","TvVideo","TvVideo"],"setType":1}]},
+        {"name":"S-Video 1","select":[{"commands":["InputSVideo"],"setType":1}]},
+        {"name":"S-Video 2","select":[{"commands":["InputSVideo","InputNext"],"setType":1}]},
+        {"name":"S-Video 3","select":[{"commands":["InputSVideo","InputNext","InputNext"],"setType":1}]},
+        {"name":"Component 1","select":[{"commands":["InputComponent 1"],"setType":1}]},
+        {"name":"Component 2","select":[{"commands":["InputComponent 2"],"setType":1}]},
+        {"name":"DVI","select":[{"commands":["InputDvi3"],"setType":1}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"RGB","select":[{"commands":["InputRGB"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

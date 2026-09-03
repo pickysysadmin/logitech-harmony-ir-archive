@@ -2,6 +2,54 @@
   "codeset": "codesets/d6/d6de5e9d03afc652.json",
   "deviceType": 47,
   "globalDeviceId": 158152,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/VCR"},{"set":"DVD/VCRInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"DVD/VCRInput","to":"VCR"},{"set":"VcrInputsInput","to":"VCRTuner"}],"name":"VCRTuner"},
+      {"commands":[{"set":"DVD/VCRInput","to":"VCR"},{"set":"VcrInputsInput","to":"VCRInput 1"}],"name":"VCRInput 1"},
+      {"commands":[{"set":"DVD/VCRInput","to":"VCR"},{"set":"VcrInputsInput","to":"VCRInput 2"}],"name":"VCRInput 2"},
+      {"commands":[{"set":"DVD/VCRInput","to":"VCR"},{"set":"VcrInputsInput","to":"VCRDV"}],"name":"VCRDV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-E35V"
+  "model": "DMR-E35V",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVD/VCRInput": {
+      "next": ["DriveSelect"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"VCR"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/VCR","select":[{"commands":["DriveSelect"],"setType":2}]},
+        {"name":"VcrInputs","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VcrInputsInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VCRTuner"},
+        {"name":"VCRInput 1"},
+        {"name":"VCRInput 2"},
+        {"name":"VCRDV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

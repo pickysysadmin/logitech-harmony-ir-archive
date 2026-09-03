@@ -2,6 +2,37 @@
   "codeset": "codesets/2f/2faf1eb0a0d53c8f.json",
   "deviceType": 1,
   "globalDeviceId": 153095,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"DigiTV/XBOX"},
+      {"name":"DVD"},
+      {"name":"AV 2"},
+      {"name":"AV 3"},
+      {"name":"XBOX360"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "32PFL-5223"
+  "model": "32PFL-5223",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DigiTV/XBOX"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

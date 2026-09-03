@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "greaterTen": ["Greater10"]
+  },
   "codeset": "codesets/2d/2d63f36550a8c822.json",
   "deviceType": 25,
   "globalDeviceId": 133177,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputVcr"],"name":"VHS"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "NV-VP33"
+  "model": "NV-VP33",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"A1"},
+        {"name":"A2"},
+        {"name":"A3"},
+        {"name":"DC"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

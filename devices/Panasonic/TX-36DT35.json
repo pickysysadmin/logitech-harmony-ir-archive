@@ -2,6 +2,55 @@
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 157490,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Av"},{"delayMs":400},{"set":"AVS","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Av"},{"delayMs":400},{"set":"AVS","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Av"},{"delayMs":400},{"set":"AVS","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"TV/AV"}
+    ],
+    "start": ["Menu"],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-36DT35"
+  "model": "TX-36DT35",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Tv"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVS": {
+      "start": ["Blue"],
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":1}]}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["TvVideo",{"delayMs":300}],"setType":2}]},
+        {"name":"Av","select":[{"commands":["TvVideo",{"delayMs":500}],"setType":2}]}
+      ]
+    },
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["Teletext"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Teletext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

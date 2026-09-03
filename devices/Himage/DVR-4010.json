@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/94/94f9d463b2f722fa.json",
   "deviceType": 34,
   "globalDeviceId": 25322,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Video1"}
+    ],
+    "next": ["Dvd/Tv"],
+    "type": 2
+  },
   "manufacturer": "Himage",
-  "model": "DVR-4010"
+  "model": "DVR-4010",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

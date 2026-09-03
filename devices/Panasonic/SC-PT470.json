@@ -2,6 +2,49 @@
   "codeset": "codesets/0e/0e8294caa036fa0c.json",
   "deviceType": 22,
   "globalDeviceId": 178117,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"USB/iPod"}],"name":"USB/iPod"},
+      {"commands":[{"set":"InputType","to":"Radio/EXT-IN"},{"set":"Radio/EXT-INInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio/EXT-IN"},{"set":"Radio/EXT-INInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Radio/EXT-IN"},{"set":"Radio/EXT-INInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Radio/EXT-IN"},{"set":"Radio/EXT-INInput","to":"D-IN"}],"name":"D-IN"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PT470"
+  "model": "SC-PT470",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"USB/iPod","select":[{"commands":["InputiPod/USB"],"setType":2}]},
+        {"name":"Radio/EXT-IN","select":[{"commands":["InputNext",{"set":"Radio/EXT-INInput","to":"FM"}],"setType":2}]}
+      ]
+    },
+    "Radio/EXT-INInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AV"},
+        {"name":"AUX"},
+        {"name":"D-IN"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

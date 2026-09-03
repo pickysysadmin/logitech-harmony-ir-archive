@@ -2,6 +2,31 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 209800,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Tv"},
+      {"commands":["InputNext"],"name":"AV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Bluesky",
-  "model": "TX-51"
+  "model": "TX-51",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tv"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

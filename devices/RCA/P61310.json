@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/4f/4fdd4bfc41bdafcb.json",
   "deviceType": 1,
   "globalDeviceId": 166976,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntennaA"],"name":"AntennaA"},
+      {"commands":["InputAntennaB"],"name":"AntennaB"},
+      {"commands":["InputVideo1"],"name":"Video1"},
+      {"commands":["InputVideo2","InputNext"],"name":"Video2"},
+      {"commands":["InputVideo3","InputNext","InputNext"],"name":"Video3"},
+      {"commands":["InputVideo4","InputNext","InputNext","InputNext"],"name":"Front"},
+      {"commands":["InputSat/Cable"],"name":"Component"},
+      {"commands":["InputS-Video"],"name":"S-Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "P61310"
+  "model": "P61310",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

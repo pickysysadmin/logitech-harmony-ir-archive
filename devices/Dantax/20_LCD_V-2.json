@@ -2,6 +2,47 @@
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 156372,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"SCART1"},
+      {"name":"SCART1 RGB"},
+      {"name":"SCART2"},
+      {"name":"SCART2 RGB"},
+      {"name":"SCART3"},
+      {"name":"SCART4"},
+      {"name":"PC"},
+      {"name":"DVI"},
+      {"name":"FAV"},
+      {"name":"S-Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Dantax",
-  "model": "20 LCD V-2"
+  "model": "20 LCD V-2",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 2
+  }
 }

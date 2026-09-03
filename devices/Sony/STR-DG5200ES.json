@@ -2,6 +2,66 @@
   "codeset": "codesets/d7/d7189be3d49c1a5e.json",
   "deviceType": 5,
   "globalDeviceId": 159250,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV/SAT"}],"name":"TV/SAT"},
+      {"commands":[{"set":"InputType","to":"TAPE/CDR"}],"name":"TAPE/CDR"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"MD.Dat"}],"name":"MD.Dat"},
+      {"commands":[{"set":"InputType","to":"SACD/CD"}],"name":"SACD/CD"},
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"MultiCh"}],"name":"MultiCh"},
+      {"commands":[{"set":"InputType","to":"M1"}],"name":"M1"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"XM"}],"name":"XM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "STR-DG5200ES"
+  "model": "STR-DG5200ES",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV/SAT","select":[{"commands":["InputTv/Sat"],"setType":2}]},
+        {"name":"TAPE/CDR","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"MD.Dat","select":[{"commands":["InputMd/Tape"],"setType":2}]},
+        {"name":"SACD/CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Phono","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"MultiCh","select":[{"commands":["Input5.1Ch"],"setType":2}]},
+        {"name":"M1","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"XM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,67 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b8/b889f51a88d9740d.json",
   "deviceType": 1,
   "globalDeviceId": 181448,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"YPBPR1"}],"name":"YPbPr 1"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"HDCP"}],"name":"HDCP"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"VGA-PC"}],"name":"VGA-PC"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"VGA-YPBPR2"}],"name":"VGA-YPbPr 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sceptre",
-  "model": "X42GV-Naga"
+  "model": "X42GV-Naga",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AnalogInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"YPBPR1"}
+      ]
+    },
+    "DigitalInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"DTV"},
+        {"name":"HDMI"},
+        {"name":"HDCP"},
+        {"name":"DVI"},
+        {"name":"VGA-PC"},
+        {"name":"VGA-YPBPR2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Analog","select":[{"commands":["InputVideo",{"set":"AnalogInput","to":"TV"}],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputPc",{"set":"DigitalInput","to":"DTV"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

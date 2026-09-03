@@ -2,6 +2,50 @@
   "codeset": "codesets/f6/f671ff4389fe7724.json",
   "deviceType": 22,
   "globalDeviceId": 124927,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Band"}],"name":"Band"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AuxOpt"}],"name":"AuxOpt"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AudioIn"}],"name":"AudioIn"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HT-502TH"
+  "model": "HT-502TH",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"AuxOpt"},
+        {"name":"AudioIn"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Band","select":[{"commands":["InputBand"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

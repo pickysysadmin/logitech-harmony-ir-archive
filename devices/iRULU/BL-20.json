@@ -2,6 +2,40 @@
   "codeset": "codesets/0d/0d2b9607cb441ca5.json",
   "deviceType": 7,
   "globalDeviceId": 335109,
+  "inputs": {
+    "list": [
+      {"name":"ATV"},
+      {"name":"AV"},
+      {"name":"YPbPr"},
+      {"name":"HDMI1"},
+      {"name":"HDMI2"},
+      {"name":"PC-RGB"},
+      {"name":"USB1"},
+      {"name":"USB2"}
+    ],
+    "next": ["Source"],
+    "type": 2
+  },
   "manufacturer": "iRULU",
-  "model": "BL-20"
+  "model": "BL-20",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,55 @@
   "codeset": "codesets/bb/bb95da3073a325ff.json",
   "deviceType": 1,
   "globalDeviceId": 85362,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Antenna Tuner"}],"name":"Antenna Tuner"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV3"}],"name":"AV3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Thomson",
-  "model": "25DT60H"
+  "model": "25DT60H",
+  "power": {
+    "off": ["PowerOff"],
+    "on": [
+      {"command":"1","durationMs":1500}
+    ],
+    "onReset": [
+      {"set":"InputType","to":"Antenna Tuner"},
+      {"set":"Input","to":"Antenna Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVInput": {
+      "next": [
+        "0",
+        {"delayMs":1000}
+      ],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Antenna Tuner","select":[{"commands":["1"],"setType":1}]},
+        {"name":"AV","select":[{"commands":[{"delayMs":1500},"0"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

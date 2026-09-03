@@ -2,6 +2,59 @@
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 151711,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompInput","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompInput","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompInput","to":"Tuner2"}],"name":"Tuner2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "TXP2675WHF"
+  "model": "TXP2675WHF",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"S-Video"}
+      ]
+    },
+    "CompInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"},
+        {"name":"Tuner2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["TvVideo",{"set":"AVInput","to":"Tuner"}],"setType":2}]},
+        {"name":"Comp","select":[{"commands":["InputNext",{"set":"CompInput","to":"Component1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6500,
+    "pressMinRepeats": 3
+  }
 }

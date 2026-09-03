@@ -2,6 +2,39 @@
   "codeset": "codesets/37/377edc67eeb0a685.json",
   "deviceType": 1,
   "globalDeviceId": 152773,
+  "inputs": {
+    "list": [
+      {"commands":["TvVideo","1"],"name":"TV"},
+      {"commands":["InputComponent1"],"name":"Component1"},
+      {"commands":["InputComponent2"],"name":"Component2"},
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["InputVideo1"],"name":"Video1"},
+      {"commands":["InputVideo2"],"name":"Video2"},
+      {"commands":["InputVideo3"],"name":"Video3"},
+      {"commands":["Sd"],"name":"SD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-50PE8U"
+  "model": "TH-50PE8U",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1500}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2500}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

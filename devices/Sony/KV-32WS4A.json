@@ -2,6 +2,37 @@
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 66968,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"TV"},
+      {"name":"TV S-VHS"},
+      {"name":"DVD"},
+      {"name":"DVD S-VHS"},
+      {"name":"Vorne"},
+      {"name":"YC3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KV-32WS4A"
+  "model": "KV-32WS4A",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

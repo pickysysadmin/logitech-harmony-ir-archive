@@ -2,6 +2,47 @@
   "codeset": "codesets/50/50768bb231b636cc.json",
   "deviceType": 22,
   "globalDeviceId": 137304,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"LINE"},{"set":"LINEInput","to":"Line1"}],"name":"Line 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"LINE"},{"set":"LINEInput","to":"Line2"}],"name":"Line 2","ports":["Coaxial"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "HTS-7000AV"
+  "model": "HTS-7000AV",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"LINE","select":[{"commands":["InputLine"],"setType":2}]}
+      ]
+    },
+    "LINEInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"Line1"},
+        {"name":"Line2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

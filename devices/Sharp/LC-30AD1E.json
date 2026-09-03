@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/90/90521bcdad3e7cd7.json",
   "deviceType": 1,
   "globalDeviceId": 163643,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"DTV"},
+      {"name":"DVDRec"},
+      {"name":"Input 2"},
+      {"name":"Movies"},
+      {"name":"Games"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "start": ["Menu"],
+    "type": 4
+  },
   "manufacturer": "Sharp",
-  "model": "LC-30AD1E"
+  "model": "LC-30AD1E",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DTV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

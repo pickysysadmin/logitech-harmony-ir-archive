@@ -2,6 +2,87 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 156460,
+  "inputs": {
+    "list": [
+      {"name":"Component (SAT)"},
+      {"name":"PC"},
+      {"name":"HDMI1(DVD)"},
+      {"name":"TV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PV70EH"
+  "model": "TH-42PV70EH",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"},
+      {"set":"Input","to":"Component (SAT)"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2/AV2SInput": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "AV3/AV3SInput": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AV4/AV4SInput": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4S"}
+      ]
+    },
+    "DigitalInput": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"Componente"},
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV/AV","select":[{"commands":[{"set":"TV/AVInput","to":"TV"}],"setType":2}]},
+        {"name":"VIDEO1","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Red","Red"],"setType":1}]},
+        {"name":"VIDEO2","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Green","Green"],"setType":2}]},
+        {"name":"VIDEO3","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Yellow","Yellow"],"setType":2}]},
+        {"name":"VIDEO4","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Green"],"setType":2}]}
+      ]
+    },
+    "RedBlueInput": {
+      "values": [
+        {"name":"Red","select":[{"commands":["Red","Red"],"setType":2}]},
+        {"name":"Blue","select":[{"commands":["Blue","Blue"],"setType":2}]}
+      ]
+    },
+    "TV/AVInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 4000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

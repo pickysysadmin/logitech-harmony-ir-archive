@@ -2,6 +2,60 @@
   "codeset": "codesets/7d/7d84bb2145046de2.json",
   "deviceType": 22,
   "globalDeviceId": 212685,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Home"}],"name":"Home"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Portable"}],"name":"Portable"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI IN 1"}],"name":"HDMI IN 1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI IN 2"}],"name":"HDMI IN 2"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"Remote iPod"}],"name":"Remote iPod"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"OSD iPod"}],"name":"OSD iPod"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HLB34S"
+  "model": "HLB34S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"FM"},
+        {"name":"Portable"},
+        {"name":"Optical"},
+        {"name":"HDMI IN 1"},
+        {"name":"HDMI IN 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Home","select":[{"commands":["Home"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["iPod"],"setType":2}]}
+      ]
+    },
+    "iPodInput": {
+      "next": ["iPod"],
+      "values": [
+        {"name":"Remote iPod"},
+        {"name":"OSD iPod"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 23000,
+    "pressMinRepeats": 1
+  }
 }

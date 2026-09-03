@@ -2,6 +2,50 @@
   "codeset": "codesets/fb/fbadba71e7c4726c.json",
   "deviceType": 7,
   "globalDeviceId": 252095,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"}],"name":"Computer"},
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"Video/S-Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video/S-Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-FX400"
+  "model": "PT-FX400",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"DVI","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"Video/S-Video","select":[{"commands":["InputVideo/S-Video"],"setType":2}]},
+        {"name":"Network","select":[{"commands":["InputNetwork"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo/S-Video"],
+      "values": [
+        {"name":"Video"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

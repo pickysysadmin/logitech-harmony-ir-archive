@@ -2,6 +2,58 @@
   "codeset": "codesets/43/43857335e4774690.json",
   "deviceType": 21,
   "globalDeviceId": 480478,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"DAB"}],"name":"DAB","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Internet Radio"}],"name":"Internet Radio","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Spotify"}],"name":"Spotify","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"My Music"}],"name":"My Music","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Aux1/2"},{"set":"Aux1/2Input","to":"Aux 1"}],"name":"Aux 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux1/2"},{"set":"Aux1/2Input","to":"Aux 2"}],"name":"Aux 2","ports":["Aux"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "sonoro",
-  "model": "SO-610"
+  "model": "SO-610",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux1/2Input": {
+      "next": ["InputAux1/2"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"FM","select":[{"commands":["InputFm"],"setType":2}]},
+        {"name":"DAB","select":[{"commands":["InputDab"],"setType":2}]},
+        {"name":"Internet Radio","select":[{"commands":["InputInternetRadio"],"setType":2}]},
+        {"name":"Spotify","select":[{"commands":["InputSpotify"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"My Music","select":[{"commands":["InputMyMusic"],"setType":2}]},
+        {"name":"Aux1/2","select":[{"commands":["InputAux1/2"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

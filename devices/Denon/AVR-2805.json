@@ -2,6 +2,38 @@
   "codeset": "codesets/24/242012657aa15d63.json",
   "deviceType": 5,
   "globalDeviceId": 165781,
+  "inputs": {
+    "list": [
+      {"commands":["InputPhono"],"name":"PHONO","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputVdp"],"name":"VDP","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputV-Aux"],"name":"V.AUX","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputVcr1"],"name":"VCR 1","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputVcr2"],"name":"VCR 2","ports":["Composite","S-Video"]},
+      {"commands":["InputTV"],"name":"TV","ports":["Component","Composite","S-Video"]},
+      {"commands":["InputDbs"],"name":"DBS","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputCdr/Tape"],"name":"CD-R/TAPE","ports":["Composite","Optical"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-2805"
+  "model": "AVR-2805",
+  "power": {
+    "off": ["MainZoneOff"],
+    "on": ["MainZoneOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

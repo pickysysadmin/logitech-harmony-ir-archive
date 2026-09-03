@@ -2,6 +2,32 @@
   "codeset": "codesets/82/8200dea33900bd49.json",
   "deviceType": 1,
   "globalDeviceId": 61778,
+  "inputs": {
+    "list": [
+      {"name":"E1"},
+      {"name":"E2"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "Nokia",
-  "model": "7176 Classic"
+  "model": "7176 Classic",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"E1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

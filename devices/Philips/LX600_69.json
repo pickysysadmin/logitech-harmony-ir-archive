@@ -2,6 +2,50 @@
   "codeset": "codesets/60/608bc053eed80d0e.json",
   "deviceType": 5,
   "globalDeviceId": 14813,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"DISC"},{"set":"DISCInput","to":"DISC 6CH"}],"name":"DISC 6CH"},
+      {"commands":[{"set":"InputType","to":"DISC"},{"set":"DISCInput","to":"DISC COAX"}],"name":"DISC COAX"},
+      {"commands":[{"set":"InputType","to":"DISC"},{"set":"DISCInput","to":"DISC OPT"}],"name":"DISC OPT"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "LX600/69"
+  "model": "LX600/69",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputDisc"],
+    "type": "discrete"
+  },
+  "states": {
+    "DISCInput": {
+      "next": ["InputDisc"],
+      "values": [
+        {"name":"DISC 6CH"},
+        {"name":"DISC COAX"},
+        {"name":"DISC OPT"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DISC","select":[{"commands":["InputDisc"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

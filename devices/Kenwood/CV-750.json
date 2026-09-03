@@ -2,6 +2,64 @@
   "codeset": "codesets/13/13cf694fe2ee6895.json",
   "deviceType": 5,
   "globalDeviceId": 112709,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Cable/SAT"}],"name":"Cable/SAT"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tape1/MD"}],"name":"Tape1/MD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDinput","to":"DVDAnalog"}],"name":"DVD Analog"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVDDigital"}],"name":"DVD Digital"},
+      {"commands":[{"set":"InputType","to":"LD"},{"set":"LDInput","to":"LDAnalog"}],"name":"LD Analog"},
+      {"commands":[{"set":"InputType","to":"LD"},{"set":"LDInput","to":"LDDigital"}],"name":"LD Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Kenwood",
-  "model": "CV-750"
+  "model": "CV-750",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDInput": {
+      "next": ["InputDVD"],
+      "values": [
+        {"name":"DVDAnalog"},
+        {"name":"DVDDigital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Cable/SAT","select":[{"commands":["InputCable/Sat"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCD"],"setType":2}]},
+        {"name":"Tape1/MD","select":[{"commands":["InputTape1/Md"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"LD","select":[{"commands":["InputLd"],"setType":2}]}
+      ]
+    },
+    "LDInput": {
+      "next": ["InputLd"],
+      "values": [
+        {"name":"LDAnalog"},
+        {"name":"LDDigital"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

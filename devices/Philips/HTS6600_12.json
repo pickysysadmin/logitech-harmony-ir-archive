@@ -2,6 +2,67 @@
   "codeset": "codesets/60/60ed3e008211effc.json",
   "deviceType": 22,
   "globalDeviceId": 172984,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"MP3 Line In"}],"name":"MP3 Line In","ports":["Line In"]},
+      {"commands":[{"set":"InputType","to":"Disc/USB"},{"set":"Disc/USBInput","to":"Disc"}],"name":"Disc","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Disc/USB"},{"set":"Disc/USBInput","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Aux/DI"},{"set":"Aux/DIInput","to":"AUX 1"}],"name":"AUX 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux/DI"},{"set":"Aux/DIInput","to":"AUX 2"}],"name":"AUX 2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux/DI"},{"set":"Aux/DIInput","to":"Digital In"}],"name":"Digital In","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"Tv 1"}],"name":"Tv 1","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"Tv 2"}],"name":"Tv 2","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio","ports":["FM Antenna","AM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS6600/12"
+  "model": "HTS6600/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/DIInput": {
+      "next": ["InputAUX/DI"],
+      "values": [
+        {"name":"AUX 1"},
+        {"name":"AUX 2"},
+        {"name":"Digital In"}
+      ]
+    },
+    "Disc/USBInput": {
+      "next": ["InputUSB/Disc"],
+      "values": [
+        {"name":"Disc"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"MP3 Line In","select":[{"commands":["InputMp3LineIn"],"setType":2}]},
+        {"name":"Disc/USB","select":[{"commands":["InputUSB/Disc"],"setType":2}]},
+        {"name":"Aux/DI","select":[{"commands":["InputAUX/DI"],"setType":2}]},
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]}
+      ]
+    },
+    "TvInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Tv 1"},
+        {"name":"Tv 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

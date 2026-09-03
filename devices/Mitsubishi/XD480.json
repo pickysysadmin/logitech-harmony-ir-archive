@@ -2,6 +2,48 @@
   "codeset": "codesets/7b/7bdf0b58871d2f7b.json",
   "deviceType": 7,
   "globalDeviceId": 207222,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer1"}],"name":"Computer1"},
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Computer2"},{"set":"Computer2Input","to":"Computer2"}],"name":"Computer2"},
+      {"commands":[{"set":"InputType","to":"Computer2"},{"set":"Computer2Input","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Mitsubishi",
-  "model": "XD480"
+  "model": "XD480",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "Computer2Input": {
+      "next": ["InputComputer2"],
+      "values": [
+        {"name":"Computer2"},
+        {"name":"DVI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Computer1","select":[{"commands":["InputComputer1"],"setType":2}]},
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Computer2","select":[{"commands":["InputComputer2"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 60000,
+    "pressMinRepeats": 3
+  }
 }

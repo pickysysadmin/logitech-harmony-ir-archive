@@ -2,6 +2,31 @@
   "codeset": "codesets/80/80284c4d73ee1ca5.json",
   "deviceType": 33,
   "globalDeviceId": 349844,
+  "inputs": {
+    "list": [
+      {"name":"UnBalanced","ports":["Composite"]},
+      {"name":"Balanced","ports":["AES"]},
+      {"name":"Optical","ports":["Optical"]},
+      {"name":"Coaxial","ports":["Coaxial"]},
+      {"name":"USB","ports":["USB"]}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "McIntosh",
-  "model": "MB50"
+  "model": "MB50",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

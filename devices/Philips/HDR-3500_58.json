@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/0c/0cce9987c3a9443f.json",
   "deviceType": 34,
   "globalDeviceId": 170436,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"LiveTV"},{"set":"TunerInput","to":"Tuner"}],"name":"LiveTv"},
+      {"commands":[{"set":"InputType","to":"LiveTV"},{"set":"TunerInput","to":"Ext1"}],"name":"ext1"},
+      {"commands":[{"set":"InputType","to":"LiveTV"},{"set":"TunerInput","to":"Ext2"}],"name":"ext2"},
+      {"commands":[{"set":"InputType","to":"LiveTV"},{"set":"TunerInput","to":"Cam1"}],"name":"Cam1"},
+      {"commands":[{"set":"InputType","to":"Cam2"}],"name":"Cam2"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HDR-3500/58"
+  "model": "HDR-3500/58",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"LiveTV","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["USB"],"setType":2}]},
+        {"name":"Cam2","select":[{"commands":["CAM"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["ChannelDown"],
+      "previous": ["ChannelUp"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Ext1"},
+        {"name":"Ext2"},
+        {"name":"Cam1"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

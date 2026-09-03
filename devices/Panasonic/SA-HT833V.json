@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/c7/c720e50d3a9227d9.json",
   "deviceType": 32,
   "globalDeviceId": 41899,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"DVD/VCR"},{"set":"DVDInput","to":"VCR"}],"name":"VHS"},
+      {"commands":[{"set":"InputType","to":"DVD/VCR"},{"set":"DVDInput","to":"DVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-HT833V"
+  "model": "SA-HT833V",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDInput": {
+      "next": ["InputDVD/VCR"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"VCR"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/VCR","select":[{"commands":["InputDVD/VCR",{"set":"DVDInput","to":"DVD"}],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner",{"set":"TunerInput","to":"FM"}],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

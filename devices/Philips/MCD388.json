@@ -2,6 +2,55 @@
   "codeset": "codesets/0e/0eb9aa4de756a05b.json",
   "deviceType": 22,
   "globalDeviceId": 163572,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"USB/SD"},{"set":"USB/SDInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB/SD"},{"set":"USB/SDInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Mp3Link/Aux"},{"set":"Mp3Link/AuxInput","to":"Mp3Link"}],"name":"Mp3Link"},
+      {"commands":[{"set":"InputType","to":"Mp3Link/Aux"},{"set":"Mp3Link/AuxInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "MCD388"
+  "model": "MCD388",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"USB/SD","select":[{"commands":["InputUsb/SD"],"setType":2}]},
+        {"name":"Mp3Link/Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "Mp3Link/AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Mp3Link"},
+        {"name":"Aux"}
+      ]
+    },
+    "USB/SDInput": {
+      "next": ["InputUsb/SD"],
+      "values": [
+        {"name":"USB"},
+        {"name":"SD"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

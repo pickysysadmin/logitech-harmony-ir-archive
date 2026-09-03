@@ -2,6 +2,44 @@
   "codeset": "codesets/b8/b8db576dcb1eab08.json",
   "deviceType": 5,
   "globalDeviceId": 81941,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"6CHLOCK","to":"Unlock"},"InputPhono"],"name":"Aux"},
+      {"commands":[{"set":"6CHLOCK","to":"Unlock"},"InputVcr1"],"name":"VCR"},
+      {"commands":[{"set":"6CHLOCK","to":"Unlock"},"InputVcr2"],"name":"VCR2"},
+      {"commands":[{"set":"6CHLOCK","to":"Unlock"},"InputAux"],"name":"V-AUX"},
+      {"commands":[{"set":"6CHLOCK","to":"Unlock"},"InputTv/Dbs"],"name":"D-TV/CBL"},
+      {"commands":[{"set":"6CHLOCK","to":"Unlock"},"InputDvd"],"name":"DVD"},
+      {"commands":[{"set":"6CHLOCK","to":"Unlock"},"InputMd/Cdr"],"name":"MD/CD-R"},
+      {"commands":[{"set":"6CHLOCK","to":"Unlock"},"InputTuner"],"name":"Tuner"},
+      {"commands":[{"set":"6CHLOCK","to":"Unlock"},"InputCd/Md"],"name":"CD"},
+      {"commands":[{"set":"6CHLOCK","to":"Lock"}],"name":"6CH"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V52"
+  "model": "RX-V52",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "6CHLOCK": {
+      "next": ["InputMultiChannel"],
+      "values": [
+        {"name":"Lock"},
+        {"name":"Unlock"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

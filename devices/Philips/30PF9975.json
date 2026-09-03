@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/95/95a15efca9f82c83.json",
   "deviceType": 1,
   "globalDeviceId": 163568,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"EXT1"},
+      {"commands":["InputVideo2"],"name":"EXT2"},
+      {"commands":["InputVideo3"],"name":"EXT3"},
+      {"commands":["InputVideo4"],"name":"YPbPr"},
+      {"commands":["InputVideo5"],"name":"Front"},
+      {"commands":["InputVideo6"],"name":"VGA"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "30PF9975"
+  "model": "30PF9975",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"EXT1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

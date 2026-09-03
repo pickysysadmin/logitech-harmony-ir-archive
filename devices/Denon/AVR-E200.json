@@ -2,6 +2,39 @@
   "codeset": "codesets/42/421da6394925158e.json",
   "deviceType": 5,
   "globalDeviceId": 250538,
+  "inputs": {
+    "list": [
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Composite","Coaxial"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Composite"]},
+      {"commands":["InputBluray"],"name":"Bluray","ports":["HDMI"]},
+      {"commands":["InputGame"],"name":"Game","ports":["HDMI"]},
+      {"commands":["InputAux"],"name":"Aux","ports":["HDMI"]},
+      {"commands":["InputPortable"],"name":"Portable","ports":["Portable"]},
+      {"commands":["InputTvAudio"],"name":"TV Audio","ports":["Optical"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["QuickSelect1"],"name":"QuickSelect 1","ports":["Streaming"]},
+      {"commands":["QuickSelect2"],"name":"QuickSelect 2","ports":["Streaming"]},
+      {"commands":["QuickSelect3"],"name":"QuickSelect 3","ports":["Streaming"]},
+      {"commands":["QuickSelect4"],"name":"QuickSelect 4","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-E200"
+  "model": "AVR-E200",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,64 @@
   "codeset": "codesets/77/7751a3f7ad47d16b.json",
   "deviceType": 1,
   "globalDeviceId": 155057,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv\\Dtv"},{"set":"Tv\\DtvInput","to":"Tv"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Tv\\Dtv"},{"set":"Tv\\DtvInput","to":"Dtv"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"Ext 1"}],"name":"Ext 1"},
+      {"commands":[{"set":"InputType","to":"Ext 2"}],"name":"Ext 2"},
+      {"commands":[{"set":"InputType","to":"Av"}],"name":"Av"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "LE-46A686"
+  "model": "LE-46A686",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Ext 1","select":[{"commands":["InputExt1"],"setType":2}]},
+        {"name":"Ext 2","select":[{"commands":["InputExt2"],"setType":2}]},
+        {"name":"Av","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"Pc","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHDMI1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHDMI2"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"HDMI 4","select":[{"commands":["InputHdmi3","InputNext"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["W.Link"],"setType":2}]},
+        {"name":"Tv\\Dtv","select":[{"commands":["TV/DTV"],"setType":2}]}
+      ]
+    },
+    "Tv\\DtvInput": {
+      "next": ["TV/DTV"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Dtv"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

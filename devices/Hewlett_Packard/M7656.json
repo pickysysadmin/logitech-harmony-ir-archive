@@ -2,6 +2,36 @@
   "codeset": "codesets/c1/c14a1578ae534a3e.json",
   "deviceType": 35,
   "globalDeviceId": 123966,
+  "inputs": {
+    "list": [
+      {"commands":["GreenButton"],"name":"My DVD"},
+      {"commands":[{"delayMs":2000},"DvdMenu","DirectionUp","DirectionUp","DirectionUp","DirectionUp","Enter"],"name":"My Videos"},
+      {"commands":["Green","DirectionUp","DirectionUp","DirectionUp","DirectionUp","Enter"],"name":"My Pictures"},
+      {"commands":["MyMusic"],"name":"My TV"},
+      {"commands":["MyMusic"],"name":"My Music"},
+      {"commands":["Green"],"name":"HP Photosmart"},
+      {"commands":["Green","DirectionUp","DirectionUp","DirectionUp","DirectionUp","Enter"],"name":"DVD"},
+      {"commands":["GreenButton"],"name":"AV2"},
+      {"commands":["Green"],"name":"0"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hewlett Packard",
-  "model": "M7656"
+  "model": "M7656",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

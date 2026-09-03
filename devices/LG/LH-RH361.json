@@ -2,6 +2,60 @@
   "codeset": "codesets/a2/a2689f8af36f6fd5.json",
   "deviceType": 22,
   "globalDeviceId": 182330,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"OPT"}],"name":"OPT"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV4"}],"name":"AV4"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"DV"}],"name":"DV"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LH-RH361"
+  "model": "LH-RH361",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["AV"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"OPT"},
+        {"name":"AV3"},
+        {"name":"AV4"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["AV"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["FM/AM"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["FM/AM"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

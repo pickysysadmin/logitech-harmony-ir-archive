@@ -2,6 +2,40 @@
   "codeset": "codesets/34/34a1dae73d9cc362.json",
   "deviceType": 34,
   "globalDeviceId": 165436,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"HDD"}
+    ],
+    "next": ["HDD/DVD"],
+    "type": 2
+  },
   "manufacturer": "Medion",
-  "model": "MD-81888"
+  "model": "MD-81888",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["Source"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Front AV"},
+        {"name":"SCART"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

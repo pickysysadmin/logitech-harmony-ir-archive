@@ -2,6 +2,63 @@
   "codeset": "codesets/47/4733594a17b27073.json",
   "deviceType": 22,
   "globalDeviceId": 49786,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVDOPT1"}],"name":"DVD OPT1"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TVAUX"}],"name":"TV (AUX)"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TVOPT2"}],"name":"TV OPT2"},
+      {"commands":[{"set":"InputType","to":"VCREXT"}],"name":"VCR (EXT)"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-DT310"
+  "model": "SA-DT310",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDInput": {
+      "next": ["InputDvd/Cd"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"DVDOPT1"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner/Band"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv/Aux"],"setType":2}]},
+        {"name":"VCREXT","select":[{"commands":["InputVcr/Ext"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv/Aux"],
+      "values": [
+        {"name":"TVAUX"},
+        {"name":"TVOPT2"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner/Band"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

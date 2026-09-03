@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/16/16753ab4abb8e718.json",
   "deviceType": 1,
   "globalDeviceId": 180117,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"Tv","ports":["Antenna"]},
+      {"commands":["InputAv1"],"name":"Av","ports":["Composite"]},
+      {"commands":["InputComponent1"],"name":"Component","ports":["Component"]},
+      {"commands":["InputPc"],"name":"Pc","ports":["PC"]},
+      {"commands":["InputHdmi1"],"name":"Hdmi1/Dvi","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"Hdmi2","ports":["HDMI"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "LN-40B500P3F"
+  "model": "LN-40B500P3F",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

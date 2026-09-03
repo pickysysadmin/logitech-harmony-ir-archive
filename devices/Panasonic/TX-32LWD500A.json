@@ -2,6 +2,86 @@
   "codeset": "codesets/1f/1f18a2d4e66095f4.json",
   "deviceType": 1,
   "globalDeviceId": 241971,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV1/HDMI"},{"set":"AV1/HDMI","to":"AV1"},{"set":"Menu","to":"OFF"}],"name":"AV1"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV1/HDMI"},{"set":"AV1/HDMI","to":"HDMI"},{"set":"Menu","to":"OFF"}],"name":"HDMI"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV2/PC"},{"set":"AV2/PC","to":"AV2"},{"set":"Menu","to":"OFF"}],"name":"AV2"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV2/PC"},{"set":"AV2/PC","to":"PC"},{"set":"Menu","to":"OFF"}],"name":"PC"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV3"},{"set":"Menu","to":"OFF"}],"name":"AV3"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV4"},{"set":"Menu","to":"OFF"}],"name":"AV4"},
+      {"commands":[{"set":"INPUTMODE","to":"TV"},{"set":"TunerInput","to":"DVB"}],"name":"DVB"},
+      {"commands":[{"set":"INPUTMODE","to":"TV"},{"set":"TunerInput","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-32LWD500A"
+  "model": "TX-32LWD500A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV1/HDMI": {
+      "next": ["Red"],
+      "values": [
+        {"name":"HDMI"},
+        {"name":"AV1"}
+      ]
+    },
+    "AV2/PC": {
+      "next": ["Green"],
+      "values": [
+        {"name":"PC"},
+        {"name":"AV2"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV1/HDMI","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"AV4","select":[{"commands":["Blue"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":2}]},
+        {"name":"AV2/PC","select":[{"commands":["Green"],"setType":2}]}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "TvVideo",
+        {"set":"Menu","to":"ON"}
+      ],
+      "values": [
+        {"name":"AV"},
+        {"name":"TV"}
+      ]
+    },
+    "Menu": {
+      "values": [
+        {"name":"OFF","select":[{"commands":["Select"],"setType":2}]},
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["Mode"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DVB"}
+      ]
+    },
+    "menu": {
+      "values": [
+        {"name":"Off"},
+        {"name":"On","select":[{"commands":["Red"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

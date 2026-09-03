@@ -2,6 +2,34 @@
   "codeset": "codesets/c0/c08fdc61e8eaab82.json",
   "deviceType": 1,
   "globalDeviceId": 106308,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"InputAV1"},
+      {"name":"InputAV2"},
+      {"name":"InputAV3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Thomson",
-  "model": "32EX45ES"
+  "model": "32EX45ES",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

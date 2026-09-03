@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/8a/8ac5f4557654e26b.json",
   "deviceType": 34,
   "globalDeviceId": 167443,
+  "inputs": {
+    "list": [
+      {"commands":["Disc"],"name":"DISC"},
+      {"commands":["USB"],"name":"USB"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "DVDR3480/31"
+  "model": "DVDR3480/31",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"CAM"},
+        {"name":"EXT2"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

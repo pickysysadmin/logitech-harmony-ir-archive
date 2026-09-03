@@ -2,6 +2,39 @@
   "codeset": "codesets/26/260d24699f5f1004.json",
   "deviceType": 7,
   "globalDeviceId": 42411,
+  "inputs": {
+    "list": [
+      {"name":"analog YPBPR"},
+      {"name":"S-Video"},
+      {"name":"Composite"},
+      {"name":"Analog RGB1"},
+      {"name":"Analog RGB2"}
+    ],
+    "next": ["InputNext"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "BenQ",
-  "model": "PB-7210 XGA"
+  "model": "PB-7210 XGA",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":2500},
+      {"delayMs":600},
+      {"command":"PowerToggle","durationMs":2500}
+    ],
+    "on": [
+      {"command":"PowerToggle","durationMs":2500}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

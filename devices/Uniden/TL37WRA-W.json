@@ -2,6 +2,55 @@
   "codeset": "codesets/b1/b1ee861da0192970.json",
   "deviceType": 1,
   "globalDeviceId": 216755,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv/Video"},{"set":"Tv/VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Tv/Video"},{"set":"Tv/VideoInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Tv/Video"},{"set":"Tv/VideoInput","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Tv/Video"},{"set":"Tv/VideoInput","to":"Video 4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Uniden",
-  "model": "TL37WRA-W"
+  "model": "TL37WRA-W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HdmiInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv/Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    },
+    "Tv/VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Video 3"},
+        {"name":"Video 4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

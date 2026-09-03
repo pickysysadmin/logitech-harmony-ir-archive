@@ -2,6 +2,33 @@
   "codeset": "codesets/e0/e03af8e3b390af2c.json",
   "deviceType": 19,
   "globalDeviceId": 256466,
+  "inputs": {
+    "list": [
+      {"commands":["InputAes/Ebu"],"name":"AES/EBU","ports":["AES/EBU"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]},
+      {"commands":["InputOpt"],"name":"OPT","ports":["Optical"]},
+      {"commands":["InputAnalog"],"name":"Analog","ports":["Composite"]},
+      {"commands":["InputCoax"],"name":"COAX","ports":["Coaxial"]},
+      {"commands":["InputBnc"],"name":"BNC","ports":["AES/EBU"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Emotiva",
-  "model": "STEALTH DC-1"
+  "model": "STEALTH DC-1",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

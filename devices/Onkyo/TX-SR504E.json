@@ -2,6 +2,35 @@
   "codeset": "codesets/8b/8bd659ddcef77a2d.json",
   "deviceType": 5,
   "globalDeviceId": 167414,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"Video 1","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVideo2"],"name":"Video 2","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVideo3"],"name":"Video 3","ports":["Composite"]},
+      {"commands":["InputMultiChannel"],"name":"Multi Channel","ports":["Composite"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputTape"],"name":"Tape","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Optical"]},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SR504E"
+  "model": "TX-SR504E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

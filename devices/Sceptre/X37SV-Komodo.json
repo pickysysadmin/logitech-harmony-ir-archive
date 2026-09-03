@@ -2,6 +2,63 @@
   "codeset": "codesets/88/88b0d0c12942e69a.json",
   "deviceType": 1,
   "globalDeviceId": 166102,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Av1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Av2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"YpBpr1"}],"name":"YpBpr1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"YpBpr2"}],"name":"YpBpr2"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"HDCP"}],"name":"HDCP"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"VGA-PC"}],"name":"VGA-PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sceptre",
-  "model": "X37SV-Komodo"
+  "model": "X37SV-Komodo",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Av1"},
+        {"name":"Av2"},
+        {"name":"YpBpr1"},
+        {"name":"YpBpr2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["InputVideo",{"set":"AVInput","to":"Tuner"}],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC",{"set":"PCInput","to":"DTV"}],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"DTV"},
+        {"name":"HDMI"},
+        {"name":"HDCP"},
+        {"name":"DVI"},
+        {"name":"VGA-PC"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

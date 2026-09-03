@@ -2,6 +2,58 @@
   "codeset": "codesets/2f/2fc8e365980ee139.json",
   "deviceType": 5,
   "globalDeviceId": 458440,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"AirPlay"}],"name":"AirPlay"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Game"}],"name":"Game"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Audio 1"}],"name":"Audio 1"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Audio 2"}],"name":"Audio 2"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Audio 3"}],"name":"Audio 3"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Audio 4"}],"name":"Audio 4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Geneva Lab",
-  "model": "Aerosphere A020"
+  "model": "Aerosphere A020",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioInput": {
+      "next": ["InputAudio"],
+      "values": [
+        {"name":"Audio 1"},
+        {"name":"Audio 2"},
+        {"name":"Audio 3"},
+        {"name":"Audio 4"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"AirPlay","select":[{"commands":["InputAirPlay"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Game","select":[{"commands":["InputGame"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Audio","select":[{"commands":["InputAudio"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

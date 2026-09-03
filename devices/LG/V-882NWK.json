@@ -2,6 +2,32 @@
   "codeset": "codesets/0c/0c6099b46ed9d013.json",
   "deviceType": 25,
   "globalDeviceId": 69303,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"Video1"},
+      {"name":"Video2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "V-882NWK"
+  "model": "V-882NWK",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

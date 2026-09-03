@@ -1,7 +1,65 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/83/83d5e652b017695e.json",
   "deviceType": 1,
   "globalDeviceId": 142973,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"S-VIDEO1"}],"name":"S-VIDEO1"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"S-VIDEO2"}],"name":"S-VIDEO2"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"COMP1"}],"name":"COMP1"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"COMP2"}],"name":"COMP2"},
+      {"commands":[{"set":"InputType","to":"DIGITAL"},{"set":"DIGITALInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"DIGITAL"},{"set":"DIGITALInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "AOC",
-  "model": "A42HD84"
+  "model": "A42HD84",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DIGITALInput": {
+      "next": ["Digital"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"VIDEO","select":[{"commands":["InputNext",{"set":"VIDEOInput","to":"AV1"}],"setType":2}]},
+        {"name":"DIGITAL","select":[{"commands":["Digital",{"set":"DIGITALInput","to":"VGA"}],"setType":2}]}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"S-VIDEO1"},
+        {"name":"AV2"},
+        {"name":"S-VIDEO2"},
+        {"name":"COMP1"},
+        {"name":"COMP2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/05/05590d199b6df420.json",
   "deviceType": 1,
   "globalDeviceId": 183026,
+  "inputs": {
+    "list": [
+      {"commands":["InputTV"],"name":"TV"},
+      {"commands":["InputTV",{"delayMs":3000},"InputD/A"],"name":"DTV"},
+      {"commands":["InputAv1"],"name":"AV1"},
+      {"commands":["InputAv2"],"name":"AV2"},
+      {"commands":["InputAv3"],"name":"AV3"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputRgb"],"name":"RGB"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "42LT75"
+  "model": "42LT75",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

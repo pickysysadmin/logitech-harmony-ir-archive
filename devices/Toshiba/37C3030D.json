@@ -2,6 +2,36 @@
   "codeset": "codesets/7f/7f0c14311a533e38.json",
   "deviceType": 1,
   "globalDeviceId": 170565,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Tuner"},
+      {"commands":["InputScart1"],"name":"Video1"},
+      {"commands":["InputScart2"],"name":"Video2"},
+      {"commands":["Input3c"],"name":"Video3"},
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["InputPc"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Toshiba",
-  "model": "37C3030D"
+  "model": "37C3030D",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

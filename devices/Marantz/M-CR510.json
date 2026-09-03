@@ -2,6 +2,51 @@
   "codeset": "codesets/67/67ef4fa1c87d895d.json",
   "deviceType": 5,
   "globalDeviceId": 258764,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InternetRadio"}],"name":"Internet Radio","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"OnlineMusic"}],"name":"Online Music","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"MusicServer"}],"name":"Music Server","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"FrontUSB"}],"name":"Front USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"RearUSB"}],"name":"Rear USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Analog"}],"name":"Analog","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Digital"}],"name":"Digital","ports":["Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Marantz",
-  "model": "M-CR510"
+  "model": "M-CR510",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"InternetRadio","select":[{"commands":["InputInternetRadio"],"setType":2}]},
+        {"name":"OnlineMusic","select":[{"commands":["InputOnlineMusic"],"setType":2}]},
+        {"name":"MusicServer","select":[{"commands":["InputMusicServer"],"setType":2}]},
+        {"name":"FrontUSB","select":[{"commands":["InputFrontUsb"],"setType":2}]},
+        {"name":"RearUSB","select":[{"commands":["InputRearUsb"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

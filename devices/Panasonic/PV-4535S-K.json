@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2,
+    "greaterHundred": ["GreaterHundred"]
+  },
   "codeset": "codesets/57/57a99a02e7accce0.json",
   "deviceType": 2,
   "globalDeviceId": 61033,
+  "inputs": {
+    "list": [
+      {"name":"VIDEO IN"},
+      {"name":"Line 1"},
+      {"name":"Line 2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "PV-4535S-K"
+  "model": "PV-4535S-K",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

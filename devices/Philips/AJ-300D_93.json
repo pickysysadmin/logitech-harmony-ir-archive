@@ -2,6 +2,43 @@
   "codeset": "codesets/25/25e076544ce73e78.json",
   "deviceType": 5,
   "globalDeviceId": 176340,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dock"}],"name":"Dock"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "AJ-300D/93"
+  "model": "AJ-300D/93",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputTuner/Aux"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dock","select":[{"commands":["InputDock"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputTuner/Aux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

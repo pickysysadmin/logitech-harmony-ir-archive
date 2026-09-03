@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/fb/fbe6181c41db62a2.json",
   "deviceType": 34,
   "globalDeviceId": 25544,
+  "inputs": {
+    "list": [
+      {"name":"Cable"},
+      {"name":"CVBS"},
+      {"name":"S-Video"},
+      {"name":"DV HQ"},
+      {"name":"YUV"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Yamakawa",
-  "model": "DVR-628"
+  "model": "DVR-628",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 95674,
+  "inputs": {
+    "list": [
+      {"commands":["InputTV"],"name":"TV"},
+      {"commands":["InputVideo1",{"delayMs":1000}],"name":"VIDEO 1"},
+      {"commands":["InputVideo2"],"name":"VIDEO 2"},
+      {"commands":["InputVideo3"],"name":"VIDEO 3"},
+      {"commands":["Input 4"],"name":"VIDEO 4"},
+      {"commands":["InputDigital In"],"name":"DIGITAL-IN 1"},
+      {"commands":["InputDigital In"],"name":"DIGITAL-IN 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "HD-617BP7/H"
+  "model": "HD-617BP7/H",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

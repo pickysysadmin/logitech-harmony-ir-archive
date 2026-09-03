@@ -2,6 +2,49 @@
   "codeset": "codesets/98/98eb11f32c71ea0c.json",
   "deviceType": 22,
   "globalDeviceId": 14422,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TUNER"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"CD-DVD"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"Video1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"Video1o"}],"name":"video 1 optical"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"Video2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"Video2o"}],"name":"video 2 optical"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Kenwood",
-  "model": "DVT-6300"
+  "model": "DVT-6300",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"VIDEO","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"DVD/CD","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"TUNER","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video1o"},
+        {"name":"Video2"},
+        {"name":"Video2o"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

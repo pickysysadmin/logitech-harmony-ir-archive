@@ -2,6 +2,40 @@
   "codeset": "codesets/57/573d3111a5231872.json",
   "deviceType": 34,
   "globalDeviceId": 208131,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"HDD"}
+    ],
+    "next": ["InputDVD"],
+    "type": 2
+  },
   "manufacturer": "Daewoo",
-  "model": "DRHT-630FP"
+  "model": "DRHT-630FP",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["Input"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AVF"},
+        {"name":"DV"},
+        {"name":"TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

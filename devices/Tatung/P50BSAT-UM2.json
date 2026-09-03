@@ -2,6 +2,80 @@
   "codeset": "codesets/20/205f98bb48599c7c.json",
   "deviceType": 1,
   "globalDeviceId": 128932,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"AVMenu","to":"On"},{"set":"VideoInput","to":"Composite"},{"set":"AVMenu","to":"Off"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"AVMenu","to":"On"},{"set":"VideoInput","to":"S-Video"},{"set":"AVMenu","to":"Off"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"AVMenu","to":"On"},{"set":"VideoInput","to":"YCbCr"},{"set":"AVMenu","to":"Off"}],"name":"YCbCr"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"AVMenu","to":"On"},{"set":"VideoInput","to":"YPbPr"},{"set":"AVMenu","to":"Off"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCMenu","to":"On"},{"set":"PCInput","to":"VGA"},{"set":"PCMenu","to":"Off"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCMenu","to":"On"},{"set":"PCInput","to":"DVI"},{"set":"PCMenu","to":"Off"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Tatung",
-  "model": "P50BSAT-UM2"
+  "model": "P50BSAT-UM2",
+  "power": {
+    "toggle": [
+      "PowerToggle",
+      {"set":"AVMenu","to":"On"},
+      {"set":"PCMenu","to":"On"}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVMenu": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputAv",{"set":"VideoInput","to":"Composite"},{"set":"AVMenu","to":"On"}],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc",{"set":"PCInput","to":"VGA"},{"set":"PCMenu","to":"On"}],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"}
+      ]
+    },
+    "PCMenu": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    },
+    "PcInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"Dvi"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"Composite"},
+        {"name":"S-Video"},
+        {"name":"YCbCr"},
+        {"name":"YPbPr"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 37,
   "globalDeviceId": 35356,
+  "inputs": {
+    "list": [
+      {"name":"video 1"},
+      {"name":"video 2"},
+      {"name":"video3"},
+      {"name":"video4"},
+      {"name":"video5"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "RCA",
-  "model": "Scenium 50"
+  "model": "Scenium 50",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"video4"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "VidMode": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"},
+        {"name":"Dvi"},
+        {"name":"video1"},
+        {"name":"video2"},
+        {"name":"front"}
+      ]
+    },
+    "inputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["0","3"],"setType":2}]},
+        {"name":"vid","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"inputDVD","select":[{"commands":["InputSat/Cable"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 18000,
+    "pressMinRepeats": 3
+  }
 }

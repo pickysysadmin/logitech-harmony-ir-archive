@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d0/d08497fe3da74b2f.json",
   "deviceType": 1,
   "globalDeviceId": 63940,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"commands":["0","3"],"name":"SAT"},
+      {"commands":["0","2"],"name":"VCR 1"},
+      {"commands":["0","3"],"name":"VCR 2"},
+      {"commands":["0","4"],"name":"VCR 3"},
+      {"commands":["0","5"],"name":"Camcorder"},
+      {"commands":["0","6"],"name":"CDI"},
+      {"commands":["1"],"name":"Program"}
+    ],
+    "start": ["0","3"],
+    "type": 3
+  },
   "manufacturer": "RFT",
-  "model": "TV72-4000H"
+  "model": "TV72-4000H",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Program"}
+    ],
+    "toggle": ["PowerOff"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,66 @@
   "codeset": "codesets/46/467f99604cb95bc0.json",
   "deviceType": 1,
   "globalDeviceId": 149272,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"ANALOG"},{"set":"ANALOGInput","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"ANALOG"},{"set":"ANALOGInput","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"DIGITAL"},{"set":"DIGITALInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"DIGITAL"},{"set":"DIGITALInput","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "VXW20L HDTV10A"
+  "model": "VXW20L HDTV10A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ANALOGInput": {
+      "next": ["InputAnalogHd"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"}
+      ]
+    },
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"}
+      ]
+    },
+    "DIGITALInput": {
+      "next": ["InputDigitalHd"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv",{"set":"AVInput","to":"AV1"}],"setType":2}]},
+        {"name":"ANALOG","select":[{"commands":["InputAnalogHd",{"set":"ANALOGInput","to":"Component 1"}],"setType":2}]},
+        {"name":"DIGITAL","select":[{"commands":["InputDigitalHd",{"set":"DIGITALInput","to":"HDMI 1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

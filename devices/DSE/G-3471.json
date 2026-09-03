@@ -2,6 +2,32 @@
   "codeset": "codesets/1e/1e0e38d9a3dcc85d.json",
   "deviceType": 1,
   "globalDeviceId": 92330,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Video1"},
+      {"name":"Video2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "DSE",
-  "model": "G-3471"
+  "model": "G-3471",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

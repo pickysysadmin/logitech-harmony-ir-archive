@@ -2,6 +2,59 @@
   "codeset": "codesets/65/65b77952fd346769.json",
   "deviceType": 7,
   "globalDeviceId": 155312,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer1"}],"name":"Computer1"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer2"}],"name":"Computer2"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"MIU"}],"name":"MIU"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "CP-X417"
+  "model": "CP-X417",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "ComputerInput": {
+      "next": ["Computer"],
+      "values": [
+        {"name":"Computer1"},
+        {"name":"Computer2"},
+        {"name":"HDMI"},
+        {"name":"MIU"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Computer","select":[{"commands":["Computer"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["Video"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Video"],
+      "values": [
+        {"name":"Component"},
+        {"name":"S-Video"},
+        {"name":"Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 1
+  }
 }

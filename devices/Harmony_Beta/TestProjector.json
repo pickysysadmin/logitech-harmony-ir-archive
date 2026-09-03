@@ -2,6 +2,36 @@
   "codeset": "codesets/cd/cd1f474d32df41d8.json",
   "deviceType": 7,
   "globalDeviceId": 479975,
+  "inputs": {
+    "list": [
+      {"name":"Hdmi"},
+      {"name":"Vga"},
+      {"name":"Video(Component)"},
+      {"name":"Audio"}
+    ],
+    "next": ["Source"],
+    "type": 2
+  },
   "manufacturer": "Harmony Beta",
-  "model": "TestProjector"
+  "model": "TestProjector",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

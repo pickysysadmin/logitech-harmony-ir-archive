@@ -2,6 +2,47 @@
   "codeset": "codesets/89/8949d30bbb4e33bc.json",
   "deviceType": 22,
   "globalDeviceId": 208416,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Port"},{"set":"PortInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Port"},{"set":"PortInput","to":"iPod"}],"name":"iPod"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "MM-C530D"
+  "model": "MM-C530D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Port","select":[{"commands":["InputPort"],"setType":2}]}
+      ]
+    },
+    "PortInput": {
+      "next": ["InputPort"],
+      "values": [
+        {"name":"USB"},
+        {"name":"iPod"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,50 @@
   "codeset": "codesets/af/af6d9675b0782b85.json",
   "deviceType": 1,
   "globalDeviceId": 262479,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"ANT/CableIn"}],"name":"ANT/CableIn"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Comp/Video"}],"name":"Comp/Video"},
+      {"commands":[{"set":"InputType","to":"MediaPlayer"}],"name":"Media Player"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TC-32A410C"
+  "model": "TC-32A410C",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"MediaPlayer"},
+        {"name":"TV"}
+      ]
+    },
+    "TVInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"ANT/CableIn"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"Comp/Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f8/f85bada5f8fd15c8.json",
   "deviceType": 1,
   "globalDeviceId": 62853,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner A"],"name":"TV"},
+      {"commands":["InputAv1"],"name":"AV1"},
+      {"commands":["InputAv2"],"name":"AV2"},
+      {"commands":["InputAv3"],"name":"AV3"},
+      {"commands":["InputAV4"],"name":"AV4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Mark Electronics",
-  "model": "DW2890"
+  "model": "DW2890",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

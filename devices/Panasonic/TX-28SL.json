@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 108615,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"AirVideo","to":"Air"}],"name":"Air"},
+      {"commands":[{"set":"AirVideo","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"AirVideo","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"AirVideo","to":"Video"},{"set":"VideoInput","to":"Video 3"}],"name":"Video 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-28SL"
+  "model": "TX-28SL",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Air"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AirVideo": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"Air"},
+        {"name":"Video"}
+      ]
+    },
+    "VideoInput": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":["Red"],"setType":1}]},
+        {"name":"Video 2","select":[{"commands":["Green"],"setType":1}]},
+        {"name":"Video 3","select":[{"commands":["Yellow"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

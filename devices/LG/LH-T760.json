@@ -2,6 +2,48 @@
   "codeset": "codesets/73/7380c4682bc98819.json",
   "deviceType": 22,
   "globalDeviceId": 110206,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Band"}],"name":"Band"},
+      {"commands":[{"set":"InputType","to":"CD/DVD"}],"name":"CD/DVD"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"TV-Audio"}],"name":"TV-Audio"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LH-T760"
+  "model": "LH-T760",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"TV-Audio"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Band","select":[{"commands":["InputBand"],"setType":2}]},
+        {"name":"CD/DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

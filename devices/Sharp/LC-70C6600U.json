@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["ENT"]
+  },
   "codeset": "codesets/a6/a6d40f87dbc74fa9.json",
   "deviceType": 1,
   "globalDeviceId": 265564,
+  "inputs": {
+    "list": [
+      {"commands":["Input1","Input1","Exit","Select","Input1","Input1",{"delayMs":3000},"Input","DirectionUp","Select"],"name":"TV","ports":["Antenna"]},
+      {"commands":["Input1","Input1","Exit","Select","Input1","Input1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["Input2","Input2","Exit","Select","Input2","Input2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["Input3","Input3","Exit","Select","Input3","Input3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["Input4","Input4","Exit","Select","Input4","Input4"],"name":"Video 1","ports":["Composite"]},
+      {"commands":["Input5","Input5","Exit","Select","Input5","Input5"],"name":"Component","ports":["Component"]},
+      {"commands":["Input6","Input6","Exit","Select","Input6","Input6"],"name":"PC IN","ports":["PC"]},
+      {"commands":["Exit","Select","Input7"],"name":"USB Media","ports":["USB"]},
+      {"commands":["Input6","Input6","Exit","Exit","Input6","Input6",{"delayMs":3000},"Input","DirectionDown","DirectionDown","Select"],"name":"Home Network(DLNA)","ports":["Streaming"]},
+      {"commands":["Exit","DirectionRight","Select","SmartCentral"],"name":"Smart Central","ports":["Streaming"]},
+      {"commands":["Input1","Input1","Exit","Exit","Input1","Input1","Input","DirectionUp","DirectionUp","Select"],"name":"MiraCast","ports":["Streaming"]},
+      {"commands":["Exit","Exit","Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-70C6600U"
+  "model": "LC-70C6600U",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

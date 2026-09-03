@@ -2,6 +2,37 @@
   "codeset": "codesets/2f/2feddaf4c53cc72c.json",
   "deviceType": 5,
   "globalDeviceId": 90121,
+  "inputs": {
+    "list": [
+      {"commands":["InputVcr"],"name":"VCR","ports":["Component","Composite","S-Video"]},
+      {"commands":["InputTv/Dbs"],"name":"TV/DBS","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputDvd/Vdp"],"name":"DVD/VDP","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputCdr/Tape"],"name":"CD-R/TAPE","ports":["Composite"]},
+      {"commands":["InputXmRadio"],"name":"XM","ports":["Others"]},
+      {"commands":["InputV-Aux"],"name":"V-Aux","ports":["Composite"]},
+      {"commands":["InputiPod"],"name":"iPod","ports":["Dock"]},
+      {"commands":["InputAux"],"name":"Aux","ports":["Composite","Coaxial"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-1507"
+  "model": "AVR-1507",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

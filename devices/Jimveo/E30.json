@@ -2,6 +2,36 @@
   "codeset": "codesets/62/62a9fefb8fc88717.json",
   "deviceType": 7,
   "globalDeviceId": 512358,
+  "inputs": {
+    "list": [
+      {"name":"HDMI 1/HDMI 2"},
+      {"name":"USB"},
+      {"name":"Headphone Jack"},
+      {"name":"AV"}
+    ],
+    "next": ["Source"],
+    "type": 2
+  },
   "manufacturer": "Jimveo",
-  "model": "E30"
+  "model": "E30",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

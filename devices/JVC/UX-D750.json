@@ -2,6 +2,64 @@
   "codeset": "codesets/b0/b03e0e4f37d7e547.json",
   "deviceType": 21,
   "globalDeviceId": 302910,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"CD/USB"},{"set":"CD/USBInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"CD/USB"},{"set":"CD/USBInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"AUX1/2"},{"set":"AUX1/2Input","to":"AUX 1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"AUX1/2"},{"set":"AUX1/2Input","to":"AUX 2"}],"name":"AUX 2"},
+      {"commands":[{"set":"InputType","to":"FM/DAB"},{"set":"FM/DABInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/DAB"},{"set":"FM/DABInput","to":"DAB"}],"name":"DAB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "UX-D750"
+  "model": "UX-D750",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUX1/2Input": {
+      "next": ["InputAux1/2"],
+      "values": [
+        {"name":"AUX 1"},
+        {"name":"AUX 2"}
+      ]
+    },
+    "CD/USBInput": {
+      "next": ["InputCd/Usb"],
+      "values": [
+        {"name":"CD"},
+        {"name":"USB"}
+      ]
+    },
+    "FM/DABInput": {
+      "next": ["InputFm/Dab"],
+      "values": [
+        {"name":"FM"},
+        {"name":"DAB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"CD/USB","select":[{"commands":["InputCd/Usb"],"setType":2}]},
+        {"name":"AUX1/2","select":[{"commands":["InputAux1/2"],"setType":2}]},
+        {"name":"FM/DAB","select":[{"commands":["InputFm/Dab"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

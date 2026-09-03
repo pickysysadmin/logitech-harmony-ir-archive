@@ -2,6 +2,35 @@
   "codeset": "codesets/15/15191b0616511f99.json",
   "deviceType": 19,
   "globalDeviceId": 200641,
+  "inputs": {
+    "list": [
+      {"name":"DigitalIn 1"},
+      {"name":"DigitalIn 2"},
+      {"name":"Analog"},
+      {"name":"iPod"}
+    ],
+    "next": ["InputNext"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HW-C470"
+  "model": "HW-C470",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 2
+  }
 }

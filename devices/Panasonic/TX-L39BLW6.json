@@ -1,7 +1,90 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/28/28b195e7d26cf4ab.json",
   "deviceType": 1,
   "globalDeviceId": 257171,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"TV"}],"name":"Analog"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVBS"}],"name":"DVB-S"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVBC"}],"name":"DVB-C"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVBT"}],"name":"DVB-T"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"CompAV"},{"set":"CompAVInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"CompAV"},{"set":"CompAVInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"VieraSmartMENU","to":"ON"},{"set":"InputType","to":"VieraSmart"}],"name":"Viera Smart"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"VieraSmartMENU","to":"OFF"},{"set":"InputType","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-L39BLW6"
+  "model": "TX-L39BLW6",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "CompAVInput": {
+      "finish": ["Ok"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"AV 2"},
+        {"name":"Component"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV","Ok"],"setType":1}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1","Ok"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2","Ok"],"setType":1}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3","Ok"],"setType":1}]},
+        {"name":"AV 1","select":[{"commands":["InputVideo1","Ok"],"setType":1}]},
+        {"name":"CompAV","select":[{"commands":["InputVideo2","Ok"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"VieraSmart","select":[{"commands":["Apps"],"setType":1}]},
+        {"name":"USB","select":[{"commands":["SdCard/Usb","Ok"],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"DVBS"},
+        {"name":"DVBC"},
+        {"name":"DVBT"},
+        {"name":"TV"}
+      ]
+    },
+    "VieraSmartMENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Apps"],"setType":1}]},
+        {"name":"OFF","select":[{"commands":["Exit"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

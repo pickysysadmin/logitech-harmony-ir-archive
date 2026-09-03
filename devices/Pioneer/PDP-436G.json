@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2b/2b0bb33797ddb4d1.json",
   "deviceType": 1,
   "globalDeviceId": 104943,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Input 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Input 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"Input 4"}],"name":"Input 4"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PDP-436G"
+  "model": "PDP-436G",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Input 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Input 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Input 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Input 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"Input 5","select":[{"commands":["InputVideo5"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTv/Dtv"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTv/Dtv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,66 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/d4/d456234c3e02b6e3.json",
   "deviceType": 1,
   "globalDeviceId": 149246,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-VIDEO 1"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-VIDEO 2"},
+      {"commands":[{"set":"AvInput","to":"Av1"}],"name":"VIDEO 1"},
+      {"commands":[{"set":"AvInput","to":"Av2"}],"name":"VIDEO 2"},
+      {"commands":[{"set":"InputType","to":"YPbPr 1"}],"name":"YPbPr 1"},
+      {"commands":[{"set":"InputType","to":"YPbPr 2"}],"name":"YPbPr 2"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Westinghouse",
-  "model": "SK-32H540S"
+  "model": "SK-32H540S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AvInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"YPbPr 1","select":[{"commands":["InputYPbPr1"],"setType":2}]},
+        {"name":"YPbPr 2","select":[{"commands":["InputYPbPr2"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"DVI","select":[{"commands":["InputDVI"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    },
+    "TvInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Hdtv"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,47 @@
   "codeset": "codesets/af/af47b50875a4e8af.json",
   "deviceType": 1,
   "globalDeviceId": 122138,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Scart"}],"name":"Scart 1"},
+      {"commands":[{"set":"InputType","to":"Scart"}],"name":"Scart 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Fujicom",
-  "model": "FC-3240"
+  "model": "FC-3240",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHDMI"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Scart","select":[{"commands":["InputScart"],"setType":2}]}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputScart"],
+      "values": [
+        {"name":"Scart 1"},
+        {"name":"Scart 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

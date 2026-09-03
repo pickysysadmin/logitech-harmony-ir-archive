@@ -2,6 +2,32 @@
   "codeset": "codesets/2f/2faf1eb0a0d53c8f.json",
   "deviceType": 1,
   "globalDeviceId": 210050,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"TV/VCR"},
+      {"name":"Video1"}
+    ],
+    "next": ["PowerToggle"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "21PT-701A/00"
+  "model": "21PT-701A/00",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

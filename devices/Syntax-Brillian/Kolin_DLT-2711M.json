@@ -2,6 +2,68 @@
   "codeset": "codesets/10/1049bfa1f2f5bf4f.json",
   "deviceType": 1,
   "globalDeviceId": 86913,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"COMP"},{"set":"COMPInput","to":"YPbPr1"}],"name":"YPbPr1"},
+      {"commands":[{"set":"InputType","to":"COMP"},{"set":"COMPInput","to":"YPbPr2"}],"name":"YPbPr2"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"S-Vid1"}],"name":"S-Video1"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoInput","to":"S-Vid2"}],"name":"S-Video2"},
+      {"commands":[{"set":"InputType","to":"DVI/VGA"},{"set":"DVI/VGAInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"DVI/VGA"},{"set":"DVI/VGAInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Syntax-Brillian",
-  "model": "Kolin DLT-2711M"
+  "model": "Kolin DLT-2711M",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "COMPInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"YPbPr1"},
+        {"name":"YPbPr2"}
+      ]
+    },
+    "DVI/VGAInput": {
+      "next": ["InputDvi/Vga"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTV"],"setType":2}]},
+        {"name":"COMP","select":[{"commands":["InputComponent",{"set":"COMPInput","to":"YPbPr1"}],"setType":2}]},
+        {"name":"VIDEO","select":[{"commands":["InputVideo",{"set":"VideoInput","to":"AV1"}],"setType":2}]},
+        {"name":"DVI/VGA","select":[{"commands":["InputDvi/Vga",{"set":"DVI/VGAInput","to":"VGA"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"S-Vid1"},
+        {"name":"S-Vid2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 2
+  }
 }

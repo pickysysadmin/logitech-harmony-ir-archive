@@ -1,7 +1,48 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/36/3607faf9bff97f1a.json",
   "deviceType": 37,
   "globalDeviceId": 90295,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"TV/DVD"},
+      {"name":"Video 2"},
+      {"name":"Video 3"},
+      {"name":"S-VHS"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Apex",
-  "model": "GT-2015DV"
+  "model": "GT-2015DV",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV/DVD"},
+      {"set":"TV/DVDInput","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "TV/DVDInput": {
+      "next": ["DVD"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DVD"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

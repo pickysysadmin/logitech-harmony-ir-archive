@@ -2,6 +2,66 @@
   "codeset": "codesets/fe/fe951dc89c5835f8.json",
   "deviceType": 1,
   "globalDeviceId": 171643,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Digital/Analog"},{"set":"Digital/AnalogInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"Digital/Analog"},{"set":"Digital/AnalogInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"Tv/Video"},{"set":"Tv/VideoInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Tv/Video"},{"set":"Tv/VideoInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Tv/Video"},{"set":"Tv/VideoInput","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"Tv/Video"},{"set":"Tv/VideoInput","to":"Video4"}],"name":"Video4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Uniden",
-  "model": "TL42TZ1-AB"
+  "model": "TL42TZ1-AB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Digital/AnalogInput": {
+      "next": ["Digital/Analog"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    },
+    "HdmiInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"Tv/Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Digital/Analog","select":[{"commands":["Digital/Analog"],"setType":2}]}
+      ]
+    },
+    "Tv/VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"},
+        {"name":"Video4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

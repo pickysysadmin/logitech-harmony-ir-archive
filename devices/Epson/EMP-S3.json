@@ -2,6 +2,34 @@
   "codeset": "codesets/d7/d7105507bcb72df3.json",
   "deviceType": 7,
   "globalDeviceId": 152466,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputComputer1"],"name":"Computer"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "EMP-S3"
+  "model": "EMP-S3",
+  "power": {
+    "off": [
+      {"delayMs":2500},
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

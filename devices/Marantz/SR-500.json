@@ -2,6 +2,58 @@
   "codeset": "codesets/86/86f3a17e4ba92f5b.json",
   "deviceType": 5,
   "globalDeviceId": 82826,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"LD/TV"}],"name":"LD/TV"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VCR1"}],"name":"VCR1"},
+      {"commands":[{"set":"InputType","to":"VCR2"}],"name":"VCR2"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tape 1"}],"name":"Tape 1"},
+      {"commands":[{"set":"InputType","to":"Tape 2"}],"name":"Tape 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Marantz",
-  "model": "SR-500"
+  "model": "SR-500",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":[{"command":"InputTuner","durationMs":2000}],"setType":2}]},
+        {"name":"LD/TV","select":[{"commands":[{"command":"InputLd","durationMs":2000},{"command":"InputLd","durationMs":2000}],"setType":2}]},
+        {"name":"DVD","select":[{"commands":[{"command":"InputDvd","durationMs":2000},{"command":"InputDvd","durationMs":2000}],"setType":2}]},
+        {"name":"VCR1","select":[{"commands":[{"command":"InputVcr","durationMs":2000},{"command":"InputVcr","durationMs":2000}],"setType":2}]},
+        {"name":"VCR2","select":[{"commands":[{"command":"InputVcr2","durationMs":2000},{"command":"InputVcr2","durationMs":2000}],"setType":2}]},
+        {"name":"TV","select":[{"commands":[{"command":"InputTv","durationMs":2000},{"command":"InputTv","durationMs":2000}],"setType":2}]},
+        {"name":"CD","select":[{"commands":[{"command":"InputCD","durationMs":2000},{"command":"InputCD","durationMs":2000}],"setType":2}]},
+        {"name":"Tape 1","select":[{"commands":[{"command":"InputTape","durationMs":2000},{"command":"InputTape","durationMs":2000}],"setType":2}]},
+        {"name":"Tape 2","select":[{"commands":[{"command":"InputPhono","durationMs":2000},{"command":"InputPhono","durationMs":2000}],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

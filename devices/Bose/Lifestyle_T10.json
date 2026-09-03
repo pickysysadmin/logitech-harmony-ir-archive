@@ -2,6 +2,40 @@
   "codeset": "codesets/9b/9b18dcb743ca33f7.json",
   "deviceType": 19,
   "globalDeviceId": 206013,
+  "inputs": {
+    "list": [
+      {"commands":["Input1"],"name":"Input 1","ports":["HDMI"]},
+      {"commands":["Input2"],"name":"Input 2","ports":["HDMI"]},
+      {"commands":["Input3"],"name":"Input 3","ports":["HDMI"]},
+      {"commands":["Input4"],"name":"Input 4","ports":["Composite","Component"]},
+      {"commands":["Input5"],"name":"Input 5","ports":["Composite","Component"]},
+      {"commands":["InputFrontAv"],"name":"Front AV","ports":["Composite"]},
+      {"commands":["InputFrontHdmi"],"name":"Front HDMI","ports":["HDMI"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]},
+      {"commands":["InputNetwork1"],"name":"Network 1","ports":["Streaming"]},
+      {"commands":["InputNetwork2"],"name":"Network 2","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Bose",
-  "model": "Lifestyle T10"
+  "model": "Lifestyle T10",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":2000},
+      "OK"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

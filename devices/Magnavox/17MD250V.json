@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/1a/1a93a92cc81ec6b6.json",
   "deviceType": 37,
   "globalDeviceId": 139516,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Tuner"},
+      {"name":"DVD"},
+      {"name":"AV1"},
+      {"name":"S-Video"},
+      {"name":"CVI"},
+      {"name":"PC"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["Menu"],
+    "type": 4
+  },
   "manufacturer": "Magnavox",
-  "model": "17MD250V"
+  "model": "17MD250V",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

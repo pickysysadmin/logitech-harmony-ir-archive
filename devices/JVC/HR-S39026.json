@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/0a/0a27841f961215a2.json",
   "deviceType": 2,
   "globalDeviceId": 105408,
+  "inputs": {
+    "list": [
+      {"commands":["0","3","Enter"],"name":"Tuner"},
+      {"commands":["0","1","Enter","ChannelDown","ChannelDown"],"name":"L-1"},
+      {"commands":["0","1","Enter","ChannelDown"],"name":"F-1"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "HR-S39026"
+  "model": "HR-S39026",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

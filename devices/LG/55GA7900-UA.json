@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/ec/ecc3261332cd9f2c.json",
   "deviceType": 1,
   "globalDeviceId": 250869,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputAv1"],"name":"AV","ports":["Composite"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputComponent1"],"name":"Component","ports":["Component"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi4"],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":["Exit","Smart"],"name":"Smart TV","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "55GA7900-UA"
+  "model": "55GA7900-UA",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 1
+  }
 }

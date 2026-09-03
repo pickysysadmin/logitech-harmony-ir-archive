@@ -2,6 +2,32 @@
   "codeset": "codesets/13/1394e7516b49787e.json",
   "deviceType": 5,
   "globalDeviceId": 144939,
+  "inputs": {
+    "list": [
+      {"commands":["InputVcr"],"name":"VCR"},
+      {"commands":["InputAux"],"name":"Video"},
+      {"commands":["InputTV"],"name":"TV"},
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputTuner"],"name":"AM-FM"},
+      {"commands":["InputCD"],"name":"CD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "RV-9970A"
+  "model": "RV-9970A",
+  "power": {
+    "off": ["PowerOff","PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

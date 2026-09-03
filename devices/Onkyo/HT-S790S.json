@@ -2,6 +2,59 @@
   "codeset": "codesets/57/57f67e3ae7c65b85.json",
   "deviceType": 5,
   "globalDeviceId": 168282,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Multi-Ch"}],"name":"Multi-Ch"},
+      {"commands":[{"set":"InputType","to":"VIDEO 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"VIDEO 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"VIDEO 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"XM"}],"name":"XM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Onkyo",
-  "model": "HT-S790S"
+  "model": "HT-S790S",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"},
+        {"name":"XM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Multi-Ch","select":[{"commands":["InputMultiChannel"],"setType":2}]},
+        {"name":"VIDEO 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"VIDEO 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"VIDEO 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

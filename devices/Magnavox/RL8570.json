@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ab/ab949ed9af78a67c.json",
   "deviceType": 1,
   "globalDeviceId": 207273,
+  "inputs": {
+    "list": [
+      {"name":"Antenna"},
+      {"name":"Aux1"},
+      {"name":"Aux2"},
+      {"name":"S-Video1"},
+      {"name":"S-Video2"}
+    ],
+    "next": ["DirectionRight"],
+    "start": [
+      "Menu",
+      {"delayMs":500},
+      "3",
+      {"delayMs":500},
+      "3"
+    ],
+    "type": 4
+  },
   "manufacturer": "Magnavox",
-  "model": "RL8570"
+  "model": "RL8570",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

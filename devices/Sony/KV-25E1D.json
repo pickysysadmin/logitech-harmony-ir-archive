@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 105576,
+  "inputs": {
+    "list": [
+      {"commands":["3"],"name":"Tuner"},
+      {"commands":["3","InputNext"],"name":"AV1"},
+      {"commands":["InputRgb1"],"name":"RGB"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo2","InputNext"],"name":"YC2"},
+      {"commands":["InputVideo2","InputNext","InputNext"],"name":"AV3"},
+      {"commands":["InputVideo3","InputNext"],"name":"YC3"},
+      {"commands":["InputVideo3","InputNext","InputNext"],"name":"AV4"},
+      {"commands":["InputVideo3","InputNext","InputNext","InputNext"],"name":"YC4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KV-25E1D"
+  "model": "KV-25E1D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

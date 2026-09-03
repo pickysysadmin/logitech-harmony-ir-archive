@@ -2,6 +2,64 @@
   "codeset": "codesets/c6/c66af8336885b7b3.json",
   "deviceType": 7,
   "globalDeviceId": 523671,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 1"}],"name":"Computer 1"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 2"}],"name":"Computer 2"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"LAN"}],"name":"LAN"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "EB-L530U"
+  "model": "EB-L530U",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComputerInput": {
+      "next": ["InputComputer"],
+      "values": [
+        {"name":"Computer 1"},
+        {"name":"Computer 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"Computer 1","select":[{"commands":["InputCompter1"],"setType":1}]},
+        {"name":"Computer 2","select":[{"commands":["InputCompter2"],"setType":1}]},
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":1}]},
+        {"name":"LAN","select":[{"commands":["InputLan"],"setType":1}]}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputUSB"],
+      "values": [
+        {"name":"USB"}
+      ]
+    },
+    "VedioInput": {
+      "next": ["InputVedio"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

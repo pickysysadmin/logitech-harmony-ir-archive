@@ -1,7 +1,50 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 224319,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input 3"}],"name":"Input 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Grundig",
-  "model": "ST70-743PIPDOLBY"
+  "model": "ST70-743PIPDOLBY",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["2"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Input 1"},
+        {"name":"Input 2"},
+        {"name":"Input 3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

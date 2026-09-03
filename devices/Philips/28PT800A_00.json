@@ -2,6 +2,49 @@
   "codeset": "codesets/3b/3ba1b9ab64fef621.json",
   "deviceType": 1,
   "globalDeviceId": 98070,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Ext1"}],"name":"Ext1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Ext2"}],"name":"Ext2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Front"}],"name":"Front"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "28PT800A/00"
+  "model": "28PT800A/00",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": [
+      "1",
+      {"set":"InputType","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Ext1"},
+        {"name":"Ext2"},
+        {"name":"Front"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["1"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

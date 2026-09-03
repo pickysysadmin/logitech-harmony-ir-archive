@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5e/5e78bea4e0d3150a.json",
   "deviceType": 1,
   "globalDeviceId": 13790,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext"],"name":"Tuner"},
+      {"commands":["Red"],"name":"A/V1"},
+      {"commands":["Green"],"name":"A/V2"},
+      {"commands":["Yellow"],"name":"Component"},
+      {"commands":["Blue"],"name":"A/V3"}
+    ],
+    "start": ["InputNext"],
+    "type": 3
+  },
   "manufacturer": "Sharp",
-  "model": "SX68NF8"
+  "model": "SX68NF8",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

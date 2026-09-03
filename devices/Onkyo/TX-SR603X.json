@@ -2,6 +2,36 @@
   "codeset": "codesets/5f/5f76da058b196405.json",
   "deviceType": 5,
   "globalDeviceId": 167557,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputTape"],"name":"Tape","ports":["Composite"]},
+      {"commands":["InputVideo1"],"name":"Video1","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVideo2"],"name":"Video2","ports":["Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputVideo3"],"name":"Video3","ports":["Composite","S-Video"]},
+      {"commands":["InputVideo4"],"name":"Video4","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SR603X"
+  "model": "TX-SR603X",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

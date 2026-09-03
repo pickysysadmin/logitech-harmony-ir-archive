@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/54/54a95b6588076c72.json",
   "deviceType": 1,
   "globalDeviceId": 63229,
+  "inputs": {
+    "finish": ["Menu"],
+    "list": [
+      {"name":"TV"},
+      {"name":"SCART1"},
+      {"name":"SCART2"},
+      {"name":"S-VIDEO/AV"},
+      {"name":"Komponente1"},
+      {"name":"Komponente2"},
+      {"name":"PC"},
+      {"name":"DVI"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Fujitsu-Siemens",
-  "model": "Myrica V42"
+  "model": "Myrica V42",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

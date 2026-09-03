@@ -2,6 +2,44 @@
   "codeset": "codesets/b8/b8e04c14b450825e.json",
   "deviceType": 5,
   "globalDeviceId": 171148,
+  "inputs": {
+    "list": [
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["HDMI","Composite","Optical","S-Video"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputMd/Tape"],"name":"MD/Tape","ports":["Composite","Optical"]},
+      {"commands":["InputBD/HD-DVD"],"name":"BD/HD-DVD","ports":["HDMI","Component","Coaxial"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputCdr"],"name":"CD-R","ports":["Composite","Optical"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Component","Composite","Optical","S-Video"]},
+      {"commands":["InputDtv"],"name":"DTV","ports":["Composite","Coaxial","S-Video"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["HDMI","Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":["InputDock"],"name":"Dock","ports":["Dock"]},
+      {"commands":["InputNet/Usb"],"name":"NET/USB","ports":["Streaming"]},
+      {"commands":["InputXm"],"name":"XM","ports":["Streaming"]},
+      {"commands":["InputMultiChannel"],"name":"Multi","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-Z11"
+  "model": "RX-Z11",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

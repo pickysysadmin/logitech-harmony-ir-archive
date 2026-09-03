@@ -2,6 +2,53 @@
   "codeset": "codesets/c4/c4c7ce682cde670c.json",
   "deviceType": 32,
   "globalDeviceId": 115490,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"MainInput"},{"set":"MainInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"MainInput"},{"set":"MainInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"MainInput"},{"set":"MainInput","to":"VCR"},{"set":"VCRInput","to":"Tuner"}],"name":"VCR Tuner"},
+      {"commands":[{"set":"InputType","to":"MainInput"},{"set":"MainInput","to":"VCR"},{"set":"VCRInput","to":"AV 1"}],"name":"VCR AV 1"},
+      {"commands":[{"set":"InputType","to":"MainInput"},{"set":"MainInput","to":"VCR"},{"set":"VCRInput","to":"AV 2"}],"name":"VCR AV 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NexxTech",
-  "model": "311-2628"
+  "model": "311-2628",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"MainInput","select":[{"commands":[{"set":"MainInput","to":"VCR"},"FeatureNext"],"setType":2}]}
+      ]
+    },
+    "MainInput": {
+      "next": ["FeatureNext"],
+      "values": [
+        {"name":"Radio"},
+        {"name":"VCR"},
+        {"name":"DVD"}
+      ]
+    },
+    "VCRInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV 1"},
+        {"name":"AV 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

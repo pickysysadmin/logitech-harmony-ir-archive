@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f5/f551a7916886bd26.json",
   "deviceType": 1,
   "globalDeviceId": 112396,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"VID1"},{"set":"VID1Input","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"VID1"},{"set":"VID1Input","to":"VIDEO1"}],"name":"VIDEO1"},
+      {"commands":[{"set":"InputType","to":"VID2"},{"set":"VID2Input","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"VID2"},{"set":"VID2Input","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Akai",
-  "model": "LM-H27CJSA"
+  "model": "LM-H27CJSA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputYUV"],"setType":2}]},
+        {"name":"VID1","select":[{"commands":["InputAv",{"set":"VID1Input","to":"RGB"}],"setType":2}]},
+        {"name":"VID2","select":[{"commands":["InputSV",{"set":"VID2Input","to":"Video2"}],"setType":2}]}
+      ]
+    },
+    "VID1Input": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"RGB"},
+        {"name":"VIDEO1"}
+      ]
+    },
+    "VID2Input": {
+      "next": ["InputSV"],
+      "values": [
+        {"name":"Video2"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/be/be8ec5ab12b1de76.json",
   "deviceType": 7,
   "globalDeviceId": 172450,
+  "inputs": {
+    "list": [
+      {"name":"Video 1"},
+      {"name":"Input A"},
+      {"name":"Input-B"}
+    ],
+    "next": ["Input"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "VPL-EW5"
+  "model": "VPL-EW5",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

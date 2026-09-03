@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/91/919f4a81955b4186.json",
   "deviceType": 34,
   "globalDeviceId": 105631,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"PlayTray"}],"name":"PlayTray"},
+      {"commands":[{"set":"InputType","to":"RecordTray"}],"name":"RecordTray"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"DV"}],"name":"DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "DVD-TR520"
+  "model": "DVD-TR520",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"PlayTray","select":[{"commands":["PlayTray"],"setType":2}]},
+        {"name":"RecordTray","select":[{"commands":["RecordTray"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

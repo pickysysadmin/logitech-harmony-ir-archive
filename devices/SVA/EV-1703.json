@@ -1,7 +1,33 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2f/2faf1eb0a0d53c8f.json",
   "deviceType": 1,
   "globalDeviceId": 31403,
+  "inputs": {
+    "list": [
+      {"commands":["PP",{"delayMs":3000},"InputNext"],"name":"Tuner"},
+      {"commands":["PP",{"delayMs":3000},"InputNext",{"delayMs":3000},"InputNext"],"name":"AV1"},
+      {"commands":["PP",{"delayMs":3000},"InputNext",{"delayMs":3000},"InputNext",{"delayMs":3000},"InputNext"],"name":"S-Video"},
+      {"commands":["PP"],"name":"VGA"}
+    ],
+    "type": 1
+  },
   "manufacturer": "SVA",
-  "model": "EV-1703"
+  "model": "EV-1703",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,49 @@
   "codeset": "codesets/cc/cca2e8669a582cf8.json",
   "deviceType": 22,
   "globalDeviceId": 211722,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"RADIO"}],"name":"RADIO"},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"ARC"}],"name":"ARC"},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"MUSICP"}],"name":"MUSICP"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-PT90"
+  "model": "SA-PT90",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "EXT-INInput": {
+      "next": ["InputExtIn"],
+      "values": [
+        {"name":"AV"},
+        {"name":"AUX"},
+        {"name":"ARC"},
+        {"name":"MUSICP"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"RADIO","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"EXT-IN","select":[{"commands":["InputExtIn"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

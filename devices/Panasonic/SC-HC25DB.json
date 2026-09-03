@@ -2,6 +2,49 @@
   "codeset": "codesets/47/47214d6f2fbca13d.json",
   "deviceType": 21,
   "globalDeviceId": 336424,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Ext-In/Radio"},{"set":"Ext-In/RadioInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Ext-In/Radio"},{"set":"Ext-In/RadioInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"Ext-In/Radio"},{"set":"Ext-In/RadioInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Ext-In/Radio"},{"set":"Ext-In/RadioInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HC25DB"
+  "model": "SC-HC25DB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Ext-In/RadioInput": {
+      "next": ["InputExtIn/Radio"],
+      "values": [
+        {"name":"Radio"},
+        {"name":"DAB"},
+        {"name":"USB"},
+        {"name":"AUX"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"Ext-In/Radio","select":[{"commands":["InputExtIn/Radio"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

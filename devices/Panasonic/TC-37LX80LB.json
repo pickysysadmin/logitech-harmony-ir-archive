@@ -1,7 +1,75 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/81/81e6e72cc1f6d101.json",
   "deviceType": 1,
   "globalDeviceId": 211596,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"Video 1"},{"set":"MENU","to":"OFF"}],"name":"Video 1"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"Video 2"},{"set":"MENU","to":"OFF"}],"name":"Video 2"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"Video 3"},{"set":"MENU","to":"OFF"}],"name":"Video 3"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"HDMI1"},{"set":"MENU","to":"OFF"}],"name":"HDMI1"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"HDMI2"},{"set":"MENU","to":"OFF"}],"name":"HDMI2"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"PC"},{"set":"MENU","to":"OFF"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TC-37LX80LB"
+  "model": "TC-37LX80LB",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVS": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":[{"set":"PAGE12","to":"PAGE1"},"Red"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":[{"set":"PAGE12","to":"PAGE1"},"Green"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":[{"set":"PAGE12","to":"PAGE1"},"Blue"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":[{"set":"PAGE12","to":"PAGE2"},"Blue"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":[{"set":"PAGE12","to":"PAGE2"},"Yellow"],"setType":2}]},
+        {"name":"PC","select":[{"commands":[{"set":"PAGE12","to":"PAGE2"},"Green"],"setType":2}]}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "Tv/Av",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":2}]}
+      ]
+    },
+    "PAGE12": {
+      "values": [
+        {"name":"PAGE1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"PAGE2","select":[{"commands":["Yellow"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

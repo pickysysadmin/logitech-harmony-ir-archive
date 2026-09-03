@@ -1,7 +1,82 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/f4/f4c495fb8895bebd.json",
   "deviceType": 1,
   "globalDeviceId": 413899,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"DVBS"}],"name":"DVB-S"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"DVBC"}],"name":"DVB-C"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"DVBT"}],"name":"DVB-T"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"HDMI4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"AV2/Component"}],"name":"AV 2/Component"},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Screen","to":"Apps"}],"name":"Apps"},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Screen","to":"Devices"}],"name":"Devices"},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Screen","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-47AS800T"
+  "model": "TX-47AS800T",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "Screen": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV","OK"],"setType":1}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1","OK"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2","OK"],"setType":1}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3","OK"],"setType":1}]},
+        {"name":"HDMI4","select":[{"commands":["InputHdmi4","OK"],"setType":1}]},
+        {"name":"AV1","select":[{"commands":["InputVideo1","OK"],"setType":1}]},
+        {"name":"AV2/Component","select":[{"commands":["InputVideo2","OK"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"Apps","select":[{"commands":["Apps"],"setType":1}]},
+        {"name":"Devices","select":[{"commands":["Devices","Devices",{"delayMs":2000},{"command":"DirectionRight","durationMs":1500},"DirectionLeft","OK"],"setType":1}]}
+      ]
+    },
+    "SmartTV_MENU": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Exit",{"delayMs":500}],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"DVBS"},
+        {"name":"DVBC"},
+        {"name":"DVBT"},
+        {"name":"Analog"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 10000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

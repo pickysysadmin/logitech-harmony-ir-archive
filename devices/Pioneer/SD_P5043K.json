@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/33/3315ae312608c631.json",
   "deviceType": 1,
   "globalDeviceId": 33892,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV 1/2"},{"set":"ANT1/2Input","to":"Antenna 1"}],"name":"ANT 1"},
+      {"commands":[{"set":"InputType","to":"TV 1/2"},{"set":"ANT1/2Input","to":"Antenna 2"}],"name":"ANT 2"},
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"VDP"}],"name":"VDP"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "SD P5043K"
+  "model": "SD P5043K",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ANT1/2Input": {
+      "next": ["Antenna A/B"],
+      "values": [
+        {"name":"Antenna 1"},
+        {"name":"Antenna 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":["InputVideo 1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo 2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo 3"],"setType":2}]},
+        {"name":"TV 1/2","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"VDP","select":[{"commands":["InputLD"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

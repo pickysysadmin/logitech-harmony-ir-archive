@@ -2,6 +2,51 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 94225,
+  "inputs": {
+    "list": [
+      {"name":"VGA"}
+    ],
+    "type": 6
+  },
   "manufacturer": "NEC",
-  "model": "LCD-1912"
+  "model": "LCD-1912",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["Video 1"],"setType":2}]},
+        {"name":"RGB/PC","select":[{"commands":["RGB/PCToggle"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Video 1"],
+      "values": [
+        {"name":"VideoAV1"},
+        {"name":"VideoAV2"},
+        {"name":"VideoAV3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

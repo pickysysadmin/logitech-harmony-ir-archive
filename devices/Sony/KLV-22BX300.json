@@ -2,6 +2,34 @@
   "codeset": "codesets/b5/b5a74ab27f976ccf.json",
   "deviceType": 1,
   "globalDeviceId": 210462,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputVideo1"],"name":"Video 1","ports":["Composite"]},
+      {"commands":["InputVideo2"],"name":"Video 2","ports":["Composite"]},
+      {"commands":["InputVideo3"],"name":"Video 3/Component","ports":["Component","Composite"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputPC"],"name":"PC","ports":["PC"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KLV-22BX300"
+  "model": "KLV-22BX300",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

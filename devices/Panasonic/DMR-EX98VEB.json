@@ -1,7 +1,65 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/15/152362ff31e6a119.json",
   "deviceType": 47,
   "globalDeviceId": 155518,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"Tuner"}],"name":"DVDTuner"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"AV1"}],"name":"DVDAV1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"AV2"}],"name":"DVDAV2"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"AV3"}],"name":"DVDAV3"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"DV"}],"name":"DVDDV"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"LineInput","to":"Tuner"}],"name":"HDDTuner"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"LineInput","to":"AV1"}],"name":"HDDAV1"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"LineInput","to":"AV2"}],"name":"HDDAV2"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"LineInput","to":"AV3"}],"name":"HDDAV3"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"LineInput","to":"DV"}],"name":"HDDDV"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"Tuner"}],"name":"VCRTuner"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"AV1"}],"name":"VCRAV1"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"AV2"}],"name":"VCRAV2"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"AV3"}],"name":"VCRAV3"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"DV"}],"name":"VCRDV"},
+      {"commands":[{"set":"InputType","to":"SD"}],"name":"SD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-EX98VEB"
+  "model": "DMR-EX98VEB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputSD/PC"],"setType":2}]},
+        {"name":"SD","select":[{"commands":["InputVcr"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

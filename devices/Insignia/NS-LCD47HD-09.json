@@ -2,6 +2,80 @@
   "codeset": "codesets/34/34354a28abd3eff6.json",
   "deviceType": 1,
   "globalDeviceId": 182049,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"AnalogTV"}],"name":"AnalogTV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DigtialTV"}],"name":"DigtialTV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Composite Rear"}],"name":"Composite Rear"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Composite Side"}],"name":"Composite Side"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"SVideo Rear"}],"name":"SVideo Rear"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"SVideo Side"}],"name":"SVideo Side"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"Hdmi3"}],"name":"Hdmi3"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component2"}],"name":"Component2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Insignia",
-  "model": "NS-LCD47HD-09"
+  "model": "NS-LCD47HD-09",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"},
+        {"name":"Hdmi3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VGA","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"AnalogTV"},
+        {"name":"DigtialTV"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Composite Rear"},
+        {"name":"Composite Side"},
+        {"name":"SVideo Rear"},
+        {"name":"SVideo Side"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

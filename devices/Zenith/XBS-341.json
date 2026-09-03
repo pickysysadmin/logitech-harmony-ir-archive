@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/c6/c68f3e4e44634ffe.json",
   "deviceType": 32,
   "globalDeviceId": 32988,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Tuner","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Tuner","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"VIDEO 1"}],"name":"VIDEO 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Video","to":"VIDEO 2"}],"name":"VIDEO 2"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Zenith",
-  "model": "XBS-341"
+  "model": "XBS-341",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVhs"],"setType":2}]}
+      ]
+    },
+    "Tuner": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "Video": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"VIDEO 1"},
+        {"name":"VIDEO 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

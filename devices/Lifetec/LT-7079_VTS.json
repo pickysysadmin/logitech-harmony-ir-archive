@@ -2,6 +2,37 @@
   "codeset": "codesets/b7/b7bf9558218fa9f0.json",
   "deviceType": 1,
   "globalDeviceId": 65039,
+  "inputs": {
+    "list": [
+      {"name":"Aktivieren"},
+      {"name":"VCR"},
+      {"name":"SCART 1"},
+      {"name":"SCART 2"},
+      {"name":"SCART 3"},
+      {"name":"SVHS"},
+      {"name":"RGB"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "Lifetec",
-  "model": "LT-7079 VTS"
+  "model": "LT-7079 VTS",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Aktivieren"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,63 @@
   "codeset": "codesets/73/7333d3ac18fe9455.json",
   "deviceType": 13,
   "globalDeviceId": 42717,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Scart 1"}],"name":"Scart 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Scart 2"}],"name":"Scart 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CVBS"}],"name":"CVBS"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YUV"}],"name":"YUV"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC RGB"}],"name":"PC RGB"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC DVI"}],"name":"PC DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Medion",
-  "model": "MR-5917"
+  "model": "MR-5917",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"InputType","to":"S-Video"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTv"],"setType":1}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"PC RGB"},
+        {"name":"PC DVI"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Scart 1"},
+        {"name":"Scart 2"},
+        {"name":"S-Video"},
+        {"name":"CVBS"},
+        {"name":"YUV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,50 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5d/5d2cea18931fce10.json",
   "deviceType": 32,
   "globalDeviceId": 145398,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"dvd"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"vcr"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"vcr"},{"set":"LineInput","to":"tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"vcr"},{"set":"LineInput","to":"line1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"vcr"},{"set":"LineInput","to":"line2"}],"name":"Line 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "SD-V57HT"
+  "model": "SD-V57HT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"dvd","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"vcr","select":[{"commands":["InputVcr"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"tuner"},
+        {"name":"line1"},
+        {"name":"line2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,56 @@
   "codeset": "codesets/71/71348dc68c6015b1.json",
   "deviceType": 13,
   "globalDeviceId": 492442,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"DVI","ports":["DVI"]},
+      {"commands":[{"set":"InputType","to":"DisplayPort"}],"name":"DisplayPort","ports":["DisplayPort"]},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"YPbPr"}],"name":"YPbPr","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"RGB/HV"}],"name":"RGB/HV","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Option"}],"name":"Option","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "P703"
+  "model": "P703",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVI","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"DisplayPort","select":[{"commands":["InputDisplayPort"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputYPbPr"],"setType":2}]},
+        {"name":"RGB/HV","select":[{"commands":["InputRgbHv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Option","select":[{"commands":["Option"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

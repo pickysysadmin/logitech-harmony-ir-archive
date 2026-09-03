@@ -2,6 +2,37 @@
   "codeset": "codesets/66/66bb2ef15285d361.json",
   "deviceType": 5,
   "globalDeviceId": 101558,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputCdr"],"name":"CD-R","ports":["Composite","Optical"]},
+      {"commands":["InputXm"],"name":"XM","ports":["Others"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputDtv"],"name":"DTV/CBL","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["Composite"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["Component","Composite","S-Video"]},
+      {"commands":["InputMultiChannel"],"name":"MultiChannel","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V559"
+  "model": "RX-V559",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/c3/c3faf40431cf43e1.json",
   "deviceType": 1,
   "globalDeviceId": 99408,
+  "inputs": {
+    "list": [
+      {"name":"SATELIET"},
+      {"name":"DVD"},
+      {"name":"TV"}
+    ],
+    "next": ["Info"],
+    "type": 2
+  },
   "manufacturer": "Vestel",
-  "model": "4242-FL"
+  "model": "4242-FL",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"On","select":[{"commands":["Teletext"],"setType":2}]},
+        {"name":"Off","select":[{"commands":["Teletext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

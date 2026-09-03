@@ -2,6 +2,70 @@
   "codeset": "codesets/ef/efd804ab5473fc0c.json",
   "deviceType": 1,
   "globalDeviceId": 151385,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"},{"set":"AVS","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV2/S"},{"set":"AV2Input","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV2/S"},{"set":"AV2Input","to":"AV2S"}],"name":"AV2S"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV3/S"},{"set":"AV3Input","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV3/S"},{"set":"AV3Input","to":"AV3S"}],"name":"AV3S"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"HDMI2"}],"name":"HDMI2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-26LMD71FA"
+  "model": "TX-26LMD71FA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2Input": {
+      "values": [
+        {"name":"AV2","select":[{"commands":["DirectionLeft"],"setType":2}]},
+        {"name":"AV2S","select":[{"commands":["DirectionRight"],"setType":2}]}
+      ]
+    },
+    "AV3Input": {
+      "values": [
+        {"name":"AV3","select":[{"commands":["DirectionLeft"],"setType":2}]},
+        {"name":"AV3S","select":[{"commands":["DirectionRight"],"setType":2}]}
+      ]
+    },
+    "AVS": {
+      "finish": ["Select"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2/S"},
+        {"name":"AV3/S"},
+        {"name":"Component"},
+        {"name":"PC"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"TV"}
+      ]
+    },
+    "INPUTMODE": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["AV"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

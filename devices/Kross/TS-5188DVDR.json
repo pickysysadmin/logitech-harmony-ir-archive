@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a0/a0d2c96c10ffd901.json",
   "deviceType": 34,
   "globalDeviceId": 92121,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext"],"name":"DVD"},
+      {"commands":["Title"],"name":"Tuner"},
+      {"commands":["Menu"],"name":"FrontCVBS"},
+      {"commands":["Menu"],"name":"RearCVBS"},
+      {"commands":["Menu"],"name":"RearS-Vid"},
+      {"commands":["Menu"],"name":"DVIn"},
+      {"commands":["Menu"],"name":"YUV"},
+      {"commands":["Menu"],"name":"Scart"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Kross",
-  "model": "TS-5188DVDR"
+  "model": "TS-5188DVDR",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,42 @@
   "codeset": "codesets/83/833c72b1faa8a6b8.json",
   "deviceType": 34,
   "globalDeviceId": 207089,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"DVD"}
+    ],
+    "next": ["Tv/Dvd"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "HR952TAW"
+  "model": "HR952TAW",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV 3"},
+        {"name":"OPT"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

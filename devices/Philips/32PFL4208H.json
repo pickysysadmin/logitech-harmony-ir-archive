@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/8f/8f1b76cc296ba4f2.json",
   "deviceType": 1,
   "globalDeviceId": 257003,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Hdmi"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"HdmiSide"}],"name":"HDMI Side"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Scart"}],"name":"Scart"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Smart"}],"name":"Smart TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "32PFL4208H"
+  "model": "32PFL4208H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Smart","select":[{"commands":["SmartTv"],"setType":2}]},
+        {"name":"Menu","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "MenuInput": {
+      "finish": ["OK"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["Source"],
+      "values": [
+        {"name":"TV"},
+        {"name":"USB"},
+        {"name":"Network"},
+        {"name":"Hdmi"},
+        {"name":"HdmiSide"},
+        {"name":"YPbPr"},
+        {"name":"Scart"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 24000,
+    "pressMinRepeats": 3
+  }
 }

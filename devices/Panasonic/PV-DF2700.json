@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a4/a463629965796891.json",
   "deviceType": 38,
   "globalDeviceId": 20151,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"LineInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"LineInput","to":"Line1"}],"name":"Line1"},
+      {"commands":[{"set":"LineInput","to":"Line2"}],"name":"Line2"},
+      {"commands":["InputDvd"],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "PV-DF2700"
+  "model": "PV-DF2700",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "LineInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line1"},
+        {"name":"Line2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

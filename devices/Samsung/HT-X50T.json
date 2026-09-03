@@ -2,6 +2,57 @@
   "codeset": "codesets/e0/e06b3aae757e53bf.json",
   "deviceType": 22,
   "globalDeviceId": 153999,
+  "inputs": {
+    "list": [
+      {"commands":["InputDVD"],"name":"DVD"},
+      {"commands":["InputTuner"],"name":"FM"},
+      {"name":"DigitalIn"},
+      {"commands":["InputAux"],"name":"Aux1"},
+      {"commands":["InputAux"],"name":"Aux2"},
+      {"commands":["InputUSB"],"name":"USB"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HT-X50T"
+  "model": "HT-X50T",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"},
+        {"name":"DigitalIn"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux",{"set":"AuxInput","to":"Aux1"}],"setType":2}]},
+        {"name":"Usb","select":[{"commands":["InputUSB"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 700,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

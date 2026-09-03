@@ -2,6 +2,58 @@
   "codeset": "codesets/1f/1f0bc6e1a6085ebb.json",
   "deviceType": 5,
   "globalDeviceId": 48626,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"LD"}],"name":"LD"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VCR 1"}],"name":"VCR 1"},
+      {"commands":[{"set":"InputType","to":"VCR 2"}],"name":"VCR 2"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tape 1"}],"name":"Tape 1"},
+      {"commands":[{"set":"InputType","to":"Tape 2"}],"name":"Tape 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Marantz",
-  "model": "SR-5000"
+  "model": "SR-5000",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"LD","select":[{"commands":["InputLd"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"VCR 1","select":[{"commands":["InputVcr1"],"setType":2}]},
+        {"name":"VCR 2","select":[{"commands":["InputVcr2"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tape 1","select":[{"commands":["InputTape1"],"setType":2}]},
+        {"name":"Tape 2","select":[{"commands":["InputTape2"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

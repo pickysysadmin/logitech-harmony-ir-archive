@@ -2,6 +2,54 @@
   "codeset": "codesets/72/725ad14a7ba60f10.json",
   "deviceType": 1,
   "globalDeviceId": 169321,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Ext"}],"name":"Ext"},
+      {"commands":[{"set":"InputType","to":"Av"}],"name":"Av"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"Dtv"}],"name":"Dtv"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "LE-19R88BD"
+  "model": "LE-19R88BD",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Ext","select":[{"commands":["InputExt"],"setType":2}]},
+        {"name":"Av","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputSVideo"],"setType":2}]},
+        {"name":"Component1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Pc","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"Hdmi1","select":[{"commands":["InputHdmi1"],"setType":2}]}
+      ]
+    },
+    "TvInput": {
+      "next": ["TV/DTV"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Dtv"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

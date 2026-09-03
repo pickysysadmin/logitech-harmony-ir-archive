@@ -2,6 +2,42 @@
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 157647,
+  "inputs": {
+    "list": [
+      {"commands":["Mode"],"name":"TV"},
+      {"commands":["InputHDMI3","TvVideo","DirectionDown","DirectionDown","Select"],"name":"AV1"},
+      {"commands":["InputHDMI3","TvVideo","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"AV2"},
+      {"commands":["InputHDMI3","TvVideo","DirectionDown","DirectionDown","DirectionDown","DirectionRight","Select"],"name":"AV2S"},
+      {"commands":["InputHDMI3","TvVideo","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"AV3"},
+      {"commands":["InputHDMI3","TvVideo","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionRight","Select"],"name":"AV3S"},
+      {"commands":["InputPc","TvVideo","DirectionUp","Select"],"name":"Component"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["InputHDMI3"],"name":"HDMI3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-PZ700E"
+  "model": "TH-PZ700E",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 2
+  }
 }

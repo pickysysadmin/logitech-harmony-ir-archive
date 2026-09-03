@@ -1,7 +1,51 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/50/50708251bfaa4b6b.json",
   "deviceType": 25,
   "globalDeviceId": 37656,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDs","to":"ANT/TV"}],"name":"ANT/TV"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDs","to":"L1"}],"name":"L1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDs","to":"L2"}],"name":"L2"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDs","to":"DVD1"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "RDR-VX50L"
+  "model": "RDR-VX50L",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDs": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"ANT/TV"},
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"DVD1"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/61/61d77474ef8e0f35.json",
   "deviceType": 32,
   "globalDeviceId": 83747,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/VCR"},{"set":"DVD/VCRInput","to":"DVD"}],"name":"Television"},
+      {"commands":[{"set":"InputType","to":"DVD/VCR"},{"set":"DVD/VCRInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AM/FMInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AM/FMInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HT790V"
+  "model": "SC-HT790V",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AM/FMInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "DVD/VCRInput": {
+      "next": ["InputDVD/VCR"],
+      "values": [
+        {"name":"Television"},
+        {"name":"DVD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/VCR","select":[{"commands":["InputDVD/VCR",{"set":"DVD/VCRInput","to":"Television"}],"setType":2}]},
+        {"name":"AM/FM","select":[{"commands":["InputTuner",{"set":"AM/FMInput","to":"FM"}],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

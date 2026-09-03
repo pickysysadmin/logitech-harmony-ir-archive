@@ -2,6 +2,61 @@
   "codeset": "codesets/30/3042b83e0bb29732.json",
   "deviceType": 1,
   "globalDeviceId": 492362,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"NetflixMenu","to":"OFF"},{"set":"MenuInput","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"NetflixMenu","to":"OFF"},{"set":"MenuInput","to":"HDMI1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"NetflixMenu","to":"OFF"},{"set":"MenuInput","to":"HDMI2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"NetflixMenu","to":"OFF"},{"set":"MenuInput","to":"HDMI3"}],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":[{"set":"NetflixMenu","to":"OFF"},{"set":"MenuInput","to":"Video"}],"name":"Video","ports":["Composite"]},
+      {"commands":[{"set":"NetflixMenu","to":"ON"},{"set":"InputType","to":"NETTV"}],"name":"NETTV","ports":["Streaming"]},
+      {"commands":[{"set":"NetflixMenu","to":"ON"},{"set":"InputType","to":"Vudu"}],"name":"Vudu","ports":["Streaming"]},
+      {"commands":[{"set":"NetflixMenu","to":"ON"},{"set":"InputType","to":"Netflix"}],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "65PFL5604"
+  "model": "65PFL5604",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"NETTV","select":[{"commands":["Return","Return","NetTv"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"Vudu","select":[{"commands":["Vudu"],"setType":1}]}
+      ]
+    },
+    "MenuInput": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["Source"],
+      "values": [
+        {"name":"TV"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"Video"}
+      ]
+    },
+    "NetflixMenu": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Home",{"delayMs":7000},"Return",{"delayMs":500}],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 30000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,60 @@
   "codeset": "codesets/d6/d6de5e9d03afc652.json",
   "deviceType": 34,
   "globalDeviceId": 133041,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Input 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-H2S"
+  "model": "DMR-H2S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDDInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Input 1"},
+        {"name":"Input 2"},
+        {"name":"Input 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":1}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":1}]},
+        {"name":"SD","select":[{"commands":["InputSd/Pc"],"setType":1}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Input 1"},
+        {"name":"Input 2"},
+        {"name":"Input 3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

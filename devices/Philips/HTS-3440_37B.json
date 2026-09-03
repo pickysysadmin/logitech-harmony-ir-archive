@@ -2,6 +2,97 @@
   "codeset": "codesets/86/86fbb0038e0f4278.json",
   "deviceType": 22,
   "globalDeviceId": 176888,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Disc/USB"},{"set":"Disc/USBInput","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Disc/USB"},{"set":"Disc/USBInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Digital In"}],"name":"Digital In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS-3440/37B"
+  "model": "HTS-3440/37B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AM/FMInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"Digital In"}
+      ]
+    },
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Digital In"},
+        {"name":"Aux 1"},
+        {"name":"Aux 2"}
+      ]
+    },
+    "Disc/USBInput": {
+      "next": ["InputDisc/Usb"],
+      "values": [
+        {"name":"Disc"},
+        {"name":"USB"}
+      ]
+    },
+    "GameInput": {
+      "next": ["InputDisc/Usb"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"PC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Disc/USB","select":[{"commands":["InputDisc/Usb"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM/MW"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 1
+  }
 }

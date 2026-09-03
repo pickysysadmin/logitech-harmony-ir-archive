@@ -2,6 +2,30 @@
   "codeset": "codesets/d7/d7105507bcb72df3.json",
   "deviceType": 7,
   "globalDeviceId": 15419,
+  "inputs": {
+    "list": [
+      {"commands":["InputComputer1"],"name":"Comp 1"},
+      {"commands":["InputComputer2"],"name":"Comp 2"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "PowerLite 81P"
+  "model": "PowerLite 81P",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/e4/e48d83eb49e3169d.json",
   "deviceType": 5,
   "globalDeviceId": 143740,
+  "inputs": {
+    "list": [
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["Composite"]},
+      {"commands":["InputDtv/Cbl"],"name":"D-TV/CBL","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputMd/Cdr"],"name":"MD/CD-R","ports":["Composite","Optical"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["Input6CH"],"name":"6CH","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V540"
+  "model": "RX-V540",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

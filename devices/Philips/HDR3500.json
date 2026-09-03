@@ -2,6 +2,50 @@
   "codeset": "codesets/16/164747db0ac92340.json",
   "deviceType": 34,
   "globalDeviceId": 234964,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"LiveTV"},{"set":"TunerInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"LiveTV"},{"set":"TunerInput","to":"EXT1"}],"name":"EXT 1"},
+      {"commands":[{"set":"InputType","to":"LiveTV"},{"set":"TunerInput","to":"EXT2"}],"name":"EXT 2"},
+      {"commands":[{"set":"InputType","to":"LiveTV"},{"set":"TunerInput","to":"CAM1"}],"name":"CAM 1"},
+      {"commands":[{"set":"InputType","to":"CAM2"}],"name":"CAM 2"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HDR3500"
+  "model": "HDR3500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"LiveTV","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"CAM2","select":[{"commands":["InputCam"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["ChannelDown"],
+      "previous": ["ChannelUp"],
+      "values": [
+        {"name":"TV"},
+        {"name":"EXT1"},
+        {"name":"EXT2"},
+        {"name":"CAM1"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

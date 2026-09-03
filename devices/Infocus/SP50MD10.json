@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 44681,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo3"],"name":"Video1"},
+      {"commands":["InputVideo4"],"name":"Video2"},
+      {"commands":["InputAUX"],"name":"Video3"},
+      {"commands":["InputS-Video"],"name":"Front"},
+      {"commands":["InputSat/Cable"],"name":"Component"},
+      {"commands":["InputAntennaB"],"name":"Ant B"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Infocus",
-  "model": "SP50MD10"
+  "model": "SP50MD10",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

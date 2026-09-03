@@ -2,6 +2,39 @@
   "codeset": "codesets/2f/2faf1eb0a0d53c8f.json",
   "deviceType": 1,
   "globalDeviceId": 159219,
+  "inputs": {
+    "finish": ["DirectionRight"],
+    "list": [
+      {"name":"T.V"},
+      {"name":"AV/SVHS"},
+      {"name":"SIDE/SVHS"},
+      {"name":"CVI-1"},
+      {"name":"CVI-2"},
+      {"name":"HDMI"},
+      {"name":"PC-VGA"},
+      {"name":"PC-D"}
+    ],
+    "next": ["DirectionDown"],
+    "start": [
+      {"set":"Input","to":"T.V"},
+      "InputNext"
+    ],
+    "type": 4
+  },
   "manufacturer": "Philips",
-  "model": "26PF5320"
+  "model": "26PF5320",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

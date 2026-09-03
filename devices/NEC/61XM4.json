@@ -2,6 +2,62 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 77157,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputRgb1"],"name":"RGB1"},
+      {"commands":["DVD/HDToggle"],"name":"DVD/HD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "61XM4"
+  "model": "61XM4",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "HDInput": {
+      "next": ["HD 1"],
+      "values": [
+        {"name":"DVD/HD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["Video 1"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["RGB/PCToggle"],"setType":2}]},
+        {"name":"HD","select":[{"commands":["HD 1"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Video 1"],
+      "values": [
+        {"name":"VideoAv1"},
+        {"name":"VideoAv2"},
+        {"name":"VideoAv3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,56 @@
   "codeset": "codesets/0f/0f64206ac1e4572a.json",
   "deviceType": 7,
   "globalDeviceId": 231254,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"}],"name":"Computer"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB (Type A)"}],"name":"USB (Type A)"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB (Type B)"}],"name":"USB (Type B)"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "EH-TW480"
+  "model": "EH-TW480",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputUsb"],
+      "values": [
+        {"name":"USB (Type A)"},
+        {"name":"USB (Type B)"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"S-Video"},
+        {"name":"Video"},
+        {"name":"HDMI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,67 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/38/388ffe1e9bd2a2e4.json",
   "deviceType": 1,
   "globalDeviceId": 88283,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FRONT VIDEO"}],"name":"FRONT VIDEO"},
+      {"commands":[{"set":"InputType","to":"Colorstream HD 1"}],"name":"Colorstream HD 1"},
+      {"commands":[{"set":"InputType","to":"Colorstream HD 2"}],"name":"Colorstream HD 2"},
+      {"commands":[{"set":"InputType","to":"Ant/Cable"}],"name":"Ant/Cable"},
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"DVI"},{"set":"DVIInput","to":"DVI-DTV"}],"name":"DVI-DTV"},
+      {"commands":[{"set":"InputType","to":"DVI"},{"set":"DVIInput","to":"DVI-PC"}],"name":"DVI-PC"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"RGB-PC"}],"name":"RGB-PC"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"RGB-DTV"}],"name":"RGB-DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "44NHM84"
+  "model": "44NHM84",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVIInput": {
+      "next": ["InputDvi"],
+      "values": [
+        {"name":"DVI-DTV"},
+        {"name":"DVI-PC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"FRONT VIDEO","select":[{"commands":["InputFront"],"setType":2}]},
+        {"name":"Colorstream HD 1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Colorstream HD 2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"Ant/Cable","select":[{"commands":["0"],"setType":2}]},
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"DVI","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["InputRgb"],
+      "values": [
+        {"name":"RGB-PC"},
+        {"name":"RGB-DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

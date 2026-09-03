@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 56357,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANT A"}],"name":"ANT A"},
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANT B"}],"name":"ANT B"},
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Video 4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"Video 5"}],"name":"Video 5"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "53UDX10B"
+  "model": "53UDX10B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ANTInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"ANT A"},
+        {"name":"ANT B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ANT","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Video 1","select":[{"commands":["Input 1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["Input 2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["Input 3"],"setType":2}]},
+        {"name":"Video 4","select":[{"commands":["Input 4"],"setType":2}]},
+        {"name":"Video 5","select":[{"commands":["Input 5"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 700,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

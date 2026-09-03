@@ -2,6 +2,55 @@
   "codeset": "codesets/c3/c3b5efe9f677909c.json",
   "deviceType": 7,
   "globalDeviceId": 228091,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer IN 1"}],"name":"Computer IN 1"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer IN 2"}],"name":"Computer IN 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Component (Y,Cb/Pb,Cr/Pr)"}],"name":"Component (Y,Cb/Pb,Cr/Pr)"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "CP-X401"
+  "model": "CP-X401",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "ComputerInput": {
+      "next": ["InputComputer"],
+      "values": [
+        {"name":"Computer IN 1"},
+        {"name":"Computer IN 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Component (Y,Cb/Pb,Cr/Pr)"},
+        {"name":"S-Video"},
+        {"name":"Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

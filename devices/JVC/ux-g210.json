@@ -2,6 +2,48 @@
   "codeset": "codesets/5f/5f0908dd0969621c.json",
   "deviceType": 21,
   "globalDeviceId": 224931,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"FM/AudioIn"},{"set":"FM/AudioInInput","to":"FM (PRE)"}],"name":"FM (PRE)"},
+      {"commands":[{"set":"InputType","to":"FM/AudioIn"},{"set":"FM/AudioInInput","to":"FM Mono"}],"name":"FM Mono"},
+      {"commands":[{"set":"InputType","to":"FM/AudioIn"},{"set":"FM/AudioInInput","to":"Audio In"}],"name":"Audio In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "ux-g210"
+  "model": "ux-g210",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FM/AudioInInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM (PRE)"},
+        {"name":"FM Mono"},
+        {"name":"Audio In"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"FM/AudioIn","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

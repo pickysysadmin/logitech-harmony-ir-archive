@@ -2,6 +2,46 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 7,
   "globalDeviceId": 30547,
+  "inputs": {
+    "finish": ["Select","Select"],
+    "list": [
+      {"name":"RGB"},
+      {"name":"S-Video"},
+      {"name":"Video"},
+      {"name":"Component"},
+      {"name":"RGB Tri-Level"},
+      {"name":"Component Tri-Level"}
+    ],
+    "next": ["DirectionDown3"],
+    "start": [
+      {"delayMs":4000},
+      "Menu",
+      "Select"
+    ],
+    "type": 4
+  },
   "manufacturer": "Runco",
-  "model": "DTV-940"
+  "model": "DTV-940",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"RGB"},
+      "Menu",
+      "Select",
+      "Select",
+      "Select",
+      {"delayMs":3500}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

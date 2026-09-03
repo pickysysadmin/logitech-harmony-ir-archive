@@ -2,6 +2,47 @@
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 157586,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo3"],"name":"AV3"},
+      {"commands":["InputVideo3","TvVideo","DirectionRight","Select"],"name":"AV3S"},
+      {"commands":["InputVideo4"],"name":"AV4"},
+      {"commands":["InputVideo4","TvVideo","DirectionRight","Select"],"name":"AV4S"},
+      {"commands":["InputComponent1"],"name":"Component1"},
+      {"commands":["InputComponent2"],"name":"Component2"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["InputHDMI3"],"name":"HDMI3"},
+      {"commands":["InputSD"],"name":"SD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-50PV80H"
+  "model": "TH-50PV80H",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1500}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2500}
+    ],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 3
+  }
 }

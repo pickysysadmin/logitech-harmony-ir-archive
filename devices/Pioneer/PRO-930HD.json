@@ -1,7 +1,57 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/6b/6b81edbe5ac876d7.json",
   "deviceType": 1,
   "globalDeviceId": 180401,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Input 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Input 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"Input 4"}],"name":"Input 4"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"i.Link"}],"name":"i.Link"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"AntA"}],"name":"AntA"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"AntB"}],"name":"AntB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PRO-930HD"
+  "model": "PRO-930HD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputAntennaA/B"],
+      "values": [
+        {"name":"AntA"},
+        {"name":"AntB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Input 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Input 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Input 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"i.Link","select":[{"commands":["InputiLink"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["InputAntennaA/B"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

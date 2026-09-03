@@ -2,6 +2,55 @@
   "codeset": "codesets/7d/7d6fb5afe142b56a.json",
   "deviceType": 13,
   "globalDeviceId": 15147,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoMode","to":"VIDEO1"}],"name":"VIDEO1"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoMode","to":"VIDEO2"}],"name":"VIDEO2"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoMode","to":"VIDEO3"}],"name":"VIDEO3"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VideoMode","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBMode","to":"RGB1"}],"name":"RGB1"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBMode","to":"RGB2"}],"name":"RGB2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "KL-W7000"
+  "model": "KL-W7000",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"VIDEO","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRGB"],"setType":2}]}
+      ]
+    },
+    "RGBMode": {
+      "next": ["InputRGB"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"}
+      ]
+    },
+    "VideoMode": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VIDEO1"},
+        {"name":"VIDEO2"},
+        {"name":"VIDEO3"},
+        {"name":"DVD"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

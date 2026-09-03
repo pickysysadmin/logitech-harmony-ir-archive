@@ -1,7 +1,148 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2b/2b481580f642520c.json",
   "deviceType": 1,
   "globalDeviceId": 175958,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"},{"set":"AV1Scart","to":"ON"},{"set":"AV2Scart","to":"ON"},{"set":"AV3Scart","to":"ON"},{"set":"HDMI1Scart","to":"ON"},{"set":"HDMI2Scart","to":"ON"}],"name":"TV"},
+      {"commands":[{"set":"AV1Scart","to":"ON"},{"set":"AV2Scart","to":"OFF"},{"set":"AV3Scart","to":"OFF"},{"set":"HDMI1Scart","to":"OFF"},{"set":"HDMI2Scart","to":"OFF"}],"name":"AV1"},
+      {"commands":[{"set":"AV2Scart","to":"ON"},{"set":"AV1Scart","to":"OFF"},{"set":"AV3Scart","to":"OFF"},{"set":"HDMI1Scart","to":"OFF"},{"set":"HDMI2Scart","to":"OFF"}],"name":"AV2"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"AVTWO","to":"AV2S"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"AV3Scart","to":"OFF"},{"set":"HDMI1Scart","to":"OFF"},{"set":"HDMI2Scart","to":"OFF"}],"name":"AV2S"},
+      {"commands":[{"set":"AV3Scart","to":"ON"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"HDMI1Scart","to":"OFF"},{"set":"HDMI2Scart","to":"OFF"}],"name":"AV3"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"AVTHREE","to":"AV3S"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"AV3Scart","to":"OFF"},{"set":"HDMI1Scart","to":"OFF"},{"set":"HDMI2Scart","to":"OFF"}],"name":"AV3S"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV4"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"AV3Scart","to":"OFF"},{"set":"HDMI1Scart","to":"OFF"},{"set":"HDMI2Scart","to":"OFF"}],"name":"AV4"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV4"},{"set":"AVFOUR","to":"AV4S"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"AV3Scart","to":"OFF"},{"set":"HDMI1Scart","to":"OFF"},{"set":"HDMI2Scart","to":"OFF"}],"name":"AV4S"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"Component/PC"},{"set":"Component/PC","to":"Component"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"AV3Scart","to":"OFF"},{"set":"HDMI1Scart","to":"OFF"},{"set":"HDMI2Scart","to":"OFF"}],"name":"Component"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"Component/PC"},{"set":"Component/PC","to":"PC"},{"set":"MENU","to":"OFF"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"AV3Scart","to":"OFF"},{"set":"HDMI1Scart","to":"OFF"},{"set":"HDMI2Scart","to":"OFF"}],"name":"PC"},
+      {"commands":[{"set":"HDMI1Scart","to":"ON"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"AV3Scart","to":"OFF"},{"set":"HDMI2Scart","to":"OFF"}],"name":"HDMI1"},
+      {"commands":[{"set":"HDMI2Scart","to":"ON"},{"set":"AV1Scart","to":"OFF"},{"set":"AV2Scart","to":"OFF"},{"set":"AV3Scart","to":"OFF"},{"set":"HDMI1Scart","to":"OFF"}],"name":"HDMI2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-26LXD600"
+  "model": "TX-26LXD600",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"},
+      {"set":"AV1Scart","to":"ON"},
+      {"set":"AV2Scart","to":"ON"},
+      {"set":"AV3Scart","to":"ON"},
+      {"set":"HDMI1Scart","to":"ON"},
+      {"set":"HDMI2Scart","to":"ON"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV1Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV1"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "AV2Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV2"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "AV3Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV3"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "AVFOUR": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4S"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":[{"set":"PAGE12","to":"PAGE1"},"Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":[{"set":"PAGE12","to":"PAGE1"},"Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":[{"set":"PAGE12","to":"PAGE1"},"Yellow"],"setType":2}]},
+        {"name":"AV4","select":[{"commands":[{"set":"PAGE12","to":"PAGE2"},"Green"],"setType":2}]},
+        {"name":"Component/PC","select":[{"commands":[{"set":"PAGE12","to":"PAGE2"},"Yellow"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":[{"set":"PAGE12","to":"PAGE2"},"Blue"],"setType":2}]}
+      ]
+    },
+    "AVTHREE": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AVTWO": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "Component/PC": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"Component"},
+        {"name":"PC"}
+      ]
+    },
+    "HDMI": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    },
+    "HDMI1Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"HDMI"},{"set":"HDMI","to":"HDMI1"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "HDMI2Scart": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"HDMI"},{"set":"HDMI","to":"HDMI2"},{"set":"MENU","to":"OFF"}],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "TvVideo",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "PAGE12": {
+      "values": [
+        {"name":"PAGE1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"PAGE2","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

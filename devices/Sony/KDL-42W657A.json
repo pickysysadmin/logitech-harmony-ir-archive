@@ -2,6 +2,33 @@
   "codeset": "codesets/5f/5f2ee1bc99a1a26f.json",
   "deviceType": 1,
   "globalDeviceId": 252028,
+  "inputs": {
+    "list": [
+      {"commands":["Home","Exit","InputTuner"],"name":"Antenna"},
+      {"commands":["Home","Exit","InputVideo1"],"name":"Video 1"},
+      {"commands":["Home","Exit","InputVideo2"],"name":"Video 2/Component"},
+      {"commands":["Home","Exit","InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["Home","Exit","InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["Home","Exit",{"delayMs":1500},"SEN"],"name":"SEN"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-42W657A"
+  "model": "KDL-42W657A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 45000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

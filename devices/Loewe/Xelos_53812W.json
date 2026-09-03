@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/27/2759f601cd7513fd.json",
   "deviceType": 1,
   "globalDeviceId": 38425,
+  "inputs": {
+    "list": [
+      {"commands":["DirectionRight"],"name":"SCART3"},
+      {"commands":["DirectionRight","DirectionRight"],"name":"SAT + VCR"},
+      {"commands":["DirectionRight","DirectionRight","DirectionRight"],"name":"DVD"},
+      {"commands":["DirectionRight","DirectionRight","DirectionRight","DirectionRight"],"name":"AVS"},
+      {"commands":["1"],"name":"Channel 1"}
+    ],
+    "start": ["0","0","DirectionLeft","DirectionLeft","DirectionLeft","DirectionLeft"],
+    "type": 3
+  },
   "manufacturer": "Loewe",
-  "model": "Xelos 53812W"
+  "model": "Xelos 53812W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

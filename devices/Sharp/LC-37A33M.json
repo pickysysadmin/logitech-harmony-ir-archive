@@ -2,6 +2,42 @@
   "codeset": "codesets/46/46143132b465198d.json",
   "deviceType": 1,
   "globalDeviceId": 169260,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"DTV"},
+      {"name":"EXT 1"},
+      {"name":"EXT 2"},
+      {"name":"EXT 3"},
+      {"name":"EXT 4"},
+      {"name":"EXT 5"},
+      {"name":"EXT 6"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sharp",
-  "model": "LC-37A33M"
+  "model": "LC-37A33M",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["Teletext"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Teletext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

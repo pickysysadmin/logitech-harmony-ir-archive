@@ -2,6 +2,54 @@
   "codeset": "codesets/2e/2e6bc500902b7999.json",
   "deviceType": 1,
   "globalDeviceId": 272237,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"d"},{"set":"TVInput","to":"DVB"}],"name":"DVB"},
+      {"commands":[{"set":"InputType","to":"d"},{"set":"TVInput","to":"Analogue"}],"name":"Analogue"},
+      {"commands":[{"set":"InputType","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Media Player"}],"name":"Media Player"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "Test Panasonic"
+  "model": "Test Panasonic",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["TV",{"delayMs":1000},"InputHdmi1","AV","DirectionUp","DirectionUp","OK"],"setType":2}]},
+        {"name":"AV 2","select":[{"commands":["TV",{"delayMs":1000},"InputHdmi1","AV","DirectionUp","OK"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["TV",{"delayMs":1000},"TV","InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["TV",{"delayMs":1000},"TV","InputHdmi1","InputHdmi1"],"setType":2}]},
+        {"name":"Media Player","select":[{"commands":["MediaPlayer"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"DVB"},
+        {"name":"Analogue"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1300,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 1
+  }
 }

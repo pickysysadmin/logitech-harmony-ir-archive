@@ -2,6 +2,52 @@
   "codeset": "codesets/a1/a1a1f97d185417af.json",
   "deviceType": 34,
   "globalDeviceId": 167401,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"DV"}],"name":"DV"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Ext1"}],"name":"Ext1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Cam1"}],"name":"Cam1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Cam2"}],"name":"Cam2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DVDR-3360H/75"
+  "model": "DVDR-3360H/75",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"DV","select":[{"commands":["InputDV"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Ext1"},
+        {"name":"Cam1"},
+        {"name":"Cam2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

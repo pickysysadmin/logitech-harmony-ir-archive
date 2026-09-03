@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/97/97fb2fd66ea912a9.json",
   "deviceType": 34,
   "globalDeviceId": 160934,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"L1"}],"name":"L1"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"L2"}],"name":"L2"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"L3"}],"name":"L3"},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"DV"}],"name":"DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "DVR-531H"
+  "model": "DVR-531H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputSelectInput": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"L3"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"InputSelect","select":[{"commands":["InputSelect"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

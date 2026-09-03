@@ -2,6 +2,51 @@
   "codeset": "codesets/7f/7f61c9705879fbfe.json",
   "deviceType": 47,
   "globalDeviceId": 158004,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AV1 Front"}],"name":"AV1 Front"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AV2 Rear"}],"name":"AV2 Rear"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"DV"}],"name":"DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LiteOn",
-  "model": "LVC-9015G"
+  "model": "LVC-9015G",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["Hdd/Dvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV1 Front"},
+        {"name":"AV2 Rear"},
+        {"name":"S-Video"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

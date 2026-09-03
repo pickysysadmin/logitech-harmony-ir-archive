@@ -2,6 +2,43 @@
   "codeset": "codesets/d2/d2ded75f278f6292.json",
   "deviceType": 5,
   "globalDeviceId": 209152,
+  "inputs": {
+    "list": [
+      {"commands":["InputNet/Usb"],"name":"NET/USB","ports":["USB"]},
+      {"commands":["InputiPod"],"name":"iPod","ports":["Dock"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputBd"],"name":"BD","ports":["HDMI","Composite"]},
+      {"commands":["InputTuner/Dtu",{"delayMs":1000},"InputAM"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner/Dtu",{"delayMs":1000},"InputFM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDock"],"name":"Dock","ports":["HDMI","Composite","S-Video"]},
+      {"commands":["InputSat/Cbl"],"name":"SAT/CBL","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputGame"],"name":"Game","ports":["HDMI"]},
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["HDMI","Composite"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["HDMI","Component","Composite","S-Video","Optical"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Optical"]},
+      {"commands":["QuickSelect1"],"name":"QuickSelect 1","ports":["Streaming"]},
+      {"commands":["QuickSelect2"],"name":"QuickSelect 2","ports":["Streaming"]},
+      {"commands":["QuickSelect3"],"name":"QuickSelect 3","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-4311"
+  "model": "AVR-4311",
+  "power": {
+    "off": ["PowerOff-Zone1"],
+    "on": ["PowerOn-Zone1"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

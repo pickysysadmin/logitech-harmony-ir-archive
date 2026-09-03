@@ -2,6 +2,48 @@
   "codeset": "codesets/bd/bdac11cec3c27971.json",
   "deviceType": 1,
   "globalDeviceId": 108786,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV"},
+      {"name":"S-Video"},
+      {"name":"SCART1"},
+      {"name":"SCART2"},
+      {"name":"Component"},
+      {"name":"VGA"},
+      {"name":"DVI"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "V7",
-  "model": "LTV-24CH"
+  "model": "LTV-24CH",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Text"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

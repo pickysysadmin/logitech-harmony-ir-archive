@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 114640,
+  "inputs": {
+    "finish": ["InputFinish"],
+    "list": [
+      {"name":"TV"},
+      {"name":"SCART1"},
+      {"name":"SCART2"},
+      {"name":"SVHS"},
+      {"name":"AV"},
+      {"name":"PC"},
+      {"name":"DVI"}
+    ],
+    "next": ["InputNext"],
+    "start": ["InputStart"],
+    "type": 4
+  },
   "manufacturer": "Soundcolor",
-  "model": "LCD-26"
+  "model": "LCD-26",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

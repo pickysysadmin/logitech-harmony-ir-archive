@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/47/4710eabef4e9f6f4.json",
   "deviceType": 1,
   "globalDeviceId": 479131,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv",{"delayMs":2000}],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputHdmi4"],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":["InputComponent1"],"name":"Component","ports":["Component"]},
+      {"commands":["Home"],"name":"Smart TV","ports":["Streaming"]},
+      {"commands":["InputAv1"],"name":"AV 1","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "49SK8000PLB"
+  "model": "49SK8000PLB",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 30000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

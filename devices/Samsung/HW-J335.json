@@ -2,6 +2,36 @@
   "codeset": "codesets/a5/a56ef244546b303d.json",
   "deviceType": 19,
   "globalDeviceId": 446303,
+  "inputs": {
+    "list": [
+      {"name":"D.IN"},
+      {"name":"AUX"},
+      {"name":"BT"},
+      {"name":"TV"},
+      {"name":"USB"}
+    ],
+    "next": ["Source"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HW-J335"
+  "model": "HW-J335",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

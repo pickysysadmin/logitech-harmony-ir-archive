@@ -2,6 +2,36 @@
   "codeset": "codesets/53/53eae4237b102405.json",
   "deviceType": 37,
   "globalDeviceId": 143087,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"DVD"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"S-Video"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "DMTech",
-  "model": "LM-17XT"
+  "model": "LM-17XT",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 1
+  }
 }

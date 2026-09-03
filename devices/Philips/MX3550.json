@@ -2,6 +2,30 @@
   "codeset": "codesets/7f/7fbdfbbe8544160f.json",
   "deviceType": 22,
   "globalDeviceId": 15937,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":[{"delayMs":1000},"InputTv/Av"],"name":"TV"},
+      {"commands":[{"delayMs":1000},"InputDisc"],"name":"DVD"},
+      {"commands":[{"delayMs":1000},"InputAux/Di"],"name":"AUX"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "MX3550"
+  "model": "MX3550",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

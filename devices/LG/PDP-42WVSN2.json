@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 115574,
+  "inputs": {
+    "list": [
+      {"name":"VIDEO"},
+      {"name":"S-VIDEO"},
+      {"name":"COMPONENT"},
+      {"name":"RGB"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "PDP-42WVSN2"
+  "model": "PDP-42WVSN2",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 1
+  }
 }

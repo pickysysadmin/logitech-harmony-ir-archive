@@ -2,6 +2,45 @@
   "codeset": "codesets/a8/a8547d18fe86ba3f.json",
   "deviceType": 1,
   "globalDeviceId": 51159,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputMode","to":"TV"}],"name":"Tuner"},
+      {"commands":[{"set":"InputMode","to":"AV"},{"set":"AVType","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputMode","to":"AV"},{"set":"AVType","to":"AV2"}],"name":"AV 2 Component"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-23LX50A"
+  "model": "TX-23LX50A",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red","Red",{"delayMs":500},"Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["Green","Green",{"delayMs":500},"Green"],"setType":2}]}
+      ]
+    },
+    "InputMode": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 2
+  }
 }

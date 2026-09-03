@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/c1/c125a12b4e724f20.json",
   "deviceType": 1,
   "globalDeviceId": 249641,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv","Exit","DirectionRight","Select",{"delayMs":500},"Exit","Exit","InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputAv1","Exit","DirectionRight","Select",{"delayMs":500},"Exit","Exit","InputAv1"],"name":"AV 1","ports":["Composite"]},
+      {"commands":["InputAv2","Exit","DirectionRight","Select",{"delayMs":500},"Exit","Exit","InputAv2"],"name":"AV 2","ports":["Composite"]},
+      {"commands":["InputComponent","Exit","DirectionRight","Select",{"delayMs":500},"Exit","Exit","InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputHdmi1","Exit","DirectionRight","Select",{"delayMs":500},"Exit","Exit","InputHdmi1"],"name":"HDMI 1/DVI","ports":["HDMI"]},
+      {"commands":["InputHdmi2","Exit","DirectionRight","Select",{"delayMs":500},"Exit","Exit","InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3","Exit","DirectionRight","Select",{"delayMs":500},"Exit","Exit","InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputHdmi4","Exit","DirectionRight","Select",{"delayMs":500},"Exit","Exit","InputHdmi4"],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":["Exit","SmartHub"],"name":"Smart Hub","ports":["Streaming"]},
+      {"commands":["Exit","Apps"],"name":"Apps","ports":["Streaming"]},
+      {"commands":["Ambient"],"name":"Ambient"},
+      {"commands":["Exit","Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UN46F8000"
+  "model": "UN46F8000",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 55000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

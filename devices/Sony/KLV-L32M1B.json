@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 75360,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VideoMode","to":"Cycle"},{"set":"VideoInput","to":"AV1"}],"name":"Video1"},
+      {"commands":[{"set":"VideoMode","to":"Cycle"},{"set":"VideoInput","to":"AV2"}],"name":"Video2"},
+      {"commands":[{"set":"VideoMode","to":"Cycle"},{"set":"VideoInput","to":"AV3"}],"name":"Video3"},
+      {"commands":[{"set":"VideoMode","to":"AV4"}],"name":"Video4"},
+      {"commands":[{"set":"VideoMode","to":"AV5"}],"name":"Video5"},
+      {"commands":[{"set":"VideoMode","to":"TV"}],"name":"Tuner"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "KLV-L32M1B"
+  "model": "KLV-L32M1B",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    },
+    "VideoMode": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AV4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"AV5","select":[{"commands":["InputVideo5"],"setType":2}]},
+        {"name":"Cycle","select":[{"commands":[{"set":"VideoInput","to":"AV1"},"InputVideo4","InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

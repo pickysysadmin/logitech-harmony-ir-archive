@@ -2,6 +2,34 @@
   "codeset": "codesets/26/262ea2a3efe17e07.json",
   "deviceType": 19,
   "globalDeviceId": 172614,
+  "inputs": {
+    "list": [
+      {"name":"Analog","ports":["Aux"]},
+      {"name":"DigitalIn 1","ports":["Optical"]},
+      {"name":"DigitalIn 2","ports":["Optical"]}
+    ],
+    "next": ["InputNext"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HW-C450"
+  "model": "HW-C450",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 2
+  }
 }

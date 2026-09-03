@@ -2,6 +2,37 @@
   "codeset": "codesets/eb/eb40a96059dd4807.json",
   "deviceType": 34,
   "globalDeviceId": 118356,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"Tuner"},
+      {"name":"Front CVBS"},
+      {"name":"Rear CVBS"},
+      {"name":"Rear S-Video"},
+      {"name":"DV"},
+      {"name":"SCART"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "BBK Electronics",
-  "model": "DW-9917K"
+  "model": "DW-9917K",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

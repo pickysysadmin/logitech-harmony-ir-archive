@@ -2,6 +2,33 @@
   "codeset": "codesets/85/85802a2718306665.json",
   "deviceType": 1,
   "globalDeviceId": 218745,
+  "inputs": {
+    "list": [
+      {"name":"E1-SAT"},
+      {"name":"E2-DVD"},
+      {"name":"E3-PS2"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "Universum",
-  "model": "FT-7197"
+  "model": "FT-7197",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"Input","to":"E1-SAT"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

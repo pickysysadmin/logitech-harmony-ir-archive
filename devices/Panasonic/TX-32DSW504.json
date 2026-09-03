@@ -1,7 +1,84 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/77/77d8a2f41a2c8d5c.json",
   "deviceType": 1,
   "globalDeviceId": 279752,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"DVBS"}],"name":"DVB-S"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"DVBC"}],"name":"DVB-C"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"DVBT"}],"name":"DVB-T"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"DVBIP"}],"name":"DVB-via-IP"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"CompAV"},{"set":"CompAVInput","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"CompAV"},{"set":"CompAVInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Screen","to":"Apps"}],"name":"Apps"},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Screen","to":"ScreenMirroring"}],"name":"Screen Mirroring"},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Screen","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-32DSW504"
+  "model": "TX-32DSW504",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "CompAVInput": {
+      "finish": ["OK"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"Component"}
+      ]
+    },
+    "Screen": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":1}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"AV1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"CompAV","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"Apps","select":[{"commands":["Apps"],"setType":1}]},
+        {"name":"ScreenMirroring","select":[{"commands":["Devices","Devices",{"delayMs":2000},{"command":"DirectionRight","durationMs":1500},"DirectionLeft","OK"],"setType":1}]}
+      ]
+    },
+    "SmartTV_MENU": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Exit",{"delayMs":500}],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"DVBS"},
+        {"name":"DVBC"},
+        {"name":"DVBT"},
+        {"name":"DVBIP"},
+        {"name":"Analog"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 10000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

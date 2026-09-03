@@ -2,6 +2,59 @@
   "codeset": "codesets/d1/d11914ce910fb562.json",
   "deviceType": 22,
   "globalDeviceId": 99180,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleInput","to":"AV4"}],"name":"AV4"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleInput","to":"DV"}],"name":"DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LH-RH9506TA"
+  "model": "LH-RH9506TA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CycleInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"Optical"},
+        {"name":"AV3"},
+        {"name":"AV4"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"Cycle","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 40000,
+    "pressMinRepeats": 3
+  }
 }

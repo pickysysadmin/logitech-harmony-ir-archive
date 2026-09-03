@@ -2,6 +2,35 @@
   "codeset": "codesets/70/70d9629461f28322.json",
   "deviceType": 1,
   "globalDeviceId": 169405,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tv"},
+      {"commands":["InputAv1"],"name":"Video1"},
+      {"commands":["InputAv2"],"name":"Video2"},
+      {"commands":["InputAv3"],"name":"Video3"},
+      {"commands":["InputAV4"],"name":"Video4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KV-32LS65E"
+  "model": "KV-32LS65E",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

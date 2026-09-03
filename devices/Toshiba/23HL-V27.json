@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2,
+    "greaterHundred": ["Greater100"]
+  },
   "codeset": "codesets/e2/e2dcd59536761dd8.json",
   "deviceType": 37,
   "globalDeviceId": 151366,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"TV/DVDInput","to":"TV"},{"set":"InputType","to":"Antenna"}],"name":"Antenna"},
+      {"commands":[{"set":"TV/DVDInput","to":"TV"},{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"TV/DVDInput","to":"TV"},{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"TV/DVDInput","to":"TV"},{"set":"InputType","to":"Colorstreem HD"}],"name":"Colorstreem HD"},
+      {"commands":[{"set":"TV/DVDInput","to":"TV"},{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"TV/DVDInput","to":"TV"},{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"TV/DVDInput","to":"DVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "23HL-V27"
+  "model": "23HL-V27",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["TvVideo","0"],"setType":2}]},
+        {"name":"Video 1","select":[{"commands":["TvVideo","1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["TvVideo","2"],"setType":2}]},
+        {"name":"Colorstreem HD","select":[{"commands":["TvVideo","3"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["TvVideo","4"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["TvVideo","5"],"setType":2}]},
+        {"name":"TV/DVD","select":[{"commands":["TvDvd",{"delayMs":2500}],"setType":2}]}
+      ]
+    },
+    "TV/DVDInput": {
+      "next": [
+        "TvDvd",
+        {"delayMs":2500}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"DVD"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

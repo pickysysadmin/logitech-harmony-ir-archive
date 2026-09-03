@@ -2,6 +2,37 @@
   "codeset": "codesets/4c/4cb3d7778ab7fcd2.json",
   "deviceType": 1,
   "globalDeviceId": 163920,
+  "inputs": {
+    "list": [
+      {"name":"Antenna"},
+      {"name":"AV"},
+      {"name":"S-Video"},
+      {"name":"PS2/VCR"},
+      {"name":"Digital TV"},
+      {"name":"DVD"},
+      {"name":"VGA"},
+      {"name":"DVI"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Hugoson",
-  "model": "HU-3221"
+  "model": "HU-3221",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 9000,
+    "pressMinRepeats": 3
+  }
 }

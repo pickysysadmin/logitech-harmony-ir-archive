@@ -2,6 +2,53 @@
   "codeset": "codesets/ac/acd8bef845a94683.json",
   "deviceType": 22,
   "globalDeviceId": 205995,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"iPod Dock"}],"name":"iPod Dock"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Coaxial In"}],"name":"Coaxial In"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Optical In"}],"name":"Optical In"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Aux In"}],"name":"Aux In"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Mp3"}],"name":"Mp3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS 5120"
+  "model": "HTS 5120",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioSourceInput": {
+      "next": ["InputAudioSource"],
+      "values": [
+        {"name":"Coaxial In"},
+        {"name":"Optical In"},
+        {"name":"Aux In"},
+        {"name":"Mp3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Usb","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"iPod Dock","select":[{"commands":["InputIPodDock"],"setType":2}]},
+        {"name":"AudioSource","select":[{"commands":["InputAudioSource"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

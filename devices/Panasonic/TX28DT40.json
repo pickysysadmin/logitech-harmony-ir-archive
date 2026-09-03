@@ -1,7 +1,79 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 113984,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"AVTVInput","to":"AV"},"Red",{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AVTV"},{"set":"AVTVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"AVTVInput","to":"AV"},"Red",{"set":"InputType","to":"AV2INPUT"},{"set":"AV2INPUTInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"AVTVInput","to":"AV"},"Red",{"set":"InputType","to":"AV2INPUT"},{"set":"AV2INPUTInput","to":"AV2S"}],"name":"AV2S"},
+      {"commands":[{"set":"AVTVInput","to":"AV"},"Red",{"set":"InputType","to":"AV3INPUT"},{"set":"AV3INPUTInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"AVTVInput","to":"AV"},"Red",{"set":"InputType","to":"AV3INPUT"},{"set":"AV3INPUTInput","to":"AV3S"}],"name":"AV3S"},
+      {"commands":[{"set":"AVTVInput","to":"AV"},"Red",{"set":"InputType","to":"AV4INPUT"},{"set":"AV4INPUTInput","to":"AV4"}],"name":"AV4"},
+      {"commands":[{"set":"AVTVInput","to":"AV"},"Red",{"set":"InputType","to":"AV4INPUT"},{"set":"AV4INPUTInput","to":"AV4S"}],"name":"AV4S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX28DT40"
+  "model": "TX28DT40",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2INPUTInput": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "AV3INPUTInput": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AV4INPUTInput": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4S"}
+      ]
+    },
+    "AVTVInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"AV"},
+        {"name":"TV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":[{"set":"AVTVInput","to":"AV"},"Red"],"setType":2}]},
+        {"name":"AVTV","select":[{"commands":[{"set":"AVTVInput","to":"AV"},"TvVideo"],"setType":2}]},
+        {"name":"AV2INPUT","select":[{"commands":[{"set":"AVTVInput","to":"AV"},"Green"],"setType":2}]},
+        {"name":"AV3INPUT","select":[{"commands":[{"set":"AVTVInput","to":"AV"},"Yellow"],"setType":2}]},
+        {"name":"AV4INPUT","select":[{"commands":[{"set":"AVTVInput","to":"AV"},"Blue"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

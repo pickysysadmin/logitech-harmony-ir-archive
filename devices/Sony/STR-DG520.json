@@ -2,6 +2,36 @@
   "codeset": "codesets/03/0320b67a4bc1fc06.json",
   "deviceType": 5,
   "globalDeviceId": 152121,
+  "inputs": {
+    "list": [
+      {"commands":["InputDmPort"],"name":"DmPort","ports":["DMPort"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputBd"],"name":"BD","ports":["HDMI"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite"]},
+      {"commands":["InputSat"],"name":"SAT","ports":["Component","Composite"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Composite"]},
+      {"commands":["InputSa-Cd/Cd"],"name":"SA-CD/CD","ports":["Composite"]},
+      {"commands":["InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputFm"],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "STR-DG520"
+  "model": "STR-DG520",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

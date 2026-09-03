@@ -2,6 +2,36 @@
   "codeset": "codesets/07/07c7f79e6c4ac34a.json",
   "deviceType": 1,
   "globalDeviceId": 179469,
+  "inputs": {
+    "list": [
+      {"name":"Ext1"},
+      {"name":"Ext2"},
+      {"name":"AV"},
+      {"name":"Component"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"TV/DTV"}
+    ],
+    "next": ["Source"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "LE-32R87"
+  "model": "LE-32R87",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV/DTV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

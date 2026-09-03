@@ -2,6 +2,34 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 83349,
+  "inputs": {
+    "list": [
+      {"name":"AV-1"},
+      {"name":"F-AV"},
+      {"name":"RGB"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Teac",
-  "model": "EU-512ST"
+  "model": "EU-512ST",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"AV-1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 9000,
+    "pressMinRepeats": 2
+  }
 }

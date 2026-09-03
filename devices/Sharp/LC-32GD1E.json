@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5e/5e78bea4e0d3150a.json",
   "deviceType": 1,
   "globalDeviceId": 38267,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"DTV"},
+      {"name":"Input 1"},
+      {"name":"Input 2"},
+      {"name":"Input 3"},
+      {"name":"Input 4"},
+      {"name":"Input 5"},
+      {"name":"Card"}
+    ],
+    "next": ["InputNext"],
+    "start": [
+      "InputNext",
+      {"delayMs":1000}
+    ],
+    "type": 4
+  },
   "manufacturer": "Sharp",
-  "model": "LC-32GD1E"
+  "model": "LC-32GD1E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

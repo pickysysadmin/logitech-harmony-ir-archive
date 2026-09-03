@@ -1,7 +1,33 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b7/b788b60a862b3d0a.json",
   "deviceType": 1,
   "globalDeviceId": 109492,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Teac",
-  "model": "EU-34HT"
+  "model": "EU-34HT",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

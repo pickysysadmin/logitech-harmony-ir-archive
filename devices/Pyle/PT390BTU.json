@@ -2,6 +2,53 @@
   "codeset": "codesets/7c/7cc6239e395942b7.json",
   "deviceType": 5,
   "globalDeviceId": 446203,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Cd/Dvd"}],"name":"Cd/Dvd"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Aux/Usb"},{"set":"Aux/UsbInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux/Usb"},{"set":"Aux/UsbInput","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"iPod/Mp3"},{"set":"iPod/Mp3Input","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"iPod/Mp3"},{"set":"iPod/Mp3Input","to":"Mp3"}],"name":"Mp3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pyle",
-  "model": "PT390BTU"
+  "model": "PT390BTU",
+  "states": {
+    "Aux/UsbInput": {
+      "next": ["InputAux/Usb"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Usb"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Cd/Dvd","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Aux/Usb","select":[{"commands":["InputAux/Usb"],"setType":2}]},
+        {"name":"iPod/Mp3","select":[{"commands":["InputiPod/Mp3"],"setType":2}]}
+      ]
+    },
+    "iPod/Mp3Input": {
+      "next": ["InputiPod/Mp3"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"Mp3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "pressMinRepeats": 1
+  }
 }

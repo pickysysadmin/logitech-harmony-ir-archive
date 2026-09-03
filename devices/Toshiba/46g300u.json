@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d6/d60d16c40b871a5f.json",
   "deviceType": 1,
   "globalDeviceId": 204465,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"commands":["1"],"name":"Video1","ports":["Component","Composite"]},
+      {"commands":["2"],"name":"Video2","ports":["Composite"]},
+      {"commands":["3"],"name":"Colorstream HD","ports":["Component"]},
+      {"commands":["4"],"name":"HDMI1","ports":["HDMI"]},
+      {"commands":["5"],"name":"HDMI2","ports":["HDMI"]},
+      {"commands":["6"],"name":"HDMI3","ports":["HDMI"]},
+      {"commands":["7"],"name":"HDMI4","ports":["HDMI"]},
+      {"commands":["8"],"name":"PC","ports":["PC"]},
+      {"commands":["0"],"name":"Antenna/Cable","ports":["Antenna"]}
+    ],
+    "start": ["Input"],
+    "type": 3
+  },
   "manufacturer": "Toshiba",
-  "model": "46g300u"
+  "model": "46g300u",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 1
+  }
 }

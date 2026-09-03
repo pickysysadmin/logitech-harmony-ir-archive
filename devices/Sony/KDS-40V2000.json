@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/73/739b5e84df7e5da6.json",
   "deviceType": 1,
   "globalDeviceId": 118308,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Component"},
+      {"name":"VIDEO4"}
+    ],
+    "next": ["InputVideo4"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KDS-40V2000"
+  "model": "KDS-40V2000",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"VIDEO4"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,35 @@
   "codeset": "codesets/65/652a0b7b021f2b5d.json",
   "deviceType": 1,
   "globalDeviceId": 107816,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"AV 1"},
+      {"name":"AV 2"},
+      {"name":"S-Video"},
+      {"name":"Component"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Telefunken",
-  "model": "SM-255"
+  "model": "SM-255",
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["Display"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Freeze"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

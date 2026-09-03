@@ -2,6 +2,36 @@
   "codeset": "codesets/1a/1a7f6bf7bcd06fb4.json",
   "deviceType": 7,
   "globalDeviceId": 217519,
+  "inputs": {
+    "list": [
+      {"commands":["InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputS-Video"],"name":"S-Video","ports":["S-Video"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputPc"],"name":"PC","ports":["PC"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "BenQ",
-  "model": "W-1100"
+  "model": "W-1100",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

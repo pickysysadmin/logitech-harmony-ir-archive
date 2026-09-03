@@ -1,7 +1,50 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6d/6de9ef22a8cea219.json",
   "deviceType": 34,
   "globalDeviceId": 159688,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"L1"}],"name":"L1","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"L2"}],"name":"L2","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"InputSelect"},{"set":"InputSelectInput","to":"L3"}],"name":"L3","ports":["Others"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "D-R400"
+  "model": "D-R400",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputSelectInput": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"L3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDMI","select":[{"commands":["HDMI"],"setType":2}]},
+        {"name":"InputSelect","select":[{"commands":["InputSelect"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

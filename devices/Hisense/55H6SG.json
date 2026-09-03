@@ -1,7 +1,75 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/42/427cff1f147ae8df.json",
   "deviceType": 1,
   "globalDeviceId": 262702,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"SmartTV_Menu","to":"ON"},{"set":"Smart_TV","to":"HI-DMP"}],"name":"HI-DMP"},
+      {"commands":[{"set":"SmartTV_Menu","to":"ON"},{"set":"Smart_TV","to":"Hi-Smart Hub"}],"name":"Hi-Smart Hub"},
+      {"commands":[{"set":"SmartTV_Menu","to":"ON"},{"set":"Smart_TV","to":"Vudu"}],"name":"Vudu"},
+      {"commands":[{"set":"SmartTV_Menu","to":"ON"},{"set":"Smart_TV","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hisense",
-  "model": "55H6SG"
+  "model": "55H6SG",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "SmartTV_Menu": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Exit",{"delayMs":5000},"Exit",{"delayMs":500}],"setType":2}]}
+      ]
+    },
+    "Smart_TV": {
+      "values": [
+        {"name":"Hi-Smart Hub","select":[{"commands":["Exit","Exit","HiSmart"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"HI-DMP","select":[{"commands":["HiDmp"],"setType":1}]},
+        {"name":"Vudu","select":[{"commands":["Vudu"],"setType":1}]}
+      ]
+    },
+    "screen": {
+      "finish": ["Select"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"},
+        {"name":"Component"},
+        {"name":"VGA"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"HDMI 4"},
+        {"name":"Dummy"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

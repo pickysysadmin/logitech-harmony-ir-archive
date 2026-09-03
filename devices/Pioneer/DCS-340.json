@@ -2,6 +2,56 @@
   "codeset": "codesets/88/889d571731537834.json",
   "deviceType": 22,
   "globalDeviceId": 51263,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"FM/AM"}],"name":"FM/AM"},
+      {"commands":[{"set":"InputType","to":"DVD/CD"},{"set":"DVD/CDInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVD/CD"},{"set":"DVD/CDInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line1"}],"name":"Line1"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Line2"}],"name":"Line2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "DCS-340"
+  "model": "DCS-340",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVD/CDInput": {
+      "next": ["InputDvd/Cd"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"CD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"FM/AM","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputLine"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"Line1"},
+        {"name":"Line2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

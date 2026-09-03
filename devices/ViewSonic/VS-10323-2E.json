@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/3e/3e5b036cb54db278.json",
   "deviceType": 1,
   "globalDeviceId": 88404,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputDVI"],"name":"DVI"},
+      {"commands":["InputComponent 1"],"name":"Component 1"},
+      {"commands":["InputComponent 2"],"name":"Component 2"},
+      {"commands":["Menu"],"name":"AV"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":[{"set":"Input","to":"SCART 1"}],"name":"SCART 1"},
+      {"commands":[{"set":"Input","to":"SCART 2"}],"name":"SCART 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "ViewSonic",
-  "model": "VS-10323-2E"
+  "model": "VS-10323-2E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

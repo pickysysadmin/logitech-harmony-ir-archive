@@ -2,6 +2,58 @@
   "codeset": "codesets/81/812f663c2a55c514.json",
   "deviceType": 1,
   "globalDeviceId": 44345,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVI/VGA"},{"set":"DVIVGAInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"DVI/VGA"},{"set":"DVIVGAInput","to":"DVI"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"YcBcr"}],"name":"YCbcr"},
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"SV"}],"name":"SV"},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"YPbPr2"}],"name":"YPbPr2"},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"YPbPr1"}],"name":"YPbPr1"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hewlett Packard",
-  "model": "PL4245N"
+  "model": "PL4245N",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVIVGAInput": {
+      "next": ["DVI/VGA"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"VGA"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"YcBcr","select":[{"commands":["YCbCr"],"setType":2}]},
+        {"name":"DVI/VGA","select":[{"commands":["DVI/VGA",{"set":"DVIVGAInput","to":"VGA"}],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["YPbPr",{"set":"YPbPrInput","to":"YPbPr1"}],"setType":2}]},
+        {"name":"AV","select":[{"commands":["AV"],"setType":2}]},
+        {"name":"SV","select":[{"commands":["SV"],"setType":2}]}
+      ]
+    },
+    "YPbPrInput": {
+      "next": ["YPbPr"],
+      "start": ["YPbPr"],
+      "values": [
+        {"name":"YPbPr1"},
+        {"name":"YPbPr2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 20000,
+    "pressMinRepeats": 3
+  }
 }

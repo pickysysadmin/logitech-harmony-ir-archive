@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3,
+    "greaterHundred": ["Greater100"],
+    "greaterTen": ["Greater100"]
+  },
   "codeset": "codesets/f8/f8858119e2912be9.json",
   "deviceType": 1,
   "globalDeviceId": 167168,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"SVHS"},
+      {"name":"YCbCr"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "AudioSonic",
-  "model": "KM-2202"
+  "model": "KM-2202",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

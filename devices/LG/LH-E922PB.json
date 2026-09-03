@@ -2,6 +2,60 @@
   "codeset": "codesets/54/540589031762703e.json",
   "deviceType": 22,
   "globalDeviceId": 165450,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AUDIO IN"}],"name":"AUDIO IN"},
+      {"commands":[{"set":"InputType","to":"D.INPUT"},{"set":"D.INPUTInput","to":"OPTICAL"}],"name":"OPTICAL"},
+      {"commands":[{"set":"InputType","to":"D.INPUT"},{"set":"D.INPUTInput","to":"COAXIAL"}],"name":"COAXIAL"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LH-E922PB"
+  "model": "LH-E922PB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"AUDIO IN"}
+      ]
+    },
+    "D.INPUTInput": {
+      "next": ["InputDigital"],
+      "values": [
+        {"name":"OPTICAL"},
+        {"name":"COAXIAL"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"D.INPUT","select":[{"commands":["InputDigital"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

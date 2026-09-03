@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 37,
   "globalDeviceId": 35285,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Television"},
+      {"commands":["InputTuner"],"name":"Radio"},
+      {"commands":["InputVideo1"],"name":"DVD"},
+      {"commands":["InputVideo2"],"name":"Line1"},
+      {"commands":["InputVideo3"],"name":"Line2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "PV27DF62"
+  "model": "PV27DF62",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

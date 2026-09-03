@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 144403,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv/Comp"},{"set":"TvCompInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Vid1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Vid2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"SVid1"}],"name":"S-Vid 1"},
+      {"commands":[{"set":"InputType","to":"Tv/Comp"},{"set":"TvCompInput","to":"Comp1"}],"name":"Comp 1"},
+      {"commands":[{"set":"InputType","to":"Tv/Comp"},{"set":"TvCompInput","to":"Comp2"}],"name":"Comp 2"},
+      {"commands":[{"set":"InputType","to":"Tv/Comp"},{"set":"TvCompInput","to":"Hdmi"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "CL-32Z40D"
+  "model": "CL-32Z40D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tv/Comp","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["TvVideo"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"Vid1"},
+        {"name":"Vid2"},
+        {"name":"Vid3"},
+        {"name":"Vid4"},
+        {"name":"SVid1"},
+        {"name":"SVid2"}
+      ]
+    },
+    "TvCompInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Comp1"},
+        {"name":"Comp2"},
+        {"name":"Hdmi"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

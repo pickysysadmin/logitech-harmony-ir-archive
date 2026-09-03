@@ -2,6 +2,38 @@
   "codeset": "codesets/95/95edd66637bd23c9.json",
   "deviceType": 5,
   "globalDeviceId": 219578,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD","ports":["Composite","Coaxial"]},
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR","ports":["Composite"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["Composite","Coaxial"]},
+      {"commands":["InputGame"],"name":"Game","ports":["Composite","Optical"]},
+      {"commands":["InputTv/Tape"],"name":"TV/Tape","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputPort"],"name":"Port","ports":["Portable"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]},
+      {"commands":["InputNet"],"name":"NET","ports":["Streaming"]},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-8050"
+  "model": "TX-8050",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

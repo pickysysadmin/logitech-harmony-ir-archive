@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/c7/c720e50d3a9227d9.json",
   "deviceType": 32,
   "globalDeviceId": 16899,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TUNER"},{"set":"RadioMode","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"TUNER"},{"set":"RadioMode","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"DVD/VCR"},{"set":"VideoMode","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVD/VCR"},{"set":"VideoMode","to":"VCR"},{"set":"AuxMode","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"DVD/VCR"},{"set":"VideoMode","to":"VCR"},{"set":"AuxMode","to":"Aux"}],"name":"VCRAux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HT810V"
+  "model": "SC-HT810V",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxMode": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"VCR"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TUNER","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD/VCR","select":[{"commands":["InputDVD/VCR"],"setType":2}]}
+      ]
+    },
+    "RadioMode": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "VideoMode": {
+      "next": ["InputDVD/VCR"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"VCR"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

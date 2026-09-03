@@ -2,6 +2,48 @@
   "codeset": "codesets/47/47dfc9ef86f5c40d.json",
   "deviceType": 19,
   "globalDeviceId": 265741,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Line"}],"name":"Line"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Coaxial"}],"name":"Coaxial"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Wharfedale",
-  "model": "Vista 100"
+  "model": "Vista 100",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"Line"},
+        {"name":"AUX"},
+        {"name":"Optical"},
+        {"name":"Coaxial"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,29 @@
   "codeset": "codesets/d7/d7105507bcb72df3.json",
   "deviceType": 7,
   "globalDeviceId": 147116,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputComputer1"],"name":"Computer"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "PowerLite 765C"
+  "model": "PowerLite 765C",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 45000,
+    "pressMinRepeats": 3
+  }
 }

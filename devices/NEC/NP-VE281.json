@@ -2,6 +2,33 @@
   "codeset": "codesets/a4/a4cca8c15f16091d.json",
   "deviceType": 7,
   "globalDeviceId": 277066,
+  "inputs": {
+    "list": [
+      {"commands":["InputComputer1"],"name":"Computer 1"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputHdmi"],"name":"HDMI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "NP-VE281"
+  "model": "NP-VE281",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

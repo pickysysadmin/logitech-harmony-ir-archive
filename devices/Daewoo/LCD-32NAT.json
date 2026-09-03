@@ -2,6 +2,48 @@
   "codeset": "codesets/a7/a7019404b7ba11c5.json",
   "deviceType": 1,
   "globalDeviceId": 90415,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Tv"},
+      {"name":"Scart1"},
+      {"name":"Scart2"},
+      {"name":"Video"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"RGB DTV"},
+      {"name":"D-Sub"},
+      {"name":"HDMI"}
+    ],
+    "next": [
+      "DirectionDown",
+      {"delayMs":500}
+    ],
+    "previous": [
+      "DirectionUp",
+      {"delayMs":500}
+    ],
+    "start": [
+      "StartInput",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Daewoo",
-  "model": "LCD-32NAT"
+  "model": "LCD-32NAT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 1
+  }
 }

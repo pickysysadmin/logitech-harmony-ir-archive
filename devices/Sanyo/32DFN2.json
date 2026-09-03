@@ -2,6 +2,33 @@
   "codeset": "codesets/54/545f304fdb37a138.json",
   "deviceType": 1,
   "globalDeviceId": 132356,
+  "inputs": {
+    "list": [
+      {"name":"PVR"},
+      {"name":"DVD"},
+      {"name":"TV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sanyo",
-  "model": "32DFN2"
+  "model": "32DFN2",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

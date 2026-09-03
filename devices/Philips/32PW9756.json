@@ -2,6 +2,36 @@
   "codeset": "codesets/a2/a2b78730ec208857.json",
   "deviceType": 1,
   "globalDeviceId": 142520,
+  "inputs": {
+    "list": [
+      {"name":"AV2 Ext 2 FBAS"},
+      {"name":"AV3 Ext 3 FBAS"},
+      {"name":"AV4 Ext 4 FBAS"},
+      {"name":"AV5 Front"},
+      {"name":"Tuner"},
+      {"name":"AV1 Ext 1 FBAS"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "32PW9756"
+  "model": "32PW9756",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"AV2 Ext 2 FBAS"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

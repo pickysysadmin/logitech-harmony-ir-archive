@@ -2,6 +2,92 @@
   "codeset": "codesets/56/569c30e2b1c08de1.json",
   "deviceType": 1,
   "globalDeviceId": 158151,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"AV2"},{"set":"AV2Input","to":"AV2"}],"name":"AV2","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"AV2"},{"set":"AV2Input","to":"AV2S"}],"name":"AV2S","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"AV3"},{"set":"AV3Input","to":"AV3"}],"name":"AV3","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AV3"},{"set":"AV3Input","to":"AV3S"}],"name":"AV3S","ports":["S-Video"]},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Hdmi1"}],"name":"Hdmi1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Hdmi2"}],"name":"Hdmi2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Hdmi3"}],"name":"Hdmi3","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Freesat"}],"name":"Freesat","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVB"}],"name":"DVB","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Other Sat."}],"name":"Other Sat.","ports":["Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PZ81B"
+  "model": "TH-42PZ81B",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AV2Input": {
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "AV3Input": {
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"Component","select":[{"commands":["InputPC","AV","DirectionUp","OK"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":1}]},
+        {"name":"Hdmi1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"Hdmi2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"Hdmi3","select":[{"commands":["InputHDMI3"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["TV"],
+      "values": [
+        {"name":"Freesat"},
+        {"name":"DVB"},
+        {"name":"TV"},
+        {"name":"Other Sat."}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,44 @@
   "codeset": "codesets/ea/ea1ae02318b1ecdf.json",
   "deviceType": 37,
   "globalDeviceId": 151751,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV (Cable/Air)"},
+      {"name":"Video 1 (AV)"},
+      {"name":"Video 2 (S-Video)"},
+      {"name":"Video 3 (YPbPr)"},
+      {"name":"DVD"},
+      {"name":"USB"},
+      {"name":"Card Reader"},
+      {"name":"Video 4 (HDMI)"},
+      {"name":"Computer (VGA)"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": [
+      {"set":"Input","to":"TV (Cable/Air)"},
+      "InputNext"
+    ],
+    "type": 4
+  },
   "manufacturer": "Polaroid",
-  "model": "TDX-01930B"
+  "model": "TDX-01930B",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV (Cable/Air)"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

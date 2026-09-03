@@ -2,6 +2,38 @@
   "codeset": "codesets/9b/9b2e53163248d1c7.json",
   "deviceType": 5,
   "globalDeviceId": 148336,
+  "inputs": {
+    "list": [
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTape"],"name":"CDR/Tape"},
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputVcr"],"name":"VCR"},
+      {"commands":["InputSat"],"name":"Sat"},
+      {"commands":["InputDvd"],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Magnavox",
-  "model": "MFX450/17"
+  "model": "MFX450/17",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2500}
+    ],
+    "on": [
+      {"command":"InputTv","durationMs":2500}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,57 @@
   "codeset": "codesets/2b/2b3996775b8c1021.json",
   "deviceType": 22,
   "globalDeviceId": 151478,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm"}],"name":"Fm"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Am"}],"name":"Am"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"D-IN"}],"name":"D-IN"},
+      {"commands":[{"set":"InputType","to":"iPod/USB"},{"set":"iPod/USBInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"iPod/USB"},{"set":"iPod/USBInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PT865"
+  "model": "SC-PT865",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"iPod/USB","select":[{"commands":["InputiPod/USB"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Fm"},
+        {"name":"Am"},
+        {"name":"Aux"},
+        {"name":"D-IN"}
+      ]
+    },
+    "iPod/USBInput": {
+      "next": ["InputiPod/USB"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"USB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 700,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,30 @@
   "codeset": "codesets/c0/c0f7c31198088f0a.json",
   "deviceType": 7,
   "globalDeviceId": 133895,
+  "inputs": {
+    "list": [
+      {"commands":["InputRgb"],"name":"RGB"},
+      {"commands":["InputVideo"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-LC75U"
+  "model": "PT-LC75U",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":1200}
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

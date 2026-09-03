@@ -2,6 +2,36 @@
   "codeset": "codesets/03/03227cc00003676c.json",
   "deviceType": 34,
   "globalDeviceId": 109044,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Front Input"},
+      {"name":"Rear Input"},
+      {"name":"S-Video"},
+      {"name":"Scart"},
+      {"name":"USB"},
+      {"name":"AV2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Qonix",
-  "model": "DRR-6280 HD"
+  "model": "DRR-6280 HD",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

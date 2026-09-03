@@ -2,6 +2,39 @@
   "codeset": "codesets/9e/9e7d40a2d2b868ea.json",
   "deviceType": 7,
   "globalDeviceId": 122608,
+  "inputs": {
+    "list": [
+      {"name":"Video"},
+      {"name":"SVideo"},
+      {"name":"Computer 1"},
+      {"name":"Computer 2"}
+    ],
+    "next": [
+      {"delayMs":1500},
+      {"command":"InputNext","durationMs":500}
+    ],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "TDP-S26"
+  "model": "TDP-S26",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":3000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

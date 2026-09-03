@@ -2,6 +2,53 @@
   "codeset": "codesets/6f/6f76872e1522896a.json",
   "deviceType": 5,
   "globalDeviceId": 174433,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"VCRVDP"},{"set":"VCRVDPInput","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"VCRVDP"},{"set":"VCRVDPInput","to":"VDP"}],"name":"VDP"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Technics",
-  "model": "SA-EH60"
+  "model": "SA-EH60",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"VCRVDP","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "VCRVDPInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"VCR"},
+        {"name":"VDP"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

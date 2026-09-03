@@ -2,6 +2,70 @@
   "codeset": "codesets/a8/a8547d18fe86ba3f.json",
   "deviceType": 1,
   "globalDeviceId": 92325,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext"],"name":"Tuner"},
+      {"commands":["InputNext"],"name":"AV 1"},
+      {"commands":["Green"],"name":"AV 2"},
+      {"commands":[{"set":"InputMode","to":"VideoMode"},{"set":"OnScreenMenu","to":"True"},{"set":"AVType","to":"Yellow"},{"set":"AV3Mode","to":"Normal"},{"set":"OnScreenMenu","to":"False"}],"name":"AV 3"},
+      {"commands":["Blue"],"name":"AV 4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-28PN1P"
+  "model": "TX-28PN1P",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TunerMode"},
+      {"set":"OnScreenMenu","to":"True"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2Mode": {
+      "next": ["Green"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AV3Mode": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AVType": {
+      "values": [
+        {"name":"Red","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"Green","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"Yellow","select":[{"commands":["Yellow"],"setType":2}]}
+      ]
+    },
+    "InputMode": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TunerMode"},
+        {"name":"VideoMode"}
+      ]
+    },
+    "OnScreenMenu": {
+      "values": [
+        {"name":"True","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"False"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 3
+  }
 }

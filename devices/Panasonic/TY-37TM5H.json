@@ -2,6 +2,34 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 12,
   "globalDeviceId": 115702,
+  "inputs": {
+    "list": [
+      {"name":"Video"},
+      {"name":"Component"},
+      {"name":"PC"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "TY-37TM5H"
+  "model": "TY-37TM5H",
+  "states": {
+    "Teletext": {
+      "next": ["TextTv"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

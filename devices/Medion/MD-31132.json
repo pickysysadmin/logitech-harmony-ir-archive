@@ -2,6 +2,48 @@
   "codeset": "codesets/e1/e1c2de201e288687.json",
   "deviceType": 1,
   "globalDeviceId": 168708,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"0"},{"set":"0Input","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"0"},{"set":"0Input","to":"AV.SV"}],"name":"AV.SV"},
+      {"commands":[{"set":"InputType","to":"0"},{"set":"0Input","to":"Scart/Av1"}],"name":"Scart/Av1"},
+      {"commands":[{"set":"InputType","to":"0"},{"set":"0Input","to":"Scart/Av2"}],"name":"Scart/Av2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Medion",
-  "model": "MD-31132"
+  "model": "MD-31132",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "0Input": {
+      "next": ["0"],
+      "values": [
+        {"name":"PC"},
+        {"name":"AV.SV"},
+        {"name":"Scart/Av1"},
+        {"name":"Scart/Av2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"0","select":[{"commands":["0"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

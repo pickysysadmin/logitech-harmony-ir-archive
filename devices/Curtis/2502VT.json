@@ -2,6 +2,31 @@
   "codeset": "codesets/b9/b9c71c9667b34975.json",
   "deviceType": 1,
   "globalDeviceId": 116951,
+  "inputs": {
+    "list": [
+      {"name":"AV"},
+      {"name":"Sender"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Curtis",
-  "model": "2502VT"
+  "model": "2502VT",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Sender"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,54 @@
   "codeset": "codesets/40/400f6df31aa47982.json",
   "deviceType": 21,
   "globalDeviceId": 170907,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Home Media Gallery"}],"name":"Home Media Gallery"},
+      {"commands":[{"set":"InputType","to":"XM Radio"}],"name":"XM Radio"},
+      {"commands":[{"set":"InputType","to":"Sirius"}],"name":"Sirius"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Line"}],"name":"Line"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Front Audio IN"}],"name":"Front Audio IN"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "X-Z9"
+  "model": "X-Z9",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"Line"},
+        {"name":"Phono"},
+        {"name":"Front Audio IN"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Home Media Gallery","select":[{"commands":["InputHomeMediaGallery"],"setType":2}]},
+        {"name":"XM Radio","select":[{"commands":["InputXM"],"setType":2}]},
+        {"name":"Sirius","select":[{"commands":["InputSirius"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

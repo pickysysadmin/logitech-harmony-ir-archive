@@ -2,6 +2,63 @@
   "codeset": "codesets/99/9904fae4f240eb95.json",
   "deviceType": 1,
   "globalDeviceId": 121673,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV Multi"}],"name":"AV Multi"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 5"}],"name":"Video 5"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component 3"}],"name":"Component 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "KV-32DRX9"
+  "model": "KV-32DRX9",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"},
+        {"name":"Component 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV Multi","select":[{"commands":["InputAvMulti"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo",{"set":"VideoInput","to":"Video 1"}],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent",{"set":"ComponentInput","to":"Component 1"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Video 3"},
+        {"name":"Video 4"},
+        {"name":"Video 5"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

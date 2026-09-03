@@ -2,6 +2,48 @@
   "codeset": "codesets/c0/c036a590a18796b3.json",
   "deviceType": 22,
   "globalDeviceId": 104600,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner/Band"}],"name":"Tuner/Band"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AuxOpt"}],"name":"AuxOpt"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LF-D7150"
+  "model": "LF-D7150",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"AuxOpt"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner/Band","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

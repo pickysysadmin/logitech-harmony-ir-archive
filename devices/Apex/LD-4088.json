@@ -2,6 +2,64 @@
   "codeset": "codesets/82/82990c559c46d580.json",
   "deviceType": 1,
   "globalDeviceId": 181685,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI1"}],"name":"HDMI1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI2"}],"name":"HDMI2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI3"}],"name":"HDMI3","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"A/V"},{"set":"A/VInput","to":"AV1"}],"name":"AV1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"A/V"},{"set":"A/VInput","to":"AV2"}],"name":"AV2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"A/V"},{"set":"A/VInput","to":"S-Video"}],"name":"S-Video","ports":["S-Video"]},
+      {"commands":[{"set":"InputType","to":"A/V"},{"set":"A/VInput","to":"Component 1"}],"name":"Component 1","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"A/V"},{"set":"A/VInput","to":"Component 2"}],"name":"Component 2","ports":["Component"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Apex",
-  "model": "LD-4088"
+  "model": "LD-4088",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "A/VInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"S-Video"},
+        {"name":"Component 1"},
+        {"name":"Component 2"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"A/V","select":[{"commands":[{"set":"A/VInput","to":"AV1"},"InputAv"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

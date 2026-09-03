@@ -2,6 +2,31 @@
   "codeset": "codesets/1f/1f32a3e87faadef5.json",
   "deviceType": 1,
   "globalDeviceId": 154635,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"TV"},
+      {"commands":["1","InputNext"],"name":"AV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KV-21T1D"
+  "model": "KV-21T1D",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

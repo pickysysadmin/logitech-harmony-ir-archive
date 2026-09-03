@@ -2,6 +2,55 @@
   "codeset": "codesets/e4/e451804b37e9f61a.json",
   "deviceType": 21,
   "globalDeviceId": 275476,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"CD/Radio"},{"set":"CD/RadioInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"CD/Radio"},{"set":"CD/RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"CD/Radio"},{"set":"CD/RadioInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"iPod/USB"},{"set":"iPod/USBInput","to":"iPod_Dock"}],"name":"iPod_Dock"},
+      {"commands":[{"set":"InputType","to":"iPod/USB"},{"set":"iPod/USBInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HC49"
+  "model": "SC-HC49",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CD/RadioInput": {
+      "next": ["InputCd/Radio"],
+      "values": [
+        {"name":"CD"},
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"CD/Radio","select":[{"commands":["InputCd/Radio"],"setType":2}]},
+        {"name":"iPod/USB","select":[{"commands":["InputiPod/Usb"],"setType":2}]}
+      ]
+    },
+    "iPod/USBInput": {
+      "next": ["InputiPod/Usb"],
+      "values": [
+        {"name":"iPod_Dock"},
+        {"name":"USB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

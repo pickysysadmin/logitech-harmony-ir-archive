@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/06/0649d6896af755c9.json",
   "deviceType": 32,
   "globalDeviceId": 57436,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InputAux"}],"name":"InputAux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Dvd/Vcr"},{"set":"Dvd/VcrInput","to":"Dvd"}],"name":"Dvd","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Dvd/Vcr"},{"set":"Dvd/VcrInput","to":"Vcr"}],"name":"Vcr","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-HT830V"
+  "model": "SA-HT830V",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDVCRInput": {
+      "next": ["InputDVD/VCR"],
+      "values": [
+        {"name":"DVDinput"},
+        {"name":"VCRinput"}
+      ]
+    },
+    "Dvd/VcrInput": {
+      "next": ["InputDVD/VCR"],
+      "values": [
+        {"name":"Dvd"},
+        {"name":"Vcr"}
+      ]
+    },
+    "FM/AMInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"InputAux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Dvd/Vcr","select":[{"commands":["InputDVD/VCR"],"setType":2}]},
+        {"name":"FM/AM","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

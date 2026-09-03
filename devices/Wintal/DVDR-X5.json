@@ -2,6 +2,38 @@
   "codeset": "codesets/94/94f9d463b2f722fa.json",
   "deviceType": 34,
   "globalDeviceId": 101532,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"Monitor Front CVBS"},
+      {"name":"Monitor Front SVideo"},
+      {"name":"Monitor Rear CVBS"},
+      {"name":"Monitor Rear SVideo"},
+      {"name":"Monitor DV"},
+      {"name":"Monitor SCART"},
+      {"name":"Monitor Channel 001"}
+    ],
+    "next": ["Source"],
+    "type": 2
+  },
   "manufacturer": "Wintal",
-  "model": "DVDR-X5"
+  "model": "DVDR-X5",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 18000,
+    "pressMinRepeats": 1
+  }
 }

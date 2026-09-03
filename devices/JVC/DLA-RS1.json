@@ -2,6 +2,39 @@
   "codeset": "codesets/19/19e58dd489a242e9.json",
   "deviceType": 7,
   "globalDeviceId": 142988,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputComponent"],"name":"COMP","ports":["Component"]},
+      {"commands":["InputVideo"],"name":"VIDEO","ports":["Composite"]},
+      {"commands":["InputS-Video"],"name":"S-VIDEO","ports":["S-Video"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "DLA-RS1"
+  "model": "DLA-RS1",
+  "power": {
+    "off": [
+      {"delayMs":1000},
+      {"command":"PowerOff","durationMs":500},
+      {"delayMs":1000},
+      {"command":"PowerOff","durationMs":500},
+      {"delayMs":1000},
+      {"command":"PowerOff","durationMs":500}
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

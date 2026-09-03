@@ -2,6 +2,50 @@
   "codeset": "codesets/d7/d7189be3d49c1a5e.json",
   "deviceType": 5,
   "globalDeviceId": 133750,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"SAT"}],"name":"SAT"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Fm"}],"name":"Fm"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Am"}],"name":"Am"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "RHT-G1000"
+  "model": "RHT-G1000",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv/Sat"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"SAT","select":[{"commands":["InputSat"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Fm"},
+        {"name":"Am"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

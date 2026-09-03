@@ -2,6 +2,49 @@
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 175812,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi2","TvVideo","TvVideo","TvVideo"],"name":"AV1"},
+      {"commands":["InputHdmi2","TvVideo","TvVideo","TvVideo","TvVideo"],"name":"AV2"},
+      {"commands":["InputHdmi2","TvVideo","TvVideo","TvVideo","TvVideo","DirectionRight"],"name":"AV2S"},
+      {"commands":["InputHdmi2","TvVideo","TvVideo","TvVideo","TvVideo","TvVideo"],"name":"AV3"},
+      {"commands":["InputHdmi2","TvVideo","TvVideo","TvVideo","TvVideo","TvVideo","DirectionRight"],"name":"AV3S"},
+      {"commands":["InputPc","TvVideo","DirectionUp","Select"],"name":"Component"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["Mode"],"name":"TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-65PY700P"
+  "model": "TH-65PY700P",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

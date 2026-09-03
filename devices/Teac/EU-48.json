@@ -2,6 +2,32 @@
   "codeset": "codesets/d0/d08497fe3da74b2f.json",
   "deviceType": 1,
   "globalDeviceId": 97141,
+  "inputs": {
+    "list": [
+      {"commands":[{"delayMs":500},"0"],"name":"Tuner"},
+      {"commands":[{"delayMs":500},"0","InputNext"],"name":"AV1"},
+      {"commands":[{"delayMs":500},"0","InputNext","InputNext"],"name":"AV2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Teac",
-  "model": "EU-48"
+  "model": "EU-48",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

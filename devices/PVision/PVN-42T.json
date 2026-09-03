@@ -2,6 +2,40 @@
   "codeset": "codesets/ea/eac85e1dcabd362f.json",
   "deviceType": 1,
   "globalDeviceId": 158210,
+  "inputs": {
+    "finish": ["DirectionRight"],
+    "list": [
+      {"name":"TV"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"RGB"},
+      {"name":"DVI"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["Menu"],
+    "type": 4
+  },
   "manufacturer": "PVision",
-  "model": "PVN-42T"
+  "model": "PVN-42T",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

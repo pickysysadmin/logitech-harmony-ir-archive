@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ac/acc7c3f9ec2231df.json",
   "deviceType": 37,
   "globalDeviceId": 43575,
+  "inputs": {
+    "list": [
+      {"name":"Cable 3"},
+      {"name":"DVD"},
+      {"name":"Component"},
+      {"name":"S-Video"},
+      {"name":"Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "SD P5000"
+  "model": "SD P5000",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Cable 3"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

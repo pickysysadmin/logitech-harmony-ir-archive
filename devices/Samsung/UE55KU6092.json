@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/18/186bf92b5fa4c92c.json",
   "deviceType": 1,
   "globalDeviceId": 523293,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","Exit","InputTv"],"name":"TV"},
+      {"commands":["InputHDMI 1","InputHDMI 1"],"name":"HDMI 1"},
+      {"commands":["InputHDMI 2","InputHDMI 2"],"name":"HDMI 2"},
+      {"commands":["InputHDMI 3","InputHDMI 3"],"name":"HDMI 3"},
+      {"commands":["InputHDMI 4","InputHDMI 4"],"name":"HDMI 4"},
+      {"commands":["InputAv","InputAv"],"name":"AV"},
+      {"commands":["Exit",{"delayMs":2000},"Exit","InputSmartHub"],"name":"SmartHub"},
+      {"commands":["InputPrimeVideo"],"name":"PrimeVideo"},
+      {"commands":["InputAmazon"],"name":"Amazon"},
+      {"commands":["InputAmbient"],"name":"Ambient"},
+      {"commands":["InputNetflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UE55KU6092"
+  "model": "UE55KU6092",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 55000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

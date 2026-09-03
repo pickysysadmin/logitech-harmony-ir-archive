@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5e/5e78bea4e0d3150a.json",
   "deviceType": 1,
   "globalDeviceId": 67021,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Input1"},
+      {"name":"Input2"},
+      {"name":"Input3"},
+      {"name":"Input4"},
+      {"name":"Input5"},
+      {"name":"iLink"},
+      {"name":"Card"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sharp",
-  "model": "TU-45GD1E"
+  "model": "TU-45GD1E",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 14000,
+    "pressMinRepeats": 3
+  }
 }

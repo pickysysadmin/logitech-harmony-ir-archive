@@ -2,6 +2,40 @@
   "codeset": "codesets/fc/fca5bf46ef71e3a6.json",
   "deviceType": 19,
   "globalDeviceId": 153813,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputSat"],"name":"Sat"},
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputVcr"],"name":"VCR"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputAux1"],"name":"Aux1"},
+      {"commands":["InputAux2"],"name":"Aux2"},
+      {"commands":["Input7.1Ch"],"name":"7.1"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Myryad",
-  "model": "MDP500"
+  "model": "MDP500",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1500}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1500}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 9000,
+    "pressMinRepeats": 3
+  }
 }

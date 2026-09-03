@@ -2,6 +2,65 @@
   "codeset": "codesets/82/82ca9b7b664a7f43.json",
   "deviceType": 1,
   "globalDeviceId": 254163,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"Music"}],"name":"Music"},
+      {"commands":[{"set":"SmartTV_Menu","to":"ON"},{"set":"Smart_TV","to":"IceApps"}],"name":"ICE Apps"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"Smart_TV","to":"Multimedia"}],"name":"Multimedia"},
+      {"commands":[{"set":"SmartTV_Menu","to":"ON"},{"set":"Smart_TV","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "SP55M-C"
+  "model": "SP55M-C",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "SmartTV_Menu": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Exit",{"delayMs":5000},"Exit",{"delayMs":500}],"setType":2}]}
+      ]
+    },
+    "Smart_TV": {
+      "values": [
+        {"name":"IceApps","select":[{"commands":["Exit","Exit","IceApps"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"Multimedia","select":[{"commands":["Multimedia"],"setType":1}]}
+      ]
+    },
+    "screen": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["Input"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Video"},
+        {"name":"Component"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"Music"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

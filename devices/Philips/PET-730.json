@@ -3,5 +3,47 @@
   "deviceType": 4,
   "globalDeviceId": 136404,
   "manufacturer": "Philips",
-  "model": "PET-730"
+  "model": "PET-730",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Dock","select":[{"commands":["InputDock"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"Digital In","select":[{"commands":["InputDigital-In"],"setType":2}]},
+        {"name":"MP3/Line In","select":[{"commands":["InputMP3/LineIn"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV 1"},
+        {"name":"TV 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

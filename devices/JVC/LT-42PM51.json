@@ -1,7 +1,67 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f9/f986818fe38f692e.json",
   "deviceType": 1,
   "globalDeviceId": 206847,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Video4"},{"set":"Video4Input","to":"Composite1"}],"name":"Composite 1"},
+      {"commands":[{"set":"InputType","to":"Video4"},{"set":"Video4Input","to":"SVideo"}],"name":"SVideo"},
+      {"commands":[{"set":"InputType","to":"Video5"},{"set":"Video5Input","to":"Composite2"}],"name":"Composite 2"},
+      {"commands":[{"set":"InputType","to":"Video5"},{"set":"Video5Input","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Video5"},{"set":"Video5Input","to":"Component"}],"name":"Component"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "LT-42PM51"
+  "model": "LT-42PM51",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["1"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputIPod"],"setType":2}]},
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Video4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"Video5","select":[{"commands":["InputVideo5"],"setType":2}]}
+      ]
+    },
+    "Video4Input": {
+      "next": ["InputVideo4"],
+      "values": [
+        {"name":"Composite1"},
+        {"name":"SVideo"}
+      ]
+    },
+    "Video5Input": {
+      "next": ["InputVideo5"],
+      "values": [
+        {"name":"Composite2"},
+        {"name":"PC"},
+        {"name":"Component"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "finish": ["InputNext"]
+  },
   "codeset": "codesets/88/887ea1031a42aa19.json",
   "deviceType": 1,
   "globalDeviceId": 143810,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext"],"name":"T.V."},
+      {"commands":["VolumeDown"],"name":"AV. 1"},
+      {"commands":["VolumeUp"],"name":"V-C-R."}
+    ],
+    "type": 1
+  },
   "manufacturer": "Konka",
-  "model": "A21SE090"
+  "model": "A21SE090",
+  "power": {
+    "onReset": ["PowerToggle"],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["ChannelDown","ChannelDown","ChannelDown"],"setType":2}]},
+        {"name":"On","select":[{"commands":["ChannelDown"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

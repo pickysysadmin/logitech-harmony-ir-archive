@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/1d/1d53c4641c39e7d1.json",
   "deviceType": 1,
   "globalDeviceId": 269836,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1/Dvi",{"command":"End","durationMs":2000},"InputHdmi1/Dvi"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2/Dvi",{"command":"End","durationMs":2000},"InputHdmi2/Dvi"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3/Dvi","InputHdmi3/Dvi",{"command":"End","durationMs":2000}],"name":"HDMI 3"},
+      {"commands":["InputHdmi4",{"command":"End","durationMs":2000},"InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["InputVga",{"command":"End","durationMs":2000},"InputVga"],"name":"PC IN"},
+      {"commands":["InputAvs",{"command":"End","durationMs":2000},"InputAvs"],"name":"AVS"},
+      {"commands":["InputAv",{"command":"End","durationMs":2000},"InputAv"],"name":"AV"},
+      {"commands":[{"command":"End","durationMs":2000},"InputHdmi1/Dvi","ChannelDown"],"name":"Video"},
+      {"commands":["Assist"],"name":"Media Net"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Loewe",
-  "model": "ART 55 UHD"
+  "model": "ART 55 UHD",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

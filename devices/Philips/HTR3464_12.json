@@ -2,6 +2,62 @@
   "codeset": "codesets/12/1293881b0d9c3b79.json",
   "deviceType": 5,
   "globalDeviceId": 180854,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"MP3 LINK"}],"name":"MP3 LINK"},
+      {"commands":[{"set":"InputType","to":"RADIO"}],"name":"RADIO"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX1"}],"name":"AUX1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX2"}],"name":"AUX2"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"COAX IN1"}],"name":"COAX IN1"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"COAX IN2"}],"name":"COAX IN2"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"OPTI IN"}],"name":"OPTI IN"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTR3464/12"
+  "model": "HTR3464/12",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX1"},
+        {"name":"AUX2"}
+      ]
+    },
+    "DigitalInput": {
+      "next": ["InputDigitalIn"],
+      "values": [
+        {"name":"COAX IN1"},
+        {"name":"COAX IN2"},
+        {"name":"OPTI IN"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["0"],"setType":2}]},
+        {"name":"MP3 LINK","select":[{"commands":["InputMp3Link"],"setType":2}]},
+        {"name":"RADIO","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux",{"set":"AUXInput","to":"AUX1"}],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDigitalIn",{"set":"DigitalInput","to":"COAX IN1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

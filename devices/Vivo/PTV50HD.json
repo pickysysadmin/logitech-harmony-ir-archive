@@ -2,6 +2,42 @@
   "codeset": "codesets/f3/f30c9886dbbeb8f2.json",
   "deviceType": 1,
   "globalDeviceId": 252502,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"ATV"},
+      {"name":"DTV"},
+      {"name":"USB"},
+      {"name":"AV"},
+      {"name":"VGA"},
+      {"name":"YPbPr"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"HDMI 3"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Vivo",
-  "model": "PTV50HD"
+  "model": "PTV50HD",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Hdmi3"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,57 @@
   "codeset": "codesets/93/9329ef466328e7af.json",
   "deviceType": 21,
   "globalDeviceId": 414022,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"BT Audio"}],"name":"BT Audio"},
+      {"commands":[{"set":"InputType","to":"AudioIn"},{"set":"AudioInInput","to":"Audio"}],"name":"Audio In"},
+      {"commands":[{"set":"InputType","to":"AudioIn"},{"set":"AudioInInput","to":"Line"}],"name":"Line"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "X-HM15BTD-K"
+  "model": "X-HM15BTD-K",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioInInput": {
+      "next": ["InputAudioIn"],
+      "values": [
+        {"name":"Audio"},
+        {"name":"Line"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AudioIn","select":[{"commands":["InputAudioIn"],"setType":2}]},
+        {"name":"BT Audio","select":[{"commands":["InputBTAudio"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"DAB"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

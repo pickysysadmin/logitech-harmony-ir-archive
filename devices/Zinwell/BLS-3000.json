@@ -2,6 +2,59 @@
   "codeset": "codesets/85/85addd3cabbfa7d5.json",
   "deviceType": 12,
   "globalDeviceId": 74295,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Source1"},{"set":"Source1Input","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Source1"},{"set":"Source1Input","to":"Vid1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Source1"},{"set":"Source1Input","to":"Vid2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Source1"},{"set":"Source1Input","to":"S-Vid1"}],"name":"S-Video 1"},
+      {"commands":[{"set":"InputType","to":"Source1"},{"set":"Source1Input","to":"S-Vid2"}],"name":"S-Video 2"},
+      {"commands":[{"set":"InputType","to":"Source1"},{"set":"Source1Input","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"Source2"},{"set":"Source2Input","to":"YPbPr1"}],"name":"YPbPr 1"},
+      {"commands":[{"set":"InputType","to":"Source2"},{"set":"Source2Input","to":"YPbPr2"}],"name":"YPbPr 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Zinwell",
-  "model": "BLS-3000"
+  "model": "BLS-3000",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Source1","select":[{"commands":["InputSource1"],"setType":2}]},
+        {"name":"Source2","select":[{"commands":["InputSource2"],"setType":2}]}
+      ]
+    },
+    "Source1Input": {
+      "next": ["InputSource1"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Vid1"},
+        {"name":"Vid2"},
+        {"name":"S-Vid1"},
+        {"name":"S-Vid2"},
+        {"name":"RGB"}
+      ]
+    },
+    "Source2Input": {
+      "next": ["InputSource2"],
+      "values": [
+        {"name":"YPbPr1"},
+        {"name":"YPbPr2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,43 @@
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 122793,
+  "inputs": {
+    "list": [
+      {"name":"AV1 sat"},
+      {"name":"AV2 dvd"},
+      {"name":"AV3"},
+      {"name":"AV4"},
+      {"name":"PC"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"D-TV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KDL-32S3530"
+  "model": "KDL-32S3530",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

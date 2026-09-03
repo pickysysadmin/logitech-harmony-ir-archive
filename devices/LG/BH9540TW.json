@@ -2,6 +2,34 @@
   "codeset": "codesets/54/54a4fceadf37437d.json",
   "deviceType": 22,
   "globalDeviceId": 264977,
+  "inputs": {
+    "list": [
+      {"commands":["InputOptical"],"name":"Optical","ports":["Optical"]},
+      {"commands":["InputOptical",{"delayMs":1000},"Function"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputOptical",{"delayMs":1000},"Function",{"delayMs":1000},"Function"],"name":"BT Ready","ports":["Pairing Input"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["Home"],"name":"Home","ports":["BuiltIn"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Composite"]},
+      {"commands":["InputArc"],"name":"ARC","ports":["HDMI"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "BH9540TW"
+  "model": "BH9540TW",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

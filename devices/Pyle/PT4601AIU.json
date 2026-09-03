@@ -2,6 +2,52 @@
   "codeset": "codesets/2e/2e07793d5d41fcbe.json",
   "deviceType": 5,
   "globalDeviceId": 414337,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Cd/Dvd"}],"name":"Cd/Dvd"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Aux/Usb"},{"set":"Aux/UsbInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux/Usb"},{"set":"Aux/UsbInput","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"iPod/Mp3"},{"set":"iPod/Mp3Input","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"iPod/Mp3"},{"set":"iPod/Mp3Input","to":"Mp3"}],"name":"Mp3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pyle",
-  "model": "PT4601AIU"
+  "model": "PT4601AIU",
+  "states": {
+    "Aux/UsbInput": {
+      "next": ["InputAux/Usb"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Usb"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Cd/Dvd","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Aux/Usb","select":[{"commands":["InputAux/Usb"],"setType":2}]},
+        {"name":"iPod/Mp3","select":[{"commands":["InputiPod/Mp3"],"setType":2}]}
+      ]
+    },
+    "iPod/Mp3Input": {
+      "next": ["InputiPod/Mp3"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"Mp3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 0,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/36/36f48c4f05c606b9.json",
   "deviceType": 5,
   "globalDeviceId": 93578,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"CDR"},
+      {"name":"MD"},
+      {"name":"FM"},
+      {"name":"AM"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Onkyo",
-  "model": "PR-155"
+  "model": "PR-155",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

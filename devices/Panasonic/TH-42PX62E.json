@@ -1,7 +1,75 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 157325,
+  "inputs": {
+    "list": [
+      {"commands":["Red","Red","Red"],"name":"AV1"},
+      {"commands":["Red","Green"],"name":"AV2"},
+      {"commands":["Red","Yellow"],"name":"AV3"},
+      {"commands":["Blue","Yellow","Yellow"],"name":"PC"},
+      {"commands":["Blue","Blue","Blue"],"name":"HDMI1"},
+      {"commands":["Blue","Blue","Blue","Blue"],"name":"HDMI2"},
+      {"commands":["InputAntB"],"name":"TNT"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["Blue","Blue","Yellow"],"name":"Component"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PX62E"
+  "model": "TH-42PX62E",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2500}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"Componente"},
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV/AV","select":[{"commands":[{"set":"TV/AVInput","to":"TV"}],"setType":2}]},
+        {"name":"VIDEO1","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Red","Red"],"setType":1}]},
+        {"name":"VIDEO2","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Green","Green"],"setType":1}]},
+        {"name":"VIDEO3","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Yellow","Yellow"],"setType":1}]},
+        {"name":"VIDEO4","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Green"],"setType":1}]}
+      ]
+    },
+    "RedBlueInput": {
+      "values": [
+        {"name":"Red","select":[{"commands":["Red","Red"],"setType":2}]},
+        {"name":"Blue","select":[{"commands":["Blue","Blue"],"setType":2}]}
+      ]
+    },
+    "TV/AVInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

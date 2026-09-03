@@ -2,6 +2,48 @@
   "codeset": "codesets/ed/ed3f5253031753bc.json",
   "deviceType": 19,
   "globalDeviceId": 479578,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Audio/Aux"},{"set":"Audio/AuxInput","to":"Audio"}],"name":"Audio","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Audio/Aux"},{"set":"Audio/AuxInput","to":"Aux"}],"name":"Aux","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Akai",
-  "model": "HT993"
+  "model": "HT993",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Audio/AuxInput": {
+      "next": ["InputAudio/Aux"],
+      "values": [
+        {"name":"Audio"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"Coaxial","select":[{"commands":["InputCoaxial"],"setType":2}]},
+        {"name":"Audio/Aux","select":[{"commands":["InputAudio/Aux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

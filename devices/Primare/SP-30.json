@@ -2,6 +2,38 @@
   "codeset": "codesets/3f/3f3bd0dd690a8d24.json",
   "deviceType": 5,
   "globalDeviceId": 115665,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"CD"},
+      {"name":"Sat"},
+      {"name":"TapeA"},
+      {"name":"TV"},
+      {"name":"Tuner"},
+      {"name":"Laser"},
+      {"name":"TapeD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Primare",
-  "model": "SP-30"
+  "model": "SP-30",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"CD"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

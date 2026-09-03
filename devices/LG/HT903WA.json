@@ -2,6 +2,62 @@
   "codeset": "codesets/41/4141c71301dcb585.json",
   "deviceType": 22,
   "globalDeviceId": 183261,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Aux"}],"name":"Aux","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AuxOpt"}],"name":"AuxOpt","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Portable"}],"name":"Portable","ports":["Portable"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"OSD IPod"}],"name":"OSD IPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"IPod"}],"name":"IPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"DVD/CD"}],"name":"DVD/CD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HT903WA"
+  "model": "HT903WA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FunctionInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"DVD/CD"},
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"AuxOpt"},
+        {"name":"Portable"},
+        {"name":"USB"},
+        {"name":"OSD IPod"},
+        {"name":"IPod"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input","select":[{"commands":["Input"],"setType":2}]},
+        {"name":"Function","select":[{"commands":["Function"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

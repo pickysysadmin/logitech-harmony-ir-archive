@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/50/50e7a78f689a018d.json",
   "deviceType": 34,
   "globalDeviceId": 145626,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"Front"}],"name":"Front"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"Component"}],"name":"Component"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Airis",
-  "model": "LW-105"
+  "model": "LW-105",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ExtInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Front"},
+        {"name":"AV"},
+        {"name":"S-Video"},
+        {"name":"Component"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"Ext","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

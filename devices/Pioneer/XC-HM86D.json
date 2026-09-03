@@ -2,6 +2,59 @@
   "codeset": "codesets/f5/f5493f5193200443.json",
   "deviceType": 21,
   "globalDeviceId": 348486,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"TunerFM"}],"name":"TunerFM"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB Front"}],"name":"USB Front"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB Rear"}],"name":"USB Rear"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital In"}],"name":"Digital In"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Line"}],"name":"Line"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "XC-HM86D"
+  "model": "XC-HM86D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputDigital"],
+      "values": [
+        {"name":"Digital In"},
+        {"name":"Line"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Network","select":[{"commands":["InputNetwork"],"setType":2}]},
+        {"name":"TunerFM","select":[{"commands":["InputTunerFM"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDigital"],"setType":2}]}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputUsb"],
+      "values": [
+        {"name":"USB Front"},
+        {"name":"USB Rear"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

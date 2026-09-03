@@ -1,7 +1,50 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/85/85dd3eb8ba6b781f.json",
   "deviceType": 1,
   "globalDeviceId": 158864,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Av1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Av2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Av3"}],"name":"Av3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Metz",
-  "model": "BRISTOL-82TN95"
+  "model": "BRISTOL-82TN95",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AvInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"},
+        {"name":"Av3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Av","select":[{"commands":["InputAv"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

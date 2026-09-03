@@ -2,6 +2,59 @@
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 13707,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VideoAntenna"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VideoAv1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VideoAv2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VideoAv3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VideoSVideo"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"CompAnt"}],"name":"Component Antenna"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "TXM2796HFX/XAA"
+  "model": "TXM2796HFX/XAA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputToggle"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"},
+        {"name":"CompAnt"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext",{"set":"VideoInput","to":"VideoSVideo"}],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputToggle",{"set":"ComponentInput","to":"Component1"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VideoSVideo"},
+        {"name":"VideoAntenna"},
+        {"name":"VideoAv1"},
+        {"name":"VideoAv2"},
+        {"name":"VideoAv3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

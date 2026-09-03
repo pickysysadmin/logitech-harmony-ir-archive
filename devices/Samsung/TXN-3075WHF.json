@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/53/5372994b5669c435.json",
   "deviceType": 1,
   "globalDeviceId": 177943,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"TV/Component"},{"set":"TV/ComponentInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/Component"},{"set":"TV/ComponentInput","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"TV/Component"},{"set":"TV/ComponentInput","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"TV/Component"},{"set":"TV/ComponentInput","to":"Digital"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "TXN-3075WHF"
+  "model": "TXN-3075WHF",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV/Video","select":[{"commands":["TvVideo"],"setType":2}]},
+        {"name":"TV/Component","select":[{"commands":["InputTv/Component"],"setType":2}]}
+      ]
+    },
+    "TV/ComponentInput": {
+      "next": ["InputTv/Component"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Component1"},
+        {"name":"Component2"},
+        {"name":"Digital"}
+      ]
+    },
+    "TV/VideoInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

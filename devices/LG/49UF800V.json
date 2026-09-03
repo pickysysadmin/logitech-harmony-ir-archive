@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/67/67431d90a1aa79a0.json",
   "deviceType": 1,
   "globalDeviceId": 273122,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"Smart TV"}],"name":"Smart TV"},
+      {"commands":[{"set":"InputType","to":"TV/Radio"},{"set":"TV/RadioInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/Radio"},{"set":"TV/RadioInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"TV/Radio"},{"set":"TV/RadioInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "49UF800V"
+  "model": "49UF800V",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["Exit","Exit","InputAv1"],"setType":2}]},
+        {"name":"AV 2","select":[{"commands":["Exit","Exit","InputAv2"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["Exit","Exit","InputComponent1"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["Exit","Exit","InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["Exit","Exit","InputHdmi2"],"setType":2}]},
+        {"name":"HDMi 3","select":[{"commands":["Exit","Exit","InputHdmi3"],"setType":2}]},
+        {"name":"Smart TV","select":[{"commands":["Exit","Smart"],"setType":2}]},
+        {"name":"TV/Radio","select":[{"commands":["Exit","Exit","Tv/Radio"],"setType":2}]}
+      ]
+    },
+    "TV/RadioInput": {
+      "next": ["Tv/Radio"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Radio"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

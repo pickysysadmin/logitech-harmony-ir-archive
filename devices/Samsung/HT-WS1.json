@@ -2,6 +2,33 @@
   "codeset": "codesets/4f/4f85ea17efb8cba3.json",
   "deviceType": 19,
   "globalDeviceId": 210818,
+  "inputs": {
+    "list": [
+      {"name":"Optical","ports":["Optical"]},
+      {"name":"Analog","ports":["Aux"]}
+    ],
+    "next": ["InputNext"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HT-WS1"
+  "model": "HT-WS1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 2
+  }
 }

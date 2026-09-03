@@ -2,6 +2,59 @@
   "codeset": "codesets/fc/fcf730010a2f9f70.json",
   "deviceType": 1,
   "globalDeviceId": 381159,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Home"}],"name":"Home"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"EXT 1"}],"name":"EXT 1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"EXT 2"}],"name":"EXT 2"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "47L6453D"
+  "model": "47L6453D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Home","select":[{"commands":["Home"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["InputNext"],
+      "start": ["InputNext"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"},
+        {"name":"EXT 1"},
+        {"name":"EXT 2"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"HDMI 4"},
+        {"name":"PC"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

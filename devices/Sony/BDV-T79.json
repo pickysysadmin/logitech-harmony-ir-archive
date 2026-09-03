@@ -2,6 +2,34 @@
   "codeset": "codesets/32/32b20ba5dba5de81.json",
   "deviceType": 22,
   "globalDeviceId": 231748,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"BD/DVD","ports":["BuiltIn"]},
+      {"commands":["InputDvd",{"delayMs":2000},"Function","Function"],"name":"USB 1","ports":["USB"]},
+      {"commands":["InputDvd",{"delayMs":2000},"Function","Function","Function"],"name":"USB 2","ports":["USB"]},
+      {"commands":["InputTuner"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":2000},"Function","Function"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputTuner",{"delayMs":2000},"Function","Function","Function"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Optical"]},
+      {"commands":["Audio"],"name":"Audio","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "BDV-T79"
+  "model": "BDV-T79",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

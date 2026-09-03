@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2f/2faf1eb0a0d53c8f.json",
   "deviceType": 1,
   "globalDeviceId": 81027,
+  "inputs": {
+    "list": [
+      {"name":"tv"},
+      {"name":"av2"},
+      {"name":"svideo"},
+      {"name":"cvi"},
+      {"name":"side av"},
+      {"name":"side svideo"},
+      {"name":"vga"},
+      {"name":"hd-a"},
+      {"name":"hd-d"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "30MW9002/37"
+  "model": "30MW9002/37",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"tv"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

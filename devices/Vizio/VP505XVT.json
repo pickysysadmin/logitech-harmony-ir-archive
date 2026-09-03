@@ -2,6 +2,43 @@
   "codeset": "codesets/46/467f99604cb95bc0.json",
   "deviceType": 1,
   "globalDeviceId": 176247,
+  "inputs": {
+    "canSkip": true,
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"SVideo"},
+      {"name":"Composite"},
+      {"name":"Component 1"},
+      {"name":"RGB"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"HDMI 3"},
+      {"name":"HDMI 4"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Vizio",
-  "model": "VP505XVT"
+  "model": "VP505XVT",
+  "power": {
+    "toggle": [
+      {"delayMs":1000},
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 1
+  }
 }

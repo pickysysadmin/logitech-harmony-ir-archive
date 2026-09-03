@@ -2,6 +2,32 @@
   "codeset": "codesets/f1/f150c62f4e4438a3.json",
   "deviceType": 5,
   "globalDeviceId": 9375,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD/CD"},
+      {"commands":["InputCD"],"name":"TV/AUX"},
+      {"commands":["InputTv"],"name":"SAT/CAB"},
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR"},
+      {"commands":["InputAUX"],"name":"FRONT"},
+      {"commands":["InputTuner"],"name":"RADIO"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Niro",
-  "model": "TWO6.1C"
+  "model": "TWO6.1C",
+  "power": {
+    "off": ["PowerOff2"],
+    "on": ["InputTv"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

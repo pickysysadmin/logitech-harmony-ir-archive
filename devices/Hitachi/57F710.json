@@ -1,7 +1,46 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/26/2694b73e0979f767.json",
   "deviceType": 1,
   "globalDeviceId": 146801,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo5","InputNext","InputNext","InputNext","Select"],"name":"Antenna A"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputVideo4"],"name":"Video 4"},
+      {"commands":["InputVideo5"],"name":"Video 5"},
+      {"commands":[{"set":"AntennaInput","to":"AntB"}],"name":"Antenna B"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "57F710"
+  "model": "57F710",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AntA"},
+        {"name":"AntB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 900,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,42 @@
   "codeset": "codesets/ed/ed144b6f18ee78b5.json",
   "deviceType": 1,
   "globalDeviceId": 152638,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Scart1"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["0"],
+    "type": 4
+  },
   "manufacturer": "Schneider",
-  "model": "Scinema 2817"
+  "model": "Scinema 2817",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["Teletext"],"setType":2}]},
+        {"name":"On","select":[{"commands":["3","Teletext","3","0","3"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 3
+  }
 }

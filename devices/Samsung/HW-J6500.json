@@ -2,6 +2,32 @@
   "codeset": "codesets/cd/cd0cecfc8bf67695.json",
   "deviceType": 19,
   "globalDeviceId": 269889,
+  "inputs": {
+    "list": [
+      {"commands":["InputD.In"],"name":"D.IN","ports":["Optical"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Aux"]},
+      {"commands":["InputAux","Source"],"name":"HDMI","ports":["HDMI"]},
+      {"commands":["InputBT"],"name":"BT","ports":["Pairing Input"]},
+      {"commands":["InputAux","Source","Source","Source"],"name":"TV","ports":["Pairing Input"]},
+      {"commands":["InputD.In","InputUsb/BT"],"name":"USB","ports":["USB"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HW-J6500"
+  "model": "HW-J6500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

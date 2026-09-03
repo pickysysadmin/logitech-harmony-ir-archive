@@ -1,7 +1,33 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/1d/1dc4e60954b1a102.json",
   "deviceType": 16,
   "globalDeviceId": 160214,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"}
+    ],
+    "type": 6
+  },
   "manufacturer": "Nokia",
-  "model": "9780s"
+  "model": "9780s",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":4000}
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

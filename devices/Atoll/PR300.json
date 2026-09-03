@@ -2,6 +2,31 @@
   "codeset": "codesets/8b/8baa3d81d9aa8771.json",
   "deviceType": 19,
   "globalDeviceId": 178417,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputCD"],"name":"CD"},
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputAux"],"name":"AUX"},
+      {"commands":[{"command":"ByPass","durationMs":2000}],"name":"BYPASS"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Atoll",
-  "model": "PR300"
+  "model": "PR300",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

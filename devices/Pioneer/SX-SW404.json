@@ -2,6 +2,47 @@
   "codeset": "codesets/24/24ef055b7c875304.json",
   "deviceType": 5,
   "globalDeviceId": 171182,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AudioIn"},{"set":"AudioInInput","to":"DVD/DVR1"}],"name":"DVD/DVR1"},
+      {"commands":[{"set":"InputType","to":"AudioIn"},{"set":"AudioInInput","to":"DVD/DVR2"}],"name":"DVD/DVR2"},
+      {"commands":[{"set":"InputType","to":"AudioIn"},{"set":"AudioInInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"AudioIn"},{"set":"AudioInInput","to":"Analog"}],"name":"Analog"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "SX-SW404"
+  "model": "SX-SW404",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioInInput": {
+      "next": ["InputAudioIn"],
+      "values": [
+        {"name":"DVD/DVR1"},
+        {"name":"DVD/DVR2"},
+        {"name":"Digital"},
+        {"name":"Analog"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AudioIn","select":[{"commands":["InputAudioIn"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

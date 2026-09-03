@@ -2,6 +2,55 @@
   "codeset": "codesets/62/62ed02ff51c3af39.json",
   "deviceType": 22,
   "globalDeviceId": 138875,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"SAT"}],"name":"SAT","ports":["Component","Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"DM Port 1"}],"name":"DM Port 1","ports":["DMPort"]},
+      {"commands":[{"set":"InputType","to":"DM Port 2"}],"name":"DM Port 2","ports":["DMPort"]},
+      {"commands":[{"set":"InputType","to":"Audio"}],"name":"Audio","ports":["Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"XM"}],"name":"XM","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "DAV-HDX501W"
+  "model": "DAV-HDX501W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"SAT","select":[{"commands":["InputDvd",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500}],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"DM Port 1","select":[{"commands":["InputTv",{"delayMs":500},{"delayMs":500},"InputNext",{"delayMs":500}],"setType":2}]},
+        {"name":"DM Port 2","select":[{"commands":["InputTv",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500}],"setType":2}]},
+        {"name":"Audio","select":[{"commands":["InputTv",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500}],"setType":2}]},
+        {"name":"XM","select":[{"commands":["AmFmToggle",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500}],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2250,
+    "pressMinRepeats": 3
+  }
 }

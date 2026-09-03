@@ -2,6 +2,53 @@
   "codeset": "codesets/ed/ed6643cb57712df5.json",
   "deviceType": 21,
   "globalDeviceId": 500742,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Usb/Cd"},{"set":"Usb/CdInput","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"Usb/Cd"},{"set":"Usb/CdInput","to":"Cd"}],"name":"Cd"},
+      {"commands":[{"set":"InputType","to":"Radio/Aux"},{"set":"Radio/AuxInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Radio/Aux"},{"set":"Radio/AuxInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HC19"
+  "model": "SC-HC19",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":1}]},
+        {"name":"Usb/Cd","select":[{"commands":["InputUsb/Cd"],"setType":1}]},
+        {"name":"Radio/Aux","select":[{"commands":["InputRadio/Aux","InputRadio/Aux"],"setType":1}]}
+      ]
+    },
+    "Radio/AuxInput": {
+      "next": ["InputRadio/Aux"],
+      "values": [
+        {"name":"Radio"},
+        {"name":"Aux"}
+      ]
+    },
+    "Usb/CdInput": {
+      "next": ["InputUsb/Cd"],
+      "values": [
+        {"name":"Usb"},
+        {"name":"Cd"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

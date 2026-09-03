@@ -2,6 +2,77 @@
   "codeset": "codesets/67/67e1188302cf8127.json",
   "deviceType": 5,
   "globalDeviceId": 143627,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"CD/DVD"},{"set":"CD/DVDInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"CD/DVD"},{"set":"CD/DVDInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Aux1"}],"name":"Aux1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Aux2"}],"name":"Aux2"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Aux3"}],"name":"Aux3"},
+      {"commands":[{"set":"InputType","to":"TV/STB"},{"set":"TV/STBInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/STB"},{"set":"TV/STBInput","to":"STB"}],"name":"STB"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"Vcr1"}],"name":"Vcr1"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"Vcr2"}],"name":"Vcr2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "T+A",
-  "model": "SR-1535R"
+  "model": "SR-1535R",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"},
+        {"name":"Aux3"}
+      ]
+    },
+    "CD/DVDInput": {
+      "next": ["InputCd"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"CD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"CD/DVD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"TV/STB","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]}
+      ]
+    },
+    "TV/STBInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"STB"}
+      ]
+    },
+    "VCRInput": {
+      "next": ["InputVcr"],
+      "values": [
+        {"name":"Vcr1"},
+        {"name":"Vcr2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

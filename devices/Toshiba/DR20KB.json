@@ -2,6 +2,39 @@
   "codeset": "codesets/18/183598dd9f6c1169.json",
   "deviceType": 34,
   "globalDeviceId": 227707,
+  "inputs": {
+    "list": [
+      {"commands":["DVD"],"name":"DVD"},
+      {"commands":["HDD"],"name":"HDD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Toshiba",
-  "model": "DR20KB"
+  "model": "DR20KB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Av 1"},
+        {"name":"Av 2"},
+        {"name":"Av 3"},
+        {"name":"DV(Av 4)"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

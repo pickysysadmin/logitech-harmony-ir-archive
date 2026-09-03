@@ -2,6 +2,80 @@
   "codeset": "codesets/5f/5f1808cd748174b7.json",
   "deviceType": 22,
   "globalDeviceId": 213363,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"TunerFM/AM"}],"name":"TunerFM/AM"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"MP3"}],"name":"MP3"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Coax"},{"set":"CoaxInput","to":"CoaxialDIN 1"}],"name":"CoaxialDIN 1"},
+      {"commands":[{"set":"InputType","to":"Coax"},{"set":"CoaxInput","to":"CoaxialDIN 2"}],"name":"CoaxialDIN 2"},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OpticalInput","to":"OpticalDIN 1"}],"name":"OpticalDIN 1"},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OpticalInput","to":"OpticalDIN 2"}],"name":"OpticalDIN 2"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teufel",
-  "model": "IMPAQ 6000"
+  "model": "IMPAQ 6000",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": [
+        {"command":"InputAux","durationMs":2000}
+      ],
+      "values": [
+        {"name":"AUX"},
+        {"name":"MP3"}
+      ]
+    },
+    "CoaxInput": {
+      "next": ["InputCoax"],
+      "values": [
+        {"name":"CoaxialDIN 1"},
+        {"name":"CoaxialDIN 2"}
+      ]
+    },
+    "HdmiInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"Hdmi 1"},
+        {"name":"Hdmi 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"TunerFM/AM","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Coax","select":[{"commands":["InputCoax"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    },
+    "OpticalInput": {
+      "next": ["InputOptical"],
+      "values": [
+        {"name":"OpticalDIN 1"},
+        {"name":"OpticalDIN 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

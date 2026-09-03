@@ -2,6 +2,56 @@
   "codeset": "codesets/17/17f7355c0ea55140.json",
   "deviceType": 19,
   "globalDeviceId": 6501,
+  "inputs": {
+    "list": [
+      {"commands":["Input1"],"name":"Input1"},
+      {"commands":["Input2"],"name":"Input2"},
+      {"commands":["Input3"],"name":"Input3"},
+      {"commands":["Input4"],"name":"Input4"},
+      {"commands":["Input5"],"name":"Input5"},
+      {"commands":["Input6"],"name":"Input6"},
+      {"commands":["InputAD","Input1"],"name":"Input7"},
+      {"commands":["InputAD","Input2"],"name":"Input8"},
+      {"commands":["InputAD","Input3"],"name":"Input9"},
+      {"commands":["InputAD","Input4"],"name":"Input10"},
+      {"commands":["InputAD","Input5"],"name":"Input11"},
+      {"commands":["InputAD","Input6"],"name":"Input12"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Theta Digital",
-  "model": "Casablanca III"
+  "model": "Casablanca III",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputLetter": {
+      "next": ["InputAD"],
+      "values": [
+        {"name":"A"},
+        {"name":"D"}
+      ]
+    },
+    "InputNumber": {
+      "values": [
+        {"name":"1","select":[{"commands":["Input1"],"setType":1}]},
+        {"name":"2","select":[{"commands":["Input2"],"setType":1}]},
+        {"name":"3","select":[{"commands":["Input3"],"setType":1}]},
+        {"name":"4","select":[{"commands":["Input4"],"setType":1}]},
+        {"name":"5","select":[{"commands":["Input5"],"setType":1}]},
+        {"name":"6","select":[{"commands":["Input6"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

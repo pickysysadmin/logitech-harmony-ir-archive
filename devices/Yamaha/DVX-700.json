@@ -2,6 +2,60 @@
   "codeset": "codesets/d0/d0c4930b320188b1.json",
   "deviceType": 22,
   "globalDeviceId": 176586,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Dock"}],"name":"Dock"},
+      {"commands":[{"set":"InputType","to":"Input1-4"},{"set":"Input1-4Input","to":"Input1"}],"name":"Input1"},
+      {"commands":[{"set":"InputType","to":"Input1-4"},{"set":"Input1-4Input","to":"Input2"}],"name":"Input2"},
+      {"commands":[{"set":"InputType","to":"Input1-4"},{"set":"Input1-4Input","to":"Input3"}],"name":"Input3"},
+      {"commands":[{"set":"InputType","to":"Input1-4"},{"set":"Input1-4Input","to":"Input4"}],"name":"Input4"},
+      {"commands":[{"set":"InputType","to":"DVD/USB"},{"set":"DVD/USBInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVD/USB"},{"set":"DVD/USBInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "DVX-700"
+  "model": "DVX-700",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVD/USBInput": {
+      "next": ["InputDvd/Usb"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"USB"}
+      ]
+    },
+    "Input1-4Input": {
+      "next": ["Input1-4"],
+      "values": [
+        {"name":"Input1"},
+        {"name":"Input2"},
+        {"name":"Input3"},
+        {"name":"Input4"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Dock","select":[{"commands":["InputDock"],"setType":2}]},
+        {"name":"Input1-4","select":[{"commands":["Input1-4"],"setType":2}]},
+        {"name":"DVD/USB","select":[{"commands":["InputDvd/Usb"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

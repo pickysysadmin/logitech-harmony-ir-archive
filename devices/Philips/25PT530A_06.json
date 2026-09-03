@@ -2,6 +2,35 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 75297,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"Ext1"},
+      {"name":"Ext2"},
+      {"name":"Ext3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "25PT530A/06"
+  "model": "25PT530A/06",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 5,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

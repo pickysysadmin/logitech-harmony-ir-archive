@@ -2,6 +2,55 @@
   "codeset": "codesets/df/dfe2ff1de9d69cf7.json",
   "deviceType": 22,
   "globalDeviceId": 67785,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Am"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AuxInput","to":"Av"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AuxInput","to":"Scart"}],"name":"Scart"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AuxInput","to":"Digital"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Grundig",
-  "model": "DR-3400DD"
+  "model": "DR-3400DD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Av"},
+        {"name":"Scart"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

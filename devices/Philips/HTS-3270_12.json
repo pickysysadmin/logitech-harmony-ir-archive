@@ -2,6 +2,53 @@
   "codeset": "codesets/b5/b57c600332b45a79.json",
   "deviceType": 22,
   "globalDeviceId": 176741,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DISC"}],"name":"DISC","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"SCART IN"}],"name":"SCART IN","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"COAX IN"}],"name":"COAX IN","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"OPTI IN"}],"name":"OPTI IN","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"MP3 Link"}],"name":"MP3 Link","ports":["Aux"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS-3270/12"
+  "model": "HTS-3270/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DISC","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source",{"set":"SourceInput","to":"SCART IN"}],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"SCART IN"},
+        {"name":"AUX"},
+        {"name":"COAX IN"},
+        {"name":"OPTI IN"},
+        {"name":"MP3 Link"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 3
+  }
 }

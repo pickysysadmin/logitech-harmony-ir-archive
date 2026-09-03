@@ -2,6 +2,47 @@
   "codeset": "codesets/c0/c0dcc52954315a6d.json",
   "deviceType": 13,
   "globalDeviceId": 176661,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Front"}],"name":"Front"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Component"}],"name":"Component"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "R52WM24"
+  "model": "R52WM24",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Front"},
+        {"name":"Component"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVI","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,37 @@
   "codeset": "codesets/a0/a0d2c96c10ffd901.json",
   "deviceType": 34,
   "globalDeviceId": 129715,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"Scart"},
+      {"name":"DVIn"},
+      {"name":"Tuner"},
+      {"name":"FrontCVBS"},
+      {"name":"FrontS-Vid"},
+      {"name":"RearCVBS"},
+      {"name":"YUV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Nachus",
-  "model": "dvr-3000"
+  "model": "dvr-3000",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

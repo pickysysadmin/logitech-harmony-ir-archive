@@ -2,6 +2,39 @@
   "codeset": "codesets/eb/eb501f77c3515b11.json",
   "deviceType": 5,
   "globalDeviceId": 83566,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD/LD"},
+      {"commands":["InputTV"],"name":"TV/SAT"},
+      {"commands":["InputVcr"],"name":"VCR 1"},
+      {"commands":["InputVcr2"],"name":"VCR 2"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputLine"],"name":"Line"},
+      {"commands":["InputCdr"],"name":"MD/Tape 2"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputCdr2"],"name":"CDR/Tape 1"},
+      {"commands":["InputPhono","InputNext"],"name":"USB"},
+      {"commands":[{"delayMs":9000},"InputPhono","InputNext","InputNext"],"name":"iLink"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Pioneer",
-  "model": "VSX-55TXI"
+  "model": "VSX-55TXI",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 400,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

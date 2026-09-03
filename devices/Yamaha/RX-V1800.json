@@ -2,6 +2,40 @@
   "codeset": "codesets/ac/ac4a02d55fe40edf.json",
   "deviceType": 5,
   "globalDeviceId": 152664,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Optical"]},
+      {"commands":["InputCdr"],"name":"CD-R","ports":["Composite"]},
+      {"commands":["InputMultiChannel"],"name":"Multi Ch In","ports":["Composite"]},
+      {"commands":["InputMd/Tape"],"name":"MD/Tape","ports":["Composite"]},
+      {"commands":["InputDVD"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputBd/HdDvd"],"name":"BD/HD DVD","ports":["HDMI","Component","Composite","Optical","S-Video"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputDtv/Cbl"],"name":"DTV/CBL","ports":["HDMI","Component","Composite","Optical","S-Video"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["HDMI","Composite","Coaxial","S-Video"]},
+      {"commands":["InputVCR"],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":["InputV-Aux/Dock"],"name":"V-Aux/Dock","ports":["Composite","Optical","S-Video"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V1800"
+  "model": "RX-V1800",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

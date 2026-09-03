@@ -2,6 +2,92 @@
   "codeset": "codesets/66/66ded6f2427cdf7d.json",
   "deviceType": 5,
   "globalDeviceId": 97963,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"2CH"}],"name":"2-Ch"},
+      {"commands":[{"set":"InputType","to":"6CH"}],"name":"6-Ch"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD1"}],"name":"DVD 1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD2"}],"name":"DVD 2"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD3"}],"name":"DVD 3"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD4"}],"name":"DVD 4"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV1"}],"name":"TV 1"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV2"}],"name":"TV 2"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV3"}],"name":"TV 3"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV4"}],"name":"TV 4"},
+      {"commands":[{"set":"InputType","to":"SAT"},{"set":"SatInput","to":"SAT1"}],"name":"SAT 1"},
+      {"commands":[{"set":"InputType","to":"SAT"},{"set":"SatInput","to":"SAT2"}],"name":"SAT 2"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Anthem",
-  "model": "Statement D2 (Zone 2)"
+  "model": "Statement D2 (Zone 2)",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "DVDInput": {
+      "next": ["InputDvd"],
+      "values": [
+        {"name":"DVD1"},
+        {"name":"DVD2"},
+        {"name":"DVD3"},
+        {"name":"DVD4"}
+      ]
+    },
+    "FM/AMInput": {
+      "next": ["InputFM/AM"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD"},
+        {"name":"2CH"},
+        {"name":"6CH"},
+        {"name":"Tape"},
+        {"name":"DVD"},
+        {"name":"FM/AM"},
+        {"name":"TV"},
+        {"name":"SAT"},
+        {"name":"VCR"},
+        {"name":"AUX"}
+      ]
+    },
+    "SatInput": {
+      "next": ["InputSat"],
+      "values": [
+        {"name":"SAT1"},
+        {"name":"SAT2"}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTV"],
+      "values": [
+        {"name":"TV1"},
+        {"name":"TV2"},
+        {"name":"TV3"},
+        {"name":"TV4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

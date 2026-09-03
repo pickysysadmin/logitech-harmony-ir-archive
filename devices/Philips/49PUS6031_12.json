@@ -2,6 +2,67 @@
   "codeset": "codesets/67/670b5c3401996324.json",
   "deviceType": 1,
   "globalDeviceId": 348965,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Discreteinput","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"AVMENU","to":"EXT1"}],"name":"EXT1","ports":["Scart"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"AVMENU","to":"Back AV"}],"name":"Back AV","ports":["Composite"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"AVMENU","to":"HDMI1"}],"name":"HDMI1","ports":["HDMI"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"AVMENU","to":"HDMI2"}],"name":"HDMI2","ports":["HDMI"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"AVMENU","to":"YPbPr"}],"name":"YPbPr","ports":["Component"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"AVMENU","to":"VGA/PC"}],"name":"VGA/PC","ports":["PC"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"AVMENU","to":"Wireless Display"}],"name":"Wireless Display","ports":["Others"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Discreteinput","to":"SmartTV"}],"name":"SmartTV","ports":["Streaming"]},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Discreteinput","to":"Netflix"}],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "49PUS6031/12"
+  "model": "49PUS6031/12",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AVMENU": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["Source"],
+      "values": [
+        {"name":"EXT1"},
+        {"name":"Back AV"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"YPbPr"},
+        {"name":"VGA/PC"},
+        {"name":"Wireless Display"}
+      ]
+    },
+    "Discreteinput": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":1}]},
+        {"name":"SmartTV","select":[{"commands":["SmartTv"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]}
+      ]
+    },
+    "SmartTV_MENU": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Exit",{"delayMs":500}],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 24000,
+    "pressMinRepeats": 1
+  }
 }

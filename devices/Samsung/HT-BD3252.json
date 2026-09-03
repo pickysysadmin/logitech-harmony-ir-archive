@@ -2,6 +2,49 @@
   "codeset": "codesets/17/17b9fb6992b4c001.json",
   "deviceType": 22,
   "globalDeviceId": 163980,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"BD/DVD"}],"name":"BD/DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 1"}],"name":"AUX1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Hdmi 1"}],"name":"HDMI1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Hdmi 2"}],"name":"HDMI2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Din 1"}],"name":"DIN","ports":["Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-BD3252"
+  "model": "HT-BD3252",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Hdmi 1"},
+        {"name":"Hdmi 2"},
+        {"name":"Din 1"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"BD/DVD","select":[{"commands":["InputBD"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

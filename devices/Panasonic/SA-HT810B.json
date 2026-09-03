@@ -1,7 +1,47 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/c7/c720e50d3a9227d9.json",
   "deviceType": 32,
   "globalDeviceId": 19755,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/VCR"},{"set":"DVD/VCRInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVD/VCR"},{"set":"DVD/VCRInput","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"FM/AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-HT810B"
+  "model": "SA-HT810B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVD/VCRInput": {
+      "next": ["InputDVD/VCR"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"VCR"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/VCR","select":[{"commands":["InputDVD/VCR"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

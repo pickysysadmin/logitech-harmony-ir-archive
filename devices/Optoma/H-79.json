@@ -2,6 +2,34 @@
   "codeset": "codesets/91/91cd3eda51a0d996.json",
   "deviceType": 7,
   "globalDeviceId": 161265,
+  "inputs": {
+    "list": [
+      {"commands":["InputS-Video"],"name":"DVI"},
+      {"commands":["InputVGA"],"name":"RCA component"},
+      {"commands":["InputDVI-A"],"name":"S-Video"},
+      {"commands":["InputVideo"],"name":"BNC component"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "H-79"
+  "model": "H-79",
+  "power": {
+    "off": [
+      {"delayMs":3000},
+      {"command":"PowerToggle","durationMs":1000},
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

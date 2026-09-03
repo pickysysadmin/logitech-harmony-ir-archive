@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["Tune"]
+  },
   "codeset": "codesets/ec/ecbd6c5134b25b4e.json",
   "deviceType": 1,
   "globalDeviceId": 177728,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputVideo4"],"name":"Video 4"},
+      {"commands":["InputDigital-In"],"name":"DigitalIn"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "HD-52Z575"
+  "model": "HD-52Z575",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

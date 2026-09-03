@@ -2,6 +2,69 @@
   "codeset": "codesets/8c/8c31065481e231f5.json",
   "deviceType": 5,
   "globalDeviceId": 67002,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"6/8CH"}],"name":"6/8CH"},
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Video 4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"Video 5"}],"name":"Video 5"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "AVR-7300"
+  "model": "AVR-7300",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"6/8CH","select":[{"commands":["Input6/8Ch"],"setType":2}]},
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Video 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"Video 5","select":[{"commands":["InputVideo5"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "SignalInput": {
+      "next": ["DigitalUp"],
+      "previous": ["DigitalDown"],
+      "start": ["Digital"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Opt1"},
+        {"name":"Opt2"},
+        {"name":"Opt3"},
+        {"name":"Opt4"},
+        {"name":"Coax1"},
+        {"name":"Coax2"},
+        {"name":"Coax3"},
+        {"name":"Coax4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

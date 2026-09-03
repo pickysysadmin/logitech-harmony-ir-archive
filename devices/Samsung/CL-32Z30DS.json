@@ -1,7 +1,67 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ef/efc40609b5fb8bed.json",
   "deviceType": 1,
   "globalDeviceId": 167015,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv/Comp"},{"set":"TvCompInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Tv/Comp"},{"set":"TvCompInput","to":"Comp1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Tv/Comp"},{"set":"TvCompInput","to":"Comp2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"Tv/Comp"},{"set":"TvCompInput","to":"Hdmi"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Vid1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Vid2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Vid3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Vid4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"SVid1"}],"name":"S-Video 1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"SVid2"}],"name":"S-Video 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "CL-32Z30DS"
+  "model": "CL-32Z30DS",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tv/Comp","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Vid1"},
+        {"name":"Vid2"},
+        {"name":"Vid3"},
+        {"name":"Vid4"},
+        {"name":"SVid1"},
+        {"name":"SVid2"}
+      ]
+    },
+    "TvCompInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Comp1"},
+        {"name":"Comp2"},
+        {"name":"Hdmi"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,33 @@
   "codeset": "codesets/f5/f5b534c3fdacb65f.json",
   "deviceType": 19,
   "globalDeviceId": 337792,
+  "inputs": {
+    "list": [
+      {"commands":["InputPortable","Optical"],"name":"Optical","ports":["Optical"]},
+      {"commands":["InputLgTv"],"name":"LG TV","ports":["Pairing Input"]},
+      {"commands":["InputBluetooth"],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":["InputHdmiIn"],"name":"HDMI IN","ports":["HDMI"]},
+      {"commands":["InputPortable"],"name":"Portable","ports":["Aux"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "SJ5Y"
+  "model": "SJ5Y",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

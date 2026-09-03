@@ -2,6 +2,80 @@
   "codeset": "codesets/a8/a8547d18fe86ba3f.json",
   "deviceType": 1,
   "globalDeviceId": 68607,
+  "inputs": {
+    "list": [
+      {"commands":["TvVideo","Red"],"name":"AV 1"},
+      {"commands":["TvVideo","Green"],"name":"AV 2"},
+      {"commands":["1"],"name":"Programm1"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-28EX5C/S"
+  "model": "TX-28EX5C/S",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TunerMode"},
+      {"set":"OnScreenMenu","to":"True"},
+      {"set":"Input","to":"Programm1"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2Mode": {
+      "next": ["Green"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AV3Mode": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AV4Mode": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AVType": {
+      "values": [
+        {"name":"Red","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"Green","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"Yellow","select":[{"commands":["Yellow"],"setType":2}]},
+        {"name":"Blue","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    },
+    "InputMode": {
+      "next": ["Red"],
+      "values": [
+        {"name":"TunerMode"},
+        {"name":"VideoMode"}
+      ]
+    },
+    "OnScreenMenu": {
+      "values": [
+        {"name":"True","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"False","select":[{"commands":["Select"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

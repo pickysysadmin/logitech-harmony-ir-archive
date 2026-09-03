@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/97/97df49855c477086.json",
   "deviceType": 1,
   "globalDeviceId": 229534,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntA"],"name":"Ant-A"},
+      {"commands":["InputAntB"],"name":"Ant-B"},
+      {"commands":["Input5"],"name":"Ant-DTV"},
+      {"commands":["Input1"],"name":"Input-1"},
+      {"commands":["Input2"],"name":"Input-2"},
+      {"commands":["Input3"],"name":"Input-3"},
+      {"commands":["InputComp1",{"delayMs":1000},"InputComp1"],"name":"Comp-1"},
+      {"commands":["InputComp2","InputComp2"],"name":"Comp-2"},
+      {"commands":["InputDTv"],"name":"INP-Dtv"},
+      {"commands":["InputVGA"],"name":"Vga"},
+      {"commands":["InputStb"],"name":"MONLINK"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Mitsubishi",
-  "model": "WD-52613"
+  "model": "WD-52613",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

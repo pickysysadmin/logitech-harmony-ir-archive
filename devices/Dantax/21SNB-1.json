@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "greaterTen": ["NumberEnter"]
+  },
   "codeset": "codesets/ca/ca785ed14e8a0261.json",
   "deviceType": 1,
   "globalDeviceId": 150001,
+  "inputs": {
+    "list": [
+      {"name":"Tv"},
+      {"name":"Av1"},
+      {"name":"Av2"},
+      {"name":"Av2-S"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Dantax",
-  "model": "21SNB-1"
+  "model": "21SNB-1",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,46 @@
   "codeset": "codesets/5a/5ae3ae3e0dcd3e75.json",
   "deviceType": 22,
   "globalDeviceId": 250279,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"BD/DVD"}],"name":"BD/DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"D.IN"}],"name":"D.IN","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"BT"}],"name":"BT","ports":["Pairing Input"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-F5530"
+  "model": "HT-F5530",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "next": ["Function"],
+      "start": ["VolumeUp","VolumeDown"],
+      "values": [
+        {"name":"BD/DVD"},
+        {"name":"D.IN"},
+        {"name":"AUX"},
+        {"name":"HDMI"},
+        {"name":"FM"},
+        {"name":"BT"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 2
+  }
 }

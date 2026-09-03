@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/0c/0cd1e4cf30d96827.json",
   "deviceType": 1,
   "globalDeviceId": 42107,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"Comp 1"},
+      {"name":"Comp 2"},
+      {"name":"RGB"},
+      {"name":"DVI"},
+      {"name":"Front AV"},
+      {"name":"Front RGB"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Gemstar",
-  "model": "GDT-56DRP"
+  "model": "GDT-56DRP",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"video","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"component","select":[{"commands":["InputVga"],"setType":2}]}
+      ]
+    },
+    "componentInput": {
+      "next": ["InputVga"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"RGB"},
+        {"name":"Front RGB"},
+        {"name":"TV"}
+      ]
+    },
+    "videoInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"Front AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2500,
+    "interDeviceDelay": 400,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 23000,
+    "pressMinRepeats": 3
+  }
 }

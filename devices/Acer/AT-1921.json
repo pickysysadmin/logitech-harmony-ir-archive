@@ -2,6 +2,71 @@
   "codeset": "codesets/49/4989cd436dcc702f.json",
   "deviceType": 1,
   "globalDeviceId": 146132,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Scart"}],"name":"SCART"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "AT-1921"
+  "model": "AT-1921",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV4"},
+        {"name":"AV5"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV","select":[{"commands":[{"set":"AVInput","to":"AV3"},"InputVideo"],"setType":2}]},
+        {"name":"Scart","select":[{"commands":[{"set":"ScartInput","to":"Svideo1-AV1"},"InputSat"],"setType":2}]},
+        {"name":"PC","select":[{"commands":[{"set":"PCInput","to":"VGA"},"InputPC"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI-D"}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputSat"],
+      "values": [
+        {"name":"Svideo1-AV1"},
+        {"name":"Svideo2-AV2-Comp"}
+      ]
+    },
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["Teletext"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Teletext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

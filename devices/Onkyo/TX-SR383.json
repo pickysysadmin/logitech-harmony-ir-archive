@@ -2,6 +2,58 @@
   "codeset": "codesets/63/631ed8c598ff4f45.json",
   "deviceType": 5,
   "globalDeviceId": 447180,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"BD/DVD"}],"name":"BD/DVD","ports":["HDMI","Composite"]},
+      {"commands":[{"set":"InputType","to":"CBL/SAT"}],"name":"CBL/SAT","ports":["HDMI","Composite"]},
+      {"commands":[{"set":"InputType","to":"STRM BOX"}],"name":"STRM BOX","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Game"}],"name":"Game","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SR383"
+  "model": "TX-SR383",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"BD/DVD","select":[{"commands":["InputBd/Dvd"],"setType":1}]},
+        {"name":"CBL/SAT","select":[{"commands":["InputCbl/Sat"],"setType":1}]},
+        {"name":"STRM BOX","select":[{"commands":["InputStrmBox"],"setType":1}]},
+        {"name":"Game","select":[{"commands":["InputGame"],"setType":1}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":1}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":1}]},
+        {"name":"Bluetooth","select":[{"commands":["Bluetooth"],"setType":1}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":1}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["Band"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

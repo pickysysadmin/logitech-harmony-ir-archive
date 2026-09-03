@@ -2,6 +2,62 @@
   "codeset": "codesets/48/48f522a13bf05f1f.json",
   "deviceType": 21,
   "globalDeviceId": 258720,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"MusicPlayer"}],"name":"MusicPlayer"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"RadioInput","to":"InternetRadio"}],"name":"InternetRadio"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"RadioInput","to":"DABRadio"}],"name":"DABRadio"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"RadioInput","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sangean",
-  "model": "DDR-63"
+  "model": "DDR-63",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Media","select":[{"commands":["InputMedia"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]}
+      ]
+    },
+    "MediaInput": {
+      "next": ["InputMedia"],
+      "values": [
+        {"name":"CD"},
+        {"name":"USB"},
+        {"name":"SD"},
+        {"name":"iPod"},
+        {"name":"MusicPlayer"}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"InternetRadio"},
+        {"name":"DABRadio"},
+        {"name":"FM"},
+        {"name":"AUX"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

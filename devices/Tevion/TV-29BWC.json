@@ -2,6 +2,34 @@
   "codeset": "codesets/71/715323c4ce1fc3e1.json",
   "deviceType": 1,
   "globalDeviceId": 143612,
+  "inputs": {
+    "list": [
+      {"name":"Foxtel"},
+      {"name":"AV 1"},
+      {"name":"AV 2"},
+      {"name":"SVHS"},
+      {"name":"YUV"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Tevion",
-  "model": "TV-29BWC"
+  "model": "TV-29BWC",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Foxtel"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

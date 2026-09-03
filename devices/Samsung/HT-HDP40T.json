@@ -2,6 +2,57 @@
   "codeset": "codesets/f4/f42fde5ab649e59a.json",
   "deviceType": 22,
   "globalDeviceId": 102423,
+  "inputs": {
+    "list": [
+      {"name":"AM"},
+      {"name":"FM"},
+      {"name":"DVD"},
+      {"name":"HDMI"},
+      {"name":"Digi 1"},
+      {"name":"Aux 1"},
+      {"name":"Aux 2"}
+    ],
+    "next": ["InputAux"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "HT-HDP40T"
+  "model": "HT-HDP40T",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Digi 1"},
+        {"name":"Digi 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,76 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/31/31ee402f4de370d3.json",
   "deviceType": 1,
   "globalDeviceId": 131753,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV1Composite"}],"name":"AV1Composite"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV1S-Video"}],"name":"AV1S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV2Composite"}],"name":"AV2Composite"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV2S-Video"}],"name":"AV2S-Video"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"AV3Component1"}],"name":"AV3Component1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"AV4Component2"}],"name":"AV4Component2"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Norcent",
-  "model": "PT-4246HD"
+  "model": "PT-4246HD",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"AV3Component1"},
+      {"set":"PCInput","to":"VGA"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"AV3Component1"},
+        {"name":"AV4Component2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"HDMI"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV1Composite"},
+        {"name":"AV1S-Video"},
+        {"name":"AV2Composite"},
+        {"name":"AV2S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

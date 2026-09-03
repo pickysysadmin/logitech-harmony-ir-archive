@@ -2,6 +2,34 @@
   "codeset": "codesets/f0/f044799d626da460.json",
   "deviceType": 1,
   "globalDeviceId": 172799,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputHD/DVD1"],"name":"HD/DVD1"},
+      {"commands":["InputHD/DVD2"],"name":"HD/DVD2"},
+      {"commands":["InputHD/DVD2",{"delayMs":1500},"InputNext"],"name":"HDMI"},
+      {"commands":["InputPc"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KF-55E200A"
+  "model": "KF-55E200A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/f7/f79c8e361c647510.json",
   "deviceType": 1,
   "globalDeviceId": 242140,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV 1"},
+      {"name":"AV 2"},
+      {"name":"S-VHS"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Emerson",
-  "model": "ETV-2901"
+  "model": "ETV-2901",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

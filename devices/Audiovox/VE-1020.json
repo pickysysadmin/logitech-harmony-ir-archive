@@ -2,6 +2,57 @@
   "codeset": "codesets/59/59a2f17da405ed81.json",
   "deviceType": 37,
   "globalDeviceId": 110533,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AmFmInput","to":"Am"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AmFmInput","to":"Fm"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AvInput","to":"Av1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AvInput","to":"Av2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Telephone"}],"name":"Telephone"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Audiovox",
-  "model": "VE-1020"
+  "model": "VE-1020",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AmFmInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    },
+    "AvInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"AM/FM","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"Telephone","select":[{"commands":["InputTelephone"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

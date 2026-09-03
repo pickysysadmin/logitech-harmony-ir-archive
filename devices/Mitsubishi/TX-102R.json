@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/8a/8ac8faf821222641.json",
   "deviceType": 1,
   "globalDeviceId": 10492,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":[{"set":"AntAB","to":"A"}],"name":"Ant-A"},
+      {"commands":[{"set":"AntAB","to":"B"}],"name":"Ant-B"},
+      {"commands":["InputVcr"],"name":"VCR"},
+      {"commands":["VDP"],"name":"VDP"},
+      {"commands":["Camera"],"name":"Camera"},
+      {"commands":["InputRGB"],"name":"RGB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Mitsubishi",
-  "model": "TX-102R"
+  "model": "TX-102R",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntAB": {
+      "next": ["AntABToggle"],
+      "values": [
+        {"name":"A"},
+        {"name":"B"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

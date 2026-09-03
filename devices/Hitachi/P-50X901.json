@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/16/16a179cfaea6630d.json",
   "deviceType": 1,
   "globalDeviceId": 137085,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"Input1"},
+      {"commands":["InputVideo2"],"name":"Input2"},
+      {"commands":["InputVideo3"],"name":"Input3"},
+      {"commands":["InputVideo4"],"name":"Input-Front"},
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["InputHdmi2","InputNext","DirectionDown","Select"],"name":"HDMI-Front"},
+      {"commands":["InputHdmi2","InputNext","DirectionDown","DirectionDown","Select"],"name":"PhotoInput"},
+      {"commands":["InputHdmi2","InputNext","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Air/Cable"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hitachi",
-  "model": "P-50X901"
+  "model": "P-50X901",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 14000,
+    "pressMinRepeats": 1
+  }
 }

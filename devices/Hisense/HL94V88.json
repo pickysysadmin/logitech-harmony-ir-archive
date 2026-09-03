@@ -1,7 +1,72 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/0e/0ec6fcc0037b50d4.json",
   "deviceType": 1,
   "globalDeviceId": 206176,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"D/A"},{"set":"D/AInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"D/A"},{"set":"D/AInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Av1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Av2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI3"}],"name":"HDMI3"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"DMP"}],"name":"DMP"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hisense",
-  "model": "HL94V88"
+  "model": "HL94V88",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "D/AInput": {
+      "next": ["D/A"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    },
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"},
+        {"name":"S-Video"},
+        {"name":"Component1"},
+        {"name":"Component2"},
+        {"name":"PC"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"DMP"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"D/A","select":[{"commands":["D/A"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

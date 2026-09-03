@@ -2,6 +2,57 @@
   "codeset": "codesets/3d/3d7c05a808c3c816.json",
   "deviceType": 5,
   "globalDeviceId": 88565,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Am"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm"}],"name":"FM"},
+      {"commands":["InputCD"],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Tape"},{"set":"TapeInput","to":"Tape1"}],"name":"Tape 1"},
+      {"commands":[{"set":"InputType","to":"Tape"},{"set":"TapeInput","to":"Tape2"}],"name":"Tape 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Braun",
-  "model": "R-2"
+  "model": "R-2",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCD"],"setType":2}]},
+        {"name":"Phono","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]}
+      ]
+    },
+    "TapeInput": {
+      "next": ["InputTape"],
+      "values": [
+        {"name":"Tape1"},
+        {"name":"Tape2"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

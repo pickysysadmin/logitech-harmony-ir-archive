@@ -2,6 +2,33 @@
   "codeset": "codesets/17/17787d1fd164ecc1.json",
   "deviceType": 7,
   "globalDeviceId": 275977,
+  "inputs": {
+    "list": [
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputHdmi"],"name":"HDMI"},
+      {"commands":["InputVideo"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Canon",
-  "model": "LE-5W"
+  "model": "LE-5W",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,39 @@
   "codeset": "codesets/21/21b379be39296c84.json",
   "deviceType": 47,
   "globalDeviceId": 151230,
+  "inputs": {
+    "list": [
+      {"commands":["DVD"],"name":"DVD"},
+      {"commands":["HDD"],"name":"HDD"},
+      {"commands":["VCR"],"name":"VCR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Toshiba",
-  "model": "D-KVR20"
+  "model": "D-KVR20",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"L3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

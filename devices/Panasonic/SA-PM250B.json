@@ -2,6 +2,45 @@
   "codeset": "codesets/32/3235679d8ff757ad.json",
   "deviceType": 21,
   "globalDeviceId": 336481,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"USB/CD"},{"set":"USB/CDInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB/CD"},{"set":"USB/CDInput","to":"CD"}],"name":"CD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-PM250B"
+  "model": "SA-PM250B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"USB/CD","select":[{"commands":["InputUsb/Cd"],"setType":2}]}
+      ]
+    },
+    "USB/CDInput": {
+      "next": ["InputUsb/Cd"],
+      "values": [
+        {"name":"USB"},
+        {"name":"CD"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

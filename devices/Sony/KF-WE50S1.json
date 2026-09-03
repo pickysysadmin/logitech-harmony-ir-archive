@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 101945,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Video 4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"Video 5"}],"name":"Video 5"},
+      {"commands":[{"set":"InputType","to":"Video 6"}],"name":"Video 6"},
+      {"commands":[{"set":"InputType","to":"Video 7"}],"name":"Video 7"},
+      {"commands":[{"set":"InputType","to":"Memory Stick"}],"name":"Memory Stick"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HD1"}],"name":"HD1"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HD2"}],"name":"HD2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "KF-WE50S1"
+  "model": "KF-WE50S1",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "HDInput": {
+      "next": ["InputHD1"],
+      "values": [
+        {"name":"HD1"},
+        {"name":"HD2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Video 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"Video 5","select":[{"commands":["InputVideo5"],"setType":2}]},
+        {"name":"Video 6","select":[{"commands":["InputVideo6"],"setType":2}]},
+        {"name":"Video 7","select":[{"commands":["InputVideo7"],"setType":2}]},
+        {"name":"Memory Stick","select":[{"commands":["MemoryStick"],"setType":2}]},
+        {"name":"HD","select":[{"commands":["InputHD1"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

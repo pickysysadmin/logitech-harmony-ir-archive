@@ -2,6 +2,33 @@
   "codeset": "codesets/5a/5acaf703a76a7581.json",
   "deviceType": 7,
   "globalDeviceId": 497136,
+  "inputs": {
+    "list": [
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"}
+    ],
+    "next": ["Input"],
+    "type": 2
+  },
   "manufacturer": "JVC",
-  "model": "DLA-N5BE"
+  "model": "DLA-N5BE",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":2000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 60000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,39 @@
   "codeset": "codesets/89/8916adec3e19b0ca.json",
   "deviceType": 21,
   "globalDeviceId": 18790,
+  "inputs": {
+    "list": [
+      {"commands":["InputCD"],"name":"CD"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputTelevision"],"name":"TV"},
+      {"commands":["InputTelevision","InputVideo"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Pioneer",
-  "model": "VS100DVD"
+  "model": "VS100DVD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "VideoSelect": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Video 3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

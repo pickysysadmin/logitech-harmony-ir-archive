@@ -2,6 +2,63 @@
   "codeset": "codesets/2c/2c1dafa18fa149ce.json",
   "deviceType": 33,
   "globalDeviceId": 512054,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Coaxial 1"}],"name":"Coaxial 1"},
+      {"commands":[{"set":"InputType","to":"Coaxial 2"}],"name":"Coaxial 2"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Internet"}],"name":"Internet"},
+      {"commands":[{"set":"InputType","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"AES"},{"set":"AESInput","to":"AES"}],"name":"AES"},
+      {"commands":[{"set":"InputType","to":"AES"},{"set":"AESInput","to":"EBU"}],"name":"EBU"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Cary Audio Design",
-  "model": "DMS-550"
+  "model": "DMS-550",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AESInput": {
+      "next": ["InputAES/EBU"],
+      "values": [
+        {"name":"AES"},
+        {"name":"EBU"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":1}]},
+        {"name":"Coaxial 1","select":[{"commands":["InputCoaxial1"],"setType":1}]},
+        {"name":"Coaxial 2","select":[{"commands":["InputCoaxial2"],"setType":1}]},
+        {"name":"Bluetooth","select":[{"commands":["Bluetooth"],"setType":1}]},
+        {"name":"Internet","select":[{"commands":["Internet"],"setType":1}]},
+        {"name":"Network","select":[{"commands":["Network"],"setType":1}]},
+        {"name":"USB","select":[{"commands":["InputUSB/SD"],"setType":1}]},
+        {"name":"AES","select":[{"commands":["InputAES/EBU"],"setType":1}]}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputUSB/SD"],
+      "values": [
+        {"name":"USB"},
+        {"name":"SD"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

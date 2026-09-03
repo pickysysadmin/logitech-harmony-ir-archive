@@ -2,6 +2,34 @@
   "codeset": "codesets/b2/b23c2596b38c1815.json",
   "deviceType": 1,
   "globalDeviceId": 40164,
+  "inputs": {
+    "list": [
+      {"name":"Antenna"},
+      {"name":"SAT"},
+      {"name":"VCR"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "28PW8504/19"
+  "model": "28PW8504/19",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

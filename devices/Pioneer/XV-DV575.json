@@ -2,6 +2,47 @@
   "codeset": "codesets/b5/b577b643a75b0f7d.json",
   "deviceType": 22,
   "globalDeviceId": 174891,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"Usb","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"LINE"},{"set":"LINEInput","to":"Line1"}],"name":"Line1","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"LINE"},{"set":"LINEInput","to":"Line2"}],"name":"Line2","ports":["Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "XV-DV575"
+  "model": "XV-DV575",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Usb","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"LINE","select":[{"commands":["InputLine"],"setType":2}]}
+      ]
+    },
+    "LINEInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"Line1"},
+        {"name":"Line2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

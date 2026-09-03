@@ -2,6 +2,36 @@
   "codeset": "codesets/7a/7a7c8ed209a06650.json",
   "deviceType": 5,
   "globalDeviceId": 148635,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputDVD/LD"],"name":"DVD/LD","ports":["Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputTv/Sat"],"name":"TV/SAT","ports":["Composite","Optical"]},
+      {"commands":["InputMd/Tape"],"name":"MD/TAPE","ports":["Composite"]},
+      {"commands":["InputCD/SACD"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Composite"]},
+      {"commands":["InputMultiCh/2ChDirect"],"name":"MultiCH","ports":["Composite"]},
+      {"commands":["InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputFm"],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "STR-K502"
+  "model": "STR-K502",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

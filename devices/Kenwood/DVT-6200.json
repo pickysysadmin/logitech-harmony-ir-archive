@@ -2,6 +2,47 @@
   "codeset": "codesets/e9/e9363af3c9deed6e.json",
   "deviceType": 22,
   "globalDeviceId": 37500,
+  "inputs": {
+    "list": [
+      {"commands":["Input 13"],"name":"DVD/CD"},
+      {"commands":["Input 1"],"name":"Tuner"},
+      {"commands":["Input 2"],"name":"VCR"},
+      {"commands":["InputCable"],"name":"CABLE/SAT"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Kenwood",
-  "model": "DVT-6200"
+  "model": "DVT-6200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"VIDEO","select":[{"commands":["InputCable"],"setType":2}]},
+        {"name":"DVD/CD","select":[{"commands":["Input 13"],"setType":2}]},
+        {"name":"TUNER","select":[{"commands":["Input 1"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video1o"},
+        {"name":"Video2"},
+        {"name":"Video2o"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,40 @@
   "codeset": "codesets/21/21d2db356ab1a152.json",
   "deviceType": 1,
   "globalDeviceId": 171663,
+  "inputs": {
+    "finish": ["InputNext"],
+    "list": [
+      {"name":"Scart1"},
+      {"name":"Scart2"},
+      {"name":"Scart3"},
+      {"name":"AV4"},
+      {"name":"AV5"},
+      {"name":"AV6"},
+      {"name":"PC1"},
+      {"name":"PC2"}
+    ],
+    "next": ["InputNext"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Sagem",
-  "model": "AXIUM HD-D45"
+  "model": "AXIUM HD-D45",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"PC2"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/9b/9b2e53163248d1c7.json",
   "deviceType": 5,
   "globalDeviceId": 36113,
+  "inputs": {
+    "list": [
+      {"commands":[{"command":"InputPhono","durationMs":1200}],"name":"Phono"},
+      {"commands":[{"command":"InputTuner","durationMs":1200}],"name":"Tuner"},
+      {"commands":[{"command":"InputCd","durationMs":1200}],"name":"CD"},
+      {"commands":[{"command":"InputTape","durationMs":1200}],"name":"CDR/Tape"},
+      {"commands":[{"command":"InputTv","durationMs":1200}],"name":"TV"},
+      {"commands":[{"command":"InputVcr","durationMs":1200}],"name":"VCR"},
+      {"commands":[{"command":"InputSat","durationMs":1200}],"name":"Sat"},
+      {"commands":[{"command":"InputDvd","durationMs":1200}],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Magnavox",
-  "model": "MRB150"
+  "model": "MRB150",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":1200}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

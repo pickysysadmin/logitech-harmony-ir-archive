@@ -2,6 +2,35 @@
   "codeset": "codesets/ec/ecb1a49782dbfc37.json",
   "deviceType": 1,
   "globalDeviceId": 257412,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnalog"],"name":"Analog","ports":["Antenna"]},
+      {"commands":["InputDigital"],"name":"Digital","ports":["Antenna"]},
+      {"commands":["InputVideo1"],"name":"AV 1","ports":["Composite"]},
+      {"commands":["InputVideo2"],"name":"AV 2/Component","ports":["Component","Composite"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2/MHL","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputHdmi4"],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":["Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-65W855A"
+  "model": "KDL-65W855A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

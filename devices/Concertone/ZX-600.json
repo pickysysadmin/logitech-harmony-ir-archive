@@ -2,6 +2,47 @@
   "codeset": "codesets/7f/7f2361ee490b9921.json",
   "deviceType": 22,
   "globalDeviceId": 131106,
+  "inputs": {
+    "list": [
+      {"name":"Input 1"},
+      {"name":"Input 2"},
+      {"name":"Radio"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Concertone",
-  "model": "ZX-600"
+  "model": "ZX-600",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Input 1"},
+        {"name":"Input 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 4,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

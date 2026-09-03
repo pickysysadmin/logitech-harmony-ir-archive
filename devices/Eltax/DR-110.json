@@ -2,6 +2,35 @@
   "codeset": "codesets/b3/b3af5481aa21d7d6.json",
   "deviceType": 22,
   "globalDeviceId": 71376,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"AUX"},
+      {"name":"TV"},
+      {"name":"VCR"},
+      {"name":"RADIO"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Eltax",
-  "model": "DR-110"
+  "model": "DR-110",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

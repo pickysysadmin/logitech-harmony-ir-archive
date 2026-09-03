@@ -2,6 +2,47 @@
   "codeset": "codesets/33/333ccc51a6d6c09f.json",
   "deviceType": 22,
   "globalDeviceId": 54268,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Tuner/Aux"},{"set":"Tuner/AuxInput","to":"Fm"}],"name":"Fm"},
+      {"commands":[{"set":"InputType","to":"Tuner/Aux"},{"set":"Tuner/AuxInput","to":"Am"}],"name":"Am"},
+      {"commands":[{"set":"InputType","to":"Tuner/Aux"},{"set":"Tuner/AuxInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PM39D"
+  "model": "SC-PM39D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Tuner/Aux","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "Tuner/AuxInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Fm"},
+        {"name":"Am"},
+        {"name":"Aux"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

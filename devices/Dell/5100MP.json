@@ -2,6 +2,34 @@
   "codeset": "codesets/5b/5b9c36d971391ac1.json",
   "deviceType": 7,
   "globalDeviceId": 118625,
+  "inputs": {
+    "list": [
+      {"name":"S Video"},
+      {"name":"Composite Video"},
+      {"name":"HDMI"}
+    ],
+    "next": ["InputDVI"],
+    "type": 2
+  },
   "manufacturer": "Dell",
-  "model": "5100MP"
+  "model": "5100MP",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":200},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 33500,
+    "pressMinRepeats": 3
+  }
 }

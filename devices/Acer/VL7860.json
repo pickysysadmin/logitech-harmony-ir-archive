@@ -2,6 +2,49 @@
   "codeset": "codesets/0b/0b11868e1610e599.json",
   "deviceType": 7,
   "globalDeviceId": 447663,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2/MHL"}],"name":"HDMI 2/MHL","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "VL7860"
+  "model": "VL7860",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "HDMIInput": {
+      "next": ["InputHdmi/Mhl"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2/MHL"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":1}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi/Mhl"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

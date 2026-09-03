@@ -2,6 +2,45 @@
   "codeset": "codesets/a8/a84a7ffb733fc2b1.json",
   "deviceType": 7,
   "globalDeviceId": 225069,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"COMPUTER"}],"name":"COMPUTER"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VIDEO"}],"name":"VIDEO"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-VIDEO"}],"name":"S-VIDEO"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "EB-S92"
+  "model": "EB-S92",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"COMPUTER","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"VIDEO"},
+        {"name":"S-VIDEO"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

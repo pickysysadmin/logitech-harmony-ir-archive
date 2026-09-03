@@ -1,7 +1,65 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/d4/d456234c3e02b6e3.json",
   "deviceType": 1,
   "globalDeviceId": 115310,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputYPbPr1"],"name":"Xbox360"},
+      {"commands":["InputYPbPr2"],"name":"YPbPr2"},
+      {"commands":["InputAV"],"name":"AV"},
+      {"commands":["InputVga"],"name":"PC"},
+      {"commands":["InputHdmi"],"name":"HDMI"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputDVI"],"name":"DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Westinghouse",
-  "model": "LTV-36W6HD"
+  "model": "LTV-36W6HD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AvInput": {
+      "next": ["InputAV"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAV"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"YPbPr 1","select":[{"commands":["InputYPbPr1"],"setType":2}]},
+        {"name":"YPbPr 2","select":[{"commands":["InputYPbPr2"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"DVI","select":[{"commands":["InputDVI"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    },
+    "TvInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Hdtv"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

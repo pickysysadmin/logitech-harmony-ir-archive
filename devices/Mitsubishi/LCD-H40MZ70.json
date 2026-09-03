@@ -1,7 +1,75 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3,
+    "greaterHundred": ["NumberEnter"]
+  },
   "codeset": "codesets/a0/a0c60f9849c65e69.json",
   "deviceType": 1,
   "globalDeviceId": 161227,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"BS"}],"name":"BS"},
+      {"commands":[{"set":"InputType","to":"CS"},{"set":"CSInput","to":"CS1"}],"name":"CS1"},
+      {"commands":[{"set":"InputType","to":"CS"},{"set":"CSInput","to":"CS2"}],"name":"CS2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Side"}],"name":"Side"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"D 1"}],"name":"D 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"D 2"}],"name":"D 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Mitsubishi",
-  "model": "LCD-H40MZ70"
+  "model": "LCD-H40MZ70",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CSInput": {
+      "next": ["CS"],
+      "values": [
+        {"name":"CS1"},
+        {"name":"CS2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Digital","select":[{"commands":["Digital"],"setType":2}]},
+        {"name":"Analog","select":[{"commands":["Analog"],"setType":2}]},
+        {"name":"BS","select":[{"commands":["BS"],"setType":2}]},
+        {"name":"CS","select":[{"commands":["CS"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "previous": ["InputPrev"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Side"},
+        {"name":"D 1"},
+        {"name":"D 2"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"PC"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

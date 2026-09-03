@@ -2,6 +2,40 @@
   "codeset": "codesets/90/90049928a11d2d09.json",
   "deviceType": 1,
   "globalDeviceId": 81804,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"tv"},
+      {"name":"scart1"},
+      {"name":"scart2"},
+      {"name":"svhs"},
+      {"name":"av"},
+      {"name":"pc"},
+      {"name":"dvi"},
+      {"name":"ypbpr"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Phocus",
-  "model": "PDP-42 PDS"
+  "model": "PDP-42 PDS",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"tv"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

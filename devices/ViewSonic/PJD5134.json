@@ -2,6 +2,39 @@
   "codeset": "codesets/27/27adad054626732d.json",
   "deviceType": 7,
   "globalDeviceId": 252378,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"D-Sub/Comp 1","ports":["PC"]},
+      {"name":"D-Sub/Comp 2","ports":["PC"]},
+      {"name":"HDMI","ports":["HDMI"]},
+      {"name":"Video","ports":["Composite"]},
+      {"name":"S-Video","ports":["S-Video"]}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "ViewSonic",
-  "model": "PJD5134"
+  "model": "PJD5134",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

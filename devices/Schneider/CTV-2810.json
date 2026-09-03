@@ -2,6 +2,34 @@
   "codeset": "codesets/b7/b7bf9558218fa9f0.json",
   "deviceType": 1,
   "globalDeviceId": 80244,
+  "inputs": {
+    "list": [
+      {"commands":["PC/TV"],"name":"TV"},
+      {"commands":["InputSat"],"name":"AV1"},
+      {"commands":["VolumeUp"],"name":"AV2"},
+      {"commands":["BrightnessUp"],"name":"AV3"},
+      {"commands":["AudioChannel"],"name":"S-Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Schneider",
-  "model": "CTV-2810"
+  "model": "CTV-2810",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

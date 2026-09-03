@@ -2,6 +2,37 @@
   "codeset": "codesets/22/22c3fa2723aed8f8.json",
   "deviceType": 1,
   "globalDeviceId": 92089,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"TV"},
+      {"commands":["2"],"name":"Scart1"},
+      {"commands":["3"],"name":"Scart2"},
+      {"commands":["4"],"name":"S-video/AV"},
+      {"commands":["5"],"name":"Component1"},
+      {"commands":["TvVideo"],"name":"Component2"},
+      {"commands":["7"],"name":"PC"},
+      {"commands":["8"],"name":"DV1"}
+    ],
+    "start": ["ChannelPrev"],
+    "type": 3
+  },
   "manufacturer": "QPVision",
-  "model": "QPV-37HD"
+  "model": "QPV-37HD",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

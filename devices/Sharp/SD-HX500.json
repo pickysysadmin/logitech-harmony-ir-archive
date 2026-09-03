@@ -2,6 +2,61 @@
   "codeset": "codesets/a2/a2972d93aa80e8c5.json",
   "deviceType": 22,
   "globalDeviceId": 150797,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV optical"}],"name":"TV optical"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Coax"}],"name":"Coax"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV analog"}],"name":"TV analog"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV auto"}],"name":"TV auto"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"VCR1"}],"name":"VCR1"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"Aux2"}],"name":"Aux2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "SD-HX500"
+  "model": "SD-HX500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVCR"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV optical"},
+        {"name":"Coax"},
+        {"name":"TV analog"},
+        {"name":"TV auto"}
+      ]
+    },
+    "VCRInput": {
+      "next": ["InputVCR"],
+      "values": [
+        {"name":"VCR1"},
+        {"name":"Aux"},
+        {"name":"Aux2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

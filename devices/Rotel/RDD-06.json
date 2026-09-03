@@ -2,6 +2,56 @@
   "codeset": "codesets/b2/b29241e34ac214db.json",
   "deviceType": 19,
   "globalDeviceId": 258339,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"D-1"},{"set":"D-1Input","to":"Coaxial 1"}],"name":"Coaxial 1"},
+      {"commands":[{"set":"InputType","to":"D-1"},{"set":"D-1Input","to":"Optical 1"}],"name":"Optical 1"},
+      {"commands":[{"set":"InputType","to":"D-2"},{"set":"D-2Input","to":"Coaxial 2"}],"name":"Coaxial 2"},
+      {"commands":[{"set":"InputType","to":"D-2"},{"set":"D-2Input","to":"Optical 2"}],"name":"Optical 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Rotel",
-  "model": "RDD-06"
+  "model": "RDD-06",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "D-1Input": {
+      "next": ["InputD-1"],
+      "values": [
+        {"name":"Coaxial 1"},
+        {"name":"Optical 1"}
+      ]
+    },
+    "D-2Input": {
+      "next": ["InputD-2"],
+      "values": [
+        {"name":"Coaxial 2"},
+        {"name":"Optical 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"D-1","select":[{"commands":["InputD-1"],"setType":2}]},
+        {"name":"D-2","select":[{"commands":["InputD-2"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

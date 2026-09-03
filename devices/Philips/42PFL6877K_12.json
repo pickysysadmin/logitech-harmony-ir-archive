@@ -1,7 +1,66 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/ab/ab5dccc0eb946897.json",
   "deviceType": 1,
   "globalDeviceId": 236006,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"SAT"}],"name":"SAT"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"HDMI4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"HDMI5"}],"name":"HDMI 5"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Scart"}],"name":"Scart"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"Smart"}],"name":"Smart TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "42PFL6877K/12"
+  "model": "42PFL6877K/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Smart","select":[{"commands":["SmartTv"],"setType":2}]},
+        {"name":"Menu","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "MenuInput": {
+      "finish": ["Ok"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["Source"],
+      "values": [
+        {"name":"TV"},
+        {"name":"SAT"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"HDMI4"},
+        {"name":"HDMI5"},
+        {"name":"Scart"},
+        {"name":"YPbPr"},
+        {"name":"VGA"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 14000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,76 @@
   "codeset": "codesets/15/15f385801eb7920f.json",
   "deviceType": 5,
   "globalDeviceId": 336019,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"BT"}],"name":"BT"},
+      {"commands":[{"set":"InputType","to":"MP3"}],"name":"MP3"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AMInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Opti/Coax"},{"set":"Opti/CoaxInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Opti/Coax"},{"set":"Opti/CoaxInput","to":"Coaxial"}],"name":"Coaxial"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX 1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX 2"}],"name":"AUX 2"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX 3"}],"name":"AUX 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Kogan",
-  "model": "KAHTS51BTXB"
+  "model": "KAHTS51BTXB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX 1"},
+        {"name":"AUX 2"},
+        {"name":"AUX 3"}
+      ]
+    },
+    "FM/AMInput": {
+      "next": ["InputFM/AM"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"BT","select":[{"commands":["InputBT"],"setType":2}]},
+        {"name":"MP3","select":[{"commands":["InputMP3"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"HDMI 4","select":[{"commands":["InputHdmi4"],"setType":2}]},
+        {"name":"FM/AM","select":[{"commands":["InputFM/AM"],"setType":2}]},
+        {"name":"Opti/Coax","select":[{"commands":["InputOpti/Coax"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "Opti/CoaxInput": {
+      "next": ["InputOpti/Coax"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"Coaxial"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,66 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 26741,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"TV/AV","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"TV/AV","to":"AV"}],"name":"AV 1"},
+      {"commands":[{"set":"TV/AV","to":"AV"},{"set":"AVInput","to":"AV2"},{"set":"AV2State","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"TV/AV","to":"AV"},{"set":"AVInput","to":"AV2"},{"set":"AV2State","to":"AV2s"}],"name":"AV 2s"},
+      {"commands":[{"set":"TV/AV","to":"AV"},{"set":"AVInput","to":"AV3"},{"set":"AV3State","to":"AV3"}],"name":"AV 3"},
+      {"commands":[{"set":"TV/AV","to":"AV"},{"set":"AVInput","to":"AV3"},{"set":"AV3State","to":"AV3S"}],"name":"AV 3s"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-28DT4"
+  "model": "TX-28DT4",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2State": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "AV3State": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AVInput": {
+      "start": ["Red"],
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":1}]}
+      ]
+    },
+    "TV/AV": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

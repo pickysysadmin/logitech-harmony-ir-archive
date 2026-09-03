@@ -2,6 +2,32 @@
   "codeset": "codesets/69/690fd4c726c155ef.json",
   "deviceType": 22,
   "globalDeviceId": 172745,
+  "inputs": {
+    "list": [
+      {"commands":["InputCdDvd"],"name":"CD/DVD","ports":["BuiltIn"]},
+      {"commands":["InputTape"],"name":"Tape","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputAux"],"name":"Aux","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Bose",
-  "model": "Lifestyle 28"
+  "model": "Lifestyle 28",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2250,
+    "pressMinRepeats": 3
+  }
 }

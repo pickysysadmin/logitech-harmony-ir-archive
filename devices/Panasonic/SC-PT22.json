@@ -2,6 +2,45 @@
   "codeset": "codesets/cc/cca2e8669a582cf8.json",
   "deviceType": 22,
   "globalDeviceId": 241339,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"EXT-IN"},{"set":"EXT-INInput","to":"AUX/TV"}],"name":"AUX/TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PT22"
+  "model": "SC-PT22",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "EXT-INInput": {
+      "next": ["InputExtIn"],
+      "values": [
+        {"name":"USB"},
+        {"name":"AUX/TV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"EXT-IN","select":[{"commands":["InputExtIn"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

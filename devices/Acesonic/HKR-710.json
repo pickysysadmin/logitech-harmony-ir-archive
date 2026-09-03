@@ -2,6 +2,74 @@
   "codeset": "codesets/fe/fe6ab8b1e95168c4.json",
   "deviceType": 5,
   "globalDeviceId": 266454,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RCA"}],"name":"RCA"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"Dvd/Ac-3"},{"set":"Dvd/Ac-3Input","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Dvd/Ac-3"},{"set":"Dvd/Ac-3Input","to":"AC-3"}],"name":"AC-3"},
+      {"commands":[{"set":"InputType","to":"Optical/Coaxial"},{"set":"Optical/CoaxialInput","to":"OPTICAL"}],"name":"OPTICAL"},
+      {"commands":[{"set":"InputType","to":"Optical/Coaxial"},{"set":"Optical/CoaxialInput","to":"COAXIAL"}],"name":"COAXIAL"},
+      {"commands":[{"set":"InputType","to":"Am/Fm"},{"set":"Am/FmInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Am/Fm"},{"set":"Am/FmInput ","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acesonic",
-  "model": "HKR-710"
+  "model": "HKR-710",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Am/FmInput": {
+      "next": ["InputAm/Fm"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "Dvd/Ac-3Input": {
+      "next": ["InputDvd/Ac-3"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"AC-3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"RCA","select":[{"commands":["InputRca"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"Dvd/Ac-3","select":[{"commands":["InputDvd/Ac-3"],"setType":2}]},
+        {"name":"Optical/Coaxial","select":[{"commands":["InputOptical/Coaxial"],"setType":2}]},
+        {"name":"Am/Fm","select":[{"commands":["InputAm/Fm"],"setType":1}]}
+      ]
+    },
+    "Optical/CoaxialInput": {
+      "next": ["InputOptical/Coaxial"],
+      "values": [
+        {"name":"OPTICAL"},
+        {"name":"COAXIAL"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

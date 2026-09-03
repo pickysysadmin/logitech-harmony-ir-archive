@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/2b/2b0bb33797ddb4d1.json",
   "deviceType": 1,
   "globalDeviceId": 146494,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANTA"}],"name":"AntA"},
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANTB"}],"name":"AntB"},
+      {"commands":[{"set":"InputType","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"iLINK"}],"name":"iLink"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"INPUT1"}],"name":"Input1"},
+      {"commands":[{"set":"InputType","to":"INPUT2"}],"name":"Input2"},
+      {"commands":[{"set":"InputType","to":"INPUT3"}],"name":"Input3"},
+      {"commands":[{"set":"InputType","to":"INPUT4"}],"name":"Input4"},
+      {"commands":[{"set":"InputType","to":"INPUT5"}],"name":"Input5"},
+      {"commands":[{"set":"InputType","to":"INPUT6"}],"name":"Input6"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PRO-940"
+  "model": "PRO-940",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "ANTInput": {
+      "next": ["InputAntennaA/B"],
+      "values": [
+        {"name":"ANTA"},
+        {"name":"ANTB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ANT","select":[{"commands":["InputAntennaA/B"],"setType":2}]},
+        {"name":"DTV","select":[{"commands":["InputTv/Dtv"],"setType":2}]},
+        {"name":"iLINK","select":[{"commands":["InputiLink"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"INPUT1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"INPUT2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"INPUT3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"INPUT4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"INPUT5","select":[{"commands":["InputVideo5"],"setType":2}]},
+        {"name":"INPUT6","select":[{"commands":["InputVideo6"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

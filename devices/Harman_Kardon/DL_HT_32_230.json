@@ -2,6 +2,60 @@
   "codeset": "codesets/41/411e9e770c03d3ca.json",
   "deviceType": 1,
   "globalDeviceId": 110867,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YUV"}],"name":"YUV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CVBS"}],"name":"CVBS"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Scart1"}],"name":"Scart1"},
+      {"commands":[{"set":"InputType","to":"DVI"},{"set":"DVIInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"DVI"},{"set":"DVIInput","to":"RGB"}],"name":"RGB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "DL HT 32/230"
+  "model": "DL HT 32/230",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "DVIInput": {
+      "next": ["InputDVI"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"RGB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHDMI"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"DVI","select":[{"commands":["InputDVI"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"YUV"},
+        {"name":"S-Video"},
+        {"name":"CVBS"},
+        {"name":"Scart1"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

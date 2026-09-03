@@ -2,6 +2,35 @@
   "codeset": "codesets/9b/9bbc359113c2d1d6.json",
   "deviceType": 22,
   "globalDeviceId": 85416,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"DVD"},
+      {"name":"Radio"},
+      {"name":"Aux1"},
+      {"name":"Aux2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Universum",
-  "model": "DVD-DR 3047"
+  "model": "DVD-DR 3047",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

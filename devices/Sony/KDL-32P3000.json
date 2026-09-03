@@ -2,6 +2,38 @@
   "codeset": "codesets/3a/3a4c35f5e26b74ae.json",
   "deviceType": 1,
   "globalDeviceId": 177000,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputAv1"],"name":"AV1","ports":["Scart"]},
+      {"commands":["InputAv2"],"name":"AV2","ports":["Scart"]},
+      {"commands":["InputAv3"],"name":"AV3","ports":["Component","Composite"]},
+      {"commands":["InputAv4"],"name":"AV4","ports":["HDMI"]},
+      {"commands":["InputAv5"],"name":"AV5","ports":["HDMI"]},
+      {"commands":["InputAv6"],"name":"AV6","ports":["HDMI"]},
+      {"commands":["InputAv6",{"delayMs":1500},"InputNext"],"name":"PC","ports":["PC"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-32P3000"
+  "model": "KDL-32P3000",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

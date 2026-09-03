@@ -2,6 +2,39 @@
   "codeset": "codesets/b9/b90cd51e37aef2cf.json",
   "deviceType": 5,
   "globalDeviceId": 172466,
+  "inputs": {
+    "list": [
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputTv/Cbl"],"name":"TV/CBL","ports":["Component","Composite","S-Video","Optical"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["HDMI","Composite","S-Video","Optical"]},
+      {"commands":["InputHdp"],"name":"HDP","ports":["HDMI","Component","Composite","S-Video"]},
+      {"commands":["InputV-Aux"],"name":"V.AUX","ports":["HDMI","Composite","S-Video","Optical"]},
+      {"commands":["InputCd-r/Tape"],"name":"CD-R/TAPE","ports":["Composite"]},
+      {"commands":["InputIpod"],"name":"iPod","ports":["Dock"]},
+      {"commands":["InputSatTu1/2"],"name":"SatTu 1/2","ports":["Others"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-889"
+  "model": "AVR-889",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

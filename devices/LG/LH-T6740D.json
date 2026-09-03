@@ -2,6 +2,52 @@
   "codeset": "codesets/89/89a7a919e0418d0f.json",
   "deviceType": 22,
   "globalDeviceId": 147327,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Cd/Dvd"}],"name":"Cd/Dvd"},
+      {"commands":[{"set":"InputType","to":"Band"}],"name":"Band"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AV1 OPT"}],"name":"AV1 OPT"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AV1 COAX"}],"name":"AV1 COAX"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"TV-AUDIO"}],"name":"TV-AUDIO"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LH-T6740D"
+  "model": "LH-T6740D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV1 OPT"},
+        {"name":"AV1 COAX"},
+        {"name":"AV2"},
+        {"name":"TV-AUDIO"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Cd/Dvd","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"Band","select":[{"commands":["InputBand"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

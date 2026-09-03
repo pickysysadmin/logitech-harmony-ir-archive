@@ -2,6 +2,36 @@
   "codeset": "codesets/7e/7e17f71d932a0f11.json",
   "deviceType": 7,
   "globalDeviceId": 222689,
+  "inputs": {
+    "list": [
+      {"commands":["InputVga"],"name":"VGA","ports":["PC"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputComponent"],"name":"Component","ports":["Component"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "HD33"
+  "model": "HD33",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 1
+  }
 }

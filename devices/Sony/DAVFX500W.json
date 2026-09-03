@@ -2,6 +2,51 @@
   "codeset": "codesets/d5/d54af5d2399451ae.json",
   "deviceType": 22,
   "globalDeviceId": 141000,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"XM"}],"name":"XM"},
+      {"commands":[{"set":"InputType","to":"TV/VCR1"}],"name":"TV/VCR1"},
+      {"commands":[{"set":"InputType","to":"TV/VCR2"}],"name":"TV/VCR2"},
+      {"commands":[{"set":"InputType","to":"audio"}],"name":"Audio"},
+      {"commands":[{"set":"InputType","to":"Am/Fm"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Am/Fm"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "DAVFX500W"
+  "model": "DAVFX500W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Am/FmInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"Am"},
+        {"name":"FM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"XM","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"TV/VCR1","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"TV/VCR2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"audio","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Am/Fm","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

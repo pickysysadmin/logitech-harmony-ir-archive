@@ -2,6 +2,46 @@
   "codeset": "codesets/d5/d54af5d2399451ae.json",
   "deviceType": 22,
   "globalDeviceId": 114174,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Am"}],"name":"Fm"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Am"}],"name":"Am"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "DAV-DZ1000"
+  "model": "DAV-DZ1000",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["InputDvd","InputNext","InputNext","InputNext"],"setType":1}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Fm"},
+        {"name":"Am"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/18/186bf92b5fa4c92c.json",
   "deviceType": 1,
   "globalDeviceId": 512879,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","Exit","InputTv"],"name":"TV"},
+      {"commands":["InputHdmi1","InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2","InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3","InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4","InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["Exit",{"delayMs":2000},"Exit","SmartHub"],"name":"Smart Hub"},
+      {"commands":["PrimeVideo"],"name":"Prime Video"},
+      {"commands":["Ambient"],"name":"Ambient"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "QN75Q60C"
+  "model": "QN75Q60C",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 55000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

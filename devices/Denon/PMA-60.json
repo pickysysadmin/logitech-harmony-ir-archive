@@ -2,6 +2,49 @@
   "codeset": "codesets/90/90dceb4c1e6b025f.json",
   "deviceType": 19,
   "globalDeviceId": 480587,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"USB-DAC"}],"name":"USB-DAC","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"Optical 1"}],"name":"Optical 1","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"Optical 2"}],"name":"Optical 2","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"Aux"}],"name":"Aux","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Denon",
-  "model": "PMA-60"
+  "model": "PMA-60",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Inputs","select":[{"commands":["NextInput"],"setType":2}]}
+      ]
+    },
+    "InputsInput": {
+      "next": ["NextInput"],
+      "values": [
+        {"name":"USB-DAC"},
+        {"name":"Aux"},
+        {"name":"Optical 2"},
+        {"name":"Optical 1"},
+        {"name":"Coaxial"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

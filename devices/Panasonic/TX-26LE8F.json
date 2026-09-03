@@ -1,7 +1,78 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6a/6ae9b690941d6b01.json",
   "deviceType": 1,
   "globalDeviceId": 159146,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AVS"},{"set":"AVS","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AVS"},{"set":"AVS","to":"AV2"},{"set":"AV2Input","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AVS"},{"set":"AVS","to":"AV2"},{"set":"AV2Input","to":"AV2S"}],"name":"AV2S"},
+      {"commands":[{"set":"InputType","to":"AVS"},{"set":"AVS","to":"AV3"},{"set":"AV3Input","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AVS"},{"set":"AVS","to":"AV3"},{"set":"AV3Input","to":"AV3S"}],"name":"AV3S"},
+      {"commands":[{"set":"InputType","to":"AVS"},{"set":"AVS","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"AVS"},{"set":"AVS","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"AVS"},{"set":"AVS","to":"Hdmi2"}],"name":"Hdmi2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-26LE8F"
+  "model": "TX-26LE8F",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1500}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2Input": {
+      "values": [
+        {"name":"AV2","select":[{"commands":["DirectionLeft"],"setType":2}]},
+        {"name":"AV2S","select":[{"commands":["DirectionRight"],"setType":2}]}
+      ]
+    },
+    "AV3Input": {
+      "values": [
+        {"name":"AV3","select":[{"commands":["DirectionLeft"],"setType":2}]},
+        {"name":"AV3S","select":[{"commands":["DirectionRight"],"setType":2}]}
+      ]
+    },
+    "AVS": {
+      "finish": ["Select"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"Component"},
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"},
+        {"name":"TV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":1}]},
+        {"name":"AVS","select":[{"commands":["AV"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 9500,
+    "pressMinRepeats": 2
+  }
 }

@@ -2,6 +2,55 @@
   "codeset": "codesets/dc/dca41b64c4b4ba9f.json",
   "deviceType": 21,
   "globalDeviceId": 212591,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"NET"}],"name":"NET"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"IPOD"}],"name":"IPOD"},
+      {"commands":[{"set":"InputType","to":"EXT"},{"set":"EXTInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"EXT"},{"set":"EXTInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"EXT"},{"set":"EXTInput","to":"GAME"}],"name":"GAME"},
+      {"commands":[{"set":"InputType","to":"EXT"},{"set":"EXTInput","to":"FRONT"}],"name":"FRONT"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Arcam",
-  "model": "SOLO NEO"
+  "model": "SOLO NEO",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "EXTInput": {
+      "next": ["InputExt"],
+      "values": [
+        {"name":"AV"},
+        {"name":"TV"},
+        {"name":"GAME"},
+        {"name":"FRONT"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"FM","select":[{"commands":["InputFm"],"setType":2}]},
+        {"name":"NET","select":[{"commands":["InputNet"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":2}]},
+        {"name":"IPOD","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"EXT","select":[{"commands":["InputExt"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

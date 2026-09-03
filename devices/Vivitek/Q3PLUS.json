@@ -2,6 +2,35 @@
   "codeset": "codesets/21/21f17bc973d4594e.json",
   "deviceType": 7,
   "globalDeviceId": 480018,
+  "inputs": {
+    "list": [
+      {"name":"HDMI","ports":["HDMI"]},
+      {"name":"USB 1","ports":["USB"]},
+      {"name":"USB 2","ports":["USB"]}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Vivitek",
-  "model": "Q3PLUS"
+  "model": "Q3PLUS",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

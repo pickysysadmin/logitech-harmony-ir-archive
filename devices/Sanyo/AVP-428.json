@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2d/2d3c32f2e81602c9.json",
   "deviceType": 1,
   "globalDeviceId": 168864,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"PC"},
+      {"name":"DVI"},
+      {"name":"RF"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"SVideo"},
+      {"name":"YPbPr1"},
+      {"name":"YPbPr2"}
+    ],
+    "next": ["ChannelDown"],
+    "previous": ["ChannelUp"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Sanyo",
-  "model": "AVP-428"
+  "model": "AVP-428",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"PC"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

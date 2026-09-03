@@ -1,7 +1,34 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a4/a463629965796891.json",
   "deviceType": 2,
   "globalDeviceId": 93652,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"}
+    ],
+    "next": ["InputNext"],
+    "type": 6
+  },
   "manufacturer": "Panasonic",
-  "model": "NV-FJ618EE"
+  "model": "NV-FJ618EE",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

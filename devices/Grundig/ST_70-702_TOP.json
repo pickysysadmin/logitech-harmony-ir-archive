@@ -2,6 +2,32 @@
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 52285,
+  "inputs": {
+    "list": [
+      {"name":"Antenna"},
+      {"name":"Video 1"},
+      {"name":"Video 2"}
+    ],
+    "next": ["PowerToggle"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "ST 70-702 TOP"
+  "model": "ST 70-702 TOP",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

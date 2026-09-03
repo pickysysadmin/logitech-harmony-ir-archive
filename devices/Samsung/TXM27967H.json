@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 153454,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"STD"}],"name":"STD"},
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"Component  1"}],"name":"Component  1"},
+      {"commands":[{"set":"InputType","to":"Analog"},{"set":"AnalogInput","to":"Component  2"}],"name":"Component  2"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"AV 3"}],"name":"AV 3"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "TXM27967H"
+  "model": "TXM27967H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AnalogInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"STD"},
+        {"name":"Component  1"},
+        {"name":"Component  2"}
+      ]
+    },
+    "DigitalInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV 3"},
+        {"name":"S-Video"},
+        {"name":"STD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Analog","select":[{"commands":["InputNext",{"set":"AnalogInput","to":"Component  1"}],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["TvVideo"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

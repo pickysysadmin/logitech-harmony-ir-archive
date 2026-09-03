@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/b1/b1f033f98c6224a0.json",
   "deviceType": 1,
   "globalDeviceId": 273706,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnalog",{"delayMs":300},"InputAnalog"],"name":"Analog","ports":["Antenna"]},
+      {"commands":["InputDigital",{"delayMs":300},"InputDigital"],"name":"Digital","ports":["Antenna"]},
+      {"commands":["InputVideo2",{"delayMs":500},"InputNext",{"delayMs":500},"DirectionDown","DirectionDown","DirectionDown","Select"],"name":"General Satellite","ports":["Antenna"]},
+      {"commands":["InputVideo2",{"delayMs":500},"InputNext",{"delayMs":500},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Preferred Satellite","ports":["Antenna"]},
+      {"commands":["InputVideo2",{"delayMs":500},"InputNext",{"delayMs":500},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Cam service list","ports":["Others"]},
+      {"commands":["InputHdmi1",{"delayMs":300},"InputHdmi1"],"name":"HDMI 1/MHL","ports":["HDMI"]},
+      {"commands":["InputHdmi2",{"delayMs":300},"InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3",{"delayMs":300},"InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputHdmi4",{"delayMs":300},"InputHdmi4"],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":["InputVideo1",{"delayMs":300},"InputVideo1"],"name":"AV 1","ports":["Composite"]},
+      {"commands":["InputVideo2",{"delayMs":300},"InputVideo2"],"name":"AV 2/Component","ports":["Component","Composite"]},
+      {"commands":["InputVideo2",{"delayMs":500},"InputNext",{"delayMs":500},"DirectionDown","Select"],"name":"Screen Mirroring","ports":["Streaming"]},
+      {"commands":["Home",{"delayMs":3000},"Home"],"name":"Android TV","ports":["Streaming"]},
+      {"commands":["Netflix",{"delayMs":300},"Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-50W809C"
+  "model": "KDL-50W809C",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":300},
+      "PowerOff"
+    ],
+    "on": [
+      "PowerOn",
+      {"delayMs":300},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 10000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

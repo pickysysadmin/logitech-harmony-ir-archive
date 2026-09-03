@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 156575,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"Ext 1"},
+      {"commands":["InputVideo2"],"name":"Ext 2"},
+      {"commands":["InputVideo3"],"name":"Ext 3"},
+      {"commands":["Input 4"],"name":"Ext 4"},
+      {"commands":["Input 4",{"delayMs":3000},"InputNext"],"name":"HDMI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-26R70BU"
+  "model": "LT-26R70BU",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

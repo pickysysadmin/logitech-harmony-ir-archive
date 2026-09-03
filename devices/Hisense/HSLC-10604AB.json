@@ -2,6 +2,62 @@
   "codeset": "codesets/ce/ce936ed9a51c3c5a.json",
   "deviceType": 1,
   "globalDeviceId": 98378,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HDTV1"}],"name":"HDTV1"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HDTV2"}],"name":"HDTV2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Video3"}],"name":"Video3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hisense",
-  "model": "HSLC-10604AB"
+  "model": "HSLC-10604AB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    },
+    "HDInput": {
+      "next": ["InputHDTV"],
+      "values": [
+        {"name":"HDTV1"},
+        {"name":"HDTV2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputVGA"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"HD","select":[{"commands":["InputHDTV"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

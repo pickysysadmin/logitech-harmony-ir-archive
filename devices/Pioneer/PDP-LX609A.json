@@ -2,6 +2,56 @@
   "codeset": "codesets/b4/b483e58909bc20b0.json",
   "deviceType": 1,
   "globalDeviceId": 174481,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Input 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Input 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"Input 4"}],"name":"Input 4"},
+      {"commands":[{"set":"InputType","to":"Input 5"}],"name":"Input 5"},
+      {"commands":[{"set":"InputType","to":"Input 6"}],"name":"Input 6"},
+      {"commands":[{"set":"InputType","to":"Input PC"}],"name":"Input PC"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Digital TV"}],"name":"Digital TV"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Analog TV"}],"name":"Analog TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PDP-LX609A"
+  "model": "PDP-LX609A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Input 1","select":[{"commands":["Input1"],"setType":2}]},
+        {"name":"Input 2","select":[{"commands":["Input2"],"setType":2}]},
+        {"name":"Input 3","select":[{"commands":["Input3"],"setType":2}]},
+        {"name":"Input 4","select":[{"commands":["Input4"],"setType":2}]},
+        {"name":"Input 5","select":[{"commands":["Input5"],"setType":2}]},
+        {"name":"Input 6","select":[{"commands":["Input6"],"setType":2}]},
+        {"name":"Input PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTv/Dtv"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTv/Dtv"],
+      "values": [
+        {"name":"Digital TV"},
+        {"name":"Analog TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

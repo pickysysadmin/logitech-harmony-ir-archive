@@ -2,6 +2,34 @@
   "codeset": "codesets/54/545f304fdb37a138.json",
   "deviceType": 1,
   "globalDeviceId": 134864,
+  "inputs": {
+    "list": [
+      {"name":"Antenna"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sanyo",
-  "model": "CM-32WF8S"
+  "model": "CM-32WF8S",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

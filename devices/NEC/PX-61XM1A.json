@@ -2,6 +2,50 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 29121,
+  "inputs": {
+    "list": [
+      {"commands":["HD 1"],"name":"VIDEO1"},
+      {"commands":["Video 1"],"name":"VIDEO2"},
+      {"commands":["Video 1"],"name":"VIDEO3"},
+      {"commands":["HD 1"],"name":"DVD1 / HD1"},
+      {"commands":["RGB/PCToggle"],"name":"RGB2 / DVD2/ HD2"},
+      {"commands":["RGB/PCToggle"],"name":"RGB3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "PX-61XM1A"
+  "model": "PX-61XM1A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

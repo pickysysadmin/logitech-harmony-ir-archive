@@ -2,6 +2,57 @@
   "codeset": "codesets/01/01e7037c33b768de.json",
   "deviceType": 22,
   "globalDeviceId": 149326,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"BD"}],"name":"BD"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Digital-In"},{"set":"Digital-InInput","to":"Digital-In1"}],"name":"Digital-In1"},
+      {"commands":[{"set":"InputType","to":"Digital-In"},{"set":"Digital-InInput","to":"Digital-In2"}],"name":"Digital-In2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-BD2ET"
+  "model": "HT-BD2ET",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxsInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"},
+        {"name":"USB"},
+        {"name":"HDMI-In"},
+        {"name":"Digital-In"}
+      ]
+    },
+    "Digital-InInput": {
+      "next": ["InputD.In"],
+      "values": [
+        {"name":"Digital-In1"},
+        {"name":"Digital-In2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"BD","select":[{"commands":["InputBD"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"FM","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Digital-In","select":[{"commands":["InputD.In"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

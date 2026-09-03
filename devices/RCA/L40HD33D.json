@@ -2,6 +2,57 @@
   "codeset": "codesets/f9/f972d80a536a39a1.json",
   "deviceType": 37,
   "globalDeviceId": 155241,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputMode","to":"TV"},{"set":"TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputMode","to":"TV"},{"set":"TVInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputMode","to":"TV"},{"set":"TVInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputMode","to":"TV"},{"set":"TVInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputMode","to":"TV"},{"set":"TVInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputMode","to":"TV"},{"set":"TVInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputMode","to":"TV"},{"set":"TVInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputMode","to":"DVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "L40HD33D"
+  "model": "L40HD33D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputMode": {
+      "next": [
+        "TvVideo",
+        {"set":"TVInput","to":"TV"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"DVD"}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Component"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"PC"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

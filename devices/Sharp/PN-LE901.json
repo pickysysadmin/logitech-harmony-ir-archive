@@ -1,7 +1,72 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/a9/a9b5cbd769d5d88f.json",
   "deviceType": 1,
   "globalDeviceId": 381094,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Exit","to":"OFF"},{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"Exit","to":"OFF"},{"set":"InputType","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"Exit","to":"OFF"},{"set":"InputType","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"Exit","to":"OFF"},{"set":"InputType","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"Exit","to":"OFF"},{"set":"InputType","to":"Video"}],"name":"Video 1"},
+      {"commands":[{"set":"Exit","to":"OFF"},{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"Exit","to":"OFF"},{"set":"InputType","to":"PC"}],"name":"PC IN"},
+      {"commands":[{"set":"Exit","to":"OFF"},{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"Exit","to":"OFF"},{"set":"InputType","to":"HomeNetwork"}],"name":"Home Network"},
+      {"commands":[{"set":"Exit","to":"OFF"},{"set":"InputType","to":"Miracast"}],"name":"Miracast"},
+      {"commands":[{"set":"SmartInput","to":"SmartCentral"}],"name":"Smart Central"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "PN-LE901"
+  "model": "PN-LE901",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Exit": {
+      "values": [
+        {"name":"OFF","select":[{"commands":["Exit",{"delayMs":500},"Exit"],"setType":1}]}
+      ]
+    },
+    "InputType": {
+      "finish": ["Enter"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["Input"],
+      "values": [
+        {"name":"TV"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"Video"},
+        {"name":"Component"},
+        {"name":"PC"},
+        {"name":"USB"},
+        {"name":"HomeNetwork"},
+        {"name":"Miracast"}
+      ]
+    },
+    "SmartInput": {
+      "next": ["SmartCentral"],
+      "values": [
+        {"name":"SmartCentral"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 19000,
+    "pressMinRepeats": 3
+  }
 }

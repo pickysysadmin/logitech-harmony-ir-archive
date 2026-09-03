@@ -2,6 +2,61 @@
   "codeset": "codesets/3e/3e5b036cb54db278.json",
   "deviceType": 1,
   "globalDeviceId": 164315,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"SVideo"}],"name":"SVideo"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Scart1"}],"name":"Scart1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Scart2"}],"name":"Scart2"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HDTV"}],"name":"HDTV"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HDMI2"}],"name":"HDMI2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teco",
-  "model": "TL-4091RW"
+  "model": "TL-4091RW",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"},
+        {"name":"SVideo"},
+        {"name":"Scart1"},
+        {"name":"Scart2"}
+      ]
+    },
+    "HDInput": {
+      "next": ["Mute"],
+      "values": [
+        {"name":"HDTV"},
+        {"name":"PC"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["InputNext",{"set":"AVInput","to":"TV"}],"setType":2}]},
+        {"name":"HD","select":[{"commands":["Mute",{"set":"HDInput","to":"HDTV"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

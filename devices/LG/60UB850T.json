@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/b6/b6fef412771d0ca1.json",
   "deviceType": 1,
   "globalDeviceId": 266970,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"HDMI 4(MHL)"}],"name":"HDMI 4(MHL)"},
+      {"commands":[{"set":"InputType","to":"Smart TV"}],"name":"Smart TV"},
+      {"commands":[{"set":"InputType","to":"TV/Radio"},{"set":"TV/RadioInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/Radio"},{"set":"TV/RadioInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"TV/Radio"},{"set":"TV/RadioInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "60UB850T"
+  "model": "60UB850T",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["Exit","Exit","InputAv1",{"delayMs":2000}],"setType":2}]},
+        {"name":"Component","select":[{"commands":["Exit","Exit","InputComponent1",{"delayMs":2000}],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["Exit","Exit","InputHdmi1",{"delayMs":2000}],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["Exit","Exit","InputHdmi2",{"delayMs":2000}],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["Exit","Exit","InputHdmi3",{"delayMs":2000}],"setType":2}]},
+        {"name":"HDMI 4(MHL)","select":[{"commands":["Exit","Exit","InputHdmi4",{"delayMs":2000}],"setType":2}]},
+        {"name":"Smart TV","select":[{"commands":["Exit","Smart"],"setType":2}]},
+        {"name":"TV/Radio","select":[{"commands":["Exit","Exit","InputTv",{"delayMs":2000}],"setType":2}]}
+      ]
+    },
+    "TV/RadioInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Radio"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 20000,
+    "pressMinRepeats": 1
+  }
 }

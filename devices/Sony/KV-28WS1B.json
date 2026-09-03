@@ -2,6 +2,36 @@
   "codeset": "codesets/ad/ad2989b7e6b2f8a4.json",
   "deviceType": 1,
   "globalDeviceId": 40697,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"Av1"},
+      {"commands":["InputRGB1"],"name":"RGB"},
+      {"commands":["InputVideo2"],"name":"Av2"},
+      {"commands":["InputVideo4"],"name":"Yc2"},
+      {"commands":["InputVideo3"],"name":"Av3"},
+      {"commands":["InputVideo5"],"name":"Yc3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KV-28WS1B"
+  "model": "KV-28WS1B",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

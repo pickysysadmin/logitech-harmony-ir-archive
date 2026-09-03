@@ -2,6 +2,60 @@
   "codeset": "codesets/f8/f85bada5f8fd15c8.json",
   "deviceType": 1,
   "globalDeviceId": 63249,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"CVI"}],"name":"CVI"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HDA"}],"name":"HDA"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HDD"}],"name":"HDD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "32PF9766"
+  "model": "32PF9766",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDInput": {
+      "next": ["InputAV4"],
+      "values": [
+        {"name":"HDA"},
+        {"name":"HDD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTuner A"],"setType":2}]},
+        {"name":"HD","select":[{"commands":["InputAV4"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["ChannelDown"],
+      "previous": ["ChannelUp"],
+      "start": ["InputTuner A"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"CVI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

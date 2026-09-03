@@ -2,6 +2,34 @@
   "codeset": "codesets/eb/eb501f77c3515b11.json",
   "deviceType": 5,
   "globalDeviceId": 35056,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputTv"],"name":"TV/CABLE"},
+      {"commands":["InputVcr"],"name":"VCR"},
+      {"commands":["InputDvd","InputNext"],"name":"GAME"},
+      {"commands":["InputCdr2"],"name":"CDR"},
+      {"commands":["InputCD"],"name":"CD"},
+      {"commands":["InputTuner"],"name":"TUNER"},
+      {"commands":["InputTuner","InputNext"],"name":"HOUSE MUSIC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "STAV-3990"
+  "model": "STAV-3990",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

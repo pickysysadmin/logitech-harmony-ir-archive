@@ -2,6 +2,39 @@
   "codeset": "codesets/d5/d5870a5e94a8dd4f.json",
   "deviceType": 7,
   "globalDeviceId": 166408,
+  "inputs": {
+    "list": [
+      {"name":"VGA"},
+      {"name":"S-Video"},
+      {"name":"Video"},
+      {"name":"Source"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Acer",
-  "model": "DSV0705"
+  "model": "DSV0705",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "onReset": [
+      {"set":"Input","to":"Source"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

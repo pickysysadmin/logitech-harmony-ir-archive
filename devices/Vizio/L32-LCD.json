@@ -2,6 +2,60 @@
   "codeset": "codesets/66/661a9d58944e385b.json",
   "deviceType": 1,
   "globalDeviceId": 170737,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"DigitalHD"}],"name":"DigitalHD"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Av1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Av2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Av3"}],"name":"Av3"},
+      {"commands":[{"set":"InputType","to":"AnalogHD"},{"set":"AnalogHDInput","to":"AnalogHD1"}],"name":"AnalogHD1"},
+      {"commands":[{"set":"InputType","to":"AnalogHD"},{"set":"AnalogHDInput","to":"AnalogHD2"}],"name":"AnalogHD2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "L32-LCD"
+  "model": "L32-LCD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AnalogHDInput": {
+      "next": ["InputAnalogHd"],
+      "values": [
+        {"name":"AnalogHD1"},
+        {"name":"AnalogHD2"}
+      ]
+    },
+    "AvInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"},
+        {"name":"Av3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRGB"],"setType":2}]},
+        {"name":"DigitalHD","select":[{"commands":["InputDigitalHd"],"setType":2}]},
+        {"name":"Av","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"AnalogHD","select":[{"commands":["InputAnalogHd"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

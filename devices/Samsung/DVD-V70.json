@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/30/30ec9cb54963499c.json",
   "deviceType": 25,
   "globalDeviceId": 95731,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"Lines"},{"set":"LinesInput","to":"Antenna"}],"name":"Antenna"},
+      {"commands":[{"set":"InputType","to":"Lines"},{"set":"LinesInput","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"Lines"},{"set":"LinesInput","to":"Line 2"}],"name":"Line 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "DVD-V70"
+  "model": "DVD-V70",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle 2"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["ViewDvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["ViewVcr"],"setType":2}]},
+        {"name":"Lines","select":[{"commands":["InputNext",{"set":"LinesInput","to":"Antenna"}],"setType":2}]}
+      ]
+    },
+    "LinesInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"Line 1"},
+        {"name":"Line 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

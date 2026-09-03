@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/db/db6004bc2238630e.json",
   "deviceType": 1,
   "globalDeviceId": 277361,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Cable/Antenna"},
+      {"commands":["InputVideo1"],"name":"Video"},
+      {"commands":["InputHdmi1",{"delayMs":1000},"InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-40R350C"
+  "model": "KDL-40R350C",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 10000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

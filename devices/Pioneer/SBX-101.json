@@ -2,6 +2,54 @@
   "codeset": "codesets/97/97a61f3f4421c324.json",
   "deviceType": 19,
   "globalDeviceId": 447189,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Aux/LineIn"},{"set":"Aux/LineInInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux/LineIn"},{"set":"Aux/LineInInput","to":"Line In"}],"name":"Line In","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Usb/Bluetooth"},{"set":"Usb/BluetoothInput","to":"Usb"}],"name":"Usb","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Usb/Bluetooth"},{"set":"Usb/BluetoothInput","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "SBX-101"
+  "model": "SBX-101",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/LineInInput": {
+      "next": ["InputAux/LineIn"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Line In"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"Aux/LineIn","select":[{"commands":["InputAux/LineIn"],"setType":2}]},
+        {"name":"Usb/Bluetooth","select":[{"commands":["InputUsb/Bluetooth"],"setType":2}]}
+      ]
+    },
+    "Usb/BluetoothInput": {
+      "next": ["InputUsb/Bluetooth"],
+      "values": [
+        {"name":"Usb"},
+        {"name":"Bluetooth"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

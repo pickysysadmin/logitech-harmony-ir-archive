@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/65/6502d5a3a240119b.json",
   "deviceType": 2,
   "globalDeviceId": 134898,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext"],"name":"Tuner"},
+      {"commands":["InputNext"],"name":"Line"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hitachi",
-  "model": "VT-M294AW"
+  "model": "VT-M294AW",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,59 @@
   "codeset": "codesets/5a/5a72ba54e01820a7.json",
   "deviceType": 22,
   "globalDeviceId": 151419,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"LineTuner"},{"set":"LineTunerInput","to":"DV"}],"name":"DV"},
+      {"commands":[{"set":"InputType","to":"LineTuner"},{"set":"LineTunerInput","to":"F1"}],"name":"F1"},
+      {"commands":[{"set":"InputType","to":"LineTuner"},{"set":"LineTunerInput","to":"L2"}],"name":"L2"},
+      {"commands":[{"set":"InputType","to":"LineTuner"},{"set":"LineTunerInput","to":"L1"}],"name":"L1"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "XV-THR3E"
+  "model": "XV-THR3E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"LineTuner","select":[{"commands":["InputDvd","0",{"set":"LineTunerInput","to":"L2"}],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    },
+    "LineTunerInput": {
+      "next": ["ChannelDown"],
+      "previous": ["ChannelUp"],
+      "start": ["0"],
+      "values": [
+        {"name":"DV"},
+        {"name":"F1"},
+        {"name":"L2"},
+        {"name":"L1"}
+      ]
+    },
+    "RadioInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

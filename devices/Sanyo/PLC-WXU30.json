@@ -2,6 +2,30 @@
   "codeset": "codesets/5e/5ec098973c8e4a2e.json",
   "deviceType": 7,
   "globalDeviceId": 153243,
+  "inputs": {
+    "list": [
+      {"name":"Analog"},
+      {"name":"Digital"},
+      {"name":"Computer 2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sanyo",
-  "model": "PLC-WXU30"
+  "model": "PLC-WXU30",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 28500,
+    "pressMinRepeats": 3
+  }
 }

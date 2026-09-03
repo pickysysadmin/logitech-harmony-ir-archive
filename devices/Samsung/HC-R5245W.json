@@ -2,6 +2,58 @@
   "codeset": "codesets/3f/3f6113bb34f0158b.json",
   "deviceType": 1,
   "globalDeviceId": 170422,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TVinput"},{"set":"TVinputInput","to":"Air"}],"name":"Air"},
+      {"commands":[{"set":"InputType","to":"Ext. 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Ext. 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Component1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"TVinput"},{"set":"TVinputInput","to":"Cable"}],"name":"Cable"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HC-R5245W"
+  "model": "HC-R5245W",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Component1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"DVI","select":[{"commands":["InputDVI"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"Ext. 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Ext. 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputSVideo"],"setType":2}]},
+        {"name":"TVinput","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TVinputInput": {
+      "next": ["InputAntennaToggle"],
+      "values": [
+        {"name":"Air"},
+        {"name":"Cable"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 9000,
+    "pressMinRepeats": 3
+  }
 }

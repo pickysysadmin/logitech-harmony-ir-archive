@@ -2,6 +2,41 @@
   "codeset": "codesets/f5/f57dbe74214879e1.json",
   "deviceType": 47,
   "globalDeviceId": 159885,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"VCR","ports":["Others"]},
+      {"name":"DVD","ports":["Others"]},
+      {"name":"SD","ports":["SD-Card"]}
+    ],
+    "next": ["DriveSelect"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-EZ475V"
+  "model": "DMR-EZ475V",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"IN1"},
+        {"name":"IN2"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

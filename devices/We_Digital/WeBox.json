@@ -2,6 +2,36 @@
   "codeset": "codesets/69/6902531b5cf92ebf.json",
   "deviceType": 35,
   "globalDeviceId": 128284,
+  "inputs": {
+    "canSkip": true,
+    "finish": ["Select"],
+    "list": [
+      {"name":"MOVIE"},
+      {"name":"MUSIC"},
+      {"name":"PHOTO"},
+      {"name":"FILE"}
+    ],
+    "next": ["DirectionRight"],
+    "type": 4
+  },
   "manufacturer": "We Digital",
-  "model": "WeBox"
+  "model": "WeBox",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"MOVIE"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

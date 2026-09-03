@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6e/6e1e67f83e9a8841.json",
   "deviceType": 1,
   "globalDeviceId": 21234,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Video 1"},
+      {"name":"S-Video"},
+      {"name":"Composite"}
+    ],
+    "next": ["PipInput"],
+    "type": 2
+  },
   "manufacturer": "Norcent",
-  "model": "PD-4263"
+  "model": "PD-4263",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Video 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTV"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video"},
+        {"name":"SVideo"},
+        {"name":"Composite"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

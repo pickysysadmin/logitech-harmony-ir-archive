@@ -2,6 +2,34 @@
   "codeset": "codesets/c2/c23817927b654f6e.json",
   "deviceType": 7,
   "globalDeviceId": 349637,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2/MHL","ports":["HDMI"]},
+      {"commands":["InputVga"],"name":"VGA","ports":["PC"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "UHD60"
+  "model": "UHD60",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

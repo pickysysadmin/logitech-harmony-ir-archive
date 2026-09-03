@@ -1,7 +1,34 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/50/50bb12e358b798f6.json",
   "deviceType": 32,
   "globalDeviceId": 50567,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd/Dvd"],"name":"CD/DVD","ports":["Streaming"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite"]},
+      {"commands":["InputTuner"],"name":"FM/AM","ports":["FM Antenna","AM Antenna"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Others"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Zenith",
-  "model": "ZHX-313"
+  "model": "ZHX-313",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

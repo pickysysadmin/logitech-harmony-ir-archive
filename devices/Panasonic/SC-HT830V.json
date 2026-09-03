@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/c7/c720e50d3a9227d9.json",
   "deviceType": 32,
   "globalDeviceId": 57995,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVDVCR"},{"set":"DVDVCR","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVDVCR"},{"set":"DVDVCR","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AM","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/AM"},{"set":"FM/AM","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HT830V"
+  "model": "SC-HT830V",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDVCR": {
+      "next": ["InputDVD/VCR"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"VCR"}
+      ]
+    },
+    "FM/AM": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVDVCR","select":[{"commands":["InputDVD/VCR"],"setType":2}]},
+        {"name":"FM/AM","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,46 @@
   "codeset": "codesets/4c/4c6ed2ad9cc70c3e.json",
   "deviceType": 13,
   "globalDeviceId": 156375,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"VideoInput","to":"Input1A"}],"name":"Input1A"},
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"VideoInput","to":"Input1B"}],"name":"Input1B"},
+      {"commands":[{"set":"InputType","to":"Input2"}],"name":"Input2"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-37PH10HS"
+  "model": "TH-37PH10HS",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Input1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Input2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo1"],
+      "values": [
+        {"name":"Input1A"},
+        {"name":"Input1B"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

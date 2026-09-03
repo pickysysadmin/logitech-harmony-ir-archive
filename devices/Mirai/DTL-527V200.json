@@ -2,6 +2,40 @@
   "codeset": "codesets/bd/bdac11cec3c27971.json",
   "deviceType": 1,
   "globalDeviceId": 155183,
+  "inputs": {
+    "finish": ["DirectionRight"],
+    "list": [
+      {"name":"TV"},
+      {"name":"VIDEO"},
+      {"name":"Scart1"},
+      {"name":"Scart2"},
+      {"name":"Scart2SVideo"},
+      {"name":"YPBPR"},
+      {"name":"HDMI"},
+      {"name":"PC"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Mirai",
-  "model": "DTL-527V200"
+  "model": "DTL-527V200",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

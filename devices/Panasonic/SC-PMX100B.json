@@ -2,6 +2,59 @@
   "codeset": "codesets/8d/8dc6c0ebffdc19d8.json",
   "deviceType": 21,
   "globalDeviceId": 279401,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"CD/USB"},{"set":"CD/USBInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"CD/USB"},{"set":"CD/USBInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In"},{"set":"Radio/Ext-InInput","to":"DAB+"}],"name":"DAB+"},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In"},{"set":"Radio/Ext-InInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In"},{"set":"Radio/Ext-InInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In"},{"set":"Radio/Ext-InInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In"},{"set":"Radio/Ext-InInput","to":"Network"}],"name":"Network"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PMX100B"
+  "model": "SC-PMX100B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CD/USBInput": {
+      "next": ["InputCd/Usb"],
+      "values": [
+        {"name":"CD"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"CD/USB","select":[{"commands":["InputCd/Usb"],"setType":2}]},
+        {"name":"Radio/Ext-In","select":[{"commands":["InputRadio"],"setType":2}]}
+      ]
+    },
+    "Radio/Ext-InInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"DAB+"},
+        {"name":"FM"},
+        {"name":"Aux"},
+        {"name":"PC"},
+        {"name":"Network"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

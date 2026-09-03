@@ -2,6 +2,36 @@
   "codeset": "codesets/ff/ffaee35e4ce73e36.json",
   "deviceType": 7,
   "globalDeviceId": 174925,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputPC"],"name":"PC","ports":["PC"]},
+      {"commands":["InputS-Video"],"name":"S-Video","ports":["S-Video"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "POWERLITE HOME CINEMA 6100"
+  "model": "POWERLITE HOME CINEMA 6100",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

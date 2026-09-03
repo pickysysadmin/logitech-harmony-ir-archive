@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/10/1083521742b85da9.json",
   "deviceType": 1,
   "globalDeviceId": 301643,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"ANT/CableIn"}],"name":"ANT/CableIn"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TVInput"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"AV1/Component"}],"name":"AV 1/Component"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Media Player"}],"name":"Media Player"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-39LRU6"
+  "model": "TH-39LRU6",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Media Player","select":[{"commands":["MediaPlayer"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"ANT/CableIn"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"AV1/Component"},
+        {"name":"AV2"},
+        {"name":"PC"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

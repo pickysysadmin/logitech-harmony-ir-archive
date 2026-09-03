@@ -2,6 +2,34 @@
   "codeset": "codesets/b2/b27b1c4b30753ad2.json",
   "deviceType": 1,
   "globalDeviceId": 84571,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"cvbs"},
+      {"name":"scart2"},
+      {"name":"scart1"},
+      {"name":"component"}
+    ],
+    "next": ["StartInput"],
+    "type": 2
+  },
   "manufacturer": "NEC",
-  "model": "PX-42T1000"
+  "model": "PX-42T1000",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"scart2"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

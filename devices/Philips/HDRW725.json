@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/78/789aa3adc2e7a236.json",
   "deviceType": 34,
   "globalDeviceId": 70408,
+  "inputs": {
+    "list": [
+      {"commands":["0","1"],"name":"Antenna"},
+      {"commands":["0","OK"],"name":"EXT 1"},
+      {"commands":["0","ChannelDown","OK"],"name":"EXT 2"},
+      {"commands":["CAM"],"name":"EXT 3"},
+      {"commands":["CAM"],"name":"CAM 1"},
+      {"commands":["CAM","ChannelDown"],"name":"CAM 2"},
+      {"commands":["CAM"],"name":"CAM 3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "HDRW725"
+  "model": "HDRW725",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

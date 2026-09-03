@@ -2,6 +2,82 @@
   "codeset": "codesets/1e/1ea248c0e1a43514.json",
   "deviceType": 1,
   "globalDeviceId": 94652,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"TVInput","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"AVInput","to":"OFF"},{"set":"S-VideoInput","to":"OFF"},{"set":"YCbCrInput","to":"OFF"},{"set":"YPbPrInput","to":"OFF"},{"set":"AnalogRGBInput","to":"OFF"},{"set":"DigitalRGBInput","to":"OFF"}],"name":"TV"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"TVInput","to":"ON"},{"set":"AVInput","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"TVInput","to":"OFF"},{"set":"S-VideoInput","to":"OFF"},{"set":"YCbCrInput","to":"OFF"},{"set":"YPbPrInput","to":"OFF"},{"set":"AnalogRGBInput","to":"OFF"},{"set":"DigitalRGBInput","to":"OFF"}],"name":"AV"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"TVInput","to":"ON"},{"set":"AVInput","to":"ON"},{"set":"S-VideoInput","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"TVInput","to":"OFF"},{"set":"AVInput","to":"OFF"},{"set":"YCbCrInput","to":"OFF"},{"set":"YPbPrInput","to":"OFF"},{"set":"AnalogRGBInput","to":"OFF"},{"set":"DigitalRGBInput","to":"OFF"}],"name":"S-Video"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"TVInput","to":"ON"},{"set":"AVInput","to":"ON"},{"set":"S-VideoInput","to":"ON"},{"set":"YCbCrInput","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"TVInput","to":"OFF"},{"set":"AVInput","to":"OFF"},{"set":"S-VideoInput","to":"OFF"},{"set":"YPbPrInput","to":"OFF"},{"set":"AnalogRGBInput","to":"OFF"},{"set":"DigitalRGBInput","to":"OFF"}],"name":"YCbCr"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"TVInput","to":"ON"},{"set":"AVInput","to":"ON"},{"set":"S-VideoInput","to":"ON"},{"set":"YCbCrInput","to":"ON"},{"set":"YPbPrInput","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"TVInput","to":"OFF"},{"set":"AVInput","to":"OFF"},{"set":"S-VideoInput","to":"OFF"},{"set":"YCbCrInput","to":"OFF"},{"set":"AnalogRGBInput","to":"OFF"},{"set":"DigitalRGBInput","to":"OFF"}],"name":"YPbPr"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"TVInput","to":"ON"},{"set":"AVInput","to":"ON"},{"set":"S-VideoInput","to":"ON"},{"set":"YCbCrInput","to":"ON"},{"set":"YPbPrInput","to":"ON"},{"set":"AnalogRGBInput","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"TVInput","to":"OFF"},{"set":"AVInput","to":"OFF"},{"set":"S-VideoInput","to":"OFF"},{"set":"YCbCrInput","to":"OFF"},{"set":"YPbPrInput","to":"OFF"},{"set":"DigitalRGBInput","to":"OFF"}],"name":"Analog RGB"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"TVInput","to":"ON"},{"set":"AVInput","to":"ON"},{"set":"S-VideoInput","to":"ON"},{"set":"YCbCrInput","to":"ON"},{"set":"YPbPrInput","to":"ON"},{"set":"AnalogRGBInput","to":"ON"},{"set":"DigitalRGBInput","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"TVInput","to":"OFF"},{"set":"AVInput","to":"OFF"},{"set":"S-VideoInput","to":"OFF"},{"set":"YCbCrInput","to":"OFF"},{"set":"YPbPrInput","to":"OFF"},{"set":"AnalogRGBInput","to":"OFF"}],"name":"Digital RGB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Akai",
-  "model": "PDP-5016H"
+  "model": "PDP-5016H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "values": [
+        {"name":"ON","select":[{"commands":["ChannelDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "AnalogRGBInput": {
+      "values": [
+        {"name":"ON","select":[{"commands":["ChannelDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "DigitalRGBInput": {
+      "values": [
+        {"name":"ON","select":[{"commands":["ChannelDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "S-VideoInput": {
+      "values": [
+        {"name":"ON","select":[{"commands":["ChannelDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "SourceMenu": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Source",{"set":"TVInput","to":"ON"}],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "values": [
+        {"name":"ON","select":[{"commands":["ChannelDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "YCbCrInput": {
+      "values": [
+        {"name":"ON","select":[{"commands":["ChannelDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "YPbPrInput": {
+      "values": [
+        {"name":"ON","select":[{"commands":["ChannelDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

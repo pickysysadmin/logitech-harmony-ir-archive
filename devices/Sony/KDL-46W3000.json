@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/24/2426a990c37b8041.json",
   "deviceType": 1,
   "globalDeviceId": 164493,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner","ports":["Antenna"]},
+      {"commands":["InputVideo1"],"name":"Video 1","ports":["Composite","S-Video"]},
+      {"commands":["InputVideo2"],"name":"Video 2","ports":["Composite"]},
+      {"commands":["InputVideo3"],"name":"Video 3","ports":["Composite"]},
+      {"commands":["InputComponent1"],"name":"Component 1","ports":["Component"]},
+      {"commands":["InputComponent2"],"name":"Component 2","ports":["Component"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputPc"],"name":"PC","ports":["PC"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-46W3000"
+  "model": "KDL-46W3000",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 10500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,61 @@
   "codeset": "codesets/68/688e4d2e863fb128.json",
   "deviceType": 5,
   "globalDeviceId": 172795,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1","ports":["Component","Composite","Optical"]},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2","ports":["HDMI","Composite","Optical"]},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Sat"}],"name":"Sat","ports":["HDMI","Component","Composite","Optical"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"SA-CD/CD"}],"name":"SA-CD/CD","ports":["Composite","Coaxial"]},
+      {"commands":[{"set":"InputType","to":"DM Port"}],"name":"DM Port","ports":["DMPort"]},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "STR-DG910"
+  "model": "STR-DG910",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Sat","select":[{"commands":["InputSat"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"SA-CD/CD","select":[{"commands":["InputSa-Cd/Cd"],"setType":2}]},
+        {"name":"DM Port","select":[{"commands":["InputDmPort"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"XM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

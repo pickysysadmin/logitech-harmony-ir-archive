@@ -2,6 +2,42 @@
   "codeset": "codesets/ca/ca785ed14e8a0261.json",
   "deviceType": 1,
   "globalDeviceId": 144760,
+  "inputs": {
+    "finish": ["0"],
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"AV1"}
+    ],
+    "next": ["InputNext"],
+    "start": ["0"],
+    "type": 4
+  },
   "manufacturer": "Beko",
-  "model": "TVB-5635"
+  "model": "TVB-5635",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Info"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

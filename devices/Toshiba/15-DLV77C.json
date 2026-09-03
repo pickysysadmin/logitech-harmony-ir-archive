@@ -1,7 +1,52 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/50/5069f7254d44d287.json",
   "deviceType": 37,
   "globalDeviceId": 172379,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"DVD/AV","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"DVD/AV","to":"AV"},{"set":"AVInput","to":"Antenna"}],"name":"Antenna"},
+      {"commands":[{"set":"DVD/AV","to":"AV"},{"set":"AVInput","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"DVD/AV","to":"AV"},{"set":"AVInput","to":"Line 2"}],"name":"Line 2"},
+      {"commands":[{"set":"DVD/AV","to":"AV"},{"set":"AVInput","to":"ColorStream"}],"name":"ColorStream"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "15-DLV77C"
+  "model": "15-DLV77C",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"Line 1"},
+        {"name":"Line 2"},
+        {"name":"ColorStream"}
+      ]
+    },
+    "DVD/AV": {
+      "next": ["TvDvd"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

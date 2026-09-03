@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/59/59518a3d388eaeb7.json",
   "deviceType": 1,
   "globalDeviceId": 131768,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV 1"},
+      {"name":"SVIDEO 1"},
+      {"name":"ypbpr1"},
+      {"name":"ypbpr2"},
+      {"name":"vga"},
+      {"name":"HDMI1"},
+      {"name":"HDMI2"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["InputNext","Select"],
+    "type": 4
+  },
   "manufacturer": "ViewSonic",
-  "model": "N-3732W"
+  "model": "N-3732W",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 3000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

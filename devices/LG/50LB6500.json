@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/6d/6d36f4d6005abf5a.json",
   "deviceType": 1,
   "globalDeviceId": 262021,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputAv1"],"name":"AV","ports":["Composite"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputComponent1"],"name":"Component","ports":["Component"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi1"],"name":"HDMI 1(ARC)","ports":["HDMI"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi3"],"name":"HDMI 3(MHL)","ports":["HDMI"]},
+      {"commands":["Exit","Smart"],"name":"Smart TV","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "50LB6500"
+  "model": "50LB6500",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 30622,
+  "inputs": {
+    "list": [
+      {"commands":["TvVideo","ChannelDown","VolumeUp"],"name":"TV/Video"},
+      {"commands":["InputComponent1"],"name":"DTV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HCJ652W"
+  "model": "HCJ652W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AspectMode": {
+      "next": ["Aspect"],
+      "start": ["Aspect"],
+      "values": [
+        {"name":"WIDE"},
+        {"name":"PANO"},
+        {"name":"ZOOM1"},
+        {"name":"ZOOM2"},
+        {"name":"NORM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"DTV","select":[{"commands":["InputComponent2",{"set":"VideoInput","to":"Antenna"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"},
+        {"name":"SVideo1"},
+        {"name":"SVideo2"},
+        {"name":"Component"},
+        {"name":"PC"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

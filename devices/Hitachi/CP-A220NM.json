@@ -2,6 +2,61 @@
   "codeset": "codesets/65/65e40ae49aa47757.json",
   "deviceType": 7,
   "globalDeviceId": 235013,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer In 1"}],"name":"Computer In 1"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer In 2"}],"name":"Computer In 2"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"LAN"}],"name":"LAN"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"USB Type A"}],"name":"USB Type A"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"USB Type B"}],"name":"USB Type B"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "CP-A220NM"
+  "model": "CP-A220NM",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "ComputerInput": {
+      "next": ["InputComputer"],
+      "values": [
+        {"name":"Computer In 1"},
+        {"name":"Computer In 2"},
+        {"name":"LAN"},
+        {"name":"USB Type A"},
+        {"name":"USB Type B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"HDMI"},
+        {"name":"S-Video"},
+        {"name":"Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

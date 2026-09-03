@@ -2,6 +2,47 @@
   "codeset": "codesets/e9/e9610c354892f2e2.json",
   "deviceType": 22,
   "globalDeviceId": 101657,
+  "inputs": {
+    "list": [
+      {"commands":["PowerToggle"],"name":"DVD"},
+      {"commands":["PowerToggle"],"name":"Tuner"},
+      {"commands":["PowerToggle","PowerToggle"],"name":"Aux1"},
+      {"commands":["PowerToggle","PowerToggle"],"name":"Aux2"},
+      {"commands":["PowerToggle","PowerToggle"],"name":"Digital"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HT-D600"
+  "model": "HT-D600",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxMode": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux1mode"},
+        {"name":"Aux2mode"},
+        {"name":"Digmode"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVDType","select":[{"commands":["InputDvd"],"setType":1}]},
+        {"name":"TunerType","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"AuxType","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

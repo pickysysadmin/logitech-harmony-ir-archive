@@ -2,6 +2,48 @@
   "codeset": "codesets/c3/c3006ee7253f368b.json",
   "deviceType": 19,
   "globalDeviceId": 349211,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Line In"}],"name":"Line In"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Optical In"}],"name":"Optical In"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Coaxial In"}],"name":"Coaxial In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "RTS7113WS"
+  "model": "RTS7113WS",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputDigital"],
+      "values": [
+        {"name":"Optical In"},
+        {"name":"Coaxial In"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["Bluetooth"],"setType":1}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":1}]},
+        {"name":"Line In","select":[{"commands":["InputLinein"],"setType":1}]},
+        {"name":"Digital","select":[{"commands":["InputDigital"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

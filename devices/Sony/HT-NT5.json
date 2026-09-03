@@ -2,6 +2,36 @@
   "codeset": "codesets/20/201d235beadede48.json",
   "deviceType": 19,
   "globalDeviceId": 278699,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV","ports":["Optical"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputBluetooth"],"name":"BT","ports":["Pairing Input"]},
+      {"commands":["InputUsb",{"delayMs":2000},"InputPrev","InputPrev"],"name":"Analog","ports":["Aux"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]},
+      {"commands":["Mirroring"],"name":"Screen Mirroring","ports":["Streaming"]},
+      {"commands":["InputHomenetwork"],"name":"Home Network","ports":["Streaming"]},
+      {"commands":["InputMusicservice"],"name":"Music Services","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "HT-NT5"
+  "model": "HT-NT5",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 3
+  }
 }

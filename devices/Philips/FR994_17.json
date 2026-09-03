@@ -2,6 +2,36 @@
   "codeset": "codesets/91/9147147c878f6704.json",
   "deviceType": 5,
   "globalDeviceId": 27217,
+  "inputs": {
+    "list": [
+      {"commands":[{"command":"InputTuner","durationMs":1500}],"name":"Tuner"},
+      {"commands":[{"command":"InputPhono","durationMs":1500}],"name":"Phono"},
+      {"commands":[{"command":"InputCd","durationMs":1500}],"name":"CD"},
+      {"commands":[{"command":"InputCdr/Tape","durationMs":1500}],"name":"CDR/Tape"},
+      {"commands":[{"command":"InputTv","durationMs":1500}],"name":"TV"},
+      {"commands":[{"command":"InputVcr","durationMs":1500}],"name":"VCR"},
+      {"commands":["InputSat"],"name":"Satellite"},
+      {"commands":[{"command":"InputDvd","durationMs":1500}],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "FR994/17"
+  "model": "FR994/17",
+  "power": {
+    "off": ["PowerToggle2"],
+    "on": [
+      {"command":"InputTv","durationMs":2000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

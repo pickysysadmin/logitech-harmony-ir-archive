@@ -2,6 +2,55 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 46031,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"ColorMenu","to":"ON"},{"set":"AVType","to":"AV1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"ColorMenu","to":"ON"},{"set":"AVType","to":"AV2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"ColorMenu","to":"ON"},{"set":"AVType","to":"AV3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"ColorMenu","to":"ON"},{"set":"AVType","to":"AV4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":["ChannelUp","TvVideo"],"name":"Component 1"},
+      {"commands":["InputComponent2"],"name":"Component 2"},
+      {"commands":["InputComponent2","TvVideo"],"name":"Digital-In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PV20"
+  "model": "TH-42PV20",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Red"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Green"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Yellow"],"setType":1}]},
+        {"name":"AV4","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Blue"],"setType":1}]}
+      ]
+    },
+    "ColorMenu": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":2}]}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TvVideo"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["TvVideo",{"set":"ColorMenu","to":"ON"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

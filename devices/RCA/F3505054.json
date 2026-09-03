@@ -2,6 +2,64 @@
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 146767,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoMode","to":"Video1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoMode","to":"Video2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoMode","to":"Video3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompMode","to":"Comp1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Comp"},{"set":"CompMode","to":"Comp2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBMode","to":"RGB1"}],"name":"RGB 1"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBMode","to":"RGB3"}],"name":"RGB 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "F3505054"
+  "model": "F3505054",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "CompMode": {
+      "next": ["InputVideo2"],
+      "values": [
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Comp","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]}
+      ]
+    },
+    "RGBMode": {
+      "next": ["InputRgb"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoMode": {
+      "next": ["InputVideo1"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

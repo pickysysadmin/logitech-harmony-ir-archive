@@ -2,6 +2,51 @@
   "codeset": "codesets/52/52c8ef2a4a90f53d.json",
   "deviceType": 22,
   "globalDeviceId": 79889,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"FM"},
+      {"commands":["InputTuner"],"name":"AM"},
+      {"commands":["InputDvd/Cd"],"name":"DVD/CD"},
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputVcr"],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Digital"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-DT110"
+  "model": "SC-DT110",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAUX"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDigital"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Fm"},
+        {"name":"Am"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

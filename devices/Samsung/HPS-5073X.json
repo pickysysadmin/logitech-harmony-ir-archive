@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/97/97185271073aaf9a.json",
   "deviceType": 1,
   "globalDeviceId": 171369,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Av1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"Av2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"S-Video1"}],"name":"S-Video1"},
+      {"commands":[{"set":"InputType","to":"S-Video2"}],"name":"S-Video2"},
+      {"commands":[{"set":"InputType","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Cable"}],"name":"Cable"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Air"}],"name":"Air"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HPS-5073X"
+  "model": "HPS-5073X",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputAntenna"],
+      "values": [
+        {"name":"Cable"},
+        {"name":"Air"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Av1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Av2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"S-Video1","select":[{"commands":["InputS-Video1"],"setType":2}]},
+        {"name":"S-Video2","select":[{"commands":["InputS-Video2"],"setType":2}]},
+        {"name":"Component1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"Pc","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["InputAntenna"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

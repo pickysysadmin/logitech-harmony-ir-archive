@@ -2,6 +2,69 @@
   "codeset": "codesets/25/256e858773a4fac2.json",
   "deviceType": 1,
   "globalDeviceId": 176917,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"COMP"},{"set":"COMPInput","to":"VIDEO"}],"name":"VIDEO"},
+      {"commands":[{"set":"InputType","to":"COMP"},{"set":"COMPInput","to":"COMP 1"}],"name":"COMP 1"},
+      {"commands":[{"set":"InputType","to":"COMP"},{"set":"COMPInput","to":"COMP 2"}],"name":"COMP 2"},
+      {"commands":[{"set":"InputType","to":"COMP"},{"set":"COMPInput","to":"MMP"}],"name":"MMP"},
+      {"commands":[{"set":"InputType","to":"DTV/ATV"},{"set":"DTV/ATVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"DTV/ATV"},{"set":"DTV/ATVInput","to":"ATV"}],"name":"ATV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Daewoo",
-  "model": "DLV-46U1UMB"
+  "model": "DLV-46U1UMB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "COMPInput": {
+      "next": ["AV/COMP/MMP"],
+      "values": [
+        {"name":"VIDEO"},
+        {"name":"COMP 1"},
+        {"name":"COMP 2"},
+        {"name":"MMP"}
+      ]
+    },
+    "DTV/ATVInput": {
+      "next": ["DTV/ATV"],
+      "values": [
+        {"name":"DTV"},
+        {"name":"ATV"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["HDMI/PC"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"PC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDMI","select":[{"commands":["HDMI/PC",{"set":"HDMIInput","to":"HDMI 1"}],"setType":2}]},
+        {"name":"COMP","select":[{"commands":["AV/COMP/MMP",{"set":"COMPInput","to":"VIDEO"}],"setType":2}]},
+        {"name":"DTV/ATV","select":[{"commands":["DTV/ATV",{"set":"DTV/ATVInput","to":"DTV"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

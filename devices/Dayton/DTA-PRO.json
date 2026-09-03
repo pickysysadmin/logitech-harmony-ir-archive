@@ -2,6 +2,31 @@
   "codeset": "codesets/86/86191571019d2243.json",
   "deviceType": 19,
   "globalDeviceId": 492940,
+  "inputs": {
+    "list": [
+      {"name":"BT","ports":["Pairing Input"]},
+      {"name":"USB","ports":["USB"]},
+      {"name":"OPT","ports":["Optical"]},
+      {"name":"COAX","ports":["Coaxial"]},
+      {"name":"Aux","ports":["Aux"]}
+    ],
+    "next": ["InputSelect"],
+    "type": 2
+  },
   "manufacturer": "Dayton",
-  "model": "DTA-PRO"
+  "model": "DTA-PRO",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

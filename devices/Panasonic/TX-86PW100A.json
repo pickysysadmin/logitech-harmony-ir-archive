@@ -2,6 +2,40 @@
   "codeset": "codesets/07/07990e7fdb5f9d69.json",
   "deviceType": 1,
   "globalDeviceId": 181639,
+  "inputs": {
+    "list": [
+      {"commands":["PowerToggle"],"name":"Tuner"},
+      {"commands":["Red"],"name":"AV 1"},
+      {"commands":["Green"],"name":"AV 2"},
+      {"commands":["Yellow"],"name":"AV 3"},
+      {"commands":["Blue"],"name":"AV 4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-86PW100A"
+  "model": "TX-86PW100A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AVMode": {
+      "next": ["PowerToggle"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,51 @@
   "codeset": "codesets/2f/2faf1eb0a0d53c8f.json",
   "deviceType": 1,
   "globalDeviceId": 109274,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"CVI"}],"name":"CVI"},
+      {"commands":[{"set":"InputType","to":"Rear"}],"name":"Rear"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HD-A"}],"name":"HD-A"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HD-D"}],"name":"HD-D"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "23PF9966/37"
+  "model": "23PF9966/37",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDInput": {
+      "next": ["InputAV4"],
+      "values": [
+        {"name":"HD-A"},
+        {"name":"HD-D"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Tuner","InputAv1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["Tuner","InputAv2"],"setType":2}]},
+        {"name":"CVI","select":[{"commands":["Tuner","InputAv1","ChannelUp"],"setType":2}]},
+        {"name":"Rear","select":[{"commands":["Tuner","InputAv3"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["Tuner","InputAv3","ChannelUp"],"setType":2}]},
+        {"name":"HD","select":[{"commands":["InputAV4"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

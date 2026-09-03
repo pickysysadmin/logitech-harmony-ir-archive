@@ -1,7 +1,78 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/05/054af2f76060a0f4.json",
   "deviceType": 1,
   "globalDeviceId": 279431,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"Digital TV"}],"name":"Digital TV"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"TV"},{"set":"TVInput","to":"Analogue TV"}],"name":"Analogue TV"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"CompAV"},{"set":"CompAVInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"CompAV"},{"set":"CompAVInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"SmartTV_MENU","to":"OFF"},{"set":"Screen","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Screen","to":"Apps"}],"name":"Apps"},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Screen","to":"ScreenMirroring"}],"name":"Screen Mirroring"},
+      {"commands":[{"set":"SmartTV_MENU","to":"ON"},{"set":"Screen","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-55DX605U"
+  "model": "TH-55DX605U",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "CompAVInput": {
+      "finish": ["OK"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["AV"],
+      "values": [
+        {"name":"AV"},
+        {"name":"Component"}
+      ]
+    },
+    "Screen": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TV"],"setType":1}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":1}]},
+        {"name":"CompAV","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"Apps","select":[{"commands":["Apps"],"setType":1}]},
+        {"name":"ScreenMirroring","select":[{"commands":["Devices","Devices",{"delayMs":2000},{"command":"DirectionRight","durationMs":1500},"DirectionLeft","OK"],"setType":1}]}
+      ]
+    },
+    "SmartTV_MENU": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Exit",{"delayMs":500}],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"Digital TV"},
+        {"name":"Analogue TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 10000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

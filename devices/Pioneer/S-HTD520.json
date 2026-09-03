@@ -2,6 +2,63 @@
   "codeset": "codesets/b0/b039e15e745b7135.json",
   "deviceType": 22,
   "globalDeviceId": 33349,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TunerModetype"},{"set":"TunerMode","to":"FMin"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"TunerModetype"},{"set":"TunerMode","to":"AMin"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"DVDModetype"},{"set":"DVDMode","to":"DVDin"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVDModetype"},{"set":"DVDMode","to":"CDin"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"TVModetype"},{"set":"TVMode","to":"TVX"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TVModetype"},{"set":"TVMode","to":"AUXM"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"TVModetype"},{"set":"TVMode","to":"DigitalM"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "S-HTD520"
+  "model": "S-HTD520",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDMode": {
+      "next": ["InputCd"],
+      "values": [
+        {"name":"DVDin"},
+        {"name":"CDin"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TVModetype","select":[{"commands":["Video1"],"setType":2}]},
+        {"name":"DVDModetype","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"TunerModetype","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TVMode": {
+      "next": ["Video1"],
+      "values": [
+        {"name":"AUXM"},
+        {"name":"TVX"},
+        {"name":"DigitalM"}
+      ]
+    },
+    "TunerMode": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FMin"},
+        {"name":"AMin"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,35 @@
   "codeset": "codesets/db/db7c09f60acc3c6a.json",
   "deviceType": 5,
   "globalDeviceId": 174231,
+  "inputs": {
+    "list": [
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR","ports":["HDMI","Component","Composite","Optical","S-Video"]},
+      {"commands":["InputCable/Sat"],"name":"CBL/SAT","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Composite"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputTape"],"name":"Tape","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Optical"]},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "HT-SR800"
+  "model": "HT-SR800",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

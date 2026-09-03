@@ -2,6 +2,32 @@
   "codeset": "codesets/13/1394e7516b49787e.json",
   "deviceType": 5,
   "globalDeviceId": 61437,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"AM"},
+      {"commands":["InputTuner"],"name":"FM"},
+      {"commands":["InputAux"],"name":"DVD/LD"},
+      {"commands":["InputVcr"],"name":"VCR"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTv"],"name":"TV/SAT"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "RV3651F"
+  "model": "RV3651F",
+  "power": {
+    "off": ["PowerOff","PowerOff"],
+    "on": ["InputTuner"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

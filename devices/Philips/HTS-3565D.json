@@ -2,6 +2,55 @@
   "codeset": "codesets/88/88e13c0d6dfcb5f8.json",
   "deviceType": 22,
   "globalDeviceId": 176938,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"MP3Link"}],"name":"MP3Link","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"DISC"}],"name":"DISC","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"DOCK"}],"name":"DOCK","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Aux1"}],"name":"Aux1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Aux2"}],"name":"Aux2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"DI"}],"name":"DI","ports":["Coaxial"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS-3565D"
+  "model": "HTS-3565D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"},
+        {"name":"DI"},
+        {"name":"MP3Link"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"MP3Link","select":[{"commands":["InputMp3Link"],"setType":2}]},
+        {"name":"DISC","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"DOCK","select":[{"commands":["InputDock"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

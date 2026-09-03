@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 81056,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGB/PC"}],"name":"RGB/PC"},
+      {"commands":[{"set":"InputType","to":"Line"}],"name":"Line"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HD 1"}],"name":"HD 1"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HD 2"}],"name":"HD 2"},
+      {"commands":["1"],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "KV-32PW1"
+  "model": "KV-32PW1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDInput": {
+      "next": ["InputHD1"],
+      "values": [
+        {"name":"HD 1"},
+        {"name":"HD 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"RGB/PC","select":[{"commands":["InputRgb1"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["Input1"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo",{"set":"VideoInput","to":"Video 1"}],"setType":2}]},
+        {"name":"HD","select":[{"commands":["InputHD1",{"set":"HDInput","to":"HD 1"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Video 3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

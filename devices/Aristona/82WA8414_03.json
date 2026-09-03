@@ -2,6 +2,34 @@
   "codeset": "codesets/a2/a2b78730ec208857.json",
   "deviceType": 1,
   "globalDeviceId": 148681,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"EXT 1 CVBS"},
+      {"name":"EXT 2 CVBS"},
+      {"name":"Front Y/C"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Aristona",
-  "model": "82WA8414/03"
+  "model": "82WA8414/03",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

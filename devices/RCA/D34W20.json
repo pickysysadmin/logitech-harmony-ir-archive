@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 35980,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VID1"}],"name":"VID1"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VID2"}],"name":"VID2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"FRNT"}],"name":"FRNT"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"COMP1"}],"name":"COMP1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"COMP2"}],"name":"COMP2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "D34W20"
+  "model": "D34W20",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["ChannelUp"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VID1"},
+        {"name":"VID2"},
+        {"name":"FRNT"},
+        {"name":"COMP1"},
+        {"name":"COMP2"},
+        {"name":"DVI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,30 @@
   "codeset": "codesets/36/36431ba1242d7ea2.json",
   "deviceType": 30,
   "globalDeviceId": 5399,
+  "inputs": {
+    "list": [
+      {"commands":["InputAes"],"name":"AES","ports":["AES"]},
+      {"commands":["InputRca"],"name":"RCA","ports":["Others"]},
+      {"commands":["InputRca","Input"],"name":"Toslink","ports":["Optical"]},
+      {"commands":["InputBnc"],"name":"BNC","ports":["Others"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "DCS",
-  "model": "Purcell"
+  "model": "Purcell",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

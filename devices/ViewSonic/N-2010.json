@@ -1,7 +1,33 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/083623f374683a64.json",
   "deviceType": 1,
   "globalDeviceId": 130715,
+  "inputs": {
+    "list": [
+      {"commands":["TvVideo"],"name":"Tuner"},
+      {"commands":["TvVideo","InputNext"],"name":"AV Composite"},
+      {"commands":["TvVideo","InputNext","InputNext"],"name":"S-Video"},
+      {"commands":["TvVideo","InputNext","InputNext","InputNext"],"name":"DVD YPbPr"}
+    ],
+    "type": 1
+  },
   "manufacturer": "ViewSonic",
-  "model": "N-2010"
+  "model": "N-2010",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

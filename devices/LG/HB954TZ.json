@@ -2,6 +2,50 @@
   "codeset": "codesets/97/97897c1da1c7a9b4.json",
   "deviceType": 22,
   "globalDeviceId": 183470,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"PORTABLE"}],"name":"PORTABLE"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"OPTICAL"}],"name":"OPTICAL"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"COAXIAL"}],"name":"COAXIAL"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HB954TZ"
+  "model": "HB954TZ",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AUX"},
+        {"name":"PORTABLE"},
+        {"name":"OPTICAL"},
+        {"name":"COAXIAL"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["Menu"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

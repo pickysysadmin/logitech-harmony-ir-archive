@@ -2,6 +2,54 @@
   "codeset": "codesets/4c/4c56584d058b9038.json",
   "deviceType": 22,
   "globalDeviceId": 90666,
+  "inputs": {
+    "list": [
+      {"name":"FM"},
+      {"name":"AM"},
+      {"name":"Aux"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputTv"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "SB-VK90"
+  "model": "SB-VK90",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Front"},
+        {"name":"TV"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux",{"set":"AuxInput","to":"Front"}],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

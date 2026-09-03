@@ -2,6 +2,61 @@
   "codeset": "codesets/fa/faac90551c5729ec.json",
   "deviceType": 21,
   "globalDeviceId": 278039,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM/CD"},{"set":"FM/CDInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/CD"},{"set":"FM/CDInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"AudioIn/USB"},{"set":"AudioIn/USBInput","to":"AudioIn"}],"name":"AudioIn"},
+      {"commands":[{"set":"InputType","to":"AudioIn/USB"},{"set":"AudioIn/USBInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Dock/Bluetooth"},{"set":"Dock/BluetoothInput","to":"Dock"}],"name":"Dock"},
+      {"commands":[{"set":"InputType","to":"Dock/Bluetooth"},{"set":"Dock/BluetoothInput","to":"Bluetooth"}],"name":"Bluetooth"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DTM3170/12"
+  "model": "DTM3170/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioIn/USBInput": {
+      "next": ["InputAudioIn/Usb"],
+      "values": [
+        {"name":"AudioIn"},
+        {"name":"USB"}
+      ]
+    },
+    "Dock/BluetoothInput": {
+      "next": ["InputDock/BT"],
+      "values": [
+        {"name":"Dock"},
+        {"name":"Bluetooth"}
+      ]
+    },
+    "FM/CDInput": {
+      "next": ["InputFm/CD"],
+      "values": [
+        {"name":"FM"},
+        {"name":"CD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"FM/CD","select":[{"commands":["InputFm/CD"],"setType":2}]},
+        {"name":"AudioIn/USB","select":[{"commands":["InputAudioIn/Usb"],"setType":2}]},
+        {"name":"Dock/Bluetooth","select":[{"commands":["InputDock/BT"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

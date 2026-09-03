@@ -2,6 +2,32 @@
   "codeset": "codesets/02/02c378eea6759130.json",
   "deviceType": 34,
   "globalDeviceId": 136783,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"HD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "MAG",
-  "model": "DW-7216U"
+  "model": "DW-7216U",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,42 @@
   "codeset": "codesets/42/42fa76c60f2e76dc.json",
   "deviceType": 5,
   "globalDeviceId": 239195,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputStb/Dvr"],"name":"STB/DVR","ports":["HDMI","Composite","Coaxial"]},
+      {"commands":["InputGame1"],"name":"Game 1","ports":["HDMI","Composite","Optical"]},
+      {"commands":["InputGame2"],"name":"Game 2","ports":["HDMI"]},
+      {"commands":["InputPc"],"name":"PC","ports":["HDMI","Composite"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["HDMI","Composite","Optical"]},
+      {"commands":["InputTv/Cd"],"name":"TV/CD","ports":["Composite","Optical"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputMusicServer"],"name":"Music Server","ports":["Streaming"]},
+      {"commands":["InputInternetRadio"],"name":"Internet Radio","ports":["Streaming"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputNet"],"name":"NET","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-NR5010"
+  "model": "TX-NR5010",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

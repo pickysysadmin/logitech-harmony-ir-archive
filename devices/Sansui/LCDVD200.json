@@ -2,6 +2,45 @@
   "codeset": "codesets/50/5069f7254d44d287.json",
   "deviceType": 37,
   "globalDeviceId": 38449,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TV","to":"ANT"}],"name":"ANT"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TV","to":"LINE1"}],"name":"Line1"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TV","to":"LINE2"}],"name":"Line2"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sansui",
-  "model": "LCDVD200"
+  "model": "LCDVD200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TvDvd"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["Play"],"setType":2}]}
+      ]
+    },
+    "TV": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"ANT"},
+        {"name":"LINE1"},
+        {"name":"LINE2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,38 @@
   "codeset": "codesets/08/08a2d43b6a96dfd5.json",
   "deviceType": 5,
   "globalDeviceId": 219448,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR","ports":["HDMI","Composite"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputGame"],"name":"GAME","ports":["HDMI","Composite","Optical"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Composite"]},
+      {"commands":["InputTv/Cd"],"name":"TV/CD","ports":["Composite","Optical"]},
+      {"commands":["InputPort"],"name":"PORT","ports":["Portable"]},
+      {"commands":["InputNet"],"name":"NET","ports":["Streaming"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "HT-R990"
+  "model": "HT-R990",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

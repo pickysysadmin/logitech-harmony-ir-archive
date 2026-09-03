@@ -2,6 +2,37 @@
   "codeset": "codesets/13/138fb9a25d4f2711.json",
   "deviceType": 5,
   "globalDeviceId": 132399,
+  "inputs": {
+    "list": [
+      {"commands":["InputiPod"],"name":"iPod","ports":["Dock"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd/Vdp"],"name":"DVD/VDP","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputTv/Dbs"],"name":"TV/DBS","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Component","Composite","S-Video"]},
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["Composite","Optical"]},
+      {"commands":["InputCdr/Tape"],"name":"CDR/TAPE","ports":["Composite"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Composite","Coaxial"]},
+      {"commands":["InputXM"],"name":"XM","ports":["Others"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-1907"
+  "model": "AVR-1907",
+  "power": {
+    "off": ["PowerOff(Zone1)"],
+    "on": ["PowerOn(Zone1)"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

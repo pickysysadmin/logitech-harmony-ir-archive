@@ -1,7 +1,81 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 175906,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV/AV"}],"name":"TV"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"}],"name":"AV1"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"}],"name":"AV2"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"}],"name":"AV3"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"}],"name":"AV4"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"}],"name":"Component"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"}],"name":"PC"},
+      {"commands":[{"set":"TV/AVInput","to":"AV"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-52PV60EH"
+  "model": "TH-52PV60EH",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2500}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"Componente"},
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV/AV","select":[{"commands":[{"set":"TV/AVInput","to":"TV"}],"setType":2}]},
+        {"name":"VIDEO1","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Red","Red"],"setType":1}]},
+        {"name":"VIDEO2","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Green","Green"],"setType":1}]},
+        {"name":"VIDEO3","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Yellow","Yellow"],"setType":1}]},
+        {"name":"VIDEO4","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Green"],"setType":1}]}
+      ]
+    },
+    "RedBlueInput": {
+      "values": [
+        {"name":"Red","select":[{"commands":["Red","Red"],"setType":2}]},
+        {"name":"Blue","select":[{"commands":["Blue","Blue"],"setType":2}]}
+      ]
+    },
+    "TV/AVInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

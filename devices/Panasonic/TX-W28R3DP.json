@@ -2,6 +2,46 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 36826,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Av1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Av2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Av3"}],"name":"AV 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-W28R3DP"
+  "model": "TX-W28R3DP",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AvInput": {
+      "values": [
+        {"name":"Av1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"Av2","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"Av3","select":[{"commands":["Yellow"],"setType":2}]}
+      ]
+    },
+    "InputType": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Av"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

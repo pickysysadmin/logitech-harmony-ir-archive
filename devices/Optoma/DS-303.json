@@ -2,6 +2,34 @@
   "codeset": "codesets/53/53825edfb46ab07f.json",
   "deviceType": 7,
   "globalDeviceId": 97612,
+  "inputs": {
+    "list": [
+      {"commands":["InputDVI"],"name":"DVI"},
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputVideo"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "DS-303"
+  "model": "DS-303",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

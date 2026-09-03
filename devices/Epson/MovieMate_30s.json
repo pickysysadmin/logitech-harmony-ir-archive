@@ -2,6 +2,32 @@
   "codeset": "codesets/5a/5a794a49c9c9e975.json",
   "deviceType": 37,
   "globalDeviceId": 92755,
+  "inputs": {
+    "list": [
+      {"name":"DVD","ports":["BuiltIn"]},
+      {"name":"VIDEO","ports":["Composite","S-Video"]},
+      {"name":"PC","ports":["PC"]}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Epson",
-  "model": "MovieMate 30s"
+  "model": "MovieMate 30s",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

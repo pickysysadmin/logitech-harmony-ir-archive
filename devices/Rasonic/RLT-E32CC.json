@@ -2,6 +2,41 @@
   "codeset": "codesets/05/05cc366f8bf52393.json",
   "deviceType": 1,
   "globalDeviceId": 117884,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"SCART 1(FULL)"},
+      {"name":"SCART 2(HALF)"},
+      {"name":"Composite 1"},
+      {"name":"S-Video 1"},
+      {"name":"Composite 2"},
+      {"name":"S-Video 2"},
+      {"name":"Component 1"},
+      {"name":"Component 2"},
+      {"name":"DVI"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Rasonic",
-  "model": "RLT-E32CC"
+  "model": "RLT-E32CC",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

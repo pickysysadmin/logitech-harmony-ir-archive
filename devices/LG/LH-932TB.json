@@ -2,6 +2,56 @@
   "codeset": "codesets/5a/5ad007f15282efc2.json",
   "deviceType": 22,
   "globalDeviceId": 130024,
+  "inputs": {
+    "list": [
+      {"commands":["Band"],"name":"Tuner"},
+      {"commands":["InputDvd"],"name":"CD/DVD"},
+      {"commands":["InputAux"],"name":"AUX"},
+      {"commands":["InputUSB"],"name":"USB"},
+      {"commands":["InputIPod"],"name":"iPod"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "LH-932TB"
+  "model": "LH-932TB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TUNER","select":[{"commands":["Band"],"setType":2}]},
+        {"name":"CD/DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "RadioMode": {
+      "next": ["Band"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "VideoMode": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video1opt"},
+        {"name":"Video2"},
+        {"name":"Video2opt"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

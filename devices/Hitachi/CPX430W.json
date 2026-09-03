@@ -2,6 +2,36 @@
   "codeset": "codesets/a8/a8b52ce5a79d5d41.json",
   "deviceType": 7,
   "globalDeviceId": 204168,
+  "inputs": {
+    "list": [
+      {"commands":["InputComponent","InputVideo"],"name":"Video"},
+      {"commands":["InputComponent","InputVideo","InputVideo"],"name":"S-Video"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputComputer"],"name":"RGB1"},
+      {"commands":["InputComputer","InputRgb"],"name":"RGB2"},
+      {"commands":["InputDvi"],"name":"DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hitachi",
-  "model": "CPX430W"
+  "model": "CPX430W",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

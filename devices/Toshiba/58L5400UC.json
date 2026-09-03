@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/ff/ffe9c99ba0ed496f.json",
   "deviceType": 1,
   "globalDeviceId": 266798,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnt/Cable","0","Exit","DirectionRight","Ok",{"delayMs":4000},"InputAnt/Cable"],"name":"ANT/Cable"},
+      {"commands":["InputVideo1","Exit","DirectionRight","Ok",{"delayMs":4000},"InputVideo1"],"name":"ColorStream HD"},
+      {"commands":["InputVideo2","Exit","DirectionRight","Ok",{"delayMs":4000},"InputVideo2"],"name":"HDMI 1"},
+      {"commands":["Input","3","Exit","DirectionRight","Ok",{"delayMs":4000},"Input","3"],"name":"HDMI 2"},
+      {"commands":["Input","4","Exit","DirectionRight","Ok",{"delayMs":4000},"Input","4"],"name":"HDMI 3"},
+      {"commands":["Menu"],"name":"SmartTV"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Toshiba",
-  "model": "58L5400UC"
+  "model": "58L5400UC",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 65000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,77 @@
   "codeset": "codesets/a8/a8547d18fe86ba3f.json",
   "deviceType": 1,
   "globalDeviceId": 71250,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"VIDEO 1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Quasar",
-  "model": "SP-2717CT"
+  "model": "SP-2717CT",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"True"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2Mode": {
+      "next": ["Green"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AV3Mode": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AV4Mode": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AVType": {
+      "values": [
+        {"name":"Red","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"Green","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"Yellow","select":[{"commands":["Yellow"],"setType":2}]},
+        {"name":"Blue","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    },
+    "InputMode": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TunerMode"},
+        {"name":"VideoMode"}
+      ]
+    },
+    "OnScreenMenu": {
+      "values": [
+        {"name":"True","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"False"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 700,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 11500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,48 @@
   "codeset": "codesets/0a/0a6249b8c4488501.json",
   "deviceType": 19,
   "globalDeviceId": 414741,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Aux/LineIn"},{"set":"Aux/LineInInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux/LineIn"},{"set":"Aux/LineInInput","to":"Line In"}],"name":"Line In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LINDEN",
-  "model": "L21WSB17"
+  "model": "L21WSB17",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/LineInInput": {
+      "next": ["InputAux/LineIn"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Line In"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Aux/LineIn","select":[{"commands":["InputAux/LineIn"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/cd/cd676783bb782cfd.json",
   "deviceType": 1,
   "globalDeviceId": 207114,
+  "inputs": {
+    "list": [
+      {"commands":["Home","Exit","Analog"],"name":"Analog","ports":["Antenna"]},
+      {"commands":["Home","Exit","Digital"],"name":"Digital","ports":["Antenna"]},
+      {"commands":["Home","Exit","InputVideo1"],"name":"Video1","ports":["Composite"]},
+      {"commands":["Home","Exit","InputVideo2"],"name":"Video2","ports":["Composite"]},
+      {"commands":["Home","Exit","InputComponent1"],"name":"Component1","ports":["Component"]},
+      {"commands":["Home","Exit","InputComponent2"],"name":"Component2","ports":["Component"]},
+      {"commands":["Home","Exit","InputHdmi1"],"name":"HDMI1","ports":["HDMI"]},
+      {"commands":["Home","Exit","InputHdmi2"],"name":"HDMI2","ports":["HDMI"]},
+      {"commands":["Home","Exit","InputHdmi3"],"name":"HDMI3","ports":["HDMI"]},
+      {"commands":["Home","Exit","InputHdmi4"],"name":"HDMI4","ports":["HDMI"]},
+      {"commands":["Home","Exit","InputPc"],"name":"PC","ports":["PC"]},
+      {"commands":["Exit","Exit","Exit","Home"],"name":"SEN","ports":["Streaming"]},
+      {"commands":["Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-55HX800"
+  "model": "KDL-55HX800",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 45000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

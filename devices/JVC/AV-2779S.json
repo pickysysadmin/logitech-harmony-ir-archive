@@ -1,7 +1,50 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2,
+    "greaterHundred": ["GreaterHundred"]
+  },
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 11003,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Ant/Cable"},{"set":"Ant/Cable","to":"Ch3"}],"name":"Ch3"},
+      {"commands":[{"set":"InputType","to":"Ant/Cable"},{"set":"Ant/Cable","to":"Cable A"}],"name":"Cable A"},
+      {"commands":[{"set":"InputType","to":"Ant/Cable"},{"set":"Ant/Cable","to":"Cable B"}],"name":"Cable B"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "AV-2779S"
+  "model": "AV-2779S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Ant/Cable": {
+      "next": ["InputAB"],
+      "values": [
+        {"name":"Cable A"},
+        {"name":"Cable B"},
+        {"name":"Ch3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Ant/Cable","select":[{"commands":["InputAB"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext 2"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

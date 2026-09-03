@@ -2,6 +2,64 @@
   "codeset": "codesets/a0/a092fcb4a49c6c11.json",
   "deviceType": 22,
   "globalDeviceId": 279044,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Coaxial Digital"}],"name":"Coaxial Digital"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Optical Digital 1"}],"name":"Optical Digital 1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Optical Digital 2"}],"name":"Optical Digital 2"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Analog Audio 1"}],"name":"Analog Audio 1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Analog Audio 2"}],"name":"Analog Audio 2"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"HDMI ARC"}],"name":"HDMI ARC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "BDS 380"
+  "model": "BDS 380",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Coaxial Digital"},
+        {"name":"Optical Digital 1"},
+        {"name":"Optical Digital 2"},
+        {"name":"Analog Audio 1"},
+        {"name":"Analog Audio 2"},
+        {"name":"HDMI ARC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,57 @@
   "codeset": "codesets/11/11b2b8972d8a602e.json",
   "deviceType": 1,
   "globalDeviceId": 202730,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"ATV/DTV"},{"set":"ATV/DTVInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"ATV/DTV"},{"set":"ATV/DTVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Ext1"}],"name":"Ext1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Ext2"}],"name":"Ext2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Ext2S"}],"name":"Ext2S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sanyo",
-  "model": "CE32LD81-B"
+  "model": "CE32LD81-B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ATV/DTVInput": {
+      "next": ["ATV/DTV"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    },
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"},
+        {"name":"Ext1"},
+        {"name":"Ext2"},
+        {"name":"Ext2S"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ATV/DTV","select":[{"commands":["ATV/DTV"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

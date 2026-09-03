@@ -2,6 +2,49 @@
   "codeset": "codesets/a4/a49b365499f32328.json",
   "deviceType": 19,
   "globalDeviceId": 120001,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Digital 1"}],"name":"Digital 1"},
+      {"commands":[{"set":"InputType","to":"Digital 2"}],"name":"Digital 2"},
+      {"commands":[{"set":"InputType","to":"Digital 3"}],"name":"Digital 3"},
+      {"commands":[{"set":"InputType","to":"LINE"},{"set":"LINEInput","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"LINE"},{"set":"LINEInput","to":"Line 2"}],"name":"Line 2"},
+      {"commands":[{"set":"InputType","to":"LINE"},{"set":"LINEInput","to":"Line 3"}],"name":"Line 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "SD-SP100"
+  "model": "SD-SP100",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Digital 1","select":[{"commands":["InputDigital1"],"setType":2}]},
+        {"name":"Digital 2","select":[{"commands":["InputDigital2"],"setType":2}]},
+        {"name":"Digital 3","select":[{"commands":["InputDigital3"],"setType":2}]},
+        {"name":"LINE","select":[{"commands":["InputLine"],"setType":2}]}
+      ]
+    },
+    "LINEInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"Line 1"},
+        {"name":"Line 2"},
+        {"name":"Line 3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

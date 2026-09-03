@@ -2,6 +2,60 @@
   "codeset": "codesets/f1/f122f4a610da99d3.json",
   "deviceType": 21,
   "globalDeviceId": 276610,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Aux/Digital"},{"set":"Aux/DigitalInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux/Digital"},{"set":"Aux/DigitalInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"NET"},{"set":"NETInput","to":"Server"}],"name":"Server"},
+      {"commands":[{"set":"InputType","to":"NET"},{"set":"NETInput","to":"Net Radio"}],"name":"Net Radio"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "CD-NT670"
+  "model": "CD-NT670",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/DigitalInput": {
+      "next": ["InputAux/Digital"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Aux/Digital","select":[{"commands":["InputAux/Digital"],"setType":2}]},
+        {"name":"NET","select":[{"commands":["InputNet"],"setType":2}]}
+      ]
+    },
+    "NETInput": {
+      "next": ["InputNet"],
+      "values": [
+        {"name":"Server"},
+        {"name":"Net Radio"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

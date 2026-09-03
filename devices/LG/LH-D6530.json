@@ -2,6 +2,50 @@
   "codeset": "codesets/15/15e1a8d203963edc.json",
   "deviceType": 22,
   "globalDeviceId": 12974,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Band"}],"name":"Band"},
+      {"commands":[{"set":"InputType","to":"Cd/Dvd"}],"name":"Cd/Dvd"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Video1Opt"}],"name":"Video1Opt"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Video2Opt"}],"name":"Video2Opt"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LH-D6530"
+  "model": "LH-D6530",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video1Opt"},
+        {"name":"Video2"},
+        {"name":"Video2Opt"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Band","select":[{"commands":["InputBand"],"setType":2}]},
+        {"name":"Cd/Dvd","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

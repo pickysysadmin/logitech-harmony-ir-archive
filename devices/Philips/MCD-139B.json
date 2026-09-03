@@ -2,6 +2,47 @@
   "codeset": "codesets/1b/1b2c2ee2f729a0ac.json",
   "deviceType": 22,
   "globalDeviceId": 124754,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Aux/Tv"},{"set":"Aux/TvInput","to":"Aux1"}],"name":"Aux1"},
+      {"commands":[{"set":"InputType","to":"Aux/Tv"},{"set":"Aux/TvInput","to":"Aux2"}],"name":"Aux2"},
+      {"commands":[{"set":"InputType","to":"Aux/Tv"},{"set":"Aux/TvInput","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "MCD-139B"
+  "model": "MCD-139B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/TvInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"},
+        {"name":"TV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Aux/Tv","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

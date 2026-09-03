@@ -2,6 +2,56 @@
   "codeset": "codesets/24/247db91956f204ea.json",
   "deviceType": 22,
   "globalDeviceId": 140869,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Video/TvSound"},{"set":"Video/TvSoundInput","to":"VCR"}],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Video/TvSound"},{"set":"Video/TvSoundInput","to":"STB"}],"name":"STB","ports":["Composite","S-Video","Optical"]},
+      {"commands":[{"set":"InputType","to":"Video/TvSound"},{"set":"Video/TvSoundInput","to":"TvSound"}],"name":"TvSound","ports":["Scart"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "TH-A75R"
+  "model": "TH-A75R",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Video/TvSound","select":[{"commands":["InputVideo/TvSound"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "Video/TvSoundInput": {
+      "next": ["InputVideo/TvSound"],
+      "values": [
+        {"name":"VCR"},
+        {"name":"STB"},
+        {"name":"TvSound"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/45/45ab369da476a60a.json",
   "deviceType": 7,
   "globalDeviceId": 118632,
+  "inputs": {
+    "list": [
+      {"name":"HDMI"},
+      {"name":"S-VIDEO"},
+      {"name":"RCA VIDEO"}
+    ],
+    "next": ["Setup"],
+    "type": 2
+  },
   "manufacturer": "Boxlight",
-  "model": "Raven"
+  "model": "Raven",
+  "power": {
+    "off": [
+      {"delayMs":500},
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 38000,
+    "pressMinRepeats": 1
+  }
 }

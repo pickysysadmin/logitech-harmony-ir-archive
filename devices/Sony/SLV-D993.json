@@ -1,7 +1,51 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/f0/f08fb91b53ed5967.json",
   "deviceType": 25,
   "globalDeviceId": 105709,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"AntennaCable"}],"name":"DVD-AntennaCable"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"L1"}],"name":"DVD-L1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"L2"}],"name":"DVD-L2"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"AntennaCable"}],"name":"VCR-AntennaCable"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"L1"}],"name":"VCR-L1"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"L2"}],"name":"VCR-L2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "SLV-D993"
+  "model": "SLV-D993",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVCR"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"AntennaCable"},
+        {"name":"L1"},
+        {"name":"L2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

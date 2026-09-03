@@ -2,6 +2,63 @@
   "codeset": "codesets/42/4283ed095c3fdbf8.json",
   "deviceType": 5,
   "globalDeviceId": 73550,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tape Deck"}],"name":"Tape Deck"},
+      {"commands":[{"set":"InputType","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Video1"},{"set":"Video1Input","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video1"},{"set":"Video1Input","to":"Ch5.1"}],"name":"Ch5.1"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Aiwa",
-  "model": "AV-D30"
+  "model": "AV-D30",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tape Deck","select":[{"commands":["InputTape Deck"],"setType":2}]},
+        {"name":"Video3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Phono","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputVideo 1/DAT"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Video1","select":[{"commands":["InputVideo2/Aux"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "Video1Input": {
+      "next": ["InputVideo2/Aux"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Ch5.1"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4500,
+    "pressMinRepeats": 3
+  }
 }

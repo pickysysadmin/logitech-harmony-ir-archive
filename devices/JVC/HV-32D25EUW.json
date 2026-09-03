@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "greaterHundred": ["GreaterHundred"]
+  },
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 157617,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["Input 4"],"name":"Video 4"},
+      {"commands":["Input 4",{"delayMs":3000},"InputToggle"],"name":"Video 5"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "HV-32D25EUW"
+  "model": "HV-32D25EUW",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 700,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 9000,
+    "pressMinRepeats": 3
+  }
 }

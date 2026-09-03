@@ -2,6 +2,61 @@
   "codeset": "codesets/54/547fbd0664af19cc.json",
   "deviceType": 19,
   "globalDeviceId": 125728,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Aux"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"A/V"},{"set":"A/VInput","to":"6Ch"}],"name":"6-CH"},
+      {"commands":[{"set":"InputType","to":"A/V"},{"set":"A/VInput","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"A/V"},{"set":"A/VInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"A/V"},{"set":"A/VInput","to":"DVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Atoll",
-  "model": "AV-500"
+  "model": "AV-500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "A/VInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"6Ch"},
+        {"name":"VCR"},
+        {"name":"AV"},
+        {"name":"DVD"}
+      ]
+    },
+    "AudioInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Tape"},
+        {"name":"Tuner"},
+        {"name":"CD"}
+      ]
+    },
+    "InputType": {
+      "next": ["AvToggle"],
+      "values": [
+        {"name":"Audio"},
+        {"name":"A/V"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

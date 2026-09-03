@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 45387,
+  "inputs": {
+    "list": [
+      {"commands":["6"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"Satellite"},
+      {"commands":["InputRgb1"],"name":"RGB"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo2","InputNext"],"name":"YC2"},
+      {"commands":["InputVideo3"],"name":"AV3"},
+      {"commands":["InputVideo3","InputNext"],"name":"YC3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KVX294"
+  "model": "KVX294",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

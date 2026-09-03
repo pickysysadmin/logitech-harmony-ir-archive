@@ -2,6 +2,30 @@
   "codeset": "codesets/08/08ff3f3ac9bbfd91.json",
   "deviceType": 7,
   "globalDeviceId": 213216,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputSVideo"],"name":"S-Video"},
+      {"commands":["InputVga"],"name":"VGA"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "DS316L"
+  "model": "DS316L",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

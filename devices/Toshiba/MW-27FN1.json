@@ -2,6 +2,45 @@
   "codeset": "codesets/e2/e2dcd59536761dd8.json",
   "deviceType": 38,
   "globalDeviceId": 47703,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TvVCR"},{"set":"TvVCRInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"TvVCR"},{"set":"TvVCRInput","to":"line 1"}],"name":"line 1"},
+      {"commands":[{"set":"InputType","to":"TvVCR"},{"set":"TvVCRInput","to":"line 2"}],"name":"line 2"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "MW-27FN1"
+  "model": "MW-27FN1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TvVCR","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]}
+      ]
+    },
+    "TvVCRInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"line 1"},
+        {"name":"line 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

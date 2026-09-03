@@ -2,6 +2,36 @@
   "codeset": "codesets/71/71d9bc7453fb4891.json",
   "deviceType": 5,
   "globalDeviceId": 113969,
+  "inputs": {
+    "list": [
+      {"commands":["InputPhono"],"name":"PHONO","ports":["Composite"]},
+      {"commands":["InputCD"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd/Vdp"],"name":"DVD/VDP","ports":["Composite","S-Video"]},
+      {"commands":["InputTv/Dbs"],"name":"TV/DBS","ports":["Composite","S-Video"]},
+      {"commands":["InputVcr1"],"name":"VCR1","ports":["Composite","S-Video"]},
+      {"commands":["InputVcr2"],"name":"VCR2","ports":["Composite","S-Video"]},
+      {"commands":["InputV-Aux"],"name":"V.AUX","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputCdr/Tape"],"name":"CDR/TAPE","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-1803"
+  "model": "AVR-1803",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

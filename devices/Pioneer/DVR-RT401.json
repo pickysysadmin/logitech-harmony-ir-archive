@@ -1,7 +1,68 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/39/391fe45ccb6410f2.json",
   "deviceType": 25,
   "globalDeviceId": 47511,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"TVICONmode","to":"ON"},{"set":"InputList","to":"TUNER"},{"set":"VcrDvdMode","to":"DVD"}],"name":"DVD TUNER TV ICON"},
+      {"commands":[{"set":"TVICONmode","to":"ON"},{"set":"InputList","to":"Line 1"},{"set":"VcrDvdMode","to":"DVD"}],"name":"DVD LINE 1 TV ICON"},
+      {"commands":[{"set":"TVICONmode","to":"ON"},{"set":"InputList","to":"Line 2"},{"set":"VcrDvdMode","to":"DVD"}],"name":"DVD LINE 2 TV ICON"},
+      {"commands":[{"set":"TVICONmode","to":"OFF"},{"set":"InputList","to":"TUNER"},{"set":"VcrDvdMode","to":"DVD"}],"name":"DVD TUNER NO TV ICON"},
+      {"commands":[{"set":"TVICONmode","to":"OFF"},{"set":"InputList","to":"Line 1"},{"set":"VcrDvdMode","to":"DVD"}],"name":"DVD LINE 1 NO TV ICON"},
+      {"commands":[{"set":"TVICONmode","to":"OFF"},{"set":"InputList","to":"Line 2"},{"set":"VcrDvdMode","to":"DVD"}],"name":"DVD LINE 2 NO TV ICON"},
+      {"commands":[{"set":"TVICONmode","to":"ON"},{"set":"InputList","to":"TUNER"},{"set":"VcrDvdMode","to":"VCR"}],"name":"VCR TUNER TV ICON"},
+      {"commands":[{"set":"TVICONmode","to":"ON"},{"set":"InputList","to":"Line 1"},{"set":"VcrDvdMode","to":"VCR"}],"name":"VCR LINE 1 TV ICON"},
+      {"commands":[{"set":"TVICONmode","to":"ON"},{"set":"InputList","to":"Line 2"},{"set":"VcrDvdMode","to":"VCR"}],"name":"VCR LINE 2 TV ICON"},
+      {"commands":[{"set":"TVICONmode","to":"OFF"},{"set":"InputList","to":"TUNER"},{"set":"VcrDvdMode","to":"VCR"}],"name":"VCR TUNER NO TV ICON"},
+      {"commands":[{"set":"TVICONmode","to":"OFF"},{"set":"InputList","to":"Line 1"},{"set":"VcrDvdMode","to":"VCR"}],"name":"VCR LINE 1 NO TV ICON"},
+      {"commands":[{"set":"TVICONmode","to":"OFF"},{"set":"InputList","to":"Line 2"},{"set":"VcrDvdMode","to":"VCR"}],"name":"VCR LINE 2 NO TV ICON"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "DVR-RT401"
+  "model": "DVR-RT401",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"ON"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputList": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TUNER"},
+        {"name":"Line 1"},
+        {"name":"Line 2"}
+      ]
+    },
+    "TVICONmode": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF"}
+      ]
+    },
+    "VcrDvdMode": {
+      "next": ["DVD/VCR"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"VCR"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

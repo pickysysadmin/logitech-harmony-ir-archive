@@ -2,6 +2,57 @@
   "codeset": "codesets/8b/8bf0645884491fc5.json",
   "deviceType": 5,
   "globalDeviceId": 180797,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["HDMI","Component","Composite","Optical"]},
+      {"commands":[{"set":"InputType","to":"Sat"}],"name":"Sat","ports":["HDMI","Component","Composite","Optical"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["HDMI","Composite","Optical"]},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR","ports":["HDMI","Composite"]},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"7.1 MultiCh"}],"name":"7.1 MultiCh","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"iPod Audio"}],"name":"iPod Audio","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"iPod Video"}],"name":"iPod Video","ports":["Dock"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-AS730S"
+  "model": "HT-AS730S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"FM","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd/Bd"],"setType":2}]},
+        {"name":"Sat","select":[{"commands":["InputSat"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVCR"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"7.1 MultiCh","select":[{"commands":["Input7.1Ch"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputIpod"],"setType":2}]}
+      ]
+    },
+    "iPodInput": {
+      "next": ["InputIpod"],
+      "values": [
+        {"name":"iPod Audio"},
+        {"name":"iPod Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

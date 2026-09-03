@@ -2,6 +2,39 @@
   "codeset": "codesets/d6/d644c141146a24f3.json",
   "deviceType": 5,
   "globalDeviceId": 206812,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"Bd/Dvd"},
+      {"commands":["InputVcr/Dvr"],"name":"Vcr/Dvr"},
+      {"commands":["InputCbl/Sat"],"name":"Cbl/Sat"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputAux"],"name":"AUX"},
+      {"commands":["InputTv/Cd"],"name":"Tv/Cd"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputPort"],"name":"Port"},
+      {"commands":["InputNet/Usb"],"name":"Net/Usb"},
+      {"commands":["InputGame"],"name":"Game"},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM"},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-NR1008"
+  "model": "TX-NR1008",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

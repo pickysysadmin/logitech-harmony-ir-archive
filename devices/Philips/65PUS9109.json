@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/d1/d11624ac33803c8d.json",
   "deviceType": 1,
   "globalDeviceId": 266008,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","Exit",{"command":"Source","durationMs":1000},{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","OK"],"name":"Network"},
+      {"commands":["Exit","Exit",{"command":"Source","durationMs":1000},{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","DirectionRight","DirectionRight","OK"],"name":"Satellite"},
+      {"commands":["InputAntenna"],"name":"Antenna"},
+      {"commands":["Exit","Exit",{"command":"Source","durationMs":1000},{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","DirectionRight","DirectionRight","DirectionRight","DirectionRight","OK"],"name":"USB"},
+      {"commands":["Exit","Exit",{"command":"Source","durationMs":1000},{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","DirectionDown","OK"],"name":"Recordings"},
+      {"commands":["Exit","Exit","InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["Exit","Exit","InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["Exit","Exit","InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["Exit","Exit","InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["Exit","Exit","InputYPbPr"],"name":"YPbPr"},
+      {"commands":["Exit","Exit","InputScart"],"name":"Scart"},
+      {"commands":["SmartTv"],"name":"Smart TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "65PUS9109"
+  "model": "65PUS9109",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 14000,
+    "pressMinRepeats": 3
+  }
 }

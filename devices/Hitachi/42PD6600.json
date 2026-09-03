@@ -2,6 +2,40 @@
   "codeset": "codesets/24/24028fdd7b09ce4f.json",
   "deviceType": 1,
   "globalDeviceId": 177193,
+  "inputs": {
+    "list": [
+      {"name":"TV","ports":["Antenna"]},
+      {"name":"Ext 1","ports":["Scart"]},
+      {"name":"Ext 2","ports":["Scart"]},
+      {"name":"Ext 3","ports":["Scart"]},
+      {"name":"Ext 3S","ports":["Scart"]},
+      {"name":"Ext 4","ports":["Component"]},
+      {"name":"Ext 5","ports":["Composite"]},
+      {"name":"Ext 5S","ports":["Scart"]},
+      {"name":"Ext 6","ports":["HDMI"]},
+      {"name":"PC","ports":["PC"]}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "42PD6600"
+  "model": "42PD6600",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

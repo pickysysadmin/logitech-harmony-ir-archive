@@ -2,6 +2,40 @@
   "codeset": "codesets/d7/d79c55eb8fbe4b29.json",
   "deviceType": 34,
   "globalDeviceId": 143842,
+  "inputs": {
+    "list": [
+      {"commands":["HDDList"],"name":"HDDList"},
+      {"commands":["LiveTV"],"name":"LiveTV"},
+      {"commands":["CAM"],"name":"CAM"},
+      {"commands":["USB"],"name":"USB"},
+      {"commands":["Disc"],"name":"Disc"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "DVDR3577H/31"
+  "model": "DVDR3577H/31",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["ChannelDown"],
+      "values": [
+        {"name":"EXT 1"},
+        {"name":"EXT 2"},
+        {"name":"CAM 1"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

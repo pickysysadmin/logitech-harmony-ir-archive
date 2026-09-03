@@ -2,6 +2,44 @@
   "codeset": "codesets/65/652a0b7b021f2b5d.json",
   "deviceType": 1,
   "globalDeviceId": 58163,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"AV2"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "Telefunken",
-  "model": "CINEVISION 28 PLUS"
+  "model": "CINEVISION 28 PLUS",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["0"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["9"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 0,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,90 @@
   "codeset": "codesets/41/41c83cf4776a688b.json",
   "deviceType": 1,
   "globalDeviceId": 176078,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"HDMI1"}],"name":"HDMI1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"HDMI2"}],"name":"HDMI2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"HDMI3"}],"name":"HDMI3","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"HDMI4"}],"name":"HDMI4","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"HDMI5"}],"name":"HDMI5","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DTV"}],"name":"DTV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Comp1"}],"name":"Comp1","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Comp2"}],"name":"Comp2","ports":["Component"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "VF550XVT1A"
+  "model": "VF550XVT1A",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"}
+      ]
+    },
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "HdmiInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"HDMI4"},
+        {"name":"HDMI5"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]}
+      ]
+    },
+    "Menu": {
+      "values": [
+        {"name":"ComponentMenu","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"HdmiMenu","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"TVMenu","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AVMenu","select":[{"commands":["InputAv"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 1
+  }
 }

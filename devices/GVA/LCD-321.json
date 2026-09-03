@@ -2,6 +2,70 @@
   "codeset": "codesets/9a/9a9a6ae3d0521775.json",
   "deviceType": 1,
   "globalDeviceId": 168743,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"TV"},{"set":"S-VideoInput","to":"TV"},{"set":"YPbPrInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"S-Video"},{"set":"S-VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"VGA"}],"name":"VGA"}
+    ],
+    "type": 5
+  },
   "manufacturer": "GVA",
-  "model": "LCD-321"
+  "model": "LCD-321",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo",{"set":"VideoInput","to":"Video"}],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video",{"set":"S-VideoInput","to":"S-Video"}],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputYPbPr",{"set":"YPbPrInput","to":"YPbPr"}],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"VGA"}
+      ]
+    },
+    "S-VideoInput": {
+      "next": ["InputS-Video"],
+      "values": [
+        {"name":"S-Video"},
+        {"name":"TV"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"TV"}
+      ]
+    },
+    "YPbPrInput": {
+      "next": ["InputYPbPr"],
+      "values": [
+        {"name":"YPbPr"},
+        {"name":"TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

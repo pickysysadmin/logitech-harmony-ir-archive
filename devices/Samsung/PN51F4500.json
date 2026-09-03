@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/4e/4e9328367f67484e.json",
   "deviceType": 1,
   "globalDeviceId": 248942,
+  "inputs": {
+    "list": [
+      {"commands":["ExitApp","Exit",{"delayMs":1500},"InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["ExitApp","Exit",{"delayMs":1500},"InputAv"],"name":"AV","ports":["Composite"]},
+      {"commands":["ExitApp","Exit",{"delayMs":1500},"InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["ExitApp","Exit",{"delayMs":1500},"InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["ExitApp","Exit",{"delayMs":1500},"InputHdmi2"],"name":"HDMI 2/DVI","ports":["HDMI"]},
+      {"commands":["SmartHub"],"name":"Smart Hub","ports":["Streaming"]},
+      {"commands":["Ambient"],"name":"Ambient"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "PN51F4500"
+  "model": "PN51F4500",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

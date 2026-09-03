@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2b/2b89deccf1e754f7.json",
   "deviceType": 1,
   "globalDeviceId": 22992,
+  "inputs": {
+    "list": [
+      {"name":"AV 1 (YCrCb)"},
+      {"name":"AV2 (SC - Video)"},
+      {"name":"AV3 (SC - SVideo)"},
+      {"name":"AV4 (SC -  YCrCb)"},
+      {"name":"AV5 (RGB)"},
+      {"name":"PC"},
+      {"name":"Antena"},
+      {"name":"Video"},
+      {"name":"SVideo"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Denver",
-  "model": "DFT-2011"
+  "model": "DFT-2011",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV 1 (YCrCb)"}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

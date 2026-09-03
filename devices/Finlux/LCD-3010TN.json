@@ -2,6 +2,41 @@
   "codeset": "codesets/05/05cc366f8bf52393.json",
   "deviceType": 1,
   "globalDeviceId": 114077,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"SCART1(FULL)"},
+      {"name":"SCART2(HALF)"},
+      {"name":"S-VIDEO 1"},
+      {"name":"COMPONENT 1"},
+      {"name":"COMPONENT2"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Finlux",
-  "model": "LCD-3010TN"
+  "model": "LCD-3010TN",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["TextOff"],"setType":2}]},
+        {"name":"On","select":[{"commands":["TextOn"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

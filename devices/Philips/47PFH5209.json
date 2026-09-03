@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/f7/f7a71826dccc29cd.json",
   "deviceType": 1,
   "globalDeviceId": 334384,
+  "inputs": {
+    "list": [
+      {"commands":["Source",{"command":"DirectionLeft","durationMs":2000},{"delayMs":200},"OK"],"name":"TV","ports":["Antenna"]},
+      {"commands":["Source",{"command":"DirectionLeft","durationMs":2000},{"delayMs":200},"DirectionRight",{"delayMs":200},"OK"],"name":"Scart","ports":["Scart"]},
+      {"commands":["Source",{"command":"DirectionRight","durationMs":2000},{"delayMs":200},"DirectionLeft","DirectionLeft",{"delayMs":200},"OK"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["Source",{"command":"DirectionRight","durationMs":2000},{"delayMs":200},"DirectionLeft",{"delayMs":200},"OK"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["Source",{"command":"DirectionRight","durationMs":2000},{"delayMs":200},"OK"],"name":"USB","ports":["USB"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "47PFH5209"
+  "model": "47PFH5209",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 24000,
+    "pressMinRepeats": 1
+  }
 }

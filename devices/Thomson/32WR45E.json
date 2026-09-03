@@ -2,6 +2,50 @@
   "codeset": "codesets/75/75271942fd2b70e2.json",
   "deviceType": 1,
   "globalDeviceId": 181534,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Video3"}],"name":"Video3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Thomson",
-  "model": "32WR45E"
+  "model": "32WR45E",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"InputType","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["1"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/cc/cc0fffd16849ee28.json",
   "deviceType": 1,
   "globalDeviceId": 148472,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TV"},
+      {"commands":["InputAV1"],"name":"AV1"},
+      {"commands":["InputAV2"],"name":"AV2"},
+      {"commands":["InputAV3"],"name":"AV3"},
+      {"commands":["InputComponent1"],"name":"COMPONENT 1"},
+      {"commands":["InputComponent2"],"name":"COMPONENT 2"},
+      {"commands":["InputRGB"],"name":"RGB"},
+      {"commands":["InputDVI"],"name":"DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Gateway",
-  "model": "GTW-P42M403"
+  "model": "GTW-P42M403",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"COMPONENT 1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

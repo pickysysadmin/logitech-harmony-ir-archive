@@ -2,6 +2,50 @@
   "codeset": "codesets/8d/8ded0f0eaab3160b.json",
   "deviceType": 22,
   "globalDeviceId": 150466,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"MP3LineIn"}],"name":"MP3LineIn"},
+      {"commands":[{"set":"InputType","to":"Aux/Di"},{"set":"Aux/DiInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux/Di"},{"set":"Aux/DiInput","to":"DI"}],"name":"DI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS-3357/05"
+  "model": "HTS-3357/05",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/DiInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"DI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"MP3LineIn","select":[{"commands":["InputMP3LineIn"],"setType":2}]},
+        {"name":"Aux/Di","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

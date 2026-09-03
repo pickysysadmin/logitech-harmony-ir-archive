@@ -2,6 +2,31 @@
   "codeset": "codesets/16/16b8143fe8ec4511.json",
   "deviceType": 1,
   "globalDeviceId": 180330,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"Tuner"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "SEG",
-  "model": "CT-3250"
+  "model": "CT-3250",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

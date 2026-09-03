@@ -2,6 +2,33 @@
   "codeset": "codesets/4c/4cd1a567b45aa3c7.json",
   "deviceType": 22,
   "globalDeviceId": 141644,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"Tv"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVCR"],"name":"Vcr"},
+      {"commands":["InputCbl/Sat"],"name":"Cbl/Sat"},
+      {"commands":["InputDVD"],"name":"Dvd"}
+    ],
+    "type": 1
+  },
   "manufacturer": "KEF",
-  "model": "KiT-100"
+  "model": "KiT-100",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Dvd"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 400,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,31 @@
   "codeset": "codesets/e0/e01d09878dada49c.json",
   "deviceType": 22,
   "globalDeviceId": 218280,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd/Cd"],"name":"DVD/CD"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputUsb"],"name":"USB"},
+      {"commands":["InputDvd/Cd",{"delayMs":1000},"InputLine"],"name":"Line 1"},
+      {"commands":["InputDvd/Cd",{"delayMs":1000},"InputLine","InputLine"],"name":"Line 2"},
+      {"commands":["InputDvd/Cd",{"delayMs":1000},"InputLine","InputLine","InputLine"],"name":"Line 3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Pioneer",
-  "model": "XV-DV30FS"
+  "model": "XV-DV30FS",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,67 @@
   "codeset": "codesets/34/34bc1da920df0ba8.json",
   "deviceType": 37,
   "globalDeviceId": 13968,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VideoMode"},{"set":"VideoInput","to":"VideoModeTv"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"VideoMode"},{"set":"VideoInput","to":"VideoAv1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"VideoMode"},{"set":"VideoInput","to":"VideoAv2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"VideoMode"},{"set":"VideoInput","to":"VideoFront"}],"name":"Front"},
+      {"commands":[{"set":"InputType","to":"DvdMode"},{"set":"DvdInput","to":"Dvd"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"TvMode"},{"set":"TvInput","to":"Cable"},"Menu","Menu"],"name":"TvCable"},
+      {"commands":[{"set":"InputType","to":"TvMode"},{"set":"TvInput","to":"Auto"},"Menu","Menu"],"name":"TvAuto"},
+      {"commands":[{"set":"InputType","to":"TvMode"},{"set":"TvInput","to":"Antenna"},"Menu","Menu"],"name":"TvAntenna"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "20DV693R"
+  "model": "20DV693R",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DvdInput": {
+      "next": ["Tv/Dvd"],
+      "values": [
+        {"name":"Dvd"},
+        {"name":"DvdModeTv"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VideoMode","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"TvMode","select":[{"commands":["Menu","DirectionDown","DirectionDown","DirectionDown","DirectionRight","DirectionDown","DirectionDown","DirectionRight"],"setType":1}]},
+        {"name":"DvdMode","select":[{"commands":["Tv/Dvd"],"setType":2}]}
+      ]
+    },
+    "TvInput": {
+      "next": ["DirectionRight"],
+      "valueDelay": 1000,
+      "values": [
+        {"name":"Cable"},
+        {"name":"Auto"},
+        {"name":"Antenna"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VideoModeTv"},
+        {"name":"VideoAv1"},
+        {"name":"VideoAv2"},
+        {"name":"VideoFront"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,57 @@
   "codeset": "codesets/15/153b319130f0d331.json",
   "deviceType": 21,
   "globalDeviceId": 256633,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Internet Radio"}],"name":"Internet Radio","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Online Music"}],"name":"Online Music","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Music Server"}],"name":"Music Server","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Digital In"}],"name":"Digital In","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Front Usb"}],"name":"Front Usb","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Rear Usb"}],"name":"Rear Usb","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"AnalogIn"},{"set":"AnalogInInput","to":"Analog 1"}],"name":"Analog 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AnalogIn"},{"set":"AnalogInInput","to":"Analog 2"}],"name":"Analog 2","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Marantz",
-  "model": "M-CR610"
+  "model": "M-CR610",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AnalogInInput": {
+      "next": ["InputAnalogIn"],
+      "values": [
+        {"name":"Analog 1"},
+        {"name":"Analog 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Internet Radio","select":[{"commands":["InputInternetRadio"],"setType":2}]},
+        {"name":"Online Music","select":[{"commands":["InputOnlineMusic"],"setType":2}]},
+        {"name":"Music Server","select":[{"commands":["InputMusicServer"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Digital In","select":[{"commands":["InputDigitalIn"],"setType":2}]},
+        {"name":"Front Usb","select":[{"commands":["InputFrontUsb"],"setType":2}]},
+        {"name":"Rear Usb","select":[{"commands":["InputRearUsb"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Analog In","select":[{"commands":["InputAnalogIn"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

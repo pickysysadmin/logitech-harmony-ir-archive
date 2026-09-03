@@ -2,6 +2,35 @@
   "codeset": "codesets/25/256c4ff162379578.json",
   "deviceType": 7,
   "globalDeviceId": 131217,
+  "inputs": {
+    "list": [
+      {"name":"Analog RGB"},
+      {"name":"Analog YPbPr"},
+      {"name":"S-Video"},
+      {"name":"Composite"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "BenQ",
-  "model": "PB-2135"
+  "model": "PB-2135",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

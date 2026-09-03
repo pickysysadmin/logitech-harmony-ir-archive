@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/9a/9a89d3336760191a.json",
   "deviceType": 1,
   "globalDeviceId": 234900,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputTv"],"name":"TV"},
+      {"commands":["InputExt","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputExt"],"name":"EXT"},
+      {"commands":["InputAv","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputAv"],"name":"AV"},
+      {"commands":["InputComponent","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputComponent"],"name":"Component"},
+      {"commands":["InputHdmi1","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputHdmi1"],"name":"HDMI 1/DVI"},
+      {"commands":["InputUsb","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputUsb"],"name":"USB"},
+      {"commands":["InputPc","Exit","Select",{"delayMs":500},"Exit",{"delayMs":500},"Exit","InputPc"],"name":"PC"},
+      {"commands":["Exit","SmartHub"],"name":"Smart Hub"},
+      {"commands":["Ambient"],"name":"Ambient"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UE22ES5410"
+  "model": "UE22ES5410",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 39446,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenna"],"name":"Tuner"},
+      {"commands":["InputVideo"],"name":"Video 1"},
+      {"commands":["InputVideo","InputNext"],"name":"Video 2"},
+      {"commands":["InputVideo","InputNext","InputNext"],"name":"Video 3"},
+      {"commands":["InputSVideo"],"name":"S-Video"},
+      {"commands":["InputComponent 1"],"name":"Component 1"},
+      {"commands":["InputComponent 2"],"name":"Component 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "TX-P3275"
+  "model": "TX-P3275",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent 1"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"},
+        {"name":"CompAnt"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["TvVideo",{"set":"VideoInput","to":"VideoSVideo"}],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent 1",{"set":"ComponentInput","to":"Component1"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"VideoSVideo"},
+        {"name":"VideoAntenna"},
+        {"name":"VideoAv1"},
+        {"name":"VideoAv2"},
+        {"name":"VideoAv3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

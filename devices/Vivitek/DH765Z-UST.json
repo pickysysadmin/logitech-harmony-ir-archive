@@ -2,6 +2,42 @@
   "codeset": "codesets/f1/f17cbf5d1a307e2e.json",
   "deviceType": 7,
   "globalDeviceId": 496111,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"name":"VGA"},
+      {"name":"YPbPr"},
+      {"name":"Dongle"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"Composite"},
+      {"name":"S-Video"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "Vivitek",
-  "model": "DH765Z-UST"
+  "model": "DH765Z-UST",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

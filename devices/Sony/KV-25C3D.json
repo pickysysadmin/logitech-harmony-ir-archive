@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5e/5ecbac3bcb1a118e.json",
   "deviceType": 1,
   "globalDeviceId": 116711,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"AV 1"},
+      {"commands":["InputPC"],"name":"RGB"},
+      {"commands":["InputVideo2"],"name":"AV 2"},
+      {"commands":["InputVideo2","InputNext"],"name":"YC 2"},
+      {"commands":["InputVideo3"],"name":"AV 3"},
+      {"commands":["InputVideo3","InputNext"],"name":"YC 3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KV-25C3D"
+  "model": "KV-25C3D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

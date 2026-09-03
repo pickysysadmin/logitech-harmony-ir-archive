@@ -2,6 +2,53 @@
   "codeset": "codesets/e0/e014f1cd8fa7423e.json",
   "deviceType": 1,
   "globalDeviceId": 200838,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Haier",
-  "model": "HL22XSL2"
+  "model": "HL22XSL2",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputNextInput": {
+      "finish": ["Select"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Composite"},
+        {"name":"Component"},
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

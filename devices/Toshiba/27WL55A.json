@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/bf/bfea79650737ced0.json",
   "deviceType": 1,
   "globalDeviceId": 94337,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"commands":["InputNext"],"name":"Antenna/Cable"},
+      {"commands":["TvVideo"],"name":"Video 1"},
+      {"commands":["TvVideo"],"name":"Video 2"},
+      {"commands":["TvVideo"],"name":"Video 3"},
+      {"commands":["Display"],"name":"Color Stream"}
+    ],
+    "start": ["InputNext"],
+    "type": 3
+  },
   "manufacturer": "Toshiba",
-  "model": "27WL55A"
+  "model": "27WL55A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

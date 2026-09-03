@@ -2,6 +2,35 @@
   "codeset": "codesets/0b/0bf880e0d6fd898b.json",
   "deviceType": 1,
   "globalDeviceId": 177411,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"Tv"},
+      {"commands":["InputHdmi1"],"name":"Hdmi 1"},
+      {"commands":["InputHdmi2"],"name":"Hdmi 2"},
+      {"commands":["InputHdmiSide"],"name":"HdmiSide"},
+      {"commands":["InputExt2",{"delayMs":2000},"Source","DirectionUp","OK"],"name":"Ext 1"},
+      {"commands":["InputExt2"],"name":"Ext 2"},
+      {"commands":["InputExt3"],"name":"Ext 3"},
+      {"commands":["InputExt3",{"delayMs":2000},"Source",{"delayMs":500},"DirectionDown","OK"],"name":"Vga"},
+      {"commands":["InputExt3",{"delayMs":2000},"Source",{"delayMs":500},"DirectionDown","DirectionDown","OK"],"name":"Vga 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "47PFL5604H/12"
+  "model": "47PFL5604H/12",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 3
+  }
 }

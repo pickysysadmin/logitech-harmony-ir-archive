@@ -2,6 +2,35 @@
   "codeset": "codesets/5a/5ab83cd50abaee1e.json",
   "deviceType": 1,
   "globalDeviceId": 85095,
+  "inputs": {
+    "list": [
+      {"name":"COMPONENT1"}
+    ],
+    "next": ["InputNext"],
+    "type": 6
+  },
   "manufacturer": "Samsung",
-  "model": "LA-26R51"
+  "model": "LA-26R51",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["TV"],"setType":2}]},
+        {"name":"On","select":[{"commands":["TeletextOn"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 3
+  }
 }

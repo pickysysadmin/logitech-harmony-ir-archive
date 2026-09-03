@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/01/01c8d15763045db3.json",
   "deviceType": 1,
   "globalDeviceId": 229439,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntA"],"name":"Tuner"},
+      {"commands":["InputNext"],"name":"AV1"},
+      {"commands":["InputComp1"],"name":"Component1"},
+      {"commands":["InputComp2"],"name":"component2"},
+      {"commands":["InputVideo4"],"name":"AV4"},
+      {"commands":["InputNext"],"name":"hdmi 1"},
+      {"commands":["InputNext"],"name":"hdmi 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Mitsubishi",
-  "model": "LT-13731"
+  "model": "LT-13731",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

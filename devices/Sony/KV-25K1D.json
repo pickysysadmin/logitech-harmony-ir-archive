@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/1f/1f32a3e87faadef5.json",
   "deviceType": 1,
   "globalDeviceId": 159174,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"DVD"},
+      {"name":"VIDEO"},
+      {"name":"AV2"},
+      {"name":"YC2"},
+      {"name":"AV3"},
+      {"name":"YC3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KV-25K1D"
+  "model": "KV-25K1D",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

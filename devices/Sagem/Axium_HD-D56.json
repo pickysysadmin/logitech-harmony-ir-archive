@@ -2,6 +2,68 @@
   "codeset": "codesets/ed/edf47df1ee969ce8.json",
   "deviceType": 1,
   "globalDeviceId": 132044,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"TVInput","to":"ON"},{"set":"InputInput","to":"SCART1"},{"set":"Menu","to":"OFF"}],"name":"TV"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"TVInput","to":"OFF"},{"set":"InputInput","to":"SCART1"},{"set":"Menu","to":"OFF"}],"name":"SCART1"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"TVInput","to":"OFF"},{"set":"InputInput","to":"SCART2"},{"set":"Menu","to":"OFF"}],"name":"SCART2"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"TVInput","to":"OFF"},{"set":"InputInput","to":"SCART3"},{"set":"Menu","to":"OFF"}],"name":"SCART3"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"TVInput","to":"OFF"},{"set":"InputInput","to":"AV4"},{"set":"Menu","to":"OFF"}],"name":"AV4"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"TVInput","to":"OFF"},{"set":"InputInput","to":"AV5"},{"set":"Menu","to":"OFF"}],"name":"AV5"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"TVInput","to":"OFF"},{"set":"InputInput","to":"AV6"},{"set":"Menu","to":"OFF"}],"name":"AV6"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"TVInput","to":"OFF"},{"set":"InputInput","to":"PC1"},{"set":"Menu","to":"OFF"}],"name":"PC1"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"TVInput","to":"OFF"},{"set":"InputInput","to":"PC2"},{"set":"Menu","to":"OFF"}],"name":"PC2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sagem",
-  "model": "Axium HD-D56"
+  "model": "Axium HD-D56",
+  "power": {
+    "toggle": [
+      {"set":"Input","to":"TV"},
+      {"set":"TVInput","to":"ON"},
+      {"set":"InputInput","to":"SCART1"},
+      {"set":"Menu","to":"OFF"},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"SCART1"},
+        {"name":"SCART2"},
+        {"name":"SCART3"},
+        {"name":"AV4"},
+        {"name":"AV5"},
+        {"name":"AV6"},
+        {"name":"PC1"},
+        {"name":"PC2"}
+      ]
+    },
+    "Menu": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"delayMs":3000},"InputNext"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "TVInput": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 27000,
+    "pressMinRepeats": 1
+  }
 }

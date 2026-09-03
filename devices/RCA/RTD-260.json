@@ -2,6 +2,47 @@
   "codeset": "codesets/5c/5ca31acbead63bf0.json",
   "deviceType": 22,
   "globalDeviceId": 135238,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Auxilary"},{"set":"AuxilaryInput","to":"Aux1"}],"name":"Aux1"},
+      {"commands":[{"set":"InputType","to":"Auxilary"},{"set":"AuxilaryInput","to":"Aux2"}],"name":"Aux2"},
+      {"commands":[{"set":"InputType","to":"Auxilary"},{"set":"AuxilaryInput","to":"Coax"}],"name":"Coax"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "RTD-260"
+  "model": "RTD-260",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxilaryInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"},
+        {"name":"Coax"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":1}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Auxilary","select":[{"commands":["InputAux",{"set":"AuxilaryInput","to":"Aux1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5500,
+    "pressMinRepeats": 3
+  }
 }

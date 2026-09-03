@@ -2,6 +2,60 @@
   "codeset": "codesets/16/16f24d689236ac45.json",
   "deviceType": 5,
   "globalDeviceId": 479923,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"SD/Usb"}],"name":"SD/Usb","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"InputOpt/Coax"},{"set":"InputOpt/CoaxInput","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"InputOpt/Coax"},{"set":"InputOpt/CoaxInput","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"InputAux1/2/Pc"},{"set":"InputAux1/2/PcInput","to":"RCA 1"}],"name":"RCA 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"InputAux1/2/Pc"},{"set":"InputAux1/2/PcInput","to":"RCA 2"}],"name":"RCA 2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"InputAux1/2/Pc"},{"set":"InputAux1/2/PcInput","to":"Aux"}],"name":"Aux","ports":["Aux"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "ROCKVILLE",
-  "model": "TM150"
+  "model": "TM150",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputAux1/2/PcInput": {
+      "next": ["InputAux1/2/Pc"],
+      "values": [
+        {"name":"RCA 1"},
+        {"name":"RCA 2"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputOpt/CoaxInput": {
+      "next": ["InputOpt/Coax"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"Coaxial"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"FM","select":[{"commands":["InputFm"],"setType":2}]},
+        {"name":"SD/Usb","select":[{"commands":["InputSd/Usb"],"setType":2}]},
+        {"name":"InputOpt/Coax","select":[{"commands":["InputOpt/Coax"],"setType":2}]},
+        {"name":"InputAux1/2/Pc","select":[{"commands":["InputAux1/2/Pc"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

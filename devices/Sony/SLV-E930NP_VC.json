@@ -2,6 +2,35 @@
   "codeset": "codesets/49/4915e5220628eb8d.json",
   "deviceType": 2,
   "globalDeviceId": 69154,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line In 1"},
+      {"name":"Line In 2"},
+      {"name":"Line In 3"},
+      {"name":"Line In 4"}
+    ],
+    "next": ["InputSelect"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "SLV-E930NP/VC"
+  "model": "SLV-E930NP/VC",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

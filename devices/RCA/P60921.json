@@ -1,7 +1,32 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 45617,
+  "inputs": {
+    "list": [
+      {"commands":[{"delayMs":2000},"ChannelUp"],"name":"Ant"},
+      {"commands":[{"delayMs":3000},"ChannelUp",{"delayMs":500},"InputNext"],"name":"Video1"},
+      {"commands":["ChannelUp",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext"],"name":"Video2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "P60921"
+  "model": "P60921",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

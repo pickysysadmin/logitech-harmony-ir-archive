@@ -2,6 +2,31 @@
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 143763,
+  "inputs": {
+    "list": [
+      {"commands":["InputSat/Cable"],"name":"Antenne"},
+      {"commands":["0"],"name":"Scart"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "R29DG8JS"
+  "model": "R29DG8JS",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "onReset": [
+      {"set":"Input","to":"Antenne"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

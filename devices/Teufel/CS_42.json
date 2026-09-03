@@ -2,6 +2,48 @@
   "codeset": "codesets/c7/c75dacc4b68c6580.json",
   "deviceType": 19,
   "globalDeviceId": 480959,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"BT"}],"name":"BT","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"Aux/Opt"},{"set":"Aux/OptInput","to":"Aux"}],"name":"Aux","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Aux/Opt"},{"set":"Aux/OptInput","to":"Optical"}],"name":"Optical","ports":["Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teufel",
-  "model": "CS 42"
+  "model": "CS 42",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/OptInput": {
+      "next": ["InputAux/Opt"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Optical"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"BT","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Aux/Opt","select":[{"commands":["InputAux/Opt"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

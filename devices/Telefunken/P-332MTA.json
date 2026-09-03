@@ -2,6 +2,31 @@
   "codeset": "codesets/45/453b6538f9b3c94a.json",
   "deviceType": 1,
   "globalDeviceId": 89631,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenne"],"name":"Antenne"},
+      {"commands":["0"],"name":"Scart"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Telefunken",
-  "model": "P-332MTA"
+  "model": "P-332MTA",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "onReset": [
+      {"set":"Input","to":"Antenne"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/2e/2e6a24298a1a0ab0.json",
   "deviceType": 1,
   "globalDeviceId": 265768,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv",{"delayMs":2000}],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputAv1"],"name":"AV 1","ports":["Scart"]},
+      {"commands":["InputAv2"],"name":"AV 2","ports":["Composite"]},
+      {"commands":["InputComponent1"],"name":"Component","ports":["Component"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI 3(MHL)","ports":["HDMI"]},
+      {"commands":["Smart"],"name":"Smart TV","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "70LB650V"
+  "model": "70LB650V",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 20000,
+    "pressMinRepeats": 1
+  }
 }

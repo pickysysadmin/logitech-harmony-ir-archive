@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/04/0496214e9add08fc.json",
   "deviceType": 1,
   "globalDeviceId": 56176,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"RGB-DTV"},
+      {"name":"RGB-PC"},
+      {"name":"RGB-DVI"}
+    ],
+    "next": [
+      {"delayMs":800},
+      "ChannelDown",
+      {"delayMs":600}
+    ],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Haier",
-  "model": "P42LV6-T1"
+  "model": "P42LV6-T1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

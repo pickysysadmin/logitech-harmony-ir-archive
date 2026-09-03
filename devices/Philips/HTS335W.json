@@ -2,6 +2,57 @@
   "codeset": "codesets/f9/f969c0a03f0a7f6f.json",
   "deviceType": 22,
   "globalDeviceId": 132756,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"MP3/Line In"}],"name":"MP3/Line In"},
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscInput","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Digital In"}],"name":"Digital In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS335W"
+  "model": "HTS335W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Digital In"}
+      ]
+    },
+    "DiscInput": {
+      "next": ["InputDisc/Usb"],
+      "values": [
+        {"name":"Disc"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"MP3/Line In","select":[{"commands":["InputMp3LineIn"],"setType":2}]},
+        {"name":"Disc","select":[{"commands":["InputDisc/Usb"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

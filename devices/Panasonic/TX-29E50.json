@@ -1,7 +1,86 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/a8/a8547d18fe86ba3f.json",
   "deviceType": 1,
   "globalDeviceId": 83136,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"InputMode","to":"TV"},{"set":"Menu","to":"OFF"}],"name":"Tuner"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"InputMode","to":"AV"},{"set":"AVMODE","to":"AV1"},{"set":"Menu","to":"OFF"}],"name":"AV 1"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"InputMode","to":"AV"},{"set":"AVMODE","to":"AV2"},{"set":"AV2Mode","to":"Normal"},{"set":"Menu","to":"OFF"}],"name":"AV 2"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"InputMode","to":"AV"},{"set":"AVMODE","to":"AV2"},{"set":"AV2Mode","to":"S-Video"},{"set":"Menu","to":"OFF"}],"name":"AV 2S"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"InputMode","to":"AV"},{"set":"AVMODE","to":"AV3"},{"set":"AV3Mode","to":"Normal"},{"set":"Menu","to":"OFF"}],"name":"AV 3"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"InputMode","to":"AV"},{"set":"AVMODE","to":"AV3"},{"set":"AV3Mode","to":"S-Video"},{"set":"Menu","to":"OFF"}],"name":"AV 3S"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"InputMode","to":"AV"},{"set":"AVMODE","to":"AV4"},{"set":"AV4Mode","to":"Normal"},{"set":"Menu","to":"OFF"}],"name":"AV 4"},
+      {"commands":[{"set":"Menu","to":"ON"},{"set":"InputMode","to":"AV"},{"set":"AVMODE","to":"AV4"},{"set":"AV4Mode","to":"S-Video"},{"set":"Menu","to":"OFF"}],"name":"AV 4S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-29E50"
+  "model": "TX-29E50",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": [
+      {"set":"InputMode","to":"TV"},
+      {"set":"Menu","to":"ON"},
+      "1"
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AV2Mode": {
+      "next": ["Green"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AV3Mode": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AV4Mode": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"Normal"},
+        {"name":"S-Video"}
+      ]
+    },
+    "AVMODE": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":2}]},
+        {"name":"AV4","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    },
+    "InputMode": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "Menu": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Green"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

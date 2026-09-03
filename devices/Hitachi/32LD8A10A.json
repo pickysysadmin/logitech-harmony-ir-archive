@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/24/24028fdd7b09ce4f.json",
   "deviceType": 1,
   "globalDeviceId": 215488,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"EXT-1"},
+      {"name":"EXT-2"},
+      {"name":"EXT-3"},
+      {"name":"EXT-4"},
+      {"name":"EXT-4S"},
+      {"name":"EXT-5"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "32LD8A10A"
+  "model": "32LD8A10A",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

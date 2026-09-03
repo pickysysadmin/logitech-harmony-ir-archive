@@ -1,7 +1,69 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/2c/2c75623fb97e11fd.json",
   "deviceType": 1,
   "globalDeviceId": 126473,
+  "inputs": {
+    "list": [
+      {"name":"AntennaB3"},
+      {"name":"AntennaA59"},
+      {"name":"Video 1 VCR"},
+      {"name":"S-In  2 DVD"},
+      {"name":"Video 3"},
+      {"name":"Video 3S"}
+    ],
+    "next": ["VideoToggle"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "55UX588A"
+  "model": "55UX588A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaMode": {
+      "next": ["AntToggle"],
+      "values": [
+        {"name":"AntModeA"},
+        {"name":"AntModeB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"SatType","select":[{"commands":["SatToggle"],"setType":2}]},
+        {"name":"AntType","select":[{"commands":["AntToggle"],"setType":2}]},
+        {"name":"VideoType","select":[{"commands":["VideoToggle"],"setType":2}]}
+      ]
+    },
+    "SatMode": {
+      "next": ["SatToggle"],
+      "values": [
+        {"name":"DirectMode"},
+        {"name":"AntMode"}
+      ]
+    },
+    "VideoMode": {
+      "next": ["VideoToggle"],
+      "values": [
+        {"name":"Video1mode"},
+        {"name":"Video2mode"},
+        {"name":"Video3mode"},
+        {"name":"Video4mode"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

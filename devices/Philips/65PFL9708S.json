@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/96/9659a08c7ad51564.json",
   "deviceType": 1,
   "globalDeviceId": 256476,
+  "inputs": {
+    "list": [
+      {"commands":["InputScart"],"name":"Scart"},
+      {"commands":["InputYPbPr"],"name":"YPbPr"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["InputHdmi5"],"name":"HDMI 5"},
+      {"commands":["InputUsb"],"name":"USB"},
+      {"commands":["InputUsb",{"delayMs":1000},"Source",{"delayMs":3500},"DirectionLeft","DirectionLeft","OK"],"name":"SAT"},
+      {"commands":["InputUsb",{"delayMs":1000},"Source",{"delayMs":3500},"DirectionLeft","OK"],"name":"TV"},
+      {"commands":["Exit","SmartTv"],"name":"Smart Tv"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "65PFL9708S"
+  "model": "65PFL9708S",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 24000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/06/0689cf96ade97298.json",
   "deviceType": 1,
   "globalDeviceId": 128633,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"VGA"},
+      {"name":"DVI"},
+      {"name":"RF"},
+      {"name":"Vidio 1"},
+      {"name":"Vidio 2"},
+      {"name":"S-Video"},
+      {"name":"Component 1"},
+      {"name":"Component 2"}
+    ],
+    "next": ["ChannelDown"],
+    "start": [
+      "StartInput",
+      {"set":"Input","to":"VGA"}
+    ],
+    "type": 4
+  },
   "manufacturer": "Prima",
-  "model": "LC-27W18S"
+  "model": "LC-27W18S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

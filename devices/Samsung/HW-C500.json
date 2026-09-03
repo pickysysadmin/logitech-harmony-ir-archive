@@ -2,6 +2,55 @@
   "codeset": "codesets/5a/5a90642f4a64f0e2.json",
   "deviceType": 5,
   "globalDeviceId": 206495,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"BD/DVD"}],"name":"BD/DVD","ports":["HDMI","Component","Composite","Optical"]},
+      {"commands":[{"set":"InputType","to":"SAT"}],"name":"SAT","ports":["HDMI","Component","Composite","Optical"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["HDMI","Composite","Optical"]},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"MULTI CH"}],"name":"MULTI CH","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"IPOD AUDIO"}],"name":"IPOD AUDIO","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"IPOD VIDEO"}],"name":"IPOD VIDEO","ports":["Dock"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HW-C500"
+  "model": "HW-C500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"FM","select":[{"commands":["TuneUp"],"setType":2}]},
+        {"name":"BD/DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"SAT","select":[{"commands":["InputSat"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"MULTI CH","select":[{"commands":["InputMultiCh"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]}
+      ]
+    },
+    "iPodInput": {
+      "next": ["InputiPod"],
+      "values": [
+        {"name":"IPOD AUDIO"},
+        {"name":"IPOD VIDEO"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,57 @@
   "codeset": "codesets/16/168ef263885f26ac.json",
   "deviceType": 1,
   "globalDeviceId": 137625,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"InputVideo1/2"},{"set":"InputVideo1/2Input","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"InputVideo1/2"},{"set":"InputVideo1/2Input","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"InputVideo3/4"},{"set":"InputVideo3/4Input","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"InputVideo3/4"},{"set":"InputVideo3/4Input","to":"Video 4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"Video 5"}],"name":"Video 5"},
+      {"commands":[{"set":"InputType","to":"Video 6"}],"name":"Video 6"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "32ZP30"
+  "model": "32ZP30",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["4"],"setType":2}]},
+        {"name":"InputVideo1/2","select":[{"commands":["InputVideo1",{"set":"InputVideo1/2Input","to":"Video 1"}],"setType":2}]},
+        {"name":"InputVideo3/4","select":[{"commands":["InputVideo3",{"set":"InputVideo3/4Input","to":"Video 3"}],"setType":2}]},
+        {"name":"Video 5","select":[{"commands":["InputVideo5"],"setType":2}]},
+        {"name":"Video 6","select":[{"commands":["InputVideo6"],"setType":2}]}
+      ]
+    },
+    "InputVideo1/2Input": {
+      "next": ["InputVideo1"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"}
+      ]
+    },
+    "InputVideo3/4Input": {
+      "next": ["InputVideo3"],
+      "values": [
+        {"name":"Video 3"},
+        {"name":"Video 4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,42 @@
   "codeset": "codesets/da/dab6814edcc46632.json",
   "deviceType": 5,
   "globalDeviceId": 151410,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Optical"]},
+      {"commands":["InputMd/Cdr"],"name":"MD/CD-R","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputDtv/Cbl"],"name":"DTV/CBL","ports":["HDMI","Component","Composite","Optical"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["Component","Composite"]},
+      {"commands":["InputV-Aux/Dock"],"name":"V-Aux/Dock","ports":["Composite"]},
+      {"commands":["InputXm"],"name":"XM","ports":["Streaming"]},
+      {"commands":["InputSirius"],"name":"Sirius","ports":["Streaming"]},
+      {"commands":["InputMultiChIn"],"name":"MultiChIN","ports":["Composite"]},
+      {"name":"Scene 1","ports":["Streaming"]},
+      {"name":"Scene 2","ports":["Streaming"]},
+      {"name":"Scene 3","ports":["Streaming"]},
+      {"name":"Scene 4","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V463"
+  "model": "RX-V463",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2250,
+    "pressMinRepeats": 1
+  }
 }

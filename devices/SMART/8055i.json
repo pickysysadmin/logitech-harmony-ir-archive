@@ -2,6 +2,62 @@
   "codeset": "codesets/6d/6dbd6f717c466ad5.json",
   "deviceType": 13,
   "globalDeviceId": 380953,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"Display Port"}],"name":"Display Port"},
+      {"commands":[{"set":"InputType","to":"VGA 1"}],"name":"VGA 1"},
+      {"commands":[{"set":"InputType","to":"VGA 2"}],"name":"VGA 2"},
+      {"commands":[{"set":"InputType","to":"DVD/HD"}],"name":"DVD/HD"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"AudioInput"},{"set":"AudioInput","to":"AudioIn 1"}],"name":"AudioIn 1"},
+      {"commands":[{"set":"InputType","to":"AudioInput"},{"set":"AudioInput","to":"AudioIn 2"}],"name":"AudioIn 2"},
+      {"commands":[{"set":"InputType","to":"AudioInput"},{"set":"AudioInput","to":"AudioIn 3"}],"name":"AudioIn 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "SMART",
-  "model": "8055i"
+  "model": "8055i",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AudioInput": {
+      "next": ["AudioInput"],
+      "values": [
+        {"name":"AudioIn 1"},
+        {"name":"AudioIn 2"},
+        {"name":"AudioIn 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVI","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"Display Port","select":[{"commands":["InputDisplayPort"],"setType":2}]},
+        {"name":"VGA 1","select":[{"commands":["InputVga1"],"setType":2}]},
+        {"name":"VGA 2","select":[{"commands":["InputVga2"],"setType":2}]},
+        {"name":"DVD/HD","select":[{"commands":["InputDvd/Hd"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"AudioInput","select":[{"commands":["AudioInput"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

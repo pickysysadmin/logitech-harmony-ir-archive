@@ -1,7 +1,34 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 89165,
+  "inputs": {
+    "list": [
+      {"commands":["ChannelUp",{"delayMs":500},"TvVideo"],"name":"Video 1"},
+      {"commands":["ChannelUp",{"delayMs":500},"TvVideo","TvVideo"],"name":"Video 2"},
+      {"commands":["ChannelUp",{"delayMs":500},"TvVideo","TvVideo","TvVideo"],"name":"Video 3"},
+      {"commands":["ChannelUp",{"delayMs":500},"TvVideo","TvVideo","TvVideo","TvVideo"],"name":"Ant B"},
+      {"commands":["ChannelUp"],"name":"Ant A"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hitachi",
-  "model": "50UX57B"
+  "model": "50UX57B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

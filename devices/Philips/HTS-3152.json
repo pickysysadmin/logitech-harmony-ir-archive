@@ -2,6 +2,47 @@
   "codeset": "codesets/01/011f4aadae3a340f.json",
   "deviceType": 22,
   "globalDeviceId": 145442,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"MP3/Line In"}],"name":"MP3/Line In"},
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscInput","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS-3152"
+  "model": "HTS-3152",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DiscInput": {
+      "next": ["InputDvd"],
+      "values": [
+        {"name":"Disc"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"MP3/Line In","select":[{"commands":["InputMP3/LineIn"],"setType":2}]},
+        {"name":"Disc","select":[{"commands":["InputDvd"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,52 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/38/388ffe1e9bd2a2e4.json",
   "deviceType": 1,
   "globalDeviceId": 32111,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvi","InputNext"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputFront"],"name":"Front"},
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["InputComponent2"],"name":"Component 2"},
+      {"commands":["InputRgb"],"name":"RGB-DTV"},
+      {"commands":["InputDvi"],"name":"DVI-DTV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "RU-44SZ51"
+  "model": "RU-44SZ51",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext",{"set":"VideoInput","to":"Tuner"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Video1"},
+        {"name":"Video2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

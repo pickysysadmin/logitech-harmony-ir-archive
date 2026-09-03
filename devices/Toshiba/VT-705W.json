@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5a/5ac3d7d463c088d3.json",
   "deviceType": 2,
   "globalDeviceId": 46805,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line In 1"},
+      {"name":"Line In 2"}
+    ],
+    "next": ["InputSelect"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "VT-705W"
+  "model": "VT-705W",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"},
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

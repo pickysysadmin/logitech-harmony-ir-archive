@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 76407,
+  "inputs": {
+    "list": [
+      {"commands":[{"delayMs":1000},"InputPC","InputNext"],"name":"TV"},
+      {"commands":[{"delayMs":1000},"InputVideo"],"name":"AV1"},
+      {"commands":[{"delayMs":1000},"InputVideo","InputNext"],"name":"AV2"},
+      {"commands":[{"delayMs":1000},"InputSVideo"],"name":"S-Video 1"},
+      {"commands":[{"delayMs":1000},"InputSVideo","InputNext"],"name":"S-Video 2"},
+      {"commands":[{"delayMs":1000},"InputComponent 2"],"name":"Component"},
+      {"commands":[{"delayMs":1000},"InputComponent 2","InputNext"],"name":"HDMI 1"},
+      {"commands":[{"delayMs":1000},"InputComponent 2","InputNext","InputNext"],"name":"HDMI 2"},
+      {"commands":[{"delayMs":1000},"InputPC"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "LNS-32410X/XAA"
+  "model": "LNS-32410X/XAA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

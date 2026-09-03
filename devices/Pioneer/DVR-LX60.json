@@ -2,6 +2,54 @@
   "codeset": "codesets/f9/f95e587aeaa024a2.json",
   "deviceType": 34,
   "globalDeviceId": 180447,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Hdd/Dvd"},{"set":"Hdd/DvdInput","to":"HDD"}],"name":"HDD","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"Hdd/Dvd"},{"set":"Hdd/DvdInput","to":"DVD"}],"name":"DVD","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"AV2/L1"}],"name":"AV2/L1","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"L2"}],"name":"L2","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"L3"}],"name":"L3","ports":["Composite","S-Video"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "DVR-LX60"
+  "model": "DVR-LX60",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Hdd/DvdInput": {
+      "next": ["Hdd/Dvd"],
+      "values": [
+        {"name":"HDD"},
+        {"name":"DVD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Hdd/Dvd","select":[{"commands":["Hdd/Dvd"],"setType":2}]},
+        {"name":"Inputs","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "InputsInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV2/L1"},
+        {"name":"L2"},
+        {"name":"L3"},
+        {"name":"Tuner"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

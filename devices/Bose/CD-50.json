@@ -2,6 +2,33 @@
   "codeset": "codesets/70/7046697f8a1de02b.json",
   "deviceType": 22,
   "globalDeviceId": 20885,
+  "inputs": {
+    "list": [
+      {"commands":["InputAM"],"name":"AM"},
+      {"commands":["InputFm"],"name":"FM"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTelevision"],"name":"TV"},
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputSAT"],"name":"AUX"},
+      {"commands":["InputTape"],"name":"TAPE"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Bose",
-  "model": "CD-50"
+  "model": "CD-50",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputTelevision"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

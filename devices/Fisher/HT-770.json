@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/65/65af1ff0c0db9d7f.json",
   "deviceType": 1,
   "globalDeviceId": 114418,
+  "inputs": {
+    "list": [
+      {"commands":["-"],"name":"Tuner"},
+      {"commands":["-"],"name":"Video1"},
+      {"commands":["-"],"name":"Video2"},
+      {"commands":["-"],"name":"Video3"},
+      {"commands":["-"],"name":"Front"},
+      {"commands":["-"],"name":"Component"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Fisher",
-  "model": "HT-770"
+  "model": "HT-770",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Video1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

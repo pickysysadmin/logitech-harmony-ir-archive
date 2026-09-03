@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/c3/c3d1b05687107bcd.json",
   "deviceType": 1,
   "globalDeviceId": 203229,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Ext1"}],"name":"Ext1"},
+      {"commands":[{"set":"InputType","to":"Ext2"}],"name":"Ext2"},
+      {"commands":[{"set":"InputType","to":"Ext3C"}],"name":"Ext3C"},
+      {"commands":[{"set":"InputType","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"Hdmi3"}],"name":"Hdmi3"},
+      {"commands":[{"set":"InputType","to":"Hdmi4"}],"name":"Hdmi4"},
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"Atv/Dtv"},{"set":"Atv/DtvInput","to":"Atv"}],"name":"Atv"},
+      {"commands":[{"set":"InputType","to":"Atv/Dtv"},{"set":"Atv/DtvInput","to":"Dtv"}],"name":"Dtv"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "37XV625D"
+  "model": "37XV625D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Atv/DtvInput": {
+      "next": ["ATV/DTV"],
+      "values": [
+        {"name":"Atv"},
+        {"name":"Dtv"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Ext1","select":[{"commands":["InputExt1"],"setType":2}]},
+        {"name":"Ext2","select":[{"commands":["InputExt2"],"setType":2}]},
+        {"name":"Ext3C","select":[{"commands":["InputExt3c"],"setType":2}]},
+        {"name":"Hdmi1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"Hdmi2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"Hdmi3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"Hdmi4","select":[{"commands":["InputHdmi4"],"setType":2}]},
+        {"name":"Pc","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"Atv/Dtv","select":[{"commands":["ATV/DTV"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

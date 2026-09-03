@@ -2,6 +2,68 @@
   "codeset": "codesets/9a/9a6a627511b9aae3.json",
   "deviceType": 1,
   "globalDeviceId": 150558,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HD 1"}],"name":"HD 1"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HD 2"}],"name":"HD 2"},
+      {"commands":[{"set":"InputType","to":"HDMI/PC"},{"set":"HDMI/PCInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"HDMI/PC"},{"set":"HDMI/PCInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 2"}],"name":"AV 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "ViewSonic",
-  "model": "VS10848-1M"
+  "model": "VS10848-1M",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": [
+        {"command":"InputAV","durationMs":2000}
+      ],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"}
+      ]
+    },
+    "HDInput": {
+      "next": [
+        {"command":"InputHd","durationMs":2000}
+      ],
+      "values": [
+        {"name":"HD 1"},
+        {"name":"HD 2"}
+      ]
+    },
+    "HDMI/PCInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"HD","select":[{"commands":[{"command":"InputHd","durationMs":2000},{"set":"HDInput","to":"HD 1"}],"setType":2}]},
+        {"name":"HDMI/PC","select":[{"commands":[{"command":"InputHdmi","durationMs":2000},{"set":"HDMI/PCInput","to":"PC"}],"setType":2}]},
+        {"name":"AV","select":[{"commands":[{"command":"InputAV","durationMs":2000},{"set":"AVInput","to":"AV 1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 1
+  }
 }

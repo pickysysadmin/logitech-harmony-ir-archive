@@ -2,6 +2,28 @@
   "codeset": "codesets/3f/3fb24fc1d4aa8e7e.json",
   "deviceType": 1,
   "globalDeviceId": 269361,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","DirectionRight","Select",{"delayMs":2500},"Exit"],"name":"Netflix OFF"},
+      {"commands":[{"command":"Search","durationMs":1500},{"command":"DirectionDown","durationMs":1500},"DirectionRight","DirectionRight","DirectionUp","DirectionLeft","Select","DirectionUp","DirectionUp","DirectionUp","DirectionLeft","DirectionLeft","DirectionLeft","Select","DirectionRight","DirectionRight","DirectionRight","Select","DirectionDown","DirectionDown","DirectionLeft","Select",{"delayMs":500},{"command":"DirectionUp","durationMs":1000},"DirectionUp","Select"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "TestNetflix1"
+  "model": "TestNetflix1",
+  "power": {
+    "off": ["Exit"],
+    "on": ["Exit"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 55000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 0,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

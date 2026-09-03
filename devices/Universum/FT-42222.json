@@ -2,6 +2,32 @@
   "codeset": "codesets/b7/b7bf9558218fa9f0.json",
   "deviceType": 1,
   "globalDeviceId": 102647,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"}
+    ],
+    "next": ["InputAntennaCable"],
+    "type": 2
+  },
   "manufacturer": "Universum",
-  "model": "FT-42222"
+  "model": "FT-42222",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

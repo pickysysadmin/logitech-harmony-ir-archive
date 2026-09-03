@@ -2,6 +2,67 @@
   "codeset": "codesets/f6/f645b66899ececb1.json",
   "deviceType": 7,
   "globalDeviceId": 276542,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"Vga1"}],"name":"Vga1"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"Vga2"}],"name":"Vga2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CompositeVideo"}],"name":"CompositeVideo"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vivitek",
-  "model": "DW832"
+  "model": "DW832",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "HdmiInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"Vga1"},
+        {"name":"Vga2"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"CompositeVideo"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 1
+  }
 }

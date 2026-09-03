@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f8/f85bada5f8fd15c8.json",
   "deviceType": 1,
   "globalDeviceId": 13350,
+  "inputs": {
+    "list": [
+      {"commands":["TvVideo"],"name":"Antenna/Cable"},
+      {"commands":["0","1","ChannelDown","ChannelDown"],"name":"AUX1"},
+      {"commands":["0","1","ChannelDown"],"name":"AUX2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Grundig",
-  "model": "WF56-3020"
+  "model": "WF56-3020",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna/Cable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

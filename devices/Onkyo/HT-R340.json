@@ -2,6 +2,35 @@
   "codeset": "codesets/81/81fff448f87aee3d.json",
   "deviceType": 5,
   "globalDeviceId": 167559,
+  "inputs": {
+    "list": [
+      {"commands":["InputTape"],"name":"Tape","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Optical"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","Coaxial"]},
+      {"commands":["InputVideo1"],"name":"Video 1","ports":["Component","Composite"]},
+      {"commands":["InputVideo2"],"name":"Video 2","ports":["Component","Composite","Optical"]},
+      {"commands":["InputVideo3"],"name":"Video 3","ports":["Composite"]},
+      {"commands":["InputMultiCh"],"name":"MultiChannel","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "HT-R340"
+  "model": "HT-R340",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

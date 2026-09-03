@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/86/86f8e2604d3bade4.json",
   "deviceType": 1,
   "globalDeviceId": 179889,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"FRONT"},
+      {"name":"SVHS"},
+      {"name":"AV1"}
+    ],
+    "next": ["ChannelDown"],
+    "start": [
+      {"set":"Input","to":"TV"},
+      "3"
+    ],
+    "type": 4
+  },
   "manufacturer": "Philips",
-  "model": "27PT643R37A"
+  "model": "27PT643R37A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

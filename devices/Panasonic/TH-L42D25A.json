@@ -2,6 +2,57 @@
   "codeset": "codesets/df/dfb056b3602f7d68.json",
   "deviceType": 1,
   "globalDeviceId": 207168,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Av 1"}],"name":"Av 1"},
+      {"commands":[{"set":"InputType","to":"Av 2"}],"name":"Av 2"},
+      {"commands":[{"set":"InputType","to":"Av 3"}],"name":"Av 3"},
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"Hdmi 1"}],"name":"Hdmi 1"},
+      {"commands":[{"set":"InputType","to":"Hdmi 2"}],"name":"Hdmi 2"},
+      {"commands":[{"set":"InputType","to":"Hdmi 3"}],"name":"Hdmi 3"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"DTv"}],"name":"DTv"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"ATv"}],"name":"ATv"},
+      {"commands":[{"set":"InputType","to":"MediaServer"}],"name":"MediaServer"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-L42D25A"
+  "model": "TH-L42D25A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Av 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Av 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Av 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Pc","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"Hdmi 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"Hdmi 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"Hdmi 3","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"Tv","select":[{"commands":["TV"],"setType":2}]},
+        {"name":"MediaServer","select":[{"commands":["InputVideo1","AV","DirectionUp","Select"],"setType":2}]}
+      ]
+    },
+    "TvInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"DTv"},
+        {"name":"ATv"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

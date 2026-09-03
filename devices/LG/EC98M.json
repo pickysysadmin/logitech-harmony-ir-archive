@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/89/8917d4fd7d26261c.json",
   "deviceType": 2,
   "globalDeviceId": 230040,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"Line In"}
+    ],
+    "next": ["InputNext"],
+    "start": ["TvVcr"],
+    "type": 4
+  },
   "manufacturer": "LG",
-  "model": "EC98M"
+  "model": "EC98M",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"},
+      {"set":"Input","to":"Antenna/Cable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

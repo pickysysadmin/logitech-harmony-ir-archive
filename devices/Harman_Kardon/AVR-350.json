@@ -2,6 +2,73 @@
   "codeset": "codesets/4b/4b89253ca32171fd.json",
   "deviceType": 5,
   "globalDeviceId": 164006,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DMP"}],"name":"DMP"},
+      {"commands":[{"set":"InputType","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"Video4"}],"name":"Video4"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"CHANNEL"},{"set":"CHANNELInput","to":"6CH"}],"name":"6CH"},
+      {"commands":[{"set":"InputType","to":"CHANNEL"},{"set":"CHANNELInput","to":"8CH"}],"name":"8CH"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "AVR-350"
+  "model": "AVR-350",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "CHANNELInput": {
+      "next": ["Input6/8Ch"],
+      "values": [
+        {"name":"6CH"},
+        {"name":"8CH"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":1}]},
+        {"name":"DMP","select":[{"commands":["InputDmp"],"setType":1}]},
+        {"name":"Hdmi1","select":[{"commands":["InputHDMI1"],"setType":1}]},
+        {"name":"Hdmi2","select":[{"commands":["InputHDMI2"],"setType":1}]},
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"Video3","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"Video4","select":[{"commands":["InputVideo4"],"setType":1}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":1}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":1}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CHANNEL","select":[{"commands":["Input6/8Ch"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 1
+  }
 }

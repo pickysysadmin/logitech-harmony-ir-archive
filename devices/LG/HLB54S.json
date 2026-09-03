@@ -2,6 +2,62 @@
   "codeset": "codesets/c0/c088fb1ac6e9eb80.json",
   "deviceType": 22,
   "globalDeviceId": 173798,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Home"}],"name":"Home","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Portable"}],"name":"Portable","ports":["Portable"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI IN 1"}],"name":"HDMI IN 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI IN 2"}],"name":"HDMI IN 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"Remote iPod"}],"name":"Remote iPod","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"OSD iPod"}],"name":"OSD iPod","ports":["Others"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HLB54S"
+  "model": "HLB54S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputNextInput": {
+      "next": [
+        {"command":"InputNext","durationMs":2000}
+      ],
+      "values": [
+        {"name":"FM"},
+        {"name":"Portable"},
+        {"name":"Optical"},
+        {"name":"HDMI IN 1"},
+        {"name":"HDMI IN 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Home","select":[{"commands":["Home"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":[{"command":"InputNext","durationMs":2000}],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["iPod"],"setType":2}]}
+      ]
+    },
+    "iPodInput": {
+      "next": ["iPod"],
+      "values": [
+        {"name":"Remote iPod"},
+        {"name":"OSD iPod"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 38131,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnt/Cable"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["InputComponent2"],"name":"Component 2"},
+      {"commands":["InputRgb/Dtv"],"name":"RGB"},
+      {"commands":["InputDVI/DTV"],"name":"DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "RU-50PZ61"
+  "model": "RU-50PZ61",
+  "power": {
+    "off": [
+      {"delayMs":6000},
+      "PowerOff"
+    ],
+    "on": [
+      {"delayMs":6000},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 5,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

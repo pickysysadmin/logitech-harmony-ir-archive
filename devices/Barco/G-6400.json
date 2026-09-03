@@ -2,6 +2,35 @@
   "codeset": "codesets/2a/2abb89f5c6eadc71.json",
   "deviceType": 7,
   "globalDeviceId": 111750,
+  "inputs": {
+    "list": [
+      {"name":"Input 1"},
+      {"name":"Input 2"},
+      {"name":"Input 3"},
+      {"name":"Input 4"},
+      {"name":"Input 5"},
+      {"name":"Input 6"}
+    ],
+    "next": ["InputVideo1"],
+    "type": 2
+  },
   "manufacturer": "Barco",
-  "model": "G-6400"
+  "model": "G-6400",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":15000}
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

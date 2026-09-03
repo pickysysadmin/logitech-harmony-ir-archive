@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 147710,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"ANTENNA"},
+      {"name":"VIDEO 1"},
+      {"name":"VIDEO 2"},
+      {"name":"VIDEO 3"},
+      {"name":"S-VIDEO 1"},
+      {"name":"S-VIDEO 2"},
+      {"name":"COMPONENT 1"},
+      {"name":"COMPONENT 2"}
+    ],
+    "next": ["DirectionDown 2"],
+    "previous": ["DirectionUp 2"],
+    "start": [
+      {"delayMs":3000},
+      "InputNext"
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HC-L5515W"
+  "model": "HC-L5515W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

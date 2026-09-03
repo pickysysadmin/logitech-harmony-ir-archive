@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/04/0496214e9add08fc.json",
   "deviceType": 1,
   "globalDeviceId": 31058,
+  "inputs": {
+    "list": [
+      {"commands":[{"delayMs":600},"ChannelDown"],"name":"AntennaCable"},
+      {"commands":["ChannelDown",{"delayMs":600},"InputNext"],"name":"AV1"},
+      {"commands":["ChannelDown",{"delayMs":600},"InputNext","InputNext"],"name":"AV2"},
+      {"commands":["ChannelDown",{"delayMs":600},"InputNext","InputNext","InputNext"],"name":"S-Video"},
+      {"commands":["ChannelDown",{"delayMs":600},"InputNext","InputNext","InputNext","InputNext"],"name":"Component"},
+      {"commands":["ChannelDown",{"delayMs":600},"InputNext","InputNext","InputNext","InputNext","InputNext"],"name":"RGB-DTV"},
+      {"commands":["ChannelDown",{"delayMs":600},"InputNext","InputNext","InputNext","InputNext","InputNext","InputNext"],"name":"RGB-PC"},
+      {"commands":["ChannelDown",{"delayMs":600},"InputNext","InputNext","InputNext","InputNext","InputNext","InputNext","InputNext"],"name":"RGB-DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Kreisen",
-  "model": "KR-370T"
+  "model": "KR-370T",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/39/391fe45ccb6410f2.json",
   "deviceType": 34,
   "globalDeviceId": 135434,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VideoInput","to":"Tuner"},{"set":"InputType","to":"DVD"}],"name":"DVDTuner"},
+      {"commands":[{"set":"VideoInput","to":"L1"},{"set":"InputType","to":"DVD"}],"name":"DVDL1"},
+      {"commands":[{"set":"VideoInput","to":"L2"},{"set":"InputType","to":"DVD"}],"name":"DVDL2"},
+      {"commands":[{"set":"VideoInput","to":"L3"},{"set":"InputType","to":"DVD"}],"name":"DVDL3"},
+      {"commands":[{"set":"VideoInput","to":"DV"},{"set":"InputType","to":"DVD"}],"name":"DVD/DV"},
+      {"commands":[{"set":"VideoInput","to":"Tuner"},{"set":"InputType","to":"HDD"}],"name":"HDDTuner"},
+      {"commands":[{"set":"VideoInput","to":"L1"},{"set":"InputType","to":"HDD"}],"name":"HDDL1"},
+      {"commands":[{"set":"VideoInput","to":"L2"},{"set":"InputType","to":"HDD"}],"name":"HDDL2"},
+      {"commands":[{"set":"VideoInput","to":"L3"},{"set":"InputType","to":"HDD"}],"name":"HDDL3"},
+      {"commands":[{"set":"VideoInput","to":"DV"},{"set":"InputType","to":"HDD"}],"name":"HDD/DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "DVR-930H"
+  "model": "DVR-930H",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["DVD"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["HDD"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"L3"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 21000,
+    "pressMinRepeats": 3
+  }
 }

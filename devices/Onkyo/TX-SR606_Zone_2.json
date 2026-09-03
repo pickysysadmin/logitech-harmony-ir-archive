@@ -2,6 +2,36 @@
   "codeset": "codesets/c5/c5da0e2db7b01ea2.json",
   "deviceType": 5,
   "globalDeviceId": 150343,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR"},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT"},
+      {"commands":["InputGame/Tv"],"name":"Game/TV"},
+      {"commands":["InputMultiChannel"],"name":"Multi Channel"},
+      {"commands":["InputAux"],"name":"AUX"},
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTuner",{"delayMs":500},"InputFm"],"name":"FM"},
+      {"commands":["InputTuner",{"delayMs":500},"InputAm"],"name":"AM"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SR606 (Zone 2)"
+  "model": "TX-SR606 (Zone 2)",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

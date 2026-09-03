@@ -2,6 +2,32 @@
   "codeset": "codesets/b9/b91c7a08e9364575.json",
   "deviceType": 1,
   "globalDeviceId": 127223,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "SkyWorth",
-  "model": "CTV-1422N"
+  "model": "CTV-1422N",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

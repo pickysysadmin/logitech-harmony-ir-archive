@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/b2/b2a001d1e6b8efc0.json",
   "deviceType": 1,
   "globalDeviceId": 267623,
+  "inputs": {
+    "list": [
+      {"commands":["Input1","Input1","Exit","Select","Input1","Input1",{"delayMs":3000},"InputNext","DirectionUp","Select"],"name":"TV"},
+      {"commands":["Input1","Input1","Exit","Select","Input1","Input1"],"name":"HDMI 1"},
+      {"commands":["Input2","Input2","Exit","Select","Input2","Input2"],"name":"HDMI 2"},
+      {"commands":["Input3","Input3","Exit","Select","Input3","Input3"],"name":"HDMI 3(Side)"},
+      {"commands":["Input4","Input4","Exit","Select","Input4","Input4"],"name":"Video In"},
+      {"commands":["Input5","Input5","Exit","Select","Input5","Input5"],"name":"Component"},
+      {"commands":["Input6","Input6","Exit","Select","Input6","Input6"],"name":"PC IN"},
+      {"commands":["Exit","Select","Input7"],"name":"USB"},
+      {"commands":["Input6","Input6","Exit","Exit","Input6","Input6",{"delayMs":3000},"InputNext","DirectionDown","DirectionDown","Select"],"name":"Home Network(DLNA)"},
+      {"commands":["Exit","DirectionRight","Select","SmartCentral"],"name":"Smart Central"},
+      {"commands":["Input1","Input1","Exit","Exit","Input1","Input1","InputNext","DirectionUp","DirectionUp","Select"],"name":"MiraCast"},
+      {"commands":["Exit","Exit","Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-65LE645U"
+  "model": "LC-65LE645U",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 19000,
+    "pressMinRepeats": 3
+  }
 }

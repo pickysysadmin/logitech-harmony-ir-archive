@@ -2,6 +2,56 @@
   "codeset": "codesets/33/33187c0e34132c3d.json",
   "deviceType": 19,
   "globalDeviceId": 18578,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AUX2"}],"name":"AUX 2"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC Digital"}],"name":"PC Digital"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC Analog"}],"name":"PC Analog"},
+      {"commands":[{"set":"InputType","to":"AUX1"},{"set":"AUX1Input","to":"AUX 1Digital"}],"name":"AUX 1Digital"},
+      {"commands":[{"set":"InputType","to":"AUX1"},{"set":"AUX1Input","to":"AUX 1Analog"}],"name":"AUX 1Analog"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "AP-U70"
+  "model": "AP-U70",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUX1Input": {
+      "next": ["InputAux1"],
+      "values": [
+        {"name":"AUX 1Digital"},
+        {"name":"AUX 1Analog"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AUX2","select":[{"commands":["InputAux2"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"AUX1","select":[{"commands":["InputAux1"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"PC Digital"},
+        {"name":"PC Analog"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

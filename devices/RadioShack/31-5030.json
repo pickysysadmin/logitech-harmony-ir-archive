@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/8c/8c44e1e2a267e86f.json",
   "deviceType": 32,
   "globalDeviceId": 158540,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV/VCR"},{"set":"TvVcrInput","to":"Tv"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/VCR"},{"set":"TvVcrInput","to":"Vcr"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AuxInput","to":"Av1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AuxInput","to":"Av2"}],"name":"AV 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RadioShack",
-  "model": "31-5030"
+  "model": "31-5030",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV/VCR","select":[{"commands":["InputTv/Vcr"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "TvVcrInput": {
+      "next": ["InputTv/Vcr"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Vcr"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

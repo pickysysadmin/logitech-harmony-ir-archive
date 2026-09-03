@@ -2,6 +2,47 @@
   "codeset": "codesets/b2/b27b1c4b30753ad2.json",
   "deviceType": 1,
   "globalDeviceId": 144756,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Tv"},
+      {"name":"Scart1"},
+      {"name":"Scart2"},
+      {"name":"Video"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"RGB DTV"},
+      {"name":"D-Sub"},
+      {"name":"HDMI"}
+    ],
+    "next": [
+      "DirectionDown",
+      {"delayMs":500}
+    ],
+    "previous": [
+      "DirectionUp",
+      {"delayMs":500}
+    ],
+    "start": [
+      "StartInput",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Daewoo",
-  "model": "LCD-32DAT"
+  "model": "LCD-32DAT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 3
+  }
 }

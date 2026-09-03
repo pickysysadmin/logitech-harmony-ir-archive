@@ -2,6 +2,52 @@
   "codeset": "codesets/d8/d8c9fe6803ba0733.json",
   "deviceType": 22,
   "globalDeviceId": 244306,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Internet Radio"}],"name":"Internet Radio"},
+      {"commands":[{"set":"InputType","to":"DAB/FM"}],"name":"DAB/FM"},
+      {"commands":[{"set":"InputType","to":"Music Player"}],"name":"Music Player"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Muvid",
-  "model": "IR 925"
+  "model": "IR 925",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FunctionInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"DVD"},
+        {"name":"iPod"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Internet Radio","select":[{"commands":["(R)InputInternetRadio"],"setType":2}]},
+        {"name":"DAB/FM","select":[{"commands":["(R)InputDab/Fm"],"setType":2}]},
+        {"name":"Music Player","select":[{"commands":["(R)InputMusicPlayer"],"setType":2}]},
+        {"name":"Function","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

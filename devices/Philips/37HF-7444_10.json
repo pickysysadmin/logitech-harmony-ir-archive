@@ -2,6 +2,34 @@
   "codeset": "codesets/2f/2faf1eb0a0d53c8f.json",
   "deviceType": 13,
   "globalDeviceId": 138274,
+  "inputs": {
+    "list": [
+      {"name":"Exit 1"},
+      {"name":"Exit 2"},
+      {"name":"Exit 3"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "37HF-7444/10"
+  "model": "37HF-7444/10",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Exit 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

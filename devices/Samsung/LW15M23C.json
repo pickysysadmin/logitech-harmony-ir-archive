@@ -2,6 +2,34 @@
   "codeset": "codesets/67/672d527dc700cbdb.json",
   "deviceType": 1,
   "globalDeviceId": 181893,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputExt1"],"name":"AV1"},
+      {"commands":["InputExt2"],"name":"AV2"},
+      {"commands":["InputS-Video"],"name":"S-VIDEO"},
+      {"commands":["InputPc"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "LW15M23C"
+  "model": "LW15M23C",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

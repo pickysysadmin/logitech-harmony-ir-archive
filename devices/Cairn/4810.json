@@ -2,6 +2,33 @@
   "codeset": "codesets/b6/b69a1293459a98cf.json",
   "deviceType": 5,
   "globalDeviceId": 9705,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"TV"},
+      {"name":"DVD"},
+      {"name":"Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Cairn",
-  "model": "4810"
+  "model": "4810",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

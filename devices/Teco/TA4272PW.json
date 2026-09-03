@@ -1,7 +1,71 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/eb/eba448826fcbd796.json",
   "deviceType": 1,
   "globalDeviceId": 141123,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teco",
-  "model": "TA4272PW"
+  "model": "TA4272PW",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["AV/S/SCART"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"}
+      ]
+    },
+    "HDInput": {
+      "next": ["HDTV/PC/HDMI"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"PC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["AV/S/SCART"],"setType":2}]},
+        {"name":"HD","select":[{"commands":["HDTV/PC/HDMI"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["TV/DTV"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV/DTV"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

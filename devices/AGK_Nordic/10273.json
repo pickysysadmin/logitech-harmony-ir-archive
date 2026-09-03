@@ -2,6 +2,33 @@
   "codeset": "codesets/dd/dd301a418a59e070.json",
   "deviceType": 34,
   "globalDeviceId": 170116,
+  "inputs": {
+    "list": [
+      {"name":"Analog TV"},
+      {"name":"DVD"},
+      {"name":"DV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "AGK Nordic",
-  "model": "10273"
+  "model": "10273",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Analog TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

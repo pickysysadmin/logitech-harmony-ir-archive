@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 43204,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TUNER"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleMode","to":"Video1"}],"name":"Vid1"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleMode","to":"Video2"}],"name":"Vid2"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleMode","to":"Front"}],"name":"Frnt"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleMode","to":"Comp1"}],"name":"Cmp1"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleMode","to":"Comp2"}],"name":"Cmp2"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleMode","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "D56W20B"
+  "model": "D56W20B",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"InputType","to":"TUNER"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "CycleMode": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Front"},
+        {"name":"Comp1"},
+        {"name":"Comp2"},
+        {"name":"DVI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TUNER","select":[{"commands":["0","3"],"setType":2}]},
+        {"name":"Cycle","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

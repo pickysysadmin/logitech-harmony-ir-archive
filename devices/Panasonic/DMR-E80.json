@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/01/01e3c33b6f57b3c3.json",
   "deviceType": 34,
   "globalDeviceId": 167454,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LinesInput","to":"L1"}],"name":"DVDL1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LinesInput","to":"L2"}],"name":"DVDL2"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LinesInput","to":"L3"}],"name":"DVDL3"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LinesInput","to":"Tuner"}],"name":"DVDTuner"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"LinesInput","to":"L1"}],"name":"HDDL1"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"LinesInput","to":"L2"}],"name":"HDDL2"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"LinesInput","to":"L3"}],"name":"HDDL3"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"LinesInput","to":"Tuner"}],"name":"HDDTuner"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-E80"
+  "model": "DMR-E80",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]}
+      ]
+    },
+    "LinesInput": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"L3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

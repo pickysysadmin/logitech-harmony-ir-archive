@@ -2,6 +2,38 @@
   "codeset": "codesets/bc/bce0454e4f8d4520.json",
   "deviceType": 1,
   "globalDeviceId": 122288,
+  "inputs": {
+    "finish": ["VolumeUp"],
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"Scart1"},
+      {"name":"Scart2"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"RGB"},
+      {"name":"DVI"}
+    ],
+    "next": ["ChannelDown"],
+    "start": [
+      {"set":"Input","to":"AntennaCable"},
+      "StartInput"
+    ],
+    "type": 4
+  },
   "manufacturer": "Watson",
-  "model": "PDP-4212TS"
+  "model": "PDP-4212TS",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

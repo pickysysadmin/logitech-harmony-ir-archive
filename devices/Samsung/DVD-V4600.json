@@ -1,7 +1,51 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/7b/7b159cf616c2d888.json",
   "deviceType": 25,
   "globalDeviceId": 164723,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"TunerLine"},{"set":"TunerLineInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"TunerLine"},{"set":"TunerLineInput","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"TunerLine"},{"set":"TunerLineInput","to":"Line 2"}],"name":"Line 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "DVD-V4600"
+  "model": "DVD-V4600",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"TunerLine","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "TunerLineInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line 1"},
+        {"name":"Line 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/2c/2c1a4024f9c88cb6.json",
   "deviceType": 35,
   "globalDeviceId": 142473,
+  "inputs": {
+    "finish": ["InputDvd"],
+    "list": [
+      {"name":"Tuner"},
+      {"name":"CD"},
+      {"name":"Tape"}
+    ],
+    "next": ["7"],
+    "start": [
+      {"set":"Input","to":"Tuner"},
+      "3"
+    ],
+    "type": 4
+  },
   "manufacturer": "Bang & Olufsen",
-  "model": "BeoPort"
+  "model": "BeoPort",
+  "power": {
+    "off": ["PowerOff"],
+    "onReset": [
+      {"set":"Input","to":"CD"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,59 @@
   "codeset": "codesets/a7/a7821db16dc5862c.json",
   "deviceType": 22,
   "globalDeviceId": 181850,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Portable"}],"name":"Portable","ports":["Portable"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HB954PB"
+  "model": "HB954PB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": [
+        "InputNext",
+        {"delayMs":1000}
+      ],
+      "values": [
+        {"name":"FM"},
+        {"name":"AUX"},
+        {"name":"Portable"},
+        {"name":"Optical"},
+        {"name":"Coaxial"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["iPod"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["Home"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

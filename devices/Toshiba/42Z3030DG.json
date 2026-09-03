@@ -2,6 +2,56 @@
   "codeset": "codesets/a4/a44de4946bcf038e.json",
   "deviceType": 1,
   "globalDeviceId": 178359,
+  "inputs": {
+    "list": [
+      {"commands":["InputScart1"],"name":"Ext1"},
+      {"commands":["InputScart2"],"name":"Ext2"},
+      {"commands":["Input3c"],"name":"Ext3"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["InputHDMI3"],"name":"HDMI3"},
+      {"commands":["1"],"name":"ATV"},
+      {"commands":["InputPc"],"name":"DTV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Toshiba",
-  "model": "42Z3030DG"
+  "model": "42Z3030DG",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ATV/DTVInput": {
+      "next": ["ATV/DTV"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Ext1","select":[{"commands":["InputScart1"],"setType":2}]},
+        {"name":"Ext2","select":[{"commands":["InputScart2"],"setType":2}]},
+        {"name":"Ext3","select":[{"commands":["Input3c"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI3","select":[{"commands":["InputHDMI3"],"setType":2}]},
+        {"name":"ATV/DTV","select":[{"commands":["ATV/DTV"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 0,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 2
+  }
 }

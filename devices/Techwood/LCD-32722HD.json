@@ -2,6 +2,37 @@
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 116684,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"EXT-1"},
+      {"name":"EXT-2"},
+      {"name":"EXT-2S"},
+      {"name":"EXT-3"},
+      {"name":"EXT-4"},
+      {"name":"EXT-4S"},
+      {"name":"EXT-5"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Techwood",
-  "model": "LCD-32722HD"
+  "model": "LCD-32722HD",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"EXT-1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

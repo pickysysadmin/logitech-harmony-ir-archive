@@ -2,6 +2,57 @@
   "codeset": "codesets/2b/2b3996775b8c1021.json",
   "deviceType": 22,
   "globalDeviceId": 164171,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm"}],"name":"Fm"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Am"}],"name":"Am"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"D-in"}],"name":"D-in"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Music P"}],"name":"Music P"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PT850W"
+  "model": "SC-PT850W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputAUX"],
+      "values": [
+        {"name":"USB"},
+        {"name":"AUX"},
+        {"name":"D-in"},
+        {"name":"Music P"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":[{"command":"InputDvd","durationMs":1200}],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":[{"command":"InputAUX","durationMs":1200},{"set":"DigitalInput","to":"USB"}],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Fm"},
+        {"name":"Am"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

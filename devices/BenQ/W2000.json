@@ -2,6 +2,40 @@
   "codeset": "codesets/fe/fedfaf5719a2161c.json",
   "deviceType": 7,
   "globalDeviceId": 274967,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2/MHL"},
+      {"name":"PC"},
+      {"name":"Video"},
+      {"name":"Component"},
+      {"name":"HDMI 3/MHL"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "BenQ",
-  "model": "W2000"
+  "model": "W2000",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

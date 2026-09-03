@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 127841,
+  "inputs": {
+    "finish": [
+      "Select",
+      {"delayMs":500}
+    ],
+    "list": [
+      {"name":"TV"},
+      {"name":"EXT1"},
+      {"name":"EXT2"},
+      {"name":"EXT2S"},
+      {"name":"EXT3"},
+      {"name":"EXT4"},
+      {"name":"EXT4S"},
+      {"name":"EXT5"},
+      {"name":"PC"}
+    ],
+    "next": ["DirectionDown"],
+    "start": [
+      "Red",
+      {"delayMs":500},
+      "DirectionLeft",
+      "DirectionLeft",
+      {"delayMs":500},
+      "DirectionDown"
+    ],
+    "type": 4
+  },
   "manufacturer": "Evesham",
-  "model": "ALQEMI37"
+  "model": "ALQEMI37",
+  "power": {
+    "toggle": [
+      {"set":"Input","to":"EXT1"},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

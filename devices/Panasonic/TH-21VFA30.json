@@ -1,7 +1,52 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 15,
   "globalDeviceId": 157257,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AUX"},
+      {"name":"Game"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-21VFA30"
+  "model": "TH-21VFA30",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVS": {
+      "start": ["Blue"],
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["Green"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":["Yellow"],"setType":1}]}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["TvVideo",{"delayMs":300}],"setType":2}]},
+        {"name":"AV","select":[{"commands":["TvVideo",{"delayMs":500}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

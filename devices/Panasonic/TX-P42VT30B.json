@@ -2,6 +2,69 @@
   "codeset": "codesets/c0/c08a2366fa6630f4.json",
   "deviceType": 1,
   "globalDeviceId": 219464,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV 2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI3"}],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI4"}],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Freesat"}],"name":"Freesat","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DVB"}],"name":"DVB","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"OtherSat"}],"name":"OtherSat","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"MediaServer"}],"name":"SD Card/USB","ports":["USB"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-P42VT30B"
+  "model": "TX-P42VT30B",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputHdmi1","AV","DirectionUp","OK"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"HDMI4","select":[{"commands":["InputHdmi4"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["TV"],"setType":2}]},
+        {"name":"MediaServer","select":[{"commands":["InputVideo1","AV","DirectionUp","OK"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"Freesat"},
+        {"name":"DVB"},
+        {"name":"TV"},
+        {"name":"OtherSat"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

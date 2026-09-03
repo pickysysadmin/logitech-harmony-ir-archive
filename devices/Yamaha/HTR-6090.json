@@ -2,6 +2,41 @@
   "codeset": "codesets/c1/c1a53c99702eac23.json",
   "deviceType": 5,
   "globalDeviceId": 177575,
+  "inputs": {
+    "list": [
+      {"commands":["InputXm"],"name":"XM","ports":["Others"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputMultiChIn"],"name":"MultiChIn","ports":["Composite"]},
+      {"commands":["InputV-Aux/Dock"],"name":"V-AUX/Dock","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Component","Composite","S-Video"]},
+      {"commands":["InputMd/Tape"],"name":"MD/Tape","ports":["Composite"]},
+      {"commands":["InputCdr"],"name":"CD-R","ports":["Composite"]},
+      {"commands":["InputDtv"],"name":"DTV","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVcr1"],"name":"VCR1","ports":["Composite","S-Video"]},
+      {"commands":["InputDvr/Vcr2"],"name":"DVR/VCR2","ports":["Composite","Coaxial","S-Video"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","Optical","S-Video"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "HTR-6090"
+  "model": "HTR-6090",
+  "power": {
+    "off": ["PowerOff-MainZone"],
+    "on": ["PowerOn-MainZone"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

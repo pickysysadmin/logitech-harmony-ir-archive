@@ -2,6 +2,76 @@
   "codeset": "codesets/af/af47b50875a4e8af.json",
   "deviceType": 1,
   "globalDeviceId": 149687,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"SV"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"Scart"}],"name":"Scart1"},
+      {"commands":[{"set":"InputType","to":"Scart"}],"name":"Scart2"},
+      {"commands":[{"set":"InputType","to":"Scart"}],"name":"Scart2S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Tatung",
-  "model": "V32MCGI-ED1"
+  "model": "V32MCGI-ED1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"Scart","select":[{"commands":["InputScart"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"PC"},
+        {"name":"HDMI"},
+        {"name":"DVI"}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputScart"],
+      "values": [
+        {"name":"Scart1"},
+        {"name":"Scart2"},
+        {"name":"Scart2S"}
+      ]
+    },
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV"},
+        {"name":"SV"},
+        {"name":"YPbPr"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

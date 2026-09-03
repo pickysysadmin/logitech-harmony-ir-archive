@@ -2,6 +2,66 @@
   "codeset": "codesets/94/94b47467a3aa2453.json",
   "deviceType": 1,
   "globalDeviceId": 179701,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"CompInput","to":"Comp1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"CompInput","to":"Comp2"}],"name":"Componnent2"},
+      {"commands":[{"set":"InputType","to":"DVI/VGA"},{"set":"DVIInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"DVI/VGA"},{"set":"DVIInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Syntax-Brillian",
-  "model": "LT-32HV"
+  "model": "LT-32HV",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CompInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "DVIInput": {
+      "next": ["InputDvi/Vga"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"VGA"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"DVI/VGA","select":[{"commands":["InputDvi/Vga",{"set":"DVIInput","to":"VGA"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 9000,
+    "pressMinRepeats": 1
+  }
 }

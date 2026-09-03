@@ -3,5 +3,39 @@
   "deviceType": 11,
   "globalDeviceId": 68423,
   "manufacturer": "Sony",
-  "model": "CDP-CX90"
+  "model": "CDP-CX90",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Continuous": {
+      "values": [
+        {"name":"True","select":[{"commands":["Continue"],"setType":2}]},
+        {"name":"False","select":[{"commands":["Shuffle"],"setType":2}]}
+      ]
+    },
+    "Grouped": {
+      "values": [
+        {"name":"True","select":[{"commands":["SelectGroup"],"setType":2}]},
+        {"name":"False","select":[{"commands":["SelectGroup"],"setType":2}]}
+      ]
+    },
+    "Single": {
+      "values": [
+        {"name":"True","select":[{"commands":["Continue"],"setType":1}]},
+        {"name":"False","select":[{"commands":["Shuffle"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

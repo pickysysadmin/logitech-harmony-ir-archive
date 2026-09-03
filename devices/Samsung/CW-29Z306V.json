@@ -2,6 +2,48 @@
   "codeset": "codesets/98/9893c676fea461ad.json",
   "deviceType": 1,
   "globalDeviceId": 179605,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VideoAv1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VideoAv2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VideoSVideo"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "CW-29Z306V"
+  "model": "CW-29Z306V",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["Source",{"set":"VideoInput","to":"VideoAv1"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"VideoAv1"},
+        {"name":"VideoAv2"},
+        {"name":"VideoSVideo"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

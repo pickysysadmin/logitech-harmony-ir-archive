@@ -2,6 +2,38 @@
   "codeset": "codesets/db/db1d96c6a2342af3.json",
   "deviceType": 7,
   "globalDeviceId": 122995,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"RGB"},
+      {"name":"HDMI"},
+      {"name":"Video"},
+      {"name":"S-Video"}
+    ],
+    "next": ["DirectionRight"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "LG",
-  "model": "AN-100"
+  "model": "AN-100",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":200},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle","PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 22000,
+    "pressMinRepeats": 1
+  }
 }

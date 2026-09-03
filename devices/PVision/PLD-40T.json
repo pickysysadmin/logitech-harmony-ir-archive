@@ -1,7 +1,47 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/04/0496214e9add08fc.json",
   "deviceType": 1,
   "globalDeviceId": 108080,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"AV4"},
+      {"name":"S-VIDEO"},
+      {"name":"COMP."},
+      {"name":"PC-RGB"},
+      {"name":"HDMI1"},
+      {"name":"HDMI2"},
+      {"name":"NIMP"}
+    ],
+    "next": [
+      {"delayMs":800},
+      "ChannelDown",
+      {"delayMs":600}
+    ],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "PVision",
-  "model": "PLD-40T"
+  "model": "PLD-40T",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

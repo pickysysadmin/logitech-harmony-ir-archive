@@ -2,6 +2,41 @@
   "codeset": "codesets/75/751278a22b84b1e0.json",
   "deviceType": 7,
   "globalDeviceId": 499607,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"name":"Computer"},
+      {"name":"Video"},
+      {"name":"S-Video"},
+      {"name":"HDMI"},
+      {"name":"File Viewer"},
+      {"name":"Wireless"},
+      {"name":"USB Display"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Input"],
+    "type": 4
+  },
   "manufacturer": "Casio",
-  "model": "XJ-M151"
+  "model": "XJ-M151",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

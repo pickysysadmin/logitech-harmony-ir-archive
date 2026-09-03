@@ -1,7 +1,78 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 121176,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"TvAvMode","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"TvAvMode","to":"AV"},{"set":"AVInputs","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"TvAvMode","to":"AV"},{"set":"AVInputs","to":"AV 2"},{"set":"Av2Input","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"TvAvMode","to":"AV"},{"set":"AVInputs","to":"AV 2"},{"set":"Av2Input","to":"AV 2s"}],"name":"AV 2s"},
+      {"commands":[{"set":"TvAvMode","to":"AV"},{"set":"AVInputs","to":"AV 3"},{"set":"Av3Input","to":"AV 3"}],"name":"AV 3"},
+      {"commands":[{"set":"TvAvMode","to":"AV"},{"set":"AVInputs","to":"AV 3"},{"set":"Av3Input","to":"AV 3s"}],"name":"AV 3s"},
+      {"commands":[{"set":"TvAvMode","to":"AV"},{"set":"AVInputs","to":"AV 4"},{"set":"Av4Input","to":"AV 4"}],"name":"AV 4"},
+      {"commands":[{"set":"TvAvMode","to":"AV"},{"set":"AVInputs","to":"AV 4"},{"set":"Av4Input","to":"AV 4s"}],"name":"AV 4s"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-32PK20"
+  "model": "TX-32PK20",
+  "power": {
+    "toggle": [
+      {"set":"TvAvMode","to":"TV"},
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInputs": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["Red"],"setType":1}]},
+        {"name":"AV 2","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"AV 3","select":[{"commands":["Yellow"],"setType":2}]},
+        {"name":"AV 4","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    },
+    "Av2Input": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV 2"},
+        {"name":"AV 2s"}
+      ]
+    },
+    "Av3Input": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV 3"},
+        {"name":"AV 3s"}
+      ]
+    },
+    "Av4Input": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"AV 4"},
+        {"name":"AV 4s"}
+      ]
+    },
+    "TvAvMode": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

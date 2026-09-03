@@ -2,6 +2,37 @@
   "codeset": "codesets/e7/e79325ac3935ccd3.json",
   "deviceType": 1,
   "globalDeviceId": 63007,
+  "inputs": {
+    "finish": ["VolumeUp"],
+    "list": [
+      {"name":"A"},
+      {"name":"H"},
+      {"name":"V1"},
+      {"name":"V2"},
+      {"name":"SV"},
+      {"name":"TV"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": [
+      {"command":"DirectionLeft","durationMs":1000}
+    ],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Tiny",
-  "model": "Focus 4200"
+  "model": "Focus 4200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

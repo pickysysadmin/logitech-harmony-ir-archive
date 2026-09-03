@@ -2,6 +2,48 @@
   "codeset": "codesets/7a/7a68f52b19548be2.json",
   "deviceType": 13,
   "globalDeviceId": 334426,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Input 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Input2"},{"set":"Input2Input","to":"Input 2A"}],"name":"Input 2A"},
+      {"commands":[{"set":"InputType","to":"Input2"},{"set":"Input2Input","to":"Input 2B"}],"name":"Input 2B"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-58PF11RK"
+  "model": "TH-58PF11RK",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Input2Input": {
+      "next": ["Input2"],
+      "values": [
+        {"name":"Input 2A"},
+        {"name":"Input 2B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input 1","select":[{"commands":["Input1"],"setType":2}]},
+        {"name":"Input 3","select":[{"commands":["Input3"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Input2","select":[{"commands":["Input2"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

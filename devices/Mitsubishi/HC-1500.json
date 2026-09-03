@@ -2,6 +2,38 @@
   "codeset": "codesets/72/72533bc9a2d5fb50.json",
   "deviceType": 7,
   "globalDeviceId": 165026,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi"],"name":"HDMI","ports":["HDMI"]},
+      {"commands":["InputComputer"],"name":"PC","ports":["PC"]},
+      {"commands":["InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputS-Video"],"name":"S-Video","ports":["S-Video"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Mitsubishi",
-  "model": "HC-1500"
+  "model": "HC-1500",
+  "power": {
+    "off": [
+      {"delayMs":500},
+      {"command":"PowerOff","durationMs":2000},
+      {"delayMs":1500},
+      {"command":"PowerOff","durationMs":2000},
+      {"delayMs":1500},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

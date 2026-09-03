@@ -2,6 +2,42 @@
   "codeset": "codesets/36/362eb927ae6329c2.json",
   "deviceType": 1,
   "globalDeviceId": 118240,
+  "inputs": {
+    "list": [
+      {"name":"1"},
+      {"name":"2"},
+      {"name":"3c"},
+      {"name":"HDMI1"},
+      {"name":"HDMI2"},
+      {"name":"PC"},
+      {"name":"TV"}
+    ],
+    "next": ["InputNext 2"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "42WL68R"
+  "model": "42WL68R",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["0"],"setType":2}]},
+        {"name":"On","select":[{"commands":["0","1","2","3","4","5"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

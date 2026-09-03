@@ -2,6 +2,47 @@
   "codeset": "codesets/47/4700fc9cf8d42867.json",
   "deviceType": 21,
   "globalDeviceId": 276734,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"USB/Mp3Link"},{"set":"USB/Mp3LinkInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB/Mp3Link"},{"set":"USB/Mp3LinkInput","to":"Mp3Link"}],"name":"Mp3Link"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "BTM2056/05"
+  "model": "BTM2056/05",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"FM","select":[{"commands":["InputFm"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"USB/Mp3Link","select":[{"commands":["InputUsb/Mp3link"],"setType":2}]}
+      ]
+    },
+    "USB/Mp3LinkInput": {
+      "next": ["InputUsb/Mp3link"],
+      "values": [
+        {"name":"USB"},
+        {"name":"Mp3Link"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

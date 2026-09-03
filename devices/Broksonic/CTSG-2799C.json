@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/bb/bb6240f38c89fb88.json",
   "deviceType": 15,
   "globalDeviceId": 27241,
+  "inputs": {
+    "list": [
+      {"name":"TV","ports":["Antenna"]},
+      {"name":"Input 1","ports":["Others"]},
+      {"name":"Input 2","ports":["Others"]},
+      {"name":"VCR","ports":["Others"]}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Broksonic",
-  "model": "CTSG-2799C"
+  "model": "CTSG-2799C",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 4,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

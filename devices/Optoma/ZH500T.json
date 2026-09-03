@@ -2,6 +2,36 @@
   "codeset": "codesets/94/94736e7547bce5ce.json",
   "deviceType": 7,
   "globalDeviceId": 479914,
+  "inputs": {
+    "list": [
+      {"commands":["InputVga1"],"name":"VGA 1"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHDBaseT"],"name":"HDBaseT"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "ZH500T"
+  "model": "ZH500T",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

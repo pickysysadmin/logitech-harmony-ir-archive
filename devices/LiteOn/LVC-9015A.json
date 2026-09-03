@@ -2,6 +2,56 @@
   "codeset": "codesets/07/077adafb4a8e02cd.json",
   "deviceType": 25,
   "globalDeviceId": 70733,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Liteon"}],"name":"Liteon Logo"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Ch3"}],"name":"Ch3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Vid"}],"name":"S-Vid"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"DV"}],"name":"DV"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LiteOn",
-  "model": "LVC-9015A"
+  "model": "LVC-9015A",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Liteon"},
+        {"name":"Ch3"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"S-Vid"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,33 @@
   "codeset": "codesets/a8/a8547d18fe86ba3f.json",
   "deviceType": 1,
   "globalDeviceId": 99906,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext"],"name":"AntennaCable"},
+      {"commands":["Red"],"name":"AV1"},
+      {"commands":["Green"],"name":"AV2"},
+      {"commands":["Yellow"],"name":"AV3"},
+      {"commands":["Blue"],"name":"HDMI"},
+      {"commands":["Blue","Blue"],"name":"YUV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TH42PE55"
+  "model": "TH42PE55",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

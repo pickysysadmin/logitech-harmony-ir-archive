@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08737a36fd12e45d.json",
   "deviceType": 18,
   "globalDeviceId": 129391,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"Tuner"},
+      {"name":"Video 1 (rca)"},
+      {"name":"Video 2 (rca)"},
+      {"name":"Scart"},
+      {"name":"S-Video 1"},
+      {"name":"S-Video 2"},
+      {"name":"DV-IN"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "AverTV Studio",
-  "model": "305"
+  "model": "305",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

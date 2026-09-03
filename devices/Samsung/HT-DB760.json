@@ -2,6 +2,55 @@
   "codeset": "codesets/79/79ff0ae7c5f1bb66.json",
   "deviceType": 22,
   "globalDeviceId": 107030,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"AM"},
+      {"commands":["InputTuner"],"name":"FM"},
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputAux"],"name":"Digital"},
+      {"commands":["InputAux"],"name":"Aux 1"},
+      {"commands":["InputAux"],"name":"Aux 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HT-DB760"
+  "model": "HT-DB760",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

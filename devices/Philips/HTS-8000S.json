@@ -2,6 +2,34 @@
   "codeset": "codesets/29/29a62b6a01443eae.json",
   "deviceType": 22,
   "globalDeviceId": 159478,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputDisc"],"name":"DVD"},
+      {"commands":["InputAux"],"name":"AUX"},
+      {"commands":["InputDigital"],"name":"DI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "HTS-8000S"
+  "model": "HTS-8000S",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["InputAux"],
+    "onReset": [
+      {"set":"Input","to":"AUX"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

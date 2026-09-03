@@ -2,6 +2,95 @@
   "codeset": "codesets/6f/6f19089d64e5b3b9.json",
   "deviceType": 1,
   "globalDeviceId": 175910,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"HDMI"},
+      {"name":"AV2"},
+      {"name":"AV2S"},
+      {"name":"AV3"},
+      {"name":"AV3S"},
+      {"name":"AV4S"},
+      {"name":"Component"},
+      {"name":"PC"},
+      {"name":"AV4"}
+    ],
+    "next": ["Green"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-65PV600R"
+  "model": "TH-65PV600R",
+  "states": {
+    "AVFOUR": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4S"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":[{"set":"PAGE12","to":"PAGE1"},"Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":[{"set":"PAGE12","to":"PAGE1"},"Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":[{"set":"PAGE12","to":"PAGE1"},"Yellow"],"setType":2}]},
+        {"name":"AV4","select":[{"commands":[{"set":"PAGE12","to":"PAGE2"},"Green"],"setType":2}]},
+        {"name":"Component/HDMI","select":[{"commands":[{"set":"PAGE12","to":"PAGE2"},"Yellow"],"setType":2}]}
+      ]
+    },
+    "AVTHREE": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AVTWO": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "Component/HDMI": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"Component"},
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "AV",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Green"],"setType":1}]}
+      ]
+    },
+    "PAGE12": {
+      "values": [
+        {"name":"PAGE1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"PAGE2","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

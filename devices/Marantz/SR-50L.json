@@ -2,6 +2,33 @@
   "codeset": "codesets/86/86f3a17e4ba92f5b.json",
   "deviceType": 5,
   "globalDeviceId": 54301,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputCD"],"name":"CD"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputVcr"],"name":"VCR"},
+      {"commands":["InputTelevision"],"name":"TV"},
+      {"commands":["InputDvd"],"name":"CDV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Marantz",
-  "model": "SR-50L"
+  "model": "SR-50L",
+  "power": {
+    "off": ["PowerOff 2"],
+    "on": ["InputCD"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

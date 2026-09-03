@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 22233,
+  "inputs": {
+    "list": [
+      {"commands":["ChannelUp"],"name":"AntennaCable"},
+      {"commands":["InputVideo1"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"SVideo"},
+      {"commands":["InputRGB"],"name":"Component 1"},
+      {"commands":["InputDVI/DTV"],"name":"Component 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "RZ-17LZ10"
+  "model": "RZ-17LZ10",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

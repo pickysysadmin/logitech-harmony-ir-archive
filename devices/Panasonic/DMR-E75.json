@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/c7/c720e50d3a9227d9.json",
   "deviceType": 47,
   "globalDeviceId": 158148,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"ModeTypes","to":"DVDInput"},{"set":"DVDInput","to":"DVDTuner"}],"name":"DVDTuner"},
+      {"commands":[{"set":"ModeTypes","to":"DVDInput"},{"set":"DVDInput","to":"DVDLine1"}],"name":"DVDLine1"},
+      {"commands":[{"set":"ModeTypes","to":"DVDInput"},{"set":"DVDInput","to":"DVDLine2"}],"name":"DVDLine2"},
+      {"commands":[{"set":"ModeTypes","to":"VCRInput"},{"set":"VCRInput","to":"VCRTuner"}],"name":"VCRTuner"},
+      {"commands":[{"set":"ModeTypes","to":"VCRInput"},{"set":"VCRInput","to":"VCRLine1"}],"name":"VCRLine1"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-E75"
+  "model": "DMR-E75",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"DVDTuner"},
+        {"name":"DVDLine1"},
+        {"name":"DVDLine2"}
+      ]
+    },
+    "ModeTypes": {
+      "next": ["Vcr/Dvd"],
+      "values": [
+        {"name":"DVDInput"},
+        {"name":"VCRInput"}
+      ]
+    },
+    "VCRInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VCRTuner"},
+        {"name":"VCRLine1"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 700,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,40 @@
   "codeset": "codesets/b9/b9ff0aa5e2e7bc09.json",
   "deviceType": 22,
   "globalDeviceId": 94294,
+  "inputs": {
+    "list": [
+      {"commands":["InputDVD"],"name":"DVD"},
+      {"commands":["InputHDD"],"name":"HDD"},
+      {"commands":["InputTuner"],"name":"Tuner"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "DAR-RH1000"
+  "model": "DAR-RH1000",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"TV"},
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"L3"},
+        {"name":"L4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

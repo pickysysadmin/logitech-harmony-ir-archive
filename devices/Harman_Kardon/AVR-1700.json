@@ -2,6 +2,81 @@
   "codeset": "codesets/f2/f2fc478f509af7e1.json",
   "deviceType": 5,
   "globalDeviceId": 233589,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Cable/SAT"}],"name":"Cable/Sat","ports":["HDMI","Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["HDMI","Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc","ports":["HDMI","Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"Server"}],"name":"Server","ports":["HDMI","Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"Aux","ports":["Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"Game"}],"name":"Game","ports":["HDMI","Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"STB"}],"name":"STB","ports":["HDMI","Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"Audio"}],"name":"Audio","ports":["Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"iPod"}],"name":"iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Network"},{"set":"NetworkInput","to":"Network"}],"name":"Network","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Network"},{"set":"NetworkInput","to":"Network"}],"name":"vTuner","ports":["Streaming"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "AVR-1700"
+  "model": "AVR-1700",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":4000}
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Cable/SAT","select":[{"commands":["InputCable/Sat"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Server","select":[{"commands":["InputServer"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Game","select":[{"commands":["InputGame"],"setType":2}]},
+        {"name":"STB","select":[{"commands":["InputStb"],"setType":2}]},
+        {"name":"Audio","select":[{"commands":["InputAudio"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Network","select":[{"commands":["InputNetwork"],"setType":2}]}
+      ]
+    },
+    "NetworkInput": {
+      "next": ["InputNetwork"],
+      "values": [
+        {"name":"Network"},
+        {"name":"vTuner"}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputUsb"],
+      "values": [
+        {"name":"USB"},
+        {"name":"iPod"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 14800,
+    "pressMinRepeats": 1
+  }
 }

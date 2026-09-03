@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 155988,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Tuner"},
+      {"commands":["TvVideo","0"],"name":"AV"},
+      {"commands":["TvVideo","1"],"name":"EXT1"},
+      {"commands":["TvVideo","2"],"name":"EXT2"},
+      {"commands":["TvVideo","3"],"name":"EXT3"},
+      {"commands":["TvVideo","4"],"name":"EXT4"},
+      {"commands":["TvVideo","5"],"name":"HDMI1"},
+      {"commands":["TvVideo","6"],"name":"HDMI2"},
+      {"commands":["TvVideo","7"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-32X70"
+  "model": "LT-32X70",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

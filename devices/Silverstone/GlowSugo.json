@@ -2,6 +2,37 @@
   "codeset": "codesets/c1/c14a1578ae534a3e.json",
   "deviceType": 35,
   "globalDeviceId": 161691,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"My TV"},
+      {"name":"My DVD"},
+      {"name":"My Videos"},
+      {"name":"My Music"},
+      {"name":"My Pictures"},
+      {"name":"My Radio"}
+    ],
+    "next": ["DirectionUp","DirectionDown","DirectionLeft","DirectionRight"],
+    "start": ["GreenButton"],
+    "type": 4
+  },
   "manufacturer": "Silverstone",
-  "model": "GlowSugo"
+  "model": "GlowSugo",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"My TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

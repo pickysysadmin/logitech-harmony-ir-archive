@@ -1,7 +1,52 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5d/5d2cea18931fce10.json",
   "deviceType": 32,
   "globalDeviceId": 55853,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"L"},{"set":"LInput","to":"L1"}],"name":"L1"},
+      {"commands":[{"set":"InputType","to":"L"},{"set":"LInput","to":"L1OPT"}],"name":"L1OPT"},
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"FM/AM"}],"name":"FM/AM"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":["InputNext"],"name":"LINE2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "SD-V57HTSU"
+  "model": "SD-V57HTSU",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"L","select":[{"commands":["InputAux",{"set":"LInput","to":"L1OPT"}],"setType":2}]},
+        {"name":"DVD/CD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"FM/AM","select":[{"commands":["InputFM/AM"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]}
+      ]
+    },
+    "LInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"L1"},
+        {"name":"L1OPT"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

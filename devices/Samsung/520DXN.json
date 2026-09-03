@@ -2,6 +2,64 @@
   "codeset": "codesets/0b/0b3c91a53a9f06e6.json",
   "deviceType": 1,
   "globalDeviceId": 179024,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Magicinfo"}],"name":"Magicinfo"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"BNC"}],"name":"BNC"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "520DXN"
+  "model": "520DXN",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]},
+        {"name":"TV/DTV","select":[{"commands":["TV/DTV"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"PC"},
+        {"name":"DVI"},
+        {"name":"AV"},
+        {"name":"HDMI"},
+        {"name":"Magicinfo"},
+        {"name":"TV"},
+        {"name":"BNC"},
+        {"name":"Component"}
+      ]
+    },
+    "TV/DTVInput": {
+      "next": ["TV/DTV"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

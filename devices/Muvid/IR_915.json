@@ -2,6 +2,58 @@
   "codeset": "codesets/70/705e03c555c4ddb7.json",
   "deviceType": 22,
   "globalDeviceId": 237220,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"(R)Function"},{"set":"(R)FunctionInput","to":"Internet Radio"}],"name":"Intenet Radio"},
+      {"commands":[{"set":"InputType","to":"(R)Function"},{"set":"(R)FunctionInput","to":"Music Player"}],"name":"Music Player"},
+      {"commands":[{"set":"InputType","to":"(R)Function"},{"set":"(R)FunctionInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"(R)Function"},{"set":"(R)FunctionInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Muvid",
-  "model": "IR 915"
+  "model": "IR 915",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "(R)FunctionInput": {
+      "next": ["(R)InputFunction"],
+      "values": [
+        {"name":"Internet Radio"},
+        {"name":"Music Player"},
+        {"name":"DAB"},
+        {"name":"FM"}
+      ]
+    },
+    "FunctionInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"DVD/CD"},
+        {"name":"iPod"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Function","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"(R)Function","select":[{"commands":["(R)InputFunction"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

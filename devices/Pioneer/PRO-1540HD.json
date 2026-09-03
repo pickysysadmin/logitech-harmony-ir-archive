@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/07/0740186956c542f4.json",
   "deviceType": 1,
   "globalDeviceId": 166107,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANT A"}],"name":"Antenna A","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANT B"}],"name":"Antenna B","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"DTV"}],"name":"DTV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"I LINK"}],"name":"iLink","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"INPUT 1"}],"name":"Input 1","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"INPUT 2"}],"name":"Input 2","ports":["Component","Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"INPUT 3"}],"name":"Input 3","ports":["Component","Composite"]},
+      {"commands":[{"set":"InputType","to":"INPUT 4"}],"name":"Input 4","ports":["Component","Composite"]},
+      {"commands":[{"set":"InputType","to":"INPUT 5"}],"name":"Input 5","ports":["HDMI","Composite"]},
+      {"commands":[{"set":"InputType","to":"INPUT 6"}],"name":"Input 6","ports":["HDMI","Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PRO-1540HD"
+  "model": "PRO-1540HD",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "ANTInput": {
+      "next": ["InputAntenna"],
+      "values": [
+        {"name":"ANT A"},
+        {"name":"ANT B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ANT","select":[{"commands":["InputAntenna"],"setType":2}]},
+        {"name":"DTV","select":[{"commands":["InputTv/Dtv"],"setType":2}]},
+        {"name":"I LINK","select":[{"commands":["InputiLink"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"INPUT 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"INPUT 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"INPUT 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"INPUT 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"INPUT 5","select":[{"commands":["InputVideo5"],"setType":2}]},
+        {"name":"INPUT 6","select":[{"commands":["InputVideo6"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

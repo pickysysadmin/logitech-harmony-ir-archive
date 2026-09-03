@@ -2,6 +2,33 @@
   "codeset": "codesets/c0/c0f7c31198088f0a.json",
   "deviceType": 7,
   "globalDeviceId": 87351,
+  "inputs": {
+    "list": [
+      {"name":"PC 1"},
+      {"name":"PC 2"},
+      {"name":"S-VIDEO"},
+      {"name":"VIDEO"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-LB50SEA"
+  "model": "PT-LB50SEA",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"PC 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

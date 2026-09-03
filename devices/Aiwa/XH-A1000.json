@@ -2,6 +2,61 @@
   "codeset": "codesets/38/38fcd07d1689bd37.json",
   "deviceType": 21,
   "globalDeviceId": 14680,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"VideoInput"},{"set":"VideoInputInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"VideoInput"},{"set":"VideoInputInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"VideoInput"},{"set":"VideoInputInput","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"AuxInput"},{"set":"AuxInputInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"AuxInput"},{"set":"AuxInputInput","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"AuxInput"},{"set":"AuxInputInput","to":"5.1"}],"name":"5.1"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Aiwa",
-  "model": "XH-A1000"
+  "model": "XH-A1000",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInputInput": {
+      "next": ["InputVideo/Aux"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Phono"},
+        {"name":"5.1"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCD"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"VideoInput","select":[{"commands":["InputMD"],"setType":2}]},
+        {"name":"AuxInput","select":[{"commands":["InputVideo/Aux"],"setType":2}]}
+      ]
+    },
+    "VideoInputInput": {
+      "next": ["InputMD"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

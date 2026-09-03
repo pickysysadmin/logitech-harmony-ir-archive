@@ -2,6 +2,34 @@
   "codeset": "codesets/53/53dde6bc3e8b9a7b.json",
   "deviceType": 1,
   "globalDeviceId": 263858,
+  "inputs": {
+    "list": [
+      {"commands":["TV"],"name":"TV"},
+      {"commands":["TV",{"delayMs":2000},"TV","InputHdmi","AV",{"delayMs":500},"DirectionUp","DirectionUp","Ok"],"name":"AV 1"},
+      {"commands":["TV",{"delayMs":2000},"TV","InputHdmi","AV",{"delayMs":500},"DirectionUp","Ok"],"name":"AV 2"},
+      {"commands":["TV",{"delayMs":2000},"TV","InputHdmi"],"name":"HDMI 1"},
+      {"commands":["TV",{"delayMs":2000},"TV","InputHdmi","InputHdmi"],"name":"HDMI 2"},
+      {"commands":["MediaPlayer"],"name":"Media Player"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-32A410D"
+  "model": "TH-32A410D",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,81 @@
   "codeset": "codesets/c8/c851420f8ebfb8e0.json",
   "deviceType": 1,
   "globalDeviceId": 215055,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AVS"},{"set":"AVS","to":"AV1"},{"set":"AV1Input","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AVS"},{"set":"AVS","to":"AV1"},{"set":"AV1Input","to":"AV1S"}],"name":"AV1S"},
+      {"commands":[{"set":"InputType","to":"AVS"},{"set":"AVS","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"AVS","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"AVS","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Hdmi1"},{"set":"AVS","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Hdmi2"},{"set":"AVS","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"DVB"}],"name":"DVB"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-32LRG20B"
+  "model": "TH-32LRG20B",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "onReset": [
+      {"set":"InputType","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AV1Input": {
+      "finish": ["Select"],
+      "values": [
+        {"name":"AV1","select":[{"commands":["DirectionLeft"],"setType":2}]},
+        {"name":"AV1S","select":[{"commands":["DirectionRight"],"setType":2}]}
+      ]
+    },
+    "AVS": {
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"Component"},
+        {"name":"PC"},
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"},
+        {"name":"TV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AVS","select":[{"commands":["AV"],"setType":1}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":1}]},
+        {"name":"Component","select":[{"commands":["InputPc","AV","DirectionUp","Select"],"setType":2}]},
+        {"name":"Hdmi1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"Hdmi2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"Tuner","select":[{"commands":["TV"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DVB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

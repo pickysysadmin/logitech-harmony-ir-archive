@@ -2,6 +2,34 @@
   "codeset": "codesets/4e/4e6111350151b033.json",
   "deviceType": 1,
   "globalDeviceId": 176810,
+  "inputs": {
+    "list": [
+      {"name":"Analog Tv"},
+      {"name":"AV1"},
+      {"name":"AV1(Dvd)"},
+      {"name":"AV2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sanyo",
-  "model": "CP21KS2K"
+  "model": "CP21KS2K",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Analog Tv"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

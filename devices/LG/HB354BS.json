@@ -2,6 +2,54 @@
   "codeset": "codesets/5e/5e01cb30261c70cb.json",
   "deviceType": 22,
   "globalDeviceId": 181032,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Portable"}],"name":"Portable","ports":["Portable"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"HdmiIn1"}],"name":"HDMI In 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"HdmiIn2"}],"name":"HDMI In 2","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HB354BS"
+  "model": "HB354BS",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AUX"},
+        {"name":"Portable"},
+        {"name":"Optical"},
+        {"name":"Coaxial"},
+        {"name":"HdmiIn1"},
+        {"name":"HdmiIn2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["Play"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

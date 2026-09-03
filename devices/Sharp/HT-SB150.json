@@ -2,6 +2,46 @@
   "codeset": "codesets/26/260ecd63eb1e9c9d.json",
   "deviceType": 19,
   "globalDeviceId": 468718,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Line In"}],"name":"Line In","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"Optical/Arc"},{"set":"Optical/ArcInput","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Optical/Arc"},{"set":"Optical/ArcInput","to":"Hdmi Arc"}],"name":"Hdmi Arc","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "HT-SB150"
+  "model": "HT-SB150",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Line In","select":[{"commands":["InputLineIn"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Optical/Arc","select":[{"commands":["InputOptical/Arc"],"setType":2}]}
+      ]
+    },
+    "Optical/ArcInput": {
+      "next": ["InputOptical/Arc"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"Hdmi Arc"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

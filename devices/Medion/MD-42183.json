@@ -2,6 +2,44 @@
   "codeset": "codesets/d0/d0a3908a74926d74.json",
   "deviceType": 34,
   "globalDeviceId": 151936,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"DVD"},
+      {"name":"HDD"}
+    ],
+    "next": ["Hdd/Dvd"],
+    "type": 2
+  },
   "manufacturer": "Medion",
-  "model": "MD-42183"
+  "model": "MD-42183",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"CVBS1"},
+        {"name":"CVBS2"},
+        {"name":"SVideo1"},
+        {"name":"SVideo2"},
+        {"name":"Scart"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,56 @@
   "codeset": "codesets/36/362eb927ae6329c2.json",
   "deviceType": 1,
   "globalDeviceId": 157978,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"AVInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"AVInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"AVInput","to":"Svideo"}],"name":"Svideo"},
+      {"commands":[{"set":"AVInput","to":"Tuner"},{"set":"RFInput","to":"RF1"}],"name":"RF1"},
+      {"commands":[{"set":"AVInput","to":"Tuner"},{"set":"RFInput","to":"RF2"}],"name":"RF2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "CX2769J"
+  "model": "CX2769J",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Video"},
+        {"name":"Svideo"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"RF","select":[{"commands":["DigitSelectToggle"],"setType":2}]}
+      ]
+    },
+    "RFInput": {
+      "next": ["DigitSelectToggle"],
+      "values": [
+        {"name":"RF1"},
+        {"name":"RF2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

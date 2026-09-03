@@ -2,6 +2,45 @@
   "codeset": "codesets/14/144194201b24fdc3.json",
   "deviceType": 19,
   "globalDeviceId": 1188,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AUXType"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"DVDType"},{"set":"InputMode","to":"DVDMode"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVDType"},{"set":"InputMode","to":"DSSMode"}],"name":"DSS"},
+      {"commands":[{"set":"InputType","to":"VCRType"}],"name":"VCR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Boston Acoustics",
-  "model": "DT-6000"
+  "model": "DT-6000",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputMode": {
+      "next": ["VolumeUp"],
+      "values": [
+        {"name":"DVDMode"},
+        {"name":"DSSMode"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVDType","select":[{"commands":["VolumeUp"],"setType":2}]},
+        {"name":"AUXType","select":[{"commands":["InputAux"],"setType":1}]},
+        {"name":"VCRType","select":[{"commands":["InputVcr"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,43 @@
   "codeset": "codesets/b8/b8db576dcb1eab08.json",
   "deviceType": 5,
   "globalDeviceId": 29001,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"TapeInput","to":"Off"},"InputTv/Dbs"],"name":"TV/DBS"},
+      {"commands":[{"set":"TapeInput","to":"Off"},"InputVcr1"],"name":"VCR"},
+      {"commands":[{"set":"TapeInput","to":"Off"},"InputDvd/Ld"],"name":"DVD/LD"},
+      {"commands":[{"set":"TapeInput","to":"Off"},"InputTuner"],"name":"Tuner"},
+      {"commands":[{"set":"TapeInput","to":"On"}],"name":"Tape"},
+      {"commands":[{"set":"TapeInput","to":"Off"},"InputPhono"],"name":"Phono"},
+      {"commands":[{"set":"TapeInput","to":"Off"},"InputAux"],"name":"V-Aux"},
+      {"commands":[{"set":"TapeInput","to":"Off"},"InputCd/Md"],"name":"CD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V792"
+  "model": "RX-V792",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "TapeInput": {
+      "next": ["InputTape"],
+      "values": [
+        {"name":"On"},
+        {"name":"Off"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

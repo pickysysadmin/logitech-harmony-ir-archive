@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/90/90075f113e051ecb.json",
   "deviceType": 1,
   "globalDeviceId": 235136,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputHdmi1",{"delayMs":300},"Source",{"delayMs":300},"DirectionLeft","OK"],"name":"SAT"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["InputHdmi5"],"name":"HDMI 5"},
+      {"commands":["InputScart"],"name":"Scart"},
+      {"commands":["InputScart",{"delayMs":300},"Source",{"delayMs":300},"DirectionRight","OK"],"name":"YPbPr"},
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["SmartTv"],"name":"Smart TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "42PFL6057K"
+  "model": "42PFL6057K",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 14000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,69 @@
   "codeset": "codesets/05/0523cb3109f6b209.json",
   "deviceType": 1,
   "globalDeviceId": 147429,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"SV"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"Scart"}],"name":"Scart1"},
+      {"commands":[{"set":"InputType","to":"Scart"}],"name":"Scart2"},
+      {"commands":[{"set":"InputType","to":"Scart"}],"name":"Scart2S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Tatung",
-  "model": "V32MAAK-ET1"
+  "model": "V32MAAK-ET1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTV"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPcHd"],"setType":2}]},
+        {"name":"Scart","select":[{"commands":["InputScart"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPcHd"],
+      "values": [
+        {"name":"PC"},
+        {"name":"HDMI"},
+        {"name":"DVI"}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputScart"],
+      "values": [
+        {"name":"Scart1"},
+        {"name":"Scart2"},
+        {"name":"Scart2S"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV"},
+        {"name":"SV"},
+        {"name":"YPbPr"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

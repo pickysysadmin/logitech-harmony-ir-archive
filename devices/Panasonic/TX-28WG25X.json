@@ -2,6 +2,44 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 207835,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV 1"},
+      {"name":"AV 2"},
+      {"name":"AV 3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-28WG25X"
+  "model": "TX-28WG25X",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": [
+      "PowerOn",
+      {"delayMs":6000},
+      "TvVideo"
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVMode": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

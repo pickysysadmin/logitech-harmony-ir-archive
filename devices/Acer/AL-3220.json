@@ -2,6 +2,37 @@
   "codeset": "codesets/49/4989cd436dcc702f.json",
   "deviceType": 1,
   "globalDeviceId": 140008,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputTv","InputVideo"],"name":"AV1"},
+      {"commands":["InputTv","InputVideo","InputVideo"],"name":"AV2"},
+      {"commands":["InputTv","InputVideo","InputVideo","InputVideo"],"name":"AV3"},
+      {"commands":["InputSat"],"name":"Component1"},
+      {"commands":["InputTv","InputSat","InputSat"],"name":"Component2"},
+      {"commands":["InputTv","InputSat","InputSat","InputSat"],"name":"Component3"},
+      {"commands":["InputPc"],"name":"VGA"},
+      {"commands":["InputTv","InputPc","InputPc"],"name":"DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Acer",
-  "model": "AL-3220"
+  "model": "AL-3220",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

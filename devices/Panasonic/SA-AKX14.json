@@ -2,6 +2,47 @@
   "codeset": "codesets/5c/5c9dd5191625a0a0.json",
   "deviceType": 21,
   "globalDeviceId": 259021,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Radio/ExtIn"},{"set":"Radio/ExtInInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio/ExtIn"},{"set":"Radio/ExtInInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Radio/ExtIn"},{"set":"Radio/ExtInInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-AKX14"
+  "model": "SA-AKX14",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Radio/ExtIn","select":[{"commands":["InputRadio/ExtIn"],"setType":2}]}
+      ]
+    },
+    "Radio/ExtInInput": {
+      "next": ["InputRadio/ExtIn"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"Aux"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

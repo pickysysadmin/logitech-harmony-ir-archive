@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/77/772ff884d1617bfe.json",
   "deviceType": 1,
   "globalDeviceId": 166864,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Front"}],"name":"Front"},
+      {"commands":[{"set":"InputType","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"RGB-PC"}],"name":"RGB-PC"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Ant/Cable"},{"set":"Ant/CableInput","to":"Antenna"}],"name":"Antenna"},
+      {"commands":[{"set":"InputType","to":"Ant/Cable"},{"set":"Ant/CableInput","to":"Cable"}],"name":"Cable"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "52SX4D"
+  "model": "52SX4D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Ant/CableInput": {
+      "next": ["InputAnt/Cable"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"Cable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"AV 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Front","select":[{"commands":["InputFront"],"setType":2}]},
+        {"name":"Component 1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component 2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"RGB-PC","select":[{"commands":["InputRGB/PC"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi","InputHdmi"],"setType":2}]},
+        {"name":"Ant/Cable","select":[{"commands":["InputAnt/Cable"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

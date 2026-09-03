@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 67548,
+  "inputs": {
+    "list": [
+      {"commands":["InputAv1"],"name":"Antenna 1"},
+      {"commands":["Input 2"],"name":"Antenna 2"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputAV2"],"name":"Xbox"},
+      {"commands":["InputAV3"],"name":"DreamBox"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hitachi",
-  "model": "CL1408R"
+  "model": "CL1408R",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 6000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

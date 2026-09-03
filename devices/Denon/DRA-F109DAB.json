@@ -2,6 +2,78 @@
   "codeset": "codesets/d6/d663c1e28ec0c2ea.json",
   "deviceType": 5,
   "globalDeviceId": 245048,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM Auto"}],"name":"FM Auto"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM Mono"}],"name":"FM Mono"},
+      {"commands":[{"set":"InputType","to":"Analog In"},{"set":"AnalogInInput","to":"AnalogIn1"}],"name":"Analog In 1"},
+      {"commands":[{"set":"InputType","to":"Analog In"},{"set":"AnalogInInput","to":"AnalogIn2"}],"name":"Analog In 2"},
+      {"commands":[{"set":"InputType","to":"Digital In"},{"set":"DigitalInInput","to":"Optical"}],"name":"Digital In Optical"},
+      {"commands":[{"set":"InputType","to":"Digital In"},{"set":"DigitalInInput","to":"Network"}],"name":"Digital In Network"},
+      {"commands":[{"set":"InputType","to":"Digital In"},{"set":"DigitalInInput","to":"Network"}],"name":"Digital In CD"},
+      {"commands":[{"set":"InputType","to":"Internet Radio"}],"name":"Internet Radio"},
+      {"commands":[{"set":"InputType","to":"Online Music"}],"name":"Online Music"},
+      {"commands":[{"set":"InputType","to":"Music Server"}],"name":"Music Server"},
+      {"commands":[{"set":"InputType","to":"iPod/USB"}],"name":"iPod/USB Network"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"iPod/USB CD"}],"name":"iPod/USB CD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Denon",
-  "model": "DRA-F109DAB "
+  "model": "DRA-F109DAB ",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AnalogInInput": {
+      "next": ["InputAnalogIn"],
+      "values": [
+        {"name":"AnalogIn1"},
+        {"name":"AnalogIn2"}
+      ]
+    },
+    "DigitalInInput": {
+      "next": ["InputDigitalIn"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"Network"},
+        {"name":"DigitalCD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Analog In","select":[{"commands":["InputAnalogIn"],"setType":2}]},
+        {"name":"Digital In","select":[{"commands":["InputDigitalIn"],"setType":2}]},
+        {"name":"Internet Radio","select":[{"commands":["InputInternetRadio"],"setType":2}]},
+        {"name":"Online Music","select":[{"commands":["InputOnlineMusic"],"setType":2}]},
+        {"name":"Music Server","select":[{"commands":["InputMusicServer"],"setType":2}]},
+        {"name":"iPod/USB Network","select":[{"commands":["InputIPod/Usb-Network"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"iPod/USB CD","select":[{"commands":["InputIPod/Usb-CD"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"DAB"},
+        {"name":"FM Auto"},
+        {"name":"FM Mono"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

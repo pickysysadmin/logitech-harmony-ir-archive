@@ -2,6 +2,33 @@
   "codeset": "codesets/54/542d4fe152e3582d.json",
   "deviceType": 21,
   "globalDeviceId": 109849,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"CD"},
+      {"name":"AUX"},
+      {"name":"SIRIUS"}
+    ],
+    "next": ["PowerToggle"],
+    "type": 2
+  },
   "manufacturer": "Clarion",
-  "model": "DXZ-465MP"
+  "model": "DXZ-465MP",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

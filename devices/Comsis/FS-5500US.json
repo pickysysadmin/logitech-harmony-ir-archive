@@ -2,6 +2,64 @@
   "codeset": "codesets/fe/fe5faedc5800591a.json",
   "deviceType": 19,
   "globalDeviceId": 224947,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Stereo"}],"name":"Stereo"},
+      {"commands":[{"set":"InputType","to":"2.1/5.1"},{"set":"2.1/5.1Input","to":"2.1"}],"name":"2.1"},
+      {"commands":[{"set":"InputType","to":"2.1/5.1"},{"set":"2.1/5.1Input","to":"5.1"}],"name":"5.1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 1"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 2"}],"name":"Aux 2"},
+      {"commands":[{"set":"InputType","to":"USB/SD"},{"set":"USB/SDInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB/SD"},{"set":"USB/SDInput","to":"SD"}],"name":"SD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Comsis",
-  "model": "FS-5500US"
+  "model": "FS-5500US",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "2.1/5.1Input": {
+      "next": ["Input2.1/5.1"],
+      "values": [
+        {"name":"2.1"},
+        {"name":"5.1"}
+      ]
+    },
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Stereo","select":[{"commands":["InputStereo"],"setType":2}]},
+        {"name":"2.1/5.1","select":[{"commands":["Input2.1/5.1",{"set":"2.1/5.1Input","to":"2.1"}],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux",{"set":"AuxInput","to":"Aux 1"}],"setType":2}]},
+        {"name":"USB/SD","select":[{"commands":["InputUsb/Sd",{"set":"USB/SDInput","to":"USB"}],"setType":2}]}
+      ]
+    },
+    "USB/SDInput": {
+      "next": ["InputUsb/Sd"],
+      "values": [
+        {"name":"USB"},
+        {"name":"SD"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

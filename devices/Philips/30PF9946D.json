@@ -2,6 +2,53 @@
   "codeset": "codesets/f8/f85bada5f8fd15c8.json",
   "deviceType": 1,
   "globalDeviceId": 141195,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"REAR"}],"name":"REAR"},
+      {"commands":[{"set":"InputType","to":"PC-A"}],"name":"PC-A"},
+      {"commands":[{"set":"InputType","to":"CVI"}],"name":"CVI"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HD-A"}],"name":"HD-A"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HD-D"}],"name":"HD-D"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "30PF9946D"
+  "model": "30PF9946D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDInput": {
+      "next": ["InputAV4"],
+      "values": [
+        {"name":"HD-A"},
+        {"name":"HD-D"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTuner A"],"setType":2}]},
+        {"name":"AV1","select":[{"commands":["NextInput","1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["NextInput","2"],"setType":2}]},
+        {"name":"REAR","select":[{"commands":["NextInput","3"],"setType":2}]},
+        {"name":"PC-A","select":[{"commands":["NextInput","5"],"setType":2}]},
+        {"name":"CVI","select":[{"commands":["NextInput","1","ChannelUp"],"setType":2}]},
+        {"name":"HD","select":[{"commands":["NextInput","4"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

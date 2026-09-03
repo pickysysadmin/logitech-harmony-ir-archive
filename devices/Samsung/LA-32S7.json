@@ -2,6 +2,50 @@
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 162968,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"SVideo"}],"name":"SVideo"},
+      {"commands":[{"set":"InputType","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "LA-32S7"
+  "model": "LA-32S7",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputVideo2V2"],"setType":2}]},
+        {"name":"SVideo","select":[{"commands":["InputSVideo"],"setType":2}]},
+        {"name":"Component 1","select":[{"commands":["InputComponent 1"],"setType":2}]},
+        {"name":"Component 2","select":[{"commands":["InputComponent 2"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputRGB"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHDMI1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHDMI2V2"],"setType":2}]},
+        {"name":"TV/DTV","select":[{"commands":["InputNext"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

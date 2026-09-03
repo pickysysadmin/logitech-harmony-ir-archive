@@ -2,6 +2,37 @@
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 78709,
+  "inputs": {
+    "list": [
+      {"name":"Tv"},
+      {"name":"Av1"},
+      {"name":"Av2"},
+      {"name":"Av3"},
+      {"name":"Av3-s"},
+      {"name":"Av4"},
+      {"name":"Av4-s"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "MF 72-7510/8"
+  "model": "MF 72-7510/8",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tv"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 0,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

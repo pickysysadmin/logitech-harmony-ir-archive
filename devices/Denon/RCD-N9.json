@@ -2,6 +2,63 @@
   "codeset": "codesets/3e/3ed6c0e225000a22.json",
   "deviceType": 21,
   "globalDeviceId": 270024,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Internet Radio"}],"name":"Internet Radio","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"iPod/USB"}],"name":"iPod/USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Music Server"}],"name":"Music Server","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Analog In"}],"name":"Analog In","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Digital In"},{"set":"DigitalInInput","to":"DigitalIn 1"}],"name":"DigitalIn 1","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Digital In"},{"set":"DigitalInInput","to":"DigitalIn 2"}],"name":"DigitalIn 2","ports":["Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Denon",
-  "model": "RCD-N9"
+  "model": "RCD-N9",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInInput": {
+      "next": ["InputDigitalIn"],
+      "values": [
+        {"name":"DigitalIn 1"},
+        {"name":"DigitalIn 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Internet Radio","select":[{"commands":["InternetRadio"],"setType":2}]},
+        {"name":"iPod/USB","select":[{"commands":["InputiPod/Usb"],"setType":2}]},
+        {"name":"Music Server","select":[{"commands":["InputMusicServer"],"setType":2}]},
+        {"name":"Analog In","select":[{"commands":["InputAnalogIn"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Digital In","select":[{"commands":["InputDigitalIn"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

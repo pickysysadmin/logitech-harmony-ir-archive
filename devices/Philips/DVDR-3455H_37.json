@@ -2,6 +2,68 @@
   "codeset": "codesets/04/04ac92e5bd61d01f.json",
   "deviceType": 34,
   "globalDeviceId": 165988,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"TunerInput","to":"Tuner"}],"name":"DVDTuner"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"TunerInput","to":"Tuner"},{"set":"LineInput","to":"Tuner"},{"set":"LineInput","to":"EXT1"}],"name":"DVDEXT1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"TunerInput","to":"Tuner"},{"set":"LineInput","to":"Tuner"},{"set":"LineInput","to":"EXT2"}],"name":"DVDEXT2"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"TunerInput","to":"Tuner"},{"set":"LineInput","to":"Tuner"},{"set":"LineInput","to":"CAM1"}],"name":"DVDCAM1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"TunerInput","to":"Tuner"},{"set":"LineInput","to":"Tuner"},{"set":"LineInput","to":"CAM2"}],"name":"DVDCAM2"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"TunerInput","to":"Tuner"},{"set":"DVInput","to":"DV"}],"name":"DVDDV"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"TunerInput","to":"Tuner"}],"name":"HDDTuner"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"TunerInput","to":"Tuner"},{"set":"LineInput","to":"Tuner"},{"set":"LineInput","to":"EXT1"}],"name":"HDDEXT1"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"TunerInput","to":"Tuner"},{"set":"LineInput","to":"Tuner"},{"set":"LineInput","to":"EXT2"}],"name":"HDDEXT2"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"TunerInput","to":"Tuner"},{"set":"LineInput","to":"Tuner"},{"set":"LineInput","to":"CAM1"}],"name":"HDDCAM1"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"TunerInput","to":"Tuner"},{"set":"LineInput","to":"Tuner"},{"set":"LineInput","to":"CAM2"}],"name":"HDDCAM2"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"TunerInput","to":"Tuner"},{"set":"DVInput","to":"DV"}],"name":"HDDDV"},
+      {"commands":[{"set":"TunerInput","to":"Tuner"},{"set":"DVInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DVDR-3455H/37"
+  "model": "DVDR-3455H/37",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVInput": {
+      "next": ["Usb/Dv"],
+      "values": [
+        {"name":"USB"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["Dvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["Hdd"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"EXT1"},
+        {"name":"EXT2"},
+        {"name":"CAM1"},
+        {"name":"CAM2"}
+      ]
+    },
+    "TunerInput": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["Tuner"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 3
+  }
 }

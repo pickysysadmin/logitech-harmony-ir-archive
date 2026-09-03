@@ -2,6 +2,56 @@
   "codeset": "codesets/0d/0d4b3620d0a5ed6b.json",
   "deviceType": 1,
   "globalDeviceId": 180245,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InputTv"}],"name":"InputTv"},
+      {"commands":[{"set":"InputType","to":"InputComponent"}],"name":"InputComponent"},
+      {"commands":[{"set":"InputType","to":"InputVideo"},{"set":"VideoInput","to":"InputVideo"}],"name":"InputVideo"},
+      {"commands":[{"set":"InputType","to":"InputVideo"},{"set":"VideoInput","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"InputPc"},{"set":"PCInput","to":"InputPc"}],"name":"InputPc"},
+      {"commands":[{"set":"InputType","to":"InputPc"},{"set":"PCInput","to":"InputHdmi"}],"name":"InputHdmi"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Westinghouse",
-  "model": "TX-42F970Z"
+  "model": "TX-42F970Z",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"InputTv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"InputComponent","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"InputVideo","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"InputPc","select":[{"commands":["InputPc/Hdmi"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc/Hdmi"],
+      "values": [
+        {"name":"InputPc"},
+        {"name":"InputHdmi"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"InputVideo"},
+        {"name":"Composite"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

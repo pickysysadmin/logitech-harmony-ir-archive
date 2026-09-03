@@ -2,6 +2,56 @@
   "codeset": "codesets/67/672a017f3b948520.json",
   "deviceType": 22,
   "globalDeviceId": 155696,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DISC"}],"name":"DISC"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"FM/DAB"},{"set":"FM/DABInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/DAB"},{"set":"FM/DABInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX 1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX 2"}],"name":"AUX 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teac",
-  "model": "DR-H300DAB"
+  "model": "DR-H300DAB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX 1"},
+        {"name":"AUX 2"}
+      ]
+    },
+    "FM/DABInput": {
+      "next": ["InputDab/FM"],
+      "values": [
+        {"name":"FM"},
+        {"name":"DAB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DISC","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"FM/DAB","select":[{"commands":["InputDab/FM"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

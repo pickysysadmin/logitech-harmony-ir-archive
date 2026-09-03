@@ -2,6 +2,68 @@
   "codeset": "codesets/33/33a184587698686f.json",
   "deviceType": 22,
   "globalDeviceId": 238062,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DiscSD"},{"set":"DiscSDInput","to":"BD/DVD"}],"name":"BD/DVD"},
+      {"commands":[{"set":"InputType","to":"DiscSD"},{"set":"DiscSDInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"DiscSD"},{"set":"DiscSDInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"RadioExtIniPod"},{"set":"RadioExtIniPodInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"RadioExtIniPod"},{"set":"RadioExtIniPodInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"RadioExtIniPod"},{"set":"RadioExtIniPodInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"RadioExtIniPod"},{"set":"RadioExtIniPodInput","to":"ARC"}],"name":"ARC"},
+      {"commands":[{"set":"InputType","to":"RadioExtIniPod"},{"set":"RadioExtIniPodInput","to":"Digital In"}],"name":"Digital In"},
+      {"commands":[{"set":"InputType","to":"RadioExtIniPod"},{"set":"RadioExtIniPodInput","to":"HDMI IN 1"}],"name":"HDMI IN 1"},
+      {"commands":[{"set":"InputType","to":"RadioExtIniPod"},{"set":"RadioExtIniPodInput","to":"HDMI IN 2"}],"name":"HDMI IN 2"},
+      {"commands":[{"set":"InputType","to":"Home"}],"name":"Home"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-BTT583"
+  "model": "SA-BTT583",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Home"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DiscSDInput": {
+      "next": ["InputDisc/Sd"],
+      "values": [
+        {"name":"BD/DVD"},
+        {"name":"SD"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DiscSD","select":[{"commands":["InputDisc/Sd"],"setType":2}]},
+        {"name":"RadioExtIniPod","select":[{"commands":["InputRadio/Ext-In/iPod"],"setType":2}]},
+        {"name":"Home","select":[{"commands":["Home"],"setType":2}]}
+      ]
+    },
+    "RadioExtIniPodInput": {
+      "next": ["InputRadio/Ext-In/iPod"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"FM"},
+        {"name":"AUX"},
+        {"name":"ARC"},
+        {"name":"Digital In"},
+        {"name":"HDMI IN 1"},
+        {"name":"HDMI IN 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

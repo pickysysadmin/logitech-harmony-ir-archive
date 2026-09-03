@@ -2,6 +2,66 @@
   "codeset": "codesets/0f/0faf7e637cdcfa4e.json",
   "deviceType": 19,
   "globalDeviceId": 425624,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"InputAux/AudioIn"},{"set":"InputAux/AudioInInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"InputAux/AudioIn"},{"set":"InputAux/AudioInInput","to":"AudioIn"}],"name":"AudioIn"},
+      {"commands":[{"set":"InputType","to":"InputOpt/Coax"},{"set":"InputOpt/CoaxInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"InputOpt/Coax"},{"set":"InputOpt/CoaxInput","to":"Coaxial"}],"name":"Coaxial"},
+      {"commands":[{"set":"InputType","to":"InputHdmi/ARC"},{"set":"InputHdmi/ARCInput","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"InputHdmi/ARC"},{"set":"InputHdmi/ARCInput","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"InputHdmi/ARC"},{"set":"InputHdmi/ARCInput","to":"HdmiARC"}],"name":"HdmiARC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Telefunken",
-  "model": "SA101BR2"
+  "model": "SA101BR2",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputAux/AudioInInput": {
+      "next": ["InputAux/AudioIn"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"AudioIn"}
+      ]
+    },
+    "InputHdmi/ARCInput": {
+      "next": ["InputHdmi/ARC"],
+      "values": [
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"},
+        {"name":"HdmiARC"}
+      ]
+    },
+    "InputOpt/CoaxInput": {
+      "next": ["InputOpt/Coax"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"Coaxial"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"InputAux/AudioIn","select":[{"commands":["InputAux/AudioIn"],"setType":2}]},
+        {"name":"InputOpt/Coax","select":[{"commands":["InputOpt/Coax"],"setType":2}]},
+        {"name":"InputHdmi/ARC","select":[{"commands":["InputHdmi/ARC"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

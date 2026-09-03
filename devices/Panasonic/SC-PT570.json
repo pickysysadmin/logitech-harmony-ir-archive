@@ -2,6 +2,57 @@
   "codeset": "codesets/0e/0e8294caa036fa0c.json",
   "deviceType": 22,
   "globalDeviceId": 171118,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"D-IN"}],"name":"D-IN"},
+      {"commands":[{"set":"InputType","to":"iPod/Usb"},{"set":"iPod/UsbInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"iPod/Usb"},{"set":"iPod/UsbInput","to":"Usb"}],"name":"Usb"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PT570"
+  "model": "SC-PT570",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Ext-InInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AV"},
+        {"name":"AUX"},
+        {"name":"D-IN"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Ext-In","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"iPod/Usb","select":[{"commands":["InputiPod/USB"],"setType":2}]}
+      ]
+    },
+    "iPod/UsbInput": {
+      "next": ["InputiPod/USB"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"Usb"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

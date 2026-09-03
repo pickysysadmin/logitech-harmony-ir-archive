@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/90/9090f104184ef4a6.json",
   "deviceType": 1,
   "globalDeviceId": 67715,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"SVHS 2"},
+      {"name":"AV3"}
+    ],
+    "next": [
+      {"delayMs":3000},
+      "InputNext"
+    ],
+    "type": 2
+  },
   "manufacturer": "Hanseatic",
-  "model": "CTV70 6000S"
+  "model": "CTV70 6000S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

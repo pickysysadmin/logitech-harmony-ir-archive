@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/91/915826fb88a29fa2.json",
   "deviceType": 1,
   "globalDeviceId": 261695,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"ANT/CableIn"}],"name":"ANT/CableIn"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Comp/Video"}],"name":"Comp/Video"},
+      {"commands":[{"set":"InputType","to":"Media Player"}],"name":"Media Player"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TC-32A400U"
+  "model": "TC-32A400U",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["Input"],"setType":2}]},
+        {"name":"Media Player","select":[{"commands":["MediaPlayer"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"ANT/CableIn"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"Comp/Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,43 @@
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 53767,
+  "inputs": {
+    "finish": ["TvVideo"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"S-VIDEO 1"},
+      {"name":"S-VIDEO 2"},
+      {"name":"YCbCr 1"},
+      {"name":"YPbPr 2"},
+      {"name":"VGA"},
+      {"name":"DVI"}
+    ],
+    "next": ["ChannelDown"],
+    "start": ["TvVideo"],
+    "type": 4
+  },
   "manufacturer": "Syntax-Brillian",
-  "model": "LCT-50HV"
+  "model": "LCT-50HV",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 60000,
+    "pressMinRepeats": 3
+  }
 }

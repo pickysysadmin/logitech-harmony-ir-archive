@@ -2,6 +2,74 @@
   "codeset": "codesets/65/653c3faff354a4b0.json",
   "deviceType": 1,
   "globalDeviceId": 164105,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"COMPONENT"},{"set":"COMPONENTInput","to":"COMPONENT1"}],"name":"COMPONENT1"},
+      {"commands":[{"set":"InputType","to":"COMPONENT"},{"set":"COMPONENTInput","to":"COMPONENT2"}],"name":"COMPONENT2"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "AT-3220A"
+  "model": "AT-3220A",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"COMPONENT1"},
+      {"set":"PCInput","to":"VGA"},
+      {"set":"AVInput","to":"AV1"}
+    ],
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"HDMI"}
+      ]
+    },
+    "COMPONENTInput": {
+      "next": ["InputSat"],
+      "values": [
+        {"name":"COMPONENT1"},
+        {"name":"COMPONENT2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"COMPONENT","select":[{"commands":["InputSat"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 200,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/65/65b391fa16195c51.json",
   "deviceType": 35,
   "globalDeviceId": 176936,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Fm/Am"}],"name":"Fm/Am"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"LIne 2"}],"name":"LIne 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"DV Input"}],"name":"DV Input"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Analog"}],"name":"Analog"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "XV-DVR9H"
+  "model": "XV-DVR9H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioInput": {
+      "next": ["InputAudio"],
+      "values": [
+        {"name":"Digital"},
+        {"name":"Analog"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Fm/Am","select":[{"commands":["FM/AM"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Audio","select":[{"commands":["InputAudio"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Line 1"},
+        {"name":"LIne 2"},
+        {"name":"DV Input"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

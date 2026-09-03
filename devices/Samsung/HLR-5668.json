@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 86295,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenna"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo3"],"name":"AV3"},
+      {"commands":["InputSVideo"],"name":"S-Video 1"},
+      {"commands":["InputSVideo2"],"name":"S-Video 2"},
+      {"commands":["InputSVideo3"],"name":"S-Video 3"},
+      {"commands":["InputComponent 1"],"name":"Component1"},
+      {"commands":["InputComponent 2"],"name":"Component2"},
+      {"commands":["InputHDMI1"],"name":"HDMI 1"},
+      {"commands":["InputHDMI1","TvVideo"],"name":"HDMI 2"},
+      {"commands":["InputRGB"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HLR-5668"
+  "model": "HLR-5668",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

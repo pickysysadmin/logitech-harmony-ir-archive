@@ -2,6 +2,41 @@
   "codeset": "codesets/60/607df7e4515c1821.json",
   "deviceType": 1,
   "globalDeviceId": 165511,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"SCART 1"},
+      {"name":"SCART 2"},
+      {"name":"Video"},
+      {"name":"S-Video"},
+      {"name":"Component 1"},
+      {"name":"Component 2"},
+      {"name":"RGB"},
+      {"name":"DVI"}
+    ],
+    "next": ["ChannelDown"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Amitech",
-  "model": "32L-941"
+  "model": "32L-941",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"SCART 1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

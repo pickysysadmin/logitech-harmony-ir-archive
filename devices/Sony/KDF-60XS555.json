@@ -2,6 +2,61 @@
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 91209,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"InputAB","to":"Ant A"}],"name":"Ant A"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"InputAB","to":"Ant B"}],"name":"Ant B"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputVideo4"],"name":"Video 4"},
+      {"commands":["InputVideo5"],"name":"Video 5"},
+      {"commands":["InputVideo6"],"name":"Video 6"},
+      {"commands":["InputVideo7"],"name":"Video 7"},
+      {"commands":["InputVideo7","InputNext"],"name":"Video 8"},
+      {"commands":["InputVideo7","InputNext","InputNext"],"name":"Video 9"},
+      {"commands":["MemoryStick"],"name":"Memory Stick"},
+      {"commands":["InputTuner"],"name":"Tuner"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "KDF-60XS555"
+  "model": "KDF-60XS555",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputAB": {
+      "next": ["InputTuner2"],
+      "values": [
+        {"name":"Ant A"},
+        {"name":"Ant B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Input 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Input 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Input 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Input 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"Input 5","select":[{"commands":["InputVideo5"],"setType":2}]},
+        {"name":"Input 6","select":[{"commands":["InputVideo6"],"setType":2}]},
+        {"name":"Input 7","select":[{"commands":["InputVideo7"],"setType":2}]},
+        {"name":"Comp 1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Comp 2","select":[{"commands":["InputComponent2"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

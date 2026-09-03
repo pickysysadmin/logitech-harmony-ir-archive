@@ -2,6 +2,35 @@
   "codeset": "codesets/3d/3d45a77f43ccf420.json",
   "deviceType": 7,
   "globalDeviceId": 143933,
+  "inputs": {
+    "list": [
+      {"commands":["InputSVideo"],"name":"S-VIDEO"},
+      {"commands":["InputVideo"],"name":"Composite Video"},
+      {"commands":["InputDvi"],"name":"DVI"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "HD-803"
+  "model": "HD-803",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":2000},
+      {"delayMs":1500},
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

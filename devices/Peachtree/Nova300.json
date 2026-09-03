@@ -2,6 +2,64 @@
   "codeset": "codesets/63/6394b692e46cf509.json",
   "deviceType": 19,
   "globalDeviceId": 337217,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"USB-A"}],"name":"USB-A"},
+      {"commands":[{"set":"InputType","to":"USB-B"}],"name":"USB-B"},
+      {"commands":[{"set":"InputType","to":"Coaxial"}],"name":"Coaxial"},
+      {"commands":[{"set":"InputType","to":"Opt-1"}],"name":"Opt-1"},
+      {"commands":[{"set":"InputType","to":"Opt-2"}],"name":"Opt-2"},
+      {"commands":[{"set":"InputType","to":"Wi-Fi"}],"name":"Wi-Fi"},
+      {"commands":[{"set":"InputType","to":"Aux-1/Htb"},{"set":"Aux-1/HtbInput","to":"Aux-1"}],"name":"Aux-1"},
+      {"commands":[{"set":"InputType","to":"Aux-1/Htb"},{"set":"Aux-1/HtbInput","to":"HTB"}],"name":"HTB"},
+      {"commands":[{"set":"InputType","to":"Aux-2/Phono"},{"set":"Aux-2/PhonoInput","to":"Aux-2"}],"name":"Aux-2"},
+      {"commands":[{"set":"InputType","to":"Aux-2/Phono"},{"set":"Aux-2/PhonoInput","to":"Phono"}],"name":"Phono"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Peachtree",
-  "model": "Nova300"
+  "model": "Nova300",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Aux-1/HtbInput": {
+      "next": ["InputAux1/Htb"],
+      "values": [
+        {"name":"Aux-1"},
+        {"name":"HTB"}
+      ]
+    },
+    "Aux-2/PhonoInput": {
+      "next": ["InputAux2/Phono"],
+      "values": [
+        {"name":"Aux-2"},
+        {"name":"Phono"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"USB-A","select":[{"commands":["InputUsbA"],"setType":2}]},
+        {"name":"USB-B","select":[{"commands":["InputUsbB"],"setType":2}]},
+        {"name":"Coaxial","select":[{"commands":["InputCoax"],"setType":2}]},
+        {"name":"Opt-1","select":[{"commands":["InputOptical1"],"setType":2}]},
+        {"name":"Opt-2","select":[{"commands":["InputOptical2"],"setType":2}]},
+        {"name":"Wi-Fi","select":[{"commands":["InputWiFi"],"setType":2}]},
+        {"name":"Aux-1/Htb","select":[{"commands":["InputAux1/Htb"],"setType":2}]},
+        {"name":"Aux-2/Phono","select":[{"commands":["InputAux2/Phono"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

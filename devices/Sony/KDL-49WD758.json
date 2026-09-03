@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/1d/1d3655d5817da4cc.json",
   "deviceType": 1,
   "globalDeviceId": 303498,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","DirectionRight","Select","InputDigital"],"name":"Digital"},
+      {"commands":["Exit","DirectionRight","Select","InputTv"],"name":"Analog"},
+      {"commands":["Exit","DirectionRight","Select",{"delayMs":1000},"InputVideo1"],"name":"Video"},
+      {"commands":["Exit","DirectionRight","Select",{"delayMs":2000},"InputHdmi1"],"name":"HDMI 1 ARC"},
+      {"commands":["Exit","DirectionRight","Select",{"delayMs":2000},"InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["Exit","DirectionRight",{"delayMs":2000},"InputVideo1","InputNext",{"delayMs":500},"DirectionDown","Select"],"name":"Screen Mirroring"},
+      {"commands":["Exit","DirectionRight","Select",{"delayMs":2000},"Home","Select"],"name":"Apps"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-49WD758"
+  "model": "KDL-49WD758",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 45000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

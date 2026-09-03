@@ -2,6 +2,75 @@
   "codeset": "codesets/61/61c09a91eda74e64.json",
   "deviceType": 7,
   "globalDeviceId": 301727,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Lan"}],"name":"Lan"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer1"}],"name":"Computer1"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer2"}],"name":"Computer2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Usb"},{"set":"UsbInput","to":"Usb Display"}],"name":"Usb Display"},
+      {"commands":[{"set":"InputType","to":"Usb"},{"set":"UsbInput","to":"Usb-A"}],"name":"Usb-A"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "EB-1985WU"
+  "model": "EB-1985WU",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "ComputerInput": {
+      "next": ["InputComputer"],
+      "values": [
+        {"name":"Computer1"},
+        {"name":"Computer2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Lan","select":[{"commands":["InputLan"],"setType":2}]},
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Usb","select":[{"commands":["InputUSB"],"setType":2}]}
+      ]
+    },
+    "InputUsb": {
+      "next": ["InputUSB"],
+      "values": [
+        {"name":"Usb Display"},
+        {"name":"Usb-A"}
+      ]
+    },
+    "UsbInput": {
+      "next": ["InputUSB"],
+      "values": [
+        {"name":"Usb Display"},
+        {"name":"Usb-A"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"HDMI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

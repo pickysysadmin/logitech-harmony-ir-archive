@@ -2,6 +2,60 @@
   "codeset": "codesets/6f/6f415f89e023d8c6.json",
   "deviceType": 21,
   "globalDeviceId": 214334,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"D.Audio"},{"set":"D.AudioInput","to":"D.Audio"}],"name":"D.Audio"},
+      {"commands":[{"set":"InputType","to":"D.Audio"},{"set":"D.AudioInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"D.Audio"},{"set":"D.AudioInput","to":"Bluetooth"}],"name":"Bluetooth"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Kenwood",
-  "model": "C-515BT"
+  "model": "C-515BT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CDInput": {
+      "next": ["InputCd"],
+      "values": [
+        {"name":"CD"},
+        {"name":"USB"},
+        {"name":"SD"}
+      ]
+    },
+    "D.AudioInput": {
+      "next": ["InputDAudio"],
+      "values": [
+        {"name":"D.Audio"},
+        {"name":"iPod"},
+        {"name":"Bluetooth"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"D.Audio","select":[{"commands":["InputDAudio"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

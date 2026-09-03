@@ -2,6 +2,45 @@
   "codeset": "codesets/1f/1f5445f22f7d1ccf.json",
   "deviceType": 5,
   "globalDeviceId": 233055,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"MP3-Link"}],"name":"MP3-Link"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Dock"},{"set":"DockInput","to":"Dock 1"}],"name":"Dock 1"},
+      {"commands":[{"set":"InputType","to":"Dock"},{"set":"DockInput","to":"Dock 2"}],"name":"Dock 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DC390/98"
+  "model": "DC390/98",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DockInput": {
+      "next": ["InputDock"],
+      "values": [
+        {"name":"Dock 1"},
+        {"name":"Dock 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"MP3-Link","select":[{"commands":["InputMp3Link"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Dock","select":[{"commands":["InputDock"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

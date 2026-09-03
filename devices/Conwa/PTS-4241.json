@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/78/788c26bf70302373.json",
   "deviceType": 1,
   "globalDeviceId": 149999,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV/AV"},{"set":"TV/AVInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"TV/AV"},{"set":"TV/AVInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"TV/AV"},{"set":"TV/AVInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"TV/AV"},{"set":"TV/AVInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"MULTIMEDIA"},{"set":"MULTIMEDIAInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"MULTIMEDIA"},{"set":"MULTIMEDIAInput","to":"RGB-DTV"}],"name":"RGB-DTV"},
+      {"commands":[{"set":"InputType","to":"MULTIMEDIA"},{"set":"MULTIMEDIAInput","to":"PC-Analog"}],"name":"PC-Analog"},
+      {"commands":[{"set":"InputType","to":"MULTIMEDIA"},{"set":"MULTIMEDIAInput","to":"PC-Digital"}],"name":"PC-Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Conwa",
-  "model": "PTS-4241"
+  "model": "PTS-4241",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV/AV","select":[{"commands":["InputNext",{"set":"TV/AVInput","to":"Video 1"}],"setType":2}]},
+        {"name":"MULTIMEDIA","select":[{"commands":["MultiMedia",{"set":"MULTIMEDIAInput","to":"Component"}],"setType":2}]}
+      ]
+    },
+    "MULTIMEDIAInput": {
+      "next": ["MultiMedia"],
+      "values": [
+        {"name":"Component"},
+        {"name":"RGB-DTV"},
+        {"name":"PC-Analog"},
+        {"name":"PC-Digital"}
+      ]
+    },
+    "TV/AVInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

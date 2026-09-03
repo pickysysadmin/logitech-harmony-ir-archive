@@ -2,6 +2,60 @@
   "codeset": "codesets/13/13683a8372275830.json",
   "deviceType": 1,
   "globalDeviceId": 267990,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV 2/Component"}],"name":"AV 2/Component"},
+      {"commands":[{"set":"InputType","to":"HDMI 1/MHL"}],"name":"HDMI 1/MHL"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"SEN"}],"name":"SEN"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Freeview"}],"name":"Freeview"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Freesat"}],"name":"Freesat"},
+      {"commands":[{"set":"InputType","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "KDL50W829BBU"
+  "model": "KDL50W829BBU",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputDigital"],
+      "values": [
+        {"name":"Freeview"},
+        {"name":"Freesat"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Analog","select":[{"commands":["Home","Return","InputAnalog"],"setType":2}]},
+        {"name":"AV 1","select":[{"commands":["Home","Return","InputVideo1"],"setType":2}]},
+        {"name":"AV 2/Component","select":[{"commands":["Home","Return","InputVideo2"],"setType":2}]},
+        {"name":"HDMI 1/MHL","select":[{"commands":["Home","Return","InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["Home","Return","InputHdmi2"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["Home","Return","InputHdmi3"],"setType":2}]},
+        {"name":"HDMI 4","select":[{"commands":["Home","Return","InputHdmi4"],"setType":2}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":2}]},
+        {"name":"SEN","select":[{"commands":["Return","Return","Return","SEN"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["Home","Return","InputDigital"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 45000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

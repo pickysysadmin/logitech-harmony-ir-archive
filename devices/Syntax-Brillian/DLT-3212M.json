@@ -1,7 +1,72 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/10/1049bfa1f2f5bf4f.json",
   "deviceType": 1,
   "globalDeviceId": 109385,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"S-Video1"}],"name":"S-Video1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"S-Video2"}],"name":"S-Video2"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"YPbPr1"}],"name":"YPbPr1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"YPBPr2"}],"name":"YPBPr2"},
+      {"commands":[{"set":"InputType","to":"DVI/VGA"},{"set":"DVI/VGAInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"DVI/VGA"},{"set":"DVI/VGAInput","to":"VGA"}],"name":"VGA"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Syntax-Brillian",
-  "model": "DLT-3212M"
+  "model": "DLT-3212M",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"S-Video1"},
+        {"name":"S-Video2"}
+      ]
+    },
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"YPbPr1"},
+        {"name":"YPBPr2"}
+      ]
+    },
+    "DVI/VGAInput": {
+      "next": ["InputDvi/Vga"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"VGA"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTV"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"DVI/VGA","select":[{"commands":["InputDvi/Vga"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 6500,
+    "pressMinRepeats": 1
+  }
 }

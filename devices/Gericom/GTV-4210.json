@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/1d/1d197c436bb2c2c9.json",
   "deviceType": 1,
   "globalDeviceId": 163566,
+  "inputs": {
+    "finish": ["Menu"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"Analog RGB"},
+      {"name":"Digital RGB"},
+      {"name":"DTV YPBPR"}
+    ],
+    "next": ["ChannelDown"],
+    "start": ["TvVideo"],
+    "type": 4
+  },
   "manufacturer": "Gericom",
-  "model": "GTV-4210"
+  "model": "GTV-4210",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,48 @@
   "codeset": "codesets/5a/5a099a6197b24304.json",
   "deviceType": 7,
   "globalDeviceId": 211730,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"SVideo"}],"name":"SVideo"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"VGA"},{"set":"VGAInput","to":"VGA 1"}],"name":"VGA 1"},
+      {"commands":[{"set":"InputType","to":"VGA"},{"set":"VGAInput","to":"VGA 2"}],"name":"VGA 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Optoma",
-  "model": "EX-615"
+  "model": "EX-615",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"SVideo","select":[{"commands":["SVideo"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["Video"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["HDMI"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["VGA"],"setType":2}]}
+      ]
+    },
+    "VGAInput": {
+      "next": ["VGA"],
+      "values": [
+        {"name":"VGA 1"},
+        {"name":"VGA 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

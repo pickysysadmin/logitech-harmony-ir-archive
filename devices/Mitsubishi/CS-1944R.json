@@ -1,7 +1,34 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/01/01c8d15763045db3.json",
   "deviceType": 1,
   "globalDeviceId": 118668,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntA"],"name":"Ant A"},
+      {"commands":["Input2","InputNext"],"name":"Ant B"},
+      {"commands":["Input1"],"name":"Input 1"},
+      {"commands":["Input2"],"name":"Input 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Mitsubishi",
-  "model": "CS-1944R"
+  "model": "CS-1944R",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

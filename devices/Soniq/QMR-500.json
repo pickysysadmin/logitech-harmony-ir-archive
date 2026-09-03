@@ -2,6 +2,62 @@
   "codeset": "codesets/53/5317125137b2b96e.json",
   "deviceType": 34,
   "globalDeviceId": 179759,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"USB/DV"},{"set":"USB/DVInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB/DV"},{"set":"USB/DVInput","to":"DV"}],"name":"DV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Scart"}],"name":"Scart"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"F-Composite"}],"name":"F-Composite"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"R-Composite"}],"name":"R-Composite"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"R-S-Video"}],"name":"R-S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Soniq",
-  "model": "QMR-500"
+  "model": "QMR-500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["Hdd/Dub"],"setType":2}]},
+        {"name":"USB/DV","select":[{"commands":["Usb/Dv"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Scart"},
+        {"name":"TV"},
+        {"name":"F-Composite"},
+        {"name":"R-Composite"},
+        {"name":"R-S-Video"}
+      ]
+    },
+    "USB/DVInput": {
+      "next": ["Usb/Dv"],
+      "values": [
+        {"name":"USB"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

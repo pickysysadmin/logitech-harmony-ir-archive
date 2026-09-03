@@ -2,6 +2,34 @@
   "codeset": "codesets/3a/3a44c724c00cd3c6.json",
   "deviceType": 37,
   "globalDeviceId": 85419,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Tuner"},
+      {"commands":["2"],"name":"VCR"},
+      {"commands":["3"],"name":"DVD"},
+      {"commands":["4"],"name":"CAM"},
+      {"commands":["5"],"name":"VGA"}
+    ],
+    "start": ["0"],
+    "type": 3
+  },
   "manufacturer": "Grundig",
-  "model": "LENARO 92 MFW 92-6110/9 DVD"
+  "model": "LENARO 92 MFW 92-6110/9 DVD",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,37 @@
   "codeset": "codesets/a7/a7b29e16f4c822f3.json",
   "deviceType": 1,
   "globalDeviceId": 128777,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV 2"},
+      {"name":"video 1"},
+      {"name":"AV 4"},
+      {"name":"AV 5"},
+      {"name":"AV 6"},
+      {"name":"VGA"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "17WL46G"
+  "model": "17WL46G",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"video 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

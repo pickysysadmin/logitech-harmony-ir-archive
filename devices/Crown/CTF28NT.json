@@ -2,6 +2,32 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 137307,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"input"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Crown",
-  "model": "CTF28NT"
+  "model": "CTF28NT",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

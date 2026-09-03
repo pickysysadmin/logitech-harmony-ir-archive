@@ -2,6 +2,55 @@
   "codeset": "codesets/c6/c6897a9ba48d78f8.json",
   "deviceType": 22,
   "globalDeviceId": 205778,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Line-In/Aux"},{"set":"Line-In/AuxInput","to":"Line-In"}],"name":"Line-In","ports":["Line In"]},
+      {"commands":[{"set":"InputType","to":"Line-In/Aux"},{"set":"Line-In/AuxInput","to":"AUX"}],"name":"Aux","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "RTD325W"
+  "model": "RTD325W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Line-In/Aux","select":[{"commands":["InputLine-In/Aux"],"setType":2}]}
+      ]
+    },
+    "Line-In/AuxInput": {
+      "next": ["InputLine-In/Aux"],
+      "values": [
+        {"name":"Line-In"},
+        {"name":"AUX"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

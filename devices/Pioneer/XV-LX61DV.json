@@ -2,6 +2,81 @@
   "codeset": "codesets/79/794d9e79cfaf1305.json",
   "deviceType": 22,
   "globalDeviceId": 211653,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Digital 1Opt"}],"name":"Digital 1Opt"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Digital 2Opt"}],"name":"Digital 2Opt"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"Digital 3Opt"}],"name":"Digital 3Opt"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "XV-LX61DV"
+  "model": "XV-LX61DV",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDInput": {
+      "next": ["InputDvd"],
+      "values": [
+        {"name":"CD"},
+        {"name":"DVD"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputLine"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Digital 1Opt"},
+        {"name":"Digital 2Opt"},
+        {"name":"Digital 3Opt"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

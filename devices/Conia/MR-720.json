@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/13/13b201b10096a864.json",
   "deviceType": 34,
   "globalDeviceId": 25140,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Front CVBS"},
+      {"name":"Front S-Video"},
+      {"name":"Rear CVBS"},
+      {"name":"Rear S-Video"},
+      {"name":"DV"},
+      {"name":"Component"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputAV"],
+    "type": 2
+  },
   "manufacturer": "Conia",
-  "model": "MR-720"
+  "model": "MR-720",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 16500,
+    "pressMinRepeats": 3
+  }
 }

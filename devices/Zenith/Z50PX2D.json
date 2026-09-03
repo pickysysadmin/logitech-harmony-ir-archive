@@ -2,6 +2,57 @@
   "codeset": "codesets/8b/8b8dc0a27beeb065.json",
   "deviceType": 1,
   "globalDeviceId": 146654,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"FrontVideo"}],"name":"FrontVideo"},
+      {"commands":[{"set":"InputType","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"RGB-DTV"}],"name":"RGB-DTV"},
+      {"commands":[{"set":"InputType","to":"RGB-PC"}],"name":"RGB-PC"},
+      {"commands":[{"set":"InputType","to":"HDMI/DVI"}],"name":"HDMI/DVI"},
+      {"commands":[{"set":"InputType","to":"TvInput"},{"set":"TvInputInput","to":"Antenna"}],"name":"Antenna"},
+      {"commands":[{"set":"InputType","to":"TvInput"},{"set":"TvInputInput","to":"Cable"}],"name":"Cable"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Zenith",
-  "model": "Z50PX2D"
+  "model": "Z50PX2D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"FrontVideo","select":[{"commands":["InputFrontVideo"],"setType":2}]},
+        {"name":"Component1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"RGB-DTV","select":[{"commands":["InputRgbDtv"],"setType":2}]},
+        {"name":"RGB-PC","select":[{"commands":["InputRgbPc"],"setType":2}]},
+        {"name":"HDMI/DVI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"TvInput","select":[{"commands":["TvInput"],"setType":2}]}
+      ]
+    },
+    "TvInputInput": {
+      "next": ["TvInput"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"Cable"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

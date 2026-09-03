@@ -2,6 +2,61 @@
   "codeset": "codesets/10/106f79b5e828f0ee.json",
   "deviceType": 22,
   "globalDeviceId": 208408,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPOD"}],"name":"iPOD"},
+      {"commands":[{"set":"InputType","to":"BD/SD"},{"set":"BD/SDInput","to":"BD/DVD"}],"name":"BD/DVD"},
+      {"commands":[{"set":"InputType","to":"BD/SD"},{"set":"BD/SDInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"ARC"}],"name":"ARC"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Din1"}],"name":"Din 1"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Din2"}],"name":"Din 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-BT330EG"
+  "model": "SC-BT330EG",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "BD/SDInput": {
+      "next": ["InputBdSd"],
+      "values": [
+        {"name":"BD/DVD"},
+        {"name":"SD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iPOD","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"BD/SD","select":[{"commands":["InputBdSd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AUX"},
+        {"name":"USB"},
+        {"name":"ARC"},
+        {"name":"Din1"},
+        {"name":"Din2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

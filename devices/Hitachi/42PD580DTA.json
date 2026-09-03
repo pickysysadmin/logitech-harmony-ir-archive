@@ -2,6 +2,64 @@
   "codeset": "codesets/00/009460820675edee.json",
   "deviceType": 1,
   "globalDeviceId": 160038,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDTV"}],"name":"HDTV"},
+      {"commands":[{"set":"InputType","to":"Analogue"}],"name":"Analogue"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"HDMI/PC"},{"set":"HDMI/PCInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"HDMI/PC"},{"set":"HDMI/PCInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "42PD580DTA"
+  "model": "42PD580DTA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDMI/PCInput": {
+      "next": ["InputPc/Hdmi"],
+      "values": [
+        {"name":"HDMI"},
+        {"name":"PC"}
+      ]
+    },
+    "HDTVInput": {
+      "next": ["InputDtt/Tv"],
+      "values": [
+        {"name":"Analogue"},
+        {"name":"HDTV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDTV","select":[{"commands":["ChannelUp"],"setType":2}]},
+        {"name":"Analogue","select":[{"commands":["InputDtt/Tv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo",{"set":"VideoInput","to":"AV1"}],"setType":2}]},
+        {"name":"HDMI/PC","select":[{"commands":["InputPc/Hdmi",{"set":"HDMI/PCInput","to":"HDMI"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

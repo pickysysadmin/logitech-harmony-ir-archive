@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 90947,
+  "inputs": {
+    "list": [
+      {"name":"AV"},
+      {"name":"Antenna"}
+    ],
+    "next": ["3"],
+    "type": 2
+  },
   "manufacturer": "Magnavox",
-  "model": "20MT1336/37"
+  "model": "20MT1336/37",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

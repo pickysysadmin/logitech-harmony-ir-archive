@@ -2,6 +2,59 @@
   "codeset": "codesets/ac/ac66e219f164710c.json",
   "deviceType": 1,
   "globalDeviceId": 183027,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Av 1"}],"name":"Av 1"},
+      {"commands":[{"set":"InputType","to":"Av 2"}],"name":"Av 2"},
+      {"commands":[{"set":"InputType","to":"Av 3"}],"name":"Av 3"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Rgb-Pc"}],"name":"Rgb-Pc"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"D/A"},{"set":"D/AInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"D/A"},{"set":"D/AInput","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "32LT75"
+  "model": "32LT75",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "D/AInput": {
+      "next": ["InputD/A"],
+      "values": [
+        {"name":"DTV"},
+        {"name":"TV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Av 1","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"Av 2","select":[{"commands":["InputAv2"],"setType":2}]},
+        {"name":"Av 3","select":[{"commands":["InputAv3"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"Rgb-Pc","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"D/A","select":[{"commands":["InputD/A"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

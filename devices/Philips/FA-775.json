@@ -2,6 +2,37 @@
   "codeset": "codesets/f8/f85bada5f8fd15c8.json",
   "deviceType": 19,
   "globalDeviceId": 77158,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"RECORDER"},
+      {"name":"VCR2"},
+      {"name":"SATELIT"},
+      {"name":"TAPE"},
+      {"name":"TUNER"},
+      {"name":"PHONO"},
+      {"name":"CD"}
+    ],
+    "next": ["NextInput"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "FA-775"
+  "model": "FA-775",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f0/f037a605fde0e9a4.json",
   "deviceType": 34,
   "globalDeviceId": 179334,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"CompositeVideo"}],"name":"CompositeVideo"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"ComponentVideo"}],"name":"ComponentVideo"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"RGBScart"}],"name":"RGBScart"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"ComponentScart"}],"name":"ComponentScart"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Kiss",
-  "model": "VR-558"
+  "model": "VR-558",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Inputs","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "InputsInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"CompositeVideo"},
+        {"name":"S-Video"},
+        {"name":"ComponentVideo"},
+        {"name":"RGBScart"},
+        {"name":"ComponentScart"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

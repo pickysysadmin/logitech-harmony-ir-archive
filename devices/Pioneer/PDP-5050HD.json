@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/4b/4bbd745dd0fd15f7.json",
   "deviceType": 1,
   "globalDeviceId": 177960,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input1type"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Input2type"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Input3type"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"Input4type"}],"name":"Input 4"},
+      {"commands":[{"set":"InputType","to":"Input5type"}],"name":"Input 5"},
+      {"commands":[{"set":"InputType","to":"InputPCtype"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"InputiLinktype"}],"name":"i-Link"},
+      {"commands":[{"set":"InputType","to":"InputDTVtype"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"Antennatype"},{"set":"AntennaMode","to":"AntAmode"}],"name":"Ant A"},
+      {"commands":[{"set":"InputType","to":"Antennatype"},{"set":"AntennaMode","to":"AntBmode"}],"name":"Ant B"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PDP-5050HD"
+  "model": "PDP-5050HD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaMode": {
+      "next": ["AntennaCable"],
+      "values": [
+        {"name":"AntAmode"},
+        {"name":"AntBmode"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input1type","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"Input2type","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"Input3type","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"Input4type","select":[{"commands":["InputVideo4"],"setType":1}]},
+        {"name":"Input5type","select":[{"commands":["InputVideo5"],"setType":1}]},
+        {"name":"InputPCtype","select":[{"commands":["InputComputer"],"setType":1}]},
+        {"name":"InputiLinktype","select":[{"commands":["InputiLink"],"setType":1}]},
+        {"name":"InputDTVtype","select":[{"commands":["InputDtv"],"setType":1}]},
+        {"name":"Antennatype","select":[{"commands":["AntennaCable"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/fd/fde4d0f07a1c537c.json",
   "deviceType": 1,
   "globalDeviceId": 167052,
+  "inputs": {
+    "finish": ["InterKeyDelay 20 Khz"],
+    "list": [
+      {"name":"Antenna 1"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"HDMI 1"}
+    ],
+    "next": ["InputDelay 25 Khz"],
+    "start": ["InterKeyDelay 30 Khz"],
+    "type": 4
+  },
   "manufacturer": "Z-Harmony Test",
-  "model": "TV-Manual Input Toggle"
+  "model": "TV-Manual Input Toggle",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna 1"}
+    ],
+    "toggle": ["PowerOnDelay 25 Khz"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5500,
+    "pressMinRepeats": 1
+  }
 }

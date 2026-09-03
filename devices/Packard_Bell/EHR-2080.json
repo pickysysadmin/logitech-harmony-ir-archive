@@ -2,6 +2,54 @@
   "codeset": "codesets/0d/0d14e861bfe69691.json",
   "deviceType": 34,
   "globalDeviceId": 165614,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"ExtInputs"},{"set":"ExtInputsInput","to":"RearCVBS"}],"name":"RearCVBS"},
+      {"commands":[{"set":"InputType","to":"ExtInputs"},{"set":"ExtInputsInput","to":"RearS-Video"}],"name":"RearS-Video"},
+      {"commands":[{"set":"InputType","to":"ExtInputs"},{"set":"ExtInputsInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"ExtInputs"},{"set":"ExtInputsInput","to":"FrontCVBS"}],"name":"FrontCVBS"},
+      {"commands":[{"set":"InputType","to":"ExtInputs"},{"set":"ExtInputsInput","to":"DV IN"}],"name":"DV IN"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Packard Bell",
-  "model": "EHR-2080"
+  "model": "EHR-2080",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ExtInputsInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"RearCVBS"},
+        {"name":"RearS-Video"},
+        {"name":"Tuner"},
+        {"name":"FrontCVBS"},
+        {"name":"DV IN"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputDV/USB"],"setType":2}]},
+        {"name":"ExtInputs","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

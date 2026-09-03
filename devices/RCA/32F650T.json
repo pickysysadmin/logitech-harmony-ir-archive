@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 29228,
+  "inputs": {
+    "list": [
+      {"commands":["ChannelUp"],"name":"Tuner"},
+      {"commands":["InputVideo3"],"name":"Video 1"},
+      {"commands":["InputVideo3","InputNext"],"name":"Video 2"},
+      {"commands":["InputVideo3","InputNext","InputNext"],"name":"Front"},
+      {"commands":["InputVideo3","InputNext","InputNext","InputNext"],"name":"CVID3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "32F650T"
+  "model": "32F650T",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

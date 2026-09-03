@@ -2,6 +2,35 @@
   "codeset": "codesets/a5/a5035df740f7f4a8.json",
   "deviceType": 7,
   "globalDeviceId": 171967,
+  "inputs": {
+    "list": [
+      {"name":"Video"},
+      {"name":"SVideo"},
+      {"name":"Computer 1"},
+      {"name":"Computer 2"}
+    ],
+    "next": [
+      {"delayMs":1500},
+      {"command":"InputNext","durationMs":500}
+    ],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "TDPEX-20"
+  "model": "TDPEX-20",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

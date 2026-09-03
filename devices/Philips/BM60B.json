@@ -2,6 +2,47 @@
   "codeset": "codesets/72/72e3d51651a28257.json",
   "deviceType": 21,
   "globalDeviceId": 494141,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Fm/AudioIn"},{"set":"Fm/AudioInInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Fm/AudioIn"},{"set":"Fm/AudioInInput","to":"AudioIn"}],"name":"AudioIn"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "BM60B"
+  "model": "BM60B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Fm/AudioInInput": {
+      "next": ["InputFm/AudioIn"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AudioIn"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Fm/AudioIn","select":[{"commands":["InputFm/AudioIn"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

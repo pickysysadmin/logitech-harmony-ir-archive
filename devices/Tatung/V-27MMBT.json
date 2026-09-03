@@ -2,6 +2,67 @@
   "codeset": "codesets/af/af47b50875a4e8af.json",
   "deviceType": 1,
   "globalDeviceId": 166570,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart 1"}],"name":"Scart 1"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart 2"}],"name":"Scart 2"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart 2 S"}],"name":"Scart 2 S"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CVBS"}],"name":"CVBS"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-video"}],"name":"S-video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YUV"}],"name":"YUV"},
+      {"commands":[{"set":"InputType","to":"VGAHdmi"},{"set":"VGAHdmiInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"VGAHdmi"},{"set":"VGAHdmiInput","to":"Hdmi"}],"name":"Hdmi"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Tatung",
-  "model": "V-27MMBT"
+  "model": "V-27MMBT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Scart","select":[{"commands":["InputScart",{"set":"ScartInput","to":"Scart 1"}],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo",{"set":"VideoInput","to":"CVBS"}],"setType":2}]},
+        {"name":"VGAHdmi","select":[{"commands":["InputHdmi",{"set":"VGAHdmiInput","to":"Hdmi"}],"setType":2}]}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputScart"],
+      "values": [
+        {"name":"Scart 1"},
+        {"name":"Scart 2"},
+        {"name":"Scart 2 S"}
+      ]
+    },
+    "VGAHdmiInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"Hdmi"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"CVBS"},
+        {"name":"S-video"},
+        {"name":"YUV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

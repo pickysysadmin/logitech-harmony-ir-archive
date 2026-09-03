@@ -2,6 +2,32 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 92507,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["TvVideo","InputVideo1"],"name":"AV1"},
+      {"commands":["TvVideo","InputVideo2"],"name":"AV2"},
+      {"commands":["TvVideo","InputVideo3"],"name":"AV3"},
+      {"commands":["InputVideo1"],"name":"VCR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-25LK10C"
+  "model": "TX-25LK10C",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["PowerToggle 2"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 4,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

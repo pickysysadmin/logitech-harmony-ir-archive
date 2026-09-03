@@ -2,6 +2,53 @@
   "codeset": "codesets/ee/eeda225f444f293f.json",
   "deviceType": 22,
   "globalDeviceId": 129302,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputDVD"],"name":"DVD"},
+      {"commands":["InputDig1"],"name":"Digital 1"},
+      {"commands":["InputDig2"],"name":"Digital 2"},
+      {"commands":["InputAux1"],"name":"Aux 1"},
+      {"commands":["InputAux2"],"name":"Aux 2"},
+      {"commands":["InputVcr"],"name":"VCR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Linn",
-  "model": "Classik Movie Di"
+  "model": "Classik Movie Di",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Tape"},
+        {"name":"Aux1"},
+        {"name":"Aux2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD/DVD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,64 @@
   "codeset": "codesets/aa/aab8d974dbe0f20a.json",
   "deviceType": 19,
   "globalDeviceId": 446476,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Airplay"}],"name":"Airplay"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 1"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"BT"}],"name":"BT"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMII 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Opt"},{"set":"OptInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Opt"},{"set":"OptInput","to":"ARC"}],"name":"ARC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "AZATOM",
-  "model": "StealthBar AZHD1"
+  "model": "StealthBar AZHD1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"BT"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Airplay","select":[{"commands":["InputAirplay"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"Opt","select":[{"commands":["InputOpt"],"setType":2}]}
+      ]
+    },
+    "OptInput": {
+      "next": ["InputOpt"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"ARC"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/f5/f5bf4dc3bffcaa42.json",
   "deviceType": 1,
   "globalDeviceId": 251663,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"TVInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"Smart TV"}],"name":"Smart TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "47la6208"
+  "model": "47la6208",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["Exit","Exit","InputAv1"],"setType":2}]},
+        {"name":"AV 2","select":[{"commands":["Exit","Exit","InputAv2"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["Exit","Exit","InputComponent1"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["Exit","Exit","InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["Exit","Exit","InputHdmi2"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["Exit","Exit","InputHdmi3"],"setType":2}]},
+        {"name":"Smart TV","select":[{"commands":["Exit","Smart"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["Exit","Exit","InputTv"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Radio"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

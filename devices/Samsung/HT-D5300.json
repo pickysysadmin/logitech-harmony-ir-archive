@@ -2,6 +2,53 @@
   "codeset": "codesets/9d/9d25ae29fc1e64d8.json",
   "deviceType": 22,
   "globalDeviceId": 219877,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Netflix"}],"name":"Netflix","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"SmartHub"}],"name":"SmartHub","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"BD/DVD"}],"name":"BD/DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"D.In"}],"name":"D.In","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"R.iPod"}],"name":"R.iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"W.iPod"}],"name":"W.iPod","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-D5300"
+  "model": "HT-D5300",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Netflix","select":[{"commands":["NetFlix"],"setType":2}]},
+        {"name":"SmartHub","select":[{"commands":["SmartHub"],"setType":2}]},
+        {"name":"Inputs","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "InputsInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"BD/DVD"},
+        {"name":"D.In"},
+        {"name":"Aux"},
+        {"name":"R.iPod"},
+        {"name":"W.iPod"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

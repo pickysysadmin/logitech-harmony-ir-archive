@@ -2,6 +2,58 @@
   "codeset": "codesets/5e/5e4989154a38efcf.json",
   "deviceType": 7,
   "globalDeviceId": 204677,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer1"}],"name":"Computer1"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer2"}],"name":"Computer2"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Dvi"}],"name":"Dvi"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CompositeVideo"}],"name":"CompositeVideo"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YCbCr"}],"name":"YCbCr"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Boxlight",
-  "model": "MP-60E"
+  "model": "MP-60E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComputerInput": {
+      "next": ["InputComputer"],
+      "values": [
+        {"name":"Computer1"},
+        {"name":"Computer2"},
+        {"name":"YPbPr"},
+        {"name":"Dvi"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"CompositeVideo"},
+        {"name":"S-Video"},
+        {"name":"YCbCr"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

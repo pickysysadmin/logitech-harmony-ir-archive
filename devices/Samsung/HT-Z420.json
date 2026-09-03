@@ -2,6 +2,60 @@
   "codeset": "codesets/31/31f07d650fac4d26.json",
   "deviceType": 22,
   "globalDeviceId": 159453,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Port"},{"set":"PortInput","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Port"},{"set":"PortInput","to":"Audio iPod"}],"name":"Audio iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Port"},{"set":"PortInput","to":"Video iPod"}],"name":"Video iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Digital In"}],"name":"Digital In","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 1"}],"name":"Aux 1","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux 2"}],"name":"Aux 2","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-Z420"
+  "model": "HT-Z420",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Digital In"},
+        {"name":"Aux 1"},
+        {"name":"Aux 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Port","select":[{"commands":["InputPort"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "PortInput": {
+      "next": ["InputPort"],
+      "values": [
+        {"name":"USB"},
+        {"name":"Audio iPod"},
+        {"name":"Video iPod"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 1
+  }
 }

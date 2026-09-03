@@ -2,6 +2,36 @@
   "codeset": "codesets/14/14b3a5cffb4b305b.json",
   "deviceType": 19,
   "globalDeviceId": 279077,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV","ports":["Optical"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputBluetooth"],"name":"Bluetooth Audio","ports":["Pairing Input"]},
+      {"commands":["InputHdmi3",{"delayMs":1500},"InputHdmi3","InputNext","InputNext","InputNext"],"name":"Analog","ports":["Aux"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]},
+      {"commands":["Mirroring"],"name":"Screen Mirroring","ports":["Streaming"]},
+      {"commands":["InputHomenetwork"],"name":"Home Network","ports":["Streaming"]},
+      {"commands":["InputMusicservice"],"name":"Music Services","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "HT-CT790"
+  "model": "HT-CT790",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

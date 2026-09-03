@@ -1,7 +1,68 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 67865,
+  "inputs": {
+    "list": [
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"},
+      {"name":"Video 4"},
+      {"name":"Video 5"},
+      {"name":"Video 6"},
+      {"name":"Tuner"},
+      {"name":"Aux"},
+      {"name":"MemoryStick"},
+      {"name":"Tuner/Vid"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KDE-42XBR960"
+  "model": "KDE-42XBR960",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"Video 4","select":[{"commands":["InputVideo4"],"setType":1}]},
+        {"name":"Video 5","select":[{"commands":["InputVideo5"],"setType":1}]},
+        {"name":"Video 6","select":[{"commands":["InputVideo6"],"setType":1}]},
+        {"name":"Tuners","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"MemStick","select":[{"commands":["MemoryStick"],"setType":2}]}
+      ]
+    },
+    "MemStickInput": {
+      "next": ["MemoryStick"],
+      "values": [
+        {"name":"MemoryStick"},
+        {"name":"Tuner/Vid"}
+      ]
+    },
+    "TunersInput": {
+      "next": ["InputTuner2"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Aux"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

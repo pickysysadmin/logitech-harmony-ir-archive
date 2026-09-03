@@ -2,6 +2,60 @@
   "codeset": "codesets/b8/b8db576dcb1eab08.json",
   "deviceType": 5,
   "globalDeviceId": 72801,
+  "inputs": {
+    "list": [
+      {"name":"CD"},
+      {"name":"TUNER"},
+      {"name":"MD/TAPE"},
+      {"name":"DVD"},
+      {"name":"D-TV/CBL"},
+      {"name":"VCR"},
+      {"name":"A"},
+      {"name":"V-AUX"},
+      {"name":"CBL/SAT"},
+      {"name":"CD-R"},
+      {"name":"VCR2/DVR"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Yamaha",
-  "model": "HTR-5459"
+  "model": "HTR-5459",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "6chInput": {
+      "next": ["InputMulti Ch In"],
+      "values": [
+        {"name":"On"},
+        {"name":"Off"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd/Md"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"MD/CD-R","select":[{"commands":["InputMd/Cdr"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd2"],"setType":2}]},
+        {"name":"D-TV/CBL","select":[{"commands":["InputTv/Dbs"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr1"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"V-AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"6CH Input","select":[{"commands":["InputMultiChannel"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

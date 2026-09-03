@@ -2,6 +2,63 @@
   "codeset": "codesets/9a/9a0e1ba08092b25d.json",
   "deviceType": 1,
   "globalDeviceId": 166792,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"COMPONENT"},{"set":"COMPONENTInput","to":"COMP1"}],"name":"COMP1"},
+      {"commands":[{"set":"InputType","to":"COMPONENT"},{"set":"COMPONENTInput","to":"COMP2"}],"name":"COMP2"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"SVIDEO"}],"name":"SVIDEO"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Dynex",
-  "model": "DX-LCD42"
+  "model": "DX-LCD42",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "COMPONENTInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"COMP1"},
+        {"name":"COMP2"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi",{"set":"HDMIInput","to":"HDMI1"}],"setType":2}]},
+        {"name":"COMPONENT","select":[{"commands":["InputComponent",{"set":"COMPONENTInput","to":"COMP1"}],"setType":2}]},
+        {"name":"VIDEO","select":[{"commands":["InputVideo",{"set":"VIDEOInput","to":"AV"}],"setType":2}]}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV"},
+        {"name":"SVIDEO"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

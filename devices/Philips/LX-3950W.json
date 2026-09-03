@@ -2,6 +2,48 @@
   "codeset": "codesets/d3/d3beb477fdb652d5.json",
   "deviceType": 22,
   "globalDeviceId": 157124,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DISC"}],"name":"DISC","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Digital"}],"name":"Digital","ports":["Coaxial"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "LX-3950W"
+  "model": "LX-3950W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAUX"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DISC","select":[{"commands":["InputDisc"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["InputTV"],"setType":1}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"Aux","select":[{"commands":["InputAUX"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

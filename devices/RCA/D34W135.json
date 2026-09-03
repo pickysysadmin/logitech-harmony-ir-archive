@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 37,
   "globalDeviceId": 139076,
+  "inputs": {
+    "list": [
+      {"commands":["InputRgb"],"name":"DVI"},
+      {"commands":["InputRgb","InputNext"],"name":"VID1"},
+      {"commands":["InputRgb","InputNext","InputNext"],"name":"VID2"},
+      {"commands":["InputRgb","InputNext","InputNext","InputNext"],"name":"Front"},
+      {"commands":["InputRgb","InputNext","InputNext","InputNext","InputNext"],"name":"CMPT1"},
+      {"commands":["InputRgb","InputNext","InputNext","InputNext","InputNext","InputNext"],"name":"CMPT2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "D34W135"
+  "model": "D34W135",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1500}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

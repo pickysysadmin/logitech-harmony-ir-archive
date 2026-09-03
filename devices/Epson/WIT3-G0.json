@@ -2,6 +2,35 @@
   "codeset": "codesets/dd/dd6f7db4fb625bae.json",
   "deviceType": 30,
   "globalDeviceId": 263074,
+  "inputs": {
+    "list": [
+      {"name":"HDMI 1","ports":["HDMI"]},
+      {"name":"HDMI 2","ports":["HDMI"]},
+      {"name":"HDMI 3","ports":["HDMI"]},
+      {"name":"HDMI 4","ports":["HDMI"]},
+      {"name":"HDMI 5","ports":["HDMI"]}
+    ],
+    "next": ["Input"],
+    "start": [
+      "Input",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Epson",
-  "model": "WIT3-G0"
+  "model": "WIT3-G0",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

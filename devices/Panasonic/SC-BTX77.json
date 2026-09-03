@@ -2,6 +2,59 @@
   "codeset": "codesets/0a/0ae89eccb99a8610.json",
   "deviceType": 22,
   "globalDeviceId": 209070,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"BD/SD"},{"set":"BD/SDInput","to":"BD/DVD/CD"}],"name":"BD/DVD/CD"},
+      {"commands":[{"set":"InputType","to":"BD/SD"},{"set":"BD/SDInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"Aux"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"Din1"}],"name":"Din 1"},
+      {"commands":[{"set":"InputType","to":"Ext-In"},{"set":"Ext-InInput","to":"Din2"}],"name":"Din 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-BTX77"
+  "model": "SC-BTX77",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "BD/SDInput": {
+      "next": ["InputBd/Sd"],
+      "values": [
+        {"name":"BD/DVD/CD"},
+        {"name":"SD"}
+      ]
+    },
+    "Ext-InInput": {
+      "next": ["InputEXT-IN"],
+      "values": [
+        {"name":"FM"},
+        {"name":"USB"},
+        {"name":"Aux"},
+        {"name":"Din1"},
+        {"name":"Din2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"BD/SD","select":[{"commands":["InputBd/Sd"],"setType":2}]},
+        {"name":"Ext-In","select":[{"commands":["InputEXT-IN"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

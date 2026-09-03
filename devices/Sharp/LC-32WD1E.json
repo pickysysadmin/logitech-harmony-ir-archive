@@ -2,6 +2,55 @@
   "codeset": "codesets/31/31b3476c28d3e6f1.json",
   "deviceType": 1,
   "globalDeviceId": 145223,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"EXT 1"}],"name":"EXT 1"},
+      {"commands":[{"set":"InputType","to":"EXT 2"}],"name":"EXT 2"},
+      {"commands":[{"set":"InputType","to":"EXT 3"}],"name":"EXT 3"},
+      {"commands":[{"set":"InputType","to":"EXT 4"}],"name":"EXT 4"},
+      {"commands":[{"set":"InputType","to":"EXT 5"}],"name":"EXT 5"},
+      {"commands":[{"set":"InputType","to":"EXT 6"}],"name":"EXT 6"},
+      {"commands":[{"set":"InputType","to":"EXT 7"}],"name":"EXT 7"},
+      {"commands":[{"set":"InputType","to":"DTV"},{"set":"DTVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"DTV"},{"set":"DTVInput","to":"ATV"}],"name":"ATV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "LC-32WD1E"
+  "model": "LC-32WD1E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DTVInput": {
+      "next": ["InputDTv"],
+      "values": [
+        {"name":"DTV"},
+        {"name":"ATV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"EXT 1","select":[{"commands":["InputExt1"],"setType":2}]},
+        {"name":"EXT 2","select":[{"commands":["InputExt2"],"setType":2}]},
+        {"name":"EXT 3","select":[{"commands":["InputExt3"],"setType":2}]},
+        {"name":"EXT 4","select":[{"commands":["InputExt4"],"setType":2}]},
+        {"name":"EXT 5","select":[{"commands":["InputExt5"],"setType":2}]},
+        {"name":"EXT 6","select":[{"commands":["InputExt6"],"setType":2}]},
+        {"name":"EXT 7","select":[{"commands":["InputExt7"],"setType":2}]},
+        {"name":"DTV","select":[{"commands":["InputDTv"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,41 @@
   "codeset": "codesets/bd/bdd107a144ae0818.json",
   "deviceType": 5,
   "globalDeviceId": 233684,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputStb/Dvr"],"name":"STB/DVR","ports":["HDMI","Composite","Coaxial"]},
+      {"commands":["InputGame"],"name":"Game","ports":["HDMI","Composite","Optical"]},
+      {"commands":["InputPc"],"name":"PC","ports":["HDMI","Composite"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["HDMI","Composite"]},
+      {"commands":["InputTv/Cd"],"name":"TV/CD","ports":["HDMI","Composite","Optical"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["HDMI","Composite"]},
+      {"commands":["InputInternetRadio"],"name":"Internet Radio","ports":["Streaming"]},
+      {"commands":["InputMusicServer"],"name":"Music Server","ports":["Streaming"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputNet"],"name":"NET","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-NR717"
+  "model": "TX-NR717",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

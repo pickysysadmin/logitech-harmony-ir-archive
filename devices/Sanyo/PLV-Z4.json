@@ -2,6 +2,37 @@
   "codeset": "codesets/85/85297d50c3d0e5fc.json",
   "deviceType": 7,
   "globalDeviceId": 145038,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputComponent1"],"name":"Component1"},
+      {"commands":["InputComponent2"],"name":"Component2"},
+      {"commands":["InputHdmi"],"name":"HDMI"},
+      {"commands":["InputPC"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sanyo",
-  "model": "PLV-Z4"
+  "model": "PLV-Z4",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1500},
+      "PowerOff"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 1
+  }
 }

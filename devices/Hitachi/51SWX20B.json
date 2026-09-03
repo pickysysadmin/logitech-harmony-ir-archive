@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 133550,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Ant"},{"set":"Antenna","to":"A"}],"name":"Antenna A"},
+      {"commands":[{"set":"InputType","to":"Ant"},{"set":"Antenna","to":"B"}],"name":"Antenna B"},
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Video4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"Video5"}],"name":"Video 5"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "51SWX20B"
+  "model": "51SWX20B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Antenna": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"A"},
+        {"name":"B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Ant","select":[{"commands":["TvVideo"],"setType":2}]},
+        {"name":"Video1","select":[{"commands":["Input 1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["Input 2"],"setType":2}]},
+        {"name":"Video3","select":[{"commands":["Input 3"],"setType":2}]},
+        {"name":"Video4","select":[{"commands":["Input 4"],"setType":2}]},
+        {"name":"Video5","select":[{"commands":["Input 5"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 4,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

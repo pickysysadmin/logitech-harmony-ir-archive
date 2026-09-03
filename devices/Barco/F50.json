@@ -2,6 +2,39 @@
   "codeset": "codesets/f4/f4377013cc575591.json",
   "deviceType": 7,
   "globalDeviceId": 303225,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvi"],"name":"DVI"},
+      {"commands":["InputHdmi"],"name":"HDMI"},
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["InputHdbaseT"],"name":"HDBaseT"},
+      {"commands":["InputDisplayPort1"],"name":"DisplayPort 1"},
+      {"commands":["InputDisplayPort2"],"name":"DisplayPort 2"},
+      {"commands":["InputSdi1"],"name":"SDI 1"},
+      {"commands":["InputSdi2"],"name":"SDI 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Barco",
-  "model": "F50"
+  "model": "F50",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

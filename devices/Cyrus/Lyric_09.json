@@ -2,6 +2,75 @@
   "codeset": "codesets/16/1664a21645e80c19.json",
   "deviceType": 22,
   "globalDeviceId": 277830,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Music"},{"set":"MusicInput","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"Music"},{"set":"MusicInput","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Internet Radio"}],"name":"Internet Radio"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"DAB/FM"}],"name":"DAB/FM"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Optical 1"}],"name":"Optical 1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Optical 2"}],"name":"Optical 2"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Coaxial 1"}],"name":"Coaxial 1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Coaxial 2"}],"name":"Coaxial 2"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"iPad(Front)"}],"name":"iPad(Front)"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"iPad(Rear)"}],"name":"iPad(Rear)"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"USB B"}],"name":"USB B"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Analogue"}],"name":"Analogue"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Cyrus",
-  "model": "Lyric 09"
+  "model": "Lyric 09",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Optical 1"},
+        {"name":"Optical 2"},
+        {"name":"Coaxial 1"},
+        {"name":"Coaxial 2"},
+        {"name":"iPad(Front)"},
+        {"name":"iPad(Rear)"},
+        {"name":"USB B"},
+        {"name":"Analogue"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Music","select":[{"commands":["InputMusic"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "MusicInput": {
+      "next": ["InputMusic"],
+      "values": [
+        {"name":"Network"},
+        {"name":"Bluetooth"}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"Internet Radio"},
+        {"name":"DAB/FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

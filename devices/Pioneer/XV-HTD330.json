@@ -2,6 +2,56 @@
   "codeset": "codesets/dc/dc8034ad780ed3dc.json",
   "deviceType": 22,
   "globalDeviceId": 36845,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TVLine"},
+      {"commands":[{"set":"InputType","to":"Dvd/Cd"}],"name":"Dvd/Cd"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"L1/L2Input","to":"L1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"L1/L2Input","to":"L2"}],"name":"Line 2"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TUNERInput","to":"Am"}],"name":"Am"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TUNERInput","to":"Fm"}],"name":"Fm"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "XV-HTD330"
+  "model": "XV-HTD330",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTV"],"setType":2}]},
+        {"name":"Dvd/Cd","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputLine"],"setType":2}]}
+      ]
+    },
+    "L1/L2Input": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"L1"},
+        {"name":"L2"}
+      ]
+    },
+    "TUNERInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

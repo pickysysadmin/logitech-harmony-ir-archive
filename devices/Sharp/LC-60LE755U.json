@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "finish": ["Ent"]
+  },
   "codeset": "codesets/12/12c6dfc6b7a5aa5a.json",
   "deviceType": 1,
   "globalDeviceId": 250857,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","Exit","ChannelUp"],"name":"TV","ports":["Antenna"]},
+      {"commands":["Exit","Exit","Input1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["Exit","Exit","Input2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["Exit","Exit","Input3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["Exit","Exit","Input4"],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":["Exit","Exit","Input5"],"name":"Component","ports":["Component"]},
+      {"commands":["Exit","Exit","Input6"],"name":"Video 1","ports":["Composite"]},
+      {"commands":["Exit","Exit","Input7"],"name":"Video 2","ports":["Composite"]},
+      {"commands":["Exit","Exit","Input8"],"name":"PC IN","ports":["PC"]},
+      {"commands":["Exit","Exit","Input8","Input"],"name":"Home Network(DLNA)","ports":["Streaming"]},
+      {"commands":["Exit","Exit","Input8","Input","Input"],"name":"USB","ports":["USB"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"SmartCentral"],"name":"Smart Central","ports":["Streaming"]},
+      {"commands":["Exit","Exit","Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-60LE755U"
+  "model": "LC-60LE755U",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

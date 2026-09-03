@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/12/122429889cf3acb1.json",
   "deviceType": 1,
   "globalDeviceId": 178027,
+  "inputs": {
+    "canSkip": true,
+    "finish": ["OK"],
+    "list": [
+      {"name":"PC"},
+      {"name":"HDMI 2"},
+      {"name":"HDMI 1"},
+      {"name":"3C"},
+      {"name":"Input2"},
+      {"name":"Input1"},
+      {"name":"DTV"},
+      {"name":"ATV"}
+    ],
+    "next": ["DirectionDown"],
+    "start": [
+      {"command":"Input","durationMs":1300}
+    ],
+    "type": 4
+  },
   "manufacturer": "Toshiba",
-  "model": "32wlt66"
+  "model": "32wlt66",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

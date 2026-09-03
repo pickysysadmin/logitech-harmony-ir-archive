@@ -2,6 +2,37 @@
   "codeset": "codesets/d0/d03da4f533fcfc5e.json",
   "deviceType": 19,
   "globalDeviceId": 336535,
+  "inputs": {
+    "list": [
+      {"name":"D.IN","ports":["Optical"]},
+      {"name":"AUX","ports":["Aux"]},
+      {"name":"HDMI","ports":["HDMI"]},
+      {"name":"BT","ports":["Pairing Input"]},
+      {"name":"TV","ports":["HDMI"]},
+      {"name":"USB","ports":["USB"]}
+    ],
+    "next": ["Source"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HW-KM57C"
+  "model": "HW-KM57C",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

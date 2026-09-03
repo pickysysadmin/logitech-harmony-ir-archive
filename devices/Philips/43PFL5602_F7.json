@@ -2,6 +2,61 @@
   "codeset": "codesets/96/96c127b1ba87612f.json",
   "deviceType": 1,
   "globalDeviceId": 349078,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"NetflixMenu","to":"OFF"},{"set":"MenuInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"NetflixMenu","to":"OFF"},{"set":"MenuInput","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"NetflixMenu","to":"OFF"},{"set":"MenuInput","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"NetflixMenu","to":"OFF"},{"set":"MenuInput","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"NetflixMenu","to":"OFF"},{"set":"MenuInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"NetflixMenu","to":"ON"},{"set":"InputType","to":"NETTV"}],"name":"NETTV"},
+      {"commands":[{"set":"NetflixMenu","to":"ON"},{"set":"InputType","to":"Vudu"}],"name":"Vudu"},
+      {"commands":[{"set":"NetflixMenu","to":"ON"},{"set":"InputType","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "43PFL5602/F7"
+  "model": "43PFL5602/F7",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"NETTV","select":[{"commands":["Return","Return","NetTv"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]},
+        {"name":"Vudu","select":[{"commands":["Vudu"],"setType":1}]}
+      ]
+    },
+    "MenuInput": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["Source"],
+      "values": [
+        {"name":"TV"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"Video"}
+      ]
+    },
+    "NetflixMenu": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Home",{"delayMs":7000},"Return",{"delayMs":500}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 30000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 24000,
+    "pressMinRepeats": 3
+  }
 }

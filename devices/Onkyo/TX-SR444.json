@@ -2,6 +2,39 @@
   "codeset": "codesets/3d/3d0cd4adc2343b6b.json",
   "deviceType": 5,
   "globalDeviceId": 271206,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD","ports":["HDMI","Component","Composite"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Composite"]},
+      {"commands":["InputGame1"],"name":"Game 1","ports":["HDMI"]},
+      {"commands":["InputGame2"],"name":"Game 2","ports":["Component","Composite"]},
+      {"commands":["InputStrmBox"],"name":"STRM BOX","ports":["HDMI"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite"]},
+      {"commands":["InputAux"],"name":"Aux","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Optical"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Composite","Optical"]},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputBluetooth"],"name":"Bluetooth","ports":["Pairing Input"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SR444"
+  "model": "TX-SR444",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

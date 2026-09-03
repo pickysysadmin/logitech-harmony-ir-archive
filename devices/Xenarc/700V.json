@@ -2,6 +2,33 @@
   "codeset": "codesets/51/514222b17710f17e.json",
   "deviceType": 13,
   "globalDeviceId": 13764,
+  "inputs": {
+    "finish": ["FinishInput"],
+    "list": [
+      {"name":"Video1"},
+      {"name":"Video2"}
+    ],
+    "next": ["NextInput"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Xenarc",
-  "model": "700V"
+  "model": "700V",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Video1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

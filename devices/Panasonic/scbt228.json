@@ -2,6 +2,59 @@
   "codeset": "codesets/4f/4fe7b475eff6236f.json",
   "deviceType": 22,
   "globalDeviceId": 204187,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bd/Sd"},{"set":"BD/SDInput","to":"BD/DVD"}],"name":"BD/DVD"},
+      {"commands":[{"set":"InputType","to":"Bd/Sd"},{"set":"BD/SDInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"ARC"}],"name":"ARC"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"DIN1"}],"name":"DIN 1"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"DIN2"}],"name":"DIN 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "scbt228"
+  "model": "scbt228",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "BD/SDInput": {
+      "next": ["InputBdSd"],
+      "values": [
+        {"name":"BD/DVD"},
+        {"name":"SD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bd/Sd","select":[{"commands":["InputBdSd"],"setType":1}]},
+        {"name":"iPod","select":[{"commands":["InputIpod"],"setType":1}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AUX"},
+        {"name":"ARC"},
+        {"name":"DIN1"},
+        {"name":"DIN2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

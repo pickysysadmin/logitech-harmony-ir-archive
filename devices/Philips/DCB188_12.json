@@ -2,6 +2,47 @@
   "codeset": "codesets/31/31b9718f1413fe86.json",
   "deviceType": 21,
   "globalDeviceId": 260138,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"iPhone/iPod"}],"name":"iPhone/iPod"},
+      {"commands":[{"set":"InputType","to":"Tuner/DAB"},{"set":"Tuner/DABInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Tuner/DAB"},{"set":"Tuner/DABInput","to":"DAB"}],"name":"DAB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DCB188/12"
+  "model": "DCB188/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"iPhone/iPod","select":[{"commands":["InputiPhone/iPod"],"setType":1}]},
+        {"name":"Tuner/DAB","select":[{"commands":["InputTuner/Dab"],"setType":1}]}
+      ]
+    },
+    "Tuner/DABInput": {
+      "next": ["InputTuner/Dab"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"DAB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

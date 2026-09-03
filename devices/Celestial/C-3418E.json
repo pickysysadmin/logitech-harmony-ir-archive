@@ -2,6 +2,34 @@
   "codeset": "codesets/1f/1f201f868022d6da.json",
   "deviceType": 1,
   "globalDeviceId": 110614,
+  "inputs": {
+    "list": [
+      {"name":"AV 1"},
+      {"name":"AV 2"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"TV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Celestial",
-  "model": "C-3418E"
+  "model": "C-3418E",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

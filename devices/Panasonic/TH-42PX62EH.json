@@ -1,7 +1,111 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 175892,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV1"},{"set":"MENU","to":"OFF"},"InputHdmi1","Red","Red"],"name":"AV1"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV2"},{"set":"AVTWO","to":"AV2"},{"set":"MENU","to":"OFF"}],"name":"AV2"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV2"},{"set":"AVTWO","to":"AV2S"},{"set":"MENU","to":"OFF"}],"name":"AV2S"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV3"},{"set":"AVTHREE","to":"AV3"},{"set":"MENU","to":"OFF"}],"name":"AV3"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV3"},{"set":"AVTHREE","to":"AV3S"},{"set":"MENU","to":"OFF"}],"name":"AV3S"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV4"},{"set":"AVFOUR","to":"AV4"},{"set":"MENU","to":"OFF"}],"name":"AV4"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"AV4"},{"set":"AVFOUR","to":"AV4S"},{"set":"MENU","to":"OFF"}],"name":"AV4S"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"Component"},{"set":"MENU","to":"OFF"}],"name":"Component"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"HDMI"},{"set":"HDMI","to":"HDMI1"},{"set":"Page1/2","to":"Page2"},{"set":"MENU","to":"OFF"},"InputHdmi1"],"name":"HDMI1"},
+      {"commands":[{"set":"MENU","to":"ON"},{"set":"INPUTMODE","to":"AV"},{"set":"AVS","to":"HDMI"},{"set":"HDMI","to":"HDMI2"},{"set":"Page1/2","to":"Page2"},{"set":"MENU","to":"OFF"},"InputHdmi2"],"name":"HDMI2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PX62EH"
+  "model": "TH-42PX62EH",
+  "power": {
+    "off": ["PowerOff"],
+    "on": [
+      {"command":"PowerOn","durationMs":1500}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVFOUR": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4S"}
+      ]
+    },
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":[{"set":"Page1/2","to":"Page1"},"Red"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":[{"set":"Page1/2","to":"Page1"},"Green"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":[{"set":"Page1/2","to":"Page1"},"Yellow"],"setType":1}]},
+        {"name":"AV4","select":[{"commands":[{"set":"Page1/2","to":"Page1"},"Green"],"setType":1}]},
+        {"name":"Component","select":[{"commands":[{"set":"Page1/2","to":"Page1"},"Yellow"],"setType":1}]},
+        {"name":"HDMI","select":[{"commands":[{"set":"Page1/2","to":"Page1"},"Blue"],"setType":1}]}
+      ]
+    },
+    "AVTHREE": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AVTWO": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "ColorMenu": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":2}]}
+      ]
+    },
+    "HDMI": {
+      "next": ["Blue"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "TvVideo",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":2}]}
+      ]
+    },
+    "Page1/2": {
+      "values": [
+        {"name":"Page1","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"Page2","select":[{"commands":["Blue"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

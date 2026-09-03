@@ -2,6 +2,56 @@
   "codeset": "codesets/05/0596c220e45daca6.json",
   "deviceType": 7,
   "globalDeviceId": 278442,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGB 1"}],"name":"RGB 1"},
+      {"commands":[{"set":"InputType","to":"RGB 2"}],"name":"RGB 2"},
+      {"commands":[{"set":"InputType","to":"DVI-D"}],"name":"DVI-D"},
+      {"commands":[{"set":"InputType","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Video/S-Video"},{"set":"Video/S-VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video/S-Video"},{"set":"Video/S-VideoInput","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-DW530U"
+  "model": "PT-DW530U",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"RGB 1","select":[{"commands":["InputRgb1"],"setType":2}]},
+        {"name":"RGB 2","select":[{"commands":["InputRgb2"],"setType":2}]},
+        {"name":"DVI-D","select":[{"commands":["InputDvi-D"],"setType":2}]},
+        {"name":"Network","select":[{"commands":["InputNetwork"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"Video/S-Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "Video/S-VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

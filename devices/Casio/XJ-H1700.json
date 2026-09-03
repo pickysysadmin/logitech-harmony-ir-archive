@@ -2,6 +2,40 @@
   "codeset": "codesets/8d/8d72a1fc112fc491.json",
   "deviceType": 7,
   "globalDeviceId": 279194,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"name":"Computer 1"},
+      {"name":"Computer 2"},
+      {"name":"S-Video"},
+      {"name":"Video"},
+      {"name":"HDMI"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Input"],
+    "type": 4
+  },
   "manufacturer": "Casio",
-  "model": "XJ-H1700"
+  "model": "XJ-H1700",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

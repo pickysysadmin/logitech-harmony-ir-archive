@@ -2,6 +2,34 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 125367,
+  "inputs": {
+    "list": [
+      {"name":"AV1"},
+      {"name":"AV3"},
+      {"name":"AV6"},
+      {"name":"Tuner"}
+    ],
+    "next": ["InputAV"],
+    "type": 2
+  },
   "manufacturer": "Dantax",
-  "model": "Plasma V7"
+  "model": "Plasma V7",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

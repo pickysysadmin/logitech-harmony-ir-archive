@@ -2,6 +2,50 @@
   "codeset": "codesets/4a/4a8c1eba6fdcb598.json",
   "deviceType": 7,
   "globalDeviceId": 273340,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"}],"name":"Computer"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"VideoInputs"},{"set":"VideoInputsInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"VideoInputs"},{"set":"VideoInputsInput","to":"Video"}],"name":"Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "EB-S110"
+  "model": "EB-S110",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"VideoInputs","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInputsInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"S-Video"},
+        {"name":"Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

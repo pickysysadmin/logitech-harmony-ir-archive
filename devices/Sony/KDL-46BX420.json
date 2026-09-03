@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/8e/8e83b78b599e3e50.json",
   "deviceType": 1,
   "globalDeviceId": 219844,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputVideo1"],"name":"Video 1/Component","ports":["Component"]},
+      {"commands":["InputVideo2"],"name":"Video 2","ports":["Composite"]},
+      {"commands":["InputPc"],"name":"PC","ports":["PC"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-46BX420"
+  "model": "KDL-46BX420",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

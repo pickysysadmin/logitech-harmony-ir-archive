@@ -2,6 +2,60 @@
   "codeset": "codesets/17/17ec885be294fcab.json",
   "deviceType": 7,
   "globalDeviceId": 499526,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"LAN"}],"name":"LAN"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 1"}],"name":"Computer 1"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 2"}],"name":"Computer 2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "V11H901120"
+  "model": "V11H901120",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "ComputerInput": {
+      "next": ["InputComputer"],
+      "values": [
+        {"name":"Computer 1"},
+        {"name":"Computer 2"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"LAN","select":[{"commands":["InputLan"],"setType":1}]},
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":1}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":1}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

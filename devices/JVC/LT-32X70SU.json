@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/3e/3efbeffb70bde7a1.json",
   "deviceType": 1,
   "globalDeviceId": 165191,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputExt1"],"name":"EXT-1"},
+      {"commands":["InputExt2"],"name":"EXT-2"},
+      {"commands":["InputExt3"],"name":"EXT-3"},
+      {"commands":["InputExt4"],"name":"EXT-4"},
+      {"commands":["InputExt4",{"delayMs":3000},"AV"],"name":"HDMI1"},
+      {"commands":["InputExt4",{"delayMs":3000},"AV",{"delayMs":3000},"AV"],"name":"HDMI2"},
+      {"commands":["InputExt4",{"delayMs":3000},"AV",{"delayMs":3000},"AV",{"delayMs":3000},"AV"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-32X70SU"
+  "model": "LT-32X70SU",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

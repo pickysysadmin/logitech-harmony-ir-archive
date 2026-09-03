@@ -2,6 +2,60 @@
   "codeset": "codesets/3a/3a4097898d82379c.json",
   "deviceType": 22,
   "globalDeviceId": 202479,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DISC"}],"name":"DISC"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"RADIO"}],"name":"RADIO"},
+      {"commands":[{"set":"InputType","to":"DOCK"}],"name":"DOCK"},
+      {"commands":[{"set":"InputType","to":"AUX/DI"},{"set":"AUX/DIInput","to":"SCART"}],"name":"SCART"},
+      {"commands":[{"set":"InputType","to":"AUX/DI"},{"set":"AUX/DIInput","to":"AUX 1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"AUX/DI"},{"set":"AUX/DIInput","to":"AUX 2"}],"name":"AUX 2"},
+      {"commands":[{"set":"InputType","to":"AUX/DI"},{"set":"AUX/DIInput","to":"AUX 3"}],"name":"AUX 3"},
+      {"commands":[{"set":"InputType","to":"AUX/DI"},{"set":"AUX/DIInput","to":"OPTICAL"}],"name":"OPTICAL"},
+      {"commands":[{"set":"InputType","to":"AUX/DI"},{"set":"AUX/DIInput","to":"DIGITAL"}],"name":"DIGITAL"},
+      {"commands":[{"set":"InputType","to":"AUX/DI"},{"set":"AUX/DIInput","to":"MP3 LINK"}],"name":"MP3 LINK"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "SW6100/12"
+  "model": "SW6100/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUX/DIInput": {
+      "next": ["InputAUX/DI"],
+      "values": [
+        {"name":"SCART"},
+        {"name":"AUX 1"},
+        {"name":"AUX 2"},
+        {"name":"AUX 3"},
+        {"name":"OPTICAL"},
+        {"name":"DIGITAL"},
+        {"name":"MP3 LINK"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DISC","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"RADIO","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"DOCK","select":[{"commands":["InputDock"],"setType":2}]},
+        {"name":"AUX/DI","select":[{"commands":["InputAUX/DI"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

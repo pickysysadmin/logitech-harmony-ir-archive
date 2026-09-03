@@ -2,6 +2,46 @@
   "codeset": "codesets/0b/0b33ee88da7f2677.json",
   "deviceType": 22,
   "globalDeviceId": 94469,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd/Cd"],"name":"DVD/CD"},
+      {"commands":["InputTuner","InputTuner"],"name":"TUNER FM/AM"},
+      {"commands":["InputTuner","InputTv"],"name":"TV/AUX"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HT340"
+  "model": "SC-HT340",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Fm"},
+        {"name":"Am"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

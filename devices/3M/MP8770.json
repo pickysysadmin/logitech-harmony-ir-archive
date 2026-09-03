@@ -2,6 +2,44 @@
   "codeset": "codesets/55/558f909c5e67facb.json",
   "deviceType": 7,
   "globalDeviceId": 55996,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Rgb"},{"set":"RgbInput","to":"Rgb1"}],"name":"Rgb1"},
+      {"commands":[{"set":"InputType","to":"Rgb"},{"set":"RgbInput","to":"Rgb2"}],"name":"Rgb2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "3M",
-  "model": "MP8770"
+  "model": "MP8770",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Rgb","select":[{"commands":["InputRgb"],"setType":2}]}
+      ]
+    },
+    "RgbInput": {
+      "next": ["InputRgb"],
+      "values": [
+        {"name":"Rgb1"},
+        {"name":"Rgb2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

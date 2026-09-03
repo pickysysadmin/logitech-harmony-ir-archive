@@ -2,6 +2,46 @@
   "codeset": "codesets/23/2385a02492a3a3fa.json",
   "deviceType": 22,
   "globalDeviceId": 121952,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM/AM"}],"name":"FM/AM"},
+      {"commands":[{"set":"InputType","to":"CD/DVD"}],"name":"CD/DVD"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"TV-Audio"}],"name":"TV-Audio"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LH-T550TB"
+  "model": "LH-T550TB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"TV-Audio"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"FM/AM","select":[{"commands":["InputBand"],"setType":2}]},
+        {"name":"CD/DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

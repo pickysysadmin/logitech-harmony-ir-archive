@@ -2,6 +2,54 @@
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 90195,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"PC/YUV"},
+      {"name":"PC/DVI"},
+      {"name":"PC/RGB"},
+      {"name":"YUV"},
+      {"name":"CVBS"},
+      {"name":"FRONTAV"},
+      {"name":"Scart2"},
+      {"name":"Scart1"},
+      {"name":"Tuner"},
+      {"name":"Dummy"},
+      {"name":"Dummy1"},
+      {"name":"Dummy2"},
+      {"name":"Dummy3"},
+      {"name":"Dummy4"},
+      {"name":"Dummy5"},
+      {"name":"Dummy6"},
+      {"name":"Dummy7"},
+      {"name":"Dummy8"}
+    ],
+    "next": ["ChannelDown"],
+    "previous": ["ChannelUp"],
+    "start": ["Select"],
+    "type": 4
+  },
   "manufacturer": "Grundig",
-  "model": "PXW 110-8620 Dolby"
+  "model": "PXW 110-8620 Dolby",
+  "power": {
+    "off": ["PowerOff"],
+    "on": [
+      {"command":"7","durationMs":2000}
+    ],
+    "onReset": [
+      {"set":"Input","to":"Scart1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 11500,
+    "pressMinRepeats": 2
+  }
 }

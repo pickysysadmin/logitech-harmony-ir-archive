@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/d0/d0d6f272bb61077f.json",
   "deviceType": 1,
   "globalDeviceId": 140803,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputVideo4"],"name":"Video 4"},
+      {"commands":["InputComputer"],"name":"PC"},
+      {"commands":["InputDtv"],"name":"DTV"},
+      {"commands":["InputiLink"],"name":"iLink"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Antenna A"}],"name":"Antenna A"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Antenna B"}],"name":"Antenna B"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PRO-910HD"
+  "model": "PRO-910HD",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["AntennaCable"],
+      "values": [
+        {"name":"Antenna A"},
+        {"name":"Antenna B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Video 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"DTV","select":[{"commands":["InputDtv"],"setType":2}]},
+        {"name":"iLink","select":[{"commands":["InputiLink"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["AntennaCable"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

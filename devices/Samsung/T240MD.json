@@ -2,6 +2,61 @@
   "codeset": "codesets/c7/c78de741907e4121.json",
   "deviceType": 13,
   "globalDeviceId": 179973,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Ext"}],"name":"Ext"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Dvi"}],"name":"Dvi"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"Tv/Dtv"},{"set":"Tv/DtvInput","to":"Dtv"}],"name":"Dtv"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "T240MD"
+  "model": "T240MD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Source","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Tv/Dtv","select":[{"commands":["TV/DTV"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Pc"},
+        {"name":"Ext"},
+        {"name":"Dvi"},
+        {"name":"Tv"},
+        {"name":"Component"},
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"}
+      ]
+    },
+    "Tv/DtvInput": {
+      "next": ["TV/DTV"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Dtv"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

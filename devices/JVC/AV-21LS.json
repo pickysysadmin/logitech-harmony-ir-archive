@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/41/418f3c95dc07e63d.json",
   "deviceType": 1,
   "globalDeviceId": 73098,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Display"},{"set":"Display","to":"CA"}],"name":"CA"},
+      {"commands":[{"set":"InputType","to":"Display"},{"set":"Display","to":"CB"}],"name":"CB"},
+      {"commands":[{"set":"InputType","to":"Display"},{"set":"Display","to":"CH"}],"name":"CH"},
+      {"commands":[{"set":"InputType","to":"Video A"}],"name":"Video A"},
+      {"commands":[{"set":"InputType","to":"Video B"}],"name":"Video B"},
+      {"commands":[{"set":"InputType","to":"Video C"}],"name":"Video C"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "AV-21LS"
+  "model": "AV-21LS",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Display": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"CA"},
+        {"name":"CB"},
+        {"name":"CH"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Display","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Video A","select":[{"commands":["InputVideoA"],"setType":2}]},
+        {"name":"Video B","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video C","select":[{"commands":["InputVideo3"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

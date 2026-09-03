@@ -2,6 +2,86 @@
   "codeset": "codesets/11/113d5dd5a0736a67.json",
   "deviceType": 5,
   "globalDeviceId": 414361,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Dock"}],"name":"Dock"},
+      {"commands":[{"set":"InputType","to":"AudioIn"}],"name":"AudioIn"},
+      {"commands":[{"set":"InputType","to":"Media"}],"name":"Media"},
+      {"commands":[{"set":"InputType","to":"Sat/Cbl"}],"name":"Sat/Cbl"},
+      {"commands":[{"set":"InputType","to":"Bd/Dvd"},{"set":"Bd/DvdInput","to":"BD"}],"name":"BD"},
+      {"commands":[{"set":"InputType","to":"Bd/Dvd"},{"set":"Bd/DvdInput","to":"Dvd"}],"name":"Dvd"},
+      {"commands":[{"set":"InputType","to":"Game1/2"},{"set":"Game1/2Input","to":"Game1"}],"name":"Game1"},
+      {"commands":[{"set":"InputType","to":"Game1/2"},{"set":"Game1/2Input","to":"Game2"}],"name":"Game2"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi3"}],"name":"Hdmi3"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi4"}],"name":"Hdmi4"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi5"}],"name":"Hdmi5"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"Hdmi6"}],"name":"Hdmi6"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Denon",
-  "model": "DN-700AVP"
+  "model": "DN-700AVP",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Bd/DvdInput": {
+      "next": ["InputBd/Dvd"],
+      "values": [
+        {"name":"BD"},
+        {"name":"Dvd"}
+      ]
+    },
+    "Game1/2Input": {
+      "next": ["InputGame1/2"],
+      "values": [
+        {"name":"Game1"},
+        {"name":"Game2"}
+      ]
+    },
+    "HdmiInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"},
+        {"name":"Hdmi3"},
+        {"name":"Hdmi4"},
+        {"name":"Hdmi5"},
+        {"name":"Hdmi6"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"FM","select":[{"commands":["InputFm"],"setType":2}]},
+        {"name":"Dock","select":[{"commands":["InputDock"],"setType":2}]},
+        {"name":"AudioIn","select":[{"commands":["InputAudioIn"],"setType":2}]},
+        {"name":"Media","select":[{"commands":["InputMedia"],"setType":2}]},
+        {"name":"Sat/Cbl","select":[{"commands":["InputSat/Cbl"],"setType":2}]},
+        {"name":"Bd/Dvd","select":[{"commands":["InputBd/Dvd"],"setType":2}]},
+        {"name":"Game1/2","select":[{"commands":["InputGame1/2"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

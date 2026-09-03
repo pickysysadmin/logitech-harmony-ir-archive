@@ -2,6 +2,38 @@
   "codeset": "codesets/f4/f4a9c0ba3371e0b8.json",
   "deviceType": 37,
   "globalDeviceId": 228012,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"RGB"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"Video3"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"PC"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "H&B",
-  "model": "TFT-26WS3"
+  "model": "TFT-26WS3",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"RGB"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

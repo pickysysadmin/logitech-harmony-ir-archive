@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/72/72c4dacfbb3035c8.json",
   "deviceType": 1,
   "globalDeviceId": 131331,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"name":"Antenna 1"},
+      {"name":"Antenna 2"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"S-Video 1"}
+    ],
+    "next": ["InputNext"],
+    "start": [
+      {"delayMs":1500},
+      "InputNext"
+    ],
+    "type": 4
+  },
   "manufacturer": "Zenith",
-  "model": "SY-2745MK3"
+  "model": "SY-2745MK3",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

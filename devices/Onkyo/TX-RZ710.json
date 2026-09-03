@@ -2,6 +2,40 @@
   "codeset": "codesets/b1/b1d11cc567a87e53.json",
   "deviceType": 5,
   "globalDeviceId": 279167,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Composite"]},
+      {"commands":["InputStrmBox"],"name":"STRM BOX","ports":["HDMI","Composite"]},
+      {"commands":["InputGame"],"name":"Game","ports":["HDMI","Component","Composite"]},
+      {"commands":["InputPc"],"name":"PC","ports":["HDMI"]},
+      {"commands":["InputAux"],"name":"Aux","ports":["HDMI","Aux"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Optical"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputAM"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputFM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputNet"],"name":"NET","ports":["Streaming"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Composite","Optical"]},
+      {"commands":["InputBluetooth"],"name":"Bluetooth","ports":["Pairing Input"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-RZ710"
+  "model": "TX-RZ710",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

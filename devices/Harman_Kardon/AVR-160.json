@@ -2,6 +2,39 @@
   "codeset": "codesets/16/16b5099b30462ed3.json",
   "deviceType": 5,
   "globalDeviceId": 130302,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"Dvd"},
+      {"commands":["InputCd"],"name":"Cd"},
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputAUX"],"name":"Aux"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputHdmi1"],"name":"Hdmi 1"},
+      {"commands":["InputHdmi2"],"name":"Hdmi 2"},
+      {"commands":["InputHdmi3"],"name":"Hdmi 3"},
+      {"commands":["Input6/8Ch"],"name":"6/8CH"},
+      {"commands":["InputAUX",{"delayMs":2000},"InputTuner"],"name":"AM/FM"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Harman Kardon",
-  "model": "AVR-160"
+  "model": "AVR-160",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 9000,
+    "pressMinRepeats": 1
+  }
 }

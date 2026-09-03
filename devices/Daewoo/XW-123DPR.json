@@ -2,6 +2,35 @@
   "codeset": "codesets/4f/4fe5d99fc2ec80de.json",
   "deviceType": 21,
   "globalDeviceId": 130080,
+  "inputs": {
+    "list": [
+      {"name":"TUNER"},
+      {"name":"TAPE/MD"},
+      {"name":"DVD"},
+      {"name":"VIDEO1"},
+      {"name":"VIDEO2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Daewoo",
-  "model": "XW-123DPR"
+  "model": "XW-123DPR",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

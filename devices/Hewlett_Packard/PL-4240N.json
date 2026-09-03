@@ -2,6 +2,72 @@
   "codeset": "codesets/6e/6e1e67f83e9a8841.json",
   "deviceType": 1,
   "globalDeviceId": 131320,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Component","to":"Comp1"}],"name":"TV"},
+      {"commands":[{"set":"Video","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"S-Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"S-Video 2"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Comp1"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Comp2"},
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"VGA"},
+      {"commands":[{"set":"Component","to":"Comp1"}],"name":"ypbpr1"},
+      {"commands":[{"set":"Component","to":"Comp2"}],"name":"ypbpr2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hewlett Packard",
-  "model": "PL-4240N"
+  "model": "PL-4240N",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "Component": {
+      "next": ["InputComposite"],
+      "values": [
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "DVI": {
+      "next": ["InputDvi/Rgb"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"VGA"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":1}]},
+        {"name":"Video","select":[{"commands":["InputNext",{"delayMs":1000}],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComposite",{"delayMs":1000}],"setType":2}]},
+        {"name":"DVI","select":[{"commands":["InputDvi/Rgb",{"delayMs":1000}],"setType":2}]}
+      ]
+    },
+    "Video": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"S-Video 1"},
+        {"name":"Video 2"},
+        {"name":"S-Video 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 9000,
+    "pressMinRepeats": 1
+  }
 }

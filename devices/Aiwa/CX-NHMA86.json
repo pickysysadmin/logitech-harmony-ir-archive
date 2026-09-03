@@ -2,6 +2,64 @@
   "codeset": "codesets/38/38fcd07d1689bd37.json",
   "deviceType": 21,
   "globalDeviceId": 159431,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tape"},{"set":"TapeInput","to":"Deck1"}],"name":"Deck1"},
+      {"commands":[{"set":"InputType","to":"Tape"},{"set":"TapeInput","to":"Deck2"}],"name":"Deck2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"5.1"}],"name":"5.1"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Aiwa",
-  "model": "CX-NHMA86"
+  "model": "CX-NHMA86",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo/Aux"],"setType":2}]}
+      ]
+    },
+    "TapeInput": {
+      "next": ["InputTape"],
+      "values": [
+        {"name":"Deck1"},
+        {"name":"Deck2"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo/Aux"],
+      "values": [
+        {"name":"Video"},
+        {"name":"5.1"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

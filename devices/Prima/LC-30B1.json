@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/96/9644cd2796c30e97.json",
   "deviceType": 1,
   "globalDeviceId": 24049,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext","Select"],"name":"VGA"},
+      {"commands":["InputNext","ChannelDown","Select"],"name":"RF"},
+      {"commands":["InputNext","ChannelDown","ChannelDown","Select"],"name":"Vid 1"},
+      {"commands":["InputNext","ChannelDown","ChannelDown","ChannelDown","Select"],"name":"Vid 2"},
+      {"commands":["InputNext","ChannelDown","ChannelDown","ChannelDown","ChannelDown","Select"],"name":"S vid"},
+      {"commands":["InputNext","ChannelDown","ChannelDown","ChannelDown","ChannelDown","ChannelDown","Select"],"name":"YPB PR1"},
+      {"commands":["InputNext","ChannelDown","ChannelDown","ChannelDown","ChannelDown","ChannelDown","ChannelDown","Select"],"name":"YPB PR2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Prima",
-  "model": "LC-30B1"
+  "model": "LC-30B1",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"VGA"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

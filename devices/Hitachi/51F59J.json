@@ -1,7 +1,47 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 92781,
+  "inputs": {
+    "finish": ["Select","Exit"],
+    "list": [
+      {"name":"Input1"},
+      {"name":"Input2"},
+      {"name":"Input3"},
+      {"name":"Input4"},
+      {"name":"Input5"},
+      {"name":"AntennaA"}
+    ],
+    "next": ["InputNext"],
+    "start": ["MenuOn"],
+    "type": 4
+  },
   "manufacturer": "Hitachi",
-  "model": "51F59J"
+  "model": "51F59J",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"AntA"},
+        {"name":"AntB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

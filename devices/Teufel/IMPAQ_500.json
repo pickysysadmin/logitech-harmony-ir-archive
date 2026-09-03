@@ -2,6 +2,68 @@
   "codeset": "codesets/83/834de2fc172e92c4.json",
   "deviceType": 22,
   "globalDeviceId": 182205,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dvd"}],"name":"DVD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"S/Pdif"},{"set":"S/PdifInput","to":"OPTICAL"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"S/Pdif"},{"set":"S/PdifInput","to":"COAXIAL"}],"name":"COAXIAL","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AUX 1"}],"name":"AUX 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AUX 2"}],"name":"AUX 2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AUX 3"}],"name":"AUX 3","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teufel",
-  "model": "IMPAQ 500"
+  "model": "IMPAQ 500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAUX"],
+      "values": [
+        {"name":"AUX 1"},
+        {"name":"AUX 2"},
+        {"name":"AUX 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dvd","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Usb","select":[{"commands":["InputUSB"],"setType":2}]},
+        {"name":"S/Pdif","select":[{"commands":["InputS/Pdif"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAUX"],"setType":2}]}
+      ]
+    },
+    "S/PdifInput": {
+      "next": ["InputS/Pdif"],
+      "values": [
+        {"name":"OPTICAL"},
+        {"name":"COAXIAL"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

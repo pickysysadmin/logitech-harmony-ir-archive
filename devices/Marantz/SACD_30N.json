@@ -2,6 +2,57 @@
   "codeset": "codesets/8f/8f55d5fd10470a19.json",
   "deviceType": 21,
   "globalDeviceId": 497755,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Internet Radio"}],"name":"Internet Radio"},
+      {"commands":[{"set":"InputType","to":"Music Server"}],"name":"Music Server"},
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"Usb Dac"}],"name":"Usb Dac"},
+      {"commands":[{"set":"InputType","to":"Coaxial"}],"name":"Coaxial"},
+      {"commands":[{"set":"InputType","to":"Cd"}],"name":"Cd"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Favorite"}],"name":"Favorite"},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OpticalInput","to":"Optical1"}],"name":"Optical1"},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OpticalInput","to":"Optical2"}],"name":"Optical2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Marantz",
-  "model": "SACD 30N"
+  "model": "SACD 30N",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Internet Radio","select":[{"commands":["InputInternetRadio"],"setType":1}]},
+        {"name":"Music Server","select":[{"commands":["InputMusicServer"],"setType":1}]},
+        {"name":"Usb","select":[{"commands":["InputUsb"],"setType":1}]},
+        {"name":"Usb Dac","select":[{"commands":["InputUsbdac"],"setType":1}]},
+        {"name":"Coaxial","select":[{"commands":["InputCoaxial"],"setType":1}]},
+        {"name":"Cd","select":[{"commands":["InputCd"],"setType":1}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":1}]},
+        {"name":"Favorite","select":[{"commands":["InputFavorite"],"setType":1}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":1}]}
+      ]
+    },
+    "OpticalInput": {
+      "next": ["InputOptical"],
+      "values": [
+        {"name":"Optical1"},
+        {"name":"Optical2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,58 @@
   "codeset": "codesets/64/64b0681e27466395.json",
   "deviceType": 5,
   "globalDeviceId": 146699,
+  "inputs": {
+    "list": [
+      {"commands":["InputDmp"],"name":"AVR"},
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputTape"],"name":"TAPE"},
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputVideo1"],"name":"VIDEO1"},
+      {"commands":["InputVideo2"],"name":"VIDEO2"},
+      {"commands":["InputVideo3"],"name":"VIDEO3"},
+      {"commands":["InputTuner"],"name":"AM/FM"},
+      {"commands":["Input6/8Ch"],"name":"6CH"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Harman Kardon",
-  "model": "AVR-147/230"
+  "model": "AVR-147/230",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"6/8CH","select":[{"commands":["Input6/8Ch"],"setType":2}]},
+        {"name":"AM/FM","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DMP","select":[{"commands":["InputDmp"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

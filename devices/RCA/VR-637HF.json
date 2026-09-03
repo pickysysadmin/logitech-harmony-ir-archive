@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/fa/faf3175534a69a63.json",
   "deviceType": 2,
   "globalDeviceId": 177906,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"Tuner","ports":["Antenna"]},
+      {"name":"Video1","ports":["Composite"]},
+      {"name":"Video2","ports":["Composite"]}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "RCA",
-  "model": "VR-637HF"
+  "model": "VR-637HF",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

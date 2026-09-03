@@ -2,6 +2,60 @@
   "codeset": "codesets/d4/d48870fd92fedf56.json",
   "deviceType": 1,
   "globalDeviceId": 239474,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":" Menu"},{"set":"MenuInput","to":"SAT"}],"name":"SAT"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"HDMISide"}],"name":"HDMI Side"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Scart"}],"name":"Scart"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"Smart"}],"name":"Smart TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "55PFL5527K/12"
+  "model": "55PFL5527K/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Smart","select":[{"commands":["SmartTv"],"setType":2}]},
+        {"name":"Menu","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "MenuInput": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["Source"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Sat"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"HDMISide"},
+        {"name":"Scart"},
+        {"name":"YPbPr"},
+        {"name":"VGA"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

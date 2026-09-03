@@ -2,6 +2,59 @@
   "codeset": "codesets/f8/f8d4917f931ec2fb.json",
   "deviceType": 1,
   "globalDeviceId": 211068,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DTV/TV"}],"name":"DTV/TV"},
+      {"commands":[{"set":"InputType","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"COMPONENT"}],"name":"COMPONENT"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"MEDIA"},{"set":"MEDIAInput","to":"PHOTO"}],"name":"PHOTO"},
+      {"commands":[{"set":"InputType","to":"MEDIA"},{"set":"MEDIAInput","to":"MUSIC"}],"name":"MUSIC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "M320VT"
+  "model": "M320VT",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DTV/TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"COMPONENT","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"HDMI 4","select":[{"commands":["InputHdmi4"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"MEDIA","select":[{"commands":["InputMedia"],"setType":2}]}
+      ]
+    },
+    "MEDIAInput": {
+      "next": ["InputMedia"],
+      "values": [
+        {"name":"PHOTO"},
+        {"name":"MUSIC"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,31 @@
   "codeset": "codesets/d5/d54975476ecc6c6f.json",
   "deviceType": 16,
   "globalDeviceId": 49246,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Satellite"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Thomson",
-  "model": "ASR-11T"
+  "model": "ASR-11T",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

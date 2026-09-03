@@ -2,6 +2,40 @@
   "codeset": "codesets/38/38674f7fd6e6fae7.json",
   "deviceType": 7,
   "globalDeviceId": 492493,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"name":"Computer 1/YPbPr 1","ports":["PC"]},
+      {"name":"Computer 2/YPbPr 2","ports":["PC"]},
+      {"name":"HDMI","ports":["HDMI"]},
+      {"name":"Video","ports":["Component"]},
+      {"name":"S-Video","ports":["S-Video"]}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "BenQ",
-  "model": "MX570"
+  "model": "MX570",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 1
+  }
 }

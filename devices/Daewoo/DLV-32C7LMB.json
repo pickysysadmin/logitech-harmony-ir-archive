@@ -2,6 +2,65 @@
   "codeset": "codesets/43/43a7c72d676268f4.json",
   "deviceType": 1,
   "globalDeviceId": 259440,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dtv/Atv"},{"set":"Dtv/AtvInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"Dtv/Atv"},{"set":"Dtv/AtvInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"Av/Comp"},{"set":"Av/CompInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"AvComp"},{"set":"Av/CompInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Av/Comp"},{"set":"Av/CompInput","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Av/Comp"},{"set":"Av/CompInput","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"Hdmi/Pc"},{"set":"Hdmi/PcInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Hdmi/Pc"},{"set":"Hdmi/PcInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Daewoo",
-  "model": "DLV-32C7LMB"
+  "model": "DLV-32C7LMB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Av/CompInput": {
+      "next": ["InputAv/Comp"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Component 1"},
+        {"name":"Component 2"}
+      ]
+    },
+    "Dtv/AtvInput": {
+      "next": ["InputDtv/Atv"],
+      "values": [
+        {"name":"DTV"},
+        {"name":"ATV"}
+      ]
+    },
+    "Hdmi/PcInput": {
+      "next": ["InputHdmi/Pc"],
+      "values": [
+        {"name":"HDMI"},
+        {"name":"PC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dtv/Atv","select":[{"commands":["InputDtv/Atv"],"setType":2}]},
+        {"name":"Av/Comp","select":[{"commands":["InputAv/Comp"],"setType":2}]},
+        {"name":"Hdmi/Pc","select":[{"commands":["InputHdmi/Pc"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

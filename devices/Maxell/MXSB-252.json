@@ -2,6 +2,64 @@
   "codeset": "codesets/d9/d99967b97090b706.json",
   "deviceType": 19,
   "globalDeviceId": 241965,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI3"}],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"OpticalARC"},{"set":"OpticalARCInput","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"OpticalARC"},{"set":"OpticalARCInput","to":"ARC"}],"name":"ARC","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"RCALineIn"},{"set":"RCALineInInput","to":"RCA"}],"name":"RCA","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"RCALineIn"},{"set":"RCALineInInput","to":"LineIn"}],"name":"LineIn","ports":["Aux"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Maxell",
-  "model": "MXSB-252"
+  "model": "MXSB-252",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"OpticalARC","select":[{"commands":["InputOpticalArc"],"setType":2}]},
+        {"name":"RCALineIn","select":[{"commands":["InputRcaLineIn"],"setType":2}]}
+      ]
+    },
+    "OpticalARCInput": {
+      "next": ["InputOpticalArc"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"ARC"}
+      ]
+    },
+    "RCALineInInput": {
+      "next": ["InputRcaLineIn"],
+      "values": [
+        {"name":"RCA"},
+        {"name":"LineIn"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,50 @@
   "codeset": "codesets/cb/cb3b8b6a1bcb1a17.json",
   "deviceType": 19,
   "globalDeviceId": 492692,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"Usb","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Hdmi"}],"name":"Hdmi","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Aux/Rca"},{"set":"Aux/RcaInput","to":"Aux"}],"name":"Aux","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Aux/Rca"},{"set":"Aux/RcaInput","to":"Rca"}],"name":"Rca","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Fityou",
-  "model": "LP-1807"
+  "model": "LP-1807",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/RcaInput": {
+      "next": ["InputAux/Rca"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Rca"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Usb","select":[{"commands":["InputUsb"],"setType":1}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":1}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":1}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":1}]},
+        {"name":"Aux/Rca","select":[{"commands":["InputAux/Rca"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

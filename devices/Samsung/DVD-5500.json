@@ -1,7 +1,49 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/30/30ec9cb54963499c.json",
   "deviceType": 25,
   "globalDeviceId": 103620,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRLineInput","to":"VCRTuner"}],"name":"VCRTuner"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRLineInput","to":"VCRLine1"}],"name":"VCRLine1"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRLineInput","to":"VCRLine2"}],"name":"VCRLine2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "DVD-5500"
+  "model": "DVD-5500",
+  "power": {
+    "toggle": ["PowerToggle 2"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]}
+      ]
+    },
+    "VCRLineInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VCRTuner"},
+        {"name":"VCRLine1"},
+        {"name":"VCRLine2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

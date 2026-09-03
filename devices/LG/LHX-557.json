@@ -2,6 +2,55 @@
   "codeset": "codesets/02/0204caf82bbc639b.json",
   "deviceType": 32,
   "globalDeviceId": 110973,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"VcrTuner"}],"name":"VcrTuner"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"VcrLine1"}],"name":"VcrLine1"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"VcrLine2"}],"name":"VcrLine2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LHX-557"
+  "model": "LHX-557",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "VCRInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VcrTuner"},
+        {"name":"VcrLine1"},
+        {"name":"VcrLine2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

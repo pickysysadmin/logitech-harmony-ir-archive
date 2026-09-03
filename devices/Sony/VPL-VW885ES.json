@@ -2,6 +2,33 @@
   "codeset": "codesets/23/237a7fbba89a6b12.json",
   "deviceType": 7,
   "globalDeviceId": 414369,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "VPL-VW885ES"
+  "model": "VPL-VW885ES",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

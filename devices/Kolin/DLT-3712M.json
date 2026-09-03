@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/10/1049bfa1f2f5bf4f.json",
   "deviceType": 1,
   "globalDeviceId": 53368,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV1"},
+      {"commands":["InputVideo"],"name":"AV1"},
+      {"commands":["InputVideo"],"name":"AV2"},
+      {"commands":["InputVideo","InputVideo","InputVideo"],"name":"SV1"},
+      {"commands":["InputVideo"],"name":"SV2"},
+      {"commands":["InputComponent"],"name":"Component 1"},
+      {"commands":["InputComponent"],"name":"Component 2"},
+      {"commands":["InputDvi/Vga"],"name":"HDMI"},
+      {"commands":["InputDvi/Vga"],"name":"VGA"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Kolin",
-  "model": "DLT-3712M"
+  "model": "DLT-3712M",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 6500,
+    "pressMinRepeats": 1
+  }
 }

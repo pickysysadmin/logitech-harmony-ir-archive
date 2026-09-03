@@ -2,6 +2,42 @@
   "codeset": "codesets/3a/3a5c342bb14b4452.json",
   "deviceType": 1,
   "globalDeviceId": 276210,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"HDMI 3"},
+      {"name":"USB"},
+      {"name":"VGA"},
+      {"name":"AV"},
+      {"name":"Component"},
+      {"name":"TV"}
+    ],
+    "next": ["DirectionRight"],
+    "previous": ["DirectionLeft"],
+    "start": [
+      "InputNext",
+      {"delayMs":500},
+      "DirectionUp"
+    ],
+    "type": 4
+  },
   "manufacturer": "Seiki",
-  "model": "SE55UGT"
+  "model": "SE55UGT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 19000,
+    "pressMinRepeats": 1
+  }
 }

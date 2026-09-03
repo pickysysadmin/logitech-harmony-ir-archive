@@ -2,6 +2,36 @@
   "codeset": "codesets/d7/d78932b9f716c9e5.json",
   "deviceType": 7,
   "globalDeviceId": 150018,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["InputDvi"],"name":"DVI"},
+      {"commands":["InputYPbPr"],"name":"YpbPr"},
+      {"commands":["InputSVideo"],"name":"S-Video"},
+      {"commands":["InputVideo"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "HD-806"
+  "model": "HD-806",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

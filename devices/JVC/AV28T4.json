@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 48735,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"E1 DVC"},
+      {"commands":["InputVideo2"],"name":"S2"},
+      {"commands":["InputVideo3"],"name":"E3"},
+      {"commands":["Input 4"],"name":"E4"},
+      {"commands":["Input 4","InputNext"],"name":"AV"},
+      {"commands":["1"],"name":"Tuner"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "AV28T4"
+  "model": "AV28T4",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"E1 DVC"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

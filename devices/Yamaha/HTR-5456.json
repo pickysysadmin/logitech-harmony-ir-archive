@@ -2,6 +2,87 @@
   "codeset": "codesets/b8/b8db576dcb1eab08.json",
   "deviceType": 5,
   "globalDeviceId": 51476,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"MD/CD-R"}],"name":"MD/CD-R"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"TUNER"}],"name":"TUNER"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"V-AUX"},{"set":"V-AUXInput","to":"V-Aux Auto"}],"name":"V-Aux Auto"},
+      {"commands":[{"set":"InputType","to":"V-AUX"},{"set":"V-AUXInput","to":"V-Aux Analog"}],"name":"V-Aux Analog"},
+      {"commands":[{"set":"InputType","to":"V-AUX"},{"set":"V-AUXInput","to":"V-Aux DTS"}],"name":"V-Aux DTS"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"CD Auto"}],"name":"CD Auto"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"CD Analog"}],"name":"CD Analog"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"CD DTS"}],"name":"CD DTS"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD Auto"}],"name":"DVD Auto"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD Analog"}],"name":"DVD Analog"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD DTS"}],"name":"DVD DTS"},
+      {"commands":[{"set":"InputType","to":"TV/DBS"},{"set":"TV/DBSInput","to":"TV/DBS Auto"}],"name":"TV/DBS Auto"},
+      {"commands":[{"set":"InputType","to":"TV/DBS"},{"set":"TV/DBSInput","to":"TV/DBS Analog"}],"name":"TV/DBS Analog"},
+      {"commands":[{"set":"InputType","to":"TV/DBS"},{"set":"TV/DBSInput","to":"TV/DBS DTS"}],"name":"TV/DBS DTS"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "HTR-5456"
+  "model": "HTR-5456",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CDInput": {
+      "next": ["InputCd/Md"],
+      "values": [
+        {"name":"CD Auto"},
+        {"name":"CD Analog"},
+        {"name":"CD DTS"}
+      ]
+    },
+    "DVDInput": {
+      "next": ["InputDvd"],
+      "values": [
+        {"name":"DVD Auto"},
+        {"name":"DVD Analog"},
+        {"name":"DVD DTS"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"MD/CD-R","select":[{"commands":["InputCd-r"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"TUNER","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr1"],"setType":2}]},
+        {"name":"V-AUX","select":[{"commands":["InputVAux"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd/Md"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"TV/DBS","select":[{"commands":["InputTv/Dbs"],"setType":2}]}
+      ]
+    },
+    "TV/DBSInput": {
+      "next": ["InputTv/Dbs"],
+      "values": [
+        {"name":"TV/DBS Auto"},
+        {"name":"TV/DBS Analog"},
+        {"name":"TV/DBS DTS"}
+      ]
+    },
+    "V-AUXInput": {
+      "next": ["InputVAux"],
+      "values": [
+        {"name":"V-Aux Auto"},
+        {"name":"V-Aux Analog"},
+        {"name":"V-Aux DTS"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

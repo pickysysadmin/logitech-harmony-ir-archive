@@ -2,6 +2,58 @@
   "codeset": "codesets/47/4739f1cf28e66e22.json",
   "deviceType": 7,
   "globalDeviceId": 447740,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"VGA"},{"set":"VGAInput","to":"VGA 1"}],"name":"Computer 1","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"VGA"},{"set":"VGAInput","to":"VGA 2"}],"name":"Computer 2","ports":["PC"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "ViewSonic",
-  "model": "VS16909"
+  "model": "VS16909",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":1}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":1}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":1}]}
+      ]
+    },
+    "VGAInput": {
+      "next": ["InputVga"],
+      "values": [
+        {"name":"VGA 1"},
+        {"name":"VGA 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

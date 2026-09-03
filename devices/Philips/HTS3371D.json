@@ -2,6 +2,56 @@
   "codeset": "codesets/27/2764e8b169c9b46d.json",
   "deviceType": 22,
   "globalDeviceId": 168786,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"Usb","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Dock"}],"name":"Dock","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Aux1"}],"name":"Aux1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Aux2"}],"name":"Aux2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"CoaxIn"}],"name":"CoaxIn","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"OptiIn"}],"name":"OptiIn","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"MP3Link"}],"name":"MP3Link","ports":["Aux"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS3371D"
+  "model": "HTS3371D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioSourceInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"},
+        {"name":"CoaxIn"},
+        {"name":"OptiIn"},
+        {"name":"MP3Link"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"Usb","select":[{"commands":["InputUSB"],"setType":2}]},
+        {"name":"Dock","select":[{"commands":["InputDock"],"setType":2}]},
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"AudioSource","select":[{"commands":["InputAux",{"set":"AudioSourceInput","to":"Aux1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

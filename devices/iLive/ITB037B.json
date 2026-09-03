@@ -2,6 +2,44 @@
   "codeset": "codesets/85/855c9a7761fd1018.json",
   "deviceType": 19,
   "globalDeviceId": 480630,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"Aux/LineIn"},{"set":"Aux/LineInInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Aux/LineIn"},{"set":"Aux/LineInInput","to":"LineIn"}],"name":"LineIn","ports":["Aux"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "iLive",
-  "model": "ITB037B"
+  "model": "ITB037B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/LineInInput": {
+      "next": ["InputAux/LineIn"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"LineIn"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Aux/LineIn","select":[{"commands":["InputAux/LineIn"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

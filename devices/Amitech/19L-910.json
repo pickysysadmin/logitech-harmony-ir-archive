@@ -2,6 +2,33 @@
   "codeset": "codesets/5d/5d7808f5e06f3be3.json",
   "deviceType": 1,
   "globalDeviceId": 131058,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"DVI"},
+      {"name":"Svideo"},
+      {"name":"Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Amitech",
-  "model": "19L-910"
+  "model": "19L-910",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

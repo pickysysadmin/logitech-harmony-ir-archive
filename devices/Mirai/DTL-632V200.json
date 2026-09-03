@@ -2,6 +2,42 @@
   "codeset": "codesets/d8/d80fcf3522b8885a.json",
   "deviceType": 1,
   "globalDeviceId": 160703,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"TV"},
+      {"name":"S-Video/AV"},
+      {"name":"SCART1"},
+      {"name":"SCART2"},
+      {"name":"PC"},
+      {"name":"DVI"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Mirai",
-  "model": "DTL-632V200"
+  "model": "DTL-632V200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Text"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

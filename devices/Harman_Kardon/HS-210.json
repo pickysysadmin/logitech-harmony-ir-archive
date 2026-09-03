@@ -2,6 +2,33 @@
   "codeset": "codesets/da/da40703d2f523e30.json",
   "deviceType": 22,
   "globalDeviceId": 208448,
+  "inputs": {
+    "list": [
+      {"commands":["InputDisc"],"name":"Disc","ports":["Streaming"]},
+      {"commands":["InputRadio"],"name":"Radio","ports":["FM Antenna"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]},
+      {"commands":["InputNetwork"],"name":"Network","ports":["Streaming"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Scart"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Harman Kardon",
-  "model": "HS-210"
+  "model": "HS-210",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputTv"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

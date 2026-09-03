@@ -2,6 +2,70 @@
   "codeset": "codesets/fb/fb9d03522c3cdffd.json",
   "deviceType": 22,
   "globalDeviceId": 180097,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AV2/TV"},{"set":"AV2/TVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV2/TV"},{"set":"AV2/TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"USB/CARD"},{"set":"USB/CARDInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB/CARD"},{"set":"USB/CARDInput","to":"CARD"}],"name":"CARD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Tangent",
-  "model": "MCS-650"
+  "model": "MCS-650",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2/TVInput": {
+      "next": ["InputAV2"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"TV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"AV1","select":[{"commands":["InputAV1"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["InputAV3"],"setType":2}]},
+        {"name":"AV2/TV","select":[{"commands":["InputAV2"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"USB/CARD","select":[{"commands":["InputUsb/Card"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "USB/CARDInput": {
+      "next": ["InputUsb/Card"],
+      "values": [
+        {"name":"USB"},
+        {"name":"CARD"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

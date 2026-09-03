@@ -1,7 +1,57 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/2b/2b0bb33797ddb4d1.json",
   "deviceType": 1,
   "globalDeviceId": 113289,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv/Dtv"],"name":"Television"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputVideo4"],"name":"Video 4"},
+      {"commands":["InputVideo5"],"name":"HDMI 1"},
+      {"commands":["InputVideo6"],"name":"HDMI 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Pioneer",
-  "model": "PDP-427GX"
+  "model": "PDP-427GX",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputAntennaA/B"],
+      "values": [
+        {"name":"AntennaA"},
+        {"name":"AntennaB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Input 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Input 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Input 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"Input 5","select":[{"commands":["InputVideo5"],"setType":2}]},
+        {"name":"Input 6","select":[{"commands":["InputVideo6"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["InputAntennaA/B"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

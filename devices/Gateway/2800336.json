@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/0c/0cd1e4cf30d96827.json",
   "deviceType": 1,
   "globalDeviceId": 84019,
+  "inputs": {
+    "list": [
+      {"name":"Comp 1"},
+      {"name":"Comp 2"},
+      {"name":"RGB"},
+      {"name":"DVI"},
+      {"name":"Front AV"},
+      {"name":"Front RGB"},
+      {"name":"TV CH"},
+      {"name":"AV1"},
+      {"name":"AV2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Gateway",
-  "model": "2800336"
+  "model": "2800336",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTV"],"setType":1}]},
+        {"name":"AV1","select":[{"commands":["InputAv1"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["InputAv2"],"setType":1}]},
+        {"name":"S-Vid","select":[{"commands":["InputS-Video",{"set":"S-VidInput","to":"S-Video1"}],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputYPbPr"],"setType":1}]},
+        {"name":"YCbCr","select":[{"commands":["InputYCbCr"],"setType":1}]},
+        {"name":"DVI","select":[{"commands":["InputDvi"],"setType":1}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":1}]}
+      ]
+    },
+    "S-VidInput": {
+      "next": ["InputS-Video"],
+      "values": [
+        {"name":"S-Video1"},
+        {"name":"S-Video2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

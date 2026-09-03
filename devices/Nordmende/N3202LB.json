@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/05/05894d8abd5e2d43.json",
   "deviceType": 1,
   "globalDeviceId": 180177,
+  "inputs": {
+    "canSkip": true,
+    "finish": ["InputNext"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV"},
+      {"name":"S-Video"},
+      {"name":"Scart1"},
+      {"name":"Scart2"},
+      {"name":"YUV"},
+      {"name":"VGA"},
+      {"name":"HDMI1"},
+      {"name":"HDMI2"}
+    ],
+    "next": ["ChannelDown"],
+    "previous": ["ChannelUp"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Nordmende",
-  "model": "N3202LB"
+  "model": "N3202LB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

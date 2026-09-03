@@ -2,6 +2,64 @@
   "codeset": "codesets/98/984eb4a5455b2769.json",
   "deviceType": 22,
   "globalDeviceId": 176432,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Dvd/Usb/Card"},{"set":"Dvd/Usb/CardInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Dvd/Usb/Card"},{"set":"Dvd/Usb/CardInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Dvd/Usb/Card"},{"set":"Dvd/Usb/CardInput","to":"Card"}],"name":"Card"},
+      {"commands":[{"set":"InputType","to":"iPod/Aux"},{"set":"iPod/AuxInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"iPod/Aux"},{"set":"iPod/AuxInput","to":"iPod"}],"name":"iPod"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Scott",
-  "model": "I-MDX150"
+  "model": "I-MDX150",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Dvd/Usb/CardInput": {
+      "next": ["InputDvd/Usb/Card"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"USB"},
+        {"name":"Card"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Dvd/Usb/Card","select":[{"commands":["InputDvd/Usb/Card"],"setType":2}]},
+        {"name":"iPod/Aux","select":[{"commands":["InputiPod/Aux"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "iPod/AuxInput": {
+      "next": ["InputiPod/Aux"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"iPod"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

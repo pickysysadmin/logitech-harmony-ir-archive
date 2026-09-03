@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 124129,
+  "inputs": {
+    "list": [
+      {"commands":["0",{"delayMs":100},"3"],"name":"Tuner"},
+      {"commands":["InputNext",{"delayMs":100}],"name":"AV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "R14GG8RA"
+  "model": "R14GG8RA",
+  "power": {
+    "off": ["PowerOff"],
+    "on": [
+      {"delayMs":1000},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

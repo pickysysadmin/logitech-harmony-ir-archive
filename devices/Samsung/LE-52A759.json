@@ -2,6 +2,38 @@
   "codeset": "codesets/dd/ddc17dc949665ac6.json",
   "deviceType": 1,
   "globalDeviceId": 171265,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputExt1"],"name":"Ext 1"},
+      {"commands":["InputExt2"],"name":"Ext 2"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputAv"],"name":"AV"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHDMI3"],"name":"HDMI 3"},
+      {"commands":["InputHDMI3",{"delayMs":500},"InputNext"],"name":"HDMI 4"},
+      {"commands":["W.Link"],"name":"USB"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "LE-52A759"
+  "model": "LE-52A759",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

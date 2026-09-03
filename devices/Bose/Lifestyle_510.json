@@ -2,6 +2,40 @@
   "codeset": "codesets/9b/9b18dcb743ca33f7.json",
   "deviceType": 5,
   "globalDeviceId": 257717,
+  "inputs": {
+    "list": [
+      {"commands":["Input1"],"name":"Input 1"},
+      {"commands":["Input2"],"name":"Input 2"},
+      {"commands":["Input3"],"name":"Input 3"},
+      {"commands":["Input4"],"name":"Input 4"},
+      {"commands":["Input5"],"name":"Input 5"},
+      {"commands":["InputFrontAv"],"name":"Front AV"},
+      {"commands":["InputFrontHdmi"],"name":"Front HDMI"},
+      {"commands":["InputUsb"],"name":"USB"},
+      {"commands":["InputNetwork1"],"name":"Network 1"},
+      {"commands":["InputNetwork2"],"name":"Network 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Bose",
-  "model": "Lifestyle 510"
+  "model": "Lifestyle 510",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":2000},
+      "OK"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

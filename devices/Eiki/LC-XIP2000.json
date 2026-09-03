@@ -2,6 +2,36 @@
   "codeset": "codesets/7a/7ac495730b593e11.json",
   "deviceType": 7,
   "globalDeviceId": 273497,
+  "inputs": {
+    "list": [
+      {"name":"Computer 1"},
+      {"name":"Computer 2"},
+      {"name":"Composite Video"},
+      {"name":"S-Video"}
+    ],
+    "next": ["Input"],
+    "type": 2
+  },
   "manufacturer": "Eiki",
-  "model": "LC-XIP2000"
+  "model": "LC-XIP2000",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

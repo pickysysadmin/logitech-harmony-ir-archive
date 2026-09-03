@@ -2,6 +2,41 @@
   "codeset": "codesets/2e/2e110b59c9a92295.json",
   "deviceType": 1,
   "globalDeviceId": 177402,
+  "inputs": {
+    "list": [
+      {"name":"Analog TV"},
+      {"name":"Scart 1"},
+      {"name":"Scart 2"},
+      {"name":"VGA/YPBPR"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Mirai",
-  "model": "DTL-742E600"
+  "model": "DTL-742E600",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Text"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

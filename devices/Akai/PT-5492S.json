@@ -1,7 +1,78 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 153599,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"ALLOFF","to":"ON"},{"set":"ANTInput","to":"ON"}],"name":"ANT"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"ANTInput","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"ALLOFF","to":"ON"},{"set":"Video1Input","to":"ON"}],"name":"Video1"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"ANTInput","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"ALLOFF","to":"ON"},{"set":"Video2Input","to":"ON"}],"name":"Video2"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"ANTInput","to":"ON"},{"set":"Video1Input","to":"ON"},{"set":"Video2Input","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"ALLOFF","to":"ON"},{"set":"S-Video1Input","to":"ON"}],"name":"S-Video1"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"ANTInput","to":"ON"},{"set":"Video1Input","to":"ON"},{"set":"S-Video1Input","to":"ON"},{"set":"Video2Input","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"ALLOFF","to":"ON"},{"set":"Component1Input","to":"ON"}],"name":"Component1"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Akai",
-  "model": "PT-5492S"
+  "model": "PT-5492S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ALLOFF": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"ANTInput","to":"OFF"},{"set":"Video1Input","to":"OFF"},{"set":"Video2Input","to":"OFF"},{"set":"S-Video1Input","to":"OFF"},{"set":"Component1Input","to":"OFF"}],"setType":1}]},
+        {"name":"OFF"}
+      ]
+    },
+    "ANTInput": {
+      "values": [
+        {"name":"ON","select":[{"commands":["DirectionDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "Component1Input": {
+      "values": [
+        {"name":"ON","select":[{"commands":["DirectionDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "S-Video1Input": {
+      "values": [
+        {"name":"ON","select":[{"commands":["DirectionDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "SourceMenu": {
+      "values": [
+        {"name":"ON","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["DirectionRight"],"setType":1}]}
+      ]
+    },
+    "Video1Input": {
+      "values": [
+        {"name":"ON","select":[{"commands":["DirectionDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "Video2Input": {
+      "values": [
+        {"name":"ON","select":[{"commands":["DirectionDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

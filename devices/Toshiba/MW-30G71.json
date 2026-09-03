@@ -2,6 +2,52 @@
   "codeset": "codesets/e2/e2dcd59536761dd8.json",
   "deviceType": 38,
   "globalDeviceId": 97205,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HD"}],"name":"HD"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"TV/VCR"}],"name":"TV/VCR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "MW-30G71"
+  "model": "MW-30G71",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"HD"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"TV/VCR","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["TvVideo"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

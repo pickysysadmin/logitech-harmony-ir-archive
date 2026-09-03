@@ -2,6 +2,36 @@
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 36991,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Satellite"},
+      {"name":"RGB"},
+      {"name":"AV2"},
+      {"name":"YC2"},
+      {"name":"AV3"},
+      {"name":"YC3"}
+    ],
+    "next": ["InputNext","InputVideo1"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KV-25C1"
+  "model": "KV-25C1",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV2"}
+    ],
+    "toggle": ["PowerToggle","InputVideo1"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

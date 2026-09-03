@@ -2,6 +2,37 @@
   "codeset": "codesets/10/109c82ac9203bedf.json",
   "deviceType": 22,
   "globalDeviceId": 176175,
+  "inputs": {
+    "list": [
+      {"name":"TV/VIDEO","ports":["Composite","Coaxial","Optical"]},
+      {"name":"DM PORT","ports":["DMPort"]},
+      {"name":"AUDIO","ports":["Composite","Coaxial","Optical"]},
+      {"name":"DVD","ports":["BuiltIn"]},
+      {"name":"TUNER FM","ports":["FM Antenna"]},
+      {"name":"TUNER AM","ports":["AM Antenna"]}
+    ],
+    "next": ["Function"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "DAV-HDZ278"
+  "model": "DAV-HDZ278",
+  "power": {
+    "off": ["PowerOff","PowerOff"],
+    "on": [
+      {"delayMs":1000},
+      "PowerOn",
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

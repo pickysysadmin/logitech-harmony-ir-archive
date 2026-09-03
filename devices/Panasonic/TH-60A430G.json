@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/e8/e850926952c659fd.json",
   "deviceType": 1,
   "globalDeviceId": 272458,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Media Player"}],"name":"Media Player"},
+      {"commands":[{"set":"InputType","to":"AvInputs"},{"set":"AvInputsInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"AvInputs"},{"set":"AvInputsInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"AvInputs"},{"set":"AvInputsInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"AvInputs"},{"set":"AvInputsInput","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-60A430G"
+  "model": "TH-60A430G",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AvInputsInput": {
+      "finish": ["OK"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["AV"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"AV"},
+        {"name":"TV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Media Player","select":[{"commands":["VieraTools"],"setType":2}]},
+        {"name":"AvInputs","select":[{"commands":["AV"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

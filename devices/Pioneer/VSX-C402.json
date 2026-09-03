@@ -2,6 +2,55 @@
   "codeset": "codesets/46/46535e216039d94b.json",
   "deviceType": 5,
   "globalDeviceId": 97353,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"STB"}],"name":"STB"},
+      {"commands":[{"set":"InputType","to":"DVR/TV"}],"name":"DVR/TV"},
+      {"commands":[{"set":"InputType","to":"VIDEO"}],"name":"VIDEO"},
+      {"commands":[{"set":"InputType","to":"FRONT"}],"name":"FRONT"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "VSX-C402"
+  "model": "VSX-C402",
+  "power": {
+    "off": ["PowerOff"],
+    "on": [
+      {"delayMs":2000},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"STB","select":[{"commands":["InputTV"],"setType":2}]},
+        {"name":"DVR/TV","select":[{"commands":["InputDvr/Vcr"],"setType":2}]},
+        {"name":"VIDEO","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"FRONT","select":[{"commands":["InputFront"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

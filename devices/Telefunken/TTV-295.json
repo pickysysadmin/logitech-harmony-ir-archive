@@ -2,6 +2,35 @@
   "codeset": "codesets/a1/a18c012762a85213.json",
   "deviceType": 1,
   "globalDeviceId": 180641,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"AV 1"},
+      {"name":"AV 2"},
+      {"name":"S-Video"},
+      {"name":"Component"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Telefunken",
-  "model": "TTV-295"
+  "model": "TTV-295",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

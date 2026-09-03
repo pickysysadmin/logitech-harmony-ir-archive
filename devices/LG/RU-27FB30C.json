@@ -1,7 +1,71 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/72/72c4dacfbb3035c8.json",
   "deviceType": 1,
   "globalDeviceId": 201112,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Ant"},{"set":"AntMode","to":"Ant1"}],"name":"Antenna1"},
+      {"commands":[{"set":"InputType","to":"Ant"},{"set":"AntMode","to":"Ant2"}],"name":"Antenna2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoMode","to":"Vid1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoMode","to":"Vid2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Front"}],"name":"Front"},
+      {"commands":[{"set":"InputType","to":"Comp1"}],"name":"Comp1"},
+      {"commands":[{"set":"InputType","to":"Comp2"}],"name":"Comp2"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBMode","to":"RGB1"}],"name":"RGB-HD"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBMode","to":"RGB2"}],"name":"RGB-PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "RU-27FB30C"
+  "model": "RU-27FB30C",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntMode": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Ant1"},
+        {"name":"Ant2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Ant","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputRGB"],"setType":2}]},
+        {"name":"Front","select":[{"commands":["InputFront"],"setType":2}]},
+        {"name":"Comp1","select":[{"commands":["InputComp 1"],"setType":2}]},
+        {"name":"Comp2","select":[{"commands":["InputComp 2"],"setType":2}]}
+      ]
+    },
+    "RGBMode": {
+      "next": ["InputRGB"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"}
+      ]
+    },
+    "VideoMode": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Vid1"},
+        {"name":"Vid2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

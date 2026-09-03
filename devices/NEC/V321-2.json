@@ -2,6 +2,65 @@
   "codeset": "codesets/e1/e10e0864e2459eab.json",
   "deviceType": 1,
   "globalDeviceId": 278690,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"RGB/HV"}],"name":"RGB/HV"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"DVD/HD"}],"name":"DVD/HD"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Audio:1"}],"name":"Audio:1"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Audio:2"}],"name":"Audio:2"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Audio:3"}],"name":"Audio:3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "V321-2"
+  "model": "V321-2",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioInput": {
+      "next": ["InputAudio"],
+      "values": [
+        {"name":"Audio:1"},
+        {"name":"Audio:2"},
+        {"name":"Audio:3"}
+      ]
+    },
+    "InputInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"VGA"},
+        {"name":"RGB/HV"},
+        {"name":"HDMI"},
+        {"name":"DVD/HD"},
+        {"name":"S-Video"},
+        {"name":"Video 1"},
+        {"name":"Video 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input","select":[{"commands":["Input"],"setType":2}]},
+        {"name":"Audio","select":[{"commands":["InputAudio"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

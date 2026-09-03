@@ -2,6 +2,32 @@
   "codeset": "codesets/eb/eb9239e5da482130.json",
   "deviceType": 1,
   "globalDeviceId": 212817,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"A1"},
+      {"name":"A2"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-28W1DT"
+  "model": "TX-28W1DT",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

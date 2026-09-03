@@ -2,6 +2,35 @@
   "codeset": "codesets/7e/7e225acc4748e9cb.json",
   "deviceType": 1,
   "globalDeviceId": 97284,
+  "inputs": {
+    "list": [
+      {"name":"EXT-2"},
+      {"name":"EXT-2s"},
+      {"name":"F-AV"},
+      {"name":"EXT"},
+      {"name":"RGB"}
+    ],
+    "next": ["Freeze"],
+    "type": 2
+  },
   "manufacturer": "Ferguson",
-  "model": "FTV-28DFW5"
+  "model": "FTV-28DFW5",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"F-AV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

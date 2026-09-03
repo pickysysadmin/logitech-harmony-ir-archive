@@ -2,6 +2,38 @@
   "codeset": "codesets/26/2640bf2c6e5034f2.json",
   "deviceType": 22,
   "globalDeviceId": 230834,
+  "inputs": {
+    "list": [
+      {"name":"BD/DVD","ports":["BuiltIn"]},
+      {"name":"D.IN","ports":["Optical"]},
+      {"name":"AUX","ports":["Composite"]},
+      {"name":"R.iPod","ports":["Dock"]},
+      {"name":"HDMI 1","ports":["HDMI"]},
+      {"name":"HDMI 2","ports":["HDMI"]},
+      {"name":"FM","ports":["FM Antenna"]}
+    ],
+    "next": [
+      "Info",
+      {"delayMs":2000},
+      "InputNext"
+    ],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "HT-E5400"
+  "model": "HT-E5400",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 2
+  }
 }

@@ -2,6 +2,32 @@
   "codeset": "codesets/d5/d5870a5e94a8dd4f.json",
   "deviceType": 7,
   "globalDeviceId": 85358,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"}
+    ],
+    "type": 6
+  },
   "manufacturer": "Acer",
-  "model": "PH112"
+  "model": "PH112",
+  "power": {
+    "off": [
+      {"delayMs":1500},
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

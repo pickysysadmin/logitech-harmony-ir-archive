@@ -1,7 +1,49 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/fe/fe53a8d2cff874d2.json",
   "deviceType": 2,
   "globalDeviceId": 177730,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"VHS"}],"name":"VHS"},
+      {"commands":[{"set":"InputType","to":"TvVcr"},{"set":"TvVcrInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TvVcr"},{"set":"TvVcrInput","to":"VCR"}],"name":"VCR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "HM-HDS1"
+  "model": "HM-HDS1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"VHS","select":[{"commands":["InputVHS"],"setType":2}]},
+        {"name":"TvVcr","select":[{"commands":["TvVcr"],"setType":2}]}
+      ]
+    },
+    "TvVcrInput": {
+      "next": ["TvVcr"],
+      "values": [
+        {"name":"TV"},
+        {"name":"VCR"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

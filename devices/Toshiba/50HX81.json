@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5c/5c3e465f20ec6d29.json",
   "deviceType": 1,
   "globalDeviceId": 178173,
+  "inputs": {
+    "finish": ["Exit"],
+    "list": [
+      {"commands":["0"],"name":"ANT 1"},
+      {"commands":["1"],"name":"Video 1"},
+      {"commands":["2"],"name":"Video 2"},
+      {"commands":["3"],"name":"Video 3"},
+      {"commands":["4"],"name":"Colorstream HD1"},
+      {"commands":["5"],"name":"Colorstream HD2"},
+      {"commands":["6"],"name":"ANT 2"}
+    ],
+    "start": [
+      {"delayMs":1000},
+      "InputNext"
+    ],
+    "type": 3
+  },
   "manufacturer": "Toshiba",
-  "model": "50HX81"
+  "model": "50HX81",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

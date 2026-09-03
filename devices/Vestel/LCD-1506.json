@@ -2,6 +2,50 @@
   "codeset": "codesets/a4/a4f609fab1fb7266.json",
   "deviceType": 1,
   "globalDeviceId": 144082,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Av1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Av2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"S-VHS"}],"name":"S-VHS"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"RGB"}],"name":"RGB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vestel",
-  "model": "LCD-1506"
+  "model": "LCD-1506",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AvInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"},
+        {"name":"Pc"},
+        {"name":"S-VHS"},
+        {"name":"RGB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Av","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,33 @@
   "codeset": "codesets/ed/edf47df1ee969ce8.json",
   "deviceType": 1,
   "globalDeviceId": 89239,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"SCART1"},
+      {"name":"SCART2"},
+      {"name":"PC2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sagem",
-  "model": "Axium HD-56B"
+  "model": "Axium HD-56B",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

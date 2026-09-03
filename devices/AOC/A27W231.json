@@ -2,6 +2,49 @@
   "codeset": "codesets/3b/3bbc0ce8785643a6.json",
   "deviceType": 1,
   "globalDeviceId": 167767,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"TvVideo"},{"set":"TvVideoInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TvVideo"},{"set":"TvVideoInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"TvVideo"},{"set":"TvVideoInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"TvVideo"},{"set":"TvVideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"TvVideo"},{"set":"TvVideoInput","to":"Component"}],"name":"Component"}
+    ],
+    "type": 5
+  },
   "manufacturer": "AOC",
-  "model": "A27W231"
+  "model": "A27W231",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"TvVideo","select":[{"commands":["TvVideo"],"setType":2}]}
+      ]
+    },
+    "TvVideoInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"S-Video"},
+        {"name":"Component"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

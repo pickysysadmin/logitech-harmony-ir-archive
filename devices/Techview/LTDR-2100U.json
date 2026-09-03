@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2a/2af6ff10b190d05d.json",
   "deviceType": 37,
   "globalDeviceId": 83089,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Dtv1/Dtv2"},{"set":"Dtv1/Dtv2Input","to":"Dtv1"}],"name":"Dtv1"},
+      {"commands":[{"set":"InputType","to":"Dtv1/Dtv2"},{"set":"Dtv1/Dtv2Input","to":"Dtv2"}],"name":"Dtv2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Techview",
-  "model": "LTDR-2100U"
+  "model": "LTDR-2100U",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Dtv1/Dtv2Input": {
+      "next": ["InputDtv1/Dtv2"],
+      "values": [
+        {"name":"Dtv1"},
+        {"name":"Dtv2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTV"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Dtv1/Dtv2","select":[{"commands":["InputDtv1/Dtv2"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

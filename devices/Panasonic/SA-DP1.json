@@ -2,6 +2,45 @@
   "codeset": "codesets/37/37df6d155019dcbf.json",
   "deviceType": 22,
   "globalDeviceId": 54246,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Tuner/AUX"},{"set":"TunerAuxInput","to":"Fm"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner/AUX"},{"set":"TunerAuxInput","to":"Am"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner/AUX"},{"set":"TunerAuxInput","to":"Aux"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-DP1"
+  "model": "SA-DP1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]},
+        {"name":"Tuner/AUX","select":[{"commands":["InputTuner/Aux"],"setType":2}]}
+      ]
+    },
+    "TunerAuxInput": {
+      "next": ["InputTuner/Aux"],
+      "values": [
+        {"name":"Fm"},
+        {"name":"Am"},
+        {"name":"Aux"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

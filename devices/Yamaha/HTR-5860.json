@@ -2,6 +2,37 @@
   "codeset": "codesets/b0/b036939c967314fc.json",
   "deviceType": 5,
   "globalDeviceId": 144302,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputMd/Cdr"],"name":"MD/CD-R","ports":["Composite","Optical"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputDtv/Cbl"],"name":"DTV/CBL","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputVcr1"],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":["InputDvr/Vcr2"],"name":"DVR","ports":["Component","Composite","S-Video"]},
+      {"commands":["InputMultiChannel"],"name":"Multi-Ch In","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "HTR-5860"
+  "model": "HTR-5860",
+  "power": {
+    "off": ["PowerOff-Zone1"],
+    "on": ["PowerOn-Zone1"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

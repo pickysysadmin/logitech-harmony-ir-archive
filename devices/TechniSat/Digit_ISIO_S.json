@@ -2,6 +2,32 @@
   "codeset": "codesets/45/458d1a2f98e6a60e.json",
   "deviceType": 18,
   "globalDeviceId": 218002,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"TV"},
+      {"name":"Radio"}
+    ],
+    "next": ["Tv/Radio"],
+    "type": 2
+  },
   "manufacturer": "TechniSat",
-  "model": "Digit ISIO S"
+  "model": "Digit ISIO S",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

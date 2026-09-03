@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/56/563076a89db9bda5.json",
   "deviceType": 1,
   "globalDeviceId": 36566,
+  "inputs": {
+    "list": [
+      {"name":"SV"},
+      {"name":"AV"},
+      {"name":"TV"},
+      {"name":"HDTV"},
+      {"name":"VGA"},
+      {"name":"DVI"},
+      {"name":"COMP"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Sova",
-  "model": "DS203-S30"
+  "model": "DS203-S30",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["PowerToggle","PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

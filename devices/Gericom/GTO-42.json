@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/b2/b27b1c4b30753ad2.json",
   "deviceType": 1,
   "globalDeviceId": 111003,
+  "inputs": {
+    "finish": ["Exit"],
+    "list": [
+      {"name":"TV"},
+      {"name":"Scart 1"},
+      {"name":"Scart 2"},
+      {"name":"S-Video"},
+      {"name":"Component 1"},
+      {"name":"Component 2"},
+      {"name":"PC"},
+      {"name":"DVI"}
+    ],
+    "next": ["StartInput"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Gericom",
-  "model": "GTO-42"
+  "model": "GTO-42",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

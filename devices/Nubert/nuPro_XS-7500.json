@@ -2,6 +2,68 @@
   "codeset": "codesets/f0/f07647bd7a07ba3d.json",
   "deviceType": 19,
   "globalDeviceId": 493692,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"WLS"}],"name":"WLS","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Analog"}],"name":"Analog","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"Coaxial"},{"set":"CoaxialInput","to":"Coaxial1"}],"name":"Coaxial1","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Coaxial"},{"set":"CoaxialInput","to":"Coaxial2"}],"name":"Coaxial2","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OpticalInput","to":"Optical1"}],"name":"Optical1","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OpticalInput","to":"Optical2"}],"name":"Optical2","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Usb"},{"set":"UsbInput","to":"Usb"}],"name":"Usb","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Usb"},{"set":"UsbInput","to":"DigitalPort"}],"name":"DigitalPort","ports":["Streaming"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Nubert",
-  "model": "nuPro XS-7500"
+  "model": "nuPro XS-7500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CoaxialInput": {
+      "next": ["InputCoaxial"],
+      "values": [
+        {"name":"Coaxial1"},
+        {"name":"Coaxial2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"WLS","select":[{"commands":["InputWls"],"setType":2}]},
+        {"name":"Analog","select":[{"commands":["InputAnalog"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Coaxial","select":[{"commands":["InputCoaxial"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"Usb","select":[{"commands":["InputUsb"],"setType":2}]}
+      ]
+    },
+    "OpticalInput": {
+      "next": ["InputOptical"],
+      "values": [
+        {"name":"Optical1"},
+        {"name":"Optical2"}
+      ]
+    },
+    "UsbInput": {
+      "next": ["InputUsb"],
+      "values": [
+        {"name":"Usb"},
+        {"name":"DigitalPort"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

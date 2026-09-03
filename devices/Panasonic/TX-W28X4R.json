@@ -2,6 +2,41 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 120095,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"TVAV","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"TVAV","to":"AV"},"Red"],"name":"AV1"},
+      {"commands":[{"set":"TVAV","to":"AV"},"Green"],"name":"AV2"},
+      {"commands":[{"set":"TVAV","to":"AV"},"Yellow"],"name":"AV3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-W28X4R"
+  "model": "TX-W28X4R",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": [
+      {"command":"PowerToggle","durationMs":2100}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "TVAV": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

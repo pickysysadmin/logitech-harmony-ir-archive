@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/67/67ad9946ed1fa350.json",
   "deviceType": 1,
   "globalDeviceId": 176854,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo 1"],"name":"Ext 1"},
+      {"commands":["InputVideo 2"],"name":"Ext 2"},
+      {"commands":["InputVideo 3"],"name":"Ext 3"},
+      {"commands":["InputVideo 4"],"name":"HDMI 1"},
+      {"commands":["InputVideo 4",{"delayMs":100},"InputVideo 4"],"name":"HDMI 2"},
+      {"commands":["InputVideo 4",{"delayMs":100},"InputVideo 4","InputVideo 4"],"name":"HDMI 3"},
+      {"commands":["InputTvVideo"],"name":"TV"},
+      {"commands":["InputVideo 4",{"delayMs":100},"InputVideo 4","InputVideo 4","InputVideo 4"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-42DV1"
+  "model": "LT-42DV1",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

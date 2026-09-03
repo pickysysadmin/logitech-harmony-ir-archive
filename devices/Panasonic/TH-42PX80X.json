@@ -2,6 +2,39 @@
   "codeset": "codesets/37/377edc67eeb0a685.json",
   "deviceType": 1,
   "globalDeviceId": 170298,
+  "inputs": {
+    "list": [
+      {"commands":["TvVideo","1"],"name":"TV"},
+      {"commands":["InputComponent1"],"name":"Component1"},
+      {"commands":["InputComponent2"],"name":"Component2"},
+      {"commands":["InputHDMI1"],"name":"HDMI1"},
+      {"commands":["InputHDMI2"],"name":"HDMI2"},
+      {"commands":["InputHdmi3"],"name":"HDMI3"},
+      {"commands":["InputVideo1"],"name":"Video1"},
+      {"commands":["InputVideo2"],"name":"Video2"},
+      {"commands":["Sd"],"name":"SD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PX80X"
+  "model": "TH-42PX80X",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 3
+  }
 }

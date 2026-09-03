@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/18/182a7de30694699e.json",
   "deviceType": 1,
   "globalDeviceId": 126324,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"HDTV"},
+      {"name":"Video 1(Side)"},
+      {"name":"Video 2(Rear)"},
+      {"name":"Video 3(S-Video)"},
+      {"name":"Video 4(YPbPr1)"},
+      {"name":"Video 5(YPbPr2)"},
+      {"name":"Video 6(HDMI)"},
+      {"name":"Computer(VGA)"}
+    ],
+    "next": ["DirectionDown"],
+    "start": [
+      {"delayMs":1500},
+      "StartInput"
+    ],
+    "type": 4
+  },
   "manufacturer": "Polaroid",
-  "model": "FLM-3132"
+  "model": "FLM-3132",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 9500,
+    "pressMinRepeats": 1
+  }
 }

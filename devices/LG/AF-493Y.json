@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/89/8917d4fd7d26261c.json",
   "deviceType": 2,
   "globalDeviceId": 131231,
+  "inputs": {
+    "list": [
+      {"name":"Aerial"},
+      {"name":"RF.OUT"},
+      {"name":"AV1 Video In"},
+      {"name":"AV1 Audio In"},
+      {"name":"AUDIO (3D Sound Out)"},
+      {"name":"Video Out"},
+      {"name":"AV2 Video In"},
+      {"name":"AV2 Audio In"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "AF-493Y"
+  "model": "AF-493Y",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 114042,
+  "inputs": {
+    "list": [
+      {"name":"Ext-1"},
+      {"name":"RGB"},
+      {"name":"Ext-2"},
+      {"name":"Ext-2S"},
+      {"name":"Ext-3"},
+      {"name":"1"}
+    ],
+    "next": ["1"],
+    "type": 2
+  },
   "manufacturer": "JVC",
-  "model": "AV-21KT1S"
+  "model": "AV-21KT1S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["Text"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Text"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4500,
+    "pressMinRepeats": 3
+  }
 }

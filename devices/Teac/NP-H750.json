@@ -2,6 +2,68 @@
   "codeset": "codesets/08/0878ef6778ae11a5.json",
   "deviceType": 5,
   "globalDeviceId": 259599,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"USB/iPod"}],"name":"USB/iPod"},
+      {"commands":[{"set":"InputType","to":"USBAudio"}],"name":"USBAudio"},
+      {"commands":[{"set":"InputType","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"NET"},{"set":"NETInput","to":"InternetRadio"}],"name":"InternetRadio"},
+      {"commands":[{"set":"InputType","to":"NET"},{"set":"NETInput","to":"MediaPlayer"}],"name":"MediaPlayer"},
+      {"commands":[{"set":"InputType","to":"Digital1/2"},{"set":"Digital1/2Input","to":"Digital 1"}],"name":"Digital 1"},
+      {"commands":[{"set":"InputType","to":"Digital1/2"},{"set":"Digital1/2Input","to":"Digital 2"}],"name":"Digital 2"},
+      {"commands":[{"set":"InputType","to":"AUX1/2"},{"set":"AUX1/2Input","to":"AUX 1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"AUX1/2"},{"set":"AUX1/2Input","to":"AUX 2"}],"name":"AUX 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teac",
-  "model": "NP-H750"
+  "model": "NP-H750",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUX1/2Input": {
+      "next": ["InputAux1/2"],
+      "values": [
+        {"name":"AUX 1"},
+        {"name":"AUX 2"}
+      ]
+    },
+    "Digital1/2Input": {
+      "next": ["InputDigital1/2"],
+      "values": [
+        {"name":"Digital 1"},
+        {"name":"Digital 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"USB/iPod","select":[{"commands":["InputUsb/iPod"],"setType":2}]},
+        {"name":"USBAudio","select":[{"commands":["InputUsbAudio"],"setType":2}]},
+        {"name":"Phono","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"NET","select":[{"commands":["InputNet"],"setType":2}]},
+        {"name":"Digital1/2","select":[{"commands":["InputDigital1/2"],"setType":2}]},
+        {"name":"AUX1/2","select":[{"commands":["InputAux1/2"],"setType":2}]}
+      ]
+    },
+    "NETInput": {
+      "next": ["InputNet"],
+      "values": [
+        {"name":"InternetRadio"},
+        {"name":"MediaPlayer"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

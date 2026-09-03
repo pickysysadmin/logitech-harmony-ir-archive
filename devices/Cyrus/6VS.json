@@ -2,6 +2,35 @@
   "codeset": "codesets/f5/f55de6a5c3dfa846.json",
   "deviceType": 19,
   "globalDeviceId": 38839,
+  "inputs": {
+    "list": [
+      {"commands":["InputCD"],"name":"CD"},
+      {"commands":["InputTuner"],"name":"TUNER"},
+      {"commands":["InputAv"],"name":"AV"},
+      {"commands":["InputAU1"],"name":"AUX/PH"},
+      {"commands":["InputAU2"],"name":"LINK"},
+      {"commands":["InputTape"],"name":"MP3"},
+      {"commands":["InputTape","InputNext"],"name":"TAPE"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Cyrus",
-  "model": "6VS"
+  "model": "6VS",
+  "power": {
+    "off": ["PowerOff"],
+    "on": [
+      {"set":"Input","to":"CD"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

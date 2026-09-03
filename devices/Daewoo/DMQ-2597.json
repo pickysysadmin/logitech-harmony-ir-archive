@@ -2,6 +2,33 @@
   "codeset": "codesets/a7/a7019404b7ba11c5.json",
   "deviceType": 1,
   "globalDeviceId": 110995,
+  "inputs": {
+    "list": [
+      {"name":"Scart 1"},
+      {"name":"Scart 2"},
+      {"name":"Antenna"}
+    ],
+    "next": ["StartInput"],
+    "type": 2
+  },
   "manufacturer": "Daewoo",
-  "model": "DMQ-2597"
+  "model": "DMQ-2597",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 2
+  }
 }

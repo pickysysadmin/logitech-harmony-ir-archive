@@ -2,6 +2,31 @@
   "codeset": "codesets/b9/b9765de045afcfc4.json",
   "deviceType": 1,
   "globalDeviceId": 38000,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Mitsubishi",
-  "model": "CT-25M5BT"
+  "model": "CT-25M5BT",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

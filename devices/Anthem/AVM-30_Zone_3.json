@@ -2,6 +2,36 @@
   "codeset": "codesets/bd/bd070bbc697a6f41.json",
   "deviceType": 5,
   "globalDeviceId": 492765,
+  "inputs": {
+    "list": [
+      {"commands":["Input2Channel"],"name":"2-Ch","ports":["Streaming"]},
+      {"commands":["Input6Channel"],"name":"6-Ch","ports":["Streaming"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","AES"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Composite","AES"]},
+      {"commands":["InputTape"],"name":"Tape","ports":["Composite","AES"]},
+      {"commands":["InputTuner"],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Composite","AES"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Composite","AES"]},
+      {"commands":["InputSat"],"name":"SAT","ports":["Composite","AES"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite","AES"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Anthem",
-  "model": "AVM-30 (Zone 3)"
+  "model": "AVM-30 (Zone 3)",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

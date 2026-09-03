@@ -2,6 +2,34 @@
   "codeset": "codesets/34/34f72f1ef6c7f0e2.json",
   "deviceType": 1,
   "globalDeviceId": 144651,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"TV","ports":["Antenna"]},
+      {"commands":["2"],"name":"Component 1","ports":["Component"]},
+      {"commands":["3"],"name":"Component 2","ports":["Component"]},
+      {"commands":["4"],"name":"HDMI","ports":["HDMI"]},
+      {"commands":["5"],"name":"Video 1","ports":["Composite","S-Video"]},
+      {"commands":["6"],"name":"Video 2","ports":["Composite","S-Video"]}
+    ],
+    "start": ["TvVideo"],
+    "type": 3
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PD50U"
+  "model": "TH-42PD50U",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1500}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/70/7022097550372fe4.json",
   "deviceType": 1,
   "globalDeviceId": 349558,
+  "inputs": {
+    "list": [
+      {"commands":["Return","DirectionRight","Select","InputTv"],"name":"TV"},
+      {"commands":["Return","DirectionRight","Select",{"delayMs":1000},"InputVideo1"],"name":"Video"},
+      {"commands":["Return","DirectionRight","Select",{"delayMs":2000},"InputVideo2"],"name":"Component"},
+      {"commands":["Return","DirectionRight","Select",{"delayMs":2000},"InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["Return","DirectionRight","Select",{"delayMs":2000},"InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["Return","DirectionRight","Select",{"delayMs":2000},"InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["Return","DirectionRight",{"delayMs":2000},"InputVideo2","Input",{"delayMs":500},"DirectionDown","Select"],"name":"Screen Mirroring"},
+      {"commands":["Return","DirectionRight","Select",{"delayMs":2000},"Home","Select"],"name":"Apps"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KD-49X720E"
+  "model": "KD-49X720E",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 45000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

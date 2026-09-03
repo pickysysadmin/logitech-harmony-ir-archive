@@ -2,6 +2,39 @@
   "codeset": "codesets/bf/bfea79650737ced0.json",
   "deviceType": 1,
   "globalDeviceId": 97232,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Ext1"},
+      {"name":"Ext2"},
+      {"name":"Ext3"},
+      {"name":"Ext4"},
+      {"name":"Ext5"},
+      {"name":"HDMI"},
+      {"name":"RGB/PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "52WM48"
+  "model": "52WM48",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

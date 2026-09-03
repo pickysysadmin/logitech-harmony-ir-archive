@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/49/49673b9b1938ec2c.json",
   "deviceType": 1,
   "globalDeviceId": 222724,
+  "inputs": {
+    "list": [
+      {"commands":["ChannelUp","Exit","Exit",{"delayMs":2000},"ChannelUp"],"name":"TV"},
+      {"commands":["Input1","Exit","Exit",{"delayMs":2000},"Input1"],"name":"HDMI 1"},
+      {"commands":["Input2","Exit","Exit",{"delayMs":2000},"Input2"],"name":"HDMI 2"},
+      {"commands":["Input3","Exit","Exit",{"delayMs":2000},"Input3"],"name":"HDMI 3"},
+      {"commands":["Input4","Exit","Exit",{"delayMs":2000},"Input4"],"name":"HDMI 4"},
+      {"commands":["Input5","Exit","Exit",{"delayMs":2000},"Input5"],"name":"HDMI 5"},
+      {"commands":["Input6","Exit","Exit",{"delayMs":2000},"Input6"],"name":"COMPONENT"},
+      {"commands":["Input7","Exit","Exit",{"delayMs":2000},"Input7"],"name":"VIDEO 1"},
+      {"commands":["Input8","Exit","Exit",{"delayMs":2000},"Input8"],"name":"VIDEO 2"},
+      {"commands":["InputPc","Exit","Exit",{"delayMs":2000},"InputPc"],"name":"PC"},
+      {"commands":["InputPc","Input","Input"],"name":"Home Network (DLNA)"},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputPc","Input","Input","Input"],"name":"USB"},
+      {"commands":["Apps"],"name":"Apps"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "PRO-70X5FD"
+  "model": "PRO-70X5FD",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,53 @@
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 207583,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"Scart1 VCR"},
+      {"name":"Scart2 DVD"},
+      {"name":"Scart3 EXT"}
+    ],
+    "next": ["A/V"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "M70-490"
+  "model": "M70-490",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"InputType","to":"AntennaCable"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AntennaCable","select":[{"commands":["0"],"setType":1}]},
+        {"name":"Scart1VCR","select":[{"commands":["1"],"setType":1}]},
+        {"name":"Scart2SAT","select":[{"commands":["A/V"],"setType":1}]},
+        {"name":"InputScartToggle","select":[{"commands":["InputComponent",{"set":"ScartInput","to":"Scart3DVD"}],"setType":1}]}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Scart3DVD"},
+        {"name":"Scart4"},
+        {"name":"Scart5"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,64 @@
   "codeset": "codesets/db/dbd2306dc56c4df8.json",
   "deviceType": 21,
   "globalDeviceId": 493524,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Cd"}],"name":"Cd","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"AnalogIn"}],"name":"AnalogIn","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"Usb","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"InternetRadio"}],"name":"InternetRadio","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"MusicServer"}],"name":"MusicServer","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Am"}],"name":"Am","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm"}],"name":"Fm","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"OpticalIn"},{"set":"OpticalInInput","to":"Optical 1"}],"name":"Optical 1","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"OpticalIn"},{"set":"OpticalInInput","to":"Optical 2"}],"name":"Optical 2","ports":["Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Marantz",
-  "model": "M-CR612"
+  "model": "M-CR612",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Cd","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"AnalogIn","select":[{"commands":["InputAnalogIn"],"setType":2}]},
+        {"name":"Usb","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"InternetRadio","select":[{"commands":["InputInternetRadio"],"setType":2}]},
+        {"name":"MusicServer","select":[{"commands":["InputMusicServer"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"OpticalIn","select":[{"commands":["InputOpticalIn"],"setType":2}]}
+      ]
+    },
+    "OpticalInInput": {
+      "next": ["InputOpticalIn"],
+      "values": [
+        {"name":"Optical 1"},
+        {"name":"Optical 2"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

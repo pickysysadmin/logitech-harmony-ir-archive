@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/f6/f684a85361d092e0.json",
   "deviceType": 1,
   "globalDeviceId": 212019,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"HDMI 3"},
+      {"name":"HDMI 4"},
+      {"name":"Component"},
+      {"name":"AV"},
+      {"name":"RGB"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": [
+      {"delayMs":3000},
+      "InputNext"
+    ],
+    "type": 4
+  },
   "manufacturer": "Hitachi",
-  "model": "LE46S704"
+  "model": "LE46S704",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 1
+  }
 }

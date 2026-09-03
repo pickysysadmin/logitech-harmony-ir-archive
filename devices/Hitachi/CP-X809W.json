@@ -2,6 +2,62 @@
   "codeset": "codesets/47/47a6f39ddd37e5d6.json",
   "deviceType": 7,
   "globalDeviceId": 468877,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"RGB 1"}],"name":"RGB 1","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"RGB 2"}],"name":"RGB 2","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"HDMI"}],"name":"HDMI","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBInput","to":"MIU"}],"name":"MIU","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Component"}],"name":"Component","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video","ports":["S-Video"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "CP-X809W"
+  "model": "CP-X809W",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"RGB","select":[{"commands":["InputComputer"],"setType":1}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":1}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["InputComputer"],
+      "values": [
+        {"name":"RGB 1"},
+        {"name":"RGB 2"},
+        {"name":"HDMI"},
+        {"name":"MIU"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Component"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,42 @@
   "codeset": "codesets/ab/ab7c5a35edb65613.json",
   "deviceType": 5,
   "globalDeviceId": 217847,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd"],"name":"BD","ports":["HDMI"]},
+      {"commands":["InputSat/Cbl"],"name":"SAT/CBL","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Optical"]},
+      {"commands":["InputNet/Usb"],"name":"NET/USB","ports":["USB"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Composite"]},
+      {"commands":["InputV-Aux"],"name":"V.AUX","ports":["HDMI","Composite"]},
+      {"commands":["InputDock"],"name":"DOCK","ports":["Composite","S-Video"]},
+      {"commands":["InputGame1"],"name":"GAME 1","ports":["HDMI"]},
+      {"commands":["InputGame2"],"name":"GAME 2","ports":["HDMI"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite"]},
+      {"commands":["QuickSelect1"],"name":"QuickSelect 1","ports":["Streaming"]},
+      {"commands":["QuickSelect2"],"name":"QuickSelect 2","ports":["Streaming"]},
+      {"commands":["QuickSelect3"],"name":"QuickSelect 3","ports":["Streaming"]},
+      {"commands":["QuickSelect4"],"name":"QuickSelect 4","ports":["Streaming"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-1912"
+  "model": "AVR-1912",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

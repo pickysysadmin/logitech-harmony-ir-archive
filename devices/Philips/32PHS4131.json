@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/cd/cd1d43c24e754c8f.json",
   "deviceType": 1,
   "globalDeviceId": 303173,
+  "inputs": {
+    "list": [
+      {"commands":["Source",{"delayMs":300},{"command":"DirectionLeft","durationMs":2000},{"delayMs":300},"OK"],"name":"Satellite"},
+      {"commands":["Source",{"delayMs":300},{"command":"DirectionLeft","durationMs":2000},{"delayMs":300},"DirectionRight","OK"],"name":"TV"},
+      {"commands":["Source",{"delayMs":300},{"command":"DirectionLeft","durationMs":2000},{"delayMs":300},"DirectionRight","DirectionRight","OK"],"name":"USB"},
+      {"commands":["Source",{"delayMs":300},{"command":"DirectionRight","durationMs":2000},{"delayMs":300},"DirectionLeft","OK"],"name":"HDMI 1"},
+      {"commands":["Source",{"delayMs":300},{"command":"DirectionRight","durationMs":2000},{"delayMs":300},"OK"],"name":"HDMI 2"},
+      {"commands":["Source",{"delayMs":300},{"command":"DirectionLeft","durationMs":2000},{"delayMs":300},"DirectionDown","OK"],"name":"Scart"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "32PHS4131"
+  "model": "32PHS4131",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 24000,
+    "pressMinRepeats": 3
+  }
 }

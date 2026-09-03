@@ -2,6 +2,39 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 26386,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["Red","Red"],"name":"AV 1"},
+      {"commands":["Green","Green"],"name":"AV 2"},
+      {"commands":["Yellow","Yellow","Yellow","Yellow"],"name":"AV 3"},
+      {"commands":["Blue","Blue"],"name":"AV 4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-36PB50D"
+  "model": "TX-36PB50D",
+  "power": {
+    "toggle": ["PowerOn","PowerOff"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVMode": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

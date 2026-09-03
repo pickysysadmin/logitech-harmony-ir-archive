@@ -2,6 +2,34 @@
   "codeset": "codesets/d0/d08497fe3da74b2f.json",
   "deviceType": 1,
   "globalDeviceId": 79756,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV"},
+      {"name":"AV2"},
+      {"name":"AV3"},
+      {"name":"AVFront"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "SEG",
-  "model": "Phoenix"
+  "model": "Phoenix",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV"}
+    ],
+    "toggle": ["PowerOn"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

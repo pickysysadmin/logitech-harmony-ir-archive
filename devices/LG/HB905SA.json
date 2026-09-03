@@ -2,6 +2,58 @@
   "codeset": "codesets/51/51d4f6165de5ef5f.json",
   "deviceType": 22,
   "globalDeviceId": 205913,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Home"}],"name":"Home","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"iPod"}],"name":"iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"Portable"}],"name":"Portable","ports":["Portable"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"Optical 1"}],"name":"Optical 1","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"Optical 2"}],"name":"Optical 2","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"HDMI"}],"name":"HDMI","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HB905SA"
+  "model": "HB905SA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Home","select":[{"commands":["Home"],"setType":2}]},
+        {"name":"Toggle","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "ToggleInput": {
+      "finish": ["Enter"],
+      "next": ["InputNext"],
+      "start": ["InputNext"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"iPod"},
+        {"name":"Aux"},
+        {"name":"Portable"},
+        {"name":"Optical 1"},
+        {"name":"Optical 2"},
+        {"name":"HDMI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 23000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/0a/0a552ec2477e54de.json",
   "deviceType": 1,
   "globalDeviceId": 468670,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","Exit","InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputHdmi1","InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2","InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["Exit",{"delayMs":500},"Exit",{"delayMs":500},"SmartHub"],"name":"SmartHub","ports":["Streaming"]},
+      {"commands":["Ambient"],"name":"Ambient"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UN43NU6900FXZA"
+  "model": "UN43NU6900FXZA",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

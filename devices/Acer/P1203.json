@@ -2,6 +2,34 @@
   "codeset": "codesets/86/86bb872838ff24f3.json",
   "deviceType": 7,
   "globalDeviceId": 208500,
+  "inputs": {
+    "list": [
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputDvi"],"name":"DVI"},
+      {"commands":["InputHdmi"],"name":"HDMI"},
+      {"commands":["InputRgb"],"name":"RGB"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Acer",
-  "model": "P1203"
+  "model": "P1203",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

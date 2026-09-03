@@ -2,6 +2,51 @@
   "codeset": "codesets/d0/d0d6f272bb61077f.json",
   "deviceType": 13,
   "globalDeviceId": 37376,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"PC2 BNC"}],"name":"PC2 BNC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PDP424"
+  "model": "PDP424",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputVideo5"],
+      "values": [
+        {"name":"Component"},
+        {"name":"PC2 BNC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputVideo5"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo4"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

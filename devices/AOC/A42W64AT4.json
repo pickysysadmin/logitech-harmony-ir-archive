@@ -1,7 +1,65 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/38/3843ddbd8416e61c.json",
   "deviceType": 1,
   "globalDeviceId": 77931,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV1 CVBS Rear"}],"name":"AV1 CVBS Rear"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV1 S-Video Rear"}],"name":"AV1 S-Video Rear"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV2 CVBS Side"}],"name":"AV2 CVBS Side"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV2 S-Video Side"}],"name":"AV2 S-Video Side"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV3 Component 1"}],"name":"AV3 Component 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV4 Component 2"}],"name":"AV4 Component 2"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "AOC",
-  "model": "A42W64AT4"
+  "model": "A42W64AT4",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputDigital"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDigital"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV1 CVBS Rear"},
+        {"name":"AV1 S-Video Rear"},
+        {"name":"AV2 CVBS Side"},
+        {"name":"AV2 S-Video Side"},
+        {"name":"AV3 Component 1"},
+        {"name":"AV4 Component 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

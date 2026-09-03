@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/5c/5c1c66df67c9dde0.json",
   "deviceType": 12,
   "globalDeviceId": 117507,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"PC"},
+      {"name":"Ekstern1"}
+    ],
+    "next": ["Menu"],
+    "type": 2
+  },
   "manufacturer": "Force",
-  "model": "DVD-Master"
+  "model": "DVD-Master",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["Select"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

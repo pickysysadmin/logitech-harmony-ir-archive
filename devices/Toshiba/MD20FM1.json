@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/50/5069f7254d44d287.json",
   "deviceType": 37,
   "globalDeviceId": 44672,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV/DVD"},{"set":"TV/DVDInput","to":"TV"},{"delayMs":500},{"set":"VideoInput","to":"Antenna"}],"name":"Antenna"},
+      {"commands":[{"set":"InputType","to":"TV/DVD"},{"set":"TV/DVDInput","to":"TV"},{"set":"VideoInput","to":"L1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"TV/DVD"},{"set":"TV/DVDInput","to":"TV"},{"set":"VideoInput","to":"L2"}],"name":"Line 2"},
+      {"commands":[{"set":"InputType","to":"TV/DVD"},{"set":"TV/DVDInput","to":"DVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "MD20FM1"
+  "model": "MD20FM1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"TV/DVD","select":[{"commands":["TvDvd"],"setType":2}]}
+      ]
+    },
+    "TV/DVDInput": {
+      "next": ["TvDvd"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DVD"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Antenna"},
+        {"name":"L1"},
+        {"name":"L2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

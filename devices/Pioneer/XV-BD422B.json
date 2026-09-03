@@ -2,6 +2,62 @@
   "codeset": "codesets/f4/f48884e424a30bb9.json",
   "deviceType": 22,
   "globalDeviceId": 249086,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Home"}],"name":"Home Media Gallery"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Tuner"}],"name":"FM Radio"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Aux"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Portables"}],"name":"Portable"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Arc"}],"name":"ARC"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Optical1"}],"name":"Optical In 1"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Optical2"}],"name":"Optical In 2"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"HDMI2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "XV-BD422B"
+  "model": "XV-BD422B",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Home"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Home","select":[{"commands":["HomeMediaGallery"],"setType":2}]},
+        {"name":"Menu","select":[{"commands":["InputNext",{"set":"MenuInput","to":"FM"}],"setType":2}]}
+      ]
+    },
+    "MenuInput": {
+      "finish": ["Select"],
+      "next": ["InputNext"],
+      "start": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Bluetooth"},
+        {"name":"Aux"},
+        {"name":"Portables"},
+        {"name":"Arc"},
+        {"name":"Optical1"},
+        {"name":"Optical2"},
+        {"name":"HDMI1"},
+        {"name":"HDMI2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

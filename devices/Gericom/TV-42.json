@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/22/22c3fa2723aed8f8.json",
   "deviceType": 1,
   "globalDeviceId": 78341,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"Analog RGB"},
+      {"name":"Digital RGB"},
+      {"name":"DTV YPBPR"}
+    ],
+    "next": ["ChannelDown"],
+    "start": ["TvVideo"],
+    "type": 4
+  },
   "manufacturer": "Gericom",
-  "model": "TV-42"
+  "model": "TV-42",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

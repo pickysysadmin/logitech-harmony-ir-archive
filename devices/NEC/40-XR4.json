@@ -2,6 +2,64 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 152431,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"Video1"},
+      {"commands":["InputVideo2"],"name":"Video2"},
+      {"commands":["InputVideo3"],"name":"video3"},
+      {"commands":["HD 1"],"name":"DVD/HD1"},
+      {"commands":["HD 2"],"name":"DVD/HD2"},
+      {"commands":["HD 3"],"name":"DVD/HD3"},
+      {"commands":["RGB/PCToggle"],"name":"PC/RGB"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "40-XR4"
+  "model": "40-XR4",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "DTVInput": {
+      "next": ["HD 1"],
+      "values": [
+        {"name":"DTV-1"},
+        {"name":"DTV-2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["Video 1"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["RGB/PCToggle"],"setType":2}]},
+        {"name":"DTV","select":[{"commands":["HD 1"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB-1"},
+        {"name":"RGB-3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Video 1"],
+      "values": [
+        {"name":"Video-1"},
+        {"name":"Video-2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4500,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 36161,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo4"],"name":"Video 1"},
+      {"commands":["InputVideo4"],"name":"Video 2"},
+      {"commands":["InputVideo4","InputNext"],"name":"Video 3"},
+      {"commands":["4","Select"],"name":"Front"},
+      {"commands":["InputSat/Cable"],"name":"Component"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "P61310JX2"
+  "model": "P61310JX2",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

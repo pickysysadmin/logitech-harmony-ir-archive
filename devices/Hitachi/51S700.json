@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/83/839a3ac805f5fdfe.json",
   "deviceType": 1,
   "globalDeviceId": 128590,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"Video 4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"Video 5"}],"name":"Video 5"},
+      {"commands":[{"set":"InputType","to":"Ant"},{"set":"AntInput","to":"AntennaA"}],"name":"AntennaA"},
+      {"commands":[{"set":"InputType","to":"Ant"},{"set":"AntInput","to":"AntennaB"}],"name":"AntennaB"},
+      {"commands":[{"set":"InputType","to":"Ant"},{"set":"AntInput","to":"AntennaC"}],"name":"AntennaC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "51S700"
+  "model": "51S700",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AntInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AntennaA"},
+        {"name":"AntennaB"},
+        {"name":"AntennaC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Video 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"Video 5","select":[{"commands":["InputVideo5"],"setType":2}]},
+        {"name":"Ant","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

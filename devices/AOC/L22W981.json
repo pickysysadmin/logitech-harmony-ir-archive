@@ -2,6 +2,52 @@
   "codeset": "codesets/c2/c2ad138a29fe23a6.json",
   "deviceType": 1,
   "globalDeviceId": 230909,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Scart"}],"name":"Scart","ports":["Scart"]},
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"Pc","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YPbPr"}],"name":"YPbPr","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Side AV"}],"name":"Side AV","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Hdmi 1"}],"name":"Hdmi 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Hdmi 2"}],"name":"Hdmi 2","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "AOC",
-  "model": "L22W981"
+  "model": "L22W981",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Scart","select":[{"commands":["InputScart"],"setType":1}]},
+        {"name":"Pc","select":[{"commands":["InputPc"],"setType":1}]},
+        {"name":"Tv","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":1}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"YPbPr"},
+        {"name":"Side AV"},
+        {"name":"Hdmi 1"},
+        {"name":"Hdmi 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,51 @@
   "codeset": "codesets/ea/ea6e6eb77d0af6f8.json",
   "deviceType": 7,
   "globalDeviceId": 204375,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer1"}],"name":"Computer1"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"SVideo"}],"name":"SVideo"},
+      {"commands":[{"set":"InputType","to":"Computer2"},{"set":"Computer2Input","to":"Computer2(Digital)"}],"name":"Computer2(Digital)"},
+      {"commands":[{"set":"InputType","to":"Computer2"},{"set":"Computer2Input","to":"Computer2(Analog)"}],"name":"Computer2(Analog)"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "NP310G"
+  "model": "NP310G",
+  "power": {
+    "off": ["PowerOff","PowerOff"],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "Computer2Input": {
+      "next": ["InputComputer2"],
+      "values": [
+        {"name":"Computer2(Digital)"},
+        {"name":"Computer2(Analog)"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Computer1","select":[{"commands":["InputComputer1"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"SVideo","select":[{"commands":["InputSVideo"],"setType":2}]},
+        {"name":"Computer2","select":[{"commands":["InputComputer2"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

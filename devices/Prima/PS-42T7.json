@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/cf/cf996283c86446f7.json",
   "deviceType": 1,
   "globalDeviceId": 201522,
+  "inputs": {
+    "list": [
+      {"commands":["ChannelUp"],"name":"TV"},
+      {"commands":["ChannelUp","StartInput","ChannelDown","VolumeUp"],"name":"Video 1"},
+      {"commands":["ChannelUp","StartInput","ChannelDown","ChannelDown","VolumeUp"],"name":"Video 2"},
+      {"commands":["ChannelUp","StartInput","ChannelDown","ChannelDown","ChannelDown","VolumeUp"],"name":"Video 3"},
+      {"commands":["ChannelUp","StartInput","ChannelDown","ChannelDown","ChannelDown","ChannelDown","VolumeUp"],"name":"Component 1"},
+      {"commands":["ChannelUp","StartInput","ChannelDown","ChannelDown","ChannelDown","ChannelDown","ChannelDown","VolumeUp"],"name":"Component 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Prima",
-  "model": "PS-42T7"
+  "model": "PS-42T7",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 175040,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenna"],"name":"TV"},
+      {"commands":["InputVideo"],"name":"EXT1"},
+      {"commands":["InputSVideo"],"name":"EXT2"},
+      {"commands":["InputSVideo",{"delayMs":500},"TvVideo"],"name":"HDMI"},
+      {"commands":["InputSVideo",{"delayMs":500},"TvVideo","TvVideo"],"name":"DVI"},
+      {"commands":["InputRGB"],"name":"PC"},
+      {"commands":["InputComponent 1"],"name":"Comp.1"},
+      {"commands":["InputComponent 2"],"name":"Comp.2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "LW32A33WX"
+  "model": "LW32A33WX",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

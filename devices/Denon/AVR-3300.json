@@ -2,6 +2,39 @@
   "codeset": "codesets/6c/6c4991df8597c770.json",
   "deviceType": 5,
   "globalDeviceId": 37001,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"Dvd","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVDP"],"name":"Vdp","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTv/Dbs"],"name":"Tv/Dbs","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVAux"],"name":"V.Aux","ports":["Composite","S-Video"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputVcr1"],"name":"Vcr-1","ports":["Composite","S-Video"]},
+      {"commands":["InputCd"],"name":"Cd","ports":["Composite","Coaxial"]},
+      {"commands":["InputMd/Tape1"],"name":"Md/Tape","ports":["Composite"]},
+      {"commands":["InputVcr2"],"name":"Vcr-2","ports":["Composite","S-Video"]},
+      {"commands":["InputExtIn"],"name":"Ext. In","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-3300"
+  "model": "AVR-3300",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

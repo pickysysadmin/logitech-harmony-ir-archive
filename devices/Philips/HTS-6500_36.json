@@ -2,6 +2,50 @@
   "codeset": "codesets/37/37daec0fbe17d4ab.json",
   "deviceType": 22,
   "globalDeviceId": 111247,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AuxAnalog"}],"name":"AuxAnalog"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AuxDigital"}],"name":"AuxDigital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS-6500/36"
+  "model": "HTS-6500/36",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": [
+        {"delayMs":8000},
+        "InputAux"
+      ],
+      "values": [
+        {"name":"AuxAnalog"},
+        {"name":"AuxDigital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":1}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":1}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

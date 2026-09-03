@@ -1,7 +1,46 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/3a/3ae01ffb8d94f394.json",
   "deviceType": 1,
   "globalDeviceId": 178686,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV2S"},
+      {"name":"AV3"},
+      {"name":"AV3S"},
+      {"name":"Component"},
+      {"name":"PC"},
+      {"name":"Hdmi1"},
+      {"name":"Hdmi2"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["AV"],
+    "type": 4
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-50PZ70"
+  "model": "TH-50PZ70",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 9500,
+    "pressMinRepeats": 3
+  }
 }

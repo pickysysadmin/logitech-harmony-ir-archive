@@ -2,6 +2,52 @@
   "codeset": "codesets/85/85282e24346298fc.json",
   "deviceType": 22,
   "globalDeviceId": 241687,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AU 1"}],"name":"AU 1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AU 2"}],"name":"AU 2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AU 3"}],"name":"AU 3"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AU 4"}],"name":"AU 4"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"BT"}],"name":"BT"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Genesis",
-  "model": "GT-2.0"
+  "model": "GT-2.0",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AU 1"},
+        {"name":"AU 2"},
+        {"name":"AU 3"},
+        {"name":"AU 4"},
+        {"name":"AV 1"},
+        {"name":"BT"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

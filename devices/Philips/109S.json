@@ -2,6 +2,53 @@
   "codeset": "codesets/70/7011f29ee27fd4c0.json",
   "deviceType": 13,
   "globalDeviceId": 14113,
+  "inputs": {
+    "list": [
+      {"name":"PC1"}
+    ],
+    "next": [
+      {"set":"InputType","to":"AV"},
+      {"set":"AVInput","to":"AV1"}
+    ],
+    "type": 6
+  },
   "manufacturer": "Philips",
-  "model": "109S"
+  "model": "109S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["TVVideo"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["TVVideo"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["PcVideo"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["PcVideo"],
+      "values": [
+        {"name":"PC1"},
+        {"name":"PC2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

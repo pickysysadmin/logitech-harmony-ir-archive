@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/78/78e744900f7341d0.json",
   "deviceType": 1,
   "globalDeviceId": 262056,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputVideo"],"name":"Component/AV","ports":["Component","Composite"]},
+      {"commands":["InputVga"],"name":"VGA","ports":["PC"]},
+      {"commands":["InputVga",{"delayMs":200},"Input","DirectionDown"],"name":"USB(Photos)","ports":["USB"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Insignia",
-  "model": "NS-40D510NA15"
+  "model": "NS-40D510NA15",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

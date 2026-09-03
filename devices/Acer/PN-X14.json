@@ -2,6 +2,35 @@
   "codeset": "codesets/41/413be22b29060416.json",
   "deviceType": 7,
   "globalDeviceId": 253500,
+  "inputs": {
+    "list": [
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputUsbA"],"name":"SD/USB A"},
+      {"commands":["InputHdmi"],"name":"HDMI/DVI"},
+      {"commands":["Lan/WiFi"],"name":"Lan/WiFi"},
+      {"commands":["InputUsbB"],"name":"USB B"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Acer",
-  "model": "PN-X14"
+  "model": "PN-X14",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

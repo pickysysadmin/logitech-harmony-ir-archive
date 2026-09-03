@@ -2,6 +2,57 @@
   "codeset": "codesets/5a/5aeb05b03ea364fa.json",
   "deviceType": 22,
   "globalDeviceId": 209208,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"iPod/Usb"},{"set":"iPod/UsbInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"iPod/Usb"},{"set":"iPod/UsbInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Fm/Ext-In"},{"set":"Fm/Ext-InInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Fm/Ext-In"},{"set":"Fm/Ext-InInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Fm/Ext-In"},{"set":"Fm/Ext-InInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Fm/Ext-In"},{"set":"Fm/Ext-InInput","to":"D-IN"}],"name":"D-IN"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-PT460 (AP)"
+  "model": "SC-PT460 (AP)",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Fm/Ext-InInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"AUX"},
+        {"name":"D-IN"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"iPod/Usb","select":[{"commands":["InputiPod/Usb"],"setType":2}]},
+        {"name":"Fm/Ext-In","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "iPod/UsbInput": {
+      "next": ["InputiPod/Usb"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"USB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

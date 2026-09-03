@@ -2,6 +2,67 @@
   "codeset": "codesets/a5/a5bb914d38baf13e.json",
   "deviceType": 1,
   "globalDeviceId": 159902,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"commands":[{"set":"InputType","to":"AVS"},{"set":"AVS","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AVS"},{"set":"AVS","to":"AV2"},{"set":"AV2Input","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AVS"},{"set":"AVS","to":"AV2"},{"set":"AV2Input","to":"AV2S"}],"name":"AV2S"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"AVS","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"AVS","to":"Hdmi"}],"name":"Hdmi"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-R42EL7KS"
+  "model": "TH-R42EL7KS",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AV2Input": {
+      "values": [
+        {"name":"AV2","select":[{"commands":["DirectionLeft"],"setType":2}]},
+        {"name":"AV2S","select":[{"commands":["DirectionRight"],"setType":2}]}
+      ]
+    },
+    "AVS": {
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"Component"},
+        {"name":"Hdmi"},
+        {"name":"TV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AVS","select":[{"commands":["AV"],"setType":1}]},
+        {"name":"Component","select":[{"commands":["InputHdmi1","AV","DirectionUp","OK"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["TV"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 9500,
+    "pressMinRepeats": 3
+  }
 }

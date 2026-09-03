@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b8/b81d08d9453a9819.json",
   "deviceType": 1,
   "globalDeviceId": 159398,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnt/Cable"],"name":"TV"},
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo2",{"delayMs":2500},"TvVideo"],"name":"S-Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "RZ-20LA90"
+  "model": "RZ-20LA90",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,35 @@
   "codeset": "codesets/59/593f86f10fa2d449.json",
   "deviceType": 19,
   "globalDeviceId": 512258,
+  "inputs": {
+    "list": [
+      {"name":"D.IN"},
+      {"name":"HDMI"},
+      {"name":"WIFI"},
+      {"name":"BT"}
+    ],
+    "next": ["Source"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HW-Q7CB"
+  "model": "HW-Q7CB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

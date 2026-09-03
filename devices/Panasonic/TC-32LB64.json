@@ -2,6 +2,49 @@
   "codeset": "codesets/91/915826fb88a29fa2.json",
   "deviceType": 1,
   "globalDeviceId": 250644,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"ANT/Cable In"}],"name":"ANT/Cable In"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Video"}],"name":"Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TC-32LB64"
+  "model": "TC-32LB64",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"ANT/Cable In"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"Component"},
+        {"name":"Video"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"USB","select":[{"commands":["MediaPlayer"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

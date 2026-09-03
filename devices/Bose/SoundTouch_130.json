@@ -2,6 +2,51 @@
   "codeset": "codesets/80/80bdc6c81ed4bb83.json",
   "deviceType": 33,
   "globalDeviceId": 273036,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CBL-SAT"}],"name":"CBL-SAT"},
+      {"commands":[{"set":"InputType","to":"BD-DVD"}],"name":"BD-DVD"},
+      {"commands":[{"set":"InputType","to":"GAME"}],"name":"GAME"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"SoundTouch/Bluetooth"},{"set":"SoundTouch/BluetoothInput","to":"SoundTouch"}],"name":"SoundTouch"},
+      {"commands":[{"set":"InputType","to":"SoundTouch/Bluetooth"},{"set":"SoundTouch/BluetoothInput","to":"Bluetooth"}],"name":"Bluetooth"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Bose",
-  "model": "SoundTouch 130"
+  "model": "SoundTouch 130",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CBL-SAT","select":[{"commands":["InputCbl-Sat"],"setType":2}]},
+        {"name":"BD-DVD","select":[{"commands":["InputBd-Dvd"],"setType":2}]},
+        {"name":"GAME","select":[{"commands":["InputGame"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"SoundTouch/Bluetooth","select":[{"commands":["InputSoundTouch/Bluetooth"],"setType":2}]}
+      ]
+    },
+    "SoundTouch/BluetoothInput": {
+      "next": ["InputSoundTouch/Bluetooth"],
+      "values": [
+        {"name":"SoundTouch"},
+        {"name":"Bluetooth"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

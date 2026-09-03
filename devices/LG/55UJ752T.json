@@ -1,7 +1,67 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/be/bed361edfedfa91b.json",
   "deviceType": 1,
   "globalDeviceId": 349702,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"Screen","to":"Antenna"},{"set":"TVInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"Screen","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"Screen","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"Screen","to":"HDMI3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"Screen","to":"HDMI4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"Screen","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"Screen","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"Screen","to":"SmartTV"}],"name":"Smart TV"},
+      {"commands":[{"set":"Screen","to":"Amazon"}],"name":"Amazon"},
+      {"commands":[{"set":"Screen","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "55UJ752T"
+  "model": "55UJ752T",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Screen": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["InputTv",{"delayMs":2000}],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"HDMI4","select":[{"commands":["InputHdmi4"],"setType":2}]},
+        {"name":"AV1","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"SmartTV","select":[{"commands":["Home"],"setType":2}]},
+        {"name":"Amazon","select":[{"commands":["Amazon"],"setType":2}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"},
+        {"name":"Radio"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

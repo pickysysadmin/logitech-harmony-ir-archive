@@ -2,6 +2,37 @@
   "codeset": "codesets/8a/8ac52d3ec7e8c275.json",
   "deviceType": 5,
   "globalDeviceId": 154009,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Optical"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd/Hdp"],"name":"DVD/HDP","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputTv/Cbl"],"name":"Tv/Cbl","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Component","Composite","S-Video","Optical"]},
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["Composite"]},
+      {"commands":["InputCdr/Tape"],"name":"Cdr/Tape","ports":["Composite"]},
+      {"commands":["InputAux"],"name":"Aux","ports":["Composite"]},
+      {"commands":["InputiPod"],"name":"iPod","ports":["Composite","S-Video"]},
+      {"commands":["InputSatTu"],"name":"SatTu","ports":["Others"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-1508"
+  "model": "AVR-1508",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

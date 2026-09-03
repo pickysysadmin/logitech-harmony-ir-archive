@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/98/982ef4c41648ebb5.json",
   "deviceType": 1,
   "globalDeviceId": 178792,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input 1"}],"name":"Input 1","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Input 2"}],"name":"Input 2","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Input 3"}],"name":"Input 3","ports":["Component","Composite"]},
+      {"commands":[{"set":"InputType","to":"Hdmi 4"}],"name":"Hdmi 4","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Hdmi 5"}],"name":"Hdmi 5","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Hdmi 6"}],"name":"Hdmi 6","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Hdmi 7"}],"name":"Hdmi 7","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Antenna","to":"Ant A"}],"name":"Ant A","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Antenna","to":"Ant B"}],"name":"Ant B","ports":["Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "Pro-150FD"
+  "model": "Pro-150FD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Antenna": {
+      "next": ["InputAntennaA/B"],
+      "values": [
+        {"name":"Ant A"},
+        {"name":"Ant B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input 1","select":[{"commands":["InputVideo1"],"setType":1}]},
+        {"name":"Input 2","select":[{"commands":["InputVideo2"],"setType":1}]},
+        {"name":"Input 3","select":[{"commands":["InputVideo3"],"setType":1}]},
+        {"name":"Hdmi 4","select":[{"commands":["InputVideo4"],"setType":1}]},
+        {"name":"Hdmi 5","select":[{"commands":["InputVideo5"],"setType":1}]},
+        {"name":"Hdmi 6","select":[{"commands":["InputVideo6"],"setType":1}]},
+        {"name":"Hdmi 7","select":[{"commands":["InputVideo7"],"setType":1}]},
+        {"name":"Tuner","select":[{"commands":["InputAntennaA/B"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

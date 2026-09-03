@@ -2,6 +2,40 @@
   "codeset": "codesets/44/44df86e45c0b4174.json",
   "deviceType": 5,
   "globalDeviceId": 499835,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD"},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT"},
+      {"commands":["InputStrmBox"],"name":"STRM BOX"},
+      {"commands":["InputGame"],"name":"Game"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputAux"],"name":"Aux"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM"},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM"},
+      {"commands":["InputNet"],"name":"NET"},
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputBluetooth"],"name":"Bluetooth"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-NR6050"
+  "model": "TX-NR6050",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

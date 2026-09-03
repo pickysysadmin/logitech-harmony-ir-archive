@@ -2,6 +2,38 @@
   "codeset": "codesets/6f/6fae55f0a31ef268.json",
   "deviceType": 1,
   "globalDeviceId": 163977,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Ext1-Scart"},
+      {"name":"Ext2-Scart"},
+      {"name":"Ext3-Component"},
+      {"name":"Ext4-FAV"},
+      {"name":"Ext5-HMDI"},
+      {"name":"Ext6-HDMI"},
+      {"name":"PC"},
+      {"name":"DTV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Zepto",
-  "model": "ZView 42"
+  "model": "ZView 42",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

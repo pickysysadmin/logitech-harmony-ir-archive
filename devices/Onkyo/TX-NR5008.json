@@ -2,6 +2,40 @@
   "codeset": "codesets/b2/b2e14ab0ca07d943.json",
   "deviceType": 5,
   "globalDeviceId": 208918,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD","ports":["HDMI","Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR","ports":["HDMI","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["HDMI","Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputGame"],"name":"Game","ports":["HDMI","Component","Composite","Optical","S-Video"]},
+      {"commands":["InputPC"],"name":"PC","ports":["HDMI","Composite","Optical"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["HDMI","Composite","Optical"]},
+      {"commands":["InputTape"],"name":"Tape","ports":["Composite","Optical"]},
+      {"commands":["InputTv/Cd"],"name":"TV/CD","ports":["Composite","Optical"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputPort"],"name":"Port","ports":["Portable"]},
+      {"commands":["InputNet/Usb"],"name":"NET/USB","ports":["USB"]},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM","ports":["AM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-NR5008"
+  "model": "TX-NR5008",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

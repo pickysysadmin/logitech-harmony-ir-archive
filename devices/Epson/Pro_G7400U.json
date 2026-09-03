@@ -2,6 +2,37 @@
   "codeset": "codesets/a8/a8f3a228cd397a36.json",
   "deviceType": 7,
   "globalDeviceId": 458454,
+  "inputs": {
+    "list": [
+      {"commands":["InputComputer"],"name":"Computer","ports":["PC"]},
+      {"commands":["InputBnc"],"name":"BNC","ports":["Component"]},
+      {"commands":["InputHdmi"],"name":"HDMI","ports":["HDMI"]},
+      {"commands":["InputLAN"],"name":"LAN","ports":["Streaming"]},
+      {"commands":["InputHdBaseT"],"name":"HDBaseT","ports":["Streaming"]},
+      {"commands":["InputSDI"],"name":"SDI","ports":["SD-Card"]},
+      {"commands":["InputDIV"],"name":"DVI-D","ports":["DVI"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "Pro G7400U"
+  "model": "Pro G7400U",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

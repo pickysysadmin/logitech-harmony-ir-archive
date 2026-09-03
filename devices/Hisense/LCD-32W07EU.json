@@ -2,6 +2,39 @@
   "codeset": "codesets/a7/a76ae11a922e1b28.json",
   "deviceType": 1,
   "globalDeviceId": 169240,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"Tv"},
+      {"name":"Scart"},
+      {"name":"AV"},
+      {"name":"S-Video"},
+      {"name":"Component"},
+      {"name":"HDMI"},
+      {"name":"VGA"}
+    ],
+    "next": ["ChannelDown"],
+    "start": [
+      {"set":"Input","to":"Tv"},
+      "Source"
+    ],
+    "type": 4
+  },
   "manufacturer": "Hisense",
-  "model": "LCD-32W07EU"
+  "model": "LCD-32W07EU",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

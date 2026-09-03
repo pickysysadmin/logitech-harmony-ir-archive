@@ -2,6 +2,55 @@
   "codeset": "codesets/38/38fcd07d1689bd37.json",
   "deviceType": 21,
   "globalDeviceId": 63348,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Videos"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Videos"},{"set":"VideoInput","to":"5CH"}],"name":"5.1 CH"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Aiwa",
-  "model": "Z-VR80"
+  "model": "Z-VR80",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Videos","select":[{"commands":["InputVideo/Aux"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo/Aux"],
+      "values": [
+        {"name":"Video"},
+        {"name":"5Ch"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

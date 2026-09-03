@@ -1,7 +1,65 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 50947,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"ColorMenu","to":"ON"},{"set":"AVType","to":"AV1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"ColorMenu","to":"ON"},{"set":"AVType","to":"AV2"},{"set":"AV2Input","to":"AV2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"ColorMenu","to":"ON"},{"set":"AVType","to":"AV2"},{"set":"AV2Input","to":"AV2s"}],"name":"Av2s"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-32DTX10"
+  "model": "TX-32DTX10",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AV2Input": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2s"}
+      ]
+    },
+    "AVType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Green"],"setType":2}]}
+      ]
+    },
+    "ColorMenu": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Red"],"setType":2}]}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext",{"set":"ColorMenu","to":"ON"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

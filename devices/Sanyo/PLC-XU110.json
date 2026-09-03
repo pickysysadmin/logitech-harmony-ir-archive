@@ -2,6 +2,51 @@
   "codeset": "codesets/77/7750a7ee0ba0c9fd.json",
   "deviceType": 7,
   "globalDeviceId": 128145,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 1a"}],"name":"Computer 1a"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 1d"}],"name":"Computer 1d"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 2"}],"name":"Computer 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sanyo",
-  "model": "PLC-XU110"
+  "model": "PLC-XU110",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle",
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "ComputerInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"Computer 1a"},
+        {"name":"Computer 1d"},
+        {"name":"Computer 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Computer","select":[{"commands":["InputPC"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 40000,
+    "pressMinRepeats": 3
+  }
 }

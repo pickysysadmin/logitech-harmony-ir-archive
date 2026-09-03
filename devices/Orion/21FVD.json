@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/89/89b23558b383f386.json",
   "deviceType": 38,
   "globalDeviceId": 181649,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"Tv/VcrInput","to":"Tv"},{"set":"AvInput","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"Tv/VcrInput","to":"Vcr"}],"name":"Vcr"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"Tv/VcrInput","to":"Tv"},{"set":"AvInput","to":"Av1"}],"name":"Av1"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"Tv/VcrInput","to":"Tv"},{"set":"AvInput","to":"Av2"}],"name":"Av2"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Orion",
-  "model": "21FVD"
+  "model": "21FVD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AvInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Av1"},
+        {"name":"Av2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTV/VCR"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]}
+      ]
+    },
+    "Tv/VcrInput": {
+      "next": ["InputTV/VCR"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Vcr"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

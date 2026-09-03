@@ -2,6 +2,39 @@
   "codeset": "codesets/48/48fe258e5c3035b3.json",
   "deviceType": 7,
   "globalDeviceId": 143888,
+  "inputs": {
+    "list": [
+      {"name":"RGB"},
+      {"name":"HDMI"},
+      {"name":"VIDEO"},
+      {"name":"S-VIDEO"},
+      {"name":"component"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "AN215"
+  "model": "AN215",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":200},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "onReset": [
+      {"set":"Input","to":"component"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 22000,
+    "pressMinRepeats": 3
+  }
 }

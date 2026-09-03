@@ -2,6 +2,55 @@
   "codeset": "codesets/e2/e293399e09391095.json",
   "deviceType": 22,
   "globalDeviceId": 249091,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DIGITAL"}],"name":"DIGITAL"},
+      {"commands":[{"set":"InputType","to":"USB/AUX"},{"set":"USB/AUXInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB/AUX"},{"set":"USB/AUXInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Scart/FM"},{"set":"Scart/FMInput","to":"Scart"}],"name":"Scart"},
+      {"commands":[{"set":"InputType","to":"Scart/FM"},{"set":"Scart/FMInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Thomson",
-  "model": "HT121SB"
+  "model": "HT121SB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"DIGITAL","select":[{"commands":["InputDigital"],"setType":2}]},
+        {"name":"USB/AUX","select":[{"commands":["InputUsb/Aux"],"setType":2}]},
+        {"name":"Scart/FM","select":[{"commands":["InputScart/Fm"],"setType":2}]}
+      ]
+    },
+    "Scart/FMInput": {
+      "next": ["InputScart/Fm"],
+      "values": [
+        {"name":"Scart"},
+        {"name":"FM"}
+      ]
+    },
+    "USB/AUXInput": {
+      "next": ["InputUsb/Aux"],
+      "values": [
+        {"name":"USB"},
+        {"name":"AUX"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

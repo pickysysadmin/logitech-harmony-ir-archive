@@ -2,6 +2,33 @@
   "codeset": "codesets/91/9147147c878f6704.json",
   "deviceType": 21,
   "globalDeviceId": 31070,
+  "inputs": {
+    "list": [
+      {"name":"Aux"},
+      {"name":"Tape 1/2"},
+      {"name":"Tuner"},
+      {"name":"Cd"}
+    ],
+    "next": ["SurroundOn"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "FW386C/37"
+  "model": "FW386C/37",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Aux"}
+    ],
+    "toggle": ["PowerToggle2"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

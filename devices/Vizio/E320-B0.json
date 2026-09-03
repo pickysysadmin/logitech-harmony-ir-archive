@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/3f/3f1d5b7b56eed455.json",
   "deviceType": 1,
   "globalDeviceId": 260729,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","InputTv"],"name":"TV"},
+      {"commands":["Exit","InputComponent"],"name":"Component"},
+      {"commands":["Exit","InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["Exit","InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["Vudu"],"name":"Vudu"},
+      {"commands":["VIA"],"name":"Vizio Internet Apps"},
+      {"commands":["Netflix","Ok"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Vizio",
-  "model": "E320-B0"
+  "model": "E320-B0",
+  "power": {
+    "off": ["Exit","PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 20000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 18000,
+    "pressMinRepeats": 1
+  }
 }

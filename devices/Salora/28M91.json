@@ -2,6 +2,34 @@
   "codeset": "codesets/8c/8c8fb4a225b1db6e.json",
   "deviceType": 1,
   "globalDeviceId": 124168,
+  "inputs": {
+    "finish": ["1"],
+    "list": [
+      {"commands":["0"],"name":"Scart 1"},
+      {"commands":["2"],"name":"Scart 2"}
+    ],
+    "start": ["10+"],
+    "type": 3
+  },
   "manufacturer": "Salora",
-  "model": "28M91"
+  "model": "28M91",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":2500}
+    ],
+    "on": [
+      {"command":"1","durationMs":2500}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

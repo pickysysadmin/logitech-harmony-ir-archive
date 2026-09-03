@@ -2,6 +2,33 @@
   "codeset": "codesets/82/825642bc3ad836a8.json",
   "deviceType": 7,
   "globalDeviceId": 242483,
+  "inputs": {
+    "list": [
+      {"commands":["InputComputer1"],"name":"Computer 1"},
+      {"commands":["InputComputer2"],"name":"Computer 2"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-video"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputHdmi"],"name":"HDMI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sanyo",
-  "model": "PDG-DWL2500"
+  "model": "PDG-DWL2500",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

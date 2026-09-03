@@ -2,6 +2,38 @@
   "codeset": "codesets/27/27c502b599174a1e.json",
   "deviceType": 1,
   "globalDeviceId": 216299,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"0 AV"},
+      {"name":"1 EXT1"},
+      {"name":"2 EXT2"},
+      {"name":"3 EXT3"},
+      {"name":"4 EXT4"},
+      {"name":"5 EXT5"},
+      {"name":"6 EXT6"}
+    ],
+    "next": ["InputNext"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "JVC",
-  "model": "LT-46Z70B4"
+  "model": "LT-46Z70B4",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"2 EXT2"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

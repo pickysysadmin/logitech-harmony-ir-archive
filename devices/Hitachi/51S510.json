@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 113449,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaSwitch","to":"AntennaA"}],"name":"Ant A"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaSwitch","to":"AntennaB"}],"name":"Ant B"},
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Vid 1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Vid 2"},
+      {"commands":[{"set":"InputType","to":"Video3"}],"name":"Vid 3"},
+      {"commands":[{"set":"InputType","to":"Video4"}],"name":"Vid 4"},
+      {"commands":[{"set":"InputType","to":"Video5"}],"name":"Vid 5"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "51S510"
+  "model": "51S510",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaSwitch": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"AntennaA"},
+        {"name":"AntennaB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video1","select":[{"commands":["Input 1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["Input 2"],"setType":2}]},
+        {"name":"Video3","select":[{"commands":["Input 3"],"setType":2}]},
+        {"name":"Video4","select":[{"commands":["Input 4"],"setType":2}]},
+        {"name":"Video5","select":[{"commands":["Input 5"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["TvVideo"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 1
+  }
 }

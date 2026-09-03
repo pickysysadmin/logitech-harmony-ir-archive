@@ -2,6 +2,31 @@
   "codeset": "codesets/a8/a8547d18fe86ba3f.json",
   "deviceType": 1,
   "globalDeviceId": 72665,
+  "inputs": {
+    "list": [
+      {"commands":["Red"],"name":"AV1"},
+      {"commands":["TvVideo"],"name":"AV2"},
+      {"commands":["Green"],"name":"AV3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-25AD50F"
+  "model": "TX-25AD50F",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": [
+      {"command":"3","durationMs":2000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

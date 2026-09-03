@@ -2,6 +2,54 @@
   "codeset": "codesets/dc/dc2e7c25467c9da0.json",
   "deviceType": 19,
   "globalDeviceId": 42554,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Tape","to":"Off"},{"set":"CurrentInput","to":"Phono"}],"name":"Phono","ports":["Composite"]},
+      {"commands":[{"set":"Tape","to":"Off"},{"set":"CurrentInput","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"Tape","to":"Off"},{"set":"CurrentInput","to":"Tuner"}],"name":"Tuner","ports":["Composite"]},
+      {"commands":[{"set":"Tape","to":"Off"},{"set":"CurrentInput","to":"CD"}],"name":"CD","ports":["Composite"]},
+      {"commands":[{"set":"Tape","to":"Off"},{"set":"CurrentInput","to":"AV"}],"name":"AV","ports":["Composite"]},
+      {"commands":[{"set":"Tape","to":"On"}],"name":"Tape","ports":["Composite"]},
+      {"commands":[{"set":"Tape","to":"Off"},{"set":"CurrentInput","to":"VCR"}],"name":"VCR","ports":["Composite"]},
+      {"commands":[{"set":"Tape","to":"Off"},{"set":"CurrentInput","to":"DVD"}],"name":"DVD","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Arcam",
-  "model": "Diva A85"
+  "model": "Diva A85",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "CurrentInput": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"AV","select":[{"commands":["InputAV"],"setType":1}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":1}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":1}]},
+        {"name":"Phono","select":[{"commands":["InputPhono"],"setType":1}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":1}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":1}]}
+      ]
+    },
+    "Tape": {
+      "next": ["InputTape"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

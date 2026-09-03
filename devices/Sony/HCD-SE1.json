@@ -2,6 +2,45 @@
   "codeset": "codesets/27/27c75a199d12c390.json",
   "deviceType": 21,
   "globalDeviceId": 133638,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"MD"}],"name":"MD"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Fm"}],"name":"Fm"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Am"}],"name":"Am"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "HCD-SE1"
+  "model": "HCD-SE1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":1}]},
+        {"name":"MD","select":[{"commands":["InputMd"],"setType":1}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Fm"},
+        {"name":"Am"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

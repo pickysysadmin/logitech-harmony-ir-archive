@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/34/343423c6675e3225.json",
   "deviceType": 1,
   "globalDeviceId": 121477,
+  "inputs": {
+    "list": [
+      {"name":"RF"},
+      {"name":"AV 1"},
+      {"name":"AV 2"},
+      {"name":"SVHS"},
+      {"name":"YUV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Akai",
-  "model": "CT-T29P55A"
+  "model": "CT-T29P55A",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"RF"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

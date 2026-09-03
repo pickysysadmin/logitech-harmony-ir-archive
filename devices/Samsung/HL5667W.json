@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 100018,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenna"],"name":"Antenna"},
+      {"commands":["InputVideo"],"name":"AV1"},
+      {"commands":["InputVideo","TvVideo"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputSVideo"],"name":"S-Video 1"},
+      {"commands":["InputSVideo","TvVideo"],"name":"S-Video 2"},
+      {"commands":["InputSVideo3"],"name":"S-Video 3"},
+      {"commands":["InputComponent 2"],"name":"Component 1"},
+      {"commands":["InputComponent 1"],"name":"Component 2"},
+      {"commands":["HDMI 1"],"name":"HDMI"},
+      {"commands":["InputRGB"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HL5667W"
+  "model": "HL5667W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

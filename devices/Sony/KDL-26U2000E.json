@@ -2,6 +2,35 @@
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 102152,
+  "inputs": {
+    "list": [
+      {"commands":["Digital"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputVideo4"],"name":"PS2"},
+      {"commands":["InputVideo4","InputNext"],"name":"PC"},
+      {"commands":["InputVideo4","InputNext","InputNext"],"name":"HDMI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-26U2000E"
+  "model": "KDL-26U2000E",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

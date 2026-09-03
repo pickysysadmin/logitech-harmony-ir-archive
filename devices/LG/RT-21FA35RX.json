@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d4/d4665b027aa34301.json",
   "deviceType": 1,
   "globalDeviceId": 103454,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"SVideo2"},
+      {"name":"AV3"},
+      {"name":"Av4"},
+      {"name":"AV5"},
+      {"name":"Component"},
+      {"name":"RGB"},
+      {"name":"HDMI"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "RT-21FA35RX"
+  "model": "RT-21FA35RX",
+  "power": {
+    "off": [
+      {"delayMs":1500},
+      {"command":"PowerToggle","durationMs":1500}
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

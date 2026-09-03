@@ -2,6 +2,101 @@
   "codeset": "codesets/e2/e2aaff8015855a30.json",
   "deviceType": 34,
   "globalDeviceId": 107818,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"MediaHome","to":"Disc"},{"set":"DiscInput","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"MediaHome","to":"Disc"},{"set":"DiscInput","to":"Movies"}],"name":"Movies"},
+      {"commands":[{"set":"MediaHome","to":"HDD"},{"set":"HDDInput","to":"TV HDD"}],"name":"TV HDD"},
+      {"commands":[{"set":"MediaHome","to":"HDD"},{"set":"HDDInput","to":"Titel List"}],"name":"Titel List"},
+      {"commands":[{"set":"MediaHome","to":"HDD"},{"set":"HDDInput","to":"Movie"}],"name":"Movie"},
+      {"commands":[{"set":"MediaHome","to":"HDD"},{"set":"HDDInput","to":"Music"}],"name":"Music"},
+      {"commands":[{"set":"MediaHome","to":"HDD"},{"set":"HDDInput","to":"Photo"}],"name":"Photo"},
+      {"commands":[{"set":"MediaHome","to":"Memory Card"},{"set":"MemoryCardInput","to":"Memory Card 1"}],"name":"Memory Card 1"},
+      {"commands":[{"set":"MediaHome","to":"Memory Card"},{"set":"MemoryCardInput","to":"Memory Card 2"}],"name":"Memory Card 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LG-539"
+  "model": "LG-539",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"HDD"},
+      {"set":"DiscInput","to":"HDD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DiscInput": {
+      "finish": [
+        {"delayMs":500},
+        "Select"
+      ],
+      "next": [
+        {"delayMs":1500},
+        "DirectionDown"
+      ],
+      "values": [
+        {"name":"HDD"},
+        {"name":"Movies"}
+      ]
+    },
+    "HDDInput": {
+      "finish": [
+        {"delayMs":500},
+        "Select"
+      ],
+      "next": [
+        {"delayMs":1000},
+        "DirectionDown"
+      ],
+      "values": [
+        {"name":"TV HDD"},
+        {"name":"Titel List"},
+        {"name":"Movie"},
+        {"name":"Music"},
+        {"name":"Photo"}
+      ]
+    },
+    "MediaHome": {
+      "finish": [
+        {"delayMs":1000},
+        "DirectionRight"
+      ],
+      "next": ["DirectionDown"],
+      "start": [
+        {"delayMs":2000},
+        "Home"
+      ],
+      "values": [
+        {"name":"HDD"},
+        {"name":"Disc"},
+        {"name":"Memory Card"}
+      ]
+    },
+    "MemoryCardInput": {
+      "finish": [
+        {"delayMs":500},
+        "Select"
+      ],
+      "next": [
+        {"delayMs":1000},
+        "DirectionRight"
+      ],
+      "values": [
+        {"name":"Memory Card 1"},
+        {"name":"Memory Card 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 24000,
+    "pressMinRepeats": 3
+  }
 }

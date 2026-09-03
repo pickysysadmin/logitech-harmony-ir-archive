@@ -2,6 +2,43 @@
   "codeset": "codesets/ac/acd7ba2e31369714.json",
   "deviceType": 19,
   "globalDeviceId": 277973,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Analog in"}],"name":"Analog in"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"USB-DAC"}],"name":"USB-DAC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Denon",
-  "model": "CEOL Carino"
+  "model": "CEOL Carino",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"Analog in"},
+        {"name":"USB-DAC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/81/8194dba019f5702a.json",
   "deviceType": 1,
   "globalDeviceId": 206968,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Digital/Analog"},{"set":"Digital/AnalogInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Digital/Analog"},{"set":"Digital/AnalogInput","to":"Analog"}],"name":"Analog"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "KDL-32EX400 (AP)"
+  "model": "KDL-32EX400 (AP)",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Digital/AnalogInput": {
+      "next": ["Digital/Analog"],
+      "values": [
+        {"name":"Digital"},
+        {"name":"Analog"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputVideo5"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["InputVideo6"],"setType":2}]},
+        {"name":"HDMI 4","select":[{"commands":["InputVideo7"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Digital/Analog","select":[{"commands":["Digital/Analog"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

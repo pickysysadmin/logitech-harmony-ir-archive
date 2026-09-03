@@ -1,7 +1,47 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 137780,
+  "inputs": {
+    "finish": ["InputHDMI1"],
+    "list": [
+      {"commands":["InputComponent 2"],"name":"Antenna"},
+      {"commands":["InputVideo"],"name":"AV1"},
+      {"commands":["InputVideo"],"name":"AV2"},
+      {"commands":["InputVideo"],"name":"AV3"},
+      {"commands":["InputSVideo"],"name":"S-Video"},
+      {"commands":["InputComponent 1"],"name":"Component 1"},
+      {"commands":["InputComponent 2"],"name":"Component 2"},
+      {"commands":["InputHDMI1"],"name":"HDMI1"}
+    ],
+    "start": ["InputHDMI1"],
+    "type": 3
+  },
   "manufacturer": "Samsung",
-  "model": "PS-50Q92"
+  "model": "PS-50Q92",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["TvVideo"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Teletext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

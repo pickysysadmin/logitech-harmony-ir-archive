@@ -2,6 +2,33 @@
   "codeset": "codesets/14/149b72680e71fdc8.json",
   "deviceType": 1,
   "globalDeviceId": 154935,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"EXT-1"},
+      {"commands":["InputVideo2"],"name":"EXT-2"},
+      {"commands":["InputVideo3"],"name":"EXT-3"},
+      {"commands":["InputVideo4"],"name":"EXT-4"},
+      {"commands":["InputVideo4",{"delayMs":3000},"InputNext"],"name":"EXT-5"},
+      {"commands":["InputVideo4",{"delayMs":3000},"InputNext","InputNext"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-32F80BU"
+  "model": "LT-32F80BU",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/0e/0e20bfcdd106c7ad.json",
   "deviceType": 1,
   "globalDeviceId": 181906,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"Kabel"},
+      {"name":"Front"},
+      {"name":"VCR"},
+      {"name":"AUX"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "28ML8976/00B"
+  "model": "28ML8976/00B",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Kabel"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

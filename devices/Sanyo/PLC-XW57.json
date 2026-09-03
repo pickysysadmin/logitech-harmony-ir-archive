@@ -2,6 +2,29 @@
   "codeset": "codesets/12/123f178161d358e4.json",
   "deviceType": 7,
   "globalDeviceId": 257468,
+  "inputs": {
+    "list": [
+      {"commands":["InputComputer"],"name":"Computer"},
+      {"commands":["InputVideo"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sanyo",
-  "model": "PLC-XW57"
+  "model": "PLC-XW57",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 1
+  }
 }

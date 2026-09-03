@@ -2,6 +2,48 @@
   "codeset": "codesets/f8/f80c2d43ad608a01.json",
   "deviceType": 19,
   "globalDeviceId": 447071,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HdmiArc"}],"name":"HDMI Arc","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"OPT"}],"name":"OPT","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"Line/Aux"},{"set":"Line/AuxInput","to":"Line"}],"name":"Line","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Line/Aux"},{"set":"Line/AuxInput","to":"Aux"}],"name":"Aux","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "1 by one",
-  "model": "HSB5810"
+  "model": "HSB5810",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HdmiArc","select":[{"commands":["InputHdmiArc"],"setType":2}]},
+        {"name":"OPT","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Line/Aux","select":[{"commands":["InputLine/Aux"],"setType":2}]}
+      ]
+    },
+    "Line/AuxInput": {
+      "next": ["InputLine/Aux"],
+      "values": [
+        {"name":"Line"},
+        {"name":"Aux"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

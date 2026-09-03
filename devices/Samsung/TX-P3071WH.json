@@ -1,7 +1,70 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 148491,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Cable"}],"name":"Cable"},
+      {"commands":[{"set":"InputType","to":"COMPONENT"},{"set":"COMPONENTInput","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"COMPONENT"},{"set":"COMPONENTInput","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"COMPONENT"},{"set":"COMPONENTInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "TX-P3071WH"
+  "model": "TX-P3071WH",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "COMPONENTInput": {
+      "next": [
+        {"delayMs":1000},
+        "InputToggle"
+      ],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"},
+        {"name":"DVI"},
+        {"name":"Cable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VIDEO","select":[{"commands":[{"delayMs":1000},"InputNext"],"setType":2}]},
+        {"name":"COMPONENT","select":[{"commands":[{"delayMs":1000},"InputToggle"],"setType":2}]}
+      ]
+    },
+    "VIDEOInput": {
+      "next": [
+        {"delayMs":1000},
+        "InputNext"
+      ],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"},
+        {"name":"S-Video"},
+        {"name":"Cable"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

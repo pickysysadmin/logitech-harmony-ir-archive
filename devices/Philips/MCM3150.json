@@ -2,6 +2,45 @@
   "codeset": "codesets/d1/d1f335ca097977cf.json",
   "deviceType": 21,
   "globalDeviceId": 271860,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"USB/AudioIn"},{"set":"USB/AudioInInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB/AudioIn"},{"set":"USB/AudioInInput","to":"AudioIn"}],"name":"AudioIn"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "MCM3150"
+  "model": "MCM3150",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"FM","select":[{"commands":["FM"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"USB/AudioIn","select":[{"commands":["InputUsb/Audio"],"setType":2}]}
+      ]
+    },
+    "USB/AudioInInput": {
+      "next": ["InputUsb/Audio"],
+      "values": [
+        {"name":"USB"},
+        {"name":"AudioIn"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

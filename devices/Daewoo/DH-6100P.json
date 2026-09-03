@@ -2,6 +2,51 @@
   "codeset": "codesets/bb/bb66122adbcc1ead.json",
   "deviceType": 34,
   "globalDeviceId": 94654,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"DV"}],"name":"DV"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"AV Front"}],"name":"AV Front"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Daewoo",
-  "model": "DH-6100P"
+  "model": "DH-6100P",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ExtInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV Front"},
+        {"name":"S-Video"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"DV","select":[{"commands":["InputDv"],"setType":2}]},
+        {"name":"Ext","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

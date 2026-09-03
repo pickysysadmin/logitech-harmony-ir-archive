@@ -2,6 +2,30 @@
   "codeset": "codesets/f6/f662bcd6c94f5edc.json",
   "deviceType": 7,
   "globalDeviceId": 8056,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"Input A"},
+      {"commands":["InputVideo1","InputVideo1"],"name":"Input B"},
+      {"commands":["InputVideo2"],"name":"S-Video"},
+      {"commands":["InputVideo2","InputVideo2"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "EMP-TW10"
+  "model": "EMP-TW10",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

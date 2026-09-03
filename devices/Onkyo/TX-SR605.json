@@ -2,6 +2,37 @@
   "codeset": "codesets/44/44c33e463a065d18.json",
   "deviceType": 5,
   "globalDeviceId": 146042,
+  "inputs": {
+    "list": [
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR","ports":["Composite","S-Video"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["Composite","S-Video"]},
+      {"commands":["InputGame/Tv"],"name":"Game/TV","ports":["Composite","S-Video"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Composite","S-Video"]},
+      {"commands":["InputMultiChannel"],"name":"MultiChannel","ports":["Composite"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","S-Video"]},
+      {"commands":["InputTape"],"name":"Tape","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputAM"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputFM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Optical"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SR605"
+  "model": "TX-SR605",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5500,
+    "pressMinRepeats": 1
+  }
 }

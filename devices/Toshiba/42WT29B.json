@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a4/a44de4946bcf038e.json",
   "deviceType": 1,
   "globalDeviceId": 100575,
+  "inputs": {
+    "finish": ["Exit"],
+    "list": [
+      {"commands":["0","1"],"name":"TV"},
+      {"commands":["0","1","InputNext"],"name":"EXT 1"},
+      {"commands":["0","1","InputNext","InputNext"],"name":"EXT 2"},
+      {"commands":["0","1","InputNext","InputNext","InputNext"],"name":"EXT 3"},
+      {"commands":["0","1","InputNext","InputNext","InputNext","InputNext"],"name":"EXT 4"}
+    ],
+    "start": ["InputNext"],
+    "type": 3
+  },
   "manufacturer": "Toshiba",
-  "model": "42WT29B"
+  "model": "42WT29B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

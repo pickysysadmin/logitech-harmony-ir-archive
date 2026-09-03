@@ -2,6 +2,52 @@
   "codeset": "codesets/5d/5d71de7d823c5ee1.json",
   "deviceType": 1,
   "globalDeviceId": 167923,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANT A"}],"name":"Antenna A"},
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANT B"}],"name":"Antenna B"},
+      {"commands":[{"set":"InputType","to":"INPUT 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"INPUT 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"INPUT 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"INPUT 4"}],"name":"Input 4"},
+      {"commands":[{"set":"InputType","to":"INPUT 5"}],"name":"Input 5"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "43UDX10B"
+  "model": "43UDX10B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ANTInput": {
+      "next": ["InputAntenna"],
+      "values": [
+        {"name":"ANT A"},
+        {"name":"ANT B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ANT","select":[{"commands":["InputAntenna"],"setType":2}]},
+        {"name":"INPUT 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"INPUT 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"INPUT 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"INPUT 4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"INPUT 5","select":[{"commands":["InputVideo5"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 1
+  }
 }

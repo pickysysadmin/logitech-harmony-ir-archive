@@ -2,6 +2,33 @@
   "codeset": "codesets/ae/ae0c6b458d43fc8b.json",
   "deviceType": 1,
   "globalDeviceId": 76102,
+  "inputs": {
+    "list": [
+      {"name":"AntennaCable"},
+      {"name":"Tuner"},
+      {"name":"PC"},
+      {"name":"A/V"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Magnavox",
-  "model": "15MF050V/15"
+  "model": "15MF050V/15",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,35 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 58211,
+  "inputs": {
+    "list": [
+      {"name":"BBC1"},
+      {"name":"Ext1"},
+      {"name":"Ext2"},
+      {"name":"Ext3"},
+      {"name":"Front"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "32PW9763/95"
+  "model": "32PW9763/95",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputNext"],
+    "onReset": [
+      {"set":"Input","to":"BBC1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 400,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

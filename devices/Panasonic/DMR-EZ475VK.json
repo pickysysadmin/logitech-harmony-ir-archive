@@ -1,7 +1,52 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/b5/b512a1dc94ac1596.json",
   "deviceType": 47,
   "globalDeviceId": 160657,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"Line 2"}],"name":"Line 2"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"LineInput","to":"DV"}],"name":"DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-EZ475VK"
+  "model": "DMR-EZ475VK",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"VCR","select":[{"commands":["InputVCR"],"setType":1}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":1}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line 1"},
+        {"name":"Line 2"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

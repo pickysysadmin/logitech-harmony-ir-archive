@@ -2,6 +2,32 @@
   "codeset": "codesets/70/703462f2a52ba6a0.json",
   "deviceType": 22,
   "globalDeviceId": 37562,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"Analog In"},
+      {"name":"Tuner"}
+    ],
+    "next": ["TvVcr"],
+    "type": 2
+  },
   "manufacturer": "Apex",
-  "model": "HT170"
+  "model": "HT170",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

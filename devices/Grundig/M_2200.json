@@ -2,6 +2,58 @@
   "codeset": "codesets/f3/f361961db2003c90.json",
   "deviceType": 21,
   "globalDeviceId": 278080,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"FM/DAB"},{"set":"FM/DABInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/DAB"},{"set":"FM/DABInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"Aux/AudioIn"},{"set":"Aux/AudioInInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux/AudioIn"},{"set":"Aux/AudioInInput","to":"Audio In"}],"name":"Audio In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Grundig",
-  "model": "M 2200"
+  "model": "M 2200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/AudioInInput": {
+      "next": ["InputAux/Audio"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Audio In"}
+      ]
+    },
+    "FM/DABInput": {
+      "next": ["InputFm/Dab"],
+      "values": [
+        {"name":"FM"},
+        {"name":"DAB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"FM/DAB","select":[{"commands":["InputFm/Dab"],"setType":2}]},
+        {"name":"Aux/AudioIn","select":[{"commands":["InputAux/Audio"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

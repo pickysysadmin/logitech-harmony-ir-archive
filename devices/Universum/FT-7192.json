@@ -2,6 +2,32 @@
   "codeset": "codesets/85/85802a2718306665.json",
   "deviceType": 1,
   "globalDeviceId": 218743,
+  "inputs": {
+    "list": [
+      {"commands":["DirectionUp"],"name":"SAT"},
+      {"commands":["0"],"name":"DVD"},
+      {"commands":["DirectionUp"],"name":"PS2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Universum",
-  "model": "FT-7192"
+  "model": "FT-7192",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"Input","to":"SAT"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

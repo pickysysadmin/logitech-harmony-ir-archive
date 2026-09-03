@@ -2,6 +2,32 @@
   "codeset": "codesets/40/40d5ae0b16644f32.json",
   "deviceType": 19,
   "globalDeviceId": 249891,
+  "inputs": {
+    "list": [
+      {"commands":["InputD.In","InputD.In"],"name":"D.IN","ports":["Optical"]},
+      {"commands":["InputAux","InputAux"],"name":"AUX","ports":["Aux"]},
+      {"commands":["InputAux","InputAux","Source"],"name":"HDMI","ports":["HDMI"]},
+      {"commands":["InputBT","InputBT"],"name":"BT","ports":["Pairing Input"]},
+      {"commands":["InputAux","InputAux","Source","Source","Source"],"name":"TV","ports":["Pairing Input"]},
+      {"commands":["InputD.In","InputD.In","InputUsb/BT"],"name":"USB","ports":["USB"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HW-FM55C"
+  "model": "HW-FM55C",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 2
+  }
 }

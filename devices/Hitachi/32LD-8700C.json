@@ -2,6 +2,54 @@
   "codeset": "codesets/1a/1a462bf87a4265ce.json",
   "deviceType": 1,
   "globalDeviceId": 134640,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AV4"}],"name":"AV4"},
+      {"commands":[{"set":"InputType","to":"AV5"}],"name":"AV5"},
+      {"commands":[{"set":"InputType","to":"RGB1"}],"name":"RGB1"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "32LD-8700C"
+  "model": "32LD-8700C",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputAv2"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["InputAv3"],"setType":2}]},
+        {"name":"AV4","select":[{"commands":["InputAV4"],"setType":2}]},
+        {"name":"AV5","select":[{"commands":["InputAV5"],"setType":2}]},
+        {"name":"RGB1","select":[{"commands":["InputRgb1"],"setType":2}]},
+        {"name":"TV/DTV","select":[{"commands":["InputDTV/TV"],"setType":2}]}
+      ]
+    },
+    "TV/DTVInput": {
+      "next": ["InputDTV/TV"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

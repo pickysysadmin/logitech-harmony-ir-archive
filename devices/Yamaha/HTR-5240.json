@@ -2,6 +2,37 @@
   "codeset": "codesets/c3/c3248cc2e962c8b0.json",
   "deviceType": 5,
   "globalDeviceId": 146774,
+  "inputs": {
+    "list": [
+      {"commands":["InputTape/Md"],"name":"Tape","ports":["Composite"]},
+      {"commands":["InputCd/Md"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputVcr"],"name":"VCR1","ports":["Composite","S-Video"]},
+      {"commands":["InputDvd/Ld"],"name":"DVD","ports":["Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["Composite"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputExternalDecoder"],"name":"ExternalDecoder","ports":["Composite"]},
+      {"commands":["InputSat/Dtv"],"name":"SAT/DTV","ports":["Composite","Optical"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "HTR-5240"
+  "model": "HTR-5240",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 900,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

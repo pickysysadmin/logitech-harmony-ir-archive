@@ -2,6 +2,36 @@
   "codeset": "codesets/4a/4ab45789c04640ce.json",
   "deviceType": 5,
   "globalDeviceId": 140899,
+  "inputs": {
+    "list": [
+      {"commands":["InputCD"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputMd/Cdr"],"name":"MD/CD-R","ports":["Composite","Optical"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputDtv"],"name":"D-TV/CBL","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["Composite"]},
+      {"commands":["InputMultiChannel"],"name":"6Ch Input","ports":["Others"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "HTR-5840"
+  "model": "HTR-5840",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

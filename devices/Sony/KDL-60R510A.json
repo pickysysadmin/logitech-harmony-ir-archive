@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/34/34c860427fc330aa.json",
   "deviceType": 1,
   "globalDeviceId": 265657,
+  "inputs": {
+    "list": [
+      {"commands":["Home","Return","InputTuner"],"name":"AntennaCable","ports":["Antenna"]},
+      {"commands":["Home","Return","InputVideo1"],"name":"Video 1/Component","ports":["Component","Composite"]},
+      {"commands":["Home","Return","InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["Home","Return","InputHdmi2"],"name":"HDMI 2/MHL","ports":["HDMI"]},
+      {"commands":["Home","Return","InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["Return","Return","Return","SEN"],"name":"SEN","ports":["Streaming"]},
+      {"commands":["Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-60R510A"
+  "model": "KDL-60R510A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

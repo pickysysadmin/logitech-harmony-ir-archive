@@ -2,6 +2,56 @@
   "codeset": "codesets/66/6623ab49ea94fbd4.json",
   "deviceType": 22,
   "globalDeviceId": 169572,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AmFm"},{"set":"AmFmInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"AmFm"},{"set":"AmFmInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AuxIn"}],"name":"AuxIn"}
+    ],
+    "type": 5
+  },
   "manufacturer": "iLive",
-  "model": "IHH810B"
+  "model": "IHH810B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AmFmInput": {
+      "next": ["Am/Fm"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AmFm","select":[{"commands":["Am/Fm"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"DVD/CD"},
+        {"name":"Radio"},
+        {"name":"iPod"},
+        {"name":"AuxIn"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

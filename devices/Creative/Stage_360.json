@@ -2,6 +2,53 @@
   "codeset": "codesets/a6/a68e7e004d1abcca.json",
   "deviceType": 19,
   "globalDeviceId": 501335,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Hdmi1/2"},{"set":"Hdmi1/2Input","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Hdmi1/2"},{"set":"Hdmi1/2Input","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"TV/Opt"},{"set":"TV/OptInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/Opt"},{"set":"TV/OptInput","to":"Opt"}],"name":"Opt"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Creative",
-  "model": "Stage 360"
+  "model": "Stage 360",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Hdmi1/2Input": {
+      "next": ["InputHdmi1/2"],
+      "values": [
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":1}]},
+        {"name":"Hdmi1/2","select":[{"commands":["InputHdmi1/2"],"setType":1}]},
+        {"name":"TV/Opt","select":[{"commands":["InputTv/Opt"],"setType":1}]}
+      ]
+    },
+    "TV/OptInput": {
+      "next": ["InputTv/Opt"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Opt"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

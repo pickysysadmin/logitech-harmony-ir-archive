@@ -2,6 +2,46 @@
   "codeset": "codesets/9f/9f3f736066254ebc.json",
   "deviceType": 13,
   "globalDeviceId": 136350,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC DVI"}],"name":"PC DVI"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC RGB"}],"name":"PC RGB"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC YUV"}],"name":"PC YUV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Conrac",
-  "model": "4050 CD"
+  "model": "4050 CD",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["0"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"PC DVI"},
+        {"name":"PC RGB"},
+        {"name":"PC YUV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 0,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

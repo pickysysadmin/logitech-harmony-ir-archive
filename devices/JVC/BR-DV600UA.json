@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/0a/0a27841f961215a2.json",
   "deviceType": 2,
   "globalDeviceId": 38807,
+  "inputs": {
+    "list": [
+      {"commands":["ChannelUp"],"name":"Tuner"},
+      {"commands":["InputLine1"],"name":"L-1"},
+      {"commands":["InputLine2"],"name":"F-1"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "BR-DV600UA"
+  "model": "BR-DV600UA",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

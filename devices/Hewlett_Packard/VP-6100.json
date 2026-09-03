@@ -2,6 +2,42 @@
   "codeset": "codesets/dc/dca6035a99194aa8.json",
   "deviceType": 7,
   "globalDeviceId": 85289,
+  "inputs": {
+    "list": [
+      {"name":"SVideo"},
+      {"name":"CompositeVideo"},
+      {"name":"Analog RGB"},
+      {"name":"Analog YPBPR"}
+    ],
+    "next": [
+      {"delayMs":300},
+      "DirectionRight"
+    ],
+    "previous": [
+      {"delayMs":300},
+      "DirectionLeft"
+    ],
+    "start": [
+      "Menu",
+      {"delayMs":1000},
+      "DirectionDown"
+    ],
+    "type": 4
+  },
   "manufacturer": "Hewlett Packard",
-  "model": "VP-6100"
+  "model": "VP-6100",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

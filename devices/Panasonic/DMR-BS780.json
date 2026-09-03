@@ -1,7 +1,48 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/32/32cbd22dc6767931.json",
   "deviceType": 34,
   "globalDeviceId": 210617,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"HDD"},
+      {"name":"BD"},
+      {"name":"SD"},
+      {"name":"USB"}
+    ],
+    "next": ["DriveSelect"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-BS780"
+  "model": "DMR-BS780",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"AV2"},
+        {"name":"Av3"},
+        {"name":"DV"},
+        {"name":"FreeSat"},
+        {"name":"OtherSat"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

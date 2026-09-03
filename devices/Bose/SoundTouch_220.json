@@ -2,6 +2,51 @@
   "codeset": "codesets/b1/b1447ed07a781844.json",
   "deviceType": 33,
   "globalDeviceId": 274633,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CBL/SAT"}],"name":"CBL/SAT"},
+      {"commands":[{"set":"InputType","to":"BD/DVD"}],"name":"BD/DVD"},
+      {"commands":[{"set":"InputType","to":"GAME"}],"name":"GAME"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Bluetooth/Music"},{"set":"Bluetooth/MusicInput","to":"Music"}],"name":"Music"},
+      {"commands":[{"set":"InputType","to":"Bluetooth/Music"},{"set":"Bluetooth/MusicInput","to":"Bluetooth"}],"name":"Bluetooth"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Bose",
-  "model": "SoundTouch 220"
+  "model": "SoundTouch 220",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Bluetooth/MusicInput": {
+      "next": ["InputBT/Music"],
+      "values": [
+        {"name":"Bluetooth"},
+        {"name":"Music"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CBL/SAT","select":[{"commands":["InputCbl/Sat"],"setType":2}]},
+        {"name":"BD/DVD","select":[{"commands":["InputBd/Dvd"],"setType":2}]},
+        {"name":"GAME","select":[{"commands":["InputGame"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Bluetooth/Music","select":[{"commands":["InputBT/Music"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

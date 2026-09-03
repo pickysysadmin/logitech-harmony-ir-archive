@@ -2,6 +2,40 @@
   "codeset": "codesets/77/771f206a01a0c607.json",
   "deviceType": 34,
   "globalDeviceId": 102300,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"Dvd"},
+      {"commands":["InputHDD"],"name":"Hdd"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputUsb/Dv"],"name":"Usb/Dv"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "DVDR3452H/31"
+  "model": "DVDR3452H/31",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["Source"],
+      "values": [
+        {"name":"EXT1"},
+        {"name":"EXT2"},
+        {"name":"CAM1"},
+        {"name":"CAM2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

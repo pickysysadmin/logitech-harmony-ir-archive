@@ -2,6 +2,46 @@
   "codeset": "codesets/d6/d6bc79e1412c364f.json",
   "deviceType": 22,
   "globalDeviceId": 253763,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"BD/DVD"}],"name":"BD/DVD"},
+      {"commands":[{"set":"InputType","to":"D.IN"}],"name":"D.IN"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"BT"}],"name":"BT"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-FS5200"
+  "model": "HT-FS5200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "next": ["Function"],
+      "start": ["VolumeUp","VolumeDown"],
+      "values": [
+        {"name":"BD/DVD"},
+        {"name":"D.IN"},
+        {"name":"AUX"},
+        {"name":"HDMI"},
+        {"name":"FM"},
+        {"name":"BT"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 2
+  }
 }

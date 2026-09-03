@@ -2,6 +2,41 @@
   "codeset": "codesets/36/36beacfb43605b01.json",
   "deviceType": 5,
   "globalDeviceId": 84626,
+  "inputs": {
+    "list": [
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputVdp"],"name":"VDP","ports":["HDMI","Composite","S-Video","Optical"]},
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["Composite","S-Video","Optical"]},
+      {"commands":["InputVcr1"],"name":"VCR 1","ports":["Composite","S-Video","Optical"]},
+      {"commands":["InputVcr2"],"name":"VCR 2","ports":["Composite","S-Video"]},
+      {"commands":["InputDbs"],"name":"DBS","ports":["Component","Composite","S-Video","Optical"]},
+      {"commands":["InputCdr/Tape"],"name":"Tape","ports":["Composite","Optical"]},
+      {"commands":["InputTv"],"name":"TV","ports":["HDMI","Component","Composite"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Dock"]},
+      {"commands":["InputAux/iPod"],"name":"iPod","ports":["Dock"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-4306"
+  "model": "AVR-4306",
+  "power": {
+    "off": ["PowerOff(Zone-1)"],
+    "on": ["PowerOn(Zone-1)"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

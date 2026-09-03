@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 157773,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"AVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"AVInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"AVInput","to":"AV2"},{"set":"AVSInput","to":"AVS"}],"name":"AV2S"},
+      {"commands":[{"set":"AVInput","to":"AV3"},{"set":"AVSInput","to":"AVS"}],"name":"AV3S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX29AD3C"
+  "model": "TX29AD3C",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":1000},
+      {"set":"AVInput","to":"TV"}
+    ],
+    "on": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["DirectionDown"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    },
+    "AVSInput": {
+      "values": [
+        {"name":"AVN","select":[{"commands":["DirectionLeft"],"setType":1}]},
+        {"name":"AVS","select":[{"commands":["DirectionRight"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

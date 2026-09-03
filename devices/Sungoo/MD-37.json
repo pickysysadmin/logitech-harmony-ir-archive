@@ -2,6 +2,54 @@
   "codeset": "codesets/83/834ebc32dec7fbab.json",
   "deviceType": 1,
   "globalDeviceId": 133251,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"Scart1"}],"name":"Scart1"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"Scart2"}],"name":"Scart2"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"AV. SV."}],"name":"AV. SV."},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"VGA PC"}],"name":"VGA PC"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"YUV"}],"name":"YUV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sungoo",
-  "model": "MD-37"
+  "model": "MD-37",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["1"],"setType":2}]},
+        {"name":"Inputs","select":[{"commands":["0"],"setType":2}]}
+      ]
+    },
+    "InputsInput": {
+      "next": ["0"],
+      "values": [
+        {"name":"Scart1"},
+        {"name":"Scart2"},
+        {"name":"AV. SV."},
+        {"name":"VGA PC"},
+        {"name":"HDMI"},
+        {"name":"YUV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 9000,
+    "pressMinRepeats": 3
+  }
 }

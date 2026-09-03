@@ -2,6 +2,37 @@
   "codeset": "codesets/a5/a5b56812a4a153dd.json",
   "deviceType": 5,
   "globalDeviceId": 302792,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD"},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT"},
+      {"commands":["InputPort"],"name":"Port"},
+      {"commands":["InputGame"],"name":"Game"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputAux"],"name":"AUX"},
+      {"commands":["InputTuner",{"delayMs":500},"InputAM"],"name":"AM"},
+      {"commands":["InputTuner",{"delayMs":500},"InputFM"],"name":"FM"},
+      {"commands":["InputTv/Cd"],"name":"TV/CD"},
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Integra",
-  "model": "DTR-20.2 (Zone 2)"
+  "model": "DTR-20.2 (Zone 2)",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

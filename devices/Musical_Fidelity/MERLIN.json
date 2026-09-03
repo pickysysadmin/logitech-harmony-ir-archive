@@ -2,6 +2,55 @@
   "codeset": "codesets/05/059e43d41990e073.json",
   "deviceType": 19,
   "globalDeviceId": 336599,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Phono/Aux"},{"set":"Phono/AuxInput","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"Phono/Aux"},{"set":"Phono/AuxInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Jack/Opt"},{"set":"Jack/OptInput","to":"Jack"}],"name":"Jack"},
+      {"commands":[{"set":"InputType","to":"Jack/Opt"},{"set":"Jack/OptInput","to":"Opt"}],"name":"Opt"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Musical Fidelity",
-  "model": "MERLIN"
+  "model": "MERLIN",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Phono/Aux","select":[{"commands":["InputPhono/Aux"],"setType":2}]},
+        {"name":"Jack/Opt","select":[{"commands":["InputJack/Opt"],"setType":2}]}
+      ]
+    },
+    "Jack/OptInput": {
+      "next": ["InputJack/Opt"],
+      "values": [
+        {"name":"Jack"},
+        {"name":"Opt"}
+      ]
+    },
+    "Phono/AuxInput": {
+      "next": ["InputPhono/Aux"],
+      "values": [
+        {"name":"Phono"},
+        {"name":"Aux"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/44/443d090128634265.json",
   "deviceType": 1,
   "globalDeviceId": 160050,
+  "inputs": {
+    "list": [
+      {"commands":[{"delayMs":1000},"InputHdmi","InputNext"],"name":"Digital","ports":["Antenna"]},
+      {"commands":["InputTv"],"name":"Analog","ports":["Antenna"]},
+      {"commands":["InputAv1"],"name":"Video 1","ports":["Composite","S-Video"]},
+      {"commands":["InputAv2"],"name":"Video 2","ports":["Composite","S-Video"]},
+      {"commands":["InputComponent"],"name":"Component 1","ports":["Component"]},
+      {"commands":[{"delayMs":1000},"InputComponent","InputNext"],"name":"Component 2","ports":["Component"]},
+      {"commands":["InputRgb"],"name":"RGB - PC","ports":["PC"]},
+      {"commands":[{"delayMs":1000},"InputRgb","InputNext"],"name":"RGB - DTV","ports":["Antenna"]},
+      {"commands":["InputHdmi"],"name":"HDMI/DVI","ports":["HDMI"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "42PX4DV"
+  "model": "42PX4DV",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 1
+  }
 }

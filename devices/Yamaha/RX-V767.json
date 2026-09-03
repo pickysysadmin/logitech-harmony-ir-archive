@@ -2,6 +2,50 @@
   "codeset": "codesets/24/2495220fcd2ee832.json",
   "deviceType": 5,
   "globalDeviceId": 56451,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI3","ports":["HDMI"]},
+      {"commands":["InputHdmi4"],"name":"HDMI4","ports":["HDMI"]},
+      {"commands":["InputHdmi5"],"name":"HDMI5","ports":["HDMI"]},
+      {"commands":["InputVAux"],"name":"V-Aux","ports":["HDMI","Composite"]},
+      {"commands":["InputAudio1"],"name":"Audio1","ports":["Composite"]},
+      {"commands":["InputAudio2"],"name":"Audio2","ports":["Composite"]},
+      {"commands":["InputAv1"],"name":"AV1","ports":["Component"]},
+      {"commands":["InputAV2"],"name":"AV2","ports":["Component"]},
+      {"commands":["InputAv3"],"name":"AV3","ports":["Composite"]},
+      {"commands":["InputAv4"],"name":"AV4","ports":["Composite"]},
+      {"commands":["InputAv5"],"name":"AV5","ports":["Composite","S-Video"]},
+      {"commands":["InputAv6"],"name":"AV6","ports":["Composite"]},
+      {"commands":["InputMultiCh"],"name":"MultiCh","ports":["Composite"]},
+      {"commands":["InputDock"],"name":"Dock","ports":["Dock"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["SceneBdDvd"],"name":"Scene BD/DVD","ports":["Streaming"]},
+      {"commands":["SceneTv"],"name":"Scene TV","ports":["Streaming"]},
+      {"commands":["SceneCd"],"name":"Scene CD","ports":["Streaming"]},
+      {"commands":["SceneRadio"],"name":"Scene Radio","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V767"
+  "model": "RX-V767",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

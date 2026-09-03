@@ -2,6 +2,37 @@
   "codeset": "codesets/ed/ed144b6f18ee78b5.json",
   "deviceType": 1,
   "globalDeviceId": 158961,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"VCR"},
+      {"name":"SCART1"},
+      {"name":"SCART2"},
+      {"name":"RGB"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["0"],
+    "type": 4
+  },
   "manufacturer": "Dual",
-  "model": "TV-ST2850VT"
+  "model": "TV-ST2850VT",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

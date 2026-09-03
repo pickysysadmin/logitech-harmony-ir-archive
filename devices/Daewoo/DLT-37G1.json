@@ -2,6 +2,70 @@
   "codeset": "codesets/a5/a5a5fc741a010ca1.json",
   "deviceType": 1,
   "globalDeviceId": 182552,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"AV3/S-Video"}],"name":"AV3/S-Video"},
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"Comp"}],"name":"Comp"},
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Multimedia"},{"set":"MultimediaInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Dvb/Analogue"},{"set":"Dvb/AnalogueInput","to":"DVB"}],"name":"DVB"},
+      {"commands":[{"set":"InputType","to":"Dvb/Analogue"},{"set":"Dvb/AnalogueInput","to":"Analogue"}],"name":"Analogue"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Daewoo",
-  "model": "DLT-37G1"
+  "model": "DLT-37G1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3/S-Video"}
+      ]
+    },
+    "Dvb/AnalogueInput": {
+      "next": ["InputDvb"],
+      "values": [
+        {"name":"DVB"},
+        {"name":"Analogue"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"Multimedia","select":[{"commands":["Multimedia"],"setType":2}]},
+        {"name":"Dvb/Analogue","select":[{"commands":["InputDvb"],"setType":2}]}
+      ]
+    },
+    "MultimediaInput": {
+      "next": ["Multimedia"],
+      "values": [
+        {"name":"Comp"},
+        {"name":"PC"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

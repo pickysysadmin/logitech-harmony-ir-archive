@@ -2,6 +2,39 @@
   "codeset": "codesets/15/15eb305df2b3ba06.json",
   "deviceType": 1,
   "globalDeviceId": 278854,
+  "inputs": {
+    "finish": ["Ok"],
+    "list": [
+      {"name":"TV","ports":["Antenna"]},
+      {"name":"HDMI 1","ports":["HDMI"]},
+      {"name":"HDMI 2","ports":["HDMI"]},
+      {"name":"HDMI 3","ports":["HDMI"]},
+      {"name":"AV","ports":["Composite"]},
+      {"name":"VGA","ports":["PC"]}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": [
+      "Home",
+      {"delayMs":1000},
+      "Ok"
+    ],
+    "type": 4
+  },
   "manufacturer": "Xiaomi",
-  "model": "Mi TV 2 49\""
+  "model": "Mi TV 2 49\"",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

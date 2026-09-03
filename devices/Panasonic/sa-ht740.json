@@ -2,6 +2,53 @@
   "codeset": "codesets/03/03ab1099c110eda9.json",
   "deviceType": 22,
   "globalDeviceId": 210364,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"AuxInput"},{"set":"AuxInputInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AuxInput"},{"set":"AuxInputInput","to":"Front"}],"name":"Front","ports":["Others"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "sa-ht740"
+  "model": "sa-ht740",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInputInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Front"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputFM/AM"],"setType":2}]},
+        {"name":"AuxInput","select":[{"commands":["InputAux",{"set":"AuxInputInput","to":"Front"}],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputFM/AM"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2250,
+    "pressMinRepeats": 3
+  }
 }

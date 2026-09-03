@@ -1,7 +1,50 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d1/d19dcefa00bb4f44.json",
   "deviceType": 25,
   "globalDeviceId": 96462,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VcrInput","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VcrInput","to":"Line1"}],"name":"Line1"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VcrInput","to":"Line2"}],"name":"Line2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sanyo",
-  "model": "DVW-7000A"
+  "model": "DVW-7000A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr",{"set":"Input","to":"VCR"}],"setType":2}]}
+      ]
+    },
+    "VcrInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Line1"},
+        {"name":"Line2"},
+        {"name":"VCR"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

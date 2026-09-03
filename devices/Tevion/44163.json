@@ -2,6 +2,56 @@
   "codeset": "codesets/77/77643630454fa811.json",
   "deviceType": 22,
   "globalDeviceId": 252711,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/USB/CARD"},{"set":"DVD/USB/CARDInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVD/USB/CARD"},{"set":"DVD/USB/CARDInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"DVD/USB/CARD"},{"set":"DVD/USB/CARDInput","to":"CARD"}],"name":"CARB"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"DVD(HIFI)"}],"name":"DVD(HIFI)"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Tevion",
-  "model": "44163"
+  "model": "44163",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVD/USB/CARDInput": {
+      "next": ["InputDvd/Usb/Card"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"USB"},
+        {"name":"CARD"}
+      ]
+    },
+    "InputInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"Radio"},
+        {"name":"DVD(HIFI)"},
+        {"name":"AUX"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/USB/CARD","select":[{"commands":["InputDvd/Usb/Card"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

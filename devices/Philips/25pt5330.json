@@ -2,6 +2,49 @@
   "codeset": "codesets/d0/d08497fe3da74b2f.json",
   "deviceType": 1,
   "globalDeviceId": 162655,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Ext1"}],"name":"Ext1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Ext2"}],"name":"Ext2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Ext3"}],"name":"Ext3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "25pt5330"
+  "model": "25pt5330",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["1"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputNext",{"set":"VideoInput","to":"Ext1"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Ext1"},
+        {"name":"Ext2"},
+        {"name":"Ext3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

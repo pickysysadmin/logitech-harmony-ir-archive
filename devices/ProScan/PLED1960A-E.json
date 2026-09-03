@@ -2,6 +2,31 @@
   "codeset": "codesets/7d/7d80f8bc17981e65.json",
   "deviceType": 1,
   "globalDeviceId": 349740,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputAv"],"name":"AV"},
+      {"commands":["InputYPbPr"],"name":"YPbPr"},
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["InputAv",{"delayMs":500},"InputHdmi"],"name":"HDMI 1"},
+      {"commands":["InputAv",{"delayMs":500},"InputHdmi","InputHdmi"],"name":"HDMI 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "ProScan",
-  "model": "PLED1960A-E"
+  "model": "PLED1960A-E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/53/5379b170993618fc.json",
   "deviceType": 1,
   "globalDeviceId": 149640,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["InputComponent2"],"name":"Component 2"},
+      {"commands":["InputComponent2","InputNext"],"name":"HDMI"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputComponent1",{"delayMs":200},"InputNext",{"delayMs":200},"InputNext"],"name":"Antenna A"},
+      {"commands":["InputComponent2","InputNext","InputNext","InputNext"],"name":"Antenna B"},
+      {"commands":["SdViewer"],"name":"SD Card"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PX25"
+  "model": "TH-42PX25",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

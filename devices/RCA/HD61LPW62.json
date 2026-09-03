@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2f/2fb136eb14dd3d31.json",
   "deviceType": 1,
   "globalDeviceId": 72077,
+  "inputs": {
+    "list": [
+      {"commands":["Antenna"],"name":"Antenna A"},
+      {"commands":["InputVid2"],"name":"Front Input"},
+      {"commands":["InputVid1"],"name":"Input 1"},
+      {"commands":["InputComp"],"name":"Input 2"},
+      {"commands":["InputVid3"],"name":"Input 3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "HD61LPW62"
+  "model": "HD61LPW62",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaAB": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"A"},
+        {"name":"B"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 4000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 16000,
+    "pressMinRepeats": 3
+  }
 }

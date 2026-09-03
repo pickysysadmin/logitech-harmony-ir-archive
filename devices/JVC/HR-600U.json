@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/0a/0a27841f961215a2.json",
   "deviceType": 2,
   "globalDeviceId": 112382,
+  "inputs": {
+    "list": [
+      {"commands":["ChannelUp"],"name":"Tuner"},
+      {"commands":["Play"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "HR-600U"
+  "model": "HR-600U",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

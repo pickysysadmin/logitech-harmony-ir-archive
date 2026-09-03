@@ -2,6 +2,57 @@
   "codeset": "codesets/c6/c6bb1bfb43f3fd17.json",
   "deviceType": 22,
   "globalDeviceId": 208290,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AuxOpt"}],"name":"AuxOpt"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"AudioIn"}],"name":"AudioIn"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"OSDiPod"}],"name":"OSDiPod"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Dvd/Cd"}],"name":"Dvd/Cd"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "XV-THG61"
+  "model": "XV-THG61",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FunctionInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"Dvd/Cd"},
+        {"name":"FM"}
+      ]
+    },
+    "InputInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"AuxOpt"},
+        {"name":"AudioIn"},
+        {"name":"OSDiPod"},
+        {"name":"iPod"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input","select":[{"commands":["Input"],"setType":2}]},
+        {"name":"Function","select":[{"commands":["Function"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

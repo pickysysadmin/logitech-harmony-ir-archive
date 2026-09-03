@@ -2,6 +2,36 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 147698,
+  "inputs": {
+    "list": [
+      {"commands":["Exit"],"name":"TV"},
+      {"commands":["ChannelPrev"],"name":"AV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Vestel",
-  "model": "CTV-2151"
+  "model": "CTV-2151",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 0,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

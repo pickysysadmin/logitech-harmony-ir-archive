@@ -2,6 +2,34 @@
   "codeset": "codesets/3b/3be7b1277d082514.json",
   "deviceType": 19,
   "globalDeviceId": 205895,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputDg1"],"name":"DIG 1","ports":["Coaxial"]},
+      {"commands":["InputDg1",{"delayMs":500},"InputNext"],"name":"DIG 2","ports":["Optical"]},
+      {"commands":["InputLine1",{"delayMs":500},"InputPrev"],"name":"DIG 3","ports":["Optical"]},
+      {"commands":["InputLine1"],"name":"Line 1","ports":["Composite"]},
+      {"commands":["InputLine1",{"delayMs":500},"InputNext"],"name":"Line 2","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "HTX-22HDX"
+  "model": "HTX-22HDX",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

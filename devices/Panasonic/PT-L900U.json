@@ -2,6 +2,63 @@
   "codeset": "codesets/c0/c0f7c31198088f0a.json",
   "deviceType": 7,
   "globalDeviceId": 123595,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Videos"},{"set":"VideosInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Videos"},{"set":"VideosInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"PCs"},{"set":"PCsInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"PCs"},{"set":"PCsInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Components"},{"set":"ComponentsInput","to":"YPbPr1"}],"name":"YPbPr1"},
+      {"commands":[{"set":"InputType","to":"Components"},{"set":"ComponentsInput","to":"YPbPr2"}],"name":"YPbPr2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "PT-L900U"
+  "model": "PT-L900U",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentsInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"YPbPr1"},
+        {"name":"YPbPr2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Videos","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"PCs","select":[{"commands":["InputRGB"],"setType":2}]},
+        {"name":"Components","select":[{"commands":["InputComponent"],"setType":2}]}
+      ]
+    },
+    "PCsInput": {
+      "next": ["InputRGB"],
+      "values": [
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    },
+    "VideosInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"S-Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

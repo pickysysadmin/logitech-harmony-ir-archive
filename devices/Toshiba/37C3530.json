@@ -2,6 +2,54 @@
   "codeset": "codesets/9b/9bd72e692bd52c4f.json",
   "deviceType": 1,
   "globalDeviceId": 212754,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"Input3C"}],"name":"Input3C"},
+      {"commands":[{"set":"InputType","to":"InputScart2"}],"name":"InputScart2"},
+      {"commands":[{"set":"InputType","to":"InputScart1"}],"name":"InputScart1"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "37C3530"
+  "model": "37C3530",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"Input3C","select":[{"commands":["Input3c"],"setType":2}]},
+        {"name":"InputScart2","select":[{"commands":["InputScart2"],"setType":2}]},
+        {"name":"InputScart1","select":[{"commands":["InputScart1"],"setType":2}]},
+        {"name":"Tv","select":[{"commands":["A/D"],"setType":2}]}
+      ]
+    },
+    "TvInput": {
+      "next": ["A/D"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/b9/b97dd661bc3b397d.json",
   "deviceType": 1,
   "globalDeviceId": 175230,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input1"}],"name":"Input1","ports":["HDMI","Scart"]},
+      {"commands":[{"set":"InputType","to":"Input2"}],"name":"Input2","ports":["Component","Scart"]},
+      {"commands":[{"set":"InputType","to":"Input3"}],"name":"Input3","ports":["HDMI","Scart"]},
+      {"commands":[{"set":"InputType","to":"Input4"}],"name":"Input4","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Input5"}],"name":"Input5","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"InputPC"}],"name":"InputPC","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"TV"}],"name":"TV","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Dtv"}],"name":"Dtv","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Sat"}],"name":"Sat","ports":["Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "KRP-500A"
+  "model": "KRP-500A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["Tv/Dtv/Sat"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Dtv"},
+        {"name":"Sat"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input1","select":[{"commands":["Input1"],"setType":2}]},
+        {"name":"Input2","select":[{"commands":["Input2"],"setType":2}]},
+        {"name":"Input3","select":[{"commands":["Input3"],"setType":2}]},
+        {"name":"Input4","select":[{"commands":["Input4"],"setType":2}]},
+        {"name":"Input5","select":[{"commands":["Input5"],"setType":2}]},
+        {"name":"InputPC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["Tv/Dtv/Sat"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 18000,
+    "pressMinRepeats": 3
+  }
 }

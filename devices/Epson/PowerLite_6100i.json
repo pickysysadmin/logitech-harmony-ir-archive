@@ -2,6 +2,30 @@
   "codeset": "codesets/99/99cd5bb570572156.json",
   "deviceType": 7,
   "globalDeviceId": 261203,
+  "inputs": {
+    "list": [
+      {"commands":["InputComputer1"],"name":"Computer 1"},
+      {"commands":["InputComputer2"],"name":"Computer 2"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "PowerLite 6100i"
+  "model": "PowerLite 6100i",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 20000,
+    "pressMinRepeats": 3
+  }
 }

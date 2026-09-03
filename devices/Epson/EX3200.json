@@ -2,6 +2,31 @@
   "codeset": "codesets/8c/8c5b5f6f023f1bf0.json",
   "deviceType": 7,
   "globalDeviceId": 225129,
+  "inputs": {
+    "list": [
+      {"commands":["InputComputer"],"name":"Computer"},
+      {"commands":["InputSvideo"],"name":"S-Video"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputUsb"],"name":"USB"},
+      {"commands":["InputSlideshow"],"name":"Slideshow"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "EX3200"
+  "model": "EX3200",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,66 @@
   "codeset": "codesets/2a/2a46e59a70a2250d.json",
   "deviceType": 19,
   "globalDeviceId": 493896,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Internet Radio"}],"name":"Internet Radio"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Spotify"}],"name":"Spotify"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"Music Player"}],"name":"Music Player"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"Aux In"}],"name":"Aux In"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"Optical 1"}],"name":"Optical 1"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"Optical 2"}],"name":"Optical 2"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"Coaxial"}],"name":"Coaxial"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"Line In"}],"name":"Line In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Roberts",
-  "model": "SB 1"
+  "model": "SB 1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"Media","select":[{"commands":["InputMedia"],"setType":2}]}
+      ]
+    },
+    "MediaInput": {
+      "next": ["InputMedia"],
+      "values": [
+        {"name":"Music Player"},
+        {"name":"Bluetooth"},
+        {"name":"Aux In"},
+        {"name":"Optical 1"},
+        {"name":"Optical 2"},
+        {"name":"Coaxial"},
+        {"name":"Line In"}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"Internet Radio"},
+        {"name":"Spotify"},
+        {"name":"DAB"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

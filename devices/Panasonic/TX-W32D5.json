@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 80271,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVType","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVType","to":"AV4"}],"name":"AV4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-W32D5"
+  "model": "TX-W32D5",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Red"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Green"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Yellow"],"setType":1}]},
+        {"name":"AV4","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Blue"],"setType":1}]}
+      ]
+    },
+    "ColorMenu": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext",{"set":"ColorMenu","to":"ON"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 5,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

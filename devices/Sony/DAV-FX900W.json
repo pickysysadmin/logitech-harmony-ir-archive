@@ -2,6 +2,32 @@
   "codeset": "codesets/eb/eb790af6f13d32af.json",
   "deviceType": 22,
   "globalDeviceId": 165779,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":["InputDvd","InputNext"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd","InputNext","InputNext"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputDvd","InputNext","InputNext","InputNext"],"name":"XM","ports":["Others"]},
+      {"commands":["InputVideo1"],"name":"TV/VCR 1","ports":["Component","Composite","Coaxial"]},
+      {"commands":["InputVideo2"],"name":"TV/VCR 2","ports":["Composite"]},
+      {"commands":["InputVideo2","InputNext"],"name":"Audio","ports":["Composite","Coaxial","Optical"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "DAV-FX900W"
+  "model": "DAV-FX900W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

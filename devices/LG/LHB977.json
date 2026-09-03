@@ -2,6 +2,58 @@
   "codeset": "codesets/02/022c8507508c7a30.json",
   "deviceType": 22,
   "globalDeviceId": 181181,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"PORTABLE"}],"name":"PORTABLE","ports":["Portable"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"OPTICAL"}],"name":"OPTICAL","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"COAXIAL"}],"name":"COAXIAL","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI IN 1"}],"name":"HDMI IN 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"HDMI IN 2"}],"name":"HDMI IN 2","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LHB977"
+  "model": "LHB977",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputNextInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"AUX"},
+        {"name":"PORTABLE"},
+        {"name":"OPTICAL"},
+        {"name":"COAXIAL"},
+        {"name":"HDMI IN 1"},
+        {"name":"HDMI IN 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["iPod"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["Home"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 27000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,64 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 28611,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"HD"},{"set":"HDInput","to":"HD1"}],"name":"HD1"},
+      {"commands":[{"set":"InputType","to":"RGB/PC"},{"set":"RGBInput","to":"RGB/PC1"}],"name":"RGB/PC1"},
+      {"commands":[{"set":"InputType","to":"RGB/PC"},{"set":"RGBInput","to":"RGB/PC2"}],"name":"RGB/PC2"},
+      {"commands":[{"set":"InputType","to":"RGB/PC"},{"set":"RGBInput","to":"RGB/PC3"}],"name":"RGB/PC3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Marantz",
-  "model": "PD4240V"
+  "model": "PD4240V",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "HDInput": {
+      "next": ["HD 1"],
+      "values": [
+        {"name":"HD1"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"HD","select":[{"commands":["HD 1"],"setType":2}]},
+        {"name":"RGB/PC","select":[{"commands":["RGB/PCToggle"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB/PC1"},
+        {"name":"RGB/PC2"},
+        {"name":"RGB/PC3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

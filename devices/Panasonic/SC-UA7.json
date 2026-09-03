@@ -2,6 +2,59 @@
   "codeset": "codesets/78/78ed6723811382a9.json",
   "deviceType": 5,
   "globalDeviceId": 391532,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"Usb/Memory"},{"set":"Usb/MemoryInput","to":"Usb A"}],"name":"Usb A","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Usb/Memory"},{"set":"Usb/MemoryInput","to":"Usb B"}],"name":"Usb B","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Usb/Memory"},{"set":"Usb/MemoryInput","to":"Memory"}],"name":"Memory","ports":["SD-Card"]},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In"},{"set":"Radio/Ext-InInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In"},{"set":"Radio/Ext-InInput","to":"D.In"}],"name":"D.In","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In"},{"set":"Radio/Ext-InInput","to":"Aux 1"}],"name":"Aux 1","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In"},{"set":"Radio/Ext-InInput","to":"Aux 2"}],"name":"Aux 2","ports":["Aux"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-UA7"
+  "model": "SC-UA7",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Usb/Memory","select":[{"commands":["InputUsb/Memory"],"setType":2}]},
+        {"name":"Radio/Ext-In","select":[{"commands":["InputRadio/Ext-In"],"setType":2}]}
+      ]
+    },
+    "Radio/Ext-InInput": {
+      "next": ["InputRadio/Ext-In"],
+      "values": [
+        {"name":"FM"},
+        {"name":"D.In"},
+        {"name":"Aux 1"},
+        {"name":"Aux 2"}
+      ]
+    },
+    "Usb/MemoryInput": {
+      "next": ["InputUsb/Memory"],
+      "values": [
+        {"name":"Usb A"},
+        {"name":"Usb B"},
+        {"name":"Memory"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/36/362eb927ae6329c2.json",
   "deviceType": 1,
   "globalDeviceId": 45847,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"VIDEO 1"}],"name":"VIDEO 1"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"VIDEO 2"}],"name":"VIDEO 2"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"VIDEO 3"}],"name":"VIDEO 3"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"COLORSTREAM 1"}],"name":"COLORSTREAM 1"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"COLORSTREAM 2"}],"name":"COLORSTREAM 2"},
+      {"commands":[{"set":"InputType","to":"Antenna"}],"name":"ANT"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "TN55H81"
+  "model": "TN55H81",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":[{"delayMs":5000},"TvVideo"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["ChannelUp"],"setType":2}]}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"VIDEO 1"},
+        {"name":"VIDEO 2"},
+        {"name":"VIDEO 3"},
+        {"name":"COLORSTREAM 1"},
+        {"name":"COLORSTREAM 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,32 @@
   "codeset": "codesets/25/256eff76a21cd021.json",
   "deviceType": 21,
   "globalDeviceId": 114212,
+  "inputs": {
+    "list": [
+      {"commands":["InputAux"],"name":"Aux"},
+      {"commands":["InputTape"],"name":"Tape 1/2"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputCd"],"name":"Cd"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "FW-350C-22"
+  "model": "FW-350C-22",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Aux"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/0a/0a4c926fc4b9f587.json",
   "deviceType": 5,
   "globalDeviceId": 116122,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"VIDEO 1"},
+      {"commands":["InputVideo2"],"name":"VIDEO 2"},
+      {"commands":["InputTape1"],"name":"TAPE 1"},
+      {"commands":["InputTape2"],"name":"TAPE 2"},
+      {"commands":["InputPhono"],"name":"PHONO"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM"},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SV424"
+  "model": "TX-SV424",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

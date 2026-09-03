@@ -2,6 +2,34 @@
   "codeset": "codesets/ed/edf47df1ee969ce8.json",
   "deviceType": 1,
   "globalDeviceId": 22864,
+  "inputs": {
+    "list": [
+      {"name":"Antenna"},
+      {"name":"Scart 1"},
+      {"name":"Scart 2"},
+      {"name":"AV4"},
+      {"name":"AV7"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sagem",
-  "model": "Axium HTD501DLP"
+  "model": "Axium HTD501DLP",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

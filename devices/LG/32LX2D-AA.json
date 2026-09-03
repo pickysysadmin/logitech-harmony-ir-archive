@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f3/f34b600222dc11d3.json",
   "deviceType": 1,
   "globalDeviceId": 181056,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VIDEO 1"}],"name":"VIDEO 1"},
+      {"commands":[{"set":"InputType","to":"VIDEO 2"}],"name":"VIDEO 2"},
+      {"commands":[{"set":"InputType","to":"COMPONENT 1"}],"name":"COMPONENT 1"},
+      {"commands":[{"set":"InputType","to":"COMPONENT 2"}],"name":"COMPONENT 2"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"TV/INPUT"},{"set":"TV/INPUTInput","to":"ANTENNA"}],"name":"ANTENNA"},
+      {"commands":[{"set":"InputType","to":"TV/INPUT"},{"set":"TV/INPUTInput","to":"CABLE"}],"name":"CABLE"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "32LX2D-AA"
+  "model": "32LX2D-AA",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"VIDEO 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"VIDEO 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"COMPONENT 1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"COMPONENT 2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"TV/INPUT","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "TV/INPUTInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"ANTENNA"},
+        {"name":"CABLE"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

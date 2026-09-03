@@ -2,6 +2,49 @@
   "codeset": "codesets/dd/dd334f54ada19df2.json",
   "deviceType": 22,
   "globalDeviceId": 147027,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Aux 1"}],"name":"Aux 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Aux 2"}],"name":"Aux 2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Digital 1"}],"name":"Digital 1","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Digital 2"}],"name":"Digital 2","ports":["Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-DS610"
+  "model": "HT-DS610",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"},
+        {"name":"Digital 1"},
+        {"name":"Digital 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 2000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

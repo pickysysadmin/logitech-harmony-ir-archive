@@ -2,6 +2,45 @@
   "codeset": "codesets/9f/9f39a06302242665.json",
   "deviceType": 22,
   "globalDeviceId": 223263,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AvInput","to":"Tv"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AvInput","to":"Aux"}],"name":"AV1"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Insignia",
-  "model": "IS-HC102732"
+  "model": "IS-HC102732",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AvInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":1}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"AV","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

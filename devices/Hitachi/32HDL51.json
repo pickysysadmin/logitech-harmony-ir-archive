@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 138884,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntennaA"],"name":"Antenna A"},
+      {"commands":["InputAntennaB"],"name":"Antenna B"},
+      {"commands":["Input 1"],"name":"Video 1"},
+      {"commands":["Input 2"],"name":"Video 2"},
+      {"commands":["Input 3"],"name":"Video 3"},
+      {"commands":["Input 4"],"name":"Video 4"},
+      {"commands":["Input 5"],"name":"Video 5"},
+      {"commands":["Input 5","InputNext","DirectionDown","Select","Exit"],"name":"RGB"},
+      {"commands":["Input 5","InputNext","DirectionDown","DirectionDown","Select","Exit"],"name":"IEEE 1394"},
+      {"commands":["Input 1","DirectionUp","DirectionUp","DirectionUp","Select","Exit"],"name":"Photo"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hitachi",
-  "model": "32HDL51"
+  "model": "32HDL51",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

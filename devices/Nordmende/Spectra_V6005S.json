@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/30/304da39194295165.json",
   "deviceType": 2,
   "globalDeviceId": 204990,
+  "inputs": {
+    "list": [
+      {"commands":["0","2"],"name":"Tuner"},
+      {"commands":["0","0"],"name":"Line-In"},
+      {"commands":["0","0"],"name":"Front Line-In"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Nordmende",
-  "model": "Spectra V6005S"
+  "model": "Spectra V6005S",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

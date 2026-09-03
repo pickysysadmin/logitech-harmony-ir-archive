@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 119349,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"VideoInput","to":"Ext 1"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"VideoInput","to":"Ext 1"}],"name":"EXT 2"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"VideoInput","to":"Ext 1"}],"name":"EXT 3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Komp"}],"name":"Component"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "WS-32Z419TQX"
+  "model": "WS-32Z419TQX",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["TvVideo"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["TvVideo",{"set":"VideoInput","to":"Ext 1"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"Ext 1"},
+        {"name":"Ext 2"},
+        {"name":"Ext 3"},
+        {"name":"Komp"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

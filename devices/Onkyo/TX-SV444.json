@@ -2,6 +2,35 @@
   "codeset": "codesets/12/12e9464c391a67a2.json",
   "deviceType": 5,
   "globalDeviceId": 128269,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv/Aux"],"name":"TV/AUX"},
+      {"commands":["InputCD"],"name":"CD"},
+      {"commands":["InputVideo1"],"name":"Video1"},
+      {"commands":["InputVideo2"],"name":"Video2"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputMultiChannel"],"name":"MultiChannel"},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM"},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SV444"
+  "model": "TX-SV444",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/94/940be39158a39d07.json",
   "deviceType": 1,
   "globalDeviceId": 15611,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Av2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDTV"}],"name":"HDTV"},
+      {"commands":[{"set":"InputType","to":"Data"},{"set":"DataInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"Data"},{"set":"DataInput","to":"Digital"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Optoma",
-  "model": "PD50PX05"
+  "model": "PD50PX05",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DataInput": {
+      "finish": ["Select"],
+      "next": ["Data"],
+      "start": ["Data"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["0",{"set":"VideoInput","to":"TV"}],"setType":2}]},
+        {"name":"Data","select":[{"commands":["0",{"set":"DataInput","to":"Analog"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "finish": ["Select"],
+      "next": ["NextInput"],
+      "start": ["NextInput"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"HDTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 3
+  }
 }

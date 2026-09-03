@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5d/5d798624e0ed0ffe.json",
   "deviceType": 32,
   "globalDeviceId": 146130,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVDVHS"},{"set":"DVDVHSInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVDVHS"},{"set":"DVDVHSInput","to":"VHS"}],"name":"VHS"},
+      {"commands":[{"set":"InputType","to":"TUNER"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"TUNER"},{"set":"TunerInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-HT822V"
+  "model": "SA-HT822V",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDVHSInput": {
+      "next": ["InputDvd/Vcr"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"VHS"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVDVHS","select":[{"commands":["InputDvd/Vcr"],"setType":2}]},
+        {"name":"TUNER","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

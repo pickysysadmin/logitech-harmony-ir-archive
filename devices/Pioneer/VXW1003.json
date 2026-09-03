@@ -2,6 +2,48 @@
   "codeset": "codesets/43/43cc7dbfc5dd9f56.json",
   "deviceType": 22,
   "globalDeviceId": 34755,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputTV"],"name":"TV"},
+      {"commands":["InputDvd/Cd"],"name":"DVD/CD"},
+      {"commands":["InputLine"],"name":"Line1"},
+      {"commands":[{"set":"LineInput","to":"L2"}],"name":"Line2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "VXW1003"
+  "model": "VXW1003",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Line12","select":[{"commands":["InputLine"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTV"],"setType":2}]},
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"L1"},
+        {"name":"L2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 4000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

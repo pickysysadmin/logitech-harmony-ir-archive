@@ -2,6 +2,59 @@
   "codeset": "codesets/d5/d51f661ccb5444ee.json",
   "deviceType": 1,
   "globalDeviceId": 214342,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"MagicInfo"}],"name":"MagicInfo"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/DTV"},{"set":"TV/DTVInput","to":"DTV"}],"name":"DTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "400MX-2"
+  "model": "400MX-2",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]},
+        {"name":"TV/DTV","select":[{"commands":["TV/DTV"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"PC"},
+        {"name":"DVI"},
+        {"name":"AV"},
+        {"name":"HDMI"},
+        {"name":"MagicInfo"},
+        {"name":"TV"}
+      ]
+    },
+    "TV/DTVInput": {
+      "next": ["TV/DTV"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

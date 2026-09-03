@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 125358,
+  "inputs": {
+    "list": [
+      {"commands":["0"],"name":"dtv"},
+      {"commands":["1"],"name":"tv"},
+      {"commands":["2"],"name":"av1"},
+      {"commands":["3"],"name":"av2"},
+      {"commands":["4"],"name":"sav2"},
+      {"commands":["5"],"name":"av3"},
+      {"commands":["6"],"name":"av4"},
+      {"commands":["7"],"name":"component"},
+      {"commands":["8"],"name":"rgb"},
+      {"commands":["9"],"name":"hdmi/dvi"},
+      {"commands":["Freeze"],"name":"hdmi2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "50PC1DA-EC"
+  "model": "50PC1DA-EC",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Component 1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component 2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"HDMI/DVI","select":[{"commands":["InputDVI/DTV"],"setType":2}]},
+        {"name":"RGB/DTV","select":[{"commands":["InputRgb/Dtv"],"setType":2}]},
+        {"name":"RGB/PC","select":[{"commands":["InputRGB/PC"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Front","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Tuners","select":[{"commands":["InputAnt/Cable"],"setType":2}]}
+      ]
+    },
+    "TunersInput": {
+      "next": ["InputAnt/Cable"],
+      "values": [
+        {"name":"TV"},
+        {"name":"CATV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 1
+  }
 }

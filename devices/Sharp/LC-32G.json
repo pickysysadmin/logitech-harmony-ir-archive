@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/51/51a5e0a754b17271.json",
   "deviceType": 1,
   "globalDeviceId": 46951,
+  "inputs": {
+    "list": [
+      {"commands":["0","3"],"name":"TV"},
+      {"commands":["0","3",{"delayMs":1500},"InputNext","DirectionDown","Select"],"name":"Input 1"},
+      {"commands":["0","3",{"delayMs":1500},"InputNext","DirectionDown","DirectionDown","Select"],"name":"Input 2"},
+      {"commands":["0","3",{"delayMs":500},"InputNext","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Input 3"},
+      {"commands":["0","3",{"delayMs":500},"InputNext","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Input 4"},
+      {"commands":["0","3",{"delayMs":500},"InputNext","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Input 5"},
+      {"commands":["0","3",{"delayMs":500},"InputNext","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Select"],"name":"Card"},
+      {"commands":["AntennaA"],"name":"Ant-A"},
+      {"commands":["AntennaB"],"name":"Ant-B"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-32G"
+  "model": "LC-32G",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

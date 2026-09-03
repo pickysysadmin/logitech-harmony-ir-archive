@@ -2,6 +2,64 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 112394,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["RGB/PCToggle"],"name":"PC/RGB"},
+      {"commands":["HD 1"],"name":"HD 1"},
+      {"commands":["HD 2"],"name":"HD 2"},
+      {"commands":["HD 3"],"name":"HD 3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Marantz",
-  "model": "PD-5001"
+  "model": "PD-5001",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "HDInput": {
+      "next": ["HD 1"],
+      "values": [
+        {"name":"HD1"},
+        {"name":"HD2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["Video 1"],"setType":2}]},
+        {"name":"HD","select":[{"commands":["HD 1"],"setType":2}]},
+        {"name":"RGB/PC","select":[{"commands":["RGB/PCToggle"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB/PC1"},
+        {"name":"RGB/PC2"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Video 1"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

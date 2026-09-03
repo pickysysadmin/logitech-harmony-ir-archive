@@ -2,6 +2,35 @@
   "codeset": "codesets/d8/d86c92eeb89df3f6.json",
   "deviceType": 7,
   "globalDeviceId": 250568,
+  "inputs": {
+    "list": [
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputHdmi"],"name":"HDMI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Acer",
-  "model": "X1213PH"
+  "model": "X1213PH",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

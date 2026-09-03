@@ -2,6 +2,56 @@
   "codeset": "codesets/be/bef84322a7404ca4.json",
   "deviceType": 1,
   "globalDeviceId": 209616,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"EXT1"}],"name":"EXT1"},
+      {"commands":[{"set":"InputType","to":"EXT2"}],"name":"EXT2"},
+      {"commands":[{"set":"InputType","to":"EXT3C"}],"name":"EXT3C"},
+      {"commands":[{"set":"InputType","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"HDMI3"}],"name":"HDMI3"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"DTV/ATV"},{"set":"DTV/ATVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"DTV/ATV"},{"set":"DTV/ATVInput","to":"ATV"}],"name":"ATV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "37XV504"
+  "model": "37XV504",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DTV/ATVInput": {
+      "next": ["ATV/DTV"],
+      "values": [
+        {"name":"DTV"},
+        {"name":"ATV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"EXT1","select":[{"commands":["InputScart1"],"setType":2}]},
+        {"name":"EXT2","select":[{"commands":["InputScart2"],"setType":2}]},
+        {"name":"EXT3C","select":[{"commands":["Input3c"],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"DTV/ATV","select":[{"commands":["ATV/DTV"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

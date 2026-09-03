@@ -2,6 +2,40 @@
   "codeset": "codesets/1d/1d938ca04ae377af.json",
   "deviceType": 19,
   "globalDeviceId": 1864,
+  "inputs": {
+    "list": [
+      {"name":"D1"},
+      {"name":"D2"},
+      {"name":"D3"},
+      {"name":"D4"},
+      {"name":"D5"},
+      {"name":"D6"},
+      {"name":"A1"},
+      {"name":"A2"},
+      {"name":"A3"},
+      {"name":"AD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "EAD",
-  "model": "Theater Master 8000 Pro"
+  "model": "Theater Master 8000 Pro",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"D1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

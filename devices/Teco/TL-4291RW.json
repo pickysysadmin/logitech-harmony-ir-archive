@@ -2,6 +2,58 @@
   "codeset": "codesets/d6/d640d6d7fe0cbaf4.json",
   "deviceType": 1,
   "globalDeviceId": 151402,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV/AV/S/SCART"},{"set":"TV/AV/S/SCARTInput","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"TV/AV/S/SCART"},{"set":"TV/AV/S/SCARTInput","to":"Av"}],"name":"Av"},
+      {"commands":[{"set":"InputType","to":"TV/AV/S/SCART"},{"set":"TV/AV/S/SCARTInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"TV/AV/S/SCART"},{"set":"TV/AV/S/SCARTInput","to":"Scart"}],"name":"Scart"},
+      {"commands":[{"set":"InputType","to":"HDTV/PC/HDMI"},{"set":"HDTV/PC/HDMIInput","to":"Hdtv"}],"name":"Hdtv"},
+      {"commands":[{"set":"InputType","to":"HDTV/PC/HDMI"},{"set":"HDTV/PC/HDMIInput","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"HDTV/PC/HDMI"},{"set":"HDTV/PC/HDMIInput","to":"Hdmi"}],"name":"Hdmi"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teco",
-  "model": "TL-4291RW"
+  "model": "TL-4291RW",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDTV/PC/HDMIInput": {
+      "next": ["HDTV/PC/HDMI"],
+      "values": [
+        {"name":"Hdtv"},
+        {"name":"Pc"},
+        {"name":"Hdmi"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV/AV/S/SCART","select":[{"commands":["TV/AV/S/SCART"],"setType":2}]},
+        {"name":"HDTV/PC/HDMI","select":[{"commands":["HDTV/PC/HDMI"],"setType":2}]}
+      ]
+    },
+    "TV/AV/S/SCARTInput": {
+      "next": ["TV/AV/S/SCART"],
+      "values": [
+        {"name":"Tv"},
+        {"name":"Av"},
+        {"name":"S-Video"},
+        {"name":"Scart"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

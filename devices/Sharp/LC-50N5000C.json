@@ -2,6 +2,34 @@
   "codeset": "codesets/3d/3dd8d7a74d871979.json",
   "deviceType": 1,
   "globalDeviceId": 349915,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext",{"delayMs":500},"OK"],"name":"TV"},
+      {"commands":["InputNext","DirectionRight","OK"],"name":"HDMI1"},
+      {"commands":["InputNext","DirectionRight","DirectionRight","OK"],"name":"HDMI2"},
+      {"commands":["InputNext","DirectionRight","DirectionRight","DirectionRight","OK"],"name":"HDMI3"},
+      {"commands":["InputNext","DirectionRight","DirectionRight","DirectionRight","DirectionRight","OK"],"name":"AV/Component"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-50N5000C"
+  "model": "LC-50N5000C",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 13000,
+    "pressMinRepeats": 1
+  }
 }

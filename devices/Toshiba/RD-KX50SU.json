@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/a7/a7fb4e0428dbd275.json",
   "deviceType": 34,
   "globalDeviceId": 167237,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"L-1"}],"name":"L-1"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"L-2"}],"name":"L-2"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"L-3"}],"name":"L-3"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"L-U"}],"name":"L-U"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "RD-KX50SU"
+  "model": "RD-KX50SU",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"Inputs","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "InputsInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"L-1"},
+        {"name":"L-2"},
+        {"name":"L-3"},
+        {"name":"L-U"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

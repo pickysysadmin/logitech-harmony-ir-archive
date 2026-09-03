@@ -1,7 +1,68 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 86162,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Comp 1"},
+      {"name":"Comp 2"},
+      {"name":"HDMI"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"},
+      {"name":"Video 4"},
+      {"name":"S-Vid 1"},
+      {"name":"S-Vid 2"}
+    ],
+    "next": ["MTS"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "CL29Z30HS"
+  "model": "CL29Z30HS",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tv/Comp","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["TvVideo"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"Vid1"},
+        {"name":"Vid2"},
+        {"name":"Vid3"},
+        {"name":"Vid4"},
+        {"name":"SVid1"},
+        {"name":"SVid2"}
+      ]
+    },
+    "TvCompInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Comp1"},
+        {"name":"Comp2"},
+        {"name":"Hdmi"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/dd/dd262b1550664094.json",
   "deviceType": 5,
   "globalDeviceId": 158479,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputBd"],"name":"BD","ports":["HDMI","Optical"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial"]},
+      {"commands":["InputSat"],"name":"SAT","ports":["HDMI","Component","Composite","Optical"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Composite"]},
+      {"commands":["InputSa-Cd/Cd"],"name":"Sa-Cd/CD","ports":["Composite"]},
+      {"commands":["DmPort"],"name":"DmPort","ports":["DMPort"]},
+      {"commands":["InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputFm"],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "STR-DH500"
+  "model": "STR-DH500",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,53 @@
   "codeset": "codesets/1c/1c64eb91555ee49e.json",
   "deviceType": 22,
   "globalDeviceId": 51449,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Input","to":"InputSa-Cd/Cd"}],"name":"SA-CD/CD"},
+      {"commands":[{"set":"Input","to":"InputDvd"}],"name":"DVD"},
+      {"commands":[{"set":"Input","to":"InputMd/Tape"}],"name":"MD/TAPE"},
+      {"commands":[{"set":"Input","to":"Video1"}],"name":"Video 1"},
+      {"commands":[{"set":"Input","to":"Video2"}],"name":"Video 2"},
+      {"commands":[{"set":"Input","to":"Tuner"},{"set":"Radio","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"Input","to":"Tuner"},{"set":"Radio","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"Input","to":"MultiCh"}],"name":"Multi Ch"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "HT-6800DP"
+  "model": "HT-6800DP",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Input": {
+      "values": [
+        {"name":"SA-CD/CD","select":[{"commands":["InputSa-cd/Cd"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"MD/TAPE","select":[{"commands":["InputMd/Tape"],"setType":2}]},
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"MultiCh","select":[{"commands":["InputMultiCh"],"setType":2}]}
+      ]
+    },
+    "Radio": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

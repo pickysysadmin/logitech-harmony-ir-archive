@@ -2,6 +2,33 @@
   "codeset": "codesets/85/85802a2718306665.json",
   "deviceType": 1,
   "globalDeviceId": 214759,
+  "inputs": {
+    "list": [
+      {"name":"DVB"},
+      {"name":"HTPC"},
+      {"name":"VCR"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Finlux",
-  "model": "82X300"
+  "model": "82X300",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputNext"],
+    "onReset": [
+      {"set":"Input","to":"DVB"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

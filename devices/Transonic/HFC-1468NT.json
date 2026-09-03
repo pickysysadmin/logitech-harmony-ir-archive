@@ -2,6 +2,32 @@
   "codeset": "codesets/ae/ae789291f0a5c68c.json",
   "deviceType": 1,
   "globalDeviceId": 95637,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV 1"},
+      {"name":"Yuv"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Transonic",
-  "model": "HFC-1468NT"
+  "model": "HFC-1468NT",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/86/8628d865aaeedf13.json",
   "deviceType": 7,
   "globalDeviceId": 493209,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputComputer"],"name":"Computer"},
+      {"commands":["InputHDBaseT"],"name":"HDBaseT"},
+      {"commands":["InputUsbA"],"name":"USB-A","ports":["USB"]},
+      {"commands":["InputApps"],"name":"Apps","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "NP-P525UL"
+  "model": "NP-P525UL",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

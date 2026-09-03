@@ -2,6 +2,68 @@
   "codeset": "codesets/9a/9aa594607980c37d.json",
   "deviceType": 1,
   "globalDeviceId": 157961,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"Pc"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"Tv"},{"set":"TvInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Hdmi1"}],"name":"Hdmi1"},
+      {"commands":[{"set":"InputType","to":"Av"},{"set":"AvInput","to":"Hdmi2"}],"name":"Hdmi2"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart1"}],"name":"Scart1"},
+      {"commands":[{"set":"InputType","to":"Scart"},{"set":"ScartInput","to":"Scart2"}],"name":"Scart2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "AT-3245"
+  "model": "AT-3245",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AvInput": {
+      "next": ["InputAV"],
+      "values": [
+        {"name":"Composite"},
+        {"name":"Component"},
+        {"name":"Hdmi1"},
+        {"name":"Hdmi2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Pc","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Av","select":[{"commands":["InputAV"],"setType":2}]},
+        {"name":"Scart","select":[{"commands":["InputScart"],"setType":2}]}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputScart"],
+      "values": [
+        {"name":"Scart1"},
+        {"name":"Scart2"}
+      ]
+    },
+    "TvInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

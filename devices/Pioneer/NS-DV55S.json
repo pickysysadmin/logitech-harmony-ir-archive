@@ -2,6 +2,59 @@
   "codeset": "codesets/ac/ac59887d16a5d4b1.json",
   "deviceType": 22,
   "globalDeviceId": 128629,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"AudioType","to":"TunerType"}],"name":"Tuner"},
+      {"commands":[{"set":"AudioType","to":"DVDType"},{"set":"DVD/CDMode","to":"CDmode"}],"name":"CD"},
+      {"commands":[{"set":"AudioType","to":"DVDType"},{"set":"DVD/CDMode","to":"DVDmode"}],"name":"DVD"},
+      {"commands":[{"set":"AudioType","to":"VideoType"},{"set":"VideoMode","to":"Video1mode"}],"name":"Video 1"},
+      {"commands":[{"set":"AudioType","to":"VideoType"},{"set":"VideoMode","to":"Video2mode"}],"name":"Video 2"},
+      {"commands":[{"set":"AudioType","to":"VideoType"},{"set":"VideoMode","to":"Video3mode"}],"name":"Video 3"},
+      {"commands":[{"set":"AudioType","to":"TapeType"}],"name":"Tape"},
+      {"commands":[{"set":"AudioType","to":"MdType"}],"name":"Md"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "NS-DV55S"
+  "model": "NS-DV55S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioType": {
+      "values": [
+        {"name":"TunerType","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"DVDType","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VideoType","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"MdType","select":[{"commands":["InputAudio1"],"setType":1}]},
+        {"name":"TapeType","select":[{"commands":["InputAudio2"],"setType":1}]}
+      ]
+    },
+    "DVD/CDMode": {
+      "next": ["InputDvd"],
+      "values": [
+        {"name":"DVDmode"},
+        {"name":"CDmode"}
+      ]
+    },
+    "VideoMode": {
+      "next": ["InputVideo1"],
+      "values": [
+        {"name":"Video1mode"},
+        {"name":"Video2mode"},
+        {"name":"Video3mode"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

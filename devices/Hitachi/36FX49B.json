@@ -1,7 +1,68 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/2c/2c75623fb97e11fd.json",
   "deviceType": 1,
   "globalDeviceId": 15318,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"AntennaMode","to":"AntModeA"},{"set":"InputType","to":"AntType"}],"name":"Antenna A"},
+      {"commands":[{"set":"AntennaMode","to":"AntModeB"},{"set":"InputType","to":"AntType"}],"name":"Antenna B"},
+      {"commands":[{"set":"VideoMode","to":"Video1mode"},{"set":"InputType","to":"VideoType"}],"name":"Video 1"},
+      {"commands":[{"set":"VideoMode","to":"Video2mode"},{"set":"InputType","to":"VideoType"}],"name":"Video 2"},
+      {"commands":[{"set":"VideoMode","to":"Video3mode"},{"set":"InputType","to":"VideoType"}],"name":"Video 3"},
+      {"commands":[{"set":"VideoMode","to":"Video4mode"},{"set":"InputType","to":"VideoType"}],"name":"Video 4"},
+      {"commands":[{"set":"SatMode","to":"DirectMode"},{"set":"InputType","to":"SatType"}],"name":"DirecTV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "36FX49B"
+  "model": "36FX49B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaMode": {
+      "next": ["AntToggle"],
+      "values": [
+        {"name":"AntModeA"},
+        {"name":"AntModeB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"SatType","select":[{"commands":["SatToggle"],"setType":2}]},
+        {"name":"AntType","select":[{"commands":["AntToggle"],"setType":2}]},
+        {"name":"VideoType","select":[{"commands":["VideoToggle"],"setType":2}]}
+      ]
+    },
+    "SatMode": {
+      "next": ["SatToggle"],
+      "values": [
+        {"name":"DirectMode"},
+        {"name":"AntMode"}
+      ]
+    },
+    "VideoMode": {
+      "next": ["VideoToggle"],
+      "values": [
+        {"name":"Video1mode"},
+        {"name":"Video2mode"},
+        {"name":"Video3mode"},
+        {"name":"Video4mode"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

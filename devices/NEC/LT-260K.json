@@ -2,6 +2,34 @@
   "codeset": "codesets/66/664b615150a0e4b9.json",
   "deviceType": 7,
   "globalDeviceId": 109383,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputSVideo"],"name":"S-Video"},
+      {"commands":["InputRGB1"],"name":"RGB1"},
+      {"commands":["InputRGB"],"name":"RGB2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "LT-260K"
+  "model": "LT-260K",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":4000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

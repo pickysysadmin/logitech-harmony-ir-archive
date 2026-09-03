@@ -2,6 +2,32 @@
   "codeset": "codesets/cd/cd56620efc320ee7.json",
   "deviceType": 22,
   "globalDeviceId": 116347,
+  "inputs": {
+    "list": [
+      {"name":"DVD/CD"},
+      {"name":"AVI/Satellite"},
+      {"name":"Tuner"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "AMW",
-  "model": "T-342"
+  "model": "T-342",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD/CD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

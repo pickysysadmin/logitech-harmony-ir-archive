@@ -2,6 +2,38 @@
   "codeset": "codesets/62/6218de579391731f.json",
   "deviceType": 22,
   "globalDeviceId": 252441,
+  "inputs": {
+    "list": [
+      {"name":"BD/DVD","ports":["Streaming"]},
+      {"name":"D.IN","ports":["Optical"]},
+      {"name":"AUX","ports":["Composite"]},
+      {"name":"HDMI 1","ports":["HDMI"]},
+      {"name":"HDMI 2","ports":["HDMI"]},
+      {"name":"FM","ports":["FM Antenna"]},
+      {"name":"BT","ports":["Pairing Input"]}
+    ],
+    "next": ["InputNext"],
+    "start": [
+      "Info",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HT-F6550W"
+  "model": "HT-F6550W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 2
+  }
 }

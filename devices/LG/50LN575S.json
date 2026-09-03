@@ -2,6 +2,35 @@
   "codeset": "codesets/df/df413d5a162cb1f5.json",
   "deviceType": 1,
   "globalDeviceId": 255432,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputAv1"],"name":"AV 1","ports":["Scart"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputAv2"],"name":"AV 2","ports":["Composite"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputComponent1"],"name":"Component","ports":["Component"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi3"],"name":"HDMI 3(MHL)","ports":["HDMI"]},
+      {"commands":["Exit","Smart"],"name":"Smart TV","ports":["Streaming"]},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputTv"],"name":"TV","ports":["Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "50LN575S"
+  "model": "50LN575S",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

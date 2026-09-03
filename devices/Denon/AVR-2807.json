@@ -2,6 +2,40 @@
   "codeset": "codesets/92/92f1fed0225b442c.json",
   "deviceType": 5,
   "globalDeviceId": 171506,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD","ports":["Composite","S-Video"]},
+      {"commands":["InputTV"],"name":"TV","ports":["Composite","S-Video"]},
+      {"commands":["InputVcr1"],"name":"VCR 1","ports":["Composite","S-Video"]},
+      {"commands":["InputVcr2"],"name":"VCR 2","ports":["Composite","S-Video"]},
+      {"commands":["InputVdp"],"name":"VDP","ports":["Composite","S-Video"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputCdr/Tape"],"name":"CDR/Tape","ports":["Composite"]},
+      {"commands":["InputDbs"],"name":"DBS","ports":["Composite","S-Video"]},
+      {"commands":["InputV-Aux"],"name":"V-Aux","ports":["Composite","S-Video"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-2807"
+  "model": "AVR-2807",
+  "power": {
+    "off": ["PowerOff"],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6300,
+    "pressMinRepeats": 3
+  }
 }

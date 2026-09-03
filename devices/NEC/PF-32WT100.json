@@ -2,6 +2,34 @@
   "codeset": "codesets/90/9090f104184ef4a6.json",
   "deviceType": 1,
   "globalDeviceId": 106668,
+  "inputs": {
+    "list": [
+      {"name":"Antenna"},
+      {"name":"SVHS"},
+      {"name":"AV2"},
+      {"name":"DVD"},
+      {"name":"DTV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "NEC",
-  "model": "PF-32WT100"
+  "model": "PF-32WT100",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

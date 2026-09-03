@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/43/437f8e705637bc0f.json",
   "deviceType": 34,
   "globalDeviceId": 182032,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputHdd"],"name":"HDD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "DVDR-3300H"
+  "model": "DVDR-3300H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["ChannelDown"],
+      "previous": ["ChannelUp"],
+      "start": ["InputTuner"],
+      "values": [
+        {"name":"EXT 1"},
+        {"name":"EXT 2"},
+        {"name":"CAM 1"},
+        {"name":"CAM 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

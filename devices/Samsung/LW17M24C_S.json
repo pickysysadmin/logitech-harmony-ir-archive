@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 98628,
+  "inputs": {
+    "list": [
+      {"name":"Tv"},
+      {"name":"Video"}
+    ],
+    "next": ["InputVideo1"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "LW17M24C S"
+  "model": "LW17M24C S",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tv"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

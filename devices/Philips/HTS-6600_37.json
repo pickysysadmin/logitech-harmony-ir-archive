@@ -2,6 +2,69 @@
   "codeset": "codesets/65/659bbd4b7d06909f.json",
   "deviceType": 22,
   "globalDeviceId": 178901,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"MP3 Line In"}],"name":"MP3 Line In"},
+      {"commands":[{"set":"InputType","to":"Dock"}],"name":"Dock"},
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Disc/USB"},{"set":"Disc/USBInput","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Disc/USB"},{"set":"Disc/USBInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Aux/DI"},{"set":"Aux/DIInput","to":"Aux 1"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"Aux/DI"},{"set":"Aux/DIInput","to":"Aux 2"}],"name":"Aux 2"},
+      {"commands":[{"set":"InputType","to":"Aux/DI"},{"set":"Aux/DIInput","to":"DI"}],"name":"DI"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM/MW"}],"name":"AM/MW"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS-6600/37"
+  "model": "HTS-6600/37",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/DIInput": {
+      "next": ["InputAUX/DI"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"},
+        {"name":"DI"}
+      ]
+    },
+    "Disc/USBInput": {
+      "next": ["InputUSB/Disc"],
+      "values": [
+        {"name":"Disc"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"MP3 Line In","select":[{"commands":["InputMp3LineIn"],"setType":2}]},
+        {"name":"Dock","select":[{"commands":["InputDock"],"setType":2}]},
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Disc/USB","select":[{"commands":["InputUSB/Disc"],"setType":2}]},
+        {"name":"Aux/DI","select":[{"commands":["InputAUX/DI"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM/MW"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

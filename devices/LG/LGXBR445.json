@@ -2,6 +2,59 @@
   "codeset": "codesets/0c/0c6099b46ed9d013.json",
   "deviceType": 25,
   "globalDeviceId": 229915,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"Tuner"}],"name":"DVD Tuner"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"Line 1"}],"name":"DVD Line 1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"Line 2"}],"name":"DVD Line 2"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DV"}],"name":"DVD DV"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"Tuner"}],"name":"VCR Tuner"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"Line 1"}],"name":"VCR Line 1"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"Line 2"}],"name":"VCR Line 2"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VCRInput","to":"DV"}],"name":"VCR DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LGXBR445"
+  "model": "LGXBR445",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line 1"},
+        {"name":"Line 2"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":1}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":1}]}
+      ]
+    },
+    "VCRInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line 1"},
+        {"name":"Line 2"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 400,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

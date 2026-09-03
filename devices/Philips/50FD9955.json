@@ -2,6 +2,62 @@
   "codeset": "codesets/6d/6ddf5ddc18d5ddef.json",
   "deviceType": 13,
   "globalDeviceId": 133715,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Ext 1"},
+      {"name":"Ext 2"},
+      {"name":"Ext 3"},
+      {"name":"Ext 4"},
+      {"name":"Ext 5"},
+      {"name":"FRONT"},
+      {"name":"VGA"}
+    ],
+    "next": ["InputAV4"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "50FD9955"
+  "model": "50FD9955",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": ["PowerOn"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputAV1": {
+      "next": ["InputAv1"],
+      "values": [
+        {"name":"YC"},
+        {"name":"CVBS1"},
+        {"name":"CVBS2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VGA","select":[{"commands":["InputAv3","InputVga",{"set":"InputVGA","to":"vga"}],"setType":1}]},
+        {"name":"AV1","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputAV2"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["InputAv3"],"setType":2}]}
+      ]
+    },
+    "InputVGA": {
+      "next": ["InputVga"],
+      "values": [
+        {"name":"vga"},
+        {"name":"dvi"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

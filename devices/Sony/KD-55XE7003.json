@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/cf/cf85d80fd96fad42.json",
   "deviceType": 1,
   "globalDeviceId": 380951,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","InputAnalog"],"name":"Analog"},
+      {"commands":["Exit","InputAnalog",{"delayMs":500},"InputNext",{"delayMs":500},"DirectionUp","Select"],"name":"Digital"},
+      {"commands":["Exit","InputVideo1"],"name":"AV"},
+      {"commands":["Exit","InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["Exit","InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["Exit","InputHdmi3"],"name":"HDMI 3/ARC"},
+      {"commands":["Exit","InputVideo1",{"delayMs":500},"InputNext",{"delayMs":500},"DirectionDown","Select"],"name":"Screen Mirroring"},
+      {"commands":["Exit","Home",{"delayMs":500},"Select"],"name":"Smart TV"},
+      {"commands":["Exit","Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KD-55XE7003"
+  "model": "KD-55XE7003",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 45000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

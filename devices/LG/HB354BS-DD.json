@@ -2,6 +2,64 @@
   "codeset": "codesets/45/45bc09b50c2189ad.json",
   "deviceType": 22,
   "globalDeviceId": 177657,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Portable"}],"name":"Portable","ports":["Portable"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Hdmi In 1"}],"name":"Hdmi In 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Hdmi In 2"}],"name":"Hdmi In 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"Remote iPod"}],"name":"Remote iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"OSD iPod"}],"name":"OSD iPod","ports":["Dock"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HB354BS-DD"
+  "model": "HB354BS-DD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"FM"},
+        {"name":"Aux"},
+        {"name":"Portable"},
+        {"name":"Optical"},
+        {"name":"Coaxial"},
+        {"name":"Hdmi In 1"},
+        {"name":"Hdmi In 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["DiscMenu"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["iPod"],"setType":2}]}
+      ]
+    },
+    "iPodInput": {
+      "next": ["iPod"],
+      "values": [
+        {"name":"Remote iPod"},
+        {"name":"OSD iPod"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

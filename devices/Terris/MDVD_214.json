@@ -2,6 +2,56 @@
   "codeset": "codesets/f3/f3834898e40fcb45.json",
   "deviceType": 22,
   "globalDeviceId": 242474,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dock"}],"name":"Dock"},
+      {"commands":[{"set":"InputType","to":"Disc/Usb/Card"},{"set":"Disc/Usb/CardInput ","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Disc/Usb/Card"},{"set":"Disc/Usb/CardInput ","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Disc/Usb/Card"},{"set":"Disc/Usb/CardInput ","to":"CARD"}],"name":"CARD"},
+      {"commands":[{"set":"InputType","to":"Aux/Tuner"},{"set":"Aux/TunerInput ","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Aux/Tuner"},{"set":"Aux/TunerInput ","to":"TUNER"}],"name":"TUNER"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Terris",
-  "model": "MDVD 214"
+  "model": "MDVD 214",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aux/TunerInput": {
+      "next": ["InputAux/Tuner"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"TUNER"}
+      ]
+    },
+    "Disc/Usb/CardInput": {
+      "next": ["InputDisc/Usb/Card"],
+      "values": [
+        {"name":"DVD/CD"},
+        {"name":"USB"},
+        {"name":"CARD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dock","select":[{"commands":["InputDock"],"setType":2}]},
+        {"name":"Disc/Usb/Card","select":[{"commands":["InputDisc/Usb/Card"],"setType":2}]},
+        {"name":"Aux/Tuner","select":[{"commands":["InputAux/Tuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,52 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/36/36396bca7f5812c2.json",
   "deviceType": 34,
   "globalDeviceId": 124476,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VideoInput","to":"Tuner"},{"set":"InputType","to":"DVD"}],"name":"DVDTuner"},
+      {"commands":[{"set":"VideoInput","to":"Input1"},{"set":"InputType","to":"DVD"}],"name":"DVDInput1"},
+      {"commands":[{"set":"VideoInput","to":"Input2"},{"set":"InputType","to":"DVD"}],"name":"DVDInput2"},
+      {"commands":[{"set":"VideoInput","to":"Tuner"},{"set":"InputType","to":"HDD"}],"name":"HDDTuner"},
+      {"commands":[{"set":"VideoInput","to":"Input1"},{"set":"InputType","to":"HDD"}],"name":"HDDInput1"},
+      {"commands":[{"set":"VideoInput","to":"Input2"},{"set":"InputType","to":"HDD"}],"name":"HDDInput2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "DVR-534H"
+  "model": "DVR-534H",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["DVD"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["HDD"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Input1"},
+        {"name":"Input2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

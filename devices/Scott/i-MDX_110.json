@@ -2,6 +2,44 @@
   "codeset": "codesets/aa/aa0d31be06339e7d.json",
   "deviceType": 22,
   "globalDeviceId": 241257,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"USB/DVD"},{"set":"USB/DVDInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"USB/DVD"},{"set":"USB/DVDInput","to":"Media"}],"name":"Media"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Scott",
-  "model": "i-MDX 110"
+  "model": "i-MDX 110",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"FM","select":[{"commands":["InputFm"],"setType":2}]},
+        {"name":"USB/DVD","select":[{"commands":["InputUsb/Dvd"],"setType":2}]}
+      ]
+    },
+    "USB/DVDInput": {
+      "next": ["InputUsb/Dvd"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"Media"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 100,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

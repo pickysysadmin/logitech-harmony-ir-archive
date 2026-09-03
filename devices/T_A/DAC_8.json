@@ -2,6 +2,71 @@
   "codeset": "codesets/4a/4a8ec4971a26b30c.json",
   "deviceType": 19,
   "globalDeviceId": 238605,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"S/P-DIF1/2"},{"set":"S/P-DIF1/2Input","to":"S/P-DIF 1"}],"name":"S/P-DIF 1","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"S/P-DIF1/2"},{"set":"S/P-DIF1/2Input","to":"S/P-DIF 2"}],"name":"S/P-DIF 2","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"S/P-DIF3/4"},{"set":"S/P-DIF3/4Input","to":"S/P-DIF 3"}],"name":"S/P-DIF 3","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"S/P-DIF3/4"},{"set":"S/P-DIF3/4Input","to":"S/P-DIF 4"}],"name":"S/P-DIF 4","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Opt/Bnc"},{"set":"Opt/BncInput","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Opt/Bnc"},{"set":"Opt/BncInput","to":"BNC"}],"name":"BNC","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"Aes/Usb"},{"set":"Aes/UsbInput","to":"AES"}],"name":"AES","ports":["AES"]},
+      {"commands":[{"set":"InputType","to":"Aes/Usb"},{"set":"Aes/UsbInput","to":"USB"}],"name":"USB","ports":["USB"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "T+A",
-  "model": "DAC 8"
+  "model": "DAC 8",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Aes/UsbInput": {
+      "next": ["InputAes/Usb"],
+      "values": [
+        {"name":"AES"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"S/P-DIF1/2","select":[{"commands":["InputS/P-DIF1/2"],"setType":2}]},
+        {"name":"S/P-DIF3/4","select":[{"commands":["InputS/P-DIF3/4"],"setType":2}]},
+        {"name":"Opt/Bnc","select":[{"commands":["InputOpt/Bnc"],"setType":2}]},
+        {"name":"Aes/Usb","select":[{"commands":["InputAes/Usb"],"setType":2}]}
+      ]
+    },
+    "Opt/BncInput": {
+      "next": ["InputOpt/Bnc"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"BNC"}
+      ]
+    },
+    "S/P-DIF1/2Input": {
+      "next": ["InputS/P-DIF1/2"],
+      "values": [
+        {"name":"S/P-DIF 1"},
+        {"name":"S/P-DIF 2"}
+      ]
+    },
+    "S/P-DIF3/4Input": {
+      "next": ["InputS/P-DIF3/4"],
+      "values": [
+        {"name":"S/P-DIF 3"},
+        {"name":"S/P-DIF 4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

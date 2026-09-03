@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/50/50e7a78f689a018d.json",
   "deviceType": 34,
   "globalDeviceId": 114732,
+  "inputs": {
+    "list": [
+      {"name":"Front CVBS"},
+      {"name":"Rear CVBS"},
+      {"name":"DV"},
+      {"name":"DVD"},
+      {"name":"Rear S-Video"},
+      {"name":"USB"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Easytouch",
-  "model": "ET-610"
+  "model": "ET-610",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 16500,
+    "pressMinRepeats": 1
+  }
 }

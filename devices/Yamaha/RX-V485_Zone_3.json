@@ -2,6 +2,48 @@
   "codeset": "codesets/c0/c00e440bfc09a646.json",
   "deviceType": 5,
   "globalDeviceId": 493709,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputHdmi4"],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":["InputAudio1"],"name":"Audio 1","ports":["Optical"]},
+      {"commands":["InputAudio2"],"name":"Audio 2","ports":["Coaxial"]},
+      {"commands":["InputAudio3"],"name":"Audio 3","ports":["Composite"]},
+      {"commands":["InputAux"],"name":"Aux","ports":["Aux"]},
+      {"commands":["InputAv1"],"name":"AV 1","ports":["Composite","Coaxial"]},
+      {"commands":["InputAv2"],"name":"AV 2","ports":["Composite"]},
+      {"commands":["InputAv3"],"name":"AV 3","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":500},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputUsb"],"name":"USB","ports":["USB"]},
+      {"commands":["InputNetRadio"],"name":"Internet Radio","ports":["Streaming"]},
+      {"commands":["InputSpotify"],"name":"Spotify","ports":["Streaming"]},
+      {"commands":["InputAirplay"],"name":"AirPlay","ports":["Streaming"]},
+      {"commands":["InputPandora"],"name":"Pandora","ports":["Streaming"]},
+      {"commands":["InputServer"],"name":"Server","ports":["Streaming"]},
+      {"commands":["InputBluetooth"],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":["InputNet"],"name":"NET","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V485 (Zone 3)"
+  "model": "RX-V485 (Zone 3)",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

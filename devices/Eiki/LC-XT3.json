@@ -2,6 +2,57 @@
   "codeset": "codesets/6e/6e8bf61dc812618d.json",
   "deviceType": 7,
   "globalDeviceId": 213591,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input1/2"},{"set":"Input1/2Input","to":"Input 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Input1/2"},{"set":"Input1/2Input","to":"Input 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Input3/4"},{"set":"Input3/4Input","to":"Input 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"Input3/4"},{"set":"Input3/4Input","to":"Input 4"}],"name":"Input 4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Eiki",
-  "model": "LC-XT3"
+  "model": "LC-XT3",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "Input1/2Input": {
+      "next": ["Input1/2"],
+      "values": [
+        {"name":"Input 1"},
+        {"name":"Input 2"}
+      ]
+    },
+    "Input3/4Input": {
+      "next": ["Input3/4"],
+      "values": [
+        {"name":"Input 3"},
+        {"name":"Input 4"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input1/2","select":[{"commands":["Input1/2"],"setType":2}]},
+        {"name":"Input3/4","select":[{"commands":["Input3/4"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 1
+  }
 }

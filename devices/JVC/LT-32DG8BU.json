@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/27/27c502b599174a1e.json",
   "deviceType": 1,
   "globalDeviceId": 175555,
+  "inputs": {
+    "list": [
+      {"name":"AV"},
+      {"name":"EXT-1"},
+      {"name":"EXT-2"},
+      {"name":"EXT-3"},
+      {"name":"HDMI-1"},
+      {"name":"HDMI-2"},
+      {"name":"TDT"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "JVC",
-  "model": "LT-32DG8BU"
+  "model": "LT-32DG8BU",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"EXT-1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

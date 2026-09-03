@@ -2,6 +2,37 @@
   "codeset": "codesets/69/698b0eb246dc6a2b.json",
   "deviceType": 5,
   "globalDeviceId": 84648,
+  "inputs": {
+    "list": [
+      {"commands":[{"command":"InputSat","durationMs":1000}],"name":"SAT"},
+      {"commands":[{"command":"InputTv","durationMs":1000}],"name":"TV"},
+      {"commands":[{"command":"InputCd","durationMs":1000}],"name":"CD"},
+      {"commands":[{"command":"InputVcr","durationMs":1000}],"name":"VCR"},
+      {"commands":[{"command":"InputTuner","durationMs":1000}],"name":"Tuner"},
+      {"commands":[{"command":"InputDvd","durationMs":1000}],"name":"DVD"},
+      {"commands":[{"command":"InputPhono","durationMs":1000}],"name":"Phono"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "FR975/17"
+  "model": "FR975/17",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "on": [
+      {"command":"InputTuner","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

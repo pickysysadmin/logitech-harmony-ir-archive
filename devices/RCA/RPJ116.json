@@ -2,6 +2,40 @@
   "codeset": "codesets/47/470beec1c2368f4e.json",
   "deviceType": 7,
   "globalDeviceId": 412773,
+  "inputs": {
+    "finish": ["OK"],
+    "list": [
+      {"name":"PC-RGB"},
+      {"name":"HDMI"},
+      {"name":"AV"},
+      {"name":"USB"},
+      {"name":"TF"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "RCA",
-  "model": "RPJ116"
+  "model": "RPJ116",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

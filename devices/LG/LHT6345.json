@@ -2,6 +2,66 @@
   "codeset": "codesets/98/98eb11f32c71ea0c.json",
   "deviceType": 22,
   "globalDeviceId": 41298,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"CD/DVD"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Video 1 OPT"}],"name":"Video 1 OPT"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Video 1 Coax"}],"name":"Video 1 Coax"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Video 2 Opt"}],"name":"Video 2 Opt"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Video Coax"}],"name":"Video Coax"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LHT6345"
+  "model": "LHT6345",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 1 OPT"},
+        {"name":"Video 1 Coax"},
+        {"name":"Video 2"},
+        {"name":"Video 2 Opt"},
+        {"name":"Video Coax"}
+      ]
+    },
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 1 OPT"},
+        {"name":"Video 1 Coax"},
+        {"name":"Video 2"},
+        {"name":"Video 2 Opt"},
+        {"name":"Video Coax"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

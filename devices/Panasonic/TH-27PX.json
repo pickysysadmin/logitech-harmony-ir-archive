@@ -2,6 +2,69 @@
   "codeset": "codesets/a8/a8547d18fe86ba3f.json",
   "deviceType": 1,
   "globalDeviceId": 109382,
+  "inputs": {
+    "list": [
+      {"name":"Ch 3","ports":["Others"]},
+      {"name":"Video 2","ports":["Others"]},
+      {"name":"Video 3","ports":["Others"]}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-27PX"
+  "model": "TH-27PX",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1200}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2Input": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2s"}
+      ]
+    },
+    "AV3Input": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3s"}
+      ]
+    },
+    "AVType": {
+      "values": [
+        {"name":"AV1","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Red"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Green"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":[{"set":"ColorMenu","to":"OFF"},"Yellow"],"setType":2}]}
+      ]
+    },
+    "ColorMenu": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext",{"set":"ColorMenu","to":"ON"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

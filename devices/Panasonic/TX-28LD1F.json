@@ -1,7 +1,48 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 157444,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Av"}],"name":"AV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-28LD1F"
+  "model": "TX-28LD1F",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "AVS": {
+      "values": [
+        {"name":"AV1","select":[{"commands":["Red",{"delayMs":100},"Red",{"delayMs":200}],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["Red",{"delayMs":100},"Red",{"delayMs":200},"Green"],"setType":1}]},
+        {"name":"AV2S","select":[{"commands":["Red",{"delayMs":100},"Red",{"delayMs":200},"Green",{"delayMs":200},"Green"],"setType":1}]},
+        {"name":"AV3","select":[{"commands":["Red",{"delayMs":100},"Red",{"delayMs":200},"Yellow"],"setType":1}]}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["TvVideo",{"delayMs":300}],"setType":2}]},
+        {"name":"Av","select":[{"commands":["TvVideo",{"delayMs":500}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

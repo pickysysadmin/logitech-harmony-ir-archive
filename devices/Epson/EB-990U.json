@@ -2,6 +2,68 @@
   "codeset": "codesets/ac/ac9999b592178675.json",
   "deviceType": 7,
   "globalDeviceId": 435942,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"LAN"}],"name":"LAN"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 1"}],"name":"Computer 1"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 2"}],"name":"Computer 2"},
+      {"commands":[{"set":"InputType","to":"HDMI/Video"},{"set":"HDMI/VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"HDMI/Video"},{"set":"HDMI/VideoInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB Display"}],"name":"USB Display"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB-A"}],"name":"USB-A"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "EB-990U"
+  "model": "EB-990U",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "ComputerInput": {
+      "next": ["InputComputer"],
+      "values": [
+        {"name":"Computer 1"},
+        {"name":"Computer 2"}
+      ]
+    },
+    "HDMI/VideoInput": {
+      "next": ["InputHdmi/Video"],
+      "values": [
+        {"name":"Video"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"LAN","select":[{"commands":["InputLan"],"setType":2}]},
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"HDMI/Video","select":[{"commands":["InputHdmi/Video"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputUsb"],
+      "values": [
+        {"name":"USB Display"},
+        {"name":"USB-A"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

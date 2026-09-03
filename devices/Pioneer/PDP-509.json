@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/df/dfb0b0469e83017f.json",
   "deviceType": 1,
   "globalDeviceId": 207993,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANT A"}],"name":"Ant A"},
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANT B"}],"name":"Ant B"},
+      {"commands":[{"set":"InputType","to":"I LINK"}],"name":"i-Link"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"INPUT 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"INPUT 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"INPUT 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"INPUT 4"}],"name":"Input 4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PDP-509"
+  "model": "PDP-509",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "ANTInput": {
+      "next": ["AntennaA/B"],
+      "values": [
+        {"name":"ANT A"},
+        {"name":"ANT B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ANT","select":[{"commands":["AntennaA/B"],"setType":2}]},
+        {"name":"I LINK","select":[{"commands":["InputiLink"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"INPUT 1","select":[{"commands":[{"delayMs":1500},"InputVideo1"],"setType":2}]},
+        {"name":"INPUT 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"INPUT 3","select":[{"commands":[{"delayMs":1500},"InputVideo3"],"setType":2}]},
+        {"name":"INPUT 4","select":[{"commands":["InputVideo4"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

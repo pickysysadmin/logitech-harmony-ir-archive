@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/66/6640de4b363f94ce.json",
   "deviceType": 1,
   "globalDeviceId": 262645,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputAv1","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputAv1"],"name":"AV 1","ports":["Composite"]},
+      {"commands":["InputAv2","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputAv2"],"name":"AV 2","ports":["Composite"]},
+      {"commands":["InputComponent","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputHdmi1","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputHdmi4","Exit","DirectionRight","Select",{"delayMs":1500},"Exit","Exit","InputHdmi4"],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":["Exit",{"delayMs":1000},"Exit",{"delayMs":2000},"SmartHub","Select"],"name":"SmartHub","ports":["Streaming"]},
+      {"commands":["Ambient"],"name":"Ambient"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UN50HU8550"
+  "model": "UN50HU8550",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

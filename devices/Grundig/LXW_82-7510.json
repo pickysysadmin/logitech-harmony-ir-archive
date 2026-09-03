@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/34/3433029b5e201ec7.json",
   "deviceType": 1,
   "globalDeviceId": 85303,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Tuner"},
+      {"commands":["InputNext"],"name":"Video1"},
+      {"commands":["InputNext","InputNext"],"name":"Video2"},
+      {"commands":["InputNext","InputNext","InputNext"],"name":"Video3"},
+      {"commands":["InputNext","InputNext","InputNext","InputNext"],"name":"Video4"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Grundig",
-  "model": "LXW 82-7510"
+  "model": "LXW 82-7510",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerOff"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

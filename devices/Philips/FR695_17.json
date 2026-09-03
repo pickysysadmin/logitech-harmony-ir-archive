@@ -2,6 +2,33 @@
   "codeset": "codesets/91/9147147c878f6704.json",
   "deviceType": 5,
   "globalDeviceId": 229704,
+  "inputs": {
+    "list": [
+      {"commands":[{"command":"InputSat","durationMs":2000}],"name":"Sat"},
+      {"commands":[{"command":"InputTelevision","durationMs":2000}],"name":"TV"},
+      {"commands":[{"command":"InputCd","durationMs":2000}],"name":"CD"},
+      {"commands":[{"command":"InputVcr","durationMs":2000}],"name":"VCR"},
+      {"commands":[{"command":"InputTuner","durationMs":2000}],"name":"Tuner"},
+      {"commands":[{"command":"InputDVD","durationMs":2000}],"name":"DVD"},
+      {"commands":[{"command":"InputPhono","durationMs":2000}],"name":"Phono"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "FR695/17"
+  "model": "FR695/17",
+  "power": {
+    "off": ["PowerToggle2"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

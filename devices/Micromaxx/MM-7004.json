@@ -2,6 +2,33 @@
   "codeset": "codesets/ca/ca785ed14e8a0261.json",
   "deviceType": 1,
   "globalDeviceId": 87147,
+  "inputs": {
+    "list": [
+      {"name":"AV1DVD"},
+      {"name":"AV2SAT"},
+      {"name":"AV3Foto"},
+      {"name":"AV3SFoto"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Micromaxx",
-  "model": "MM-7004"
+  "model": "MM-7004",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV3SFoto"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

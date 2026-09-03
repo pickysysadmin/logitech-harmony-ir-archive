@@ -2,6 +2,53 @@
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 133541,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Input Video1"}],"name":"Input Video1"},
+      {"commands":[{"set":"InputType","to":"Input Video2"}],"name":"Input Video2"},
+      {"commands":[{"set":"InputType","to":"Input Video3"}],"name":"Input Video3"},
+      {"commands":[{"set":"InputType","to":"Input Video4"}],"name":"Input Video4"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital1"}],"name":"Digital1"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital2"}],"name":"Digital2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "HD-61FH97A"
+  "model": "HD-61FH97A",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputDigital In"],
+      "values": [
+        {"name":"Digital1"},
+        {"name":"Digital2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputAB"],"setType":2}]},
+        {"name":"Input Video1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Input Video2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Input Video3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Input Video4","select":[{"commands":["Input 4"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDigital In",{"set":"DigitalInput","to":"Digital1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

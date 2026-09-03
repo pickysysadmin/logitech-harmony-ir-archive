@@ -2,6 +2,35 @@
   "codeset": "codesets/ba/ba743dffa583b1df.json",
   "deviceType": 22,
   "globalDeviceId": 209971,
+  "inputs": {
+    "list": [
+      {"name":"Home","ports":["BuiltIn"]},
+      {"name":"Aux 1","ports":["Composite"]},
+      {"name":"Aux 2","ports":["Composite"]},
+      {"name":"Coaxial","ports":["Coaxial"]},
+      {"name":"Mp3Link","ports":["Aux"]},
+      {"name":"FM","ports":["FM Antenna"]}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "HTS3051BV/F7"
+  "model": "HTS3051BV/F7",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Home"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

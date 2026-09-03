@@ -2,6 +2,37 @@
   "codeset": "codesets/8b/8b9ec7e35e22bde7.json",
   "deviceType": 1,
   "globalDeviceId": 493403,
+  "inputs": {
+    "list": [
+      {"commands":["Input",{"delayMs":1000},"InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputHdmi1",{"delayMs":1000},"Input",{"delayMs":1000},"DirectionLeft","Select"],"name":"WatchFree"},
+      {"commands":["Input",{"delayMs":1000},"InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["Input",{"delayMs":1000},"InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["Input",{"delayMs":1000},"InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["Input",{"delayMs":1000},"InputComponent"],"name":"Component"},
+      {"commands":["Input",{"delayMs":1000},"InputAv"],"name":"AV","ports":["Composite"]},
+      {"commands":["PrimeVideo"],"name":"Prime Video","ports":["Streaming"]},
+      {"commands":["SmartCastTV"],"name":"SmartCast TV","ports":["Antenna"]},
+      {"commands":["Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Vizio",
-  "model": "V755-G4"
+  "model": "V755-G4",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 8000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

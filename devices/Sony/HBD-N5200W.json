@@ -2,6 +2,34 @@
   "codeset": "codesets/43/43b134124c5fc5b3.json",
   "deviceType": 22,
   "globalDeviceId": 266233,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"BD/DVD","ports":["Streaming"]},
+      {"commands":["InputUSB"],"name":"USB","ports":["USB"]},
+      {"commands":["InputTuner"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner","Function"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputTuner",{"delayMs":2000},"Function","Function"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputTV"],"name":"TV","ports":["Optical"]},
+      {"commands":["Mirroring"],"name":"SCR M","ports":["Streaming"]},
+      {"commands":["InputBT"],"name":"BT","ports":["Pairing Input"]},
+      {"commands":["InputAudio"],"name":"Audio","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "HBD-N5200W"
+  "model": "HBD-N5200W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

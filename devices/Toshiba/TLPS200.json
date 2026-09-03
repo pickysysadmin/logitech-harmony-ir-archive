@@ -2,6 +2,39 @@
   "codeset": "codesets/4b/4bc730619a57cd38.json",
   "deviceType": 7,
   "globalDeviceId": 215200,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"InputComputer1"},
+      {"name":"InputYPBPR1"},
+      {"name":"InputComputer2"},
+      {"name":"InputYPBPR2"},
+      {"name":"InputVideo"},
+      {"name":"InputSVideo"},
+      {"name":"InputPCCard"},
+      {"name":"InputCamera"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Toshiba",
-  "model": "TLPS200"
+  "model": "TLPS200",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

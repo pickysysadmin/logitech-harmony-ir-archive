@@ -2,6 +2,34 @@
   "codeset": "codesets/4f/4f36280fc04a74c8.json",
   "deviceType": 1,
   "globalDeviceId": 160732,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV"}
+    ],
+    "next": ["Tv/Av"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-14S1 (EU)"
+  "model": "TX-14S1 (EU)",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1500}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 1
+  }
 }

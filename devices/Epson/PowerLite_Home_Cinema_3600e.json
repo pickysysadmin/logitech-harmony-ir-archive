@@ -2,6 +2,37 @@
   "codeset": "codesets/22/228da8e1ff582113.json",
   "deviceType": 7,
   "globalDeviceId": 266290,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1/ MHL","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputPc"],"name":"PC","ports":["PC"]},
+      {"commands":["InputUsb/Lan"],"name":"USB/LAN","ports":["USB"]},
+      {"commands":["InputWirelessHd"],"name":"WirelessHD","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "PowerLite Home Cinema 3600e"
+  "model": "PowerLite Home Cinema 3600e",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000},
+      {"delayMs":4000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 2500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

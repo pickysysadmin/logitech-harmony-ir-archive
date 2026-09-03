@@ -2,6 +2,38 @@
   "codeset": "codesets/02/0227b130f9e3ef61.json",
   "deviceType": 7,
   "globalDeviceId": 523614,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"Media Reader"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "BenQ",
-  "model": "W5800"
+  "model": "W5800",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

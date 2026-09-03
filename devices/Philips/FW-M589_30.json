@@ -2,6 +2,61 @@
   "codeset": "codesets/67/67e23073ec63876f.json",
   "deviceType": 21,
   "globalDeviceId": 212767,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"UsbPcLink"}],"name":"UsbPcLink"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"Cd1"}],"name":"Cd1"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"Cd2"}],"name":"Cd2"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"Cd3"}],"name":"Cd3"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"Cd4"}],"name":"Cd4"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"Cd5"}],"name":"Cd5"},
+      {"commands":[{"set":"InputType","to":"Game/Aux"},{"set":"Game/AuxInput","to":"GamePort"}],"name":"GamePort"},
+      {"commands":[{"set":"InputType","to":"Game/Aux"},{"set":"Game/AuxInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "FW-M589/30"
+  "model": "FW-M589/30",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CDInput": {
+      "next": ["InputCd"],
+      "values": [
+        {"name":"Cd1"},
+        {"name":"Cd2"},
+        {"name":"Cd3"},
+        {"name":"Cd4"},
+        {"name":"Cd5"}
+      ]
+    },
+    "Game/AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"GamePort"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"UsbPcLink","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Game/Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

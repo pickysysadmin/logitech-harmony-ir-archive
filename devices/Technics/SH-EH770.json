@@ -2,6 +2,32 @@
   "codeset": "codesets/4f/4faa10a9aaed7f1a.json",
   "deviceType": 21,
   "globalDeviceId": 52795,
+  "inputs": {
+    "list": [
+      {"name":"CD"},
+      {"name":"RADIO"},
+      {"name":"CASSETTE"}
+    ],
+    "next": ["InputCD"],
+    "type": 2
+  },
   "manufacturer": "Technics",
-  "model": "SH-EH770"
+  "model": "SH-EH770",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"CD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

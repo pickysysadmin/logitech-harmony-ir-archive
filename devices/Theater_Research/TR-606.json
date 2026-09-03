@@ -2,6 +2,51 @@
   "codeset": "codesets/ed/ed22bdfb24f10d37.json",
   "deviceType": 19,
   "globalDeviceId": 176564,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Media"},{"set":"MediaInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Theater Research",
-  "model": "TR-606"
+  "model": "TR-606",
+  "states": {
+    "InputType": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Media"},
+        {"name":"Tuner"}
+      ]
+    },
+    "MediaInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tape"},
+        {"name":"DVD"},
+        {"name":"CD"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 0,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/05/05cc366f8bf52393.json",
   "deviceType": 1,
   "globalDeviceId": 77508,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"SCART1(FULL)"},
+      {"name":"SCART2(HALF)"},
+      {"name":"COMPONENT 1"},
+      {"name":"S-VIDEO 1"}
+    ],
+    "next": ["ChannelDown"],
+    "start": [
+      {"delayMs":1000},
+      "InputNext"
+    ],
+    "type": 4
+  },
   "manufacturer": "Fairtec",
-  "model": "EPT-4201AP"
+  "model": "EPT-4201AP",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

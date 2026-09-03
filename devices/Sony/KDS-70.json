@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/af/afe707509c1800e1.json",
   "deviceType": 1,
   "globalDeviceId": 70680,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner","ports":["Antenna"]},
+      {"commands":["InputVideo1"],"name":"Video 1","ports":["Composite","S-Video"]},
+      {"commands":["InputVideo2"],"name":"Video 2","ports":["Composite","S-Video"]},
+      {"commands":["InputVideo3"],"name":"Video 3","ports":["Composite","S-Video"]},
+      {"commands":["InputVideo4"],"name":"Video 4","ports":["Component"]},
+      {"commands":["InputVideo5"],"name":"Video 5","ports":["Component"]},
+      {"commands":["InputVideo6"],"name":"Video 6","ports":["HDMI","Composite"]},
+      {"commands":["InputVideo7"],"name":"Video 7","ports":["HDMI"]},
+      {"commands":["MemoryStick"],"name":"Memory Stick","ports":["SD-Card"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDS-70"
+  "model": "KDS-70",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

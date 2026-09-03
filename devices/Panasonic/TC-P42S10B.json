@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/9f/9fd8d3d00dee78cc.json",
   "deviceType": 1,
   "globalDeviceId": 165494,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"TV"},
+      {"commands":["2"],"name":"AV1"},
+      {"commands":["3"],"name":"AV2"},
+      {"commands":["4"],"name":"AV3"},
+      {"commands":["5"],"name":"AV4"},
+      {"commands":["6"],"name":"Hdmi1"},
+      {"commands":["7"],"name":"Hdmi2"},
+      {"commands":["8"],"name":"Hdmi3"},
+      {"commands":["9"],"name":"PC"}
+    ],
+    "start": ["Input"],
+    "type": 3
+  },
   "manufacturer": "Panasonic",
-  "model": "TC-P42S10B"
+  "model": "TC-P42S10B",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

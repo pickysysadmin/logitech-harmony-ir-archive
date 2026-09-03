@@ -2,6 +2,38 @@
   "codeset": "codesets/6a/6afc58a92d043975.json",
   "deviceType": 7,
   "globalDeviceId": 122852,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"1 Video"},
+      {"commands":["2"],"name":"2 SVideo"},
+      {"commands":["3"],"name":"3 RGBs 15kHz"},
+      {"commands":["4"],"name":"4 YCrCb 15kHz"},
+      {"commands":["5"],"name":"5 RGBs 32kHz"},
+      {"commands":["6"],"name":"6 YCrCb 32kHz"},
+      {"commands":["7"],"name":"7 Graphics RGB"}
+    ],
+    "start": ["0"],
+    "type": 3
+  },
   "manufacturer": "Sim2",
-  "model": "Domino 40"
+  "model": "Domino 40",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":1000},
+      {"delayMs":2000},
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

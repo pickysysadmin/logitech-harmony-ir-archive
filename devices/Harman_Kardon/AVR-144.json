@@ -2,6 +2,58 @@
   "codeset": "codesets/4b/4b89253ca32171fd.json",
   "deviceType": 5,
   "globalDeviceId": 107641,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD","ports":["Component","Composite","Coaxial","S-Video"]},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD","ports":["Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape","ports":["Composite","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"Video 1"}],"name":"Video 1","ports":["Component","Composite","S-Video","Optical"]},
+      {"commands":[{"set":"InputType","to":"Video 2"}],"name":"Video 2","ports":["Component","Composite","S-Video","Optical"]},
+      {"commands":[{"set":"InputType","to":"Video 3"}],"name":"Video 3","ports":["Component","Coaxial","Optical"]},
+      {"commands":[{"set":"InputType","to":"6/8CH"}],"name":"6/8 Ch","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"DMP"}],"name":"DMP","ports":["Others"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "AVR-144"
+  "model": "AVR-144",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Video 1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"6/8CH","select":[{"commands":["Input6/8Ch"],"setType":2}]},
+        {"name":"AM/FM","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DMP","select":[{"commands":["InputDmp"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 111707,
+  "inputs": {
+    "list": [
+      {"commands":["TvVideo"],"name":"Ext.1"},
+      {"commands":["TvVideo"],"name":"Ext.2"},
+      {"commands":["InputRgb"],"name":"PC"},
+      {"commands":["InputAntenna"],"name":"Tuner"},
+      {"commands":["InputComponent 1"],"name":"Comp"},
+      {"commands":["InputVideo"],"name":"AV"},
+      {"commands":["TvVideo"],"name":"HDMI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "LA-27S7"
+  "model": "LA-27S7",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

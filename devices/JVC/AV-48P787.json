@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/5c/5c675781daa9670a.json",
   "deviceType": 1,
   "globalDeviceId": 177695,
+  "inputs": {
+    "list": [
+      {"commands":["InputTV"],"name":"TV"},
+      {"commands":["InputVideo 1"],"name":"Video 1"},
+      {"commands":["InputVideo 2"],"name":"Video 2"},
+      {"commands":["InputVideo 3"],"name":"Video 3"},
+      {"commands":["InputVideo 4"],"name":"Video 4"},
+      {"commands":["InputDigitalIn1"],"name":"Digital-In1"},
+      {"commands":["InputDigitalIn1",{"delayMs":3000},"InputNext"],"name":"Digital-In2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "AV-48P787"
+  "model": "AV-48P787",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

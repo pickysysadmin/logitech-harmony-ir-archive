@@ -2,6 +2,68 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 29044,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGBPC"},{"set":"RGBInput","to":"RGBPC"}],"name":"RGB-PC"},
+      {"commands":[{"set":"InputType","to":"RGBPC"},{"set":"RGBInput","to":"RGB1"}],"name":"RGB1"},
+      {"commands":[{"set":"InputType","to":"RGBPC"},{"set":"RGBInput","to":"RGB2"}],"name":"RGB2"},
+      {"commands":[{"set":"InputType","to":"RGBPC"},{"set":"RGBInput","to":"RGB3"}],"name":"RGB3"},
+      {"commands":[{"set":"InputType","to":"DVDHD"},{"set":"DVDHDInput","to":"DVDHD1"}],"name":"DVD-HD1"},
+      {"commands":[{"set":"InputType","to":"DVDHD"},{"set":"DVDHDInput","to":"DVDHD2"}],"name":"DVD-HD2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1"}],"name":"VIDEO1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2"}],"name":"VIDEO2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video3"}],"name":"VIDEO3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "PX42-XM2A"
+  "model": "PX42-XM2A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "DVDHDInput": {
+      "next": ["DVD/HDToggle"],
+      "values": [
+        {"name":"DVDHD1"},
+        {"name":"DVDHD2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"RGBPC","select":[{"commands":["RGB/PCToggle"],"setType":2}]},
+        {"name":"DVDHD","select":[{"commands":["DVD/HDToggle"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"},
+        {"name":"RGBPC"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

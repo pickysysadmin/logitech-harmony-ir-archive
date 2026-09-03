@@ -2,6 +2,62 @@
   "codeset": "codesets/61/61c09a91eda74e64.json",
   "deviceType": 7,
   "globalDeviceId": 277341,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"}],"name":"Computer"},
+      {"commands":[{"set":"InputType","to":"LAN"}],"name":"LAN"},
+      {"commands":[{"set":"InputType","to":"VideoInputs"},{"set":"VideoInputsInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"VideoInputs"},{"set":"VideoInputsInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"VideoInputs"},{"set":"VideoInputsInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"USBInputs"},{"set":"USBInputsInput","to":"USB Display"}],"name":"USB Display"},
+      {"commands":[{"set":"InputType","to":"USBInputs"},{"set":"USBInputsInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "EB-W04"
+  "model": "EB-W04",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"LAN","select":[{"commands":["InputLan"],"setType":2}]},
+        {"name":"VideoInputs","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"USBInputs","select":[{"commands":["InputUsb"],"setType":2}]}
+      ]
+    },
+    "USBInputsInput": {
+      "next": ["InputUsb"],
+      "values": [
+        {"name":"USB Display"},
+        {"name":"USB"}
+      ]
+    },
+    "VideoInputsInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"S-Video"},
+        {"name":"Video"},
+        {"name":"HDMI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

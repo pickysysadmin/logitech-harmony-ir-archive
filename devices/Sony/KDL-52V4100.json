@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/05/057895460f092d24.json",
   "deviceType": 1,
   "globalDeviceId": 156179,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner","ports":["Antenna"]},
+      {"commands":["InputVideo1"],"name":"Video 1","ports":["Composite","S-Video"]},
+      {"commands":["InputVideo2"],"name":"Video 2","ports":["Composite"]},
+      {"commands":["InputVideo3"],"name":"Video 3","ports":["Composite"]},
+      {"commands":["InputVideo4"],"name":"Component 1","ports":["Component"]},
+      {"commands":["InputVideo5"],"name":"Component 2","ports":["Component"]},
+      {"commands":["InputVideo6"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputVideo7"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputVideo8"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputVideo9"],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":["InputPc"],"name":"PC","ports":["PC"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-52V4100"
+  "model": "KDL-52V4100",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 3
+  }
 }

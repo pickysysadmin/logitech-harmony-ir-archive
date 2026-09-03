@@ -1,7 +1,46 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 119081,
+  "inputs": {
+    "list": [
+      {"name":"TUNER"},
+      {"name":"VIDEO1"},
+      {"name":"VIDEO2"},
+      {"name":"VIDEO3"},
+      {"name":"S-video"},
+      {"name":"component"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "RT-29FB75RX"
+  "model": "RT-29FB75RX",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["Teletext"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Teletext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

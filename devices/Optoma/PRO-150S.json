@@ -2,6 +2,46 @@
   "codeset": "codesets/e1/e19a9ba8b1af3f78.json",
   "deviceType": 7,
   "globalDeviceId": 203128,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Vga"},{"set":"VgaInput","to":"Vga1"}],"name":"Vga1"},
+      {"commands":[{"set":"InputType","to":"Vga"},{"set":"VgaInput","to":"Vga2"}],"name":"Vga2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Optoma",
-  "model": "PRO-150S"
+  "model": "PRO-150S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Vga","select":[{"commands":["InputVGA"],"setType":2}]}
+      ]
+    },
+    "VgaInput": {
+      "next": ["InputVGA"],
+      "values": [
+        {"name":"Vga1"},
+        {"name":"Vga2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

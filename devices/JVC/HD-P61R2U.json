@@ -2,6 +2,55 @@
   "codeset": "codesets/5b/5b06708526cea6f3.json",
   "deviceType": 1,
   "globalDeviceId": 125470,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"Video3"},
+      {"name":"Video4"},
+      {"name":"Digital-In1"},
+      {"name":"Digital-In2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "JVC",
-  "model": "HD-P61R2U"
+  "model": "HD-P61R2U",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["InputDigital-In"],
+      "values": [
+        {"name":"Digital-In1"},
+        {"name":"Digital-In2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["ChannelUp"],"setType":2}]},
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Video4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"iLink","select":[{"commands":["iLinkMenu"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDigital-In"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

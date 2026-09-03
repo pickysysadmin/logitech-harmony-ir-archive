@@ -2,6 +2,36 @@
   "codeset": "codesets/32/32412132860c2224.json",
   "deviceType": 5,
   "globalDeviceId": 167412,
+  "inputs": {
+    "list": [
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo3"],"name":"Video 3"},
+      {"commands":["InputMultiChannel"],"name":"MultiChannel"},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM"},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "HT-SR600"
+  "model": "HT-SR600",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

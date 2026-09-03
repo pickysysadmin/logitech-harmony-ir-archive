@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 78041,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2/S"},
+      {"commands":["InputVideo3"],"name":"AV3/S/PC"},
+      {"commands":["InputVideo4"],"name":"AV4/S/C"},
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["TvVideo"],"name":"TV/AV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-37PE"
+  "model": "TH-37PE",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":4000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

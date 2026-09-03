@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 113863,
+  "inputs": {
+    "list": [
+      {"commands":["InputAB"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"Video-1"},
+      {"commands":["InputVideo2"],"name":"Video-2"},
+      {"commands":["InputVideo3"],"name":"video-3"},
+      {"commands":["InputDigital In"],"name":"HDMI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-26X585"
+  "model": "LT-26X585",
+  "power": {
+    "off": ["PowerOff"],
+    "on": [
+      {"command":"PowerOn","durationMs":1500}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 2
+  }
 }

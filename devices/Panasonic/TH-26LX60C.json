@@ -1,7 +1,44 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 100657,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"commands":["TvVideo"],"name":"Tuner"},
+      {"commands":["Red"],"name":"AV1"},
+      {"commands":["Green"],"name":"AV2"},
+      {"commands":["Yellow"],"name":"AV3"},
+      {"commands":["Blue"],"name":"AV4"}
+    ],
+    "start": ["TvVideo"],
+    "type": 3
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-26LX60C"
+  "model": "TH-26LX60C",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": [
+      "PowerToggle",
+      {"delayMs":600},
+      {"command":"PowerToggle","durationMs":3000}
+    ],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

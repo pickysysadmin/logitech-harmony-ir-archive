@@ -2,6 +2,42 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 144731,
+  "inputs": {
+    "finish": [
+      {"command":"VolumeUp","durationMs":2000}
+    ],
+    "list": [
+      {"name":"VGA"},
+      {"name":"HDMI"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"TV"},
+      {"name":"D4"}
+    ],
+    "next": ["ChannelDown"],
+    "previous": ["ChannelUp"],
+    "start": [
+      {"command":"InputNext","durationMs":2000}
+    ],
+    "type": 4
+  },
   "manufacturer": "Ozzio",
-  "model": "HDV-32WX1"
+  "model": "HDV-32WX1",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"VGA"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4500,
+    "pressMinRepeats": 3
+  }
 }

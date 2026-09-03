@@ -1,7 +1,33 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f8/f85bada5f8fd15c8.json",
   "deviceType": 15,
   "globalDeviceId": 112527,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"TV"},
+      {"commands":["1","ChannelDown"],"name":"E1"},
+      {"commands":["1","ChannelDown","ChannelDown"],"name":"AV E2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "21PV715/39"
+  "model": "21PV715/39",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

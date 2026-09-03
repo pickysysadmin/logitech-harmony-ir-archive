@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/f5/f5d1d735a9df89eb.json",
   "deviceType": 34,
   "globalDeviceId": 142304,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"DVD"},
+      {"name":"Video 2"},
+      {"name":"Tuner"},
+      {"name":"Video 1"},
+      {"name":"S-Video"}
+    ],
+    "next": ["DirectionRight"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "CyberHome",
-  "model": "DVR-1200"
+  "model": "DVR-1200",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

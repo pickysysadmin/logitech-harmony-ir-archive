@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/5c/5cfcf970edc52470.json",
   "deviceType": 34,
   "globalDeviceId": 99172,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"CH"},
+      {"name":"Front CVBS"},
+      {"name":"Rear CVBS"},
+      {"name":"S-Video"},
+      {"name":"DV"},
+      {"name":"YUV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sansui",
-  "model": "DVR-1038"
+  "model": "DVR-1038",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

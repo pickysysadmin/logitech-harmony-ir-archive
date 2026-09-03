@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/1f/1f201f868022d6da.json",
   "deviceType": 1,
   "globalDeviceId": 105462,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV"},
+      {"name":"RGB"},
+      {"name":"YPBPR"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Elsay",
-  "model": "LC 60"
+  "model": "LC 60",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

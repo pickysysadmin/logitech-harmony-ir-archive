@@ -2,6 +2,32 @@
   "codeset": "codesets/0f/0fd74edc004b5f35.json",
   "deviceType": 1,
   "globalDeviceId": 71076,
+  "inputs": {
+    "list": [
+      {"name":"Antenna"},
+      {"name":"Video1"},
+      {"name":"Video2"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Tevion",
-  "model": "K-3288U"
+  "model": "K-3288U",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

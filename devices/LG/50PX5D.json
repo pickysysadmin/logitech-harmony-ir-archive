@@ -2,6 +2,64 @@
   "codeset": "codesets/d4/d439be18d561991e.json",
   "deviceType": 1,
   "globalDeviceId": 169455,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Analog Tuner"}],"name":"Analog Tuner"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Digital Tuner"}],"name":"Digital Tuner"},
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"HDMI1/DVI"}],"name":"HDMI1/DVI"},
+      {"commands":[{"set":"InputType","to":"RGB/DTV"}],"name":"RGB/DTV"},
+      {"commands":[{"set":"InputType","to":"RGB/PC"}],"name":"RGB/PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "50PX5D"
+  "model": "50PX5D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "CATVInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"TV"},
+        {"name":"CATV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDMI1/DVI","select":[{"commands":["InputHdmi1/Dvi"],"setType":2}]},
+        {"name":"Component1","select":[{"commands":["InputComponent1"],"setType":2}]},
+        {"name":"Component2","select":[{"commands":["InputComponent2"],"setType":2}]},
+        {"name":"AV1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"RGB/DTV","select":[{"commands":["InputRgb/Dtv"],"setType":2}]},
+        {"name":"RGB/PC","select":[{"commands":["InputRGB/PC"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"Analog Tuner"},
+        {"name":"Digital Tuner"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

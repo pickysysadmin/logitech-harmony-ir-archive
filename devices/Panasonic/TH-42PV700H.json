@@ -1,7 +1,98 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 129166,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"NowTV"},
+      {"name":"Xbox360"},
+      {"name":"AV3"},
+      {"name":"AV4"},
+      {"name":"PC"},
+      {"name":"DVD"},
+      {"name":"HDMI2"},
+      {"name":"HDMI3"},
+      {"name":"TV"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-42PV700H"
+  "model": "TH-42PV700H",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AV2/AV2SInput": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "AV3/AV3SInput": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AV4/AV4SInput": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV4"},
+        {"name":"AV4S"}
+      ]
+    },
+    "DigitalInput": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"Componente"},
+        {"name":"PC"},
+        {"name":"HDMI"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV/AV","select":[{"commands":[{"set":"TV/AVInput","to":"TV"}],"setType":2}]},
+        {"name":"VIDEO1","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Red","Red"],"setType":1}]},
+        {"name":"VIDEO2","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Green","Green"],"setType":2}]},
+        {"name":"VIDEO3","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Yellow","Yellow"],"setType":2}]},
+        {"name":"VIDEO4","select":[{"commands":[{"set":"TV/AVInput","to":"AV"},"Green"],"setType":2}]}
+      ]
+    },
+    "RedBlueInput": {
+      "values": [
+        {"name":"Red","select":[{"commands":["Red","Red"],"setType":2}]},
+        {"name":"Blue","select":[{"commands":["Blue","Blue"],"setType":2}]}
+      ]
+    },
+    "TV/AVInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 0,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,75 @@
   "codeset": "codesets/9c/9c9b8fce107dcf8c.json",
   "deviceType": 5,
   "globalDeviceId": 77895,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"V-AUX"}],"name":"V-AUX"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Sat"},{"set":"SatInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"Sat"},{"set":"SatInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Sat"},{"set":"SatInput","to":"Coaxial"}],"name":"Coaxial"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "RT-2350"
+  "model": "RT-2350",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CDInput": {
+      "next": ["InputCd"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Optical"},
+        {"name":"Coaxial"}
+      ]
+    },
+    "DVDInput": {
+      "next": ["InputDvd"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Optical"},
+        {"name":"Coaxial"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"V-AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Sat","select":[{"commands":["InputSat/Cable"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "SatInput": {
+      "next": ["InputSat/Cable"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Optical"},
+        {"name":"Coaxial"}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Optical"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,31 @@
   "codeset": "codesets/f5/f5022b026e473c6e.json",
   "deviceType": 5,
   "globalDeviceId": 255480,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmiArc","InputNext"],"name":"Optical","ports":["Optical"]},
+      {"commands":["InputAnalog"],"name":"Analog","ports":["Coaxial"]},
+      {"commands":["InputHdmi","InputPrev"],"name":"BT AU","ports":["Pairing Input"]},
+      {"commands":["InputHdmi"],"name":"HDMI","ports":["HDMI"]},
+      {"commands":["InputHdmiArc"],"name":"TV HDMI","ports":["HDMI"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "HT-CT260H"
+  "model": "HT-CT260H",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

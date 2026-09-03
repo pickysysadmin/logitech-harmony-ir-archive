@@ -2,6 +2,32 @@
   "codeset": "codesets/8a/8aa8aa4b328c8fed.json",
   "deviceType": 19,
   "globalDeviceId": 248604,
+  "inputs": {
+    "list": [
+      {"commands":["InputD.In"],"name":"D.IN","ports":["Optical"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Aux"]},
+      {"commands":["InputAux","Source"],"name":"HDMI","ports":["HDMI"]},
+      {"commands":["InputBT"],"name":"BT","ports":["Pairing Input"]},
+      {"commands":["InputAux","Source","Source","Source"],"name":"TV","ports":["Pairing Input"]},
+      {"commands":["InputD.In","InputUsb/BT"],"name":"USB","ports":["USB"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HW-F450"
+  "model": "HW-F450",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 2
+  }
 }

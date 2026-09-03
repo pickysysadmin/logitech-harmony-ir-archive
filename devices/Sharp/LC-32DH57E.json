@@ -2,6 +2,58 @@
   "codeset": "codesets/fa/faa2c644ab3ae015.json",
   "deviceType": 1,
   "globalDeviceId": 162106,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"InputSource"},{"set":"InputSourceInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"InputSource"},{"set":"InputSourceInput","to":"EXT 1"}],"name":"EXT 1"},
+      {"commands":[{"set":"InputType","to":"InputSource"},{"set":"InputSourceInput","to":"EXT 2"}],"name":"EXT 2"},
+      {"commands":[{"set":"InputType","to":"InputSource"},{"set":"InputSourceInput","to":"EXT 3"}],"name":"EXT 3"},
+      {"commands":[{"set":"InputType","to":"InputSource"},{"set":"InputSourceInput","to":"EXT 4"}],"name":"EXT 4"},
+      {"commands":[{"set":"InputType","to":"InputSource"},{"set":"InputSourceInput","to":"EXT 5"}],"name":"EXT 5"},
+      {"commands":[{"set":"InputType","to":"InputSource"},{"set":"InputSourceInput","to":"EXT 6"}],"name":"EXT 6"},
+      {"commands":[{"set":"InputType","to":"InputSource"},{"set":"InputSourceInput","to":"EXT 7"}],"name":"EXT 7"},
+      {"commands":[{"set":"InputType","to":"InputSource"},{"set":"InputSourceInput","to":"EXT 8"}],"name":"EXT 8"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "LC-32DH57E"
+  "model": "LC-32DH57E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputSourceInput": {
+      "next": ["InputSource"],
+      "values": [
+        {"name":"TV"},
+        {"name":"EXT 1"},
+        {"name":"EXT 2"},
+        {"name":"EXT 3"},
+        {"name":"EXT 4"},
+        {"name":"EXT 5"},
+        {"name":"EXT 6"},
+        {"name":"EXT 7"},
+        {"name":"EXT 8"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"InputSource","select":[{"commands":["InputSource"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

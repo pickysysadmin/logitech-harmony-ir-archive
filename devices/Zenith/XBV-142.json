@@ -2,6 +2,53 @@
   "codeset": "codesets/c6/c68f3e4e44634ffe.json",
   "deviceType": 25,
   "globalDeviceId": 152435,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputNext",{"set":"Video","to":"VIDEO 1"}],"name":"VIDEO 1"},
+      {"commands":["InputNext",{"set":"Video","to":"VIDEO 2"}],"name":"VIDEO 2"},
+      {"commands":["InputVhs"],"name":"VCR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Zenith",
-  "model": "XBV-142"
+  "model": "XBV-142",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVhs"],"setType":2}]}
+      ]
+    },
+    "Tuner": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "Video": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"VIDEO 1"},
+        {"name":"VIDEO 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,51 @@
   "codeset": "codesets/0e/0ee69c866709160e.json",
   "deviceType": 19,
   "globalDeviceId": 261035,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Unbalanced"}],"name":"Unbalanced"},
+      {"commands":[{"set":"InputType","to":"Balanced"}],"name":"Balanced"},
+      {"commands":[{"set":"InputType","to":"CUE"}],"name":"CUE"},
+      {"commands":[{"set":"InputType","to":"TOSLINK"}],"name":"TOSLINK"},
+      {"commands":[{"set":"InputType","to":"ADAT"}],"name":"ADAT"},
+      {"commands":[{"set":"InputType","to":"S/PDIF"}],"name":"S/PDIF"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"AES"},{"set":"AESInput","to":"AES 1"}],"name":"AES 1"},
+      {"commands":[{"set":"InputType","to":"AES"},{"set":"AESInput","to":"AES 2"}],"name":"AES 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Grace Design",
-  "model": "m905"
+  "model": "m905",
+  "states": {
+    "AESInput": {
+      "next": ["aes"],
+      "values": [
+        {"name":"AES 1"},
+        {"name":"AES 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Unbalanced","select":[{"commands":["unbal"],"setType":2}]},
+        {"name":"Balanced","select":[{"commands":["bal"],"setType":2}]},
+        {"name":"CUE","select":[{"commands":["cue"],"setType":2}]},
+        {"name":"TOSLINK","select":[{"commands":["toslink"],"setType":2}]},
+        {"name":"ADAT","select":[{"commands":["adat"],"setType":2}]},
+        {"name":"S/PDIF","select":[{"commands":["s/pdif"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["usb"],"setType":2}]},
+        {"name":"AES","select":[{"commands":["aes"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "pressMinRepeats": 1
+  }
 }

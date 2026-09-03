@@ -1,7 +1,63 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6c/6c1855d174704513.json",
   "deviceType": 1,
   "globalDeviceId": 133272,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"INPUTMODE","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV-1"},{"set":"MENU","to":"OFF"}],"name":"AV-1"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV-2"},{"set":"MENU","to":"OFF"}],"name":"AV-2"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"Component"},{"set":"MENU","to":"OFF"}],"name":"Component"},
+      {"commands":[{"set":"INPUTMODE","to":"AV"},{"set":"MENU","to":"ON"},{"set":"AVS","to":"AV-3/S-Video"},{"set":"MENU","to":"OFF"}],"name":"AV-3/S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "SX76NF8"
+  "model": "SX76NF8",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVS": {
+      "values": [
+        {"name":"AV-1","select":[{"commands":["Red"],"setType":1}]},
+        {"name":"AV-2","select":[{"commands":["Green"],"setType":1}]},
+        {"name":"Component","select":[{"commands":["Yellow"],"setType":1}]},
+        {"name":"AV-3/S-Video","select":[{"commands":["Blue"],"setType":1}]}
+      ]
+    },
+    "INPUTMODE": {
+      "next": [
+        "InputNext",
+        {"set":"MENU","to":"ON"}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV"}
+      ]
+    },
+    "MENU": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

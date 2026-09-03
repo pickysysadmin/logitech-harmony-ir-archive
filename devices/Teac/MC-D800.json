@@ -2,6 +2,64 @@
   "codeset": "codesets/11/11261c6b6dec5651.json",
   "deviceType": 21,
   "globalDeviceId": 335153,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Jack"},{"set":"JackInput","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"Jack"},{"set":"JackInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Drive"},{"set":"DriveInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Drive"},{"set":"DriveInput","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Drive"},{"set":"DriveInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teac",
-  "model": "MC-D800"
+  "model": "MC-D800",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DriveInput": {
+      "next": ["InputDiscDrive"],
+      "values": [
+        {"name":"CD"},
+        {"name":"Bluetooth"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Jack","select":[{"commands":["InputPhono/Aux"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Drive","select":[{"commands":["InputDiscDrive"],"setType":2}]}
+      ]
+    },
+    "JackInput": {
+      "next": ["InputPhono/Aux"],
+      "values": [
+        {"name":"Phono"},
+        {"name":"Aux"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

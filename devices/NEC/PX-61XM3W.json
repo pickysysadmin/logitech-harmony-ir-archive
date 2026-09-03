@@ -2,6 +2,53 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 103680,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"VIDEO1"},
+      {"commands":["InputVideo2"],"name":"VIDEO2"},
+      {"commands":["InputVideo3"],"name":"VIDEO3"},
+      {"commands":["InputRgb1"],"name":"RGB1"},
+      {"commands":["InputRgb2"],"name":"RGB2"},
+      {"commands":["InputRGB3"],"name":"RGB3"},
+      {"commands":["HD 1"],"name":"DVD1"},
+      {"commands":["HD 2"],"name":"DVD2"},
+      {"commands":["HD 3"],"name":"DVD3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "PX-61XM3W"
+  "model": "PX-61XM3W",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

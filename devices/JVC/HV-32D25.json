@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2,
+    "greaterHundred": ["GreaterHundred"]
+  },
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 45264,
+  "inputs": {
+    "finish": ["MenuOn"],
+    "list": [
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"},
+      {"name":"Video 4"},
+      {"name":"Video 5"}
+    ],
+    "next": ["InputToggle","DirectionDown","DirectionLeft","DirectionRight","DirectionUp"],
+    "start": ["Display"],
+    "type": 4
+  },
   "manufacturer": "JVC",
-  "model": "HV-32D25"
+  "model": "HV-32D25",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 700,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

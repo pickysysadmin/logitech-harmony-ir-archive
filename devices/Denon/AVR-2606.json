@@ -2,6 +2,42 @@
   "codeset": "codesets/67/67b2d3fcae1b4d9b.json",
   "deviceType": 5,
   "globalDeviceId": 96346,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputTV"],"name":"TV/DBS"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputVcr1"],"name":"VCR 1"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTape1"],"name":"MD/Tape"},
+      {"commands":["InputVcr2"],"name":"VCR 2"},
+      {"commands":["InputV-Aux"],"name":"V-AUX"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-2606"
+  "model": "AVR-2606",
+  "power": {
+    "off": [
+      {"delayMs":2500},
+      "PowerOff"
+    ],
+    "on": [
+      {"delayMs":2500},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 4,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

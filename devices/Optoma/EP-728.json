@@ -2,6 +2,35 @@
   "codeset": "codesets/b6/b6ef22817954e8c3.json",
   "deviceType": 7,
   "globalDeviceId": 166540,
+  "inputs": {
+    "list": [
+      {"commands":["DVI"],"name":"DVI"},
+      {"commands":["VGA"],"name":"VGA"},
+      {"commands":["S-Video"],"name":"S-Video"},
+      {"commands":["Video"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "EP-728"
+  "model": "EP-728",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 1
+  }
 }

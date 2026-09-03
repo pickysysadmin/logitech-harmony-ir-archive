@@ -2,6 +2,54 @@
   "codeset": "codesets/21/21af14b3ef67518f.json",
   "deviceType": 5,
   "globalDeviceId": 261990,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Tuner/USB"},{"set":"Tuner/USBInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Tuner/USB"},{"set":"Tuner/USBInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Line/BT"},{"set":"Line/BTInput","to":"Line"}],"name":"Line"},
+      {"commands":[{"set":"InputType","to":"Line/BT"},{"set":"Line/BTInput","to":"BT"}],"name":"BT"}
+    ],
+    "type": 5
+  },
   "manufacturer": "AEG",
-  "model": "BSS 4806"
+  "model": "BSS 4806",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Tuner/USB","select":[{"commands":["InputTuner/USB"],"setType":2}]},
+        {"name":"Line/BT","select":[{"commands":["InputLine/BT"],"setType":2}]}
+      ]
+    },
+    "Line/BTInput": {
+      "next": ["InputLine/BT"],
+      "values": [
+        {"name":"Line"},
+        {"name":"BT"}
+      ]
+    },
+    "Tuner/USBInput": {
+      "next": ["InputTuner/USB"],
+      "values": [
+        {"name":"USB"},
+        {"name":"Tuner"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

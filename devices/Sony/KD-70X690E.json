@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/70/7022097550372fe4.json",
   "deviceType": 1,
   "globalDeviceId": 349924,
+  "inputs": {
+    "list": [
+      {"commands":["Return","DirectionRight","Select","InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["Return","DirectionRight","Select",{"delayMs":1000},"InputVideo1"],"name":"Video/Component","ports":["Component","Composite"]},
+      {"commands":["Return","DirectionRight","Select",{"delayMs":2000},"InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["Return","DirectionRight","Select",{"delayMs":2000},"InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["Return","DirectionRight","Select",{"delayMs":2000},"InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["Return","DirectionRight",{"delayMs":2000},"InputVideo1","Input",{"delayMs":500},"DirectionDown","Select"],"name":"Screen Mirroring","ports":["Streaming"]},
+      {"commands":["Return","DirectionRight","Select",{"delayMs":2000},"Home","Select"],"name":"Apps","ports":["Streaming"]},
+      {"commands":["Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KD-70X690E"
+  "model": "KD-70X690E",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

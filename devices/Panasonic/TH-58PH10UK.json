@@ -2,6 +2,56 @@
   "codeset": "codesets/1f/1f6b7888e7db1650.json",
   "deviceType": 1,
   "globalDeviceId": 148561,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"Input1Input","to":"Input 1A"}],"name":"Input 1A"},
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"Input1Input","to":"Input 1B"}],"name":"Input 1B"},
+      {"commands":[{"set":"InputType","to":"Input3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"Input2"},{"set":"Input2Input","to":"Input 2A"}],"name":"Input 2A"},
+      {"commands":[{"set":"InputType","to":"Input2"},{"set":"Input2Input","to":"Input 2B"}],"name":"Input 2B"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-58PH10UK"
+  "model": "TH-58PH10UK",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Input1Input": {
+      "next": ["InputVideo1"],
+      "values": [
+        {"name":"Input 1A"},
+        {"name":"Input 1B"}
+      ]
+    },
+    "Input2Input": {
+      "next": ["InputVideo2"],
+      "values": [
+        {"name":"Input 2A"},
+        {"name":"Input 2B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Input1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Input3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Input2","select":[{"commands":["InputVideo2"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

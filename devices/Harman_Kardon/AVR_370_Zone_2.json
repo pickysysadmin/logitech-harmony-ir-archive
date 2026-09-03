@@ -2,6 +2,77 @@
   "codeset": "codesets/c2/c2d67fcd5dca8e69.json",
   "deviceType": 5,
   "globalDeviceId": 273731,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Cable/Sat"}],"name":"Cable/SAT"},
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"DVR"}],"name":"DVR"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Game"}],"name":"Game"},
+      {"commands":[{"set":"InputType","to":"Media Server"}],"name":"MediaServer"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"USBInputs"},{"set":"USBInputsInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USBInputs"},{"set":"USBInputsInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"NetworkInputs"},{"set":"NetworkInputsInput","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"NetworkInputs"},{"set":"NetworkInputsInput","to":"vTuner"}],"name":"vTuner"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "AVR 370 (Zone 2)"
+  "model": "AVR 370 (Zone 2)",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Cable/Sat"},
+        {"name":"Disc"},
+        {"name":"DVR"},
+        {"name":"TV"},
+        {"name":"Game"},
+        {"name":"Media Server"},
+        {"name":"Aux"},
+        {"name":"Radio"},
+        {"name":"USBInputs"},
+        {"name":"NetworkInputs"}
+      ]
+    },
+    "NetworkInputsInput": {
+      "next": ["InputNetwork"],
+      "values": [
+        {"name":"Network"},
+        {"name":"vTuner"}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "USBInputsInput": {
+      "next": ["InputUsb"],
+      "values": [
+        {"name":"USB"},
+        {"name":"iPod"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

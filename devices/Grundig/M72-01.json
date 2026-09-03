@@ -1,7 +1,53 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 73037,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AntennaCable"}],"name":"Antenna/Cable"},
+      {"commands":[{"set":"InputType","to":"Scart1VCR"}],"name":"Scart1 VCR"},
+      {"commands":[{"set":"InputType","to":"Scart2SAT"}],"name":"Scart2 SAT"},
+      {"commands":[{"set":"InputType","to":"InputScartToggle"},{"set":"ScartInput","to":"Scart3DVD"}],"name":"Scart3 DVD"},
+      {"commands":[{"set":"InputType","to":"InputScartToggle"},{"set":"ScartInput","to":"Scart4"}],"name":"Scart4"},
+      {"commands":[{"set":"InputType","to":"InputScartToggle"},{"set":"ScartInput","to":"Scart5"}],"name":"Scart5"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Grundig",
-  "model": "M72-01"
+  "model": "M72-01",
+  "power": {
+    "toggle": ["PowerOff"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AntennaCable","select":[{"commands":["0"],"setType":1}]},
+        {"name":"Scart1VCR","select":[{"commands":["1"],"setType":1}]},
+        {"name":"Scart2SAT","select":[{"commands":["A/V"],"setType":1}]},
+        {"name":"InputScartToggle","select":[{"commands":["InputComponent",{"set":"ScartInput","to":"Scart3DVD"}],"setType":1}]}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Scart3DVD"},
+        {"name":"Scart4"},
+        {"name":"Scart5"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

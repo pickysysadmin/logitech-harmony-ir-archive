@@ -2,6 +2,45 @@
   "codeset": "codesets/e2/e2dcd59536761dd8.json",
   "deviceType": 37,
   "globalDeviceId": 114652,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Antenna","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Antenna","to":"L1"}],"name":"L1"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"Antenna","to":"L2"}],"name":"L2"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "MD-24H63"
+  "model": "MD-24H63",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Antenna": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"L1"},
+        {"name":"L2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

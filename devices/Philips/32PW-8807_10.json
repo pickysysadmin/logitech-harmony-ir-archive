@@ -2,6 +2,35 @@
   "codeset": "codesets/43/4367ccd2caf1d401.json",
   "deviceType": 1,
   "globalDeviceId": 149222,
+  "inputs": {
+    "list": [
+      {"name":"Antenna"},
+      {"name":"Ext1"},
+      {"name":"Ext2"},
+      {"name":"SVHS2"},
+      {"name":"Ext3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Philips",
-  "model": "32PW-8807/10"
+  "model": "32PW-8807/10",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

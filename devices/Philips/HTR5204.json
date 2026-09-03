@@ -2,6 +2,51 @@
   "codeset": "codesets/32/32c72e59b2455c00.json",
   "deviceType": 5,
   "globalDeviceId": 178422,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"MP3 Line In"}],"name":"MP3 Line In"},
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscInput","to":"DISC 6CH"}],"name":"DISC 6CH"},
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscInput","to":"COAX IN"}],"name":"COAX IN"},
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscInput","to":"OPTI IN"}],"name":"OPTI IN"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTR5204"
+  "model": "HTR5204",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DiscInput": {
+      "next": ["InputDisc"],
+      "values": [
+        {"name":"DISC 6CH"},
+        {"name":"COAX IN"},
+        {"name":"OPTI IN"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"MP3 Line In","select":[{"commands":["InputMP3/LineIn"],"setType":2}]},
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

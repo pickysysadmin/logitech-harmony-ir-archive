@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/82/826aa2f9baa1d200.json",
   "deviceType": 15,
   "globalDeviceId": 67598,
+  "inputs": {
+    "list": [
+      {"name":"AV"},
+      {"name":"Front"},
+      {"name":"Tuner"}
+    ],
+    "next": ["Select"],
+    "type": 2
+  },
   "manufacturer": "Grundig",
-  "model": "TVR-4510"
+  "model": "TVR-4510",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/58/58f9f773f11287cf.json",
   "deviceType": 19,
   "globalDeviceId": 269402,
+  "inputs": {
+    "list": [
+      {"name":"D.In","ports":["Optical"]},
+      {"name":"AUX","ports":["Aux"]},
+      {"name":"BT","ports":["Pairing Input"]},
+      {"name":"TV","ports":["Pairing Input"]},
+      {"name":"USB","ports":["USB"]}
+    ],
+    "next": ["Source"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HW-J355"
+  "model": "HW-J355",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

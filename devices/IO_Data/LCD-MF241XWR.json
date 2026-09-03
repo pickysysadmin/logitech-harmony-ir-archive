@@ -2,6 +2,61 @@
   "codeset": "codesets/90/9007bfd19418faa8.json",
   "deviceType": 1,
   "globalDeviceId": 139470,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"D5"}],"name":"D5"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"Analog"}],"name":"Analog"}
+    ],
+    "type": 5
+  },
   "manufacturer": "IO Data",
-  "model": "LCD-MF241XWR"
+  "model": "LCD-MF241XWR",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDMIInput": {
+      "next": ["InputVideo3"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDMI","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputVideo4"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputVideo4"],
+      "values": [
+        {"name":"Digital"},
+        {"name":"Analog"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo1"],
+      "values": [
+        {"name":"D5"},
+        {"name":"Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

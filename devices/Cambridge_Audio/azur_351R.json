@@ -2,6 +2,50 @@
   "codeset": "codesets/4b/4b29dc53c35c55c3.json",
   "deviceType": 5,
   "globalDeviceId": 251097,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"BD/DVD"}],"name":"BD/DVD"},
+      {"commands":[{"set":"InputType","to":"CD/Video1"}],"name":"CD/Video 1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"AUX/TV"},{"set":"TVInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"AUX/TV"},{"set":"TVInput","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Cambridge Audio",
-  "model": "azur 351R"
+  "model": "azur 351R",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"FM","select":[{"commands":["FM"],"setType":2}]},
+        {"name":"BD/DVD","select":[{"commands":["InputBd/Dvd"],"setType":2}]},
+        {"name":"CD/Video1","select":[{"commands":["InputCd/Video1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"AUX/TV","select":[{"commands":["InputAux/Tv"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputAux/Tv"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"TV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,58 @@
   "codeset": "codesets/26/26a7cdb4cd44fb71.json",
   "deviceType": 1,
   "globalDeviceId": 153012,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input 1"}],"name":"Input 1","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Input 2"}],"name":"Input 2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Input 3"}],"name":"Input 3","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Input 4"}],"name":"Input 4","ports":["HDMI","Composite"]},
+      {"commands":[{"set":"InputType","to":"Input 5"}],"name":"Input 5","ports":["HDMI","Composite"]},
+      {"commands":[{"set":"InputType","to":"Input 6"}],"name":"Input 6","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Input 7"}],"name":"Input 7","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Antenna"}],"name":"Antenna A","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Antenna"}],"name":"Antenna B","ports":["Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PDP-6010FD"
+  "model": "PDP-6010FD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputAntennaA/B"],
+      "values": [
+        {"name":"Antenna A"},
+        {"name":"Antenna B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input 1","select":[{"commands":["Input1"],"setType":2}]},
+        {"name":"Input 2","select":[{"commands":["Input2"],"setType":2}]},
+        {"name":"Input 3","select":[{"commands":["Input3"],"setType":2}]},
+        {"name":"Input 4","select":[{"commands":["Input4"],"setType":2}]},
+        {"name":"Input 5","select":[{"commands":["Input5"],"setType":2}]},
+        {"name":"Input 6","select":[{"commands":["Input6"],"setType":2}]},
+        {"name":"Input 7","select":[{"commands":["Input7"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["InputAntennaA/B"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,37 @@
   "codeset": "codesets/6b/6b09e619e5028e9c.json",
   "deviceType": 5,
   "globalDeviceId": 24465,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputMd/Cdr"],"name":"MD/CD-R","ports":["Composite","Optical"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputDtv/Cbl"],"name":"D-TV/CBL","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputV-Aux"],"name":"V-Aux","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputVcr1"],"name":"VCR1","ports":["Composite","S-Video"]},
+      {"commands":["InputVcr2/Dvr"],"name":"VCR2/DVR","ports":["Composite","S-Video"]},
+      {"commands":["Input6Ch"],"name":"6Ch Input","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V630"
+  "model": "RX-V630",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

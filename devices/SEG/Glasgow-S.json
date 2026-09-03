@@ -2,6 +2,37 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 129051,
+  "inputs": {
+    "list": [
+      {"name":"AV"}
+    ],
+    "type": 6
+  },
   "manufacturer": "SEG",
-  "model": "Glasgow-S"
+  "model": "Glasgow-S",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["ChannelUp"],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

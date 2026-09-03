@@ -2,6 +2,57 @@
   "codeset": "codesets/ce/ce5379126fe4d3d9.json",
   "deviceType": 22,
   "globalDeviceId": 160379,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscInput","to":"DVD"}],"name":"DVD","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscInput","to":"SD"}],"name":"SD","ports":["SD-Card"]},
+      {"commands":[{"set":"InputType","to":"DIn"}],"name":"DIn","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"AuxTv"}],"name":"Aux TV","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-BT100"
+  "model": "SC-BT100",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DiscInput": {
+      "next": ["InputBd/Sd"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"SD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["InputIpod"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Disc","select":[{"commands":["InputBd/Sd"],"setType":2}]},
+        {"name":"DIn","select":[{"commands":["InputAux",{"delayMs":7000},"InputPrevious"],"setType":2}]},
+        {"name":"AuxTv","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 6000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

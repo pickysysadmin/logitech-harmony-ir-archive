@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/8b/8bed4809cbf37803.json",
   "deviceType": 2,
   "globalDeviceId": 29820,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Line In"},
+      {"name":"Front Line In"},
+      {"name":"Aux"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "JVC",
-  "model": "HR-VP75U"
+  "model": "HR-VP75U",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,34 @@
   "codeset": "codesets/97/97015b703094991b.json",
   "deviceType": 5,
   "globalDeviceId": 107991,
+  "inputs": {
+    "list": [
+      {"commands":[{"command":"InputTuner","durationMs":3000}],"name":"Tuner"},
+      {"commands":[{"command":"InputCd","durationMs":3000}],"name":"CD"},
+      {"commands":[{"command":"InputTape","durationMs":3000}],"name":"Tape"},
+      {"commands":[{"command":"InputPhono","durationMs":3000}],"name":"Phono"},
+      {"commands":[{"command":"InputTv","durationMs":3000}],"name":"TV"},
+      {"commands":[{"command":"InputVcr","durationMs":3000}],"name":"VCR"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "FR-910"
+  "model": "FR-910",
+  "power": {
+    "off": ["PowerOff"],
+    "on": [
+      {"command":"InputTuner","durationMs":3000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

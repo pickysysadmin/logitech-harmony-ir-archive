@@ -2,6 +2,46 @@
   "codeset": "codesets/4a/4aa23c9dc04fab6c.json",
   "deviceType": 1,
   "globalDeviceId": 143468,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"EXT"},{"set":"EXTInput","to":"Ext1"}],"name":"Ext1"},
+      {"commands":[{"set":"InputType","to":"EXT"},{"set":"EXTInput","to":"Ext2"}],"name":"Ext2"},
+      {"commands":[{"set":"InputType","to":"EXT"},{"set":"EXTInput","to":"Ext3"}],"name":"Ext3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "AV-25GS1E"
+  "model": "AV-25GS1E",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "EXTInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Ext1"},
+        {"name":"Ext2"},
+        {"name":"Ext3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"EXT","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

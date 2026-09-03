@@ -2,6 +2,59 @@
   "codeset": "codesets/01/01c8d15763045db3.json",
   "deviceType": 13,
   "globalDeviceId": 129368,
+  "inputs": {
+    "list": [
+      {"name":"Video1"},
+      {"name":"Video2"},
+      {"name":"Video3"},
+      {"name":"PC1"},
+      {"name":"PC2"},
+      {"name":"MonitorLink"},
+      {"name":"DVDHD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Mitsubishi",
-  "model": "PD-4002"
+  "model": "PD-4002",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["Input1"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"HD","select":[{"commands":["InputComp1"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputVga"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Input1"],
+      "values": [
+        {"name":"video1"},
+        {"name":"video2"},
+        {"name":"video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

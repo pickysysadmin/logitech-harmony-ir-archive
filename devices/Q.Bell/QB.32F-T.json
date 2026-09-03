@@ -2,6 +2,45 @@
   "codeset": "codesets/3c/3c94f29b4c1a7b0f.json",
   "deviceType": 1,
   "globalDeviceId": 144683,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"PC"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"TV"},
+      {"name":"YPbPr"},
+      {"name":"AV"},
+      {"name":"S-Video"},
+      {"name":"Scart 1"},
+      {"name":"Scart 2"},
+      {"name":"Scart 2SV"}
+    ],
+    "next": ["InputNext"],
+    "start": [
+      {"set":"Input","to":"PC"},
+      "InputNext"
+    ],
+    "type": 5
+  },
   "manufacturer": "Q.Bell",
-  "model": "QB.32F-T"
+  "model": "QB.32F-T",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"PC"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

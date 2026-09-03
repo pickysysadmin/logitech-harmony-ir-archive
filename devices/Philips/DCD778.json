@@ -1,7 +1,65 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/85/859a2049d672e5e8.json",
   "deviceType": 37,
   "globalDeviceId": 138495,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Dtv"}],"name":"Dtv"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Atv"}],"name":"Atv"},
+      {"commands":[{"set":"InputType","to":"iPod/AV"},{"set":"iPod/AVInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"iPod/AV"},{"set":"iPod/AVInput","to":"AV"}],"name":"AV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DCD778"
+  "model": "DCD778",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputDisc/Tuner"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputDTV/ATV"],"setType":2}]},
+        {"name":"iPod/AV","select":[{"commands":["InputiPod/AV"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputDisc/Tuner"],
+      "values": [
+        {"name":"Disc"},
+        {"name":"Tuner"}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputDTV/ATV"],
+      "values": [
+        {"name":"Dtv"},
+        {"name":"Atv"}
+      ]
+    },
+    "iPod/AVInput": {
+      "next": ["InputiPod/AV"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

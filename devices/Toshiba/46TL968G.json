@@ -2,6 +2,58 @@
   "codeset": "codesets/11/11cb757ce57f1aee.json",
   "deviceType": 1,
   "globalDeviceId": 236949,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"DTV SAT"}],"name":"DTV SAT"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Cable"}],"name":"Cable"},
+      {"commands":[{"set":"InputType","to":"EXT 1"}],"name":"EXT 1"},
+      {"commands":[{"set":"InputType","to":"EXT 2"}],"name":"EXT 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "46TL968G"
+  "model": "46TL968G",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DigitalInput": {
+      "next": ["TV"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV SAT"},
+        {"name":"Cable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"EXT 1","select":[{"commands":["InputExt2","InputNext","DirectionUp","OK"],"setType":2}]},
+        {"name":"EXT 2","select":[{"commands":["InputExt2"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"HDMI 3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"HDMI 4","select":[{"commands":["InputHdmi4"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["TV"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

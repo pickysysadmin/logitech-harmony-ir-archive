@@ -2,6 +2,45 @@
   "codeset": "codesets/e7/e7279b2cb2ada0e5.json",
   "deviceType": 2,
   "globalDeviceId": 144765,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"LineInput","to":"TV"},{"set":"ModeInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"LineInput","to":"Line 1"},{"set":"ModeInput","to":"VCR"}],"name":"Line 1"},
+      {"commands":[{"set":"LineInput","to":"Line 2"},{"set":"ModeInput","to":"VCR"}],"name":"Line 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "SLV-N700"
+  "model": "SLV-N700",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "LineInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Line 1"},
+        {"name":"Line 2"}
+      ]
+    },
+    "ModeInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"TV"},
+        {"name":"VCR"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

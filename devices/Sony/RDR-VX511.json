@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/64/64d47d97279aa0b7.json",
   "deviceType": 47,
   "globalDeviceId": 157727,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"VideoInput","to":"Tuner"}],"name":"DVDTuner"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"VideoInput","to":"Line1"}],"name":"DVDLine1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"VideoInput","to":"Line2"}],"name":"DVDLine2"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"VideoInput","to":"DV"}],"name":"DVDDV"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VideoInput","to":"Tuner"}],"name":"VCRTuner"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VideoInput","to":"Line1"}],"name":"VCRLine1"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VideoInput","to":"Line2"}],"name":"VCRLine2"},
+      {"commands":[{"set":"InputType","to":"VCR"},{"set":"VideoInput","to":"DV"}],"name":"VCRDV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "RDR-VX511"
+  "model": "RDR-VX511",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["DVD"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["VCR"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line1"},
+        {"name":"Line2"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

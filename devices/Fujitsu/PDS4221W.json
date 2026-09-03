@@ -2,6 +2,54 @@
   "codeset": "codesets/e5/e5ba270b912efcdf.json",
   "deviceType": 13,
   "globalDeviceId": 102075,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputList","to":"RGB"},{"set":"RGBInput","to":"rgb1"}],"name":"RGB1 (DVI)"},
+      {"commands":[{"set":"InputList","to":"RGB"},{"set":"RGBInput","to":"rgb2"}],"name":"RGB2 (VGA)"},
+      {"commands":[{"set":"InputList","to":"VIDEO"},{"set":"VIDEOInput","to":"composite"}],"name":"Composite Video"},
+      {"commands":[{"set":"InputList","to":"VIDEO"},{"set":"VIDEOInput","to":"component"}],"name":"Component Video"},
+      {"commands":[{"set":"InputList","to":"VIDEO"},{"set":"VIDEOInput","to":"s-video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Fujitsu",
-  "model": "PDS4221W"
+  "model": "PDS4221W",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputList": {
+      "values": [
+        {"name":"RGB","select":[{"commands":["InputRgb1"],"setType":2}]},
+        {"name":"VIDEO","select":[{"commands":["InputSVideo"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["InputRgb1"],
+      "values": [
+        {"name":"rgb1"},
+        {"name":"rgb2"}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputSVideo"],
+      "values": [
+        {"name":"component"},
+        {"name":"composite"},
+        {"name":"s-video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

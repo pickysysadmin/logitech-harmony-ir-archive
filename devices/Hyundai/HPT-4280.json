@@ -2,6 +2,57 @@
   "codeset": "codesets/99/99e7262d9e0a161a.json",
   "deviceType": 1,
   "globalDeviceId": 98040,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"SCART"},{"set":"ScartInput","to":"Scart1"}],"name":"Scart 1"},
+      {"commands":[{"set":"InputType","to":"SCART"},{"set":"ScartInput","to":"Scart2"}],"name":"Scart 2"},
+      {"commands":[{"set":"InputType","to":"PC/DVI"},{"set":"PcDviInput","to":"Comp1"}],"name":"Comp 1"},
+      {"commands":[{"set":"InputType","to":"PC/DVI"},{"set":"PcDviInput","to":"Comp2"}],"name":"Comp 2"},
+      {"commands":[{"set":"InputType","to":"PC/DVI"},{"set":"PcDviInput","to":"DVI"}],"name":"HDMI(DVI)"},
+      {"commands":[{"set":"InputType","to":"PC/DVI"},{"set":"PcDviInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hyundai",
-  "model": "HPT-4280"
+  "model": "HPT-4280",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"SCART","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"PC/DVI","select":[{"commands":["InputPc/Dvi"],"setType":2}]}
+      ]
+    },
+    "PcDviInput": {
+      "next": ["InputPc/Dvi"],
+      "values": [
+        {"name":"Comp1"},
+        {"name":"Comp2"},
+        {"name":"DVI"},
+        {"name":"PC"}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Scart1"},
+        {"name":"Scart2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

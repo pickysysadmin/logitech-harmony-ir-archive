@@ -2,6 +2,61 @@
   "codeset": "codesets/bc/bc70f44dfed0f1d7.json",
   "deviceType": 21,
   "globalDeviceId": 337040,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"FM/DAB"},{"set":"FM/DABInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/DAB"},{"set":"FM/DABInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"CD/DOCK"},{"set":"CD/DOCKInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"CD/DOCK"},{"set":"CD/DOCKInput","to":"DOCK"}],"name":"DOCK"},
+      {"commands":[{"set":"InputType","to":"AudioIn/Usb"},{"set":"AudioIn/UsbInput","to":"AudioIn"}],"name":"AudioIn"},
+      {"commands":[{"set":"InputType","to":"AudioIn/Usb"},{"set":"AudioIn/UsbInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DCB2270"
+  "model": "DCB2270",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioIn/UsbInput": {
+      "next": ["InputAudioIn/Usb"],
+      "values": [
+        {"name":"AudioIn"},
+        {"name":"USB"}
+      ]
+    },
+    "CD/DOCKInput": {
+      "next": ["InputCd/Dock"],
+      "values": [
+        {"name":"CD"},
+        {"name":"DOCK"}
+      ]
+    },
+    "FM/DABInput": {
+      "next": ["InputFm/Dab"],
+      "values": [
+        {"name":"FM"},
+        {"name":"DAB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"FM/DAB","select":[{"commands":["InputFm/Dab"],"setType":2}]},
+        {"name":"CD/DOCK","select":[{"commands":["InputCd/Dock"],"setType":2}]},
+        {"name":"AudioIn/Usb","select":[{"commands":["InputAudioIn/Usb"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/8e/8ee96f30ea3b8d23.json",
   "deviceType": 18,
   "globalDeviceId": 103047,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"TV / Radio"}
+    ],
+    "next": ["InputRadio"],
+    "type": 2
+  },
   "manufacturer": "Kaon",
-  "model": "KTSC-N550 H2E"
+  "model": "KTSC-N550 H2E",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV / Radio"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

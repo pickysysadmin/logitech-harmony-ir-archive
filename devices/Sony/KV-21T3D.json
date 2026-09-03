@@ -2,6 +2,34 @@
   "codeset": "codesets/ad/ad2989b7e6b2f8a4.json",
   "deviceType": 1,
   "globalDeviceId": 57192,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"TV"},
+      {"name":"AV"},
+      {"name":"RGB"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KV-21T3D"
+  "model": "KV-21T3D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

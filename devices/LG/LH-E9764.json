@@ -2,6 +2,57 @@
   "codeset": "codesets/98/98eb11f32c71ea0c.json",
   "deviceType": 22,
   "globalDeviceId": 97425,
+  "inputs": {
+    "list": [
+      {"commands":["AmFmToggle"],"name":"AM"},
+      {"commands":["AmFmToggle"],"name":"FM"},
+      {"commands":["InputCd/Dvd"],"name":"CD/DVD"},
+      {"commands":["InputVideo1"],"name":"Video1"},
+      {"commands":["InputVideo1"],"name":"Video1opt"},
+      {"commands":["InputVideo2"],"name":"Video2"},
+      {"commands":["InputVideo2"],"name":"Video2opt"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "LH-E9764"
+  "model": "LH-E9764",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TUNER","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"CD/DVD","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "RadioMode": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "VideoMode": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video1opt"},
+        {"name":"Video2"},
+        {"name":"Video2opt"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

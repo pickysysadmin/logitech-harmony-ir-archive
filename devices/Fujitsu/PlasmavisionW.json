@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/68/68c2d1d9d943bbf2.json",
   "deviceType": 1,
   "globalDeviceId": 672,
+  "inputs": {
+    "list": [
+      {"commands":["Display","InputVideo1"],"name":"Video 1"},
+      {"commands":["Display","InputVideo2"],"name":"Video 2"},
+      {"commands":["Display","InputVideo3"],"name":"Video 3"},
+      {"commands":["Display","InputVideo4"],"name":"Video 4"},
+      {"commands":["InputRgb1"],"name":"RGB 1"},
+      {"commands":["InputRgb2"],"name":"RGB 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Fujitsu",
-  "model": "PlasmavisionW"
+  "model": "PlasmavisionW",
+  "power": {
+    "toggle": ["PowerToggle","Display"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

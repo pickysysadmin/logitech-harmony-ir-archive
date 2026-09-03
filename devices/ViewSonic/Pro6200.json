@@ -2,6 +2,49 @@
   "codeset": "codesets/b9/b90a708f05ed43d9.json",
   "deviceType": 7,
   "globalDeviceId": 271940,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VGA 1"}],"name":"VGA 1"},
+      {"commands":[{"set":"InputType","to":"VGA 2"}],"name":"VGA 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "ViewSonic",
-  "model": "Pro6200"
+  "model": "Pro6200",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"VGA 1","select":[{"commands":["InputVga1"],"setType":2}]},
+        {"name":"VGA 2","select":[{"commands":["InputVga2"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Composite"},
+        {"name":"S-Video"},
+        {"name":"HDMI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 60000,
+    "pressMinRepeats": 1
+  }
 }

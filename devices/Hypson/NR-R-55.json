@@ -2,6 +2,31 @@
   "codeset": "codesets/af/af67da47d3cc5f09.json",
   "deviceType": 1,
   "globalDeviceId": 64846,
+  "inputs": {
+    "list": [
+      {"name":"AV"},
+      {"name":"Tuner"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Hypson",
-  "model": "NR-R-55"
+  "model": "NR-R-55",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

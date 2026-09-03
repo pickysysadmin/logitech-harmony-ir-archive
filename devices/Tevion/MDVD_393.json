@@ -2,6 +2,56 @@
   "codeset": "codesets/f7/f79e9d469510cb9b.json",
   "deviceType": 22,
   "globalDeviceId": 210827,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"iPod/Aux"},{"set":"iPod/AuxInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"iPod/Aux"},{"set":"iPod/AuxInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"USB/Card"},{"set":"USB/CardInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"USB/Card"},{"set":"USB/CardInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB/Card"},{"set":"USB/CardInput","to":"Card"}],"name":"Card"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Tevion",
-  "model": "MDVD 393"
+  "model": "MDVD 393",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"iPod/Aux","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"USB/Card","select":[{"commands":["InputDvd"],"setType":2}]}
+      ]
+    },
+    "USB/CardInput": {
+      "next": ["InputDvd"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"USB"},
+        {"name":"Card"}
+      ]
+    },
+    "iPod/AuxInput": {
+      "next": ["InputiPod"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"iPod"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,33 @@
   "codeset": "codesets/94/946c98f6f543bfa8.json",
   "deviceType": 37,
   "globalDeviceId": 169368,
+  "inputs": {
+    "list": [
+      {"name":"DVD/USB"},
+      {"name":"HDMI"},
+      {"name":"Video"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Epson",
-  "model": "MovieMate 72"
+  "model": "MovieMate 72",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD/USB"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

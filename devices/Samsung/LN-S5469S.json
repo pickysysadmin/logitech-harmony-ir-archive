@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 99394,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"ANT 1"}],"name":"ANT 1"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"ANT 2"}],"name":"ANT 2"},
+      {"commands":[{"set":"InputType","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "LN-S5469S"
+  "model": "LN-S5469S",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["InputAntenna"],
+      "values": [
+        {"name":"ANT 1"},
+        {"name":"ANT 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AV 1","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"AV 2","select":[{"commands":["InputVideo2V2"],"setType":2}]},
+        {"name":"HDMI 1","select":[{"commands":["InputHDMI1"],"setType":2}]},
+        {"name":"HDMI 2","select":[{"commands":["InputHDMI2V2"],"setType":2}]},
+        {"name":"Component 1","select":[{"commands":["InputComponent 1"],"setType":2}]},
+        {"name":"Component 2","select":[{"commands":["InputComponent 2"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputRgb"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["InputAntenna"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2f/2faf1eb0a0d53c8f.json",
   "deviceType": 1,
   "globalDeviceId": 109075,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext","DirectionRight"],"name":"TV"},
+      {"commands":["InputNext","DirectionDown","DirectionRight"],"name":"AV1 Side"},
+      {"commands":["InputNext","DirectionDown","DirectionDown","DirectionRight"],"name":"AV SIDE"},
+      {"commands":["InputNext","DirectionDown","DirectionDown","DirectionDown","DirectionRight"],"name":"CVI 1"},
+      {"commands":["InputNext","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionRight"],"name":"CVI 2"},
+      {"commands":["InputNext","DirectionUp","DirectionUp","DirectionUp","DirectionRight"],"name":"HDMI"},
+      {"commands":["InputNext","DirectionUp","DirectionUp","DirectionRight"],"name":"PC VGA"},
+      {"commands":["InputNext","DirectionUp","DirectionRight"],"name":"PC D"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "32PF5350/26"
+  "model": "32PF5350/26",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,38 @@
   "codeset": "codesets/47/47d87481bd11d53d.json",
   "deviceType": 34,
   "globalDeviceId": 173800,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdd"],"name":"HDD"},
+      {"commands":["InputDvd"],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-EH59"
+  "model": "DMR-EH59",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV 3"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

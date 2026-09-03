@@ -1,7 +1,51 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 13340,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"ANTInput","to":"ANT A"}],"name":"ANT A"},
+      {"commands":[{"set":"ANTInput","to":"ANT B"}],"name":"ANT B"},
+      {"commands":["InputRGB1"],"name":"TV/RGB"},
+      {"commands":["Input 1"],"name":"Video 1"},
+      {"commands":["Input 2"],"name":"Video 2"},
+      {"commands":["Input 3"],"name":"Video 3"},
+      {"commands":["Input 4"],"name":"Video 4"},
+      {"commands":["Input 5"],"name":"Video 5"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "50HDX60"
+  "model": "50HDX60",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ANTInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"ANT A"},
+        {"name":"ANT B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ANT","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

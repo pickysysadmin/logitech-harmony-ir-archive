@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 147748,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV/Component"},{"set":"TV/ComponentInput","to":"Component 1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"TV/Component"},{"set":"TV/ComponentInput","to":"Component 2"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"Antenna"}],"name":"Antenna"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"TV/Video"},{"set":"TV/VideoInput","to":"AV 3"}],"name":"AV 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "TXM3296F"
+  "model": "TXM3296F",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV/Component","select":[{"commands":["InputComponent1",{"set":"TV/ComponentInput","to":"Component 1"}],"setType":2}]},
+        {"name":"TV/Video","select":[{"commands":["InputNext",{"set":"TV/VideoInput","to":"S-Video"}],"setType":2}]}
+      ]
+    },
+    "TV/ComponentInput": {
+      "next": ["InputComponent1"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"}
+      ]
+    },
+    "TV/VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"S-Video"},
+        {"name":"Antenna"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"AV 3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

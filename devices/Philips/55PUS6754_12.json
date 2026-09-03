@@ -1,7 +1,64 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/16/168e833d66c9f501.json",
   "deviceType": 1,
   "globalDeviceId": 493350,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Miracast"}],"name":"Miracast","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Network"}],"name":"Network","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 3"}],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"YPbPr"}],"name":"YPbPr","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"CVBS"}],"name":"CVBS","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"SmartTv"}],"name":"SmartTv","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Netflix"}],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "55PUS6754/12"
+  "model": "55PUS6754/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"SmartTv","select":[{"commands":["SmartTv"],"setType":2}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "finish": ["OK"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["Source"],
+      "values": [
+        {"name":"Miracast"},
+        {"name":"Network"},
+        {"name":"USB"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"YPbPr"},
+        {"name":"CVBS"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 30000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 3
+  }
 }

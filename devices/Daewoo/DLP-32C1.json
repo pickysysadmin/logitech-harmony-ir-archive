@@ -2,6 +2,61 @@
   "codeset": "codesets/c8/c82e980a1035c6b8.json",
   "deviceType": 1,
   "globalDeviceId": 119591,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TVAV"},{"set":"TVAVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TVAV"},{"set":"TVAVInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"TVAV"},{"set":"TVAVInput","to":"AV2/S-VHS"}],"name":"AV2/S-VHS"},
+      {"commands":[{"set":"InputType","to":"TVAV"},{"set":"TVAVInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"CompPCHD"},{"set":"CompPCHDInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"CompPCHD"},{"set":"CompPCHDInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"CompPCHD"},{"set":"CompPCHDInput","to":"Component"}],"name":"Component"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Daewoo",
-  "model": "DLP-32C1"
+  "model": "DLP-32C1",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CompPCHDInput": {
+      "next": ["Multimedia"],
+      "values": [
+        {"name":"PC"},
+        {"name":"HDMI"},
+        {"name":"Component"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TVAV","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"CompPCHD","select":[{"commands":["Multimedia"],"setType":2}]}
+      ]
+    },
+    "TVAVInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV1"},
+        {"name":"AV2/S-VHS"},
+        {"name":"AV3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

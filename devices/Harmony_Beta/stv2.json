@@ -1,7 +1,46 @@
 {
+  "channelTuning": {
+    "finish": [
+      {"delayMs":1000},
+      {"delayMs":1000},
+      {"delayMs":1000},
+      {"delayMs":1000},
+      "Select"
+    ]
+  },
   "codeset": "codesets/30/30a94f4ebbb04653.json",
   "deviceType": 1,
   "globalDeviceId": 496515,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"}
+    ],
+    "type": 0
+  },
   "manufacturer": "Harmony Beta",
-  "model": "stv2"
+  "model": "stv2",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":300},
+      "PowerOff"
+    ],
+    "on": [
+      "PowerOn",
+      {"delayMs":300},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

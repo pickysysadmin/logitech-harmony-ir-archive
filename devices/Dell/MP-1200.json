@@ -2,6 +2,38 @@
   "codeset": "codesets/5b/5b9c36d971391ac1.json",
   "deviceType": 7,
   "globalDeviceId": 119244,
+  "inputs": {
+    "list": [
+      {"name":"S-Video"},
+      {"name":"AnalogRGB"},
+      {"name":"YCBCr"},
+      {"name":"CompositeVideo"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Dell",
-  "model": "MP-1200"
+  "model": "MP-1200",
+  "power": {
+    "off": [
+      {"delayMs":1000},
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

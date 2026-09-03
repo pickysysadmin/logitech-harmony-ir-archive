@@ -2,6 +2,50 @@
   "codeset": "codesets/6f/6fbfa8658ec9aca8.json",
   "deviceType": 22,
   "globalDeviceId": 70704,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"CD/DVD"}],"name":"CD/DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Bose",
-  "model": "Lifestyle 35 (Software V2)"
+  "model": "Lifestyle 35 (Software V2)",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputFM/AM"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":1}]},
+        {"name":"CD/DVD","select":[{"commands":["InputCD/DVD"],"setType":1}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":1}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":1}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputFM/AM"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 1
+  }
 }

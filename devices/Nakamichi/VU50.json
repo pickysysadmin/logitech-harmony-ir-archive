@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/94/940be39158a39d07.json",
   "deviceType": 1,
   "globalDeviceId": 45965,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"HDTV"}
+    ],
+    "next": [
+      {"delayMs":300},
+      "NextInput",
+      {"delayMs":100}
+    ],
+    "start": ["NextInput"],
+    "type": 4
+  },
   "manufacturer": "Nakamichi",
-  "model": "VU50"
+  "model": "VU50",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

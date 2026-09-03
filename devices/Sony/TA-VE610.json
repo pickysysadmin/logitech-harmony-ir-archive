@@ -2,6 +2,38 @@
   "codeset": "codesets/48/4882edcce8444c24.json",
   "deviceType": 19,
   "globalDeviceId": 168740,
+  "inputs": {
+    "list": [
+      {"commands":[{"delayMs":2000},"InputVideo1"],"name":"VIDEO1"},
+      {"commands":[{"delayMs":2000},"InputVideo2"],"name":"VIDEO2"},
+      {"commands":[{"delayMs":2000},"InputVideo3"],"name":"VIDEO3"},
+      {"commands":[{"delayMs":2000},"InputLd"],"name":"LD"},
+      {"commands":[{"delayMs":2000},"InputTv"],"name":"TV"},
+      {"commands":[{"delayMs":2000},"InputTape"],"name":"TAPE"},
+      {"commands":[{"delayMs":2000},"InputDat/Md"],"name":"DAT/MD"},
+      {"commands":[{"delayMs":2000},"InputCd"],"name":"CD"},
+      {"commands":[{"delayMs":2000},"InputTuner"],"name":"TUNER"},
+      {"commands":[{"delayMs":2000},"InputPhono"],"name":"PHONO"},
+      {"commands":[{"delayMs":2000},"Input5.1"],"name":"5.1 INPUT"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "TA-VE610"
+  "model": "TA-VE610",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputTv"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

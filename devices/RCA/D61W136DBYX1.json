@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 37,
   "globalDeviceId": 103529,
+  "inputs": {
+    "list": [
+      {"commands":["InputSat/Cable"],"name":"DVD"},
+      {"commands":["InputRgb"],"name":"DVI"},
+      {"commands":["InputVideo3"],"name":"Video 1"},
+      {"commands":["InputVideo4"],"name":"Video 2"},
+      {"commands":["InputVideo4","InputNext"],"name":"Front"},
+      {"commands":["InputVideo4","InputNext","InputNext"],"name":"Comp 1"},
+      {"commands":["InputVideo4","InputNext","InputNext","InputNext"],"name":"Comp 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "D61W136DBYX1"
+  "model": "D61W136DBYX1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["ChannelUp"],"setType":1}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputSat/Cable"],"setType":1}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"Vid 1"},
+        {"name":"Vid 2"},
+        {"name":"Front"},
+        {"name":"Comp 1"},
+        {"name":"Comp 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/9e/9e7d40a2d2b868ea.json",
   "deviceType": 7,
   "globalDeviceId": 140413,
+  "inputs": {
+    "list": [
+      {"name":"PC"},
+      {"name":"DVI"},
+      {"name":"Video"},
+      {"name":"S-Video"},
+      {"name":"Y/PB/PR"}
+    ],
+    "next": [
+      {"delayMs":1500},
+      "InputNext"
+    ],
+    "type": 2
+  },
   "manufacturer": "Toshiba",
-  "model": "TDP-MT200"
+  "model": "TDP-MT200",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 4000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

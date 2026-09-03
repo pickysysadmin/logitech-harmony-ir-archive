@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/a2/a286cf4e04e2f5b9.json",
   "deviceType": 1,
   "globalDeviceId": 98850,
+  "inputs": {
+    "list": [
+      {"commands":["ChannelUp"],"name":"Tv"},
+      {"commands":["ChannelUp",{"delayMs":1500},"InputNext"],"name":"Av1"},
+      {"commands":["ChannelUp",{"delayMs":1500},"InputNext","InputNext"],"name":"Av2"},
+      {"commands":["ChannelUp",{"delayMs":1500},"InputNext","InputNext","InputNext"],"name":"Svid"},
+      {"commands":["ChannelUp",{"delayMs":1500},"InputNext","InputNext","InputNext","InputNext"],"name":"YCbCr"},
+      {"commands":["ChannelUp",{"delayMs":1500},"InputNext","InputNext","InputNext","InputNext","InputNext"],"name":"HDTV"},
+      {"commands":["ChannelUp",{"delayMs":1500},"InputNext","InputNext","InputNext","InputNext","InputNext","InputNext"],"name":"PC"},
+      {"commands":["ChannelUp",{"delayMs":1500},"InputNext","InputNext","InputNext","InputNext","InputNext","InputNext","InputNext"],"name":"DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Astar",
-  "model": "LTV-2701"
+  "model": "LTV-2701",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

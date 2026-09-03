@@ -1,7 +1,49 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 136365,
+  "inputs": {
+    "list": [
+      {"name":"Tv"},
+      {"name":"Cinema"},
+      {"name":"Foxtel"},
+      {"name":"VCR"},
+      {"name":"Video Games"},
+      {"name":"GameCube"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Loewe",
-  "model": "Calida 63"
+  "model": "Calida 63",
+  "power": {
+    "toggle": [
+      "PowerToggle",
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

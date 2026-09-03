@@ -2,6 +2,40 @@
   "codeset": "codesets/7d/7d4971ca6943ecc5.json",
   "deviceType": 1,
   "globalDeviceId": 168812,
+  "inputs": {
+    "finish": ["DirectionRight"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV/SVHS"},
+      {"name":"Side/SVHS"},
+      {"name":"CVI-1 (SD/HD)"},
+      {"name":"CVI-2 (SD/HD)"},
+      {"name":"HDMI"},
+      {"name":"PC-VGA"},
+      {"name":"PC-D"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": [
+      {"set":"Input","to":"TV"},
+      "InputNext"
+    ],
+    "type": 4
+  },
   "manufacturer": "Philips",
-  "model": "42PF7321/77"
+  "model": "42PF7321/77",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,66 @@
   "codeset": "codesets/96/964534444407650e.json",
   "deviceType": 1,
   "globalDeviceId": 216873,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"PC/HD"},{"set":"PC/HDInput","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"PC/HD"},{"set":"PC/HDInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"PC/HD"},{"set":"PC/HDInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"YPbPr 1"}],"name":"YPbPr 1"},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"YPbPr 2"}],"name":"YPbPr 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Viore",
-  "model": "V42NAFC"
+  "model": "V42NAFC",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"PC/HD","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputComponent"],"setType":2}]}
+      ]
+    },
+    "PC/HDInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"PC"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"}
+      ]
+    },
+    "YPbPrInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"YPbPr 1"},
+        {"name":"YPbPr 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

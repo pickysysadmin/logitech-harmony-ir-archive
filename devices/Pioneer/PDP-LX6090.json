@@ -2,6 +2,54 @@
   "codeset": "codesets/5b/5b8ab5b8e24349bd.json",
   "deviceType": 1,
   "globalDeviceId": 152277,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input1"}],"name":"Input1"},
+      {"commands":[{"set":"InputType","to":"Input2"}],"name":"Input2"},
+      {"commands":[{"set":"InputType","to":"Input3"}],"name":"Input3"},
+      {"commands":[{"set":"InputType","to":"Input4"}],"name":"Input4"},
+      {"commands":[{"set":"InputType","to":"Input5"}],"name":"Input5"},
+      {"commands":[{"set":"InputType","to":"InputPc"}],"name":"InputPC"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"ATV"}],"name":"ATV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PDP-LX6090"
+  "model": "PDP-LX6090",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Input1","select":[{"commands":["Input1"],"setType":2}]},
+        {"name":"Input2","select":[{"commands":["Input2"],"setType":2}]},
+        {"name":"Input3","select":[{"commands":["Input3"],"setType":2}]},
+        {"name":"Input4","select":[{"commands":["Input4"],"setType":2}]},
+        {"name":"Input5","select":[{"commands":["Input5"],"setType":2}]},
+        {"name":"InputPC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTv/Dtv"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTv/Dtv"],
+      "values": [
+        {"name":"DTV"},
+        {"name":"ATV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 11000,
+    "pressMinRepeats": 3
+  }
 }

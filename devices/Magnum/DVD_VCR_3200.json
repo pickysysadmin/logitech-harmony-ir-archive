@@ -2,6 +2,30 @@
   "codeset": "codesets/68/68dc404c4f93e9f6.json",
   "deviceType": 25,
   "globalDeviceId": 144313,
+  "inputs": {
+    "list": [
+      {"commands":["InputVCR"],"name":"Video1"},
+      {"commands":["TvVcr"],"name":"Tuner"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Magnum",
-  "model": "DVD VCR 3200"
+  "model": "DVD VCR 3200",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

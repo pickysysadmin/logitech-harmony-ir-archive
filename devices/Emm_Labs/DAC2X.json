@@ -2,6 +2,51 @@
   "codeset": "codesets/94/94508fe7c7bfecce.json",
   "deviceType": 19,
   "globalDeviceId": 251328,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"EMM"}],"name":"EMM"},
+      {"commands":[{"set":"InputType","to":"PC/USB"}],"name":"PC/USB"},
+      {"commands":[{"set":"InputType","to":"AES"}],"name":"AES"},
+      {"commands":[{"set":"InputType","to":"Coax"}],"name":"Coax"},
+      {"commands":[{"set":"InputType","to":"PDAI"}],"name":"PDAI"},
+      {"commands":[{"set":"InputType","to":"Tos"},{"set":"TosInput","to":"TOS1"}],"name":"TOS 1"},
+      {"commands":[{"set":"InputType","to":"Tos"},{"set":"TosInput","to":"TOS2"}],"name":"TOS 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Emm Labs",
-  "model": "DAC2X"
+  "model": "DAC2X",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"EMM","select":[{"commands":["InputEmm"],"setType":2}]},
+        {"name":"PC/USB","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"AES","select":[{"commands":["InputAes"],"setType":2}]},
+        {"name":"Coax","select":[{"commands":["InputCoax"],"setType":2}]},
+        {"name":"Tos","select":[{"commands":["InputTos"],"setType":2}]},
+        {"name":"PDAI","select":[{"commands":["InputPdai"],"setType":2}]}
+      ]
+    },
+    "TosInput": {
+      "next": ["InputTos"],
+      "values": [
+        {"name":"TOS1"},
+        {"name":"TOS2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

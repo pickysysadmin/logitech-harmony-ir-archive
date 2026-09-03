@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/ce/ce018b9d9068ec4e.json",
   "deviceType": 48,
   "globalDeviceId": 269840,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1/Dvi",{"command":"End","durationMs":2000},"InputHdmi1/Dvi"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2/Dvi",{"command":"End","durationMs":2000},"InputHdmi2/Dvi"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3/Dvi",{"command":"End","durationMs":2000},"InputHdmi3/Dvi"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4",{"command":"End","durationMs":2000},"InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["InputVga",{"command":"End","durationMs":2000},"InputVga"],"name":"PC IN"},
+      {"commands":["InputAvs",{"command":"End","durationMs":2000},"InputAvs"],"name":"AVS"},
+      {"commands":["InputAv",{"command":"End","durationMs":2000},"InputAv"],"name":"AV"},
+      {"commands":[{"command":"End","durationMs":2000},"InputHdmi1/Dvi","ChannelDown","ChannelDown"],"name":"Video"},
+      {"commands":[{"command":"End","durationMs":2000},"InputHdmi1/Dvi","ChannelDown"],"name":"SPDIF IN"},
+      {"commands":["Assist"],"name":"Media Net"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Loewe",
-  "model": "Individual Slim Frame 46"
+  "model": "Individual Slim Frame 46",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

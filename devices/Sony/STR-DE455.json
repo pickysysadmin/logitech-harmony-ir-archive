@@ -2,6 +2,34 @@
   "codeset": "codesets/f5/f5e36fbadb0cee91.json",
   "deviceType": 5,
   "globalDeviceId": 21432,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"Video"},
+      {"commands":["InputDvd"],"name":"DVD/LD"},
+      {"commands":["InputTelevision"],"name":"TV/SAT"},
+      {"commands":["InputMd/Tape"],"name":"MDTape"},
+      {"commands":["InputCd"],"name":"CD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "STR-DE455"
+  "model": "STR-DE455",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD/LD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

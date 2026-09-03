@@ -2,6 +2,37 @@
   "codeset": "codesets/fa/fa3376f07e598ca0.json",
   "deviceType": 34,
   "globalDeviceId": 112281,
+  "inputs": {
+    "list": [
+      {"name":"AV2 DV"},
+      {"name":"AV SCART"},
+      {"name":"TV"},
+      {"name":"AV2 Video"},
+      {"name":"AV2 S-Video"},
+      {"name":"AV Video"},
+      {"name":"AV S-Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Omisys",
-  "model": "PR-DD918"
+  "model": "PR-DD918",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

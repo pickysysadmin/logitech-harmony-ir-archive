@@ -2,6 +2,59 @@
   "codeset": "codesets/36/36e4463080349247.json",
   "deviceType": 22,
   "globalDeviceId": 174552,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Mp3LineIn"}],"name":"Mp3LineIn"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux1"}],"name":"Aux1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux2"}],"name":"Aux2"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"DigitalIn"}],"name":"DigitalIn"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTS-6600/05"
+  "model": "HTS-6600/05",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAUX/DI"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"},
+        {"name":"DigitalIn"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"Mp3LineIn","select":[{"commands":["InputMp3LineIn"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUSB/Disc"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAUX/DI"],"setType":2}]}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputUSB/Disc"],
+      "values": [
+        {"name":"Disc"},
+        {"name":"Usb"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

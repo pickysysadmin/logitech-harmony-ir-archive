@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/4b/4b78d85bd7070783.json",
   "deviceType": 1,
   "globalDeviceId": 170504,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input1"}],"name":"Input1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input2"}],"name":"Input2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input3"}],"name":"Input3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input4"}],"name":"Input4"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Input5"}],"name":"Input5"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"iLink"}],"name":"iLink"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Card"}],"name":"Card"},
+      {"commands":[{"set":"InputType","to":"AnalogA"}],"name":"AnalogA"},
+      {"commands":[{"set":"InputType","to":"AnalogB"}],"name":"AnalogB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "LC-45G1X"
+  "model": "LC-45G1X",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputNext",{"set":"VideoInput","to":"TV"}],"setType":2}]},
+        {"name":"AnalogA","select":[{"commands":["AnalogA"],"setType":2}]},
+        {"name":"AnalogB","select":[{"commands":["AnalogB"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Input1"},
+        {"name":"Input2"},
+        {"name":"Input3"},
+        {"name":"Input4"},
+        {"name":"Input5"},
+        {"name":"iLink"},
+        {"name":"Card"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

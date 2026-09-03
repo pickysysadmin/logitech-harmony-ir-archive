@@ -2,6 +2,60 @@
   "codeset": "codesets/b7/b7d02ba760ccb104.json",
   "deviceType": 22,
   "globalDeviceId": 173344,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"AUX OPT"}],"name":"AUX OPT"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"PORTABLE"}],"name":"PORTABLE"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"OSD IPOD"}],"name":"OSD IPOD"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"IPOD"}],"name":"IPOD"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HS33S"
+  "model": "HS33S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FunctionInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"DVD/CD"},
+        {"name":"FM"}
+      ]
+    },
+    "InputNextInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"AUX OPT"},
+        {"name":"PORTABLE"},
+        {"name":"USB"},
+        {"name":"OSD IPOD"},
+        {"name":"IPOD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"InputNext","select":[{"commands":["Input"],"setType":2}]},
+        {"name":"Function","select":[{"commands":["Function"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,35 @@
   "codeset": "codesets/fc/fc49fb349a6f564a.json",
   "deviceType": 5,
   "globalDeviceId": 165033,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputMd/Cdr"],"name":"MD/CD-R","ports":["Composite"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Composite","Optical"]},
+      {"commands":["InputDtv/Cbl"],"name":"D-TV/CBL","ports":["Composite"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite"]},
+      {"commands":["InputV-Aux"],"name":"V-AUX","ports":["Composite"]},
+      {"commands":["InputMultiChIn"],"name":"6Ch Input","ports":["Others"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "HTR-5630"
+  "model": "HTR-5630",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

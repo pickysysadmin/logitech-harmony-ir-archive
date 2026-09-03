@@ -2,6 +2,31 @@
   "codeset": "codesets/fd/fde4d0f07a1c537c.json",
   "deviceType": 1,
   "globalDeviceId": 165908,
+  "inputs": {
+    "finish": ["InterKeyDelay 25 Khz"],
+    "list": [
+      {"commands":["InputDelay 30 Khz"],"name":"Antenna 1"},
+      {"commands":["InputDelay 25 Khz"],"name":"Video 1"},
+      {"commands":["TestButton 0"],"name":"Video 2"}
+    ],
+    "start": ["InterKeyDelay 25 Khz"],
+    "type": 3
+  },
   "manufacturer": "Z-Harmony Test",
-  "model": "TV Discretes"
+  "model": "TV Discretes",
+  "power": {
+    "toggle": ["PowerOnDelay 25 Khz"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5500,
+    "pressMinRepeats": 1
+  }
 }

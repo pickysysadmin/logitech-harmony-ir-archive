@@ -1,7 +1,52 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/cb/cba215d43e9f6ea3.json",
   "deviceType": 1,
   "globalDeviceId": 250643,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"ANT/CableIn"}],"name":"ANT/CableIn"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"HDMI1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"HDMI2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Input"},{"set":"InputInput","to":"Component"}],"name":"Comp/Video"},
+      {"commands":[{"set":"InputType","to":"Media Player"}],"name":"Media Player"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TC-L32B6"
+  "model": "TC-L32B6",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputInput": {
+      "next": ["Input"],
+      "values": [
+        {"name":"ANT/CableIn"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"Comp/Video"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Media Player","select":[{"commands":["MediaPlayer"],"setType":2}]},
+        {"name":"Input","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 9000,
+    "pressMinRepeats": 1
+  }
 }

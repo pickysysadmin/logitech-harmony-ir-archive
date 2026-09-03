@@ -2,6 +2,33 @@
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 70146,
+  "inputs": {
+    "list": [
+      {"commands":["2","ChannelDown"],"name":"Tuner"},
+      {"commands":["1","ChannelDown"],"name":"Video 3"},
+      {"commands":["1","ChannelDown","ChannelDown"],"name":"Video 2"},
+      {"commands":["1","ChannelDown","ChannelDown","ChannelDown"],"name":"Video 1"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Grundig",
-  "model": "ST 70-700 NIC"
+  "model": "ST 70-700 NIC",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

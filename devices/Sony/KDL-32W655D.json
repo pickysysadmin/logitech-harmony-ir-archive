@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/a2/a290392ca4810307.json",
   "deviceType": 1,
   "globalDeviceId": 415134,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","DirectionRight","Select","InputTv"],"name":"Antenna/Cable"},
+      {"commands":["Exit","DirectionRight","Select",{"delayMs":1000},"InputVideo1"],"name":"Video"},
+      {"commands":["Exit","DirectionRight","Select",{"delayMs":2000},"InputComponent"],"name":"Component"},
+      {"commands":["Exit","DirectionRight","Select",{"delayMs":2000},"InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["Exit","DirectionRight","Select",{"delayMs":2000},"InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["Exit","DirectionRight",{"delayMs":2000},"InputComponent","Input",{"delayMs":500},"DirectionDown","Select"],"name":"Screen Mirroring"},
+      {"commands":["Exit","DirectionRight","Select",{"delayMs":2000},"Home","Select"],"name":"Apps"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-32W655D"
+  "model": "KDL-32W655D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 10000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

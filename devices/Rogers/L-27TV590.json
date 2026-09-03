@@ -2,6 +2,38 @@
   "codeset": "codesets/bd/bdac11cec3c27971.json",
   "deviceType": 1,
   "globalDeviceId": 69144,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV"},
+      {"name":"S-Video"},
+      {"name":"SCART1"},
+      {"name":"SCART2"},
+      {"name":"Component"},
+      {"name":"VGA"},
+      {"name":"DVI"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Rogers",
-  "model": "L-27TV590"
+  "model": "L-27TV590",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 4,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

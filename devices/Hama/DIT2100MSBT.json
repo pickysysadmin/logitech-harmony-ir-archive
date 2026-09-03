@@ -2,6 +2,32 @@
   "codeset": "codesets/66/66905b95f700818d.json",
   "deviceType": 33,
   "globalDeviceId": 479950,
+  "inputs": {
+    "list": [
+      {"commands":["InputInternetRadio"],"name":"Internet Radio","ports":["Streaming"]},
+      {"commands":["InputInternetRadio",{"delayMs":500},"Mode"],"name":"Spotify","ports":["Streaming"]},
+      {"commands":["Media"],"name":"Music Player","ports":["Streaming"]},
+      {"commands":["InputDab"],"name":"DAB","ports":["Streaming"]},
+      {"commands":["InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputAux"],"name":"Aux In","ports":["Aux"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hama",
-  "model": "DIT2100MSBT"
+  "model": "DIT2100MSBT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

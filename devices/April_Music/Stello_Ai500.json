@@ -2,6 +2,53 @@
   "codeset": "codesets/48/483b89fca6c2a637.json",
   "deviceType": 5,
   "globalDeviceId": 257769,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"ByPass"}],"name":"ByPass"},
+      {"commands":[{"set":"InputType","to":"Bal"}],"name":"Bal"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"COAX"}],"name":"COAX"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"OPT"}],"name":"OPT"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"PC USB"}],"name":"PC USB"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"iPod(USB)"}],"name":"iPod(USB)"}
+    ],
+    "type": 5
+  },
   "manufacturer": "April Music",
-  "model": "Stello Ai500"
+  "model": "Stello Ai500",
+  "states": {
+    "DigitalInput": {
+      "next": ["InputDigital"],
+      "values": [
+        {"name":"COAX"},
+        {"name":"OPT"},
+        {"name":"PC USB"},
+        {"name":"iPod(USB)"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ByPass"},
+        {"name":"Bal"},
+        {"name":"CD"},
+        {"name":"Tuner"},
+        {"name":"AUX"},
+        {"name":"iPod"},
+        {"name":"Digital"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "pressMinRepeats": 1
+  }
 }

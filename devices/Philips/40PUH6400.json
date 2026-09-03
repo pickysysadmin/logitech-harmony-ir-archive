@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/58/58b60f9427d2f212.json",
   "deviceType": 1,
   "globalDeviceId": 273860,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"Antenna"},
+      {"commands":["Source",{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","DirectionDown","DirectionDown","OK"],"name":"USB"},
+      {"commands":["Source",{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","OK"],"name":"Network"},
+      {"commands":["Source",{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","OK"],"name":"Recordings"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["InputYPbPr"],"name":"YPbPr"},
+      {"commands":["InputScart"],"name":"Scart"},
+      {"commands":["Home"],"name":"Android TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "40PUH6400"
+  "model": "40PUH6400",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 1
+  }
 }

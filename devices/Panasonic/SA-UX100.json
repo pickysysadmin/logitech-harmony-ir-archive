@@ -2,6 +2,53 @@
   "codeset": "codesets/67/6735c6509be73c57.json",
   "deviceType": 21,
   "globalDeviceId": 496487,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"USB/CD"},{"set":"USB/CDInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB/CD"},{"set":"USB/CDInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Radio/Aux"},{"set":"Radio/AuxInput","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Radio/Aux"},{"set":"Radio/AuxInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-UX100"
+  "model": "SA-UX100",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"USB/CD","select":[{"commands":["InputUsb/Cd"],"setType":2}]},
+        {"name":"Radio/Aux","select":[{"commands":["InputRadio/Aux"],"setType":2}]}
+      ]
+    },
+    "Radio/AuxInput": {
+      "next": ["InputRadio/Aux"],
+      "values": [
+        {"name":"Radio"},
+        {"name":"Aux"}
+      ]
+    },
+    "USB/CDInput": {
+      "next": ["InputUsb/Cd"],
+      "values": [
+        {"name":"USB"},
+        {"name":"CD"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

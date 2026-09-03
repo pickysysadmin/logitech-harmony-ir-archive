@@ -2,6 +2,39 @@
   "codeset": "codesets/da/dac0a429deccf24c.json",
   "deviceType": 34,
   "globalDeviceId": 210533,
+  "inputs": {
+    "list": [
+      {"commands":["DVD"],"name":"DVD"},
+      {"commands":["HDD"],"name":"HDD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Magnavox",
-  "model": "MDR515H/F7"
+  "model": "MDR515H/F7",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Line1"},
+        {"name":"Line2"},
+        {"name":"Line3"},
+        {"name":"AntennaIn"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

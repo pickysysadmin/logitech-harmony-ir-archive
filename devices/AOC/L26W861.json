@@ -2,6 +2,64 @@
   "codeset": "codesets/9c/9c972e589ec844c6.json",
   "deviceType": 1,
   "globalDeviceId": 150756,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Comp"}],"name":"Composite"},
+      {"commands":[{"set":"VideoInput","to":"Video1"}],"name":"S-Video"},
+      {"commands":[{"set":"CompInput","to":"Comp2"}],"name":"Component"},
+      {"commands":[{"set":"PcInput","to":"Vga"}],"name":"VGA"},
+      {"commands":[{"set":"PcInput","to":"Hdmi"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "AOC",
-  "model": "L26W861"
+  "model": "L26W861",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CompInput": {
+      "next": ["Comp"],
+      "values": [
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["Tv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["Video"],"setType":2}]},
+        {"name":"Comp","select":[{"commands":["Comp"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["Pc/Hdmi"],"setType":2}]}
+      ]
+    },
+    "PcInput": {
+      "next": ["Pc/Hdmi"],
+      "values": [
+        {"name":"Vga"},
+        {"name":"Hdmi"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Video"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"},
+        {"name":"Video4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

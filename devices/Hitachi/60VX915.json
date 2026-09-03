@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 91604,
+  "inputs": {
+    "list": [
+      {"commands":["Input 5","InputNext","DirectionUp","DirectionUp","Select"],"name":"Antenna-B"},
+      {"commands":["Input 1","InputNext","DirectionUp","Select"],"name":"Antenna-A"},
+      {"commands":["Input 1"],"name":"Video 1"},
+      {"commands":["Input 2"],"name":"Video 2"},
+      {"commands":["Input 3"],"name":"Video 3"},
+      {"commands":["Input 4"],"name":"Video 4"},
+      {"commands":["Input 5"],"name":"Video 5"},
+      {"commands":["Input 5","InputNext","DirectionDown","Select"],"name":"IEEE"},
+      {"commands":["InputVideo5","InputNext","DirectionDown","DirectionDown","Select"],"name":"Photo"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hitachi",
-  "model": "60VX915"
+  "model": "60VX915",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna-A"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 20000,
+    "pressMinRepeats": 3
+  }
 }

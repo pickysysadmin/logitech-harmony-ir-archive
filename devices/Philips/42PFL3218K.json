@@ -2,6 +2,60 @@
   "codeset": "codesets/41/413f6a1c72a75e0f.json",
   "deviceType": 1,
   "globalDeviceId": 260383,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Satellite"}],"name":"Satellite"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"HDMI Side"}],"name":"HDMI Side"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Scart"}],"name":"Scart"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Menu"},{"set":"MenuInput","to":"Smart"}],"name":"Smart TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "42PFL3218K"
+  "model": "42PFL3218K",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Smart","select":[{"commands":["SmartTv"],"setType":2}]},
+        {"name":"Menu","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "MenuInput": {
+      "finish": ["OK"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["Source"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Satellite"},
+        {"name":"USB"},
+        {"name":"Network"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI Side"},
+        {"name":"YPbPr"},
+        {"name":"Scart"},
+        {"name":"AV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 24000,
+    "pressMinRepeats": 3
+  }
 }

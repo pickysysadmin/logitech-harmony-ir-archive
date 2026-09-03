@@ -2,6 +2,38 @@
   "codeset": "codesets/8f/8f05b2a44f7db5d3.json",
   "deviceType": 1,
   "globalDeviceId": 182562,
+  "inputs": {
+    "list": [
+      {"name":"TUNER"},
+      {"name":"SCART1"},
+      {"name":"SCART2"},
+      {"name":"SCART3"},
+      {"name":"S-VIDEO"},
+      {"name":"AV"},
+      {"name":"PC"},
+      {"name":"DVI"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Firstline",
-  "model": "FS-2605BE"
+  "model": "FS-2605BE",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TUNER"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

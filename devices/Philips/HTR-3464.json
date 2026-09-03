@@ -2,6 +2,54 @@
   "codeset": "codesets/ef/efe90fac11f49662.json",
   "deviceType": 5,
   "globalDeviceId": 181042,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"MP3 LINK"}],"name":"MP3 LINK"},
+      {"commands":[{"set":"InputType","to":"RADIO"}],"name":"RADIO"},
+      {"commands":[{"set":"InputType","to":"DI/AUX"},{"set":"DI/AUXInput","to":"COAX IN1"}],"name":"COAX IN1"},
+      {"commands":[{"set":"InputType","to":"DI/AUX"},{"set":"DI/AUXInput","to":"COAX IN2"}],"name":"COAX IN2"},
+      {"commands":[{"set":"InputType","to":"DI/AUX"},{"set":"DI/AUXInput","to":"OPTI IN"}],"name":"OPTI IN"},
+      {"commands":[{"set":"InputType","to":"DI/AUX"},{"set":"DI/AUXInput","to":"AUX 1"}],"name":"AUX 1"},
+      {"commands":[{"set":"InputType","to":"DI/AUX"},{"set":"DI/AUXInput","to":"AUX 2"}],"name":"AUX 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTR-3464"
+  "model": "HTR-3464",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"AUX 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DI/AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"COAX IN1"},
+        {"name":"COAX IN2"},
+        {"name":"OPTI IN"},
+        {"name":"AUX 1"},
+        {"name":"AUX 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"MP3 LINK","select":[{"commands":["InputMp3Link"],"setType":2}]},
+        {"name":"RADIO","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"DI/AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

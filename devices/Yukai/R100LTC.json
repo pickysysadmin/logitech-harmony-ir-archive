@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/b3/b3a67028a0a6f4a2.json",
   "deviceType": 34,
   "globalDeviceId": 108592,
+  "inputs": {
+    "finish": ["Dvd/Source"],
+    "list": [
+      {"commands":["Dvd/Source","Dvd/Source","Dvd/Source","Dvd/Source"],"name":"Tuner"},
+      {"commands":["Dvd/Source"],"name":"DVD"},
+      {"commands":["Dvd/Source","Dvd/Source","Dvd/Source","Dvd/Source"],"name":"Video1"},
+      {"commands":["Dvd/Source","Dvd/Source","Dvd/Source"],"name":"Video2"}
+    ],
+    "start": ["Dvd/Source"],
+    "type": 3
+  },
   "manufacturer": "Yukai",
-  "model": "R100LTC"
+  "model": "R100LTC",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,54 @@
   "codeset": "codesets/94/940be39158a39d07.json",
   "deviceType": 1,
   "globalDeviceId": 85272,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"ANALOG"},{"set":"ANALOGINPUT","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"ANALOG"},{"set":"ANALOGINPUT","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"ANALOG"},{"set":"ANALOGINPUT","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"ANALOG"},{"set":"ANALOGINPUT","to":"HDTV"}],"name":"HDTV"},
+      {"commands":[{"set":"InputType","to":"DATA"}],"name":"DATA"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Optoma",
-  "model": "PD50"
+  "model": "PD50",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ANALOGINPUT": {
+      "next": [
+        {"delayMs":500},
+        "NextInput"
+      ],
+      "start": [
+        "NextInput",
+        {"delayMs":500}
+      ],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"HDTV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ANALOG","select":[{"commands":[{"delayMs":300},"NextInput",{"delayMs":500},{"set":"ANALOGINPUT","to":"TV"}],"setType":2}]},
+        {"name":"DATA","select":[{"commands":[{"delayMs":300},"Data",{"delayMs":300},"Data",{"delayMs":300},"Data"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

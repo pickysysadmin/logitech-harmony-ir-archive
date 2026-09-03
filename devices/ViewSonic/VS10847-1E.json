@@ -2,6 +2,41 @@
   "codeset": "codesets/52/526024bfb676bbc3.json",
   "deviceType": 1,
   "globalDeviceId": 108606,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"AV"},
+      {"name":"SVideo"},
+      {"name":"TV"},
+      {"name":"SCART 1"},
+      {"name":"SCART 2"},
+      {"name":"HDTV"},
+      {"name":"PC"},
+      {"name":"HDMI"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": [
+      "InputNext",
+      {"delayMs":500},
+      "Select"
+    ],
+    "type": 4
+  },
   "manufacturer": "ViewSonic",
-  "model": "VS10847-1E"
+  "model": "VS10847-1E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

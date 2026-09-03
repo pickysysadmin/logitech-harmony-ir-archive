@@ -2,6 +2,37 @@
   "codeset": "codesets/69/696e30946a66faec.json",
   "deviceType": 7,
   "globalDeviceId": 168734,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvi"],"name":"DVI"},
+      {"commands":["InputVga"],"name":"VGA"},
+      {"commands":["InputHdmi"],"name":"HDMI"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputYPbPr"],"name":"YPbPr"},
+      {"commands":["InputVideo"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "HD-71"
+  "model": "HD-71",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1500},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

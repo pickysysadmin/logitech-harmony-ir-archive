@@ -2,6 +2,63 @@
   "codeset": "codesets/8a/8aa2a505003f3e05.json",
   "deviceType": 13,
   "globalDeviceId": 72539,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VideoInput","to":"AV 1"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"YPBPR 1"}],"name":"YPBPR 1"},
+      {"commands":[{"set":"InputType","to":"Component"},{"set":"ComponentInput","to":"YPBPR 2"}],"name":"YPBPR 2"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"PCInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Westinghouse",
-  "model": "LCM-19W4"
+  "model": "LCM-19W4",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComponentInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"YPBPR 1"},
+        {"name":"YPBPR 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"PC","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputDvi"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"VGA"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"AV 1"},
+        {"name":"AV 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

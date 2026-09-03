@@ -2,6 +2,33 @@
   "codeset": "codesets/0a/0a7f69672ce6ece5.json",
   "deviceType": 22,
   "globalDeviceId": 183318,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DISC","ports":["BuiltIn"]},
+      {"commands":["InputRadio"],"name":"Radio","ports":["FM Antenna"]},
+      {"commands":["InputUSB"],"name":"USB","ports":["USB"]},
+      {"commands":["InputAUX"],"name":"AUX","ports":["Composite"]},
+      {"commands":["InputScart"],"name":"SCART IN","ports":["Scart"]},
+      {"commands":["InputScart",{"delayMs":500},"Source"],"name":"COAX IN","ports":["Coaxial"]},
+      {"commands":["InputScart",{"delayMs":500},"Source","Source"],"name":"OPTI IN","ports":["Optical"]},
+      {"commands":["InputScart",{"delayMs":500},"Source","Source","Source"],"name":"MP3 Link","ports":["Aux"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "HTS3377"
+  "model": "HTS3377",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,36 @@
   "codeset": "codesets/f9/f9bf32cff903087e.json",
   "deviceType": 7,
   "globalDeviceId": 264816,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputYPbPr"],"name":"Component","ports":["Component"]},
+      {"commands":["InputVga"],"name":"VGA","ports":["PC"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Optoma",
-  "model": "HD-50"
+  "model": "HD-50",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

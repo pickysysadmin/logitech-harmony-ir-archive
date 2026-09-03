@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/f8/f85bada5f8fd15c8.json",
   "deviceType": 1,
   "globalDeviceId": 98853,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Ext1"}],"name":"Ext1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Ext2"}],"name":"Ext2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"FrontAV"}],"name":"FrontAV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"SuperVHS"}],"name":"SuperVHS"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Universum",
-  "model": "FT-81227"
+  "model": "FT-81227",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Ext1"},
+        {"name":"Ext2"},
+        {"name":"FrontAV"},
+        {"name":"SuperVHS"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["1"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,48 @@
   "codeset": "codesets/d4/d4a8eac16f87badf.json",
   "deviceType": 22,
   "globalDeviceId": 205580,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dvd"}],"name":"Dvd","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Audio/Aux"},{"set":"Audio/AuxInput","to":"Audio"}],"name":"Audio","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Audio/Aux"},{"set":"Audio/AuxInput","to":"Aux"}],"name":"Aux","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "RTD315WR"
+  "model": "RTD315WR",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Audio/AuxInput": {
+      "next": ["InputAudio/AUX"],
+      "values": [
+        {"name":"Audio"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dvd","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Audio/Aux","select":[{"commands":["InputAudio/AUX"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

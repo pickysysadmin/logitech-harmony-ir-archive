@@ -2,6 +2,37 @@
   "codeset": "codesets/76/76a1430d34e487a9.json",
   "deviceType": 34,
   "globalDeviceId": 182034,
+  "inputs": {
+    "list": [
+      {"commands":["HDD"],"name":"Hdd"},
+      {"commands":["DVD"],"name":"Dvd"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "RDR-HX650"
+  "model": "RDR-HX650",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line1"},
+        {"name":"Line2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

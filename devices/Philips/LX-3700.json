@@ -2,6 +2,63 @@
   "codeset": "codesets/7f/7fbdfbbe8544160f.json",
   "deviceType": 22,
   "globalDeviceId": 151442,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"DISC"}],"name":"DISC"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AuxDigital"}],"name":"AuxDigital"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"AuxAnalog"}],"name":"AuxAnalog"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "LX-3700"
+  "model": "LX-3700",
+  "power": {
+    "off": ["PowerOff"],
+    "on": [
+      {"set":"InputType","to":"Dummy"},
+      "Select"
+    ],
+    "onReset": [
+      {"set":"InputType","to":"Dummy"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux/Di"],
+      "values": [
+        {"name":"AuxDigital"},
+        {"name":"AuxAnalog"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv/Av"],"setType":1}]},
+        {"name":"DISC","select":[{"commands":["InputDisc"],"setType":1}]},
+        {"name":"Aux","select":[{"commands":["InputAux/Di"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Dummy","select":[{"commands":["Select"],"setType":1}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

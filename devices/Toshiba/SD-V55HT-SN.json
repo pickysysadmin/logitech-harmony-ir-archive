@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/24/24de5ce17db1eab6.json",
   "deviceType": 32,
   "globalDeviceId": 226170,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd/Cd"],"name":"DVD/CD"},
+      {"commands":["InputAm/Fm"],"name":"FM/AM"},
+      {"commands":["InputVcr"],"name":"VCR"},
+      {"commands":["InputSelect"],"name":"INPUT"},
+      {"commands":["InputSelect"],"name":"L1"},
+      {"commands":["InputSelect","InputSelect"],"name":"L2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Toshiba",
-  "model": "SD-V55HT-SN"
+  "model": "SD-V55HT-SN",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

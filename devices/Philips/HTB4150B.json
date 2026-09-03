@@ -2,6 +2,51 @@
   "codeset": "codesets/b4/b4cf38e62e0d5976.json",
   "deviceType": 22,
   "globalDeviceId": 262263,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Optical In"}],"name":"Optical In","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Coaxial In"}],"name":"Coaxial In","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Audio In"}],"name":"Audio In","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTB4150B"
+  "model": "HTB4150B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Optical In"},
+        {"name":"Coaxial In"},
+        {"name":"AUX"},
+        {"name":"Audio In"},
+        {"name":"Bluetooth"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

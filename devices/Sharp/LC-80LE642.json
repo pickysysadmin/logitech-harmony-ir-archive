@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "finish": ["Ent"]
+  },
   "codeset": "codesets/aa/aab981195b6dd274.json",
   "deviceType": 1,
   "globalDeviceId": 267528,
+  "inputs": {
+    "list": [
+      {"commands":["ChannelUp","Exit","Exit",{"delayMs":2000},"ChannelUp"],"name":"TV"},
+      {"commands":["Input1","Input1","Exit","Enter","Input1","Input1"],"name":"HDMI 1"},
+      {"commands":["Input2","Input2","Exit","Enter","Input2","Input2"],"name":"HDMI 2"},
+      {"commands":["Input3","Input3","Exit","Enter","Input3","Input3"],"name":"HDMI 3"},
+      {"commands":["Input4","Input4","Exit","Enter","Input4","Input4"],"name":"HDMI 4"},
+      {"commands":["Input5","Input5","Exit","Enter","Input5","Input5"],"name":"Component"},
+      {"commands":["Input6","Input6","Exit","Enter","Input6","Input6"],"name":"Video 1"},
+      {"commands":["Input7","Input7","Exit","Enter","Input7","Input7"],"name":"Video 2"},
+      {"commands":["Input8","Input8","Exit","Enter","Input8","Input8"],"name":"PC IN"},
+      {"commands":["Exit","Exit","Input8","Input"],"name":"Home Network(DLNA)"},
+      {"commands":["Exit","Exit","Input8","Input","Input"],"name":"USB"},
+      {"commands":["Exit","Exit","SmartCentral",{"delayMs":2000},"SmartCentral"],"name":"Smart Central"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-80LE642"
+  "model": "LC-80LE642",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 19000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/67/67532c559f31b912.json",
   "deviceType": 1,
   "globalDeviceId": 164042,
+  "inputs": {
+    "list": [
+      {"commands":["InputVga",{"delayMs":500},"InputNext"],"name":"Tuner 1"},
+      {"commands":["InputTuner"],"name":"Tuner 2"},
+      {"commands":["InputComposite1"],"name":"Composite 1"},
+      {"commands":["InputComposite2"],"name":"Composite 2"},
+      {"commands":["InputSVideo1"],"name":"S-Video 1"},
+      {"commands":["InputSVideo2"],"name":"S-Video 2"},
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["InputComponent2"],"name":"Component 2"},
+      {"commands":["InputComponent2",{"delayMs":500},"InputNext"],"name":"HDMI 1"},
+      {"commands":["InputHDMI2"],"name":"HDMI 2"},
+      {"commands":["InputVga"],"name":"VGA"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Syntax-Brillian",
-  "model": "Olevia 252T FHD"
+  "model": "Olevia 252T FHD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

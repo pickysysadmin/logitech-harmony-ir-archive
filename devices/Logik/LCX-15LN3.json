@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["Select"],
+    "fixedDigits": 3
+  },
   "codeset": "codesets/01/01af46de67876601.json",
   "deviceType": 1,
   "globalDeviceId": 224538,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV1"},
+      {"name":"SCART"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Logik",
-  "model": "LCX-15LN3"
+  "model": "LCX-15LN3",
+  "power": {
+    "onReset": ["PowerToggle"],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

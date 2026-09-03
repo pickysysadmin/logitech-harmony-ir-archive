@@ -2,6 +2,56 @@
   "codeset": "codesets/44/44aa1cf6d288991f.json",
   "deviceType": 1,
   "globalDeviceId": 157379,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"Hdmi1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Hdmi2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV 2S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-50PV70LB"
+  "model": "TH-50PV70LB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2AV2S": {
+      "finish": ["Select"],
+      "next": ["DirectionRight"],
+      "previous": ["DirectionLeft"],
+      "start": ["TvVideo"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["Mode"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputPc","TvVideo","DirectionUp","Select"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Hdmi1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"Hdmi2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"AV1","select":[{"commands":["InputHdmi2","TvVideo","DirectionDown","DirectionDown","Select"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputHdmi2","TvVideo","DirectionDown","DirectionDown","DirectionDown","Select"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 9500,
+    "pressMinRepeats": 3
+  }
 }

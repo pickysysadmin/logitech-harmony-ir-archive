@@ -2,6 +2,58 @@
   "codeset": "codesets/2f/2fc8e365980ee139.json",
   "deviceType": 5,
   "globalDeviceId": 182322,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"AirPlay"}],"name":"AirPlay"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Game"}],"name":"Game"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Audio"}],"name":"Audio 1"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Audio2"}],"name":"Audio 2"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Audio3"}],"name":"Audio 3"},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Audio4"}],"name":"Audio 4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Geneva Lab",
-  "model": "Model XXL"
+  "model": "Model XXL",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioInput": {
+      "next": ["InputAudio"],
+      "values": [
+        {"name":"Audio1"},
+        {"name":"Audio2"},
+        {"name":"Audio3"},
+        {"name":"Audio4"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"AirPlay","select":[{"commands":["InputAirPlay"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Game","select":[{"commands":["InputGame"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Audio","select":[{"commands":["InputAudio"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 1
+  }
 }

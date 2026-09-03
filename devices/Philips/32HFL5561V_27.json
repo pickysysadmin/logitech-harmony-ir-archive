@@ -2,6 +2,41 @@
   "codeset": "codesets/8d/8d8818e7d10f18d4.json",
   "deviceType": 1,
   "globalDeviceId": 212940,
+  "inputs": {
+    "finish": ["DirectionRight"],
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV"},
+      {"name":"Side AV"},
+      {"name":"Side S-Video"},
+      {"name":"CVI"},
+      {"name":"VGA"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"HDMI 3"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "Philips",
-  "model": "32HFL5561V/27"
+  "model": "32HFL5561V/27",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"HDMI 3"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

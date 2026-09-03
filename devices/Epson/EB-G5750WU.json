@@ -2,6 +2,64 @@
   "codeset": "codesets/f9/f9c4d864200f419e.json",
   "deviceType": 7,
   "globalDeviceId": 236666,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"}],"name":"Computer"},
+      {"commands":[{"set":"InputType","to":"BNC"}],"name":"BNC"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"LAN/USB"},{"set":"LAN/USBInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"LAN/USB"},{"set":"LAN/USBInput","to":"LAN"}],"name":"LAN"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "EB-G5750WU"
+  "model": "EB-G5750WU",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"BNC","select":[{"commands":["InputBnc"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"LAN/USB","select":[{"commands":["InputLan/Usb"],"setType":2}]}
+      ]
+    },
+    "LAN/USBInput": {
+      "next": ["InputLan/Usb"],
+      "values": [
+        {"name":"LAN"},
+        {"name":"USB"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,48 @@
   "codeset": "codesets/01/01e7037c33b768de.json",
   "deviceType": 22,
   "globalDeviceId": 157086,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"BD"}],"name":"BD"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Digital-In"},{"set":"Digital-InInput","to":"Digital-In1"}],"name":"Digital-In1"},
+      {"commands":[{"set":"InputType","to":"Digital-In"},{"set":"Digital-InInput","to":"Digital-In2"}],"name":"Digital-In2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-BD2S"
+  "model": "HT-BD2S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Digital-InInput": {
+      "next": ["InputD.In"],
+      "values": [
+        {"name":"Digital-In1"},
+        {"name":"Digital-In2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"BD","select":[{"commands":["InputBd"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"FM","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Digital-In","select":[{"commands":["InputD.In"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,33 @@
   "codeset": "codesets/61/614d181accf956ca.json",
   "deviceType": 1,
   "globalDeviceId": 165685,
+  "inputs": {
+    "list": [
+      {"name":"Antenna 1"},
+      {"name":"Video 1"},
+      {"name":"Video 2"}
+    ],
+    "next": ["InputDelay 25 Khz"],
+    "type": 2
+  },
   "manufacturer": "Z-Harmony Test",
-  "model": "30S100M100M"
+  "model": "30S100M100M",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna 1"}
+    ],
+    "toggle": ["PowerOnDelay 30 Khz"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 1
+  }
 }

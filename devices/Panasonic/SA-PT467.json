@@ -2,6 +2,57 @@
   "codeset": "codesets/46/4684a1c8b91d3d08.json",
   "deviceType": 22,
   "globalDeviceId": 261332,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"DIN"}],"name":"DIN"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-PT467"
+  "model": "SA-PT467",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputiPod/Usb"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputFm/Ext-In"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputFm/Ext-In"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AV"},
+        {"name":"AUX"},
+        {"name":"DIN"}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputiPod/Usb"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"USB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

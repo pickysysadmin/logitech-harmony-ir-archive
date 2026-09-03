@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/66/6602c16b242e2ed1.json",
   "deviceType": 1,
   "globalDeviceId": 170627,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"Tv","ports":["Antenna"]},
+      {"commands":["InputExt1"],"name":"Ext 1","ports":["Scart"]},
+      {"commands":["InputExt2"],"name":"Ext 2","ports":["Scart"]},
+      {"commands":["InputAv"],"name":"AV","ports":["Composite"]},
+      {"commands":["InputS-Video"],"name":"S-Video","ports":["S-Video"]},
+      {"commands":["InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputPc"],"name":"PC","ports":["PC"]},
+      {"commands":["InputHdmi"],"name":"Hdmi","ports":["HDMI","Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "LE-26R32B"
+  "model": "LE-26R32B",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

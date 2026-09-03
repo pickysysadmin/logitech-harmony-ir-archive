@@ -2,6 +2,33 @@
   "codeset": "codesets/fb/fba728efe99ed74b.json",
   "deviceType": 22,
   "globalDeviceId": 79483,
+  "inputs": {
+    "list": [
+      {"name":"Radio"},
+      {"name":"CD"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Yamada",
-  "model": "Chili Style 2100X"
+  "model": "Chili Style 2100X",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Radio"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

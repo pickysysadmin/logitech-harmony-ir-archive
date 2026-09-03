@@ -2,6 +2,48 @@
   "codeset": "codesets/32/3269aded4fde74e1.json",
   "deviceType": 22,
   "globalDeviceId": 170450,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Band"},{"set":"BandInput","to":"UKW"}],"name":"UKW"},
+      {"commands":[{"set":"InputType","to":"Band"},{"set":"BandInput","to":"MW"}],"name":"MW"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LH-T760PA"
+  "model": "LH-T760PA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "BandInput": {
+      "next": ["InputBand"],
+      "values": [
+        {"name":"UKW"},
+        {"name":"MW"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"Band","select":[{"commands":["InputBand"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

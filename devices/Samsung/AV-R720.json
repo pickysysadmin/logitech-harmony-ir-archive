@@ -2,6 +2,73 @@
   "codeset": "codesets/a8/a8e1b7a8bc4f0ada.json",
   "deviceType": 5,
   "globalDeviceId": 182905,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"7.1CH"}],"name":"7.1CH","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DvdOptic1"}],"name":"DvdOptic1","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DvdHdmi1"}],"name":"DvdHdmi1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DvdAnalog"}],"name":"DvdAnalog","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"SAT"},{"set":"SATInput","to":"SatOptic2"}],"name":"SatOptic2","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"SAT"},{"set":"SATInput","to":"SatHdmi2"}],"name":"SatHdmi2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"SAT"},{"set":"SATInput","to":"SatAnalog"}],"name":"SatAnalog","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"CdCoaxial"}],"name":"CdCoaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"CdAnalog"}],"name":"CdAnalog","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "AV-R720"
+  "model": "AV-R720",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CDInput": {
+      "next": ["InputMode"],
+      "values": [
+        {"name":"CdCoaxial"},
+        {"name":"CdAnalog"}
+      ]
+    },
+    "DVDInput": {
+      "next": ["InputMode"],
+      "values": [
+        {"name":"DvdOptic1"},
+        {"name":"DvdHdmi1"},
+        {"name":"DvdAnalog"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VCR","select":[{"commands":["DirectionUp",{"delayMs":5000},"InputVcr"],"setType":2}]},
+        {"name":"7.1CH","select":[{"commands":["DirectionUp",{"delayMs":5000},"Input7.1CH"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["DirectionUp",{"delayMs":5000},"InputAux"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["DirectionUp",{"delayMs":5000},"InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["DirectionUp",{"delayMs":5000},"InputDvd"],"setType":2}]},
+        {"name":"SAT","select":[{"commands":["DirectionUp",{"delayMs":5000},"InputSat"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["DirectionUp",{"delayMs":5000},"InputCd"],"setType":2}]}
+      ]
+    },
+    "SATInput": {
+      "next": ["InputMode"],
+      "values": [
+        {"name":"SatOptic2"},
+        {"name":"SatHdmi2"},
+        {"name":"SatAnalog"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

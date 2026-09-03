@@ -2,6 +2,51 @@
   "codeset": "codesets/98/98eb11f32c71ea0c.json",
   "deviceType": 22,
   "globalDeviceId": 40289,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"CD/DVD"},
+      {"commands":[{"set":"InputType","to":"TUNER"}],"name":"BAND"},
+      {"commands":[{"set":"AuxInput","to":"Video 1"}],"name":"VIDEO 1"},
+      {"commands":[{"set":"AuxInput","to":"Video 1 OPT"}],"name":"VIDEO 1 OPT"},
+      {"commands":[{"set":"AuxInput","to":"Video 2"}],"name":"VIDEO 2"},
+      {"commands":[{"set":"AuxInput","to":"Video 2 Opt"}],"name":"VIDEO 2 OPT"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LGHTW316"
+  "model": "LGHTW316",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 1 OPT"},
+        {"name":"Video 1 Coax"},
+        {"name":"Video 2"},
+        {"name":"Video 2 Opt"},
+        {"name":"Video Coax"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TUNER","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,55 @@
   "codeset": "codesets/9f/9fcc0859a32a3e3e.json",
   "deviceType": 7,
   "globalDeviceId": 262601,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"HDMI/DVI"}],"name":"HDMI/DVI"},
+      {"commands":[{"set":"InputType","to":"LAN/WiFi"}],"name":"LAN/WiFi"},
+      {"commands":[{"set":"InputType","to":"USB B"}],"name":"USB B"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB A1"}],"name":"USB A1"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB A2"}],"name":"USB A2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "P1276"
+  "model": "P1276",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"VGA"},
+        {"name":"Video"},
+        {"name":"S-Video"},
+        {"name":"HDMI/DVI"},
+        {"name":"LAN/WiFi"},
+        {"name":"USB B"},
+        {"name":"USB"}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputSD/USBA"],
+      "values": [
+        {"name":"USB A1"},
+        {"name":"USB A2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

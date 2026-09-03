@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 25542,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"CycleMode","to":"AV1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"CycleMode","to":"AV2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"CycleMode","to":"AV3"}],"name":"Front"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"CycleMode","to":"AV4"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"CycleMode","to":"AV5"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"CycleMode","to":"AV6"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "D56W20BYX2"
+  "model": "D56W20BYX2",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CycleMode": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"AV4"},
+        {"name":"AV5"},
+        {"name":"AV6"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["0","3"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

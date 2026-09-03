@@ -1,7 +1,51 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 224054,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AntennaCable"}],"name":"AntennaCable"},
+      {"commands":[{"set":"InputType","to":"InputScartToggle"},"1"],"name":"Scart1SAT"},
+      {"commands":[{"set":"InputType","to":"Scart2SAT"},"2"],"name":"Scart2 AVR"},
+      {"commands":[{"set":"InputType","to":"InputScartToggle"},{"set":"InputType","to":"InputScartToggle"},"3"],"name":"Scart3 S-VHS"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Grundig",
-  "model": "M70-681"
+  "model": "M70-681",
+  "power": {
+    "toggle": ["PowerOff"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"AntennaCable","select":[{"commands":["0"],"setType":1}]},
+        {"name":"Scart1VCR","select":[{"commands":["1"],"setType":1}]},
+        {"name":"Scart2SAT","select":[{"commands":["A/V"],"setType":1}]},
+        {"name":"InputScartToggle","select":[{"commands":["InputComponent",{"set":"ScartInput","to":"Scart3DVD"}],"setType":1}]}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Scart3DVD"},
+        {"name":"Scart4"},
+        {"name":"Scart5"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

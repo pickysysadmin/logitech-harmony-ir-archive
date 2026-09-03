@@ -2,6 +2,33 @@
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 135816,
+  "inputs": {
+    "list": [
+      {"commands":["TvVideo"],"name":"Tuner"},
+      {"commands":["Red"],"name":"AV1"},
+      {"commands":["Green"],"name":"AV2"},
+      {"commands":["Yellow"],"name":"AV3"}
+    ],
+    "start": ["Blue"],
+    "type": 3
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-28MK1FM"
+  "model": "TX-28MK1FM",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerOff"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

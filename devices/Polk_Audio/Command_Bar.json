@@ -2,6 +2,43 @@
   "codeset": "codesets/bc/bc0983d4e72bcd9c.json",
   "deviceType": 19,
   "globalDeviceId": 447429,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Hdmi 1"}],"name":"Hdmi 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Hdmi 2"}],"name":"Hdmi 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Hdmi Arc"}],"name":"Hdmi Arc","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Optical"}],"name":"Optical","ports":["Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Polk Audio",
-  "model": "Command Bar"
+  "model": "Command Bar",
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Hdmi 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"Hdmi 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Hdmi Arc"},
+        {"name":"Optical"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "pressMinRepeats": 1
+  }
 }

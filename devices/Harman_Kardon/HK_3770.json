@@ -2,6 +2,81 @@
   "codeset": "codesets/01/0110d8fcb3483508.json",
   "deviceType": 5,
   "globalDeviceId": 263333,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"Usb"},
+      {"commands":[{"set":"InputType","to":"Phono"}],"name":"Phono"},
+      {"commands":[{"set":"InputType","to":"Network"}],"name":"Network"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"vTuner"}],"name":"vTuner"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"A 1"}],"name":"A 1"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"A 2"}],"name":"A 2"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"A 3"}],"name":"A 3"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"A 4"}],"name":"A 4"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"A 5"}],"name":"A 5"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Coaxial"}],"name":"Coaxial"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Optical 1"}],"name":"Optical 1"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Optical 2"}],"name":"Optical 2"},
+      {"commands":[{"set":"InputType","to":"Am/Fm"},{"set":"Am/FmInput","to":"Am"}],"name":"Am"},
+      {"commands":[{"set":"InputType","to":"Am/Fm"},{"set":"Am/FmInput","to":"Fm"}],"name":"Fm"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Harman Kardon",
-  "model": "HK 3770"
+  "model": "HK 3770",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Am/FmInput": {
+      "next": ["InputAm/Fm"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    },
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"A 1"},
+        {"name":"A 2"},
+        {"name":"A 3"},
+        {"name":"A 4"},
+        {"name":"A 5"}
+      ]
+    },
+    "DigitalInput": {
+      "next": ["InputDigital"],
+      "values": [
+        {"name":"Coaxial"},
+        {"name":"Optical 1"},
+        {"name":"Optical 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Usb","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Phono","select":[{"commands":["InputPhono"],"setType":2}]},
+        {"name":"Network","select":[{"commands":["InputNetwork"],"setType":2}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"vTuner","select":[{"commands":["InputvTuner"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDigital"],"setType":2}]},
+        {"name":"Am/Fm","select":[{"commands":["InputAm/Fm"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

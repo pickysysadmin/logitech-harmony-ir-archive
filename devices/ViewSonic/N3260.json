@@ -2,6 +2,43 @@
   "codeset": "codesets/d3/d3133d7f1669190c.json",
   "deviceType": 1,
   "globalDeviceId": 153031,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"AV 1"},
+      {"name":"AV 2"},
+      {"name":"S-Video 1"},
+      {"name":"S-Video 2"},
+      {"name":"TV"},
+      {"name":"HDTV 1"},
+      {"name":"HDTV 2"},
+      {"name":"PC"},
+      {"name":"HDMI"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": [
+      "InputNext",
+      {"delayMs":500},
+      "Select",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "ViewSonic",
-  "model": "N3260"
+  "model": "N3260",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

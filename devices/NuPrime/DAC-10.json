@@ -2,6 +2,52 @@
   "codeset": "codesets/5c/5c65bf03f8fd8a00.json",
   "deviceType": 19,
   "globalDeviceId": 349214,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Coaxial 1"}],"name":"Coaxial 1"},
+      {"commands":[{"set":"InputType","to":"Coaxial 2"}],"name":"Coaxial 2"},
+      {"commands":[{"set":"InputType","to":"Optical 1"}],"name":"Optical 1"},
+      {"commands":[{"set":"InputType","to":"Optical 2"}],"name":"Optical 2"},
+      {"commands":[{"set":"InputType","to":"L1/L2"},{"set":"L1/L2Input","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"L1/L2"},{"set":"L1/L2Input","to":"Line 2"}],"name":"Line 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NuPrime",
-  "model": "DAC-10"
+  "model": "DAC-10",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Coaxial 1","select":[{"commands":["InputCoaxial1"],"setType":2}]},
+        {"name":"Coaxial 2","select":[{"commands":["InputCoaxial2"],"setType":2}]},
+        {"name":"Optical 1","select":[{"commands":["InputOptical1"],"setType":2}]},
+        {"name":"Optical 2","select":[{"commands":["InputOptical2"],"setType":2}]},
+        {"name":"L1/L2","select":[{"commands":["InputL1/L2"],"setType":2}]}
+      ]
+    },
+    "L1/L2Input": {
+      "next": ["InputL1/L2"],
+      "values": [
+        {"name":"Line 1"},
+        {"name":"Line 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

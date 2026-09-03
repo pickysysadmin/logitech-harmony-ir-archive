@@ -2,6 +2,40 @@
   "codeset": "codesets/6f/6f76872e1522896a.json",
   "deviceType": 21,
   "globalDeviceId": 114396,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Audio","to":"FM"}],"name":"Tuner FM"},
+      {"commands":[{"set":"Audio","to":"AM"}],"name":"Tuner AM"},
+      {"commands":[{"set":"Audio","to":"AUX"}],"name":"Aux"},
+      {"commands":["InputCD"],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-EN53"
+  "model": "SC-EN53",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Audio": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"AUX"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 5,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

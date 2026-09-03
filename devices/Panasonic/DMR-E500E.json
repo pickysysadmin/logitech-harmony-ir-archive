@@ -1,7 +1,51 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d6/d6de5e9d03afc652.json",
   "deviceType": 34,
   "globalDeviceId": 70628,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"HDDInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"HDDInput","to":"Input 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"HDDInput","to":"Input 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"HDDInput","to":"Input 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-E500E"
+  "model": "DMR-E500E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HDDInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Input 1"},
+        {"name":"Input 2"},
+        {"name":"Input 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

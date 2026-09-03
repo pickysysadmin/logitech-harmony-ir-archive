@@ -2,6 +2,50 @@
   "codeset": "codesets/1a/1ac5497b791a49e7.json",
   "deviceType": 19,
   "globalDeviceId": 493023,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Usb"}],"name":"Usb","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"HdmiArc"}],"name":"HdmiArc","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Rca/LineIn"},{"set":"Rca/LineInInput","to":"Rca"}],"name":"Rca","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Rca/LineIn"},{"set":"Rca/LineInInput","to":"LineIn"}],"name":"LineIn","ports":["Aux"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hisense",
-  "model": "HS212"
+  "model": "HS212",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":1}]},
+        {"name":"Usb","select":[{"commands":["InputUsb"],"setType":1}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":1}]},
+        {"name":"HdmiArc","select":[{"commands":["InputHdmiArc"],"setType":1}]},
+        {"name":"Rca/LineIn","select":[{"commands":["InputRca/LineIn"],"setType":1}]}
+      ]
+    },
+    "Rca/LineInInput": {
+      "next": ["InputRca/LineIn"],
+      "values": [
+        {"name":"Rca"},
+        {"name":"LineIn"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

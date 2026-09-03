@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 148022,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnt/Cable",{"delayMs":1000},"InputAnt/Cable"],"name":"TV"},
+      {"commands":["InputVideo1",{"delayMs":1000},"InputVideo1"],"name":"AV"},
+      {"commands":["InputVideo2",{"delayMs":1000}],"name":"SVideo"},
+      {"commands":["InputVideo2",{"delayMs":500},"TvVideo"],"name":"Component 1"},
+      {"commands":["InputComponent2",{"delayMs":1000},"InputComponent2"],"name":"Component 2"},
+      {"commands":["InputRgb"],"name":"DPM MODE"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "RT-26LZ50"
+  "model": "RT-26LZ50",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,55 @@
   "codeset": "codesets/a4/a4954eae72c3ad98.json",
   "deviceType": 21,
   "globalDeviceId": 149699,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD 1"}],"name":"CD 1"},
+      {"commands":[{"set":"InputType","to":"CD 2"}],"name":"CD 2"},
+      {"commands":[{"set":"InputType","to":"CD 3"}],"name":"CD 3"},
+      {"commands":[{"set":"InputType","to":"CD 4"}],"name":"CD 4"},
+      {"commands":[{"set":"InputType","to":"CD 5"}],"name":"CD 5"},
+      {"commands":[{"set":"InputType","to":"TUNER"}],"name":"TUNER"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"CDR"}],"name":"CDR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "MCM-530/30"
+  "model": "MCM-530/30",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"CDR"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD 1","select":[{"commands":["CD1"],"setType":2}]},
+        {"name":"CD 2","select":[{"commands":["CD2"],"setType":2}]},
+        {"name":"CD 3","select":[{"commands":["CD3"],"setType":2}]},
+        {"name":"CD 4","select":[{"commands":["CD4"],"setType":2}]},
+        {"name":"CD 5","select":[{"commands":["CD5"],"setType":2}]},
+        {"name":"TUNER","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

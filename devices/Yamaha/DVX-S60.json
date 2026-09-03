@@ -2,6 +2,56 @@
   "codeset": "codesets/2d/2d4fcdfa23972ee6.json",
   "deviceType": 22,
   "globalDeviceId": 182124,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Video2"}],"name":"Video2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Yamaha",
-  "model": "DVX-S60"
+  "model": "DVX-S60",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,48 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/fb/fb8a44ca2258cdd7.json",
   "deviceType": 1,
   "globalDeviceId": 493502,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv",{"delayMs":300},"InputTv"],"name":"Channels","ports":["Antenna"]},
+      {"commands":["InputHdmi1",{"delayMs":1000},"InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputHdmi2",{"delayMs":300},"InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputHdmi3",{"delayMs":300},"InputHdmi3"],"name":"HDMI 3/ARC","ports":["HDMI"]},
+      {"commands":["InputHdmi4",{"delayMs":300},"InputHdmi4"],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":["InputVideo1",{"delayMs":300},"InputVideo1"],"name":"Video","ports":["Composite"]},
+      {"commands":["Home",{"delayMs":3000},"Home"],"name":"Android TV","ports":["Streaming"]},
+      {"commands":["GooglePlay",{"delayMs":300},"GooglePlay"],"name":"GooglePlay","ports":["Streaming"]},
+      {"commands":["Netflix",{"delayMs":300},"Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "XBR-98Z9G"
+  "model": "XBR-98Z9G",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":300},
+      "PowerOff"
+    ],
+    "on": [
+      "PowerOn",
+      {"delayMs":300},
+      "PowerOn"
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 5000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

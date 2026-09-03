@@ -2,6 +2,50 @@
   "codeset": "codesets/3b/3b4c44513c01d39c.json",
   "deviceType": 1,
   "globalDeviceId": 166566,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv"}],"name":"Tv"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Scart 1"}],"name":"Scart 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Scart 2"}],"name":"Scart 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Y/C"}],"name":"Y/C"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"CVB"}],"name":"CVB"},
+      {"commands":[{"set":"InputType","to":"Pc"}],"name":"Pc"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Medion",
-  "model": "MD-41842"
+  "model": "MD-41842",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["InputVideo"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tv","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Pc","select":[{"commands":["InputPc"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Scart 1"},
+        {"name":"Scart 2"},
+        {"name":"Y/C"},
+        {"name":"CVB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

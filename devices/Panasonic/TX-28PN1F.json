@@ -2,6 +2,72 @@
   "codeset": "codesets/a8/a8547d18fe86ba3f.json",
   "deviceType": 1,
   "globalDeviceId": 60260,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputMode","to":"TunerMode"},{"set":"OnScreenMenu","to":"True"}],"name":"Tuner"},
+      {"commands":[{"set":"InputMode","to":"VideoMode"},{"set":"OnScreenMenu","to":"True"},{"set":"AVType","to":"Red"},{"set":"OnScreenMenu","to":"False"}],"name":"AV 1"},
+      {"commands":[{"set":"InputMode","to":"VideoMode"},{"set":"OnScreenMenu","to":"True"},{"set":"AVType","to":"Green"},{"set":"AV2Mode","to":"AV2"},{"set":"OnScreenMenu","to":"False"}],"name":"AV 2"},
+      {"commands":[{"set":"InputMode","to":"VideoMode"},{"set":"OnScreenMenu","to":"True"},{"set":"AVType","to":"Green"},{"set":"AV2Mode","to":"AV2S"},{"set":"OnScreenMenu","to":"False"}],"name":"AV 2S"},
+      {"commands":[{"set":"InputMode","to":"VideoMode"},{"set":"OnScreenMenu","to":"True"},{"set":"AVType","to":"Yellow"},{"set":"AV3Mode","to":"AV3"},{"set":"OnScreenMenu","to":"False"}],"name":"AV 3"},
+      {"commands":[{"set":"InputMode","to":"VideoMode"},{"set":"OnScreenMenu","to":"True"},{"set":"AVType","to":"Yellow"},{"set":"AV3Mode","to":"AV3S"},{"set":"OnScreenMenu","to":"False"}],"name":"AV 3S"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-28PN1F"
+  "model": "TX-28PN1F",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TunerMode"}
+    ],
+    "toggle": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AV2Mode": {
+      "next": ["Green"],
+      "values": [
+        {"name":"AV2"},
+        {"name":"AV2S"}
+      ]
+    },
+    "AV3Mode": {
+      "next": ["Yellow"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV3S"}
+      ]
+    },
+    "AVType": {
+      "values": [
+        {"name":"Red","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"Green","select":[{"commands":["Green"],"setType":2}]},
+        {"name":"Yellow","select":[{"commands":["Yellow"],"setType":2}]}
+      ]
+    },
+    "InputMode": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TunerMode"},
+        {"name":"VideoMode"}
+      ]
+    },
+    "OnScreenMenu": {
+      "values": [
+        {"name":"True","select":[{"commands":["Red"],"setType":2}]},
+        {"name":"False","select":[{"commands":["Select"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

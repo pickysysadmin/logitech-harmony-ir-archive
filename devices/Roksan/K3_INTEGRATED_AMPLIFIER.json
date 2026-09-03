@@ -2,6 +2,52 @@
   "codeset": "codesets/fb/fbc244c630f6f294.json",
   "deviceType": 19,
   "globalDeviceId": 336174,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Other"},{"set":"OtherInput","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Other"},{"set":"OtherInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Other"},{"set":"OtherInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Other"},{"set":"OtherInput","to":"Line 1"}],"name":"Line 1"},
+      {"commands":[{"set":"InputType","to":"Other"},{"set":"OtherInput","to":"Line 2"}],"name":"Line 2"},
+      {"commands":[{"set":"InputType","to":"Other"},{"set":"OtherInput","to":"Phono"}],"name":"Phono"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Roksan",
-  "model": "K3 INTEGRATED AMPLIFIER"
+  "model": "K3 INTEGRATED AMPLIFIER",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Other","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "OtherInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"CD"},
+        {"name":"Tuner"},
+        {"name":"Video"},
+        {"name":"Line 1"},
+        {"name":"Line 2"},
+        {"name":"Phono"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

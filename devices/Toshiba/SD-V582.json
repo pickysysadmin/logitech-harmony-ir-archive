@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/24/24de5ce17db1eab6.json",
   "deviceType": 25,
   "globalDeviceId": 114435,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Dvd/Vcr"},{"set":"Dvd/VcrInput","to":"Dvd"}],"name":"Dvd"},
+      {"commands":[{"set":"InputType","to":"Dvd/Vcr"},{"set":"Dvd/VcrInput","to":"Vcr"}],"name":"Vcr"},
+      {"commands":[{"set":"InputType","to":"AuxInput"},{"set":"AuxInputInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AuxInput"},{"set":"AuxInputInput","to":"Line1"}],"name":"Line1"},
+      {"commands":[{"set":"InputType","to":"AuxInput"},{"set":"AuxInputInput","to":"Line2"}],"name":"Line2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "SD-V582"
+  "model": "SD-V582",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInputInput": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Line1"},
+        {"name":"Line2"}
+      ]
+    },
+    "Dvd/VcrInput": {
+      "next": ["InputDvd"],
+      "values": [
+        {"name":"Dvd"},
+        {"name":"Vcr"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Dvd/Vcr","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"AuxInput","select":[{"commands":["InputSelect"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

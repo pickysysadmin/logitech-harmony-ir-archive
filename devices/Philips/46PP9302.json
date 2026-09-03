@@ -1,7 +1,48 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/51/51c2ba3c2f3d79f0.json",
   "deviceType": 1,
   "globalDeviceId": 145682,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"TUNER"},
+      {"commands":["InputAv1"],"name":"AV1"},
+      {"commands":["InputCV1"],"name":"CVI"},
+      {"commands":["InputAV2"],"name":"AV2"},
+      {"commands":["InputAV3"],"name":"AV3"},
+      {"commands":["InputAV4"],"name":"AV4"},
+      {"commands":["InputAV5"],"name":"AV5"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "46PP9302"
+  "model": "46PP9302",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "PictureMode": {
+      "next": ["Format"],
+      "values": [
+        {"name":"4:3"},
+        {"name":"Expand"},
+        {"name":"Wide"},
+        {"name":"Auto"},
+        {"name":"Picture"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

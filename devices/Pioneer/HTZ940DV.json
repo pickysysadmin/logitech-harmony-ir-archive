@@ -2,6 +2,59 @@
   "codeset": "codesets/43/43cc7dbfc5dd9f56.json",
   "deviceType": 22,
   "globalDeviceId": 46645,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"L1 Analog"}],"name":"L1 Analog"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"L1 Digital"}],"name":"L1 Digital"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"L2 Analog"}],"name":"L2 Analog"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"L2 Digital"}],"name":"L2 Digital"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "HTZ940DV"
+  "model": "HTZ940DV",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd/Cd"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":1}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"L1 Analog"},
+        {"name":"L1 Digital"},
+        {"name":"L2 Analog"},
+        {"name":"L2 Digital"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3500,
+    "pressMinRepeats": 3
+  }
 }

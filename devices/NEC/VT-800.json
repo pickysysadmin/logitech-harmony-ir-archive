@@ -2,6 +2,35 @@
   "codeset": "codesets/98/98f6a9f09b129fe6.json",
   "deviceType": 7,
   "globalDeviceId": 148049,
+  "inputs": {
+    "list": [
+      {"commands":["InputComputer1"],"name":"Computer 1"},
+      {"commands":["InputComputer2"],"name":"Computer 2"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputHdmi"],"name":"HDMI"},
+      {"commands":["InputViewer"],"name":"Viewer"},
+      {"commands":["InputNetwork"],"name":"Network"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "VT-800"
+  "model": "VT-800",
+  "power": {
+    "off": ["PowerOff","PowerOff"],
+    "on": [
+      {"command":"PowerOn","durationMs":3000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

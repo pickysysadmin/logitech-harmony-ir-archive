@@ -2,6 +2,62 @@
   "codeset": "codesets/42/425d5b698aeb4047.json",
   "deviceType": 1,
   "globalDeviceId": 165229,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"screen","to":"TV"},{"set":"Antenna","to":"ANT 1 AIR"}],"name":"ANT 1 AIR","ports":["Antenna"]},
+      {"commands":[{"set":"screen","to":"TV"},{"set":"Antenna","to":"ANT 2 CABLE"}],"name":"ANT 2 CABLE","ports":["Antenna"]},
+      {"commands":[{"set":"screen","to":"AV1"}],"name":"AV 1","ports":["Composite"]},
+      {"commands":[{"set":"screen","to":"AV2"}],"name":"AV 2","ports":["Composite"]},
+      {"commands":[{"set":"screen","to":"SVideo1"}],"name":"S-Video 1","ports":["S-Video"]},
+      {"commands":[{"set":"screen","to":"SVideo2"}],"name":"S-Video 2","ports":["S-Video"]},
+      {"commands":[{"set":"screen","to":"Component1"}],"name":"Component 1","ports":["Component"]},
+      {"commands":[{"set":"screen","to":"Component2"}],"name":"Component 2","ports":["Component"]},
+      {"commands":[{"set":"screen","to":"PC"}],"name":"PC","ports":["PC"]},
+      {"commands":[{"set":"screen","to":"HDMI1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"screen","to":"HDMI2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"screen","to":"HDMI3"}],"name":"HDMI 3","ports":["HDMI"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "LN-T4671F"
+  "model": "LN-T4671F",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Antenna": {
+      "next": ["InputAntenna"],
+      "values": [
+        {"name":"ANT 1 AIR"},
+        {"name":"ANT 2 CABLE"}
+      ]
+    },
+    "screen": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTV",{"delayMs":1000},"ChannelUp",{"delayMs":1000}],"setType":2}]},
+        {"name":"HDMI1","select":[{"commands":["InputHdmi1"],"setType":1}]},
+        {"name":"HDMI2","select":[{"commands":["InputHdmi2"],"setType":1}]},
+        {"name":"HDMI3","select":[{"commands":["InputHdmi3"],"setType":1}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":1}]},
+        {"name":"Component1","select":[{"commands":["InputComponent1"],"setType":1}]},
+        {"name":"Component2","select":[{"commands":["InputComponent2"],"setType":1}]},
+        {"name":"AV1","select":[{"commands":["InputAv1"],"setType":1}]},
+        {"name":"AV2","select":[{"commands":["InputAv2"],"setType":1}]},
+        {"name":"SVideo1","select":[{"commands":["InputSVideo1"],"setType":1}]},
+        {"name":"SVideo2","select":[{"commands":["InputSVideo2"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8500,
+    "pressMinRepeats": 3
+  }
 }

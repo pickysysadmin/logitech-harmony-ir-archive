@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b1/b133ef525611abad.json",
   "deviceType": 2,
   "globalDeviceId": 43702,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext"],"name":"Line In"},
+      {"commands":["InputNext"],"name":"VHF"},
+      {"commands":["InputNext"],"name":"UHF"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sylvania",
-  "model": "VC4020AT01"
+  "model": "VC4020AT01",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

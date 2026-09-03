@@ -2,6 +2,46 @@
   "codeset": "codesets/5f/5ffb4c9bea653931.json",
   "deviceType": 19,
   "globalDeviceId": 261951,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Analog"}],"name":"Analog","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "SA-CT60BT"
+  "model": "SA-CT60BT",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "FunctionInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Optical"},
+        {"name":"Coaxial"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":2}]},
+        {"name":"Function","select":[{"commands":["Function"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

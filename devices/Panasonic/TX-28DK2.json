@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b9/b9c65377979efc87.json",
   "deviceType": 1,
   "globalDeviceId": 135199,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["Red"],"name":"Video 1"},
+      {"commands":["Green"],"name":"Video 2"},
+      {"commands":["Yellow"],"name":"Video 3"}
+    ],
+    "type": 3
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-28DK2"
+  "model": "TX-28DK2",
+  "power": {
+    "toggle": [
+      {"command":"PowerToggle","durationMs":3000}
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

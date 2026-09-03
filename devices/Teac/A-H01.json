@@ -2,6 +2,44 @@
   "codeset": "codesets/63/637cc661cd282f6b.json",
   "deviceType": 19,
   "globalDeviceId": 228836,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Line1/2"},{"set":"Line1/2Input","to":"Line 1"}],"name":"Line 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Line1/2"},{"set":"Line1/2Input","to":"Line 2"}],"name":"Line 2","ports":["Composite"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teac",
-  "model": "A-H01"
+  "model": "A-H01",
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Coaxial","select":[{"commands":["InputCoaxial"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"Line1/2","select":[{"commands":["InputLine1/2"],"setType":2}]}
+      ]
+    },
+    "Line1/2Input": {
+      "next": ["InputLine1/2"],
+      "values": [
+        {"name":"Line 1"},
+        {"name":"Line 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 1
+  }
 }

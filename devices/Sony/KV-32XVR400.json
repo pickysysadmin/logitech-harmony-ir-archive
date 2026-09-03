@@ -1,7 +1,58 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 102105,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video2"},
+      {"commands":[{"set":"InputType","to":"Video3"}],"name":"Video3"},
+      {"commands":[{"set":"InputType","to":"Video4"}],"name":"Video4"},
+      {"commands":[{"set":"InputType","to":"Video5"}],"name":"Video5"},
+      {"commands":[{"set":"InputType","to":"Video6"}],"name":"Video6"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "KV-32XVR400"
+  "model": "KV-32XVR400",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "ANTInput": {
+      "next": ["InputTuner2"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"Video3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Video4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"Video5","select":[{"commands":["InputVideo5"],"setType":2}]},
+        {"name":"Video6","select":[{"commands":["InputVideo6"],"setType":2}]},
+        {"name":"ANT","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

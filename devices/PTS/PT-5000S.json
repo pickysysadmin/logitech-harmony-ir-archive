@@ -2,6 +2,33 @@
   "codeset": "codesets/21/21ab4ffcb842943c.json",
   "deviceType": 19,
   "globalDeviceId": 28429,
+  "inputs": {
+    "list": [
+      {"name":"AUX"},
+      {"name":"VCD"},
+      {"name":"DVD"},
+      {"name":"CD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "PTS",
-  "model": "PT-5000S"
+  "model": "PT-5000S",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AUX"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

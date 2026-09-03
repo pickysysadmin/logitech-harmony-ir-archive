@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/7f/7fbcc00714c6fe16.json",
   "deviceType": 34,
   "globalDeviceId": 93488,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"Tuner"}],"name":"DVDTuner"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"AV1"}],"name":"DVDAV1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"AV2"}],"name":"DVDAV2"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"LineInput","to":"DV"}],"name":"DVDDV"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"LineInput","to":"Tuner"}],"name":"HDDTuner"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"LineInput","to":"AV1"}],"name":"HDDAV1"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"LineInput","to":"AV2"}],"name":"HDDAV2"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"LineInput","to":"DV"}],"name":"HDDDV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "DVD-HR700"
+  "model": "DVD-HR700",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

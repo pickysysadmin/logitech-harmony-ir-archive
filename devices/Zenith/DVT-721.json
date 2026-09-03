@@ -2,6 +2,58 @@
   "codeset": "codesets/98/98eb11f32c71ea0c.json",
   "deviceType": 22,
   "globalDeviceId": 121787,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"CD/DVD"}],"name":"CD/DVD"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Video1"},{"set":"Video1Input","to":"Digital"}],"name":"Video 1 Digital"},
+      {"commands":[{"set":"InputType","to":"Video1"},{"set":"Video1Input","to":"Analog"}],"name":"Video 1 Analog"},
+      {"commands":[{"set":"InputType","to":"Video2"},{"set":"Video2Input","to":"Digital"}],"name":"Video 2 Digital"},
+      {"commands":[{"set":"InputType","to":"Video2"},{"set":"Video2Input","to":"Analog"}],"name":"Video 2 Analog"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Zenith",
-  "model": "DVT-721"
+  "model": "DVT-721",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["AmFmToggle"],"setType":1}]},
+        {"name":"CD/DVD","select":[{"commands":["InputCd/Dvd"],"setType":1}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":1}]},
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]}
+      ]
+    },
+    "Video1Input": {
+      "next": ["InputVideo1"],
+      "values": [
+        {"name":"Digital"},
+        {"name":"Analog"}
+      ]
+    },
+    "Video2Input": {
+      "next": ["InputVideo2"],
+      "values": [
+        {"name":"Digital"},
+        {"name":"Analog"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 1
+  }
 }

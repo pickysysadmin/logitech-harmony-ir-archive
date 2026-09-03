@@ -2,6 +2,71 @@
   "codeset": "codesets/9c/9c972e589ec844c6.json",
   "deviceType": 1,
   "globalDeviceId": 174903,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video Rear"}],"name":"S-Video Rear"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video Side"}],"name":"S-Video Side"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Composite Rear"}],"name":"Composite Rear"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Composite Side"}],"name":"Composite Side"},
+      {"commands":[{"set":"InputType","to":"Composite"},{"set":"CompositeInput","to":"Component1"}],"name":"Component1"},
+      {"commands":[{"set":"InputType","to":"Composite"},{"set":"CompositeInput","to":"Component2"}],"name":"Component2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI3"}],"name":"HDMI3"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"VGA"}],"name":"VGA"}
+    ],
+    "type": 5
+  },
   "manufacturer": "AOC",
-  "model": "L42H861"
+  "model": "L42H861",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CompositeInput": {
+      "next": ["Comp"],
+      "values": [
+        {"name":"Component1"},
+        {"name":"Component2"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["Pc/Hdmi"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"VGA"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["Tv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["Video"],"setType":2}]},
+        {"name":"Composite","select":[{"commands":["Comp"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["Pc/Hdmi"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Video"],
+      "values": [
+        {"name":"S-Video Rear"},
+        {"name":"S-Video Side"},
+        {"name":"Composite Rear"},
+        {"name":"Composite Side"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,49 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/21/21d2e853438a9285.json",
   "deviceType": 1,
   "globalDeviceId": 162449,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi2","AV","AV","AV","Ok"],"name":"AV1"},
+      {"commands":["InputHdmi2","AV","AV","AV","AV","Ok"],"name":"AV2"},
+      {"commands":["InputHdmi2","AV","AV","AV","AV","DirectionRight","Ok"],"name":"AV2S"},
+      {"commands":["InputHdmi2","AV","AV","AV","AV","AV","Ok"],"name":"AV3"},
+      {"commands":["InputHdmi2","AV","AV","AV","AV","AV","DirectionRight","Ok"],"name":"AV3S"},
+      {"commands":["InputPc","AV","DirectionUp","DirectionUp","Ok"],"name":"AV4"},
+      {"commands":["InputPc","AV","DirectionUp","DirectionUp","DirectionRight","Ok"],"name":"AV4S"},
+      {"commands":["InputPc","AV","DirectionUp","Ok"],"name":"Component"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["TV"],"name":"TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TX-37LZ70P"
+  "model": "TX-37LZ70P",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7500,
+    "pressMinRepeats": 3
+  }
 }

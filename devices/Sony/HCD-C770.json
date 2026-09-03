@@ -2,6 +2,35 @@
   "codeset": "codesets/f9/f9f365c5bc875c67.json",
   "deviceType": 22,
   "globalDeviceId": 50445,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"Video 1","ports":["Composite"]},
+      {"name":"Video 2","ports":["Composite"]},
+      {"name":"Tuner","ports":["FM Antenna","AM Antenna"]},
+      {"name":"DVD","ports":["Streaming"]}
+    ],
+    "next": [
+      {"delayMs":500},
+      "InputNext",
+      {"delayMs":500}
+    ],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "HCD-C770"
+  "model": "HCD-C770",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

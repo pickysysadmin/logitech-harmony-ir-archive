@@ -2,6 +2,84 @@
   "codeset": "codesets/17/17537bae197edd36.json",
   "deviceType": 13,
   "globalDeviceId": 302830,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"RGB/HV"}],"name":"RGB/HV"},
+      {"commands":[{"set":"InputType","to":"Option"}],"name":"Option"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"DisplayPort"},{"set":"DisplayPortInput","to":"DisplayPort 1"}],"name":"DisplayPort 1"},
+      {"commands":[{"set":"InputType","to":"DisplayPort"},{"set":"DisplayPortInput","to":"DisplayPort 2"}],"name":"DisplayPort 2"},
+      {"commands":[{"set":"InputType","to":"DisplayPort"},{"set":"DisplayPortInput","to":"DisplayPort 3"}],"name":"DisplayPort 3"},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"YPbpr 1"}],"name":"YPbpr 1"},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"Scart"}],"name":"Scart"},
+      {"commands":[{"set":"InputType","to":"YPbPr"},{"set":"YPbPrInput","to":"YPbPr 2"}],"name":"YPbpr 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "P463"
+  "model": "P463",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "DisplayPortInput": {
+      "next": ["InputDisplayPort"],
+      "values": [
+        {"name":"DisplayPort 1"},
+        {"name":"DisplayPort 2"},
+        {"name":"DisplayPort 3"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVI","select":[{"commands":["InputDvi"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"RGB/HV","select":[{"commands":["InputRgbHv"],"setType":2}]},
+        {"name":"Option","select":[{"commands":["Option"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]},
+        {"name":"DisplayPort","select":[{"commands":["InputDisplayPort"],"setType":2}]},
+        {"name":"YPbPr","select":[{"commands":["InputYPbPr"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"S-Video"}
+      ]
+    },
+    "YPbPrInput": {
+      "next": ["InputYPbPr"],
+      "values": [
+        {"name":"YPbpr 1"},
+        {"name":"Scart"},
+        {"name":"YPbPr 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

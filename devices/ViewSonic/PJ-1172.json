@@ -2,6 +2,56 @@
   "codeset": "codesets/96/966887ae3f7d16e9.json",
   "deviceType": 7,
   "globalDeviceId": 118458,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Vids"},{"set":"VidsInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Vids"},{"set":"VidsInput","to":"Comp"}],"name":"Comp"},
+      {"commands":[{"set":"InputType","to":"Vids"},{"set":"VidsInput","to":"S.Video"}],"name":"S.Video"},
+      {"commands":[{"set":"InputType","to":"RGBs"},{"set":"RGBsInput","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"RGBs"},{"set":"RGBsInput","to":"BNC"}],"name":"BNC"},
+      {"commands":[{"set":"InputType","to":"RGBs"},{"set":"RGBsInput","to":"M1-D"}],"name":"M1-D"}
+    ],
+    "type": 5
+  },
   "manufacturer": "ViewSonic",
-  "model": "PJ-1172"
+  "model": "PJ-1172",
+  "power": {
+    "toggle": ["PowerToggle","PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Vids","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"RGBs","select":[{"commands":["InputRgb"],"setType":2}]}
+      ]
+    },
+    "RGBsInput": {
+      "next": ["InputRgb"],
+      "values": [
+        {"name":"RGB"},
+        {"name":"BNC"},
+        {"name":"M1-D"}
+      ]
+    },
+    "VidsInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video"},
+        {"name":"Comp"},
+        {"name":"S.Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 35000,
+    "pressMinRepeats": 1
+  }
 }

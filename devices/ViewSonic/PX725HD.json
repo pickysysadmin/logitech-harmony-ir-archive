@@ -2,6 +2,35 @@
   "codeset": "codesets/15/1501dd848d6c69be.json",
   "deviceType": 7,
   "globalDeviceId": 494228,
+  "inputs": {
+    "list": [
+      {"commands":["InputPc"],"name":"D-Sub/Comp"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputVideo"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "ViewSonic",
-  "model": "PX725HD"
+  "model": "PX725HD",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":2000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

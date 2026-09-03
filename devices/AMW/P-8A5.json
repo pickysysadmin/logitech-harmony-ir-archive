@@ -2,6 +2,32 @@
   "codeset": "codesets/db/dbe9d5f362cf57a1.json",
   "deviceType": 22,
   "globalDeviceId": 86755,
+  "inputs": {
+    "list": [
+      {"name":"DVD/CD"},
+      {"name":"AVI/Satellite"},
+      {"name":"Tuner"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "AMW",
-  "model": "P-8A5"
+  "model": "P-8A5",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD/CD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

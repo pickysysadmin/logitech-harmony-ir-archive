@@ -2,6 +2,30 @@
   "codeset": "codesets/0c/0c6099b46ed9d013.json",
   "deviceType": 25,
   "globalDeviceId": 62526,
+  "inputs": {
+    "list": [
+      {"commands":["InputVcr"],"name":"Antenna/Cable"},
+      {"commands":["InputDvd"],"name":"Line In"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "V8916"
+  "model": "V8916",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

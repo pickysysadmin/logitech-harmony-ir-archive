@@ -2,6 +2,42 @@
   "codeset": "codesets/cf/cfa17daec5abf1eb.json",
   "deviceType": 1,
   "globalDeviceId": 178291,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"S-Video 1"},
+      {"name":"S-Video 2"},
+      {"name":"Video 3"},
+      {"name":"DVD"},
+      {"name":"D-Video 2"},
+      {"name":"PC"},
+      {"name":"Hdmi 1"},
+      {"name":"Hdmi 2"}
+    ],
+    "next": ["InputNext"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-50V10"
+  "model": "TH-50V10",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

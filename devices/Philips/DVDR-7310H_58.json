@@ -2,6 +2,55 @@
   "codeset": "codesets/57/570ac9a94bade65d.json",
   "deviceType": 34,
   "globalDeviceId": 119459,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"CAM"},{"set":"CAMInput","to":"CAM1"}],"name":"CAM1"},
+      {"commands":[{"set":"InputType","to":"CAM"},{"set":"CAMInput","to":"EXT1"}],"name":"EXT1"},
+      {"commands":[{"set":"InputType","to":"CAM"},{"set":"CAMInput","to":"EXT2"}],"name":"EXT2"},
+      {"commands":[{"set":"InputType","to":"TV/HDD"},{"set":"TV/HDDInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/HDD"},{"set":"TV/HDDInput","to":"HDD"}],"name":"HDD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DVDR-7310H/58"
+  "model": "DVDR-7310H/58",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CAMInput": {
+      "next": ["InputCAM"],
+      "values": [
+        {"name":"CAM1"},
+        {"name":"EXT1"},
+        {"name":"EXT2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CAM","select":[{"commands":["InputCAM"],"setType":2}]},
+        {"name":"TV/HDD","select":[{"commands":["InputTV/HDD"],"setType":2}]}
+      ]
+    },
+    "TV/HDDInput": {
+      "next": ["InputTV/HDD"],
+      "values": [
+        {"name":"TV"},
+        {"name":"HDD"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

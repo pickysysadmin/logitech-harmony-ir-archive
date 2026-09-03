@@ -1,7 +1,34 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/f0/f08d3453996ee1fc.json",
   "deviceType": 34,
   "globalDeviceId": 170869,
+  "inputs": {
+    "list": [
+      {"name":"Line 1","ports":["Composite","S-Video"]},
+      {"name":"Line 2","ports":["Composite","S-Video"]},
+      {"name":"Line 3","ports":["Composite","S-Video"]}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-E50"
+  "model": "DMR-E50",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

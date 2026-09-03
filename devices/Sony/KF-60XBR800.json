@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/22/22c172dac17892df.json",
   "deviceType": 1,
   "globalDeviceId": 165933,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VIDEO1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"VIDEO2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"VIDEO3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"VIDEO4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"VIDEO5"}],"name":"Video 5"},
+      {"commands":[{"set":"InputType","to":"VIDEO6"}],"name":"Video 6"},
+      {"commands":[{"set":"InputType","to":"VIDEO7"}],"name":"Video 7"},
+      {"commands":[{"set":"InputType","to":"MemStick"}],"name":"Memory Stick"},
+      {"commands":[{"set":"InputType","to":"ANTENNA"},{"set":"ANTENNAInput","to":"Ant"}],"name":"Antenna"},
+      {"commands":[{"set":"InputType","to":"ANTENNA"},{"set":"ANTENNAInput","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "KF-60XBR800"
+  "model": "KF-60XBR800",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "ANTENNAInput": {
+      "next": ["Antenna"],
+      "values": [
+        {"name":"Ant"},
+        {"name":"Aux"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VIDEO1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"VIDEO2","select":[{"commands":["InputVideo2"],"setType":2}]},
+        {"name":"VIDEO3","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"VIDEO4","select":[{"commands":["InputVideo4"],"setType":2}]},
+        {"name":"VIDEO5","select":[{"commands":["InputVideo5"],"setType":2}]},
+        {"name":"VIDEO6","select":[{"commands":["InputVideo6"],"setType":2}]},
+        {"name":"VIDEO7","select":[{"commands":["InputVideo7"],"setType":2}]},
+        {"name":"MemStick","select":[{"commands":["MemoryStick"],"setType":2}]},
+        {"name":"ANTENNA","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e7/e79325ac3935ccd3.json",
   "deviceType": 1,
   "globalDeviceId": 71202,
+  "inputs": {
+    "list": [
+      {"name":"VGA"},
+      {"name":"DVI"},
+      {"name":"YPB PR1"},
+      {"name":"YPB PR2"},
+      {"name":"Video"},
+      {"name":"TV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "NuVision",
-  "model": "NVX26HDU"
+  "model": "NVX26HDU",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 173111,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"Ant"},
+      {"commands":["InputAnt/Cable"],"name":"Cable"},
+      {"commands":["InputVideo1"],"name":"AV 1"},
+      {"commands":["InputVideo2"],"name":"AV 2"},
+      {"commands":["InputComponent1"],"name":"Component 1"},
+      {"commands":["InputComponent2"],"name":"Component 2"},
+      {"commands":["InputRGB/PC"],"name":"RGB/PC"},
+      {"commands":["InputHdmi"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi2",{"delayMs":1200},"InputRgb"],"name":"HDMI 3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "42LB4D"
+  "model": "42LB4D",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 1
+  }
 }

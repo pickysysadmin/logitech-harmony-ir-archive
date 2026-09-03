@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/d7/d7853fa2fea3fc39.json",
   "deviceType": 34,
   "globalDeviceId": 131562,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"FrontCVBS"},
+      {"name":"RearCVBS"},
+      {"name":"R-SV"},
+      {"name":"YUV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Arlink",
-  "model": "DR-910"
+  "model": "DR-910",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

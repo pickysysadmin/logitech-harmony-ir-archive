@@ -2,6 +2,55 @@
   "codeset": "codesets/ea/ea6e6eb77d0af6f8.json",
   "deviceType": 7,
   "globalDeviceId": 213357,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer1"}],"name":"Computer1"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"SVideo"}],"name":"SVideo"},
+      {"commands":[{"set":"InputType","to":"Computer2"},{"set":"Computer2Input","to":"Computer2(Digital)"}],"name":"Computer2(Digital)"},
+      {"commands":[{"set":"InputType","to":"Computer2"},{"set":"Computer2Input","to":"Computer2(Analog)"}],"name":"Computer2(Analog)"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "NP410"
+  "model": "NP410",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":500},
+      "PowerOff"
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "Computer2Input": {
+      "next": ["InputComputer2"],
+      "values": [
+        {"name":"Computer2(Digital)"},
+        {"name":"Computer2(Analog)"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Computer1"},
+        {"name":"Video"},
+        {"name":"SVideo"},
+        {"name":"Computer2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

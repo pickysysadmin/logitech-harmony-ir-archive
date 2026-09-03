@@ -2,6 +2,33 @@
   "codeset": "codesets/56/56720cc7dd448880.json",
   "deviceType": 13,
   "globalDeviceId": 180268,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo1"],"name":"AV (S-Video)"},
+      {"commands":["InputVideo2"],"name":"Component"},
+      {"commands":["InputVideo3"],"name":"RGB/PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "TH-37PW4"
+  "model": "TH-37PW4",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": [
+      {"command":"PowerOn","durationMs":2000}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 9500,
+    "pressMinRepeats": 3
+  }
 }

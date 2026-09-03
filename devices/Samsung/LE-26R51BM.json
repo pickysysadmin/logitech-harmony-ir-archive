@@ -2,6 +2,42 @@
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 119597,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenna"],"name":"TV"},
+      {"commands":["InputRGB"],"name":"Ext.1"},
+      {"commands":["InputVideo2"],"name":"Ext.2"},
+      {"commands":["InputSVideo"],"name":"AV"},
+      {"commands":["InputSVideo"],"name":"S-Video"},
+      {"commands":["InputComponent 1"],"name":"Component"},
+      {"commands":["InputRGB"],"name":"PC"},
+      {"commands":["InputHDMI1"],"name":"HDMI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "LE-26R51BM"
+  "model": "LE-26R51BM",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["InputAntenna"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Teletext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

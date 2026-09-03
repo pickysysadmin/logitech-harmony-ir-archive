@@ -2,6 +2,55 @@
   "codeset": "codesets/61/61ef271600fdb680.json",
   "deviceType": 38,
   "globalDeviceId": 88145,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"TvVcr"},{"set":"TvVcrInput","to":"TV"}],"name":"TvVcr"},
+      {"commands":[{"set":"InputType","to":"TvVcr"},{"set":"TvVcrInput","to":"TV"},{"set":"TvInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TvVcr"},{"set":"TvVcrInput","to":"TV"},{"set":"TvInput","to":"Line1"}],"name":"Line1"},
+      {"commands":[{"set":"InputType","to":"TvVcr"},{"set":"TvVcrInput","to":"TV"},{"set":"TvInput","to":"Line2"}],"name":"Line2"},
+      {"commands":[{"set":"InputType","to":"TvVcr"},{"set":"TvVcrInput","to":"VCR"}],"name":"VCR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "mw20f52"
+  "model": "mw20f52",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":1}]},
+        {"name":"TvVcr","select":[{"commands":["TvVcr"],"setType":2}]}
+      ]
+    },
+    "TvInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Line1"},
+        {"name":"Line2"}
+      ]
+    },
+    "TvVcrInput": {
+      "next": ["TvVcr"],
+      "values": [
+        {"name":"TV"},
+        {"name":"VCR"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

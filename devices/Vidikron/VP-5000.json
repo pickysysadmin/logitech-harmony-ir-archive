@@ -2,6 +2,51 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 121078,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"VideoInput","to":"Video1"}],"name":"VIDEO1"},
+      {"commands":[{"set":"VideoInput","to":"Video2"}],"name":"VIDEO2"},
+      {"commands":["HD 1"],"name":"dvd/hd1"},
+      {"commands":["HD 2"],"name":"dvd/hd2"},
+      {"commands":["HD 3"],"name":"dvd/hd3"},
+      {"commands":["DVD/HDToggle"],"name":"dvd/hd4"},
+      {"commands":["RGB/PCToggle"],"name":"pc/rgb"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vidikron",
-  "model": "VP-5000"
+  "model": "VP-5000",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["Ent"]
+  },
   "codeset": "codesets/83/83b44895d97370b3.json",
   "deviceType": 1,
   "globalDeviceId": 272094,
+  "inputs": {
+    "list": [
+      {"commands":["Input",{"delayMs":500},"Enter"],"name":"TV"},
+      {"commands":["Input","DirectionDown","Enter"],"name":"HDMI 1"},
+      {"commands":["Input","DirectionDown","DirectionDown","Enter"],"name":"HDMI 2"},
+      {"commands":["Input","DirectionDown","DirectionDown","DirectionDown","Enter"],"name":"HDMI 3"},
+      {"commands":["Input","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Enter"],"name":"HDMI 4"},
+      {"commands":["Input","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Enter"],"name":"COMPONENT/VIDEO"},
+      {"commands":["Home"],"name":"Android TV"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-60UE30U"
+  "model": "LC-60UE30U",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "onReset": [
+      {"set":"Input","to":"Input TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 10000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 19000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,66 @@
   "codeset": "codesets/89/897a3319cb017753.json",
   "deviceType": 1,
   "globalDeviceId": 237425,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"Component"}],"name":"Component"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"SmartTV_Menu","to":"OFF"},{"set":"screen","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"SmartTV_Menu","to":"ON"},{"set":"Smart_TV","to":"NET CONNECT"}],"name":"NET CONNECT"},
+      {"commands":[{"set":"SmartTV_Menu","to":"ON"},{"set":"Smart_TV","to":"Netflix"}],"name":"Netflix"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Haier",
-  "model": "LE32N1620"
+  "model": "LE32N1620",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "SmartTV_Menu": {
+      "values": [
+        {"name":"ON"},
+        {"name":"OFF","select":[{"commands":["Exit",{"delayMs":5000},"Exit",{"delayMs":500}],"setType":2}]}
+      ]
+    },
+    "Smart_TV": {
+      "values": [
+        {"name":"NET CONNECT","select":[{"commands":["Exit","Exit","NetConnect"],"setType":1}]},
+        {"name":"Netflix","select":[{"commands":["Netflix"],"setType":1}]}
+      ]
+    },
+    "screen": {
+      "finish": ["Select"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "start": ["Input"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Video"},
+        {"name":"Component"},
+        {"name":"VGA"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"HDMI 4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 45000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,59 @@
   "codeset": "codesets/cf/cf7a1066794ebb97.json",
   "deviceType": 5,
   "globalDeviceId": 178151,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Aux 1"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Aux 2"}],"name":"Aux 2"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Coax In"}],"name":"Coax In"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"Opti In"}],"name":"Opti In"},
+      {"commands":[{"set":"InputType","to":"AudioSource"},{"set":"AudioSourceInput","to":"MP3 Link"}],"name":"MP3 Link"},
+      {"commands":[{"set":"InputType","to":"HdmiSource"},{"set":"HdmiSourceInput","to":"Hdmi-In1"}],"name":"Hdmi-In1"},
+      {"commands":[{"set":"InputType","to":"HdmiSource"},{"set":"HdmiSourceInput","to":"Hdmi-In2"}],"name":"Hdmi-In2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTR5224"
+  "model": "HTR5224",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AudioSourceInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Aux 1"},
+        {"name":"Aux 2"},
+        {"name":"Coax In"},
+        {"name":"Opti In"},
+        {"name":"MP3 Link"}
+      ]
+    },
+    "HdmiSourceInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"Hdmi-In1"},
+        {"name":"Hdmi-In2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AudioSource","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"HdmiSource","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

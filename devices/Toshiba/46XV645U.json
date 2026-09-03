@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/d6/d60d16c40b871a5f.json",
   "deviceType": 1,
   "globalDeviceId": 162340,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"commands":["0"],"name":"AntennaCable","ports":["Antenna"]},
+      {"commands":["1"],"name":"Video1","ports":["Composite"]},
+      {"commands":["2"],"name":"Video2","ports":["Composite"]},
+      {"commands":["3"],"name":"ColorStreamHD1","ports":["Component"]},
+      {"commands":["4"],"name":"ColorStreamHD2","ports":["Component"]},
+      {"commands":["5"],"name":"HDMI1","ports":["HDMI"]},
+      {"commands":["6"],"name":"HDMI2","ports":["HDMI"]},
+      {"commands":["7"],"name":"HDMI3","ports":["HDMI"]},
+      {"commands":["8"],"name":"PC","ports":["PC"]}
+    ],
+    "start": ["Input"],
+    "type": 3
+  },
   "manufacturer": "Toshiba",
-  "model": "46XV645U"
+  "model": "46XV645U",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

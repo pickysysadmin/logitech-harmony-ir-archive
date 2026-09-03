@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 112037,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnt/Cable"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"Video 1"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputVideo2","TvVideo"],"name":"S-video"},
+      {"commands":["InputComponent1"],"name":"Component"},
+      {"commands":["InputRGB/PC"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "RU-23LZ21"
+  "model": "RU-23LZ21",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

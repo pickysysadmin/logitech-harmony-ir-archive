@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 116236,
+  "inputs": {
+    "list": [
+      {"name":"Tv"},
+      {"name":"Cinema"},
+      {"name":"Foxtel"},
+      {"name":"VCR"},
+      {"name":"Video Games"},
+      {"name":"GameCube"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Loewe",
-  "model": "Calida 5563Z"
+  "model": "Calida 5563Z",
+  "power": {
+    "toggle": [
+      "PowerToggle",
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

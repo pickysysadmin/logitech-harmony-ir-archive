@@ -2,6 +2,64 @@
   "codeset": "codesets/d6/d6ca5bacaf0e1af0.json",
   "deviceType": 1,
   "globalDeviceId": 116300,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video3(Component)"}],"name":"Video3(Component)"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"DigitalTV"}],"name":"DigitalTV"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"AnalogTV"}],"name":"AnalogTV"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video1(Composite)"}],"name":"Video1(Composite)"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video2(S-Video)"}],"name":"Video2(S-Video)"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"Video4(VGA)"}],"name":"Video4(VGA)"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"Video5(HDMI)"}],"name":"Video5(HDMI)"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Insignia",
-  "model": "NS-LCD19"
+  "model": "NS-LCD19",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video3(Component)","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTV"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["2",{"set":"VideoInput","to":"Video1(Composite)"}],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC",{"set":"PCInput","to":"Video5(HDMI)"}],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"Video4(VGA)"},
+        {"name":"Video5(HDMI)"}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTV"],
+      "values": [
+        {"name":"DigitalTV"},
+        {"name":"AnalogTV"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video1(Composite)"},
+        {"name":"Video2(S-Video)"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

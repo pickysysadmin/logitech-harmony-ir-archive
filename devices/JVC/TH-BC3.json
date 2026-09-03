@@ -2,6 +2,63 @@
   "codeset": "codesets/1c/1c4efee477bb635b.json",
   "deviceType": 5,
   "globalDeviceId": 222263,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Analog/FM"},{"set":"Analog/FMInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"Analog/FM"},{"set":"Analog/FMInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital 1"}],"name":"Digital 1"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital 2"}],"name":"Digital 2"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"TV ARC"}],"name":"TV ARC"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI"},{"set":"HDMIInput","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "JVC",
-  "model": "TH-BC3"
+  "model": "TH-BC3",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Analog/FMInput": {
+      "next": ["InputAnalog/Fm"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"FM"}
+      ]
+    },
+    "DigitalInput": {
+      "next": ["InputDigital"],
+      "values": [
+        {"name":"Digital 1"},
+        {"name":"Digital 2"},
+        {"name":"TV ARC"}
+      ]
+    },
+    "HDMIInput": {
+      "next": ["InputHdmi"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Analog/FM","select":[{"commands":["InputAnalog/Fm"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["InputDigital"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

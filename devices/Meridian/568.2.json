@@ -2,6 +2,37 @@
   "codeset": "codesets/60/60e92f5603948327.json",
   "deviceType": 5,
   "globalDeviceId": 10103,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputRadio"],"name":"Radio","ports":["Composite"]},
+      {"commands":["InputLP"],"name":"LP","ports":["Composite"]},
+      {"commands":["InputTape1"],"name":"Tape 1","ports":["Composite"]},
+      {"commands":["InputTape2"],"name":"Tape 2","ports":["Coaxial"]},
+      {"commands":["InputCDR"],"name":"CDR","ports":["Coaxial"]},
+      {"commands":["InputCable"],"name":"Cable","ports":["Composite"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Coaxial","S-Video"]},
+      {"commands":["InputVCR1"],"name":"VCR 1","ports":["Composite","S-Video"]},
+      {"commands":["InputVcr2"],"name":"VCR 2","ports":["Composite","S-Video"]},
+      {"commands":["InputLD"],"name":"LD","ports":["Composite","Optical"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Meridian",
-  "model": "568.2"
+  "model": "568.2",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputDvd"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

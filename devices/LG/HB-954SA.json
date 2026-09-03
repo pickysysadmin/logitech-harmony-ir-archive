@@ -2,6 +2,51 @@
   "codeset": "codesets/9b/9bf334fa571e4772.json",
   "deviceType": 22,
   "globalDeviceId": 181750,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Home"}],"name":"Home","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"Aux"}],"name":"Aux","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"Portable"}],"name":"Portable","ports":["Portable"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Toggle"},{"set":"ToggleInput","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HB-954SA"
+  "model": "HB-954SA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Home","select":[{"commands":["Home"],"setType":2}]},
+        {"name":"Toggle","select":[{"commands":["Input"],"setType":2}]}
+      ]
+    },
+    "ToggleInput": {
+      "next": ["Input"],
+      "start": ["Input"],
+      "values": [
+        {"name":"FM"},
+        {"name":"Aux"},
+        {"name":"Portable"},
+        {"name":"Optical"},
+        {"name":"Coaxial"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,50 @@
   "codeset": "codesets/57/57fed350a894d465.json",
   "deviceType": 5,
   "globalDeviceId": 204186,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"source"},{"set":"sourceInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"source"},{"set":"sourceInput","to":"AV 1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"source"},{"set":"sourceInput","to":"AV 2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"source"},{"set":"sourceInput","to":"Line"}],"name":"Line"},
+      {"commands":[{"set":"InputType","to":"source"},{"set":"sourceInput","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "iLive",
-  "model": "ITP280B"
+  "model": "ITP280B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"iPod","select":[{"commands":["InputIpod"],"setType":2}]},
+        {"name":"source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "sourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AV 1"},
+        {"name":"AV 2"},
+        {"name":"Line"},
+        {"name":"AUX"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/39/391fe45ccb6410f2.json",
   "deviceType": 34,
   "globalDeviceId": 111072,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"L1"}],"name":"L1"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"L2"}],"name":"L2"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"L3"}],"name":"L3"},
+      {"commands":[{"set":"InputType","to":"Inputs"},{"set":"InputsInput","to":"DV"}],"name":"DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "DVR-525H"
+  "model": "DVR-525H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HDD","select":[{"commands":["HDD"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["Dvd"],"setType":2}]},
+        {"name":"Inputs","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    },
+    "InputsInput": {
+      "next": ["InputNext"],
+      "start": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"L3"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "finish": ["Ok"]
+  },
   "codeset": "codesets/ee/ee39c17e2fff00d7.json",
   "deviceType": 2,
   "globalDeviceId": 166477,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"Tuner"},
+      {"name":"L-1"},
+      {"name":"L-2"},
+      {"name":"F-2"},
+      {"name":"S-2"}
+    ],
+    "next": ["ChannelUp"],
+    "start": ["0"],
+    "type": 4
+  },
   "manufacturer": "JVC",
-  "model": "HR-S7700"
+  "model": "HR-S7700",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

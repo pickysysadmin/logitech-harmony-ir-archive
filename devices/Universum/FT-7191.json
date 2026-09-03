@@ -2,6 +2,34 @@
   "codeset": "codesets/7a/7a07488d37691ad0.json",
   "deviceType": 1,
   "globalDeviceId": 182561,
+  "inputs": {
+    "list": [
+      {"name":"SAT"},
+      {"name":"DVD"},
+      {"name":"AUX"}
+    ],
+    "next": ["TvVideo"],
+    "type": 2
+  },
   "manufacturer": "Universum",
-  "model": "FT-7191"
+  "model": "FT-7191",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["0"],
+    "onReset": [
+      {"set":"Input","to":"SAT"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

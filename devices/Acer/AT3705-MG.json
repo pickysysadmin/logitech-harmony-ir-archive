@@ -2,6 +2,71 @@
   "codeset": "codesets/49/4989cd436dcc702f.json",
   "deviceType": 1,
   "globalDeviceId": 214887,
+  "inputs": {
+    "finish": ["InputVideo"],
+    "list": [
+      {"name":"TV"},
+      {"name":"AV3"},
+      {"name":"AV4"},
+      {"name":"AV5"},
+      {"name":"S-Video 1-AV1"},
+      {"name":"S-Video 2-AV2-Comp"},
+      {"name":"VGA"},
+      {"name":"DVI-D"}
+    ],
+    "next": ["InputSat"],
+    "start": ["Menu"],
+    "type": 4
+  },
   "manufacturer": "Acer",
-  "model": "AT3705-MG"
+  "model": "AT3705-MG",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV4"},
+        {"name":"AV5"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV","select":[{"commands":[{"set":"AVInput","to":"AV3"},"InputVideo"],"setType":2}]},
+        {"name":"Scart","select":[{"commands":[{"set":"ScartInput","to":"Svideo1-AV1"},"InputSat"],"setType":2}]},
+        {"name":"PC","select":[{"commands":[{"set":"PCInput","to":"VGA"},"InputPc"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI-D"}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputSat"],
+      "values": [
+        {"name":"Svideo1-AV1"},
+        {"name":"Svideo2-AV2-Comp"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

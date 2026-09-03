@@ -2,6 +2,37 @@
   "codeset": "codesets/ca/caca5181b350d5b7.json",
   "deviceType": 1,
   "globalDeviceId": 232017,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["Exit","InputAv"],"name":"AV","ports":["Composite"]},
+      {"commands":["Exit","InputComp"],"name":"Component","ports":["Component"]},
+      {"commands":["Exit","InputHdmi1"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["Exit","InputHdmi2"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["Exit","InputHdmi3"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["Exit","InputRgb"],"name":"RGB","ports":["PC"]},
+      {"commands":["Vudu"],"name":"Vudu","ports":["Streaming"]},
+      {"commands":["VIA"],"name":"Vizio Internet Apps","ports":["Streaming"]},
+      {"commands":["Netflix","OK"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Vizio",
-  "model": "E322AR"
+  "model": "E322AR",
+  "power": {
+    "off": ["Exit","PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 20000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 18000,
+    "pressMinRepeats": 1
+  }
 }

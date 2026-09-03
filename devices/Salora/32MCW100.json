@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/85/85802a2718306665.json",
   "deviceType": 1,
   "globalDeviceId": 73809,
+  "inputs": {
+    "list": [
+      {"name":"SAT"},
+      {"name":"Movie"},
+      {"name":"DigiTV"},
+      {"name":"DVD"},
+      {"name":"TV"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "Salora",
-  "model": "32MCW100"
+  "model": "32MCW100",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

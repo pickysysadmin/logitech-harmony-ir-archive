@@ -2,6 +2,36 @@
   "codeset": "codesets/52/5250d5c102d756a8.json",
   "deviceType": 1,
   "globalDeviceId": 497144,
+  "inputs": {
+    "list": [
+      {"commands":["Input",{"delayMs":1000},"InputTv"],"name":"TV"},
+      {"commands":["InputHdmi1",{"delayMs":1000},"Input",{"delayMs":1000},"DirectionLeft","OK"],"name":"WatchFree"},
+      {"commands":["Input",{"delayMs":1000},"InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["Input",{"delayMs":1000},"InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["Input",{"delayMs":1000},"InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["Input",{"delayMs":1000},"InputAv"],"name":"AV"},
+      {"commands":["PrimeVideo"],"name":"PrimeVideo"},
+      {"commands":["SmartCastTV"],"name":"SmartCast TV"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Vizio",
-  "model": "V435-H11"
+  "model": "V435-H11",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 8000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

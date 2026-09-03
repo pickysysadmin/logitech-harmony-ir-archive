@@ -2,6 +2,52 @@
   "codeset": "codesets/33/33fa508e595ba505.json",
   "deviceType": 34,
   "globalDeviceId": 237864,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"Front"}],"name":"Front"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"Component"}],"name":"Component"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Tevion",
-  "model": "TDR-5102"
+  "model": "TDR-5102",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ExtInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Front"},
+        {"name":"AV"},
+        {"name":"S-Video"},
+        {"name":"Component"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"Ext","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

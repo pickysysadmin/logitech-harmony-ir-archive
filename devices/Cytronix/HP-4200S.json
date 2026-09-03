@@ -1,7 +1,45 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d3/d392d35d41eed564.json",
   "deviceType": 1,
   "globalDeviceId": 128953,
+  "inputs": {
+    "finish": [
+      {"delayMs":1000},
+      "Select"
+    ],
+    "list": [
+      {"name":"TV"},
+      {"name":"Scart 1"},
+      {"name":"Scart 2"},
+      {"name":"S-VIDEO/AV"},
+      {"name":"Component 1"},
+      {"name":"Component 2"},
+      {"name":"PC"},
+      {"name":"DVI"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Cytronix",
-  "model": "HP-4200S"
+  "model": "HP-4200S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 1
+  }
 }

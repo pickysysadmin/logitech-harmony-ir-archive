@@ -2,6 +2,72 @@
   "codeset": "codesets/11/11974f9864ab9038.json",
   "deviceType": 1,
   "globalDeviceId": 267265,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"EXT 1"}],"name":"EXT 1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"EXT 2"}],"name":"EXT 2"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"EXT 2-S"}],"name":"EXT 2-S"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"SIDE AV"}],"name":"SIDE AV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 3"}],"name":"HDMI 3"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI 4"}],"name":"HDMI 4"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"VGA/PC"}],"name":"VGA/PC"},
+      {"commands":[{"set":"InputType","to":"TV-Empfang"},{"set":"TV-EmpfangInput","to":"DVB-T"}],"name":"DVB-T"},
+      {"commands":[{"set":"InputType","to":"TV-Empfang"},{"set":"TV-EmpfangInput","to":"Cable"}],"name":"Cable"},
+      {"commands":[{"set":"InputType","to":"TV-Empfang"},{"set":"TV-EmpfangInput","to":"Satellite"}],"name":"Satellite"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Medion",
-  "model": "MD 30854"
+  "model": "MD 30854",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]},
+        {"name":"TV-Empfang","select":[{"commands":["TV-Empfang"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "finish": ["Ok"],
+      "next": ["DirectionDown"],
+      "previous": ["DirectionUp"],
+      "values": [
+        {"name":"EXT 1"},
+        {"name":"EXT 2"},
+        {"name":"EXT 2-S"},
+        {"name":"SIDE AV"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"HDMI 3"},
+        {"name":"HDMI 4"},
+        {"name":"YPbPr"},
+        {"name":"VGA/PC"}
+      ]
+    },
+    "TV-EmpfangInput": {
+      "finish": ["Ok"],
+      "next": ["DirectionDown"],
+      "values": [
+        {"name":"DVB-T"},
+        {"name":"Cable"},
+        {"name":"Satellite"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

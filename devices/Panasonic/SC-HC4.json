@@ -2,6 +2,49 @@
   "codeset": "codesets/7e/7eca717bb3248de9.json",
   "deviceType": 21,
   "globalDeviceId": 212865,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Radio/Aux"},{"set":"Radio/AuxInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio/Aux"},{"set":"Radio/AuxInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Radio/Aux"},{"set":"Radio/AuxInput","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-HC4"
+  "model": "SC-HC4",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"SD","select":[{"commands":["InputCard"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputIpod"],"setType":2}]},
+        {"name":"Radio/Aux","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "Radio/AuxInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"},
+        {"name":"AUX"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

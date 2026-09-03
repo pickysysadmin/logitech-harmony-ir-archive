@@ -2,6 +2,44 @@
   "codeset": "codesets/78/788c26bf70302373.json",
   "deviceType": 1,
   "globalDeviceId": 147029,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"S-Video"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"Component"},
+      {"name":"RGB-PC"},
+      {"name":"DVI"},
+      {"name":"HDMI"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Decktron",
-  "model": "DL40-M70P"
+  "model": "DL40-M70P",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Text"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1700,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

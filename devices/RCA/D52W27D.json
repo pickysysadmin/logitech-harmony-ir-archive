@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 37,
   "globalDeviceId": 20951,
+  "inputs": {
+    "list": [
+      {"name":"DVI"},
+      {"name":"Vid 1"},
+      {"name":"Vid 2"},
+      {"name":"Front"},
+      {"name":"Comp 1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "RCA",
-  "model": "D52W27D"
+  "model": "D52W27D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Antenna","select":[{"commands":["ChannelUp"],"setType":1}]},
+        {"name":"Video","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputSat/Cable"],"setType":1}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"Vid 1"},
+        {"name":"Vid 2"},
+        {"name":"Front"},
+        {"name":"Comp 1"},
+        {"name":"Comp 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 12500,
+    "pressMinRepeats": 3
+  }
 }

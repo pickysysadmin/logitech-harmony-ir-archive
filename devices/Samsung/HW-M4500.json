@@ -2,6 +2,36 @@
   "codeset": "codesets/32/329db2a2214194b5.json",
   "deviceType": 19,
   "globalDeviceId": 349020,
+  "inputs": {
+    "list": [
+      {"name":"HDMI","ports":["HDMI"]},
+      {"name":"BT","ports":["Pairing Input"]},
+      {"name":"USB","ports":["USB"]},
+      {"name":"D.IN","ports":["Optical"]},
+      {"name":"AUX","ports":["Aux"]}
+    ],
+    "next": ["Source"],
+    "start": [
+      "WakeUp",
+      {"delayMs":500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "HW-M4500"
+  "model": "HW-M4500",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

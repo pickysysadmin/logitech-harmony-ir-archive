@@ -2,6 +2,55 @@
   "codeset": "codesets/b6/b625a68ed4e4d38f.json",
   "deviceType": 21,
   "globalDeviceId": 85314,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Tape1/2"},{"set":"Tape1/2Input","to":"Tape1"}],"name":"Tape1"},
+      {"commands":[{"set":"InputType","to":"Tape1/2"},{"set":"Tape1/2Input","to":"Tape2"}],"name":"Tape2"},
+      {"commands":[{"set":"InputType","to":"AUX/CDR"},{"set":"AUX/CDRInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"AUX/CDR"},{"set":"AUX/CDRInput","to":"CDR"}],"name":"CDR"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "FW-C85"
+  "model": "FW-C85",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUX/CDRInput": {
+      "next": ["InputAux/Cdr"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"CDR"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Tape1/2","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"AUX/CDR","select":[{"commands":["InputAux/Cdr"],"setType":2}]}
+      ]
+    },
+    "Tape1/2Input": {
+      "next": ["InputTape"],
+      "values": [
+        {"name":"Tape1"},
+        {"name":"Tape2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

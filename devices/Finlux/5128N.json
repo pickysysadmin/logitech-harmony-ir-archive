@@ -2,6 +2,32 @@
   "codeset": "codesets/1d/1dc4e60954b1a102.json",
   "deviceType": 1,
   "globalDeviceId": 82075,
+  "inputs": {
+    "list": [
+      {"commands":["StartInput"],"name":"Tuner"},
+      {"commands":["InputE1"],"name":"E1"},
+      {"commands":["InputE2"],"name":"E2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Finlux",
-  "model": "5128N"
+  "model": "5128N",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["PowerToggle"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

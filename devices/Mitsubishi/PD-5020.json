@@ -2,6 +2,64 @@
   "codeset": "codesets/01/01c8d15763045db3.json",
   "deviceType": 13,
   "globalDeviceId": 229448,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDinput","to":"DVD1"}],"name":"DVD1/HD1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDinput","to":"DVD2"}],"name":"DVD2/HD2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Videoinput","to":"videoin1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Videoinput","to":"videoin2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"Videoinput","to":"videoin3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBinput","to":"RGB1"}],"name":"RGB/PC1"},
+      {"commands":[{"set":"InputType","to":"RGB"},{"set":"RGBinput","to":"RGB2"}],"name":"RGB/PC2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Mitsubishi",
-  "model": "PD-5020"
+  "model": "PD-5020",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "DVDinput": {
+      "next": ["InputComp1"],
+      "values": [
+        {"name":"DVD1"},
+        {"name":"DVD2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["Input1"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputComp1"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputVga"],"setType":2}]}
+      ]
+    },
+    "RGBinput": {
+      "next": ["InputVga"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"}
+      ]
+    },
+    "Videoinput": {
+      "next": ["Input1"],
+      "values": [
+        {"name":"videoin1"},
+        {"name":"videoin2"},
+        {"name":"videoin3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

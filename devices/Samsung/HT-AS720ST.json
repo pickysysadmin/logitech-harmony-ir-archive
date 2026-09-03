@@ -2,6 +2,106 @@
   "codeset": "codesets/67/670f5262f7021fed.json",
   "deviceType": 5,
   "globalDeviceId": 172483,
+  "inputs": {
+    "finish": [
+      {"set":"DisplayMode","to":"OFF"}
+    ],
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD Optic1"}],"name":"DVD Optic1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD HDMI1"}],"name":"DVD HDMI1"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"DVDInput","to":"DVD Analog"}],"name":"DVD Analog"},
+      {"commands":[{"set":"InputType","to":"SAT"},{"set":"SATInput","to":"SAT Optic2"}],"name":"SAT Optic2"},
+      {"commands":[{"set":"InputType","to":"SAT"},{"set":"SATInput","to":"SAT HDMI2"}],"name":"SAT HDMI2"},
+      {"commands":[{"set":"InputType","to":"SAT"},{"set":"SATInput","to":"SAT Analog"}],"name":"SAT Analog"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"CD Coaxial"}],"name":"CD Coaxial"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"CD Analog"}],"name":"CD Analog"},
+      {"commands":[{"set":"InputType","to":"7.1"}],"name":"7.1"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-AS720ST"
+  "model": "HT-AS720ST",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CDInput": {
+      "next": [
+        {"set":"DisplayMode","to":"ON"},
+        "InputMode"
+      ],
+      "values": [
+        {"name":"CD Coaxial"},
+        {"name":"CD Analog"}
+      ]
+    },
+    "DVDInput": {
+      "next": [
+        {"set":"DisplayMode","to":"ON"},
+        "InputMode"
+      ],
+      "values": [
+        {"name":"DVD Optic1"},
+        {"name":"DVD HDMI1"},
+        {"name":"DVD Analog"}
+      ]
+    },
+    "DisplayMode": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"delayMs":5000},"InputMode"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"7.1","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"SAT","select":[{"commands":["InputSat"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["Input5.1"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": [
+        "InputMode",
+        {"delayMs":1000}
+      ],
+      "start": [
+        "InputTuner",
+        {"delayMs":500},
+        "InputMode"
+      ],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "SATInput": {
+      "next": [
+        {"set":"DisplayMode","to":"ON"},
+        "InputMode"
+      ],
+      "values": [
+        {"name":"SAT Optic2"},
+        {"name":"SAT HDMI2"},
+        {"name":"SAT Analog"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,51 @@
   "codeset": "codesets/15/15a6d990e1b817e0.json",
   "deviceType": 33,
   "globalDeviceId": 264748,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"INTERNET RADIO"}],"name":"INTERNET RADIO"},
+      {"commands":[{"set":"InputType","to":"MUSIC SERVER"}],"name":"MUSIC SERVER"},
+      {"commands":[{"set":"InputType","to":"ONLINE MUSIC"}],"name":"ONLINE MUSIC"},
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB-DAC"}],"name":"USB-DAC"},
+      {"commands":[{"set":"InputType","to":"OPT/COAX"},{"set":"OPT/COAXInput","to":"Opt"}],"name":"Opt"},
+      {"commands":[{"set":"InputType","to":"d"},{"set":"OPT/COAXInput","to":"Coax"}],"name":"Coax"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Marantz",
-  "model": "NA8005"
+  "model": "NA8005",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"INTERNET RADIO","select":[{"commands":["InputInternetRadio"],"setType":2}]},
+        {"name":"MUSIC SERVER","select":[{"commands":["InputMusicServer"],"setType":2}]},
+        {"name":"ONLINE MUSIC","select":[{"commands":["InputOnlineMusic"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]},
+        {"name":"USB-DAC","select":[{"commands":["InputUsb-Dac"],"setType":2}]},
+        {"name":"OPT/COAX","select":[{"commands":["InputOpt/Coax"],"setType":2}]}
+      ]
+    },
+    "OPT/COAXInput": {
+      "next": ["InputOpt/Coax"],
+      "values": [
+        {"name":"Opt"},
+        {"name":"Coax"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

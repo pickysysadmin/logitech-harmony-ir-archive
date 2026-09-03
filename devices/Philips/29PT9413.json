@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/2f/2faf1eb0a0d53c8f.json",
   "deviceType": 1,
   "globalDeviceId": 113980,
+  "inputs": {
+    "list": [
+      {"commands":["0"],"name":"TV"},
+      {"commands":["0",{"delayMs":1000},"InputNext"],"name":"EXT1"},
+      {"commands":["0",{"delayMs":1000},"InputNext",{"delayMs":500},"InputNext"],"name":"EXT2"},
+      {"commands":["0",{"delayMs":1000},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext"],"name":"EXT3"},
+      {"commands":["0",{"delayMs":1000},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext"],"name":"FRONT"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "29PT9413"
+  "model": "29PT9413",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["ChannelUp"],
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

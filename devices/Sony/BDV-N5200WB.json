@@ -2,6 +2,34 @@
   "codeset": "codesets/a2/a235724ba2a6182a.json",
   "deviceType": 22,
   "globalDeviceId": 273726,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD"},
+      {"commands":["InputUsb"],"name":"USB"},
+      {"commands":["InputTuner"],"name":"FM"},
+      {"commands":["InputTuner",{"delayMs":2000},"Function"],"name":"HDMI 1"},
+      {"commands":["InputTuner",{"delayMs":2000},"Function","Function"],"name":"HDMI 2"},
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["Mirroring"],"name":"SCR M"},
+      {"commands":["InputBT"],"name":"BT"},
+      {"commands":["InputAudio"],"name":"Audio"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "BDV-N5200WB"
+  "model": "BDV-N5200WB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

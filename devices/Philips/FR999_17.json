@@ -2,6 +2,34 @@
   "codeset": "codesets/91/9147147c878f6704.json",
   "deviceType": 5,
   "globalDeviceId": 30628,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputCD"],"name":"CD"},
+      {"commands":["InputCdr/Tape"],"name":"CDR/Tape"},
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputVcr"],"name":"VCR"},
+      {"commands":["InputSat"],"name":"Satellite"},
+      {"commands":["InputDvd"],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "FR999/17"
+  "model": "FR999/17",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputSat"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

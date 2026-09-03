@@ -2,6 +2,32 @@
   "codeset": "codesets/13/1394e7516b49787e.json",
   "deviceType": 5,
   "globalDeviceId": 60754,
+  "inputs": {
+    "list": [
+      {"commands":["InputVcr"],"name":"VCR"},
+      {"commands":["InputAUX"],"name":"Video"},
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputTuner"],"name":"AM-FM"},
+      {"commands":["InputCd"],"name":"CD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "RCA",
-  "model": "RV-9910A"
+  "model": "RV-9910A",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["InputTv"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

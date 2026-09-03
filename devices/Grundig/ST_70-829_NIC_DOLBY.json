@@ -2,6 +2,50 @@
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 165381,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Ant/cable"}],"name":"Ant/cable"},
+      {"commands":[{"set":"InputType","to":"AVinputs"},{"set":"AVinputsInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AVinputs"},{"set":"AVinputsInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AVinputs"},{"set":"AVinputsInput","to":"AV3"}],"name":"AV3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Grundig",
-  "model": "ST 70-829 NIC/DOLBY"
+  "model": "ST 70-829 NIC/DOLBY",
+  "power": {
+    "off": [
+      {"command":"PowerOff","durationMs":1200}
+    ],
+    "on": [
+      {"command":"InputNext","durationMs":1200}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "AVinputsInput": {
+      "next": ["0"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Ant/cable","select":[{"commands":["7"],"setType":2}]},
+        {"name":"AVinputs","select":[{"commands":["0"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 300,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

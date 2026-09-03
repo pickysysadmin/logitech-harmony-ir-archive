@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/39/391fe45ccb6410f2.json",
   "deviceType": 34,
   "globalDeviceId": 107957,
+  "inputs": {
+    "list": [
+      {"commands":["HDD"],"name":"HDD"},
+      {"commands":["DVD"],"name":"DVD"},
+      {"commands":["1"],"name":"TV"},
+      {"commands":["1",{"delayMs":2000},"ChannelDown",{"delayMs":1000},"ChannelDown",{"delayMs":1000},"ChannelDown"],"name":"L1"},
+      {"commands":["1",{"delayMs":2000},"ChannelDown",{"delayMs":1000},"ChannelDown"],"name":"L2"},
+      {"commands":["1",{"delayMs":2000},"ChannelDown"],"name":"L3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Pioneer",
-  "model": "DV-645H"
+  "model": "DV-645H",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 0,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/7e/7ee138e52e5b0006.json",
   "deviceType": 1,
   "globalDeviceId": 493471,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnt/Cable"],"name":"ANT/CABLE"},
+      {"commands":["InputAv"],"name":"AV"},
+      {"commands":["InputComponent"],"name":"COMPONENT"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi3",{"delayMs":500},"Input","DirectionDown","Enter"],"name":"USB"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Harmony Beta",
-  "model": "Test 55L310U "
+  "model": "Test 55L310U ",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

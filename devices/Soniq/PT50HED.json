@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/54/54a95b6588076c72.json",
   "deviceType": 1,
   "globalDeviceId": 75454,
+  "inputs": {
+    "finish": ["Exit"],
+    "list": [
+      {"name":"TV"},
+      {"name":"Scart1"},
+      {"name":"Scart2"},
+      {"name":"Svid-AV"},
+      {"name":"Comp1"},
+      {"name":"Comp2"},
+      {"name":"PC"},
+      {"name":"DVI"}
+    ],
+    "next": ["StartInput"],
+    "start": ["StartInput"],
+    "type": 4
+  },
   "manufacturer": "Soniq",
-  "model": "PT50HED"
+  "model": "PT50HED",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 105016,
+  "inputs": {
+    "list": [
+      {"commands":["InputAnt/Cable"],"name":"ANT"},
+      {"commands":["InputTv"],"name":"CABLE"},
+      {"commands":["InputVideo1"],"name":"Video"},
+      {"commands":["InputComponent1"],"name":"Component1"},
+      {"commands":["InputComponent2"],"name":"Component 2"},
+      {"commands":["InputDVI/DTV"],"name":"HDMI 1/DVI"},
+      {"commands":["InputDVI/DTV","InputRgb"],"name":"HDMI 2"},
+      {"commands":["InputRGB/PC"],"name":"RGB/PC"},
+      {"commands":["InputS-Video"],"name":"FRONT VIDEO"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "50-PB2RRH"
+  "model": "50-PB2RRH",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 1
+  }
 }

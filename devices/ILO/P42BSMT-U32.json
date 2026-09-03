@@ -2,6 +2,35 @@
   "codeset": "codesets/20/205f98bb48599c7c.json",
   "deviceType": 1,
   "globalDeviceId": 21633,
+  "inputs": {
+    "list": [
+      {"name":"Analog RGB"},
+      {"name":"Digital RGB"},
+      {"name":"Composite Video"},
+      {"name":"S-Video"},
+      {"name":"YCbCr"},
+      {"name":"YPbPr"}
+    ],
+    "next": ["InputAv"],
+    "type": 2
+  },
   "manufacturer": "ILO",
-  "model": "P42BSMT-U32"
+  "model": "P42BSMT-U32",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Analog RGB"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

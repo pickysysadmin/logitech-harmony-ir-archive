@@ -1,7 +1,54 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/10/104969418a2cebc1.json",
   "deviceType": 1,
   "globalDeviceId": 143880,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Ext 1"}],"name":"Ext 1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Ext 2"}],"name":"Ext 2"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"F-AV"}],"name":"F-AV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"SVHS"}],"name":"SVHS"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "C28WF560N"
+  "model": "C28WF560N",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAv"],
+      "values": [
+        {"name":"Ext 1"},
+        {"name":"RGB"},
+        {"name":"Ext 2"},
+        {"name":"F-AV"},
+        {"name":"SVHS"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["1"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAv"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "greaterTen": ["NumberEnter"]
+  },
   "codeset": "codesets/1a/1a2ce98368b68a0d.json",
   "deviceType": 1,
   "globalDeviceId": 180427,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV 1"},
+      {"name":"RGB"},
+      {"name":"AV 2"},
+      {"name":"YC 2"},
+      {"name":"AV 3"},
+      {"name":"YC 3"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KP-41S4"
+  "model": "KP-41S4",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

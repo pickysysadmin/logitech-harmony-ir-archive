@@ -2,6 +2,32 @@
   "codeset": "codesets/c8/c85fd755dd879b45.json",
   "deviceType": 21,
   "globalDeviceId": 493702,
+  "inputs": {
+    "list": [
+      {"commands":["InputCd"],"name":"CD","ports":["Others"]},
+      {"commands":["InputAnalogIn"],"name":"Analog In","ports":["Composite"]},
+      {"commands":["InputOpticalIn"],"name":"Optical In","ports":["Optical"]},
+      {"commands":["InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputBluetooth"],"name":"Bluetooth","ports":["Pairing Input"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "D-T1"
+  "model": "D-T1",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

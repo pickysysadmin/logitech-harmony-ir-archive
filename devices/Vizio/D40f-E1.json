@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/77/774087044e23e975.json",
   "deviceType": 1,
   "globalDeviceId": 349391,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv","Exit","DirectionRight","OK",{"delayMs":2500},"InputTv"],"name":"TV"},
+      {"commands":["InputHdmi1","Exit","DirectionRight","OK",{"delayMs":2500},"InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2","Exit","DirectionRight","OK",{"delayMs":2500},"InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputComponent","Exit","DirectionRight","OK",{"delayMs":2500},"InputComponent"],"name":"Component"},
+      {"commands":["InputRgb","Exit","DirectionRight","OK",{"delayMs":2500},"InputRgb"],"name":"RGB"},
+      {"commands":["Vudu"],"name":"Vudu"},
+      {"commands":["VIA"],"name":"Vizio Internet Apps"},
+      {"commands":["Media"],"name":"Media"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Vizio",
-  "model": "D40f-E1"
+  "model": "D40f-E1",
+  "power": {
+    "off": ["Exit","PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 20000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 12000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,50 @@
   "codeset": "codesets/eb/eb2b13fd64cfd6b5.json",
   "deviceType": 22,
   "globalDeviceId": 232130,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"BD/DVD"}],"name":"BD/DVD"},
+      {"commands":[{"set":"InputType","to":"D.IN"}],"name":"D.IN"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"R.iPod"}],"name":"R.iPod"},
+      {"commands":[{"set":"InputType","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"HDMI 2"}],"name":"HDMI 2"},
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"BT"}],"name":"BT"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HTE5530"
+  "model": "HTE5530",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "next": ["Function"],
+      "start": ["VolumeUp","VolumeDown"],
+      "values": [
+        {"name":"BD/DVD"},
+        {"name":"D.IN"},
+        {"name":"AUX"},
+        {"name":"R.iPod"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"},
+        {"name":"FM"},
+        {"name":"BT"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 2
+  }
 }

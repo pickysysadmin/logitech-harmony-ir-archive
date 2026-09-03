@@ -2,6 +2,46 @@
   "codeset": "codesets/2b/2b89467482b0bf87.json",
   "deviceType": 1,
   "globalDeviceId": 89907,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"commands":["1"],"name":"VGA"},
+      {"commands":["2"],"name":"DVI"},
+      {"commands":["3"],"name":"TV"},
+      {"commands":["4"],"name":"SC 1 - Technisat"},
+      {"commands":["5"],"name":"SC2 - Spiel"},
+      {"commands":["6"],"name":"SC3 - DBOX"},
+      {"commands":["7"],"name":"AV1"},
+      {"commands":["8"],"name":"AV2"},
+      {"commands":["9"],"name":"AV3 - DSM"}
+    ],
+    "start": ["TvVideo"],
+    "type": 3
+  },
   "manufacturer": "Humax",
-  "model": "LDE-40"
+  "model": "LDE-40",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 1
+  }
 }

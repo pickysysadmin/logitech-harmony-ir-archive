@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/ef/ef00201c07a638f1.json",
   "deviceType": 1,
   "globalDeviceId": 161696,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV","ports":["Antenna"]},
+      {"commands":["InputAv1"],"name":"AV1","ports":["Scart"]},
+      {"commands":["InputAv2"],"name":"AV2","ports":["Scart"]},
+      {"commands":["InputAv3"],"name":"AV3","ports":["Composite","S-Video"]},
+      {"commands":["InputComponent"],"name":"Component","ports":["Component"]},
+      {"commands":["InputHdmi1"],"name":"HDMI1","ports":["HDMI"]},
+      {"commands":["InputHdmi2"],"name":"HDMI2","ports":["HDMI"]},
+      {"commands":["InputHdmi3"],"name":"HDMI3","ports":["HDMI"]},
+      {"commands":["InputRgb"],"name":"RGB","ports":["PC"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "42PG3000"
+  "model": "42PG3000",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,33 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 201941,
+  "inputs": {
+    "list": [
+      {"commands":["PowerOn"],"name":"TV"},
+      {"commands":["InputVideo3"],"name":"VCR1"},
+      {"commands":["InputVideo4"],"name":"VCR2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "ProScan",
-  "model": "PS5220P"
+  "model": "PS5220P",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

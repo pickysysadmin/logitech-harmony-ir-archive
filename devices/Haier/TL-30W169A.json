@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/af/af6bfb8dc1160eda.json",
   "deviceType": 1,
   "globalDeviceId": 122074,
+  "inputs": {
+    "list": [
+      {"name":"TV/Video"},
+      {"name":"S-Video"},
+      {"name":"DVD"},
+      {"name":"PC"}
+    ],
+    "next": ["InputDvd"],
+    "type": 2
+  },
   "manufacturer": "Haier",
-  "model": "TL-30W169A"
+  "model": "TL-30W169A",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV/Video"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

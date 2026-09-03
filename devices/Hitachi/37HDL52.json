@@ -2,6 +2,68 @@
   "codeset": "codesets/35/35d2a77874cd2f03.json",
   "deviceType": 1,
   "globalDeviceId": 124648,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"VIDEOS"},{"set":"VIDEOSInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"VIDEOS"},{"set":"VIDEOSInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"VIDEOS"},{"set":"VIDEOSInput","to":"Video 3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"VIDEOS"},{"set":"VIDEOSInput","to":"Video 4"}],"name":"Video 4"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"RGB2"}],"name":"RGB2"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"RGB1"}],"name":"RGB1"},
+      {"commands":[{"set":"InputType","to":"NTSC"},{"set":"NTSCInput","to":"Air"}],"name":"Air"},
+      {"commands":[{"set":"InputType","to":"NTSC"},{"set":"NTSCInput","to":"Catv"}],"name":"Catv"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "37HDL52"
+  "model": "37HDL52",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DTV","select":[{"commands":["InputDtv"],"setType":2}]},
+        {"name":"VIDEOS","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputRgb/Dvi"],"setType":2}]},
+        {"name":"NTSC","select":[{"commands":["InputNtsc"],"setType":2}]}
+      ]
+    },
+    "NTSCInput": {
+      "next": ["InputNtsc"],
+      "values": [
+        {"name":"Air"},
+        {"name":"Catv"}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputRgb/Dvi"],
+      "values": [
+        {"name":"RGB2"},
+        {"name":"RGB1"}
+      ]
+    },
+    "VIDEOSInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Video 3"},
+        {"name":"Video 4"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

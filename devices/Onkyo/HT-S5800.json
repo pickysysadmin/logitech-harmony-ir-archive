@@ -2,6 +2,39 @@
   "codeset": "codesets/b1/b14e954d45d89365.json",
   "deviceType": 5,
   "globalDeviceId": 302072,
+  "inputs": {
+    "list": [
+      {"commands":["InputBd/Dvd"],"name":"BD/DVD"},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT"},
+      {"commands":["InputGame1"],"name":"Game 1"},
+      {"commands":["InputGame2"],"name":"Game 2"},
+      {"commands":["InputStrmBox"],"name":"STRM BOX"},
+      {"commands":["InputVcr"],"name":"VCR"},
+      {"commands":["InputAux"],"name":"Aux"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputTuner",{"delayMs":500},"FM"],"name":"FM"},
+      {"commands":["InputTuner",{"delayMs":500},"AM"],"name":"AM"},
+      {"commands":["InputBluetooth"],"name":"Bluetooth"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "HT-S5800"
+  "model": "HT-S5800",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

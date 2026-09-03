@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 81361,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Kanal1"},
+      {"commands":["A/V"],"name":"AV1"},
+      {"commands":["A/V"],"name":"AV2"},
+      {"commands":["A/V"],"name":"AV3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Grundig",
-  "model": "M72-215IDTV"
+  "model": "M72-215IDTV",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"AV3"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 52629,
+  "inputs": {
+    "finish": ["VolumeUp"],
+    "list": [
+      {"name":"ANT/CATV"},
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"},
+      {"name":"S-Video 1"},
+      {"name":"S-video 2"},
+      {"name":"DVD"}
+    ],
+    "next": ["ChannelDown"],
+    "start": ["TvVideo"],
+    "type": 4
+  },
   "manufacturer": "Samsung",
-  "model": "PCJ534RF"
+  "model": "PCJ534RF",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"ANT/CATV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

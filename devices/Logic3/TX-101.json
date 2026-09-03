@@ -2,6 +2,56 @@
   "codeset": "codesets/1b/1b869cc209d7ed98.json",
   "deviceType": 5,
   "globalDeviceId": 141549,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Coax"},{"set":"CoaxInput","to":"Coax1"}],"name":"Coax1"},
+      {"commands":[{"set":"InputType","to":"Coax"},{"set":"CoaxInput","to":"Coax2"}],"name":"Coax2"},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OpticalInput","to":"Optical1"}],"name":"Optical1"},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OpticalInput","to":"Optical2"}],"name":"Optical2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Logic3",
-  "model": "TX-101"
+  "model": "TX-101",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CoaxInput": {
+      "next": ["InputCoax"],
+      "values": [
+        {"name":"Coax1"},
+        {"name":"Coax2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Coax","select":[{"commands":["InputCoax"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]}
+      ]
+    },
+    "OpticalInput": {
+      "next": ["InputOptical"],
+      "values": [
+        {"name":"Optical1"},
+        {"name":"Optical2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

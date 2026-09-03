@@ -2,6 +2,90 @@
   "codeset": "codesets/3c/3c60afb7e9755ad4.json",
   "deviceType": 1,
   "globalDeviceId": 170583,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV4"}],"name":"AV4"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV5"}],"name":"AV5"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Comp1"}],"name":"Comp1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Comp2"}],"name":"Comp2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Comp3"}],"name":"Comp3"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"SCART"},{"set":"SCARTInput","to":"SCART1"}],"name":"SCART1"},
+      {"commands":[{"set":"InputType","to":"SCART"},{"set":"SCARTInput","to":"SCART2"}],"name":"SCART2"},
+      {"commands":[{"set":"InputType","to":"SCART"},{"set":"SCARTInput","to":"SCART3"}],"name":"SCART3"},
+      {"commands":[{"set":"InputType","to":"SCART"},{"set":"SCARTInput","to":"SCART4"}],"name":"SCART4"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Digital"}],"name":"Digital"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "AT3705-DTV"
+  "model": "AT3705-DTV",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo",{"set":"VideoInput","to":"AV1"}],"setType":2}]},
+        {"name":"SCART","select":[{"commands":["InputScart",{"set":"SCARTInput","to":"SCART1"}],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc",{"set":"PCInput","to":"VGA"}],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTV",{"set":"TVInput","to":"Analog"}],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"}
+      ]
+    },
+    "SCARTInput": {
+      "next": ["InputScart"],
+      "values": [
+        {"name":"SCART1"},
+        {"name":"SCART2"},
+        {"name":"SCART3"},
+        {"name":"SCART4"}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTV"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Digital"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"AV4"},
+        {"name":"AV5"},
+        {"name":"Comp1"},
+        {"name":"Comp2"},
+        {"name":"Comp3"},
+        {"name":"HDMI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

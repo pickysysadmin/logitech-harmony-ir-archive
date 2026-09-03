@@ -2,6 +2,56 @@
   "codeset": "codesets/9c/9c1fa5250e53b97b.json",
   "deviceType": 1,
   "globalDeviceId": 164020,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Av 1"}],"name":"Av 1"},
+      {"commands":[{"set":"InputType","to":"Av 2"}],"name":"Av 2"},
+      {"commands":[{"set":"InputType","to":"Av 3"}],"name":"Av 3"},
+      {"commands":[{"set":"InputType","to":"Av 4"}],"name":"Av 4"},
+      {"commands":[{"set":"InputType","to":"Hdmi 1"}],"name":"Hdmi 1"},
+      {"commands":[{"set":"InputType","to":"Hdmi 2"}],"name":"Hdmi 2"},
+      {"commands":[{"set":"InputType","to":"Hdmi 3"}],"name":"Hdmi 3"},
+      {"commands":[{"set":"InputType","to":"TV/DTT"},{"set":"TV/DTTInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TV/DTT"},{"set":"TV/DTTInput","to":"DTT"}],"name":"DTT"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "L37X01AU"
+  "model": "L37X01AU",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Av 1","select":[{"commands":["InputAv1"],"setType":2}]},
+        {"name":"Av 2","select":[{"commands":["InputAv2"],"setType":2}]},
+        {"name":"Av 3","select":[{"commands":["InputAv3"],"setType":2}]},
+        {"name":"Av 4","select":[{"commands":["InputAv4"],"setType":2}]},
+        {"name":"Hdmi 1","select":[{"commands":["InputHdmi1"],"setType":2}]},
+        {"name":"Hdmi 2","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"Hdmi 3","select":[{"commands":["InputHdmi3"],"setType":2}]},
+        {"name":"TV/DTT","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "TV/DTTInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DTT"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

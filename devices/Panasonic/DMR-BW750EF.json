@@ -2,6 +2,40 @@
   "codeset": "codesets/c2/c2ce1ad349194abf.json",
   "deviceType": 34,
   "globalDeviceId": 206904,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdd"],"name":"HDD"},
+      {"commands":["InputDvd"],"name":"BD"},
+      {"commands":["InputSd"],"name":"SD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-BW750EF"
+  "model": "DMR-BW750EF",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Lines": {
+      "next": ["InputSelect"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

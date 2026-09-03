@@ -2,6 +2,36 @@
   "codeset": "codesets/ec/ecd508b5a1706682.json",
   "deviceType": 1,
   "globalDeviceId": 178271,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["InputHdmi3"],"name":"HDMI3"},
+      {"commands":["InputHdmiSide"],"name":"HDMIside"},
+      {"commands":["InputExt1"],"name":"EXT1"},
+      {"commands":["InputExt2"],"name":"EXT2"},
+      {"commands":["InputExt3"],"name":"EXT3"},
+      {"commands":["InputExt3","InputNext","DirectionDown","Select"],"name":"VGA"},
+      {"commands":["InputExt3","InputNext","DirectionDown","DirectionDown","Select"],"name":"VIDEO"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "37PFL8404H/60"
+  "model": "37PFL8404H/60",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 3
+  }
 }

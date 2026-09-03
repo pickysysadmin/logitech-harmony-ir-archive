@@ -2,6 +2,51 @@
   "codeset": "codesets/6d/6dba21347d5a81d3.json",
   "deviceType": 1,
   "globalDeviceId": 29614,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANT A"}],"name":"Ant A"},
+      {"commands":[{"set":"InputType","to":"ANT"},{"set":"ANTInput","to":"ANT B"}],"name":"Ant B"},
+      {"commands":[{"set":"InputType","to":"Video 1"},"Input 1"],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"Video 2"},"Input 2"],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Video 3"},"Input 3"],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"Video 4"},"Input 4"],"name":"Input 4"},
+      {"commands":[{"set":"InputType","to":"Video 5"},"Input 5"],"name":"Input 5"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "43FX20B"
+  "model": "43FX20B",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ANTInput": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"ANT A"},
+        {"name":"ANT B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video 1","select":[{"commands":["Input 1"],"setType":2}]},
+        {"name":"Video 2","select":[{"commands":["Input 2"],"setType":2}]},
+        {"name":"Video 3","select":[{"commands":["Input 3"],"setType":2}]},
+        {"name":"Video 4","select":[{"commands":["Input 4"],"setType":2}]},
+        {"name":"Video 5","select":[{"commands":["Input 5"],"setType":2}]},
+        {"name":"ANT","select":[{"commands":["TvVideo"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

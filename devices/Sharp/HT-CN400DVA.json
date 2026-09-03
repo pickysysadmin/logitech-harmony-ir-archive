@@ -2,6 +2,42 @@
   "codeset": "codesets/b9/b9b5aa9ae2eaed82.json",
   "deviceType": 22,
   "globalDeviceId": 160505,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":[{"set":"Auxmode","to":"Auxmode1"}],"name":"Aux1"},
+      {"commands":[{"set":"Auxmode","to":"Auxmode2"}],"name":"Aux2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "HT-CN400DVA"
+  "model": "HT-CN400DVA",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Auxmode": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Auxmode1"},
+        {"name":"Auxmode2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

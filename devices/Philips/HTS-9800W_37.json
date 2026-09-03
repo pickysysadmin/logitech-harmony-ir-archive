@@ -2,6 +2,31 @@
   "codeset": "codesets/64/646417b2c550a386.json",
   "deviceType": 22,
   "globalDeviceId": 159855,
+  "inputs": {
+    "list": [
+      {"commands":["InputDisc"],"name":"Disc"},
+      {"commands":["InputDisc",{"delayMs":1500},"InputNext",{"delayMs":500},"InputNext"],"name":"Tuner"},
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputAux",{"delayMs":1500},"InputAux"],"name":"AUX"},
+      {"commands":["InputAux",{"delayMs":1500},"InputNext",{"delayMs":500},"InputNext"],"name":"Digi In"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "HTS-9800W/37"
+  "model": "HTS-9800W/37",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

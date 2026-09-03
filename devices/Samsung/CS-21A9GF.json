@@ -2,6 +2,33 @@
   "codeset": "codesets/c8/c8271d4e73a1d4bf.json",
   "deviceType": 1,
   "globalDeviceId": 116599,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"AV-1"},
+      {"name":"AV-2"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Samsung",
-  "model": "CS-21A9GF"
+  "model": "CS-21A9GF",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

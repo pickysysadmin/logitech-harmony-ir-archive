@@ -2,6 +2,35 @@
   "codeset": "codesets/6d/6d4cb35def06002a.json",
   "deviceType": 19,
   "globalDeviceId": 79165,
+  "inputs": {
+    "list": [
+      {"name":"Aux/Sat"},
+      {"name":"Tuner"},
+      {"name":"TV/VCR"},
+      {"name":"LD/DVD"},
+      {"name":"CD/DAC"},
+      {"name":"Balanced"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Cairn",
-  "model": "4808"
+  "model": "4808",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":2000}
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

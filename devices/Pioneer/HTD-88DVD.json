@@ -2,6 +2,63 @@
   "codeset": "codesets/d0/d0acd72912bef6b1.json",
   "deviceType": 22,
   "globalDeviceId": 212743,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"L1"}],"name":"L1"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"L2"}],"name":"L2"},
+      {"commands":[{"set":"InputType","to":"Dvd/Cd"},{"set":"Dvd/CdInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Dvd/Cd"},{"set":"Dvd/CdInput","to":"CD"}],"name":"CD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "HTD-88DVD"
+  "model": "HTD-88DVD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Dvd/CdInput": {
+      "next": ["InputDvd/Cd"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"CD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Line","select":[{"commands":["InputLine"],"setType":2}]},
+        {"name":"Dvd/Cd","select":[{"commands":["InputDvd/Cd"],"setType":2}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputLine"],
+      "values": [
+        {"name":"L1"},
+        {"name":"L2"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

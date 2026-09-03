@@ -2,6 +2,48 @@
   "codeset": "codesets/75/756d8d6fcd002059.json",
   "deviceType": 22,
   "globalDeviceId": 256691,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Home"}],"name":"Home","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"AUX"}],"name":"AUX","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Portable"}],"name":"Portable","ports":["Portable"]},
+      {"commands":[{"set":"InputType","to":"Function"},{"set":"FunctionInput","to":"Optical"}],"name":"Optical","ports":["Optical"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "BH6430P"
+  "model": "BH6430P",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FunctionInput": {
+      "next": ["Function"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AUX"},
+        {"name":"Portable"},
+        {"name":"Optical"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Home"},
+        {"name":"Function"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 1
+  }
 }

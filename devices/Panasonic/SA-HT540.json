@@ -2,6 +2,55 @@
   "codeset": "codesets/9c/9cccd59ecd95d45e.json",
   "deviceType": 22,
   "globalDeviceId": 80452,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD/CD"}],"name":"DVD/CD"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Fm"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Am"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"MusicP"}],"name":"Music P."},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Ext"},{"set":"ExtInput","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SA-HT540"
+  "model": "SA-HT540",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ExtInput": {
+      "next": ["InputExtIn"],
+      "values": [
+        {"name":"MusicP"},
+        {"name":"TV"},
+        {"name":"AUX"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD/CD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner/Band"],"setType":2}]},
+        {"name":"Ext","select":[{"commands":["InputExtIn"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner/Band"],
+      "values": [
+        {"name":"Fm"},
+        {"name":"Am"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

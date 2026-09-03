@@ -2,6 +2,57 @@
   "codeset": "codesets/cf/cf51a6419c29c641.json",
   "deviceType": 5,
   "globalDeviceId": 159586,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Cable Sat"}],"name":"Cable Sat"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Video-3"}],"name":"Video-3"},
+      {"commands":[{"set":"InputType","to":"Video1"}],"name":"Video-1"},
+      {"commands":[{"set":"InputType","to":"Video2"}],"name":"Video-2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SV464"
+  "model": "TX-SV464",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputVideo3"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"VCR"},
+        {"name":"Cable Sat"},
+        {"name":"Video-3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputVideo3"],"setType":2}]},
+        {"name":"Video1","select":[{"commands":["InputVideo1"],"setType":2}]},
+        {"name":"Video2","select":[{"commands":["InputVideo2"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 1
+  }
 }

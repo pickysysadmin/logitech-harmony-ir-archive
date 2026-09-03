@@ -1,7 +1,70 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/10/1049bfa1f2f5bf4f.json",
   "deviceType": 1,
   "globalDeviceId": 40610,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputTv","InputVideo"],"name":"Video1"},
+      {"commands":["InputTv","InputVideo","InputVideo"],"name":"Video2"},
+      {"commands":["InputTv","InputVideo","InputVideo","InputVideo"],"name":"Video3"},
+      {"commands":["InputTv","InputComponent"],"name":"Component1"},
+      {"commands":["InputTv","InputComponent","InputComponent"],"name":"Component2"},
+      {"commands":["InputTv","InputDvi/Vga"],"name":"VGA"},
+      {"commands":["InputTv","InputDvi/Vga","InputDvi/Vga"],"name":"DVI"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Syntax-Brillian",
-  "model": "LT-37HV"
+  "model": "LT-37HV",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CompInput": {
+      "next": ["InputComponent"],
+      "values": [
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "DVIInput": {
+      "next": ["InputDvi/Vga"],
+      "values": [
+        {"name":"DVI"},
+        {"name":"VGA"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputComponent"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"DVI/VGA","select":[{"commands":["InputDvi/Vga"],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video2"},
+        {"name":"Video3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

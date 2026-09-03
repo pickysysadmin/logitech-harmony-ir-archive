@@ -1,7 +1,47 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/36/362eb927ae6329c2.json",
   "deviceType": 1,
   "globalDeviceId": 3534,
+  "inputs": {
+    "list": [
+      {"commands":["ChannelUp",{"set":"InputSelect","to":"ANT"},{"set":"InputType","to":"ANT A"}],"name":"Ant A"},
+      {"commands":["ChannelUp",{"set":"InputSelect","to":"ANT"},{"set":"InputType","to":"ANT B"}],"name":"Ant B"},
+      {"commands":[{"set":"InputSelect","to":"VIDEO"},"ChannelUp","TvVideo"],"name":"Video 1"},
+      {"commands":[{"set":"InputSelect","to":"VIDEO"},"ChannelUp","TvVideo","TvVideo"],"name":"Video 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Toshiba",
-  "model": "CX36F67"
+  "model": "CX36F67",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputSelect": {
+      "values": [
+        {"name":"ANT"},
+        {"name":"VIDEO"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"ANT A","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"ANT B","select":[{"commands":["InputNext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

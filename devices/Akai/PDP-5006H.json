@@ -1,7 +1,93 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/1e/1ea248c0e1a43514.json",
   "deviceType": 1,
   "globalDeviceId": 131932,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"ALLOFF","to":"ON"},{"set":"TVInput","to":"ON"}],"name":"TV"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"TVInput","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"ALLOFF","to":"ON"},{"set":"AVInput","to":"ON"}],"name":"AV"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"TVInput","to":"ON"},{"set":"AVInput","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"ALLOFF","to":"ON"},{"set":"S-VideoInput","to":"ON"}],"name":"S-Video"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"TVInput","to":"ON"},{"set":"AVInput","to":"ON"},{"set":"S-VideoInput","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"ALLOFF","to":"ON"},{"set":"YCbCrInput","to":"ON"}],"name":"YCbCr"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"TVInput","to":"ON"},{"set":"AVInput","to":"ON"},{"set":"S-VideoInput","to":"ON"},{"set":"YCbCrInput","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"ALLOFF","to":"ON"},{"set":"YPbPrInput","to":"ON"}],"name":"YPbPr"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"TVInput","to":"ON"},{"set":"AVInput","to":"ON"},{"set":"S-VideoInput","to":"ON"},{"set":"YCbCrInput","to":"ON"},{"set":"YPbPrInput","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"ALLOFF","to":"ON"},{"set":"AnalogRGBInput","to":"ON"}],"name":"Analog RGB"},
+      {"commands":[{"set":"SourceMenu","to":"ON"},{"set":"TVInput","to":"ON"},{"set":"AVInput","to":"ON"},{"set":"S-VideoInput","to":"ON"},{"set":"YCbCrInput","to":"ON"},{"set":"YPbPrInput","to":"ON"},{"set":"AnalogRGBInput","to":"ON"},{"set":"SourceMenu","to":"OFF"},{"set":"ALLOFF","to":"ON"},{"set":"DigitalRGBInput","to":"ON"}],"name":"Digital RGB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Akai",
-  "model": "PDP-5006H"
+  "model": "PDP-5006H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ALLOFF": {
+      "values": [
+        {"name":"ON","select":[{"commands":[{"set":"TVInput","to":"OFF"},{"set":"AVInput","to":"OFF"},{"set":"S-VideoInput","to":"OFF"},{"set":"YCbCrInput","to":"OFF"},{"set":"YPbPrInput","to":"OFF"},{"set":"AnalogRGBInput","to":"OFF"},{"set":"DigitalRGBInput","to":"OFF"}],"setType":1}]},
+        {"name":"OFF"}
+      ]
+    },
+    "AVInput": {
+      "values": [
+        {"name":"ON","select":[{"commands":["DirectionDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "AnalogRGBInput": {
+      "values": [
+        {"name":"ON","select":[{"commands":["DirectionDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "DigitalRGBInput": {
+      "values": [
+        {"name":"ON","select":[{"commands":["DirectionDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "S-VideoInput": {
+      "values": [
+        {"name":"ON","select":[{"commands":["DirectionDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "SourceMenu": {
+      "values": [
+        {"name":"ON","select":[{"commands":["Source"],"setType":2}]},
+        {"name":"OFF","select":[{"commands":["Select"],"setType":1}]}
+      ]
+    },
+    "TVInput": {
+      "values": [
+        {"name":"ON","select":[{"commands":["DirectionDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "YCbCrInput": {
+      "values": [
+        {"name":"ON","select":[{"commands":["DirectionDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    },
+    "YPbPrInput": {
+      "values": [
+        {"name":"ON","select":[{"commands":["DirectionDown"],"setType":2}]},
+        {"name":"OFF"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 9000,
+    "pressMinRepeats": 1
+  }
 }

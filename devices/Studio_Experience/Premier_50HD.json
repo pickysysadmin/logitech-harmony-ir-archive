@@ -2,6 +2,35 @@
   "codeset": "codesets/d4/d467d57aad52b6d8.json",
   "deviceType": 7,
   "globalDeviceId": 18464,
+  "inputs": {
+    "list": [
+      {"commands":["Input1"],"name":"Input1"},
+      {"commands":["Input2"],"name":"Input2"},
+      {"commands":["Input3"],"name":"Input3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Studio Experience",
-  "model": "Premier 50HD"
+  "model": "Premier 50HD",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":500},
+      {"command":"PowerToggle","durationMs":500},
+      {"command":"PowerToggle","durationMs":500}
+    ],
+    "on": [
+      {"command":"PowerToggle","durationMs":800}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

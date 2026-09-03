@@ -2,6 +2,52 @@
   "codeset": "codesets/25/25879045ed9dc178.json",
   "deviceType": 5,
   "globalDeviceId": 205814,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"MP3LineIn"}],"name":"MP3LineIn"},
+      {"commands":[{"set":"InputType","to":"Disc/DI"},{"set":"Disc/DIInput","to":"Disc6Ch"}],"name":"Disc6Ch"},
+      {"commands":[{"set":"InputType","to":"Disc/DI"},{"set":"Disc/DIInput","to":"CoaxIn"}],"name":"CoaxIn"},
+      {"commands":[{"set":"InputType","to":"Disc/DI"},{"set":"Disc/DIInput","to":"OptiIn"}],"name":"OptiIn"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTR-5205"
+  "model": "HTR-5205",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Disc/DIInput": {
+      "next": ["InputDisc/Di"],
+      "values": [
+        {"name":"Disc6Ch"},
+        {"name":"CoaxIn"},
+        {"name":"OptiIn"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"MP3LineIn","select":[{"commands":["InputMp3LineIn"],"setType":2}]},
+        {"name":"Disc/DI","select":[{"commands":["InputDisc/Di"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

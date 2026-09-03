@@ -2,6 +2,62 @@
   "codeset": "codesets/a8/a8225fd5d7a5891e.json",
   "deviceType": 5,
   "globalDeviceId": 260402,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"BD/DVD"}],"name":"BD/DVD"},
+      {"commands":[{"set":"InputType","to":"CBL/SAT"}],"name":"CBL/SAT"},
+      {"commands":[{"set":"InputType","to":"STB/DVR"}],"name":"STB/DVR"},
+      {"commands":[{"set":"InputType","to":"Game"}],"name":"Game"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"TV/CD"}],"name":"TV/CD"},
+      {"commands":[{"set":"InputType","to":"NET"}],"name":"NET"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB(Front)"}],"name":"USB(Front)"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB(Rear)"}],"name":"USB(Rear)"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Tascam",
-  "model": "PA-R200"
+  "model": "PA-R200",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"BD/DVD","select":[{"commands":["InputBd/Dvd"],"setType":2}]},
+        {"name":"CBL/SAT","select":[{"commands":["InputCbl/Sat"],"setType":2}]},
+        {"name":"STB/DVR","select":[{"commands":["InputStb/Dvr"],"setType":2}]},
+        {"name":"Game","select":[{"commands":["InputGame"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"AM","select":[{"commands":["InputAm"],"setType":2}]},
+        {"name":"FM","select":[{"commands":["InputFm"],"setType":2}]},
+        {"name":"TV/CD","select":[{"commands":["InputTv/Cd"],"setType":2}]},
+        {"name":"NET","select":[{"commands":["InputNet"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":2}]}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputUsb"],
+      "values": [
+        {"name":"USB(Front)"},
+        {"name":"USB(Rear)"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

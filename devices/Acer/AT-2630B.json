@@ -2,6 +2,83 @@
   "codeset": "codesets/49/4989cd436dcc702f.json",
   "deviceType": 1,
   "globalDeviceId": 141279,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"Component"}],"name":"Component 2"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Acer",
-  "model": "AT-2630B"
+  "model": "AT-2630B",
+  "power": {
+    "toggle": [
+      {"delayMs":2000},
+      "PowerToggle"
+    ],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV3"},
+        {"name":"AV4"},
+        {"name":"AV5"}
+      ]
+    },
+    "ComponentInput": {
+      "next": ["InputSAT"],
+      "values": [
+        {"name":"Component 1"},
+        {"name":"Component 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"Component","select":[{"commands":["InputSAT"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPc"],
+      "values": [
+        {"name":"VGA"},
+        {"name":"DVI"}
+      ]
+    },
+    "ScartInput": {
+      "next": ["InputSAT"],
+      "values": [
+        {"name":"Svideo1-AV1"},
+        {"name":"Svideo2-AV2-Comp"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"HDMI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

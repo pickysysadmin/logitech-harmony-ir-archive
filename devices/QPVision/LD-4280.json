@@ -1,7 +1,43 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b2/b27b1c4b30753ad2.json",
   "deviceType": 1,
   "globalDeviceId": 159805,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"TV"},
+      {"name":"SCART1"},
+      {"name":"SCART2"},
+      {"name":"RGB 1"},
+      {"name":"Component 1"},
+      {"name":"Component 2"},
+      {"name":"HDMI (DVI)"},
+      {"name":"PC"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["InputTv"],
+    "type": 4
+  },
   "manufacturer": "QPVision",
-  "model": "LD-4280"
+  "model": "LD-4280",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"SCART1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

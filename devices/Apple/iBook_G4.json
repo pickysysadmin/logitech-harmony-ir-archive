@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/2e/2e69b5218b3c56f3.json",
   "deviceType": 35,
   "globalDeviceId": 161791,
+  "inputs": {
+    "list": [
+      {"name":"My TV"},
+      {"name":"My DVD"},
+      {"name":"My Videos"},
+      {"name":"My Music"},
+      {"name":"My Pictures"}
+    ],
+    "next": ["NextTrack"],
+    "type": 2
+  },
   "manufacturer": "Apple",
-  "model": "iBook G4"
+  "model": "iBook G4",
+  "power": {
+    "off": [
+      {"command":"Pause","durationMs":3500}
+    ],
+    "on": ["Play"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,56 @@
   "codeset": "codesets/3b/3b1e3c7ce2724ffd.json",
   "deviceType": 5,
   "globalDeviceId": 168991,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Vcr1"}],"name":"Vcr1"},
+      {"commands":[{"set":"InputType","to":"Vcr2"}],"name":"Vcr2"},
+      {"commands":[{"set":"InputType","to":"Vcr3"}],"name":"Vcr3"},
+      {"commands":[{"set":"InputType","to":"VDP/VDP6CH"},{"set":"VDP/VDP6CHInput","to":"VDP"}],"name":"VDP"},
+      {"commands":[{"set":"InputType","to":"VDP/VDP6CH"},{"set":"VDP/VDP6CHInput","to":"VDP6CH"}],"name":"VDP6CH"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Technics",
-  "model": "SA-TX50"
+  "model": "SA-TX50",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTV"],"setType":2}]},
+        {"name":"Vcr1","select":[{"commands":["InputVcr1"],"setType":2}]},
+        {"name":"Vcr2","select":[{"commands":["InputVcr2"],"setType":2}]},
+        {"name":"Vcr3","select":[{"commands":["InputVcr3"],"setType":2}]},
+        {"name":"VDP/VDP6CH","select":[{"commands":["InputVDP"],"setType":2}]}
+      ]
+    },
+    "VDP/VDP6CHInput": {
+      "next": ["InputVDP"],
+      "values": [
+        {"name":"VDP"},
+        {"name":"VDP6CH"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

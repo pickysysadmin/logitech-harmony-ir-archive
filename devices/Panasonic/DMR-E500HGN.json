@@ -1,7 +1,56 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/d6/d6de5e9d03afc652.json",
   "deviceType": 34,
   "globalDeviceId": 154798,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"VideoInput","to":"Tuner"}],"name":"DVDTuner"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"VideoInput","to":"Input3"}],"name":"DVDInput3"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"VideoInput","to":"Input4"}],"name":"DVDInput4"},
+      {"commands":[{"set":"InputType","to":"DVD"},{"set":"VideoInput","to":"DV"}],"name":"DVDDV"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"VideoInput","to":"Tuner"}],"name":"HDDTuner"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"VideoInput","to":"Input3"}],"name":"HDDInput3"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"VideoInput","to":"Input4"}],"name":"HDDInput4"},
+      {"commands":[{"set":"InputType","to":"HDD"},{"set":"VideoInput","to":"DV"}],"name":"HDDDV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-E500HGN"
+  "model": "DMR-E500HGN",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":1}]},
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":1}]},
+        {"name":"SD","select":[{"commands":["InputSd/Pc"],"setType":1}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"Input3"},
+        {"name":"Input4"},
+        {"name":"DV"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

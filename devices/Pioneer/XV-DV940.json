@@ -2,6 +2,59 @@
   "codeset": "codesets/43/43cc7dbfc5dd9f56.json",
   "deviceType": 22,
   "globalDeviceId": 29274,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"L1 Analog"}],"name":"L1 Analog"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"L1 Digital"}],"name":"L1 Digital"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"L2 Analog"}],"name":"L2 Analog"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"L2 Digital"}],"name":"L2 Digital"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Line"},{"set":"LineInput","to":"L1 Digital"},{"delayMs":2000},{"set":"InputType","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "XV-DV940"
+  "model": "XV-DV940",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Line","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd/Cd"],"setType":1}]},
+        {"name":"TV","select":[{"commands":["InputTelevision"],"setType":1}]}
+      ]
+    },
+    "LineInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"L1 Analog"},
+        {"name":"L1 Digital"},
+        {"name":"L2 Analog"},
+        {"name":"L2 Digital"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

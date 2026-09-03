@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/c7/c7729a6eab2368f1.json",
   "deviceType": 1,
   "globalDeviceId": 446484,
+  "inputs": {
+    "list": [
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputTv"],"name":"TV"},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputAv"],"name":"AV"},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["Exit","Exit",{"delayMs":2000},"InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["Exit",{"delayMs":2000},"Home"],"name":"Smart TV"},
+      {"commands":["Netflix"],"name":"Netflix"}
+    ],
+    "type": 1
+  },
   "manufacturer": "LG",
-  "model": "49UK7700AUB"
+  "model": "49UK7700AUB",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 30000,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

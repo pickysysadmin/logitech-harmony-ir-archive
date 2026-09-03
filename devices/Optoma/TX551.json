@@ -2,6 +2,53 @@
   "codeset": "codesets/7b/7bcc3e84bcb90481.json",
   "deviceType": 7,
   "globalDeviceId": 274135,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VGA"},{"set":"VGAInput","to":"VGA 1"}],"name":"VGA 1"},
+      {"commands":[{"set":"InputType","to":"VGA"},{"set":"VGAInput","to":"VGA 2"}],"name":"VGA 2"},
+      {"commands":[{"set":"InputType","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Optoma",
-  "model": "TX551"
+  "model": "TX551",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"VGA","select":[{"commands":["InputVga"],"setType":2}]},
+        {"name":"S-Video","select":[{"commands":["InputS-Video"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"HDMI","select":[{"commands":["InputHdmi"],"setType":2}]}
+      ]
+    },
+    "VGAInput": {
+      "next": ["InputVga"],
+      "values": [
+        {"name":"VGA 1"},
+        {"name":"VGA 2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 60000,
+    "pressMinRepeats": 1
+  }
 }

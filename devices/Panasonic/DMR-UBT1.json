@@ -2,6 +2,31 @@
   "codeset": "codesets/c6/c6c64ef4446f2cd5.json",
   "deviceType": 34,
   "globalDeviceId": 402615,
+  "inputs": {
+    "list": [
+      {"name":"HDD","ports":["Streaming"]},
+      {"name":"Disc","ports":["Streaming"]},
+      {"name":"SD","ports":["SD-Card"]},
+      {"name":"USB","ports":["USB"]}
+    ],
+    "next": ["DriveSelect"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-UBT1"
+  "model": "DMR-UBT1",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

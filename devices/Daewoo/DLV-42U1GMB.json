@@ -2,6 +2,69 @@
   "codeset": "codesets/33/3302eff773c0c51b.json",
   "deviceType": 1,
   "globalDeviceId": 149236,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DTV/ATV"},{"set":"DTV/ATVInput","to":"ATV"}],"name":"ATV"},
+      {"commands":[{"set":"InputType","to":"DTV/ATV"},{"set":"DTV/ATVInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"AV/COMP/MMP"},{"set":"AV/COMP/MMPInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"AV/COMP/MMP"},{"set":"AV/COMP/MMPInput","to":"COMP1"}],"name":"COMP1"},
+      {"commands":[{"set":"InputType","to":"AV/COMP/MMP"},{"set":"AV/COMP/MMPInput","to":"COMP2"}],"name":"COMP2"},
+      {"commands":[{"set":"InputType","to":"AV/COMP/MMP"},{"set":"AV/COMP/MMPInput","to":"MMP"}],"name":"MMP"},
+      {"commands":[{"set":"InputType","to":"HDMI/PC"},{"set":"HDMI/PCInput","to":"HDMI1"}],"name":"HDMI1"},
+      {"commands":[{"set":"InputType","to":"HDMI/PC"},{"set":"HDMI/PCInput","to":"HDMI2"}],"name":"HDMI2"},
+      {"commands":[{"set":"InputType","to":"HDMI/PC"},{"set":"HDMI/PCInput","to":"HDMI3"}],"name":"HDMI3"},
+      {"commands":[{"set":"InputType","to":"HDMI/PC"},{"set":"HDMI/PCInput","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Daewoo",
-  "model": "DLV-42U1GMB"
+  "model": "DLV-42U1GMB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AV/COMP/MMPInput": {
+      "next": ["InputAV/COMP/MMP"],
+      "values": [
+        {"name":"Video"},
+        {"name":"COMP1"},
+        {"name":"COMP2"},
+        {"name":"MMP"}
+      ]
+    },
+    "DTV/ATVInput": {
+      "next": ["InputDTV/ATV"],
+      "values": [
+        {"name":"ATV"},
+        {"name":"DTV"}
+      ]
+    },
+    "HDMI/PCInput": {
+      "next": ["InputHDMI/PC"],
+      "values": [
+        {"name":"HDMI1"},
+        {"name":"HDMI2"},
+        {"name":"HDMI3"},
+        {"name":"PC"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DTV/ATV","select":[{"commands":["InputDTV/ATV"],"setType":2}]},
+        {"name":"AV/COMP/MMP","select":[{"commands":["InputAV/COMP/MMP"],"setType":2}]},
+        {"name":"HDMI/PC","select":[{"commands":["InputHDMI/PC"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

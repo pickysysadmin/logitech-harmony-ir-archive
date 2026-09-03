@@ -2,6 +2,38 @@
   "codeset": "codesets/8d/8dba09308eb1a9db.json",
   "deviceType": 7,
   "globalDeviceId": 18930,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video 1"},
+      {"commands":["InputS-Video"],"name":"S-Video 1"},
+      {"commands":["InputA"],"name":"Input-A"},
+      {"commands":["InputVideo2"],"name":"Video 2"},
+      {"commands":["InputS-Video2"],"name":"S-Video 2"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputComponent","InputNext"],"name":"Digital"},
+      {"commands":["InputComponent","InputNext","InputNext"],"name":"MS"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "VPL-20"
+  "model": "VPL-20",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

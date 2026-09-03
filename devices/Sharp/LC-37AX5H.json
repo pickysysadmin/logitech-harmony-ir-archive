@@ -2,6 +2,38 @@
   "codeset": "codesets/18/1880bf534e517114.json",
   "deviceType": 1,
   "globalDeviceId": 115460,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"TV"},
+      {"commands":["InputExt1"],"name":"INPUT1"},
+      {"commands":["InputExt2"],"name":"INPUT2"},
+      {"commands":["InputExt3"],"name":"INPUT3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-37AX5H"
+  "model": "LC-37AX5H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4500,
+    "pressMinRepeats": 3
+  }
 }

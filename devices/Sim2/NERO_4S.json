@@ -2,6 +2,36 @@
   "codeset": "codesets/c9/c9501561f55a30f4.json",
   "deviceType": 7,
   "globalDeviceId": 494513,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["InputHdmi3"],"name":"HDMI3"},
+      {"commands":["InputDisplayPort"],"name":"DisplayPort"},
+      {"commands":["InputVga1"],"name":"VGA"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sim2",
-  "model": "NERO 4S"
+  "model": "NERO 4S",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

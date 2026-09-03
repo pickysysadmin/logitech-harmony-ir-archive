@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/08/08f760ea24a601e7.json",
   "deviceType": 1,
   "globalDeviceId": 40499,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Antenna/Cable"},{"set":"HD/SD","to":"HD"}],"name":"HD"},
+      {"commands":[{"set":"InputType","to":"Antenna/Cable"},{"set":"HD/SD","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Input 1"}],"name":"Input 1"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Input 2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Input 3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Input 4"}],"name":"Input 4"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"HDMI"}],"name":"HDMI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "HD61THW263YX1"
+  "model": "HD61THW263YX1",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "HD/SD": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"HD"},
+        {"name":"SD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VIDEO","select":[{"commands":["InputNext",{"set":"VIDEOInput","to":"Input 1"}],"setType":2}]},
+        {"name":"Antenna/Cable","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Ant"},
+        {"name":"Input 1"},
+        {"name":"Input 2"},
+        {"name":"Input 3"},
+        {"name":"Input 4"},
+        {"name":"HDMI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 4000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 16000,
+    "pressMinRepeats": 3
+  }
 }

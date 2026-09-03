@@ -2,6 +2,33 @@
   "codeset": "codesets/5b/5bba09c49b6e1421.json",
   "deviceType": 22,
   "globalDeviceId": 119390,
+  "inputs": {
+    "list": [
+      {"name":"CD/DVD"},
+      {"name":"Radio"},
+      {"name":"Aux"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Mustek",
-  "model": "DVD-HT713"
+  "model": "DVD-HT713",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"CD/DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

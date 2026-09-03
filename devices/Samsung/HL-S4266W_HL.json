@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/50/506d3365b4d1bf86.json",
   "deviceType": 1,
   "globalDeviceId": 153264,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenna"],"name":"TV"},
+      {"commands":["InputVideo"],"name":"AV 1"},
+      {"commands":["InputVideo","InputNext"],"name":"AV 2"},
+      {"commands":["InputVideo","InputNext","InputNext"],"name":"AV 3"},
+      {"commands":["InputSVideo"],"name":"S Vid 1"},
+      {"commands":["InputSVideo","InputNext"],"name":"S Vid 2"},
+      {"commands":["InputComponent 2"],"name":"Comp 1"},
+      {"commands":["InputComponent 1"],"name":"Comp 2"},
+      {"commands":["InputRGB"],"name":"PC"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi1","InputNext"],"name":"HDMI 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "HL-S4266W/HL"
+  "model": "HL-S4266W/HL",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

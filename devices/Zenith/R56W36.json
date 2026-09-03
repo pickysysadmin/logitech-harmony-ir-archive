@@ -1,7 +1,62 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/e1/e1cf59d13c6d5673.json",
   "deviceType": 1,
   "globalDeviceId": 19016,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoMode","to":"AntMode"}],"name":"AntennaCable"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoMode","to":"VideoMode1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoMode","to":"VideoMode2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoMode","to":"VideoMode3"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"CompType"},{"set":"CompMode","to":"CompMode1"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"CompType"},{"set":"CompMode","to":"CompMode2"}],"name":"Component 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Zenith",
-  "model": "R56W36"
+  "model": "R56W36",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CompMode": {
+      "next": ["InputRgb"],
+      "values": [
+        {"name":"CompMode1"},
+        {"name":"CompMode2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VideoType","select":[{"commands":["TvVideo"],"setType":2}]},
+        {"name":"CompType","select":[{"commands":["InputRgb"],"setType":2}]}
+      ]
+    },
+    "VideoMode": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"AntMode"},
+        {"name":"VideoMode1"},
+        {"name":"VideoMode2"},
+        {"name":"VideoMode3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

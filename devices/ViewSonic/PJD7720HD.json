@@ -2,6 +2,33 @@
   "codeset": "codesets/a8/a89dd5fbd9f2d417.json",
   "deviceType": 7,
   "globalDeviceId": 335192,
+  "inputs": {
+    "list": [
+      {"name":"HDMI"},
+      {"name":"HDMI/MHL"}
+    ],
+    "next": ["InputHdmi"],
+    "type": 2
+  },
   "manufacturer": "ViewSonic",
-  "model": "PJD7720HD"
+  "model": "PJD7720HD",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

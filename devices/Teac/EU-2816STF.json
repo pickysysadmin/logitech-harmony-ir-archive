@@ -2,6 +2,50 @@
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 164002,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"EXT-1"}],"name":"EXT-1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"YCbCr"}],"name":"YCbCr"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"F-AV"}],"name":"F-AV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Teac",
-  "model": "EU-2816STF"
+  "model": "EU-2816STF",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"EXT-1"},
+        {"name":"RGB"},
+        {"name":"YCbCr"},
+        {"name":"F-AV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputNext",{"set":"AVInput","to":"EXT-1"}],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 3000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,52 @@
   "codeset": "codesets/45/45a6d7ba6f48a019.json",
   "deviceType": 22,
   "globalDeviceId": 34330,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleInput","to":"V2/CDR PC"}],"name":"V2/CDR PC"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleInput","to":"TV/Line"}],"name":"TV/Line"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleInput","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Cycle"},{"set":"CycleInput","to":"AM"}],"name":"AM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Onkyo",
-  "model": "LS-V955"
+  "model": "LS-V955",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "CycleInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"V2/CDR PC"},
+        {"name":"TV/Line"},
+        {"name":"Tape"},
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Cycle","select":[{"commands":["InputNext",{"set":"CycleInput","to":"Video 1"}],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["Play"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

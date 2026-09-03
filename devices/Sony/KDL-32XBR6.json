@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/1a/1a540e298acd75b3.json",
   "deviceType": 1,
   "globalDeviceId": 158168,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner","ports":["Antenna"]},
+      {"commands":["InputVideo1"],"name":"Video 1","ports":["Composite","S-Video"]},
+      {"commands":["InputVideo2"],"name":"Video 2","ports":["Composite","S-Video"]},
+      {"commands":["InputVideo3"],"name":"Video 3","ports":["Composite"]},
+      {"commands":["InputVideo4"],"name":"Component 1","ports":["Component"]},
+      {"commands":["InputVideo5"],"name":"Component 2","ports":["Component"]},
+      {"commands":["InputVideo6"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["InputVideo7"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["InputVideo8"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["InputVideo9"],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":["InputVideo9","InputNext","InputNext"],"name":"PC","ports":["PC"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "KDL-32XBR6"
+  "model": "KDL-32XBR6",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

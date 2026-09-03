@@ -2,6 +2,33 @@
   "codeset": "codesets/3c/3c89c390e5e7bfc1.json",
   "deviceType": 22,
   "globalDeviceId": 127158,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd","InputNext"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputTuner"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputVideo"],"name":"Video 1","ports":["Composite","Coaxial","S-Video","Optical"]},
+      {"commands":["InputVideo2"],"name":"Video 2","ports":["Composite","Coaxial","S-Video"]},
+      {"commands":["InputTv"],"name":"TV","ports":["Composite","Optical"]},
+      {"commands":["InputTv","InputNext"],"name":"Audio","ports":["Composite"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "DAV-X1V"
+  "model": "DAV-X1V",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

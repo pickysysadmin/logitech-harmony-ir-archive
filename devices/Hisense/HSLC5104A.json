@@ -1,7 +1,51 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/06/062bfd9c3134326c.json",
   "deviceType": 1,
   "globalDeviceId": 147100,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"YPbPr"}],"name":"YPbPr"},
+      {"commands":[{"set":"InputType","to":"VGA"}],"name":"VGA"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"VIDEO"}],"name":"VIDEO"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"S-VIDEO"}],"name":"S-VIDEO"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hisense",
-  "model": "HSLC5104A"
+  "model": "HSLC5104A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"YPbPr","select":[{"commands":["InputHdtv"],"setType":2}]},
+        {"name":"VGA","select":[{"commands":["InputVGA"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"TV"},
+        {"name":"VIDEO"},
+        {"name":"S-VIDEO"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

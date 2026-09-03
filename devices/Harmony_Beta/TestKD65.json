@@ -2,6 +2,37 @@
   "codeset": "codesets/66/662f04464dcd449f.json",
   "deviceType": 1,
   "globalDeviceId": 493425,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"Streaming Channels"},
+      {"commands":["InputHdmi1",{"delayMs":1000},"InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4"],"name":"HDMI 4"},
+      {"commands":["InputVideo1"],"name":"AV 1"},
+      {"commands":["InputVideo2"],"name":"AV 2/Component"},
+      {"commands":["InputVideo2","InputNext",{"delayMs":500},"DirectionDown","Select"],"name":"Screen Mirroring"},
+      {"commands":["Back",{"delayMs":500},"Home",{"delayMs":2000}],"name":"Android TV"},
+      {"commands":["GooglePlay"],"name":"GooglePlay"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Harmony Beta",
-  "model": "TestKD65"
+  "model": "TestKD65",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

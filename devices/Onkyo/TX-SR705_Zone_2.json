@@ -2,6 +2,38 @@
   "codeset": "codesets/ec/eca156c0b21f5b47.json",
   "deviceType": 5,
   "globalDeviceId": 168298,
+  "inputs": {
+    "list": [
+      {"commands":["InputDVD"],"name":"DVD"},
+      {"commands":["InputVcr/Dvr"],"name":"VCR/DVR"},
+      {"commands":["InputCable/Sat"],"name":"Cable/Sat"},
+      {"commands":["InputGame/Tv"],"name":"Game/TV"},
+      {"commands":["InputAux"],"name":"AUX"},
+      {"commands":["InputMultiCh"],"name":"Multi-Ch"},
+      {"commands":["InputTape"],"name":"Tape"},
+      {"commands":["InputTuner",{"delayMs":500},"InputAM"],"name":"AM"},
+      {"commands":["InputTuner",{"delayMs":500},"InputFM"],"name":"FM"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputPhono"],"name":"Phono"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Onkyo",
-  "model": "TX-SR705 (Zone 2)"
+  "model": "TX-SR705 (Zone 2)",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

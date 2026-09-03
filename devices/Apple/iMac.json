@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/65/6503da68dc1563a8.json",
   "deviceType": 35,
   "globalDeviceId": 150046,
+  "inputs": {
+    "list": [
+      {"name":"FrontRow"}
+    ],
+    "next": ["NextTrack"],
+    "type": 6
+  },
   "manufacturer": "Apple",
-  "model": "iMac"
+  "model": "iMac",
+  "power": {
+    "off": [
+      {"command":"Pause","durationMs":5000}
+    ],
+    "on": ["Play"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 1
+  }
 }

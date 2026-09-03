@@ -2,6 +2,47 @@
   "codeset": "codesets/e9/e9610c354892f2e2.json",
   "deviceType": 22,
   "globalDeviceId": 35628,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"AuxType"},{"set":"AuxValue","to":"Aux1"}],"name":"Aux 1"},
+      {"commands":[{"set":"InputType","to":"AuxType"},{"set":"AuxValue","to":"Aux2"}],"name":"Aux 2"},
+      {"commands":[{"set":"InputType","to":"AuxType"},{"set":"AuxValue","to":"Digital"}],"name":"Dig in"},
+      {"commands":[{"set":"InputType","to":"DvdType"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"TunerType"}],"name":"Tuner"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HT-DB600TH"
+  "model": "HT-DB600TH",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxValue": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux1"},
+        {"name":"Aux2"},
+        {"name":"Digital"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"AuxType","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"DVDType","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"TunerType","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 0,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

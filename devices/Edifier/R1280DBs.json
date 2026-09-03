@@ -2,6 +2,54 @@
   "codeset": "codesets/db/dbb9b6bb3b36bc28.json",
   "deviceType": 19,
   "globalDeviceId": 497769,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Opt/Coax"},{"set":"Opt/CoaxInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Opt/Coax"},{"set":"Opt/CoaxInput","to":"Coaxial"}],"name":"Coaxial"},
+      {"commands":[{"set":"InputType","to":"Line1/2"},{"set":"Line1/2Input","to":"Line1"}],"name":"Line1"},
+      {"commands":[{"set":"InputType","to":"Line1/2"},{"set":"Line1/2Input","to":"Line2"}],"name":"Line2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Edifier",
-  "model": "R1280DBs"
+  "model": "R1280DBs",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":1}]},
+        {"name":"Opt/Coax","select":[{"commands":["InputOpt/Coax"],"setType":1}]},
+        {"name":"Line1/2","select":[{"commands":["InputLine1/2"],"setType":1}]}
+      ]
+    },
+    "Line1/2Input": {
+      "next": ["InputLine1/2"],
+      "values": [
+        {"name":"Line1"},
+        {"name":"Line2"}
+      ]
+    },
+    "Opt/CoaxInput": {
+      "next": ["InputOpt/Coax"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"Coaxial"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

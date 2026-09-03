@@ -1,7 +1,73 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/e2/e2d1e00ac778f999.json",
   "deviceType": 1,
   "globalDeviceId": 102104,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AV/SV"}],"name":"AV/SV"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC VGA"}],"name":"PC VGA"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"PC HDMI"}],"name":"PC HDMI"},
+      {"commands":[{"set":"InputType","to":"Scart1"},{"set":"Scart1Input","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Scart1"},{"set":"Scart1Input","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Scart1"},{"set":"Scart1Input","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"Scart1"},{"set":"Scart1Input","to":"Auto"}],"name":"Auto"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Medion",
-  "model": "MD-30141"
+  "model": "MD-30141",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"AV/SV","select":[{"commands":["InputAV/SV"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC"],"setType":2}]},
+        {"name":"Scart1","select":[{"commands":["InputScart1"],"setType":2}]},
+        {"name":"Scart2","select":[{"commands":["InputScart2"],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"PC VGA"},
+        {"name":"PC HDMI"}
+      ]
+    },
+    "Scart1Input": {
+      "next": ["InputScart1"],
+      "values": [
+        {"name":"Video"},
+        {"name":"S-Video"},
+        {"name":"RGB"},
+        {"name":"Auto"}
+      ]
+    },
+    "Scart2Input": {
+      "next": ["InputScart2"],
+      "values": [
+        {"name":"Video"},
+        {"name":"S-Video"},
+        {"name":"Auto"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

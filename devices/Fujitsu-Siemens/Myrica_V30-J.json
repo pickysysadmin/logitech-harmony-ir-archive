@@ -2,6 +2,43 @@
   "codeset": "codesets/bd/bdac11cec3c27971.json",
   "deviceType": 1,
   "globalDeviceId": 131475,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"AV"},
+      {"name":"S-Video"},
+      {"name":"Scart1"},
+      {"name":"Scart2"},
+      {"name":"Component"},
+      {"name":"VGA"},
+      {"name":"DVI"}
+    ],
+    "next": ["InputAV"],
+    "type": 2
+  },
   "manufacturer": "Fujitsu-Siemens",
-  "model": "Myrica V30-J"
+  "model": "Myrica V30-J",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Text"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

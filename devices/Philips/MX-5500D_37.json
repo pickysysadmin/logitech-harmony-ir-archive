@@ -2,6 +2,55 @@
   "codeset": "codesets/f9/f96583be1bb2c99b.json",
   "deviceType": 22,
   "globalDeviceId": 21272,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tv/Av"}],"name":"Tv/Av"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscInput","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Disc"},{"set":"DiscInput","to":"MediaSlot"}],"name":"MediaSlot"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"DI"}],"name":"DI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "MX-5500D/37"
+  "model": "MX-5500D/37",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX"},
+        {"name":"DI"}
+      ]
+    },
+    "DiscInput": {
+      "next": ["InputDisc"],
+      "values": [
+        {"name":"Disc"},
+        {"name":"MediaSlot"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tv/Av","select":[{"commands":["InputTv/Av"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,40 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 136342,
+  "inputs": {
+    "list": [
+      {"name":"AV1"}
+    ],
+    "next": ["TvVideo"],
+    "type": 6
+  },
   "manufacturer": "Philips",
-  "model": "14PT-1353/24"
+  "model": "14PT-1353/24",
+  "power": {
+    "off": ["PowerOff"],
+    "on": [
+      {"command":"ChannelUp","durationMs":1000}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["Teletext"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 4,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 3
+  }
 }

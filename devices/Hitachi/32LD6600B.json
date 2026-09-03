@@ -2,6 +2,37 @@
   "codeset": "codesets/ab/abc52c03e0752e43.json",
   "deviceType": 1,
   "globalDeviceId": 105733,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"EXT-1"},
+      {"name":"EXT-2"},
+      {"name":"EXT-3"},
+      {"name":"EXT-4"},
+      {"name":"EXT-4S"},
+      {"name":"EXT-5"},
+      {"name":"PC"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Hitachi",
-  "model": "32LD6600B"
+  "model": "32LD6600B",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

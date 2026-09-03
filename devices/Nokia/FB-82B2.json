@@ -2,6 +2,39 @@
   "codeset": "codesets/79/7973bb74fa53072f.json",
   "deviceType": 1,
   "globalDeviceId": 134885,
+  "inputs": {
+    "list": [
+      {"name":"Video1"},
+      {"name":"dvd 1"},
+      {"name":"dvd 2"},
+      {"name":"teletext"}
+    ],
+    "next": ["0"],
+    "type": 2
+  },
   "manufacturer": "Nokia",
-  "model": "FB-82B2"
+  "model": "FB-82B2",
+  "power": {
+    "off": ["PowerOff"],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["TeleText"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

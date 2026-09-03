@@ -2,6 +2,45 @@
   "codeset": "codesets/56/5664ef27252e2366.json",
   "deviceType": 21,
   "globalDeviceId": 14547,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"Input","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"Input","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"Input","to":"Radio"},{"set":"Radio","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"Input","to":"Radio"},{"set":"Radio","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "HCD-NE3"
+  "model": "HCD-NE3",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Input": {
+      "values": [
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "Radio": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,66 @@
   "codeset": "codesets/e6/e6fa02bf9b45fc95.json",
   "deviceType": 5,
   "globalDeviceId": 493394,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"InputDigital"},{"set":"InputDigitalInput","to":"Coaxial"}],"name":"Coaxial","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"InputDigital"},{"set":"InputDigitalInput","to":"Optical"}],"name":"Optical","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"InputDigital"},{"set":"InputDigitalInput","to":"Digital1"}],"name":"Digital1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"InputDigital"},{"set":"InputDigitalInput","to":"Digital2"}],"name":"Digital2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"InputDigital"},{"set":"InputDigitalInput","to":"Digital3"}],"name":"Digital3","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"InputDigital"},{"set":"InputDigitalInput","to":"USB"}],"name":"USB","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"InputAnalog"},{"set":"InputAnalogInput","to":"BT"}],"name":"BT","ports":["Pairing Input"]},
+      {"commands":[{"set":"InputType","to":"InputAnalog"},{"set":"InputAnalogInput","to":"DVD"}],"name":"DVD","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"InputAnalog"},{"set":"InputAnalogInput","to":"CD"}],"name":"CD","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"InputAnalog"},{"set":"InputAnalogInput","to":"AUX"}],"name":"AUX","ports":["Aux"]},
+      {"commands":[{"set":"InputType","to":"InputAnalog"},{"set":"InputAnalogInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pyle",
-  "model": "PT694BT"
+  "model": "PT694BT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputAnalogInput": {
+      "next": ["InputAnalog"],
+      "values": [
+        {"name":"BT"},
+        {"name":"DVD"},
+        {"name":"CD"},
+        {"name":"AUX"},
+        {"name":"FM"}
+      ]
+    },
+    "InputDigitalInput": {
+      "next": ["InputDigital"],
+      "values": [
+        {"name":"Coaxial"},
+        {"name":"Optical"},
+        {"name":"Digital1"},
+        {"name":"Digital2"},
+        {"name":"Digital3"},
+        {"name":"USB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"InputDigital","select":[{"commands":["InputDigital"],"setType":2}]},
+        {"name":"InputAnalog","select":[{"commands":["InputAnalog"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

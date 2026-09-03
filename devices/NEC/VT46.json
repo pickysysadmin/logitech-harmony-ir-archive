@@ -2,6 +2,32 @@
   "codeset": "codesets/66/664b615150a0e4b9.json",
   "deviceType": 7,
   "globalDeviceId": 18406,
+  "inputs": {
+    "list": [
+      {"commands":["InputRgb1"],"name":"RGB"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputSVideo"],"name":"S-Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "NEC",
-  "model": "VT46"
+  "model": "VT46",
+  "power": {
+    "off": ["PowerOff","PowerOff"],
+    "on": [
+      {"command":"PowerOn","durationMs":1500}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 1
+  }
 }

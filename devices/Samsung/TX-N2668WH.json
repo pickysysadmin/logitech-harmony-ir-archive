@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/7d/7d1b900fade05ce8.json",
   "deviceType": 1,
   "globalDeviceId": 38848,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoMode","to":"Tunermode"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoMode","to":"Video1mode"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoMode","to":"Video2mode"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoMode","to":"Video3mode"}],"name":"Video 3"},
+      {"commands":[{"set":"InputType","to":"VideoType"},{"set":"VideoMode","to":"SVideomode"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"CompType"},{"set":"CompMode","to":"Comp1mode"}],"name":"Component 1"},
+      {"commands":[{"set":"InputType","to":"CompType"},{"set":"CompMode","to":"Comp2mode"}],"name":"Component 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "TX-N2668WH"
+  "model": "TX-N2668WH",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CompMode": {
+      "next": ["InputComponent1"],
+      "values": [
+        {"name":"Comp1mode"},
+        {"name":"Comp2mode"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VideoType","select":[{"commands":[{"set":"VideoMode","to":"Tunermode"},"TvVideo"],"setType":2}]},
+        {"name":"CompType","select":[{"commands":[{"set":"CompMode","to":"Comp1mode"},"InputComponent1"],"setType":2}]}
+      ]
+    },
+    "VideoMode": {
+      "next": ["TvVideo"],
+      "values": [
+        {"name":"Tunermode"},
+        {"name":"Video1mode"},
+        {"name":"Video2mode"},
+        {"name":"Video3mode"},
+        {"name":"SVideomode"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

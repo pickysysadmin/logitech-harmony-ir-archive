@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["Select"]
+  },
   "codeset": "codesets/fd/fd194d5cbcf99052.json",
   "deviceType": 2,
   "globalDeviceId": 170767,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext"],"name":"Antenna"},
+      {"commands":["InputLine1"],"name":"Video 1 (Rear)"},
+      {"commands":["InputLine2"],"name":"Video 2 (Front)"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "HR-S4600U"
+  "model": "HR-S4600U",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

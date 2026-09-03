@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/c0/c08fdc61e8eaab82.json",
   "deviceType": 1,
   "globalDeviceId": 99485,
+  "inputs": {
+    "list": [
+      {"name":"Eingang"}
+    ],
+    "next": ["InputNext"],
+    "type": 6
+  },
   "manufacturer": "Thomson",
-  "model": "42JH68"
+  "model": "42JH68",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["1"],
+    "type": "discrete"
+  },
+  "states": {
+    "Teletext": {
+      "next": ["TeletextOn"],
+      "values": [
+        {"name":"Off"},
+        {"name":"On"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

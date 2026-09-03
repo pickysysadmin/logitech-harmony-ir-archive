@@ -2,6 +2,62 @@
   "codeset": "codesets/11/11551795072b7fa9.json",
   "deviceType": 22,
   "globalDeviceId": 217532,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc/SD"},{"set":"Disc/SDInput","to":"BD/DVD"}],"name":"BD/DVD"},
+      {"commands":[{"set":"InputType","to":"Disc/SD"},{"set":"Disc/SDInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In/iPod"},{"set":"Radio/Ext-In/iPodInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In/iPod"},{"set":"Radio/Ext-In/iPodInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In/iPod"},{"set":"Radio/Ext-In/iPodInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In/iPod"},{"set":"Radio/Ext-In/iPodInput","to":"ARC"}],"name":"ARC"},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In/iPod"},{"set":"Radio/Ext-In/iPodInput","to":"Digital In"}],"name":"Digital In"},
+      {"commands":[{"set":"InputType","to":"Home"}],"name":"Home"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-BTT268"
+  "model": "SC-BTT268",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Home"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Disc/SDInput": {
+      "next": ["InputDisc/Sd"],
+      "values": [
+        {"name":"BD/DVD"},
+        {"name":"SD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc/SD","select":[{"commands":["InputDisc/Sd"],"setType":2}]},
+        {"name":"Radio/Ext-In/iPod","select":[{"commands":["InputRadio/Ext-In/iPod"],"setType":2}]},
+        {"name":"Home","select":[{"commands":["Home"],"setType":2}]}
+      ]
+    },
+    "Radio/Ext-In/iPodInput": {
+      "next": ["InputRadio/Ext-In/iPod"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"FM"},
+        {"name":"AUX"},
+        {"name":"ARC"},
+        {"name":"Digital In"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 3
+  }
 }

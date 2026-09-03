@@ -2,6 +2,59 @@
   "codeset": "codesets/f8/f84476b9df458a0a.json",
   "deviceType": 34,
   "globalDeviceId": 165850,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDD"}],"name":"HDD"},
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"AnalogInputs"},{"set":"AnalogInputsInput","to":"Scart2"}],"name":"Scart2"},
+      {"commands":[{"set":"InputType","to":"AnalogInputs"},{"set":"AnalogInputsInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AnalogInputs"},{"set":"AnalogInputsInput","to":"FrontVideo"}],"name":"FrontVideo"},
+      {"commands":[{"set":"InputType","to":"AnalogInputs"},{"set":"AnalogInputsInput","to":"FrontS-Video"}],"name":"FrontS-Video"},
+      {"commands":[{"set":"InputType","to":"DigitalInputs"},{"set":"DigitalInputsInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"DigitalInputs"},{"set":"DigitalInputsInput","to":"DV"}],"name":"DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Packard Bell",
-  "model": "Easy HDD Recorder 80"
+  "model": "Easy HDD Recorder 80",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AnalogInputsInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Scart2"},
+        {"name":"Tuner"},
+        {"name":"FrontVideo"},
+        {"name":"FrontS-Video"}
+      ]
+    },
+    "DigitalInputsInput": {
+      "next": ["InputDigital"],
+      "values": [
+        {"name":"USB"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDD","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"AnalogInputs","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"DigitalInputs","select":[{"commands":["InputDigital"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

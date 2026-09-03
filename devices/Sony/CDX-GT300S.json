@@ -1,7 +1,65 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/9b/9b89cb73a1e096e8.json",
   "deviceType": 32,
   "globalDeviceId": 122053,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AM/FMInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AM/FMInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"L1"}],"name":"L1"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"L2"}],"name":"L2"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Digital"}],"name":"Digital In"},
+      {"commands":[{"set":"InputType","to":"Digital"},{"set":"DigitalInput","to":"Opt"}],"name":"Opt"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sony",
-  "model": "CDX-GT300S"
+  "model": "CDX-GT300S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AM/FMInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "DigitalInput": {
+      "next": ["Input Select"],
+      "values": [
+        {"name":"L1"},
+        {"name":"L2"},
+        {"name":"Tuner"},
+        {"name":"Digital"},
+        {"name":"Opt"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"AM/FM","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Digital","select":[{"commands":["Input Select"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 800,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,55 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 114132,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"VIDEO1"}],"name":"VIDEO1"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"VIDEO2"}],"name":"VIDEO2"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"VIDEO3"}],"name":"VIDEO3"},
+      {"commands":[{"set":"InputType","to":"COMPONENT"},{"set":"COMPONENTInput","to":"COMPONENT1"}],"name":"COMPONENT1"},
+      {"commands":[{"set":"InputType","to":"COMPONENT"},{"set":"COMPONENTInput","to":"COMPONENT2"}],"name":"COMPONENT2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "AVIC-HD1BT"
+  "model": "AVIC-HD1BT",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "COMPONENTInput": {
+      "next": ["DVD/HDToggle"],
+      "values": [
+        {"name":"COMPONENT1"},
+        {"name":"COMPONENT2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"VIDEO","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"COMPONENT","select":[{"commands":["DVD/HDToggle"],"setType":2}]}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"VIDEO1"},
+        {"name":"VIDEO2"},
+        {"name":"VIDEO3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

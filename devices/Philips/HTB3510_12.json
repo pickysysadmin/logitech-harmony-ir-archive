@@ -2,6 +2,47 @@
   "codeset": "codesets/3f/3f1ae54a97544ff2.json",
   "deviceType": 22,
   "globalDeviceId": 255858,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"OpticalIn"}],"name":"OpticalIn"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"CoaxialIn"}],"name":"CoaxialIn"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AUX"}],"name":"AUX"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTB3510/12"
+  "model": "HTB3510/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Disc","select":[{"commands":["InputDisc"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["InputSource"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["InputSource"],
+      "values": [
+        {"name":"OpticalIn"},
+        {"name":"CoaxialIn"},
+        {"name":"AUX"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

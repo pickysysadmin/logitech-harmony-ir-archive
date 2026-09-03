@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["PowerOff"]
+  },
   "codeset": "codesets/57/57888785e581bcd9.json",
   "deviceType": 1,
   "globalDeviceId": 302656,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv","Exit","Exit",{"delayMs":2000},"InputTv"],"name":"TV"},
+      {"commands":["InputHdmi1","Exit","Exit",{"delayMs":2000},"InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2","Exit","Exit",{"delayMs":2000},"InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3","Exit","Exit",{"delayMs":2000},"InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputAv","Exit","Exit",{"delayMs":2000},"InputAv"],"name":"AV"},
+      {"commands":["InputComponent","Exit","Exit",{"delayMs":2000},"InputComponent"],"name":"Component"},
+      {"commands":["Exit",{"delayMs":2000},"Home","DirectionRight","DirectionRight","DirectionRight","DirectionRight"],"name":"SmartHub"},
+      {"commands":["Ambient"],"name":"Ambient"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "UE55K5670SS"
+  "model": "UE55K5670SS",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

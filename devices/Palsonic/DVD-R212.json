@@ -2,6 +2,51 @@
   "codeset": "codesets/7e/7e0f33d4c497a082.json",
   "deviceType": 34,
   "globalDeviceId": 163886,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DV"}],"name":"DV"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"FrontCVBS"}],"name":"FrontCVBS"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"RearCVBS"}],"name":"RearCVBS"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"RearS-Video"}],"name":"RearS-Video"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"DVDPlay"}],"name":"DVDPlay"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Palsonic",
-  "model": "DVD-R212"
+  "model": "DVD-R212",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"DV","select":[{"commands":["InputDv"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"Source","select":[{"commands":["InputAV"],"setType":2}]}
+      ]
+    },
+    "SourceInput": {
+      "next": ["InputAV"],
+      "values": [
+        {"name":"TV"},
+        {"name":"FrontCVBS"},
+        {"name":"RearCVBS"},
+        {"name":"RearS-Video"},
+        {"name":"DV"},
+        {"name":"DVDPlay"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

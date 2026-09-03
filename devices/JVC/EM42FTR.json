@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/80/8086f7a2f98937f7.json",
   "deviceType": 1,
   "globalDeviceId": 260727,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputComponent",{"delayMs":1500},"InputNext",{"delayMs":500},"DirectionDown","OK"],"name":"HDMI 1"},
+      {"commands":["InputComponent",{"delayMs":1500},"InputNext",{"delayMs":500},"DirectionDown","DirectionDown","OK"],"name":"HDMI 2"},
+      {"commands":["InputComponent",{"delayMs":1500},"InputNext",{"delayMs":500},"DirectionDown","DirectionDown","DirectionDown","OK"],"name":"HDMI/MHL"},
+      {"commands":["InputMusic"],"name":"Music"},
+      {"commands":["InputMusic"],"name":"Media"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "EM42FTR"
+  "model": "EM42FTR",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

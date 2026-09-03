@@ -2,6 +2,35 @@
   "codeset": "codesets/14/146005046124cb12.json",
   "deviceType": 7,
   "globalDeviceId": 277128,
+  "inputs": {
+    "list": [
+      {"name":"VGA"},
+      {"name":"S-Video"},
+      {"name":"Video"}
+    ],
+    "next": ["Source"],
+    "type": 2
+  },
   "manufacturer": "Acer",
-  "model": "X1160PZ"
+  "model": "X1160PZ",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

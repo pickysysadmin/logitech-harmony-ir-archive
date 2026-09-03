@@ -2,6 +2,63 @@
   "codeset": "codesets/8a/8a910b7425ada87d.json",
   "deviceType": 1,
   "globalDeviceId": 50804,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Analog"}],"name":"Analog"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video1"}],"name":"S-Video1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video2"}],"name":"S-Video2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"YCbCr"}],"name":"YCbCr"},
+      {"commands":[{"set":"InputType","to":"Graph"},{"set":"GraphInput","to":"Digital"}],"name":"Digital"},
+      {"commands":[{"set":"InputType","to":"Graph"},{"set":"GraphInput","to":"D-SUB"}],"name":"D-SUB"},
+      {"commands":[{"set":"InputType","to":"Graph"},{"set":"GraphInput","to":"DVI"}],"name":"DVI"},
+      {"commands":[{"set":"InputType","to":"Graph"},{"set":"GraphInput","to":"YPbPr"}],"name":"YPbPr"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Optima",
-  "model": "PPMA50HD10"
+  "model": "PPMA50HD10",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "GraphInput": {
+      "next": ["InputGraphic"],
+      "values": [
+        {"name":"Digital"},
+        {"name":"D-SUB"},
+        {"name":"DVI"},
+        {"name":"YPbPr"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["InputVideo",{"set":"VideoInput","to":"Analog"}],"setType":2}]},
+        {"name":"Graph","select":[{"commands":["InputGraphic",{"set":"GraphInput","to":"D-SUB"}],"setType":2}]}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"S-Video1"},
+        {"name":"AV1"},
+        {"name":"S-Video2"},
+        {"name":"AV2"},
+        {"name":"YCbCr"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,37 @@
   "codeset": "codesets/8e/8e78d14546112616.json",
   "deviceType": 7,
   "globalDeviceId": 435936,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdBaseT"],"name":"HDBaseT"},
+      {"commands":["InputComputer"],"name":"Computer"},
+      {"commands":["InputBnc"],"name":"BNC"},
+      {"commands":["InputLan"],"name":"LAN"},
+      {"commands":["InputBnc",{"delayMs":500},"Source",{"delayMs":500},"DirectionDown","Enter"],"name":"Mirroring"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "Powerlite 5535U"
+  "model": "Powerlite 5535U",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

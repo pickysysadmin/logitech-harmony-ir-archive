@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 91017,
+  "inputs": {
+    "list": [
+      {"name":"Ext 1"},
+      {"name":"Ext 2"},
+      {"name":"Ext 3"},
+      {"name":"Front-AV"},
+      {"name":"S-VHS"},
+      {"name":"VCR"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Medion",
-  "model": "MD-7098 VTS-A"
+  "model": "MD-7098 VTS-A",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Ext 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,60 @@
   "codeset": "codesets/b3/b3c3ec101b829018.json",
   "deviceType": 22,
   "globalDeviceId": 212064,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"BT Audio"}],"name":"BT Audio"},
+      {"commands":[{"set":"InputType","to":"Input/Tuner"},{"set":"Input/TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Input/Tuner"},{"set":"Input/TunerInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"Input/Tuner"},{"set":"Input/TunerInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Input/Tuner"},{"set":"Input/TunerInput","to":"Portable"}],"name":"Portable"},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OpticalInput","to":"Optical1"}],"name":"Optical1"},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OpticalInput","to":"Optical2"}],"name":"Optical2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "BCS-707"
+  "model": "BCS-707",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Input/TunerInput": {
+      "next": ["InputNext"],
+      "start": ["InputNext"],
+      "values": [
+        {"name":"FM"},
+        {"name":"iPod"},
+        {"name":"Aux"},
+        {"name":"Portable"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["Play"],"setType":2}]},
+        {"name":"BT Audio","select":[{"commands":["InputBtAudio"],"setType":2}]},
+        {"name":"Input/Tuner","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":2}]}
+      ]
+    },
+    "OpticalInput": {
+      "next": ["InputOptical"],
+      "values": [
+        {"name":"Optical1"},
+        {"name":"Optical2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

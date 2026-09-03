@@ -2,6 +2,55 @@
   "codeset": "codesets/59/59a2f17da405ed81.json",
   "deviceType": 37,
   "globalDeviceId": 94495,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"DVD"},
+      {"name":"AV 1"}
+    ],
+    "next": ["InputAV"],
+    "type": 2
+  },
   "manufacturer": "Audiovox",
-  "model": "D-1020"
+  "model": "D-1020",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AmFmInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"Am"},
+        {"name":"Fm"}
+      ]
+    },
+    "AvInput": {
+      "next": ["InputAV"],
+      "values": [
+        {"name":"Av1"},
+        {"name":"Av2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"AM/FM","select":[{"commands":["AmFmToggle"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAV"],"setType":2}]},
+        {"name":"Telephone","select":[{"commands":["InputTelephone"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

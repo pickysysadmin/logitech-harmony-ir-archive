@@ -1,7 +1,35 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/68/688d6c530e7c5b0a.json",
   "deviceType": 1,
   "globalDeviceId": 160285,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"Tv"},
+      {"commands":["InputComposite"],"name":"Composite"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputComponent","InputNext","DirectionDown","Select"],"name":"Vga"},
+      {"commands":["InputHdmi"],"name":"Hdmi"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Insignia",
-  "model": "NS-LCD22"
+  "model": "NS-LCD22",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,55 @@
   "codeset": "codesets/d9/d9a15bdfadb18519.json",
   "deviceType": 22,
   "globalDeviceId": 263592,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Home"}],"name":"Home"},
+      {"commands":[{"set":"InputType","to":"Radio"}],"name":"Radio"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Optical"}],"name":"Coaxial"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"HDMI ARC"}],"name":"HDMI ARC"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"Audio IN"}],"name":"Audio IN"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"SourceInput","to":"BT"}],"name":"BT"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "HTB6251D"
+  "model": "HTB6251D",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Disc"},
+        {"name":"Home"},
+        {"name":"Radio"},
+        {"name":"Source"}
+      ]
+    },
+    "SourceInput": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"Coaxial"},
+        {"name":"HDMI ARC"},
+        {"name":"AUX"},
+        {"name":"Audio IN"},
+        {"name":"BT"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

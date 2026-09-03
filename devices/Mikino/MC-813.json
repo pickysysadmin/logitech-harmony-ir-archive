@@ -2,6 +2,62 @@
   "codeset": "codesets/99/998875b820eb215d.json",
   "deviceType": 30,
   "globalDeviceId": 150704,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HDs"},{"set":"HDsInput","to":"HD1"}],"name":"HD1"},
+      {"commands":[{"set":"InputType","to":"HDs"},{"set":"HDsInput","to":"HD2"}],"name":"HD2"},
+      {"commands":[{"set":"InputType","to":"HDs"},{"set":"HDsInput","to":"HD3"}],"name":"HD3"},
+      {"commands":[{"set":"InputType","to":"HDs"},{"set":"HDsInput","to":"HD4"}],"name":"HD4"},
+      {"commands":[{"set":"InputType","to":"AVs"},{"set":"AVsInput","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AVs"},{"set":"AVsInput","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AVs"},{"set":"AVsInput","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AVs"},{"set":"AVsInput","to":"AV4"}],"name":"AV4"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Mikino",
-  "model": "MC-813"
+  "model": "MC-813",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVsInput": {
+      "next": ["AvRight"],
+      "previous": ["AvLeft"],
+      "values": [
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"AV4"}
+      ]
+    },
+    "HDsInput": {
+      "next": ["HdmiRight"],
+      "previous": ["HdmiLeft"],
+      "values": [
+        {"name":"HD1"},
+        {"name":"HD2"},
+        {"name":"HD3"},
+        {"name":"HD4"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"HDs","select":[{"commands":["HdmiRight"],"setType":2}]},
+        {"name":"AVs","select":[{"commands":["AvRight"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

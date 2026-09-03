@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "finish": ["OK"]
+  },
   "codeset": "codesets/9f/9fec5bb858c1dbde.json",
   "deviceType": 1,
   "globalDeviceId": 273873,
+  "inputs": {
+    "list": [
+      {"commands":[{"command":"Source","durationMs":1000},{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","OK"],"name":"Satellite"},
+      {"commands":[{"command":"Source","durationMs":1000},{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","DirectionDown","OK"],"name":"Antenna"},
+      {"commands":[{"command":"Source","durationMs":1000},{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","DirectionDown","DirectionDown","OK"],"name":"USB"},
+      {"commands":[{"command":"Source","durationMs":1000},{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","OK"],"name":"Network"},
+      {"commands":[{"command":"Source","durationMs":1000},{"delayMs":300},{"command":"DirectionUp","durationMs":2000},"DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","OK"],"name":"Recordings"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputHdmi4"],"name":"HDMI 4"},
+      {"commands":[{"command":"Source","durationMs":1000},{"delayMs":300},{"command":"DirectionDown","durationMs":2000},"DirectionUp","DirectionUp","OK"],"name":"YPbPr"},
+      {"commands":["InputScart"],"name":"Scart"},
+      {"commands":["Home"],"name":"Android TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "55PUS7180"
+  "model": "55PUS7180",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 17000,
+    "pressMinRepeats": 1
+  }
 }

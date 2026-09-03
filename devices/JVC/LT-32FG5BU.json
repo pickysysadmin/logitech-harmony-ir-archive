@@ -2,6 +2,33 @@
   "codeset": "codesets/00/009c91288f67ea01.json",
   "deviceType": 1,
   "globalDeviceId": 175467,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo 1"],"name":"EXT-1"},
+      {"commands":["InputVideo 2"],"name":"EXT-2"},
+      {"commands":["InputVideo 3"],"name":"EXT-3"},
+      {"commands":["InputVideo 4"],"name":"EXT-4"},
+      {"commands":["InputVideo 4",{"delayMs":3000},"InputNext"],"name":"EXT-5"},
+      {"commands":["InputVideo 4",{"delayMs":3000},"InputNext","InputNext"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-32FG5BU"
+  "model": "LT-32FG5BU",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

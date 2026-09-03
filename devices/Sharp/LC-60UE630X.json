@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/83/83b44895d97370b3.json",
   "deviceType": 1,
   "globalDeviceId": 480106,
+  "inputs": {
+    "list": [
+      {"commands":["Input",{"delayMs":500},"Enter"],"name":"TV","ports":["Antenna"]},
+      {"commands":["Input","DirectionDown","Enter"],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":["Input","DirectionDown","DirectionDown","Enter"],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":["Input","DirectionDown","DirectionDown","DirectionDown","Enter"],"name":"HDMI 3","ports":["HDMI"]},
+      {"commands":["Input","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Enter"],"name":"HDMI 4","ports":["HDMI"]},
+      {"commands":["Input","DirectionDown","DirectionDown","DirectionDown","DirectionDown","DirectionDown","Enter"],"name":"COMPONENT/VIDEO","ports":["Component","Composite"]},
+      {"commands":["Home"],"name":"Android TV","ports":["Streaming"]},
+      {"commands":["Netflix"],"name":"Netflix","ports":["Streaming"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-60UE630X"
+  "model": "LC-60UE630X",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerToggle"],
+    "onReset": [
+      {"set":"Input","to":"Input TV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 19000,
+    "pressMinRepeats": 3
+  }
 }

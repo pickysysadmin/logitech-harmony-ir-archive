@@ -2,6 +2,36 @@
   "codeset": "codesets/24/24febcc2f8b2cb69.json",
   "deviceType": 7,
   "globalDeviceId": 301877,
+  "inputs": {
+    "list": [
+      {"commands":["Source1"],"name":"Source 1"},
+      {"commands":["Source2"],"name":"Source 2"},
+      {"commands":["Source3"],"name":"Source 3"},
+      {"commands":["Source4"],"name":"Source 4"},
+      {"commands":["Source5"],"name":"Source 5"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Digital Projection",
-  "model": "M-Vision Cine 320 3D"
+  "model": "M-Vision Cine 320 3D",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

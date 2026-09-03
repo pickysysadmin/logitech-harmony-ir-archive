@@ -2,6 +2,67 @@
   "codeset": "codesets/17/1735a3ecdacd2d40.json",
   "deviceType": 7,
   "globalDeviceId": 230656,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 1"}],"name":"Computer 1"},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 2"}],"name":"Computer 2"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB Display"}],"name":"USB Display"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB 1"}],"name":"USB 1"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB 2"}],"name":"USB 2"},
+      {"commands":[{"set":"InputType","to":"LAN"}],"name":"LAN"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "EB-1915"
+  "model": "EB-1915",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "ComputerInput": {
+      "next": ["InputComputer"],
+      "values": [
+        {"name":"Computer 1"},
+        {"name":"Computer 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"LAN","select":[{"commands":["InputLan"],"setType":2}]},
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":2}]}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputUSB"],
+      "values": [
+        {"name":"USB Display"},
+        {"name":"USB 1"},
+        {"name":"USB 2"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"S-Video"},
+        {"name":"HDMI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

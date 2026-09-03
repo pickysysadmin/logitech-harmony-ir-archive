@@ -2,6 +2,70 @@
   "codeset": "codesets/ac/acdf77b4d41980f2.json",
   "deviceType": 7,
   "globalDeviceId": 492511,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"LAN"}],"name":"LAN","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 1"}],"name":"Computer 1","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Computer"},{"set":"ComputerInput","to":"Computer 2"}],"name":"Computer 2","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"HDMI/Video"},{"set":"HDMI/VideoInput","to":"Video"}],"name":"Video","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"HDMI/Video"},{"set":"HDMI/VideoInput","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"HDMI/Video"},{"set":"HDMI/VideoInput","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB Display"}],"name":"USB Display","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB-A"}],"name":"USB-A","ports":["USB"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "H836A"
+  "model": "H836A",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "states": {
+    "ComputerInput": {
+      "next": ["InputComputer"],
+      "values": [
+        {"name":"Computer 1"},
+        {"name":"Computer 2"}
+      ]
+    },
+    "HDMI/VideoInput": {
+      "next": ["InputHdmi/Video"],
+      "values": [
+        {"name":"Video"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"LAN","select":[{"commands":["InputLan"],"setType":1}]},
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":1}]},
+        {"name":"HDMI/Video","select":[{"commands":["InputHdmi/Video"],"setType":1}]},
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":1}]}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputUsb"],
+      "values": [
+        {"name":"USB Display"},
+        {"name":"USB-A"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

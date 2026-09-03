@@ -1,7 +1,39 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/9c/9c2879fa48fd8a26.json",
   "deviceType": 1,
   "globalDeviceId": 169128,
+  "inputs": {
+    "list": [
+      {"commands":["InputTV"],"name":"TV"},
+      {"commands":["InputVideo 1"],"name":"Ext 1"},
+      {"commands":["InputVideo 2"],"name":"Ext 2"},
+      {"commands":["InputVideo 3"],"name":"Ext 3"},
+      {"commands":["InputVideo 4"],"name":"Ext 4"},
+      {"commands":["InputVideo 4",{"delayMs":3000},"InputNext"],"name":"HDMI 1"},
+      {"commands":["InputVideo 4",{"delayMs":3000},"InputNext","InputNext"],"name":"HDMI 2"},
+      {"commands":["InputVideo 4",{"delayMs":3000},"InputNext","InputNext","InputNext"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "JVC",
-  "model": "LT-37DP8"
+  "model": "LT-37DP8",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

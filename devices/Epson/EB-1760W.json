@@ -2,6 +2,55 @@
   "codeset": "codesets/80/8040c6dbb8cdeb84.json",
   "deviceType": 7,
   "globalDeviceId": 228396,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Computer"}],"name":"Computer"},
+      {"commands":[{"set":"InputType","to":"LAN"}],"name":"LAN"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"HDMI"}],"name":"HDMI"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB Display"}],"name":"USB Display"},
+      {"commands":[{"set":"InputType","to":"USB"},{"set":"USBInput","to":"USB"}],"name":"USB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Epson",
-  "model": "EB-1760W"
+  "model": "EB-1760W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Computer","select":[{"commands":["InputComputer"],"setType":2}]},
+        {"name":"LAN","select":[{"commands":["InputLan"],"setType":2}]},
+        {"name":"VIDEO","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"USB","select":[{"commands":["InputUSB"],"setType":2}]}
+      ]
+    },
+    "USBInput": {
+      "next": ["InputUSB"],
+      "values": [
+        {"name":"USB Display"},
+        {"name":"USB"}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video"},
+        {"name":"HDMI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,60 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b4/b4e64e5018d17f31.json",
   "deviceType": 1,
   "globalDeviceId": 142589,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DTT/TV"}],"name":"DTT/TV"},
+      {"commands":[{"set":"InputType","to":"AV1"}],"name":"AV1"},
+      {"commands":[{"set":"InputType","to":"AV2"}],"name":"AV2"},
+      {"commands":[{"set":"InputType","to":"AV3"}],"name":"AV3"},
+      {"commands":[{"set":"InputType","to":"AV4"}],"name":"AV4"},
+      {"commands":[{"set":"InputType","to":"AV5"}],"name":"AV5"},
+      {"commands":[{"set":"InputType","to":"RGB"}],"name":"RGB"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"HDMI 1"}],"name":"HDMI 1"},
+      {"commands":[{"set":"InputType","to":"Hdmi"},{"set":"HdmiInput","to":"HDMI 2"}],"name":"HDMI 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Hitachi",
-  "model": "55PD9700CP"
+  "model": "55PD9700CP",
+  "power": {
+    "toggle": ["PowerToggle","0"],
+    "type": "toggle"
+  },
+  "states": {
+    "HdmiInput": {
+      "next": ["InputHdmi1"],
+      "values": [
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DTT/TV","select":[{"commands":["InputTV"],"setType":2}]},
+        {"name":"AV1","select":[{"commands":["Info"],"setType":2}]},
+        {"name":"AV2","select":[{"commands":["InputAv2"],"setType":2}]},
+        {"name":"AV3","select":[{"commands":["InputAv3"],"setType":2}]},
+        {"name":"AV4","select":[{"commands":["InputAv4"],"setType":2}]},
+        {"name":"AV5","select":[{"commands":["InputAv5"],"setType":2}]},
+        {"name":"RGB","select":[{"commands":["InputHdmi2"],"setType":2}]},
+        {"name":"Hdmi","select":[{"commands":["InputHdmi1"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 400,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 4000,
+    "pressMinRepeats": 1
+  }
 }

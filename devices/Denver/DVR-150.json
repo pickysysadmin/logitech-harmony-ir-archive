@@ -2,6 +2,37 @@
   "codeset": "codesets/13/13b201b10096a864.json",
   "deviceType": 34,
   "globalDeviceId": 156015,
+  "inputs": {
+    "list": [
+      {"name":"Front CVBS"},
+      {"name":"Front S-VIDEO"},
+      {"name":"Rear CVBS"},
+      {"name":"Rear S-Video"},
+      {"name":"DV"},
+      {"name":"SCART"},
+      {"name":"Tuner"},
+      {"name":"DVD"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Denver",
-  "model": "DVR-150"
+  "model": "DVR-150",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

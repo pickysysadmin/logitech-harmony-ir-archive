@@ -2,6 +2,58 @@
   "codeset": "codesets/78/784efde41af88ea8.json",
   "deviceType": 22,
   "globalDeviceId": 146872,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD"},
+      {"commands":["InputMP3"],"name":"MP3"},
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputTuner"],"name":"FM"},
+      {"commands":["InputTuner"],"name":"AM"},
+      {"commands":["InputAux"],"name":"AUX1"},
+      {"commands":["InputAux"],"name":"AUX2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Jamo",
-  "model": "S260HCS21"
+  "model": "S260HCS21",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"AUX1"},
+        {"name":"AUX2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"MP3","select":[{"commands":["InputMP3"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"TUNER","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    },
+    "TUNERInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

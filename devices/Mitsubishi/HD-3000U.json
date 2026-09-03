@@ -2,6 +2,35 @@
   "codeset": "codesets/a5/a5cea61fad34479a.json",
   "deviceType": 7,
   "globalDeviceId": 111783,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvi-D"],"name":"DVI"},
+      {"commands":["InputComputer"],"name":"PC"},
+      {"commands":["InputComponent"],"name":"COMP"},
+      {"commands":["InputVideo"],"name":"VIDEO"},
+      {"commands":["InputVideo2"],"name":"S-VIDEO"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Mitsubishi",
-  "model": "HD-3000U"
+  "model": "HD-3000U",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":500},
+      {"command":"PowerOff","durationMs":2000}
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 400,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

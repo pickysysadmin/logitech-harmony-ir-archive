@@ -2,6 +2,53 @@
   "codeset": "codesets/5a/5a39bfb41eca4f0f.json",
   "deviceType": 21,
   "globalDeviceId": 269416,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"FM/Bluetooth"},{"set":"FM/BluetoothInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"FM/Bluetooth"},{"set":"FM/BluetoothInput","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"USB/AudioIn"},{"set":"USB/AudioInInput","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"USB/AudioIn"},{"set":"USB/AudioInInput","to":"AudioIn"}],"name":"Audio In"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "BTM2310/12"
+  "model": "BTM2310/12",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "FM/BluetoothInput": {
+      "next": ["InputFm/Bluetooth"],
+      "values": [
+        {"name":"FM"},
+        {"name":"Bluetooth"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"FM/Bluetooth","select":[{"commands":["InputFm/Bluetooth"],"setType":2}]},
+        {"name":"USB/AudioIn","select":[{"commands":["InputUsb/AudioIn"],"setType":2}]}
+      ]
+    },
+    "USB/AudioInInput": {
+      "next": ["InputUsb/AudioIn"],
+      "values": [
+        {"name":"USB"},
+        {"name":"AudioIn"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

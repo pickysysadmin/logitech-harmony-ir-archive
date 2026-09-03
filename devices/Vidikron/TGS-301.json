@@ -2,6 +2,52 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 7,
   "globalDeviceId": 34201,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"EXT"},{"set":"EXTInput","to":"CVBS1"}],"name":"CVBS1"},
+      {"commands":[{"set":"InputType","to":"EXT"},{"set":"EXTInput","to":"CVBS2"}],"name":"CVBS2"},
+      {"commands":[{"set":"InputType","to":"EXT"},{"set":"EXTInput","to":"S-VHS"}],"name":"S-VHS"},
+      {"commands":[{"set":"InputType","to":"EXT"},{"set":"EXTInput","to":"RGB"}],"name":"RGB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vidikron",
-  "model": "TGS-301"
+  "model": "TGS-301",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "type": "discrete"
+  },
+  "states": {
+    "EXTInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"CVBS1"},
+        {"name":"CVBS2"},
+        {"name":"S-VHS"},
+        {"name":"RGB"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"EXT","select":[{"commands":["InputNext",{"set":"EXTInput","to":"CVBS1"}],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 4000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 4,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

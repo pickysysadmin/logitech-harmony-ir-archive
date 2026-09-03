@@ -2,6 +2,36 @@
   "codeset": "codesets/be/bed4c8ad97c59dca.json",
   "deviceType": 7,
   "globalDeviceId": 480815,
+  "inputs": {
+    "list": [
+      {"commands":["InputComputer1"],"name":"Computer 1","ports":["PC"]},
+      {"commands":["InputComputer2"],"name":"Computer 2","ports":["PC"]},
+      {"commands":["InputVideo"],"name":"Video","ports":["Composite"]},
+      {"commands":["InputS-Video"],"name":"S-Video","ports":["PC"]},
+      {"commands":["InputComponent"],"name":"Component","ports":["PC"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Canon",
-  "model": "LV-7295"
+  "model": "LV-7295",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 1
+  }
 }

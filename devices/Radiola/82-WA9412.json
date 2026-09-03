@@ -2,6 +2,35 @@
   "codeset": "codesets/2f/2faf1eb0a0d53c8f.json",
   "deviceType": 1,
   "globalDeviceId": 129244,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Noos"},
+      {"name":"PS2"},
+      {"name":"DVD"},
+      {"name":"Front"},
+      {"name":"ext1"}
+    ],
+    "next": ["Tuner"],
+    "type": 2
+  },
   "manufacturer": "Radiola",
-  "model": "82-WA9412"
+  "model": "82-WA9412",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

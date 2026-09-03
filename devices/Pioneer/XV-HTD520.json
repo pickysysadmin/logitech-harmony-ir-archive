@@ -2,6 +2,63 @@
   "codeset": "codesets/cf/cf7e61312cc0fc38.json",
   "deviceType": 22,
   "globalDeviceId": 15560,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TunerModetype"},{"set":"TunerMode","to":"FMin"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"TunerModetype"},{"set":"TunerMode","to":"AMin"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"DVDModetype"},{"set":"DVDMode","to":"DVDin"}],"name":"DVD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"DVDModetype"},{"set":"DVDMode","to":"CDin"}],"name":"CD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"TVModetype"},{"set":"TVMode","to":"TVX"}],"name":"TV","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"TVModetype"},{"set":"TVMode","to":"AUXM"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"TVModetype"},{"set":"TVMode","to":"DigitalM"}],"name":"Digital","ports":["Coaxial"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "XV-HTD520"
+  "model": "XV-HTD520",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDMode": {
+      "next": ["InputCd"],
+      "values": [
+        {"name":"DVDin"},
+        {"name":"CDin"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TVModetype","select":[{"commands":["Video1"],"setType":2}]},
+        {"name":"DVDModetype","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"TunerModetype","select":[{"commands":["InputTuner"],"setType":2}]}
+      ]
+    },
+    "TVMode": {
+      "next": ["Video1"],
+      "values": [
+        {"name":"AUXM"},
+        {"name":"TVX"},
+        {"name":"DigitalM"}
+      ]
+    },
+    "TunerMode": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FMin"},
+        {"name":"AMin"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

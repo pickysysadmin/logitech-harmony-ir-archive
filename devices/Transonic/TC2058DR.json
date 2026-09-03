@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/9e/9e426ea675003430.json",
   "deviceType": 34,
   "globalDeviceId": 123567,
+  "inputs": {
+    "list": [
+      {"name":"TV"},
+      {"name":"Front Comp"},
+      {"name":"Front S-Video"},
+      {"name":"Rear Comp"},
+      {"name":"Rear S-Video"},
+      {"name":"Rear Scart"},
+      {"name":"DVD"}
+    ],
+    "next": ["TV","InputNext"],
+    "type": 2
+  },
   "manufacturer": "Transonic",
-  "model": "TC2058DR"
+  "model": "TC2058DR",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

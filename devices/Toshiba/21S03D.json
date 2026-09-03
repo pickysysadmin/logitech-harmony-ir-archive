@@ -2,6 +2,31 @@
   "codeset": "codesets/bf/bfea79650737ced0.json",
   "deviceType": 1,
   "globalDeviceId": 49548,
+  "inputs": {
+    "list": [
+      {"commands":["Display"],"name":"AntennaCable"},
+      {"commands":["InputNext"],"name":"EXT 1"},
+      {"commands":["InputNext","InputNext"],"name":"EXT 2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Toshiba",
-  "model": "21S03D"
+  "model": "21S03D",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/84/84b035fe368ae2fa.json",
   "deviceType": 1,
   "globalDeviceId": 35799,
+  "inputs": {
+    "list": [
+      {"commands":["InputRGB"],"name":"DVI"},
+      {"commands":[{"delayMs":1200},"InputAV2","InputAB","DirectionUp","Select"],"name":"DSUB"},
+      {"commands":["InputAV2"],"name":"VIDEO1"},
+      {"commands":["InputComponent"],"name":"VIDEO2"},
+      {"commands":["InputAV1"],"name":"DVD"},
+      {"commands":["Zoom -"],"name":"HDTV"},
+      {"commands":["InputTuner"],"name":"TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Gateway",
-  "model": "GTW L30M103"
+  "model": "GTW L30M103",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

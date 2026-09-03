@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/96/96e0494004f0ffae.json",
   "deviceType": 1,
   "globalDeviceId": 334866,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1",{"delayMs":2500},"Input","DirectionUp","Enter"],"name":"TV"},
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputHdmi3"],"name":"HDMI 3"},
+      {"commands":["InputComponent"],"name":"Component/AV"},
+      {"commands":["InputComponent",{"delayMs":1000},"Input","DirectionDown","Enter"],"name":"USB"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-40LB480U"
+  "model": "LC-40LB480U",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

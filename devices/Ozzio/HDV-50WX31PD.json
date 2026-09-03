@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b7/b7bf9558218fa9f0.json",
   "deviceType": 1,
   "globalDeviceId": 143163,
+  "inputs": {
+    "finish": ["DirectionRight"],
+    "list": [
+      {"name":"VGA"},
+      {"name":"HDMI"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"TV"},
+      {"name":"D4-1"},
+      {"name":"D4-2"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["InputNext"],
+    "type": 4
+  },
   "manufacturer": "Ozzio",
-  "model": "HDV-50WX31PD"
+  "model": "HDV-50WX31PD",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AV1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

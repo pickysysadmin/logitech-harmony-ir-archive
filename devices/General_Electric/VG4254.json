@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/1c/1c2923b07eeb1c83.json",
   "deviceType": 2,
   "globalDeviceId": 26233,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"Line In"}
+    ],
+    "next": ["InputNext","InputNext"],
+    "type": 2
+  },
   "manufacturer": "General Electric",
-  "model": "VG4254"
+  "model": "VG4254",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

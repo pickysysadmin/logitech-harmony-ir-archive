@@ -2,6 +2,51 @@
   "codeset": "codesets/a5/a54700313be37e61.json",
   "deviceType": 21,
   "globalDeviceId": 165387,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Line1"}],"name":"Line1"},
+      {"commands":[{"set":"InputType","to":"Line2"}],"name":"Line2"},
+      {"commands":[{"set":"InputType","to":"Line3"}],"name":"Line3"},
+      {"commands":[{"set":"InputType","to":"Line4"}],"name":"Line4"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"DAB"}],"name":"DAB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Primare",
-  "model": "CDi-10"
+  "model": "CDi-10",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Line1","select":[{"commands":["InputLine1"],"setType":2}]},
+        {"name":"Line2","select":[{"commands":["InputLine2"],"setType":2}]},
+        {"name":"Line3","select":[{"commands":["InputLine3"],"setType":2}]},
+        {"name":"Line4","select":[{"commands":["InputLine4"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputDab/Fm"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputDab/Fm"],
+      "values": [
+        {"name":"FM"},
+        {"name":"DAB"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

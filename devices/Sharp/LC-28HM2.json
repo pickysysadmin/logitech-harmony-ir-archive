@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "finish": ["ChannelPrev"]
+  },
   "codeset": "codesets/6e/6e45437814a52ecf.json",
   "deviceType": 1,
   "globalDeviceId": 1355,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Tuner"},
+      {"commands":["2"],"name":"Video 1"},
+      {"commands":["3"],"name":"Video 2"},
+      {"commands":["4"],"name":"S-Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sharp",
-  "model": "LC-28HM2"
+  "model": "LC-28HM2",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Video 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

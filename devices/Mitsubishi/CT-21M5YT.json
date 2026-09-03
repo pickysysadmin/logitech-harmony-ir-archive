@@ -2,6 +2,47 @@
   "codeset": "codesets/bb/bb590deb295ce62a.json",
   "deviceType": 1,
   "globalDeviceId": 109056,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"AVMode"},{"set":"AVModeInput","to":"AV"}],"name":"AV"},
+      {"commands":[{"set":"InputType","to":"AVMode"},{"set":"AVModeInput","to":"AV-RGB"}],"name":"AV-RGB"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Mitsubishi",
-  "model": "CT-21M5YT"
+  "model": "CT-21M5YT",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVModeInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"AV"},
+        {"name":"AV-RGB"}
+      ]
+    },
+    "InputType": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"TV"},
+        {"name":"AVMode"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

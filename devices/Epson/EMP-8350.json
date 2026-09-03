@@ -2,6 +2,32 @@
   "codeset": "codesets/bc/bc28bf8904072ca0.json",
   "deviceType": 7,
   "globalDeviceId": 258430,
+  "inputs": {
+    "list": [
+      {"commands":["InputHdmi1"],"name":"HDMI 1"},
+      {"commands":["InputHdmi2"],"name":"HDMI 2"},
+      {"commands":["InputComponent"],"name":"Component"},
+      {"commands":["InputPc"],"name":"PC"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputVideo"],"name":"Video"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Epson",
-  "model": "EMP-8350"
+  "model": "EMP-8350",
+  "power": {
+    "off": ["PowerToggle","PowerToggle"],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 35000,
+    "pressMinRepeats": 3
+  }
 }

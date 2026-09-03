@@ -2,6 +2,36 @@
   "codeset": "codesets/40/4008e9f84660b390.json",
   "deviceType": 5,
   "globalDeviceId": 97904,
+  "inputs": {
+    "list": [
+      {"commands":["InputCD"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAM"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputDtv/Cbl"],"name":"DTV/CBL","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":["InputV-Aux"],"name":"V-Aux","ports":["Composite"]},
+      {"commands":["InputMultiChannel"],"name":"MULTICHANNEL","ports":["Composite"]},
+      {"commands":["InputMd/Cd-r"],"name":"MD/CD-R","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V457"
+  "model": "RX-V457",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

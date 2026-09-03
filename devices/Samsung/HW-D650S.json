@@ -2,6 +2,61 @@
   "codeset": "codesets/81/8173c3050e401ed1.json",
   "deviceType": 5,
   "globalDeviceId": 222741,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"BD/DVD"}],"name":"BD/DVD"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"SAT"}],"name":"SAT"},
+      {"commands":[{"set":"InputType","to":"Game/TV"},{"set":"Game/TVInput","to":"Game"}],"name":"Game"},
+      {"commands":[{"set":"InputType","to":"Game/TV"},{"set":"Game/TVInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"iPod Audio"}],"name":"iPod Audio"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"iPod Video"}],"name":"iPod Video"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Samsung",
-  "model": "HW-D650S"
+  "model": "HW-D650S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Game/TVInput": {
+      "next": ["InputGame/Tv"],
+      "values": [
+        {"name":"Game"},
+        {"name":"TV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"BD/DVD","select":[{"commands":["InputBd/Dvd"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"SAT","select":[{"commands":["InputSat"],"setType":2}]},
+        {"name":"Game/TV","select":[{"commands":["InputGame/Tv"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputIpod"],"setType":2}]}
+      ]
+    },
+    "iPodInput": {
+      "next": ["InputIpod"],
+      "values": [
+        {"name":"iPod Audio"},
+        {"name":"iPod Video"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,76 @@
   "codeset": "codesets/5a/5ad007f15282efc2.json",
   "deviceType": 22,
   "globalDeviceId": 226287,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD/DVD"}],"name":"CD/DVD"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Audio In"}],"name":"Audio In"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux"},{"set":"DigitalInput","to":"Aux Opt"}],"name":"Aux Opt"},
+      {"commands":[{"set":"InputType","to":"Aux"},{"set":"AuxInput","to":"Aux"},{"set":"DigitalInput","to":"Aux Coax"}],"name":"Aux Coax"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Ant"}],"name":"Ant"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"Ipod"},{"set":"IpodInput","to":"OSDIpod"}],"name":"OSDIpod"},
+      {"commands":[{"set":"InputType","to":"Ipod"},{"set":"IpodInput","to":"Ipod"}],"name":"Ipod"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "LH-E922PB"
+  "model": "LH-E922PB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Audio In"}
+      ]
+    },
+    "DigitalInput": {
+      "next": ["InputDigital"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Aux Opt"},
+        {"name":"Aux Coax"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD/DVD","select":[{"commands":["InputDVD"],"setType":2}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["Band"],"setType":2}]},
+        {"name":"Ipod","select":[{"commands":["InputIPod"],"setType":2}]}
+      ]
+    },
+    "IpodInput": {
+      "next": ["InputIPod"],
+      "values": [
+        {"name":"OSDIpod"},
+        {"name":"Ipod"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["Band"],
+      "values": [
+        {"name":"Ant"},
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

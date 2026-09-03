@@ -2,6 +2,37 @@
   "codeset": "codesets/77/7750a7ee0ba0c9fd.json",
   "deviceType": 7,
   "globalDeviceId": 104120,
+  "inputs": {
+    "list": [
+      {"commands":["InputVideo"],"name":"Video"},
+      {"commands":["InputS-Video"],"name":"S-Video"},
+      {"commands":["InputComponent"],"name":"Component1"},
+      {"commands":["InputComponent2"],"name":"Component2"},
+      {"commands":["InputHdmi"],"name":"HDMI"},
+      {"commands":["InputPC"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sanyo",
-  "model": "PLZ-3"
+  "model": "PLZ-3",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 30000,
+    "pressMinRepeats": 1
+  }
 }

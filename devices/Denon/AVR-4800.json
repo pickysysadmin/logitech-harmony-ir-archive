@@ -2,6 +2,38 @@
   "codeset": "codesets/85/855271630f2ec91b.json",
   "deviceType": 5,
   "globalDeviceId": 128767,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd"],"name":"DVD","ports":["Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputTv/Dbs"],"name":"TV/DBS","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputVcr"],"name":"VCR-1","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputVcr2"],"name":"VCR-2","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputVDP/TV"],"name":"VDP","ports":["Composite","Coaxial","S-Video"]},
+      {"commands":["InputVAux"],"name":"V. AUX","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputCD"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputTape"],"name":"MD/Tape-1","ports":["Composite","Optical"]},
+      {"commands":["InputTape2Mon"],"name":"Tape 2 Mon","ports":["Composite"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-4800"
+  "model": "AVR-4800",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

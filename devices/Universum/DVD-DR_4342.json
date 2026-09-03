@@ -2,6 +2,56 @@
   "codeset": "codesets/01/01c5d655fc62bcf0.json",
   "deviceType": 22,
   "globalDeviceId": 139005,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"CD/DVD"}],"name":"CD/DVD"},
+      {"commands":[{"set":"InputType","to":"Band"}],"name":"Band"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Video1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Video1 Optical"}],"name":"Video 1 Optical"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Video1 Coax"}],"name":"Video 1 Coax"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Video2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Video2 Optical"}],"name":"Video 2 Optical"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"Video2 Coax"}],"name":"Video 2 Coax"},
+      {"commands":[{"set":"InputType","to":"AUX"},{"set":"AUXInput","to":"TV Audio"}],"name":"TV Audio"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Universum",
-  "model": "DVD-DR 4342"
+  "model": "DVD-DR 4342",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUXInput": {
+      "next": ["InputAux"],
+      "values": [
+        {"name":"Video1"},
+        {"name":"Video1 Optical"},
+        {"name":"Video1 Coax"},
+        {"name":"Video2"},
+        {"name":"Video2 Optical"},
+        {"name":"Video2 Coax"},
+        {"name":"TV Audio"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"CD/DVD","select":[{"commands":["InputCd/Dvd"],"setType":2}]},
+        {"name":"Band","select":[{"commands":["InputBand"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

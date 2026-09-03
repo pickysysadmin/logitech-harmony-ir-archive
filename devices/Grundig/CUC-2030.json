@@ -1,7 +1,36 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/6e/6ec13fcaf3f066dd.json",
   "deviceType": 1,
   "globalDeviceId": 80436,
+  "inputs": {
+    "list": [
+      {"commands":["1"],"name":"Antenna/Cable"},
+      {"commands":["1","ChannelDown","ChannelDown","ChannelDown","ChannelDown","ChannelDown"],"name":"AV1"},
+      {"commands":["1","ChannelDown","ChannelDown","ChannelDown","ChannelDown"],"name":"AV2"},
+      {"commands":["1","ChannelDown","ChannelDown","ChannelDown"],"name":"AV3"},
+      {"commands":["1","ChannelDown","ChannelDown"],"name":"AV4"},
+      {"commands":["1","ChannelDown"],"name":"AV5"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Grundig",
-  "model": "CUC-2030"
+  "model": "CUC-2030",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 4000,
+    "interDeviceDelay": 600,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }

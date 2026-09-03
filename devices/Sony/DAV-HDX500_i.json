@@ -2,6 +2,34 @@
   "codeset": "codesets/d5/d54af5d2399451ae.json",
   "deviceType": 22,
   "globalDeviceId": 165410,
+  "inputs": {
+    "list": [
+      {"commands":["InputDvd",{"delayMs":500},"InputNext"],"name":"Tuner FM"},
+      {"commands":["InputTuner"],"name":"Tuner AM"},
+      {"commands":["InputTuner",{"delayMs":500},"InputNext"],"name":"XM"},
+      {"commands":["InputTuner",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext"],"name":"Sat/CABLE"},
+      {"commands":["InputTv"],"name":"TV"},
+      {"commands":["InputTv",{"delayMs":500},"InputNext"],"name":"IMPORT1"},
+      {"commands":["InputTv",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext"],"name":"IMPORT2"},
+      {"commands":["InputTv",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext",{"delayMs":500},"InputNext"],"name":"Audio"},
+      {"commands":["InputDvd"],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "DAV-HDX500/i"
+  "model": "DAV-HDX500/i",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

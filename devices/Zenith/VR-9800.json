@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/d3/d3cbf3e36c06fb11.json",
   "deviceType": 2,
   "globalDeviceId": 114710,
+  "inputs": {
+    "list": [
+      {"name":"video1"},
+      {"name":"Video2"},
+      {"name":"Video3"},
+      {"name":"Component1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Zenith",
-  "model": "VR-9800"
+  "model": "VR-9800",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

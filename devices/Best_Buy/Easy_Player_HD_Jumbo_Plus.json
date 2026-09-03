@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/e4/e4baac071c61a698.json",
   "deviceType": 35,
   "globalDeviceId": 134142,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"TUNER"}
+    ],
+    "next": ["Mode"],
+    "type": 2
+  },
   "manufacturer": "Best Buy",
-  "model": "Easy Player HD Jumbo Plus"
+  "model": "Easy Player HD Jumbo Plus",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 2,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 2
+  }
 }

@@ -1,7 +1,47 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 122302,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Scart1"},
+      {"name":"Scart1RGB"},
+      {"name":"Scart2"},
+      {"name":"Scart2RGB"},
+      {"name":"Pc"},
+      {"name":"DVI"},
+      {"name":"FAV"},
+      {"name":"Svid"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Funai",
-  "model": "26A-0828WLB"
+  "model": "26A-0828WLB",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Teletext": {
+      "values": [
+        {"name":"Off","select":[{"commands":["TeletextStop"],"setType":2}]},
+        {"name":"On","select":[{"commands":["Teletext"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

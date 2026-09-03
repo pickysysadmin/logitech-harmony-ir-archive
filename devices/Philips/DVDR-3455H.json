@@ -2,6 +2,61 @@
   "codeset": "codesets/04/04ac92e5bd61d01f.json",
   "deviceType": 34,
   "globalDeviceId": 179732,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Hdd"}],"name":"Hdd","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"Dvd"}],"name":"Dvd","ports":["Others"]},
+      {"commands":[{"set":"InputType","to":"Usb/Dv"}],"name":"Usb/Dv","ports":["USB"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"CAM1"}],"name":"CAM1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"CAM2"}],"name":"CAM2","ports":["S-Video"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"EXT1"}],"name":"EXT1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"EXT2"}],"name":"EXT2","ports":["S-Video"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DVDR-3455H"
+  "model": "DVDR-3455H",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Hdd","select":[{"commands":["Hdd"],"setType":2}]},
+        {"name":"Dvd","select":[{"commands":["Dvd"],"setType":2}]},
+        {"name":"Usb/Dv","select":[{"commands":["Usb/Dv"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["Tuner"],"setType":2}]}
+      ]
+    },
+    "Lines": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"DV IN"}
+      ]
+    },
+    "TunerInput": {
+      "next": ["Tuner"],
+      "values": [
+        {"name":"CAM1"},
+        {"name":"CAM2"},
+        {"name":"EXT1"},
+        {"name":"EXT2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

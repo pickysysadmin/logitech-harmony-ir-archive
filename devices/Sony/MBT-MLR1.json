@@ -2,6 +2,39 @@
   "codeset": "codesets/02/028315ac6137b61e.json",
   "deviceType": 1,
   "globalDeviceId": 168822,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputVideo3"],"name":"AV3"},
+      {"commands":["InputVideo4"],"name":"AV4"},
+      {"commands":["InputVideo5"],"name":"AV5"},
+      {"commands":["InputVideo6"],"name":"AV6"},
+      {"commands":["InputRgb"],"name":"PC"},
+      {"commands":["InputMemoryStick"],"name":"Memory Stick"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "MBT-MLR1"
+  "model": "MBT-MLR1",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

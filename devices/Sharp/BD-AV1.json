@@ -2,6 +2,31 @@
   "codeset": "codesets/76/76321d7fa3ee184c.json",
   "deviceType": 34,
   "globalDeviceId": 145870,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"iLink"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sharp",
-  "model": "BD-AV1"
+  "model": "BD-AV1",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

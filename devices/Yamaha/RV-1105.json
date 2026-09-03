@@ -2,6 +2,39 @@
   "codeset": "codesets/b8/b8db576dcb1eab08.json",
   "deviceType": 5,
   "globalDeviceId": 24499,
+  "inputs": {
+    "list": [
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputCd/Md"],"name":"CD","ports":["Composite","Optical"]},
+      {"commands":["InputAux"],"name":"V-AUX","ports":["Composite","S-Video"]},
+      {"commands":["InputCbl/Sat"],"name":"Cable","ports":["Antenna"]},
+      {"commands":["InputTape"],"name":"MD/Tape","ports":["Composite"]},
+      {"commands":["InputTape2"],"name":"CD-R","ports":["Others"]},
+      {"commands":["InputVcr1"],"name":"VCR 1","ports":["Composite","S-Video"]},
+      {"commands":["InputVcr2"],"name":"VCR 2/DVR","ports":["Others"]},
+      {"commands":["InputDvd/Ld"],"name":"DVD/LD","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputSat"],"name":"SAT","ports":["Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RV-1105"
+  "model": "RV-1105",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

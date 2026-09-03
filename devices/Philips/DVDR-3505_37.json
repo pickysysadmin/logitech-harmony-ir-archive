@@ -1,7 +1,59 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/dc/dcf399995cb0ac08.json",
   "deviceType": 34,
   "globalDeviceId": 178818,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Hdmi"}],"name":"Hdmi"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"E1"}],"name":"E1"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"E2"}],"name":"E2"},
+      {"commands":[{"set":"InputType","to":"InputNext"},{"set":"InputNextInput","to":"E3"}],"name":"E3"},
+      {"commands":[{"set":"InputType","to":"Dtv/Tv"},{"set":"Dtv/TvInput","to":"DTV"}],"name":"DTV"},
+      {"commands":[{"set":"InputType","to":"Dtv/Tv"},{"set":"Dtv/TvInput","to":"TV"}],"name":"TV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "DVDR-3505/37"
+  "model": "DVDR-3505/37",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Dtv/TvInput": {
+      "next": ["DTV/TV"],
+      "values": [
+        {"name":"DTV"},
+        {"name":"TV"}
+      ]
+    },
+    "InputNextInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"E1"},
+        {"name":"E2"},
+        {"name":"E3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Hdmi","select":[{"commands":["HDMI"],"setType":2}]},
+        {"name":"InputNext","select":[{"commands":["InputNext"],"setType":2}]},
+        {"name":"Dtv/Tv","select":[{"commands":["DTV/TV"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

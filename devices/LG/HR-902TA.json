@@ -2,6 +2,60 @@
   "codeset": "codesets/53/53565fdf0c02af24.json",
   "deviceType": 22,
   "globalDeviceId": 130752,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"TVToggle"},{"set":"TVToggleInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"TVToggle"},{"set":"TVToggleInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"AVToggle"},{"set":"AVToggleInput","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AVToggle"},{"set":"AVToggleInput","to":"AV1"}],"name":"AV 1"},
+      {"commands":[{"set":"InputType","to":"AVToggle"},{"set":"AVToggleInput","to":"AV2"}],"name":"AV 2"},
+      {"commands":[{"set":"InputType","to":"AVToggle"},{"set":"AVToggleInput","to":"AV3"}],"name":"AV 3"},
+      {"commands":[{"set":"InputType","to":"AVToggle"},{"set":"AVToggleInput","to":"OPT"}],"name":"OPT"},
+      {"commands":[{"set":"InputType","to":"AVToggle"},{"set":"AVToggleInput","to":"DV"}],"name":"DV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "LG",
-  "model": "HR-902TA"
+  "model": "HR-902TA",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVToggleInput": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Tuner"},
+        {"name":"AV1"},
+        {"name":"AV2"},
+        {"name":"AV3"},
+        {"name":"OPT"},
+        {"name":"DV"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"TVToggle","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AVToggle","select":[{"commands":["Tv/Dvd"],"setType":2}]}
+      ]
+    },
+    "TVToggleInput": {
+      "next": ["Tv/Dvd"],
+      "values": [
+        {"name":"TV"},
+        {"name":"DVD"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

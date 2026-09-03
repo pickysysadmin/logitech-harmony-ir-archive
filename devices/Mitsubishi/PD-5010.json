@@ -2,6 +2,66 @@
   "codeset": "codesets/4b/4b3aa2ae4e0648e0.json",
   "deviceType": 13,
   "globalDeviceId": 16227,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"RGB/PC"},{"set":"RGB/PCInput","to":"RGB/PC 1"}],"name":"RGB/PC 1"},
+      {"commands":[{"set":"InputType","to":"RGB/PC"},{"set":"RGB/PCInput","to":"RGB/PC 2"}],"name":"RGB/PC 2"},
+      {"commands":[{"set":"InputType","to":"RGB/PC"},{"set":"RGB/PCInput","to":"MONLINK"}],"name":"MONLINK"},
+      {"commands":[{"set":"InputType","to":"HD/DVD/DTV"},{"set":"HD/DVD/DTVInput","to":"HD1/DVD1/DTV1"}],"name":"HD1/DVD1/DTV1"},
+      {"commands":[{"set":"InputType","to":"HD/DVD/DTV"},{"set":"HD/DVD/DTVInput","to":"HD2/DVD2/DTV2"}],"name":"HD2/DVD2/DTV2"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Video 1"}],"name":"Video 1"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Video 2"}],"name":"Video 2"},
+      {"commands":[{"set":"InputType","to":"VIDEO"},{"set":"VIDEOInput","to":"Video 3"}],"name":"Video 3"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Mitsubishi",
-  "model": "PD-5010"
+  "model": "PD-5010",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "states": {
+    "HD/DVD/DTVInput": {
+      "next": ["InputDvd/Hd"],
+      "values": [
+        {"name":"HD1/DVD1/DTV1"},
+        {"name":"HD2/DVD2/DTV2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"RGB/PC","select":[{"commands":["InputPc/Rgb"],"setType":2}]},
+        {"name":"HD/DVD/DTV","select":[{"commands":["InputDvd/Hd"],"setType":2}]},
+        {"name":"VIDEO","select":[{"commands":["InputVideo"],"setType":2}]}
+      ]
+    },
+    "RGB/PCInput": {
+      "next": ["InputPc/Rgb"],
+      "values": [
+        {"name":"RGB/PC 1"},
+        {"name":"RGB/PC 2"},
+        {"name":"MONLINK"}
+      ]
+    },
+    "VIDEOInput": {
+      "next": ["InputVideo"],
+      "values": [
+        {"name":"Video 1"},
+        {"name":"Video 2"},
+        {"name":"Video 3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 3
+  }
 }

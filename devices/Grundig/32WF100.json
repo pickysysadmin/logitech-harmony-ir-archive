@@ -2,6 +2,37 @@
   "codeset": "codesets/b9/b9c71c9667b34975.json",
   "deviceType": 1,
   "globalDeviceId": 55627,
+  "inputs": {
+    "finish": ["Exit"],
+    "list": [
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AV2 S-VHS"},
+      {"name":"Front"},
+      {"name":"Front S-VHS"}
+    ],
+    "next": ["DirectionDown"],
+    "start": ["0"],
+    "type": 4
+  },
   "manufacturer": "Grundig",
-  "model": "32WF100"
+  "model": "32WF100",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"AV1"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

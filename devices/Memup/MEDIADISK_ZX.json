@@ -2,6 +2,35 @@
   "codeset": "codesets/8e/8e3fa40ba40c6d60.json",
   "deviceType": 35,
   "globalDeviceId": 156927,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"My TV"},
+      {"name":"My DVD"},
+      {"name":"My Music"},
+      {"name":"My Pictures"}
+    ],
+    "next": ["Home"],
+    "type": 2
+  },
   "manufacturer": "Memup",
-  "model": "MEDIADISK ZX"
+  "model": "MEDIADISK ZX",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"My TV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

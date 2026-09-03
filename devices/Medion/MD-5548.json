@@ -2,6 +2,31 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 111260,
+  "inputs": {
+    "list": [
+      {"commands":["PowerOn","InputNext"],"name":"AV1"},
+      {"commands":["PowerOn","InputNext","InputNext"],"name":"AV2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Medion",
-  "model": "MD-5548"
+  "model": "MD-5548",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["1"],
+    "onReset": [
+      {"set":"Input","to":"AV2"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

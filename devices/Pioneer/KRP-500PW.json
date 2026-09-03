@@ -2,6 +2,55 @@
   "codeset": "codesets/5b/5b8fd59f46cb4bea.json",
   "deviceType": 1,
   "globalDeviceId": 217713,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input1"}],"name":"Input1"},
+      {"commands":[{"set":"InputType","to":"Input2"}],"name":"Input2"},
+      {"commands":[{"set":"InputType","to":"Input3"}],"name":"Input3"},
+      {"commands":[{"set":"InputType","to":"Input4"}],"name":"Input4"},
+      {"commands":[{"set":"InputType","to":"Input5"}],"name":"Input5"},
+      {"commands":[{"set":"InputType","to":"InputPC"}],"name":"InputPC"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Dtv"}],"name":"Dtv"},
+      {"commands":[{"set":"InputType","to":"Antenna"},{"set":"AntennaInput","to":"Sat"}],"name":"Sat"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "KRP-500PW"
+  "model": "KRP-500PW",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AntennaInput": {
+      "next": ["Tv/Dtv/Sat"],
+      "values": [
+        {"name":"TV"},
+        {"name":"Dtv"},
+        {"name":"Sat"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input1","select":[{"commands":["Input1"],"setType":2}]},
+        {"name":"Input2","select":[{"commands":["Input2"],"setType":2}]},
+        {"name":"Input3","select":[{"commands":["Input3"],"setType":2}]},
+        {"name":"Input4","select":[{"commands":["Input4"],"setType":2}]},
+        {"name":"Input5","select":[{"commands":["Input5"],"setType":2}]},
+        {"name":"InputPC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Antenna","select":[{"commands":["Tv/Dtv/Sat"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

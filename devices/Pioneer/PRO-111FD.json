@@ -1,7 +1,61 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/a6/a664f7b3c0e305ec.json",
   "deviceType": 1,
   "globalDeviceId": 159228,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input 1"}],"name":"Input 1","ports":["Composite","S-Video"]},
+      {"commands":[{"set":"InputType","to":"Input 2"}],"name":"Input 2","ports":["Component"]},
+      {"commands":[{"set":"InputType","to":"Input 3"}],"name":"Input 3","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Input 4"}],"name":"Input 4","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Input 5"}],"name":"Input 5","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Input 6"}],"name":"Input 6","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Input 7"}],"name":"Input 7","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC","ports":["PC"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Analog"}],"name":"Analog","ports":["Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"Digital"}],"name":"Digital","ports":["Antenna"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Pioneer",
-  "model": "PRO-111FD"
+  "model": "PRO-111FD",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Input 1","select":[{"commands":["Input1"],"setType":2}]},
+        {"name":"Input 2","select":[{"commands":["Input2"],"setType":2}]},
+        {"name":"Input 3","select":[{"commands":["Input3"],"setType":2}]},
+        {"name":"Input 4","select":[{"commands":["Input4"],"setType":2}]},
+        {"name":"Input 5","select":[{"commands":["Input5"],"setType":2}]},
+        {"name":"Input 6","select":[{"commands":["Input6"],"setType":2}]},
+        {"name":"Input 7","select":[{"commands":["Input7"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Tuner","select":[{"commands":["Tv/Dtv"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["Tv/Dtv"],
+      "values": [
+        {"name":"Analog"},
+        {"name":"Digital"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 2500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,55 @@
   "codeset": "codesets/f9/f99dd97d02dc89f6.json",
   "deviceType": 13,
   "globalDeviceId": 72281,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VideoAV1"}],"name":"VCR/Campus"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VideoAV2"}],"name":"DirecTV (satellite)"},
+      {"commands":[{"set":"InputType","to":"Video"},{"set":"VideoInput","to":"VideoAV3"}],"name":"Polycom"},
+      {"commands":[{"set":"InputType","to":"RGB/PC"},{"set":"RGBInput","to":"RGB1"}],"name":"computer into Plasma"},
+      {"commands":[{"set":"InputType","to":"RGB/PC"},{"set":"RGBInput","to":"RGB2"}],"name":"NEC Room"},
+      {"commands":[{"set":"InputType","to":"RGB/PC"},{"set":"RGBInput","to":"RGB3"}],"name":"DVI connection"}
+    ],
+    "type": 5
+  },
   "manufacturer": "NEC",
-  "model": "RD-1136E"
+  "model": "RD-1136E",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Video","select":[{"commands":["Video 1"],"setType":2}]},
+        {"name":"RGB/PC","select":[{"commands":["RGB/PCToggle"],"setType":2}]}
+      ]
+    },
+    "RGBInput": {
+      "next": ["RGB/PCToggle"],
+      "values": [
+        {"name":"RGB1"},
+        {"name":"RGB2"},
+        {"name":"RGB3"}
+      ]
+    },
+    "VideoInput": {
+      "next": ["Video 1"],
+      "values": [
+        {"name":"VideoAV1"},
+        {"name":"VideoAV2"},
+        {"name":"VideoAV3"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

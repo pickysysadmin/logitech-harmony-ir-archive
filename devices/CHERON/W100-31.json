@@ -2,6 +2,47 @@
   "codeset": "codesets/f7/f717fd72e32b73af.json",
   "deviceType": 19,
   "globalDeviceId": 446175,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"USB"}],"name":"USB"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"Source","to":"Aux In"}],"name":"Aux In"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"Source","to":"Audio In"}],"name":"Audio In"},
+      {"commands":[{"set":"InputType","to":"Source"},{"set":"Source","to":"Optical"}],"name":"Optical"}
+    ],
+    "type": 5
+  },
   "manufacturer": "CHERON",
-  "model": "W100-31"
+  "model": "W100-31",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"USB","select":[{"commands":["InputUsb"],"setType":1}]},
+        {"name":"Bluetooth","select":[{"commands":["Bluetooth"],"setType":1}]},
+        {"name":"Source","select":[{"commands":["Source"],"setType":1}]}
+      ]
+    },
+    "Source": {
+      "next": ["Source"],
+      "values": [
+        {"name":"Aux In"},
+        {"name":"Audio In"},
+        {"name":"Optical"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

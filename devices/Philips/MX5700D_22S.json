@@ -2,6 +2,55 @@
   "codeset": "codesets/7a/7ac7d448ee9fa245.json",
   "deviceType": 22,
   "globalDeviceId": 58412,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"Disc/Media"},{"set":"Disc/MediaInput","to":"Disc"}],"name":"Disc"},
+      {"commands":[{"set":"InputType","to":"Disc/Media"},{"set":"Disc/MediaInput","to":"Media"}],"name":"Media"},
+      {"commands":[{"set":"InputType","to":"AUX/DI"},{"set":"AUX/DIInput","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"AUX/DI"},{"set":"AUX/DIInput","to":"DI"}],"name":"DI"},
+      {"commands":[{"set":"InputType","to":"TV/AV"}],"name":"TV/AV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Philips",
-  "model": "MX5700D/22S"
+  "model": "MX5700D/22S",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AUX/DIInput": {
+      "next": ["InputAux/DI"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"DI"}
+      ]
+    },
+    "Disc/MediaInput": {
+      "next": ["InputDisc/Media"],
+      "values": [
+        {"name":"Disc"},
+        {"name":"Media"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"Disc/Media","select":[{"commands":["InputDisc/Media"],"setType":2}]},
+        {"name":"AUX/DI","select":[{"commands":["InputAux/DI"],"setType":2}]},
+        {"name":"TV/AV","select":[{"commands":["InputTv/Av"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

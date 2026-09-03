@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/36/362eb927ae6329c2.json",
   "deviceType": 1,
   "globalDeviceId": 211839,
+  "inputs": {
+    "list": [
+      {"commands":["TvVideo"],"name":"1"},
+      {"commands":["TvVideo"],"name":"2"},
+      {"commands":["TvVideo"],"name":"2S"},
+      {"commands":["TvVideo"],"name":"RF"},
+      {"commands":["TvVideo"],"name":"AV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Toshiba",
-  "model": "2181RF"
+  "model": "2181RF",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"RF"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

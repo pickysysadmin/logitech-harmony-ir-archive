@@ -1,7 +1,41 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/e4/e485451cd7c15bda.json",
   "deviceType": 1,
   "globalDeviceId": 122906,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"VGA"},
+      {"name":"HDMI"},
+      {"name":"VIDEO1"},
+      {"name":"VIDEO2"},
+      {"name":"TV"},
+      {"name":"HDTV1"},
+      {"name":"HDTV2"}
+    ],
+    "next": ["DirectionDown"],
+    "start": [
+      {"set":"Input","to":"VGA"}
+    ],
+    "type": 4
+  },
   "manufacturer": "Prima",
-  "model": "LC-32RG18X"
+  "model": "LC-32RG18X",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,38 @@
   "codeset": "codesets/13/13f9d15a6b4cb70c.json",
   "deviceType": 1,
   "globalDeviceId": 108075,
+  "inputs": {
+    "list": [
+      {"name":"AV"},
+      {"name":"RGB"},
+      {"name":"AV2"},
+      {"name":"YC2"},
+      {"name":"AV3"},
+      {"name":"YC3"},
+      {"name":"AV4"},
+      {"name":"YC4"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sony",
-  "model": "KP-S4111K"
+  "model": "KP-S4111K",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "onReset": [
+      {"set":"Input","to":"AV"}
+    ],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

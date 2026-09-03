@@ -2,6 +2,57 @@
   "codeset": "codesets/f5/f551a7916886bd26.json",
   "deviceType": 1,
   "globalDeviceId": 148487,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Composite"}],"name":"Composite"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"S-Video"}],"name":"S-Video"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Comp1"}],"name":"Comp1"},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Comp2"}],"name":"Comp2"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"Analog VGA"}],"name":"Analog VGA"},
+      {"commands":[{"set":"InputType","to":"PC"},{"set":"PCInput","to":"DVI"}],"name":"DVI"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Brookstone",
-  "model": "P42HSKT"
+  "model": "P42HSKT",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAV"],
+      "values": [
+        {"name":"Composite"},
+        {"name":"S-Video"},
+        {"name":"Comp1"},
+        {"name":"Comp2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputAntennaCable"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAV",{"set":"AVInput","to":"Composite"}],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPC",{"set":"PCInput","to":"Analog VGA"}],"setType":2}]}
+      ]
+    },
+    "PCInput": {
+      "next": ["InputPC"],
+      "values": [
+        {"name":"Analog VGA"},
+        {"name":"DVI"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

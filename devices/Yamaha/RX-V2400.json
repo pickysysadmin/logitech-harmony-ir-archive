@@ -2,6 +2,40 @@
   "codeset": "codesets/f7/f7ed482adc40db8d.json",
   "deviceType": 5,
   "globalDeviceId": 48232,
+  "inputs": {
+    "list": [
+      {"commands":["InputVAux"],"name":"V-Aux","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAM"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFM"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputMd/Tape"],"name":"MD/Tape","ports":["Composite"]},
+      {"commands":["InputCdr"],"name":"CD-R","ports":["Composite","S-Video"]},
+      {"commands":["InputCD"],"name":"CD","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputDtv"],"name":"DTV","ports":["Component","Composite","Optical","S-Video"]},
+      {"commands":["InputCbl/Sat"],"name":"CBL/SAT","ports":["Composite","Optical","S-Video"]},
+      {"commands":["InputVcr1"],"name":"VCR1","ports":["Composite","S-Video"]},
+      {"commands":["InputDvr/Vcr2"],"name":"VCR2/DVR","ports":["Composite","Coaxial","S-Video"]},
+      {"commands":["InputDVD"],"name":"DVD","ports":["Component","Composite","Coaxial","Optical","S-Video"]},
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputMultiChannel"],"name":"Multi Ch In","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V2400"
+  "model": "RX-V2400",
+  "power": {
+    "off": ["PowerOff-Zone1"],
+    "on": ["PowerOn-Zone1"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 1
+  }
 }

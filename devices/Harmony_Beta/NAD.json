@@ -2,6 +2,40 @@
   "codeset": "codesets/36/36c1bd0b26387e9d.json",
   "deviceType": 19,
   "globalDeviceId": 491978,
+  "inputs": {
+    "list": [
+      {"commands":["InputOptical1"],"name":"Optical 1"},
+      {"commands":["InputOptical2"],"name":"Optical 2"},
+      {"commands":["InputCoaxial1"],"name":"Coaxial 1"},
+      {"commands":["InputCoaxial2"],"name":"Coaxial 2"},
+      {"commands":["InputPhono"],"name":"Phono"},
+      {"commands":["InputLine1"],"name":"Line 1"},
+      {"commands":["InputLine2"],"name":"Line 2"},
+      {"commands":["InputBluetooth"],"name":"Bluetooth"},
+      {"commands":["InputOptical1",{"delayMs":500},"SourceUp",{"delayMs":500},"SourceUp",{"delayMs":500},"SourceUp",{"delayMs":500},"SourceUp",{"delayMs":500},"SourceUp"],"name":"BluOS"},
+      {"commands":["InputOptical1",{"delayMs":500},"SourceUp",{"delayMs":500},"SourceUp",{"delayMs":500},"SourceUp",{"delayMs":500},"SourceUp"],"name":"HDMI 1"},
+      {"commands":["InputOptical1",{"delayMs":500},"SourceUp",{"delayMs":500},"SourceUp",{"delayMs":500},"SourceUp"],"name":"HDMI 2"},
+      {"commands":["InputOptical1",{"delayMs":500},"SourceUp",{"delayMs":500},"SourceUp"],"name":"HDMI 3"},
+      {"commands":["InputOptical1",{"delayMs":500},"SourceUp"],"name":"HDMI ARC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Harmony Beta",
-  "model": "NAD"
+  "model": "NAD",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

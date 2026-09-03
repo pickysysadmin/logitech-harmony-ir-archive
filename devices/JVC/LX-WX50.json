@@ -2,6 +2,39 @@
   "codeset": "codesets/0e/0e3576d98cd1382b.json",
   "deviceType": 7,
   "globalDeviceId": 391526,
+  "inputs": {
+    "finish": ["Enter"],
+    "list": [
+      {"name":"Computer"},
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"Video"},
+      {"name":"S-Video"}
+    ],
+    "next": ["DirectionDown"],
+    "previous": ["DirectionUp"],
+    "start": ["Source"],
+    "type": 4
+  },
   "manufacturer": "JVC",
-  "model": "LX-WX50"
+  "model": "LX-WX50",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 3
+  }
 }

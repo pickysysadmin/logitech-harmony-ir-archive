@@ -2,6 +2,34 @@
   "codeset": "codesets/ba/ba21f865815a69e3.json",
   "deviceType": 1,
   "globalDeviceId": 180176,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Cable"},
+      {"commands":["InputVideo1"],"name":"AV1"},
+      {"commands":["InputVideo2"],"name":"AV2"},
+      {"commands":["InputComponent1"],"name":"Component1"},
+      {"commands":["InputComponent2"],"name":"Component2"},
+      {"commands":["InputHdmi1"],"name":"HDMI1"},
+      {"commands":["InputHdmi2"],"name":"HDMI2"},
+      {"commands":["InputHdmi2",{"delayMs":500},"InputNext",{"delayMs":100},"DirectionDown",{"delayMs":100},"Select"],"name":"HDMI3"},
+      {"commands":["InputPC"],"name":"PC"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Hewlett Packard",
-  "model": "LC-4276N"
+  "model": "LC-4276N",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

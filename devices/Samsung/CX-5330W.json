@@ -2,6 +2,31 @@
   "codeset": "codesets/68/68fe7e00ef173968.json",
   "deviceType": 1,
   "globalDeviceId": 110483,
+  "inputs": {
+    "list": [
+      {"commands":["InputTv"],"name":"AntennaCable"},
+      {"commands":["InputNext"],"name":"AV"},
+      {"commands":["InputTv","InputVideo","InputVideo"],"name":"AV-1"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Samsung",
-  "model": "CX-5330W"
+  "model": "CX-5330W",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"AntennaCable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 3000,
+    "pressMinRepeats": 3
+  }
 }

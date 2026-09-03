@@ -2,6 +2,32 @@
   "codeset": "codesets/a9/a9a4056d09e2d7ab.json",
   "deviceType": 34,
   "globalDeviceId": 42127,
+  "inputs": {
+    "list": [
+      {"name":"DVD"},
+      {"name":"DV"},
+      {"name":"TV"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sears",
-  "model": "30914"
+  "model": "30914",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 7000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 3
+  }
 }

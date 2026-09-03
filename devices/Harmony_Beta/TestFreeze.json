@@ -2,6 +2,30 @@
   "codeset": "codesets/91/915bf86ec7553372.json",
   "deviceType": 5,
   "globalDeviceId": 499101,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM"},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputDvd"],"name":"DVD"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Harmony Beta",
-  "model": "TestFreeze"
+  "model": "TestFreeze",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

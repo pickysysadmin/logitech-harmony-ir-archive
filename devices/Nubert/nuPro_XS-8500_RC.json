@@ -2,6 +2,60 @@
   "codeset": "codesets/09/09e207f68084804b.json",
   "deviceType": 19,
   "globalDeviceId": 512526,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Hdmi"}],"name":"Hdmi"},
+      {"commands":[{"set":"InputType","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"Port"}],"name":"Port"},
+      {"commands":[{"set":"InputType","to":"Coaxial"},{"set":"CoaxialInput","to":"Coax1"}],"name":"Coax1"},
+      {"commands":[{"set":"InputType","to":"Coaxial"},{"set":"CoaxialInput","to":"Coax2"}],"name":"Coax2"},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OpticalInput","to":"Opt1"}],"name":"Opt1"},
+      {"commands":[{"set":"InputType","to":"Optical"},{"set":"OpticalInput","to":"Opt2"}],"name":"Opt2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Nubert",
-  "model": "nuPro XS-8500 RC"
+  "model": "nuPro XS-8500 RC",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "CoaxialInput": {
+      "next": ["InputCoax"],
+      "values": [
+        {"name":"Coax1"},
+        {"name":"Coax2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Hdmi","select":[{"commands":["InputHdmi"],"setType":1}]},
+        {"name":"Aux","select":[{"commands":["InputAux"],"setType":1}]},
+        {"name":"Bluetooth","select":[{"commands":["InputBluetooth"],"setType":1}]},
+        {"name":"Port","select":[{"commands":["InputPort"],"setType":1}]},
+        {"name":"Coaxial","select":[{"commands":["InputCoax"],"setType":1}]},
+        {"name":"Optical","select":[{"commands":["InputOptical"],"setType":1}]}
+      ]
+    },
+    "OpticalInput": {
+      "next": ["InputOptical"],
+      "values": [
+        {"name":"Opt1"},
+        {"name":"Opt2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

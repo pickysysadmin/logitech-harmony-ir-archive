@@ -1,7 +1,42 @@
 {
+  "channelTuning": {
+    "fixedDigits": 3
+  },
   "codeset": "codesets/cb/cb07fef1459fc1e6.json",
   "deviceType": 1,
   "globalDeviceId": 91945,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Scart 1"},
+      {"name":"Scart 1 Rgb"},
+      {"name":"Scart 2"},
+      {"name":"Scart 2 Rgb"},
+      {"name":"Digital"},
+      {"name":"PC"},
+      {"name":"Fav"},
+      {"name":"S-Video"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Wharfedale",
-  "model": "LCD2610AF"
+  "model": "LCD2610AF",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 3
+  }
 }

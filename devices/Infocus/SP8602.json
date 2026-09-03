@@ -2,6 +2,34 @@
   "codeset": "codesets/72/7224329b2ca59d6e.json",
   "deviceType": 7,
   "globalDeviceId": 203782,
+  "inputs": {
+    "list": [
+      {"commands":["InputSource1"],"name":"Source1"},
+      {"commands":["InputSource2"],"name":"Source2"},
+      {"commands":["InputSource3"],"name":"Source3"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Infocus",
-  "model": "SP8602"
+  "model": "SP8602",
+  "power": {
+    "off": [
+      "PowerOff",
+      {"delayMs":1000},
+      "PowerOff"
+    ],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 25000,
+    "pressMinRepeats": 1
+  }
 }

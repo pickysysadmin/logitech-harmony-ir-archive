@@ -2,6 +2,39 @@
   "codeset": "codesets/00/00163c6fa5ec58b0.json",
   "deviceType": 1,
   "globalDeviceId": 54989,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"Video"},
+      {"name":"AV1"},
+      {"name":"AV2"},
+      {"name":"AVS"},
+      {"name":"VGA/XGA"},
+      {"name":"DVI"},
+      {"name":"COMPONENT"}
+    ],
+    "next": ["DirectionRight"],
+    "previous": ["DirectionLeft"],
+    "start": [
+      "InputNext",
+      {"delayMs":2500}
+    ],
+    "type": 4
+  },
   "manufacturer": "Loewe",
-  "model": "Xelos SL 37"
+  "model": "Xelos SL 37",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 14000,
+    "pressMinRepeats": 3
+  }
 }

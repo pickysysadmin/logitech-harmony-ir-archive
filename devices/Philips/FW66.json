@@ -2,6 +2,32 @@
   "codeset": "codesets/a5/a51d4554cc4f5157.json",
   "deviceType": 21,
   "globalDeviceId": 63799,
+  "inputs": {
+    "list": [
+      {"commands":["InputCD"],"name":"CD"},
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputTape"],"name":"Tape1"},
+      {"commands":["InputTape"],"name":"Tape2"},
+      {"commands":["InputDcc"],"name":"DCC"},
+      {"commands":["InputTv"],"name":"TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Philips",
-  "model": "FW66"
+  "model": "FW66",
+  "power": {
+    "off": ["PowerToggle"],
+    "on": ["InputTuner"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

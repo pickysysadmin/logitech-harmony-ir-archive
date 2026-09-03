@@ -2,6 +2,49 @@
   "codeset": "codesets/38/38fcd07d1689bd37.json",
   "deviceType": 21,
   "globalDeviceId": 148629,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"},
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"VideoAux"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"VideoAux"}],"name":"5.1ch"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"MD"}],"name":"MD"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Aiwa",
-  "model": "CX-NMT504"
+  "model": "CX-NMT504",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AuxMode": {
+      "next": ["InputVideo/Aux"],
+      "values": [
+        {"name":"Video"},
+        {"name":"5.1ch"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":1}]},
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":1}]},
+        {"name":"VideoAux","select":[{"commands":["InputVideo/Aux"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCD"],"setType":1}]},
+        {"name":"MD","select":[{"commands":["InputMD"],"setType":1}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

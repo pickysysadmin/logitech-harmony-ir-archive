@@ -2,6 +2,62 @@
   "codeset": "codesets/ad/add5db22439eaab8.json",
   "deviceType": 22,
   "globalDeviceId": 217447,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Disc/SD"},{"set":"Disc/SDInput","to":"BD/DVD"}],"name":"BD/DVD","ports":["Streaming"]},
+      {"commands":[{"set":"InputType","to":"Disc/SD"},{"set":"Disc/SDInput","to":"SD"}],"name":"SD","ports":["SD-Card"]},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In/iPod"},{"set":"Radio/Ext-In/iPodInput","to":"iPod"}],"name":"iPod","ports":["Dock"]},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In/iPod"},{"set":"Radio/Ext-In/iPodInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In/iPod"},{"set":"Radio/Ext-In/iPodInput","to":"AUX"}],"name":"AUX","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In/iPod"},{"set":"Radio/Ext-In/iPodInput","to":"ARC"}],"name":"ARC","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Radio/Ext-In/iPod"},{"set":"Radio/Ext-In/iPodInput","to":"Digital In"}],"name":"Digital In","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Home"}],"name":"Home","ports":["Streaming"]}
+    ],
+    "type": 5
+  },
   "manufacturer": "Panasonic",
-  "model": "SC-BTT270"
+  "model": "SC-BTT270",
+  "power": {
+    "onReset": [
+      {"set":"InputType","to":"Home"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Disc/SDInput": {
+      "next": ["InputDisc/Sd"],
+      "values": [
+        {"name":"BD/DVD"},
+        {"name":"SD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Disc/SD","select":[{"commands":["InputDisc/Sd"],"setType":2}]},
+        {"name":"Radio/Ext-In/iPod","select":[{"commands":["InputRadio/Ext-In/iPod"],"setType":2}]},
+        {"name":"Home","select":[{"commands":["Home"],"setType":2}]}
+      ]
+    },
+    "Radio/Ext-In/iPodInput": {
+      "next": ["InputRadio/Ext-In/iPod"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"FM"},
+        {"name":"AUX"},
+        {"name":"ARC"},
+        {"name":"Digital In"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,42 @@
   "codeset": "codesets/ad/ad0c08feac053ee0.json",
   "deviceType": 5,
   "globalDeviceId": 172960,
+  "inputs": {
+    "list": [
+      {"commands":["InputXm"],"name":"XM","ports":["Streaming"]},
+      {"commands":["InputNet/Usb"],"name":"Net/USB","ports":["USB"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial","Optical"]},
+      {"commands":["InputCd-r"],"name":"CD-R","ports":["Composite","Optical"]},
+      {"commands":["InputMultiChannel"],"name":"MULTICHANNEL","ports":["Composite"]},
+      {"commands":["InputMd/Tape"],"name":"MD/TAPE","ports":["Composite","Optical"]},
+      {"commands":["InputDvd"],"name":"DVD","ports":["HDMI","Component","Composite","Coaxial","S-Video","Optical"]},
+      {"commands":["InputBd/HdDvd"],"name":"BD/HD DVD","ports":["HDMI","Component","Composite","S-Video","Optical"]},
+      {"commands":["InputPhono"],"name":"PHONO","ports":["Composite"]},
+      {"commands":["InputDtv/Cbl"],"name":"DTV/CBL","ports":["HDMI","Component","Composite","S-Video","Optical"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["HDMI","Composite","Coaxial","S-Video"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":["InputV-Aux/Dock"],"name":"V-AUX/DOCK","ports":["Composite","S-Video","Optical","Dock"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Yamaha",
-  "model": "RX-V3800"
+  "model": "RX-V3800",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

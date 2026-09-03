@@ -1,7 +1,86 @@
 {
+  "channelTuning": {
+    "finish": ["Enter"]
+  },
   "codeset": "codesets/46/467f99604cb95bc0.json",
   "deviceType": 1,
   "globalDeviceId": 140381,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"DigitalHDInput","to":"Digital HD1"}],"name":"RGB"},
+      {"commands":["InputDigitalHd"],"name":"HDMI"},
+      {"commands":["InputTV"],"name":"TV"},
+      {"commands":["InputAnalogHd"],"name":"COMPONENT"},
+      {"commands":["InputAV"],"name":"AV"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Vizio",
-  "model": "GV-45L"
+  "model": "GV-45L",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": [
+        {"command":"InputAV","durationMs":1000}
+      ],
+      "start": [
+        {"delayMs":3000},
+        {"command":"InputAV","durationMs":1000}
+      ],
+      "values": [
+        {"name":"AV1 S-Video"},
+        {"name":"AV1 Video"},
+        {"name":"AV2 S-Video"},
+        {"name":"AV2 Video"}
+      ]
+    },
+    "AnalogHDInput": {
+      "next": [
+        {"command":"InputAnalogHd","durationMs":1000}
+      ],
+      "start": [
+        {"delayMs":3000},
+        {"command":"InputAnalogHd","durationMs":1000}
+      ],
+      "values": [
+        {"name":"Analog HD1"},
+        {"name":"Analog HD2"}
+      ]
+    },
+    "DigitalHDInput": {
+      "next": [
+        {"command":"InputDigitalHd","durationMs":1000}
+      ],
+      "start": [
+        {"delayMs":3000},
+        {"command":"InputDigitalHd","durationMs":1000}
+      ],
+      "values": [
+        {"name":"Digital HD1"},
+        {"name":"Digital HD2"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"RGB","select":[{"commands":[{"command":"InputRGB","durationMs":1000}],"setType":2}]},
+        {"name":"Digital HD","select":[{"commands":[{"command":"InputDigitalHd","durationMs":1000}],"setType":2}]},
+        {"name":"Analog HD","select":[{"commands":[{"command":"InputAnalogHd","durationMs":1000}],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAV"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 200,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 1
+  }
 }

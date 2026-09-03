@@ -1,7 +1,37 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/4c/4cf90f45ce501886.json",
   "deviceType": 34,
   "globalDeviceId": 149095,
+  "inputs": {
+    "canSkip": true,
+    "list": [
+      {"name":"HDTV"},
+      {"name":"DVD"}
+    ],
+    "next": ["Dtv/Dvd"],
+    "type": 2
+  },
   "manufacturer": "LG",
-  "model": "LST-3510A"
+  "model": "LST-3510A",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"HDTV"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 1
+  }
 }

@@ -2,6 +2,39 @@
   "codeset": "codesets/14/14785d9f2279b1b2.json",
   "deviceType": 5,
   "globalDeviceId": 177023,
+  "inputs": {
+    "list": [
+      {"commands":["InputPhono"],"name":"Phono","ports":["Composite"]},
+      {"commands":["InputCd"],"name":"CD","ports":["Composite","Coaxial"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputAm"],"name":"AM","ports":["AM Antenna"]},
+      {"commands":["InputTuner",{"delayMs":1000},"InputFm"],"name":"FM","ports":["FM Antenna"]},
+      {"commands":["InputDvd/Hdp"],"name":"DVD/HDP","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputTv/Cbl"],"name":"TV/CBL","ports":["HDMI","Component","Composite","Coaxial","S-Video"]},
+      {"commands":["InputVcr"],"name":"VCR","ports":["Composite","S-Video"]},
+      {"commands":["InputDvr"],"name":"DVR","ports":["Component","Composite","S-Video","Optical"]},
+      {"commands":["InputV-Aux"],"name":"V.AUX","ports":["Composite","S-Video","Optical"]},
+      {"commands":["InputAux"],"name":"AUX","ports":["Composite","Optical"]},
+      {"commands":["InputiPod"],"name":"iPod","ports":["Dock"]},
+      {"commands":["InputSatTu"],"name":"SAT TU","ports":["Others"]},
+      {"commands":["InputExt-In"],"name":"Ext. In","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Denon",
-  "model": "AVR-2308CI"
+  "model": "AVR-2308CI",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 7000,
+    "pressMinRepeats": 3
+  }
 }

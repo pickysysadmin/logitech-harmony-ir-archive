@@ -2,6 +2,37 @@
   "codeset": "codesets/cc/cccc5a6f620277dd.json",
   "deviceType": 21,
   "globalDeviceId": 181960,
+  "inputs": {
+    "list": [
+      {"name":"Radio"},
+      {"name":"Sirius Tuner"},
+      {"name":"CD"},
+      {"name":"CD Changer"},
+      {"name":"DVD Changer"},
+      {"name":"TV"},
+      {"name":"AUX"}
+    ],
+    "next": ["Function"],
+    "type": 2
+  },
   "manufacturer": "Clarion",
-  "model": "DXZ-445"
+  "model": "DXZ-445",
+  "power": {
+    "off": [
+      {"command":"PowerToggle","durationMs":1000}
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

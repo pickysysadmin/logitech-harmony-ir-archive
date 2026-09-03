@@ -2,6 +2,76 @@
   "codeset": "codesets/40/40bd32d9169652b5.json",
   "deviceType": 5,
   "globalDeviceId": 254034,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"UPnP"}],"name":"UPnP"},
+      {"commands":[{"set":"InputType","to":"Digital 3"}],"name":"Digital 3"},
+      {"commands":[{"set":"InputType","to":"Digital 4"}],"name":"Digital 4"},
+      {"commands":[{"set":"InputType","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"Analogue 1"}],"name":"Analogue 1"},
+      {"commands":[{"set":"InputType","to":"CD"},{"set":"CDInput","to":"Digital 1"}],"name":"Digital 1"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"iRadio"}],"name":"iRadio"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"FM"}],"name":"FM"},
+      {"commands":[{"set":"InputType","to":"Radio"},{"set":"RadioInput","to":"DAB"}],"name":"DAB"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"USB/iPod"}],"name":"USB/iPod"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"FrontAnalogue/Digital"}],"name":"FrontAnalogue/Digital"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Analogue 2"}],"name":"Analogue 2"},
+      {"commands":[{"set":"InputType","to":"TV"},{"set":"TVInput","to":"Digital 2"}],"name":"Digital 2"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Naim",
-  "model": "NAC-N 172 XS"
+  "model": "NAC-N 172 XS",
+  "states": {
+    "CDInput": {
+      "next": ["InputCd"],
+      "values": [
+        {"name":"Analogue 1"},
+        {"name":"Digital 1"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"UPnP","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Digital 3","select":[{"commands":["InputAv"],"setType":2}]},
+        {"name":"Digital 4","select":[{"commands":["InputHdd"],"setType":2}]},
+        {"name":"AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Radio","select":[{"commands":["InputRadio"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputiPod"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]}
+      ]
+    },
+    "RadioInput": {
+      "next": ["InputRadio"],
+      "values": [
+        {"name":"iRadio"},
+        {"name":"FM"},
+        {"name":"DAB"}
+      ]
+    },
+    "TVInput": {
+      "next": ["InputTv"],
+      "values": [
+        {"name":"Analogue 2"},
+        {"name":"Digital 2"}
+      ]
+    },
+    "iPodInput": {
+      "next": ["InputiPod"],
+      "values": [
+        {"name":"USB/iPod"},
+        {"name":"FrontAnalogue/Digital"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "pressMinRepeats": 3
+  }
 }

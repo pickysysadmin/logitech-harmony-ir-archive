@@ -2,6 +2,37 @@
   "codeset": "codesets/e3/e34bad910e1b2094.json",
   "deviceType": 7,
   "globalDeviceId": 496957,
+  "inputs": {
+    "list": [
+      {"name":"HDMI 1"},
+      {"name":"HDMI 2"},
+      {"name":"VGA"},
+      {"name":"Component"},
+      {"name":"Media"}
+    ],
+    "next": ["Source"],
+    "type": 2
+  },
   "manufacturer": "Optoma",
-  "model": "UHD3200A"
+  "model": "UHD3200A",
+  "power": {
+    "off": [
+      "PowerToggle",
+      {"delayMs":1000},
+      "PowerToggle"
+    ],
+    "on": ["PowerToggle"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 10000,
+    "pressMinRepeats": 1
+  }
 }

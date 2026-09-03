@@ -2,6 +2,36 @@
   "codeset": "codesets/f5/f5e36fbadb0cee91.json",
   "deviceType": 5,
   "globalDeviceId": 20354,
+  "inputs": {
+    "list": [
+      {"commands":["InputTuner"],"name":"Tuner"},
+      {"commands":["InputDat/Md"],"name":"DAT"},
+      {"commands":["InputTape"],"name":"TAPE1"},
+      {"commands":["InputCd"],"name":"CD"},
+      {"commands":["InputPhono"],"name":"PHONO"},
+      {"commands":["InputVideo1"],"name":"VIDEO1"},
+      {"commands":["InputVideo2"],"name":"VIDEO2"},
+      {"commands":["InputVideo3"],"name":"VIDEO3"},
+      {"commands":["InputLaserDisc"],"name":"DVD/LD"},
+      {"commands":["InputTelevision"],"name":"TV"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "STR-D1615"
+  "model": "STR-D1615",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

@@ -2,6 +2,29 @@
   "codeset": "codesets/21/21b16c7da61ecff5.json",
   "deviceType": 19,
   "globalDeviceId": 263162,
+  "inputs": {
+    "list": [
+      {"commands":["BluetoothParing","Input"],"name":"TV","ports":["HDMI","Optical"]},
+      {"commands":["BluetoothParing","Input",{"delayMs":5000},"Input"],"name":"BD/DVD","ports":["HDMI"]},
+      {"commands":["BluetoothParing"],"name":"Bluetooth","ports":["Pairing Input"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Panasonic",
-  "model": "SU-HTB580"
+  "model": "SU-HTB580",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
 }

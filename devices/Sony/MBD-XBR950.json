@@ -1,7 +1,38 @@
 {
+  "channelTuning": {
+    "finish": ["NumberEnter"]
+  },
   "codeset": "codesets/8b/8bd1f05589f8013b.json",
   "deviceType": 5,
   "globalDeviceId": 45594,
+  "inputs": {
+    "list": [
+      {"commands":["InputAntenna"],"name":"Tuner","ports":["Antenna"]},
+      {"commands":["InputVideo1"],"name":"Video 1","ports":["Composite","S-Video"]},
+      {"commands":["InputVideo2"],"name":"Video 2","ports":["Composite","S-Video"]},
+      {"commands":["InputVideo3"],"name":"Video 3","ports":["Composite","S-Video"]},
+      {"commands":["InputVideo4"],"name":"Video 4","ports":["Component","Composite"]},
+      {"commands":["InputVideo5"],"name":"Video 5","ports":["Component","Composite"]},
+      {"commands":["InputVideo6"],"name":"Video 6","ports":["Composite"]}
+    ],
+    "type": 1
+  },
   "manufacturer": "Sony",
-  "model": "MBD-XBR950"
+  "model": "MBD-XBR950",
+  "power": {
+    "off": ["PowerOff"],
+    "on": ["PowerOn"],
+    "type": "discrete"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

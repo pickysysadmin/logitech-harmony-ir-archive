@@ -2,6 +2,33 @@
   "codeset": "codesets/e7/e79325ac3935ccd3.json",
   "deviceType": 1,
   "globalDeviceId": 111722,
+  "inputs": {
+    "list": [
+      {"commands":[{"delayMs":3500},"InputNext","FinishInput"],"name":"VGA"},
+      {"commands":[{"delayMs":3500},"InputNext","ChannelDown","FinishInput"],"name":"DVI"},
+      {"commands":[{"delayMs":3500},"InputNext","ChannelDown","ChannelDown","FinishInput"],"name":"RF"},
+      {"commands":[{"delayMs":3500},"InputNext","ChannelDown","ChannelDown","ChannelDown","FinishInput"],"name":"Video1"},
+      {"commands":[{"delayMs":3500},"InputNext","ChannelUp","ChannelUp","ChannelUp","FinishInput"],"name":"Video2"},
+      {"commands":[{"delayMs":4500},"InputNext",{"delayMs":1300},"ChannelUp",{"delayMs":1300},"ChannelUp",{"delayMs":1300},"FinishInput"],"name":"YPbPr1"},
+      {"commands":[{"delayMs":4500},"InputNext",{"delayMs":1300},"ChannelUp",{"delayMs":1300},"FinishInput"],"name":"YPbPr2"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Insignia",
-  "model": "INC3708"
+  "model": "INC3708",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 3,
+    "powerOnDelay": 6000,
+    "pressMinRepeats": 3
+  }
 }

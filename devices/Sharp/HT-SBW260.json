@@ -2,6 +2,54 @@
   "codeset": "codesets/25/25fe3442134f39a6.json",
   "deviceType": 19,
   "globalDeviceId": 495206,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"HdmiArc"}],"name":"HdmiArc"},
+      {"commands":[{"set":"InputType","to":"Opt/BT"},{"set":"Opt/BTInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"Opt/BT"},{"set":"Opt/BTInput","to":"Bluetooth"}],"name":"Bluetooth"},
+      {"commands":[{"set":"InputType","to":"LineIn/Usb"},{"set":"LineIn/UsbInput","to":"LineIn"}],"name":"LineIn"},
+      {"commands":[{"set":"InputType","to":"LineIn/Usb"},{"set":"LineIn/UsbInput","to":"Usb"}],"name":"Usb"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Sharp",
-  "model": "HT-SBW260"
+  "model": "HT-SBW260",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"HdmiArc","select":[{"commands":["InputHdmiArc"],"setType":2}]},
+        {"name":"Opt/BT","select":[{"commands":["InputOpt/BT"],"setType":2}]},
+        {"name":"LineIn/Usb","select":[{"commands":["InputLineIn/Usb"],"setType":2}]}
+      ]
+    },
+    "LineIn/UsbInput": {
+      "next": ["InputLineIn/Usb"],
+      "values": [
+        {"name":"LineIn"},
+        {"name":"Usb"}
+      ]
+    },
+    "Opt/BTInput": {
+      "next": ["InputOpt/BT"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"Bluetooth"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 1
+  }
 }

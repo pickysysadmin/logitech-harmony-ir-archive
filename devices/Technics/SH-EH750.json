@@ -2,6 +2,49 @@
   "codeset": "codesets/3c/3ce71a382d8624b7.json",
   "deviceType": 19,
   "globalDeviceId": 235287,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner/Band"}],"name":"Tuner/Band"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tape/Deck1/2"}],"name":"Tape/Deck1/2"},
+      {"commands":[{"set":"InputType","to":"VCR/AUX/6Ch"},{"set":"VCR/AUX/6ChInput","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"VCR/AUX/6Ch"},{"set":"VCR/AUX/6ChInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"VCR/AUX/6Ch"},{"set":"VCR/AUX/6ChInput","to":"6ChInput"}],"name":"6ChInput"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Technics",
-  "model": "SH-EH750"
+  "model": "SH-EH750",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "InputType": {
+      "values": [
+        {"name":"Tuner/Band","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tape/Deck1/2","select":[{"commands":["InputTape"],"setType":2}]},
+        {"name":"VCR/AUX/6Ch","select":[{"commands":["InputVCR/AUX/6ch"],"setType":2}]}
+      ]
+    },
+    "VCR/AUX/6ChInput": {
+      "next": ["InputVCR/AUX/6ch"],
+      "values": [
+        {"name":"VCR"},
+        {"name":"AUX"},
+        {"name":"6ChInput"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
 }

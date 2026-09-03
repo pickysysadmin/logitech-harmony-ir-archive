@@ -2,6 +2,81 @@
   "codeset": "codesets/f6/f6aab7d21f42b71d.json",
   "deviceType": 5,
   "globalDeviceId": 44467,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"Video"}],"name":"Video"},
+      {"commands":[{"set":"InputType","to":"6-Channel"}],"name":"6-Channel"},
+      {"commands":[{"set":"InputType","to":"Aux/Coax2"},{"set":"Aux/Coax2Input","to":"Aux"}],"name":"Aux"},
+      {"commands":[{"set":"InputType","to":"Aux/Coax2"},{"set":"Aux/Coax2Input","to":"Coax2"}],"name":"Coax2"},
+      {"commands":[{"set":"InputType","to":"CD/Coax1"},{"set":"CD/Coax1Input","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"CD/Coax1"},{"set":"CD/Coax1Input","to":"Coax1"}],"name":"Coax1"},
+      {"commands":[{"set":"InputType","to":"DVD/Opt"},{"set":"DVD/OptInput","to":"DVD"}],"name":"DVD"},
+      {"commands":[{"set":"InputType","to":"DVD/Opt"},{"set":"DVD/OptInput","to":"Optical"}],"name":"Optical"},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AM/FMInput","to":"AM"}],"name":"AM"},
+      {"commands":[{"set":"InputType","to":"AM/FM"},{"set":"AM/FMInput","to":"FM"}],"name":"FM"}
+    ],
+    "type": 5
+  },
   "manufacturer": "Insignia",
-  "model": "IS-HC04091"
+  "model": "IS-HC04091",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AM/FMInput": {
+      "next": ["AmFmToggle"],
+      "values": [
+        {"name":"AM"},
+        {"name":"FM"}
+      ]
+    },
+    "Aux/Coax2Input": {
+      "next": ["InputAux/Coax2"],
+      "values": [
+        {"name":"Aux"},
+        {"name":"Coax2"}
+      ]
+    },
+    "CD/Coax1Input": {
+      "next": ["InputCd/Coax1"],
+      "values": [
+        {"name":"CD"},
+        {"name":"Coax1"}
+      ]
+    },
+    "DVD/OptInput": {
+      "next": ["InputDvd/Opt"],
+      "values": [
+        {"name":"DVD"},
+        {"name":"Optical"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"Video","select":[{"commands":["InputVideo"],"setType":2}]},
+        {"name":"6-Channel","select":[{"commands":["Input6-Ch"],"setType":2}]},
+        {"name":"Aux/Coax2","select":[{"commands":["InputAux/Coax2"],"setType":2}]},
+        {"name":"CD/Coax1","select":[{"commands":["InputCd/Coax1"],"setType":2}]},
+        {"name":"DVD/Opt","select":[{"commands":["InputDvd/Opt",{"set":"DVD/OptInput","to":"Optical"}],"setType":2}]},
+        {"name":"AM/FM","select":[{"commands":["AmFmToggle"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

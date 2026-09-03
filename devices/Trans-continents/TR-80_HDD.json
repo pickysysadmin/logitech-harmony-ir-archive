@@ -1,7 +1,40 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/a0/a0d2c96c10ffd901.json",
   "deviceType": 34,
   "globalDeviceId": 121904,
+  "inputs": {
+    "list": [
+      {"commands":["InputNext"],"name":"DVD"},
+      {"commands":["Title"],"name":"Tuner"},
+      {"commands":["Menu"],"name":"FrontCVBS"},
+      {"commands":["Menu"],"name":"RearCVBS"},
+      {"commands":["Menu"],"name":"RearS-Vid"},
+      {"commands":["Menu"],"name":"DVIn"},
+      {"commands":["Menu"],"name":"YUV"},
+      {"commands":["Menu"],"name":"Scart"}
+    ],
+    "type": 1
+  },
   "manufacturer": "Trans-continents",
-  "model": "TR-80 HDD"
+  "model": "TR-80 HDD",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"DVD"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 200,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 500,
+    "pressMinRepeats": 3
+  }
 }

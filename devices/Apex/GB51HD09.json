@@ -2,6 +2,38 @@
   "codeset": "codesets/40/4049021db24e18dd.json",
   "deviceType": 1,
   "globalDeviceId": 153766,
+  "inputs": {
+    "list": [
+      {"name":"Antenna/Cable"},
+      {"name":"SVHS1"},
+      {"name":"AV2"},
+      {"name":"SVHS2"},
+      {"name":"FAV"},
+      {"name":"FSVHS"},
+      {"name":"YPBPr1"},
+      {"name":"YPBPr2"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Apex",
-  "model": "GB51HD09"
+  "model": "GB51HD09",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Antenna/Cable"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 8000,
+    "pressMinRepeats": 1
+  }
 }

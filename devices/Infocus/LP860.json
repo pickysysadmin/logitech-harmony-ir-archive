@@ -2,6 +2,37 @@
   "codeset": "codesets/37/37c9e9866e63feb3.json",
   "deviceType": 7,
   "globalDeviceId": 64744,
+  "inputs": {
+    "finish": ["Select"],
+    "list": [
+      {"name":"Video 1"},
+      {"name":"Video 2"},
+      {"name":"Video 3"},
+      {"name":"Computer 1"},
+      {"name":"Computer 2"},
+      {"name":"Computer 3"}
+    ],
+    "next": ["InputNext"],
+    "start": ["Display"],
+    "type": 4
+  },
   "manufacturer": "Infocus",
-  "model": "LP860"
+  "model": "LP860",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Video 1"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 300,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 15000,
+    "pressMinRepeats": 3
+  }
 }

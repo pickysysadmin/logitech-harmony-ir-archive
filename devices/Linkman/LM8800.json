@@ -2,6 +2,34 @@
   "codeset": "codesets/60/60512e62c193f73b.json",
   "deviceType": 22,
   "globalDeviceId": 264407,
+  "inputs": {
+    "list": [
+      {"name":"Aux"},
+      {"name":"DVD"},
+      {"name":"iPod"},
+      {"name":"Radio"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Linkman",
-  "model": "LM8800"
+  "model": "LM8800",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Aux"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 5000,
+    "pressMinRepeats": 1
+  }
 }

@@ -1,7 +1,55 @@
 {
+  "channelTuning": {
+    "fixedDigits": 2
+  },
   "codeset": "codesets/b5/b512a1dc94ac1596.json",
   "deviceType": 34,
   "globalDeviceId": 130305,
+  "inputs": {
+    "list": [
+      {"name":"DVD Line1"},
+      {"name":"DVD Line2"},
+      {"name":"DVD TP"},
+      {"name":"DVD Tuner"},
+      {"name":"VCR Line1"},
+      {"name":"VCR Line2"},
+      {"name":"VCR TP"},
+      {"name":"VCR Tuner"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Panasonic",
-  "model": "DMR-ES46W"
+  "model": "DMR-ES46W",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "L": {
+      "next": ["InputNext"],
+      "values": [
+        {"name":"Line1"},
+        {"name":"Line2"},
+        {"name":"TP"},
+        {"name":"Tuner"}
+      ]
+    },
+    "Mode": {
+      "values": [
+        {"name":"DVD","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2000,
+    "pressMinRepeats": 3
+  }
 }

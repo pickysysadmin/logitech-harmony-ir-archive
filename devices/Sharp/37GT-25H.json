@@ -2,6 +2,31 @@
   "codeset": "codesets/d0/d058b16b974699b3.json",
   "deviceType": 1,
   "globalDeviceId": 116046,
+  "inputs": {
+    "list": [
+      {"name":"Tuner"},
+      {"name":"Input 1"}
+    ],
+    "next": ["InputNext"],
+    "type": 2
+  },
   "manufacturer": "Sharp",
-  "model": "37GT-25H"
+  "model": "37GT-25H",
+  "power": {
+    "onReset": [
+      {"set":"Input","to":"Tuner"}
+    ],
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 500,
+    "interDeviceDelay": 100,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1000,
+    "pressMinRepeats": 3
+  }
 }

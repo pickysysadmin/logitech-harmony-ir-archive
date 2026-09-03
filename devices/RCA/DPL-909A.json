@@ -2,6 +2,63 @@
   "codeset": "codesets/13/1394e7516b49787e.json",
   "deviceType": 22,
   "globalDeviceId": 92932,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"}],"name":"Tuner"},
+      {"commands":[{"set":"InputType","to":"TV"}],"name":"TV"},
+      {"commands":[{"set":"InputType","to":"VCR"}],"name":"VCR"},
+      {"commands":[{"set":"InputType","to":"DVDType"},{"set":"DVDMode","to":"6channel"}],"name":"DVD-6CH"},
+      {"commands":[{"set":"InputType","to":"DVDType"},{"set":"DVDMode","to":"Optical"}],"name":"DVD-OPT"},
+      {"commands":[{"set":"InputType","to":"V-AUX"}],"name":"V-AUX"},
+      {"commands":[{"set":"InputType","to":"Sat/Cbl"},{"set":"SAT","to":"1"}],"name":"SAT/CBL"},
+      {"commands":[{"set":"InputType","to":"Sat/Cbl"},{"set":"SAT","to":"2"}],"name":"SAT/CBL2"},
+      {"commands":[{"set":"InputType","to":"CD"}],"name":"CD"},
+      {"commands":[{"set":"InputType","to":"Tape"}],"name":"Tape"}
+    ],
+    "type": 5
+  },
   "manufacturer": "RCA",
-  "model": "DPL-909A"
+  "model": "DPL-909A",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DVDMode": {
+      "next": ["InputDvd"],
+      "values": [
+        {"name":"Optical"},
+        {"name":"6channel"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"TV","select":[{"commands":["InputTv"],"setType":2}]},
+        {"name":"VCR","select":[{"commands":["InputVcr"],"setType":2}]},
+        {"name":"DVDType","select":[{"commands":["InputDvd"],"setType":2}]},
+        {"name":"V-AUX","select":[{"commands":["InputAux"],"setType":2}]},
+        {"name":"Sat/Cbl","select":[{"commands":["InputSat"],"setType":2}]},
+        {"name":"CD","select":[{"commands":["InputCd"],"setType":2}]},
+        {"name":"Tape","select":[{"commands":["InputTape"],"setType":2}]}
+      ]
+    },
+    "SAT": {
+      "next": ["InputSat"],
+      "values": [
+        {"name":"1"},
+        {"name":"2"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1500,
+    "interDeviceDelay": 1000,
+    "interKeyDelay": 500,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 2500,
+    "pressMinRepeats": 3
+  }
 }
