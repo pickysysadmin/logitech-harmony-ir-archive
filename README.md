@@ -514,12 +514,28 @@ python3 rehydrate.py --all --out /tmp/everything      # ~5.8 GB, 276,236 files
 5.1 parses JSON slowly — fine for one manufacturer; use Python or PowerShell 7 for
 anything larger.
 
+## Acknowledgements
+
+A massive thank you to the following projects:
+
+- Flipper-IRDB – https://github.com/Lucaslhm/Flipper-IRDB
+- IrScrutinizer – https://github.com/bengtmartensson/IrScrutinizer
+- IrpTransmogrifier – https://github.com/bengtmartensson/IrpTransmogrifier
+- MakeHex – https://github.com/probonopd/MakeHex
+- irdb – https://github.com/probonopd/irdb
+- Remote Central – https://www.remotecentral.com/cgi-bin/codes/
+- harmony-hub-root – https://github.com/Ripthulhu/harmony-hub-root
+
+Your work was invaluable in getting this archive created and the Pronto codes validated (hopefully).
+
 ## Licence
 
-This archive is dedicated to the public domain under CC0 1.0.
+My contributions to this archive, the Pronto conversions, the schema, and the
+organization of the data, are released under CC0 1.0 Universal.
 
-The underlying device and protocol data originates with Logitech's Harmony
-service; this project makes no ownership claim over it and asserts no rights
-beyond its own compilation and derived formats.
+The underlying IR codes and protocol definitions originate with Logitech. I make no
+representation about their copyright status and I'm not in a position to license them.
+CC0 waives my rights, not anyone else's. If you're building something commercial on
+this, evaluate that yourself.
 
 See `LICENSE` for the full CC0 1.0 Universal text.
