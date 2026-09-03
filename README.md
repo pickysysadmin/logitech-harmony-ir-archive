@@ -88,20 +88,23 @@ The last five are **absent, never `null` and never `{}`**, on a device Logitech 
 nothing to say about — the same convention `pronto` follows. Test with `in` /
 `hasOwnProperty`, not for a falsy value. A fuller record:
 
+A real one, `devices/Magnavox/RJ5540.json`, trimmed only of its timing block:
+
 ```json
 {"manufacturer": "Magnavox",
  "model": "RJ5540",
- "globalDeviceId": 9,
+ "globalDeviceId": 636,
  "deviceType": 1,
- "codeset": "codesets/aa/aabbccddeeff0011.json",
- "timing": {"interKeyDelay": 100, "interDeviceDelay": 500, "minRepeats": 1},
- "power": {"type": "discrete", "on": ["PowerOn"], "off": ["PowerOff"]},
+ "codeset": "codesets/3b/3b3e7eddcbfe948a.json",
+ "power": {"type": "toggle", "toggle": ["PowerToggle"]},
  "inputs": {"type": 1,
-            "list": [{"name": "Tuner", "commands": ["InputTuner"], "ports": ["Antenna"]},
-                     {"name": "TV", "commands": ["InputNext", "InputTuner", {"delayMs": 500}]}],
-            "next": ["InputNext"]},
- "channelTuning": {"fixedDigits": 2, "finish": ["Enter"]}}
+            "list": [{"name": "VCR/AUX", "commands": ["InputNext", {"delayMs": 500}, "InputAux"]},
+                     {"name": "TV", "commands": ["InputNext", {"delayMs": 500}, "InputTuner"]}]}}
 ```
+
+This device has no discrete power command at all — only `PowerToggle` — and reaching
+either input means pressing `InputNext`, **waiting half a second**, then pressing the
+one you want. None of that is knowable from its command list.
 
 ### Control
 
@@ -124,10 +127,12 @@ you must perform them**. A step is one of five things:
 | `{"delayMs": 500}` | send nothing; wait 500 ms before the next step |
 | `{"set": "Input", "to": "Antenna"}` | **not a transmission.** The device is now in state `Input` = `Antenna`; record it if you track device state |
 
-So `["InputNext", "InputTuner", {"delayMs": 500}]` means: send `InputNext`, send
-`InputTuner`, then wait half a second before doing anything else. A consumer that
-ignores everything except the bare strings and `command` fields will still work — it
-will just be less careful about timing and state.
+So `["InputNext", {"delayMs": 500}, "InputTuner"]` means: send `InputNext`, wait half
+a second for the set to settle, then send `InputTuner`. **The order is the order of
+the array** — a delay in the middle is a real wait between two presses, not a
+trailing cooldown. A consumer that ignores everything except the bare strings and
+`command` fields will still work; it will just be less careful about timing and
+state.
 
 The names in `set` / `to` are Logitech's own state labels, and where the device
 declares them you will find them in its `states` block, below.
