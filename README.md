@@ -531,6 +531,7 @@ anything larger.
 
 A massive thank you to the following projects:
 
+- Logitech for compiling all of these codes
 - Flipper-IRDB – https://github.com/Lucaslhm/Flipper-IRDB
 - IrScrutinizer – https://github.com/bengtmartensson/IrScrutinizer
 - IrpTransmogrifier – https://github.com/bengtmartensson/IrpTransmogrifier
@@ -550,5 +551,8 @@ The underlying IR codes and protocol definitions originate with Logitech. I make
 representation about their copyright status and I'm not in a position to license them.
 CC0 waives my rights, not anyone else's. If you're building something commercial on
 this, evaluate that yourself.
+
+If anyone from Logitech is reading this and could grant a license/permission to use the
+data free and clear, please reach out.
 
 See `LICENSE` for the full CC0 1.0 Universal text.
