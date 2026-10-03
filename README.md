@@ -142,6 +142,16 @@ trailing cooldown. A consumer that ignores everything except the bare strings an
 `command` fields will still work; it will just be less careful about timing and
 state.
 
+You can rely on that order as published. Logitech numbers each step with an `Order`
+field and does not always store the steps in that order: about 1 in 12 of an input's
+`commands` lists arrives shuffled, most often a two-step sequence stored as `[2, 1]`.
+Every action list here, at every level — the per-input and per-state-value lists
+included — was sorted on `Order` before it was written, so array position *is*
+execution order and there is no `Order` field to check against.
+
+A press Logitech gives a duration of 0 ms is published as a bare string, the same as
+a press with no duration: a 0 ms hold is just a press.
+
 The names in `set` / `to` are Logitech's own state labels, and where the device
 declares them you will find them in its `states` block, below.
 
