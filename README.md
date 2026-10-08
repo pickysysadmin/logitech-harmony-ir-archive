@@ -357,11 +357,17 @@ if device.pressMinRepeats ~= json.null and device.pressMinRepeats >= 0 then
 end
 ```
 
-It writes that count into the transmission it hands to the IR blaster, next to the
-start, repeat and finish sequences. The obvious reading is: send the start group once,
-send the repeat group `pressMinRepeats` times (3 if the field is absent), then send the
-finish group. That reading is unconfirmed, because the blaster's own firmware decides,
-so compare against a real capture if the exact count matters. Devices from one manufacturer
+The hub's IR driver then plays a single press as:
+
+    start group once  →  repeat group × pressMinRepeats  →  finish group
+
+All of those copies are sent even when the key is released straight away. While the
+key is held, the hub keeps replaying the last repeat copy. On release it finishes that
+copy and plays the finish group. A device with `pressMinRepeats` 0 sends no repeat at
+all on a quick press, unless its keycode has no start or finish group, in which case
+it sends one. This was traced through the hub's own IR stack, from the Lua engine
+through its streaming daemon to the kernel DMA driver. It has not yet been checked
+against a capture from a real hub. Devices from one manufacturer
 tend to share a value, so it can look like it follows a device family. It is stored
 per device, so read it per device.
 
@@ -372,7 +378,7 @@ Three other repeat-looking values are **not** the repeat count:
 - a protocol's `pressMinimumRepeats`, which the hub reads but never sends with
 - the device's `minRepeats`, which the hub does not read at all
 
-All three come from reading the hub's firmware. We have not seen the compiler Logitech's
+All of this comes from the hub's firmware. We have not seen the compiler Logitech's
 desktop app uses for older remotes (650, 700, One, …), so treat `pressMinRepeats` as
 the tried value. Treat the other two as possible hints that compiler may use.
 
