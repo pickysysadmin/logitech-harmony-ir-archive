@@ -307,7 +307,7 @@ any one directory under a few hundred entries.
 | `standardProtocol` | the name IrpTransmogrifier gives one generated waveform from this protocol (`NEC1`, `RC5`, `Kaseikyo`, …), or `null` where it does not decode. Informational; the definition is authoritative |
 | `irp` | the definition rendered as an [IRP](http://hifi-remote.com/wiki/index.php/IRP_Notation) string, or `null` for a non-IR protocol |
 | `keycodeFields` | which keycode group, token and segment feeds each `CodeN` field of the IRP, its width, and the toggle-bit position if it has one |
-| `pressMinimumRepeats` | how many times Logitech's own remote repeats a single press |
+| `pressMinimumRepeats` | Logitech's protocol-level repeat count, set on 39 of the 684 protocols. The hub firmware reads it but never sends with it — the repeat count that is actually used is the device's `timing.pressMinRepeats`. See *Repeats* |
 | `definition` | **Logitech's original JSON, verbatim.** The primary source, and the reason this archive outlives our tooling |
 
 ## Timing
@@ -334,12 +334,47 @@ Every one of the 276,236 devices carries one.
 | `interKeyDelay` | ms | between two presses sent to this device (500 or 100 on most) |
 | `interDeviceDelay` | ms | between a command to this device and one to a different device |
 | `holdInterDeviceDelay` | ms | the same, while a key is held. 0 on all but 6 devices |
-| `pressMinRepeats` | count | least number of times one press must be repeated (3 on 206,783; 1 on 67,803) |
-| `minRepeats` | count | least repeats overall, where Logitech states one separately — present on 78,846 |
+| `pressMinRepeats` | count | **the repeat count** for a single press (3 on 206,783; 1 on 67,803). See *Repeats* |
+| `minRepeats` | count | a second catalogue repeat value, present on 78,846. Nothing we have seen send IR reads it; published in case Logitech's desktop compiler does |
 | `isInterKeyDelayOptimized` | flag | Logitech has tuned `interKeyDelay` for this device. True on 288 |
 | `powerOnDelay` | ms | how long the device takes to become responsive after power on — present on 268,058, commonly 1500, and up to tens of seconds |
 | `connectedAppPowerOnDelay` | ms | the same for a network-connected app rather than the device itself. 0 on 268,967 |
 | `inputDelay` | ms | settling time after an input change before the device accepts more commands |
+
+### Repeats
+
+Most IR protocols repeat a command while a key is held. Harmony also sends a
+*minimum* number of repeats for a single short press, and that number varies by device.
+It is `timing.pressMinRepeats`. It is not in the keycode and not in the protocol.
+
+The Harmony Hub's own IR engine (`irmanager.lua`, `generateFromKeyCode`) does exactly
+this:
+
+```lua
+local minRepeats = 3
+if device.pressMinRepeats ~= json.null and device.pressMinRepeats >= 0 then
+  minRepeats = device.pressMinRepeats
+end
+```
+
+It writes that count into the transmission it hands to the IR blaster, next to the
+start, repeat and finish sequences. The obvious reading is: send the start group once,
+send the repeat group `pressMinRepeats` times (3 if the field is absent), then send the
+finish group. That reading is unconfirmed, because the blaster's own firmware decides,
+so compare against a real capture if the exact count matters. Devices from one manufacturer
+tend to share a value, so it can look like it follows a device family. It is stored
+per device, so read it per device.
+
+Three other repeat-looking values are **not** the repeat count:
+
+- the number after the last colon of a keycode, which is `3` on 99.95% of keycodes
+  whatever the device's real count is — see *The keycode*
+- a protocol's `pressMinimumRepeats`, which the hub reads but never sends with
+- the device's `minRepeats`, which the hub does not read at all
+
+All three come from reading the hub's firmware. We have not seen the compiler Logitech's
+desktop app uses for older remotes (650, 700, One, …), so treat `pressMinRepeats` as
+the tried value. Treat the other two as possible hints that compiler may use.
 
 **Provenance, and why a device may be short a field.** These come from two different
 Logitech endpoints. `interKeyDelay`, `interDeviceDelay`, `holdInterDeviceDelay`,
@@ -399,8 +434,10 @@ G:JVC 16 Bit:(Start)(0xC004)():3
 - A token is either `<segment id>x<hex value>` — the `x` sits at index 1, so plain
   `0x750` *is* segment `"0"` carrying the value `750` — or a bare segment id naming
   a fixed (literal) segment, such as `Start` or `Repeat`.
-- The trailing number after the last colon is Logitech's repeat hint, not part of
-  the waveform.
+- The trailing number after the last colon is not part of the waveform, and it is
+  **not** the repeat count. It is `3` on 13,287,136 of 13,293,293 keycodes, including
+  on devices whose real count is 1. Use the device's `timing.pressMinRepeats` — see
+  *Repeats*.
 
 The protocol definition supplies the rest.
 
