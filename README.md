@@ -14,45 +14,74 @@ They are the unfiltered raw data I captured to do with as you see fit.
 
 ## Overview
 
-The infrared control database from Logitech's Harmony universal remotes: **276,236
-devices** from **7,889 manufacturers**, **13,293,293 commands**, and — the half that
-usually goes missing — **all 684 of Logitech's own IR protocol definitions**.
+The infrared control database from Logitech's Harmony universal remotes: about
+276,000 devices from 7,900 manufacturers, 13.3 million commands, and all 684 of
+Logitech's own IR protocol definitions. `manifest.json` has the current counts.
 
-Harmony is mostly discontinued and this data lived only on Logitech's servers.
-Everything here is plain JSON. Nothing in it needs a Logitech service, an account,
-or any tooling beyond what is in this repository.
+Harmony is mostly discontinued, and this data lived only on Logitech's servers. It is
+all plain JSON, and using it needs no Logitech service, no account, and no tooling
+beyond what is in this repository.
 
-Every command carries the original Harmony **keycode** and, for the 13,290,985 that
-are infrared and well-formed, a ready-to-send **Pronto Hex** string. Every protocol carries
-Logitech's original definition — carrier, header, per-bit waveform, framing, repeat
-structure — so any command in the archive can be recompiled to a waveform from first
-principles, by you, without trusting our rendering.
+Every command has its original Harmony **keycode** and, where it is infrared, a
+ready-to-send **Pronto Hex** string. Every protocol has Logitech's original
+definition, so you can render any command yourself instead of trusting ours. Devices
+also record how to *drive* them: timing, whether power is discrete or a toggle, their
+inputs, and how channel numbers are dialled.
 
-Devices also carry what Logitech knew about *driving* them: how fast they accept
-commands, whether power is discrete or a toggle, what their inputs are called and
-which command selects each, and how a channel number must be dialled. See *Control*
-and *Timing*.
-
----
+One convention applies throughout: **an optional field that has no value is absent.
+It is never `null`, `{}` or a placeholder.** Test whether the key exists, not whether
+its value is falsy.
 
 ## Contents
 
 ```
-manifest.json                    counts, schema version, build date
-index.json                       every manufacturer
+manifest.json                        counts, schema version, build date
+index.json                           every manufacturer
 devices/<Manufacturer>/index.json    every model that manufacturer has
-devices/<Manufacturer>/<Model>.json  one device: identity, how to drive it, and a pointer to its code set
-codesets/<xx>/<hash>.json        one command set, shared by every device that has it
-protocols/index.json             every protocol
-protocols/<Protocol_Name>.json   one protocol definition
-index.html                       a lookup page (open it or serve it; see below)
-rehydrate.py, rehydrate.ps1      write device files with their commands inlined
+devices/<Manufacturer>/<Model>.json  one device: identity, how to drive it, and its code set
+codesets/<xx>/<hash>.json            one command set, shared by every device that has it
+protocols/index.json                 every protocol
+protocols/<Protocol_Name>.json       one protocol definition
+index.html                           a lookup page
+rehydrate.py, rehydrate.ps1          write device files with their commands inlined
 ```
 
-**Why code sets are separate.** 79% of devices have a byte-identical command set:
-276,236 devices resolve to 54,118 distinct sets. Storing each set once takes the
-tree from ~5.8 GB to ~0.8 GB. `rehydrate.py` or `rehydrate.ps1` undoes it if you
-would rather have one fat file per device.
+Code sets are stored separately because 79% of devices share a byte-identical set
+with another device. Storing each set once shrinks the tree from ~5.8 GB to ~0.8 GB.
+
+## Looking something up
+
+**The page.** `index.html` is a single file with no build step and no dependencies.
+Double-click it and use **Open archive folder…** to pick the folder holding
+`manifest.json`. It reads the files in place, and nothing is uploaded. This needs
+the File System Access API, which Chromium browsers have and Firefox and Safari do
+not. In any browser, you can instead serve the folder and open it over `http://`:
+
+```sh
+python3 -m http.server 8000     # or any static file server, run from the archive root
+```
+
+**By hand.**
+
+```sh
+jq -r '.[] | select(.n=="Sony") | .s' index.json           # -> Sony
+jq -r '.[] | select(.m=="CDP222ES") | .f' devices/Sony/index.json
+jq . devices/Sony/CDP222ES.json
+jq -r '.commands[] | "\(.name)\t\(.pronto)"' \
+   "$(jq -r .codeset devices/Sony/CDP222ES.json)"
+```
+
+**Rehydrated.** `rehydrate.py` writes self-contained device files with the commands
+inlined:
+
+```sh
+python3 rehydrate.py --manufacturer Sony --out /tmp/sony
+python3 rehydrate.py --model-file my-devices.txt --out /tmp/mine
+python3 rehydrate.py --all --out /tmp/everything      # ~5.8 GB
+```
+
+`rehydrate.ps1` does the same in PowerShell. Windows PowerShell 5.1 is slow at
+parsing JSON, so use Python or PowerShell 7 for anything bigger than one manufacturer.
 
 ## Schema
 
@@ -60,43 +89,16 @@ would rather have one fat file per device.
 
 | field | meaning |
 |---|---|
-| `schemaVersion` | bumped on any breaking field change — pin it if you parse this |
+| `schemaVersion` | bumped on any breaking field change. Pin it if you parse this |
 | `generated` | build date, `YYYY-MM-DD` |
 | `source` | where the data came from |
 | `counts` | `manufacturers`, `devices`, `devicesWithCodes`, `devicesWithTiming`, `devicesWithControl`, `commands`, `commandsWithPronto`, `codesets`, `protocols` |
-| `layout` | the three path patterns, so a consumer never hard-codes them |
+| `layout` | the path patterns, so a consumer never hard-codes them |
 | `notes` | rendering caveats that apply to the whole archive |
 
 ### `devices/<Manufacturer>/<Model>.json`
 
-```json
-{"manufacturer": "Sony",
- "model": "CDP222ES",
- "globalDeviceId": 744,
- "deviceType": 3,
- "codeset": "codesets/41/41c7c832e76a05cd.json"}
-```
-
-| field | meaning |
-|---|---|
-| `manufacturer`, `model` | **verbatim as Logitech spells them.** The filename is only an address (see *Filenames*) — always read the name from inside the file |
-| `globalDeviceId` | Logitech's permanent catalogue id, and this file's stable identity |
-| `deviceType` | Logitech's device-type code (1 TV, 2 VCR, 3 CD, 4 DVD, …) |
-| `codeset` | path to this device's command set, **relative to the archive root** — or `null` for a device Logitech lists with no commands |
-| `timing` | how fast this device can be driven: millisecond delays and repeat counts. See *Timing* |
-| `power` | how the device is turned on and off, and — crucially — whether "on" is a distinct command or a toggle. See *Control* |
-| `inputs` | its named inputs, the command that selects each one, and the physical ports each is wired to |
-| `channelTuning` | how a channel number is dialled: fixed digit width, and any prefix or terminator |
-| `states` | the device's internal states, their legal values, and what to send to reach each — what a `{"set": …, "to": …}` action refers to |
-
-`codeset` holds a path, not a bare hash, so nothing downstream needs to know the
-sharding rule.
-
-The last five are **absent, never `null` and never `{}`**, on a device Logitech has
-nothing to say about — the same convention `pronto` follows. Test with `in` /
-`hasOwnProperty`, not for a falsy value. A fuller record:
-
-A real one, `devices/Magnavox/RJ5540.json`, trimmed only of its timing block:
+A real one, `devices/Magnavox/RJ5540.json`, with its timing block removed:
 
 ```json
 {"manufacturer": "Magnavox",
@@ -110,110 +112,89 @@ A real one, `devices/Magnavox/RJ5540.json`, trimmed only of its timing block:
                      {"name": "TV", "commands": ["InputNext", {"delayMs": 500}, "InputTuner"]}]}}
 ```
 
-This device has no discrete power command at all — only `PowerToggle` — and reaching
-either input means pressing `InputNext`, **waiting half a second**, then pressing the
-one you want. None of that is knowable from its command list.
+This device has no discrete power command, and to reach either input you press
+`InputNext`, wait half a second, then press the one you want. Its command list alone
+would not tell you that.
+
+| field | meaning |
+|---|---|
+| `manufacturer`, `model` | verbatim, spelled as Logitech spells them. Read these rather than the filename (see *Filenames*) |
+| `globalDeviceId` | Logitech's permanent catalogue id, and this file's stable identity |
+| `deviceType` | Logitech's device-type code (1 TV, 2 VCR, 3 CD, 4 DVD, …) |
+| `codeset` | path to the device's command set, relative to the archive root, or `null` for a device with no commands |
+| `timing` | delays and repeat counts. See *Timing* |
+| `power`, `inputs`, `channelTuning`, `states` | how to control it. See *Control* |
 
 ### Control
 
-`codesets/` tells you a device *has* a command called `PowerOn`. It does not tell you
-that sending it is unsafe, that `InputHdmi1` is the socket the console is plugged
-into, or that channel 7 must be dialled as `07`. That is what these four blocks are
-for. 251,449 devices (91%) carry at least one.
+A code set tells you a device *has* a `PowerOn` command. It does not tell you whether
+sending it is safe, which input is HDMI 1, or that channel 7 must be dialled `07`.
+These four blocks carry that information, and about 91% of devices have at least one.
 
 #### Action lists
 
-Every actionable field — `power.on`, `inputs.next`, an input's `commands`,
-`channelTuning.finish`, a state value's `select` — is a **list of steps, in the order
-you must perform them**. A step is one of five things:
+Every actionable field (`power.on`, `inputs.next`, an input's `commands`,
+`channelTuning.finish`, a state value's `select`, …) is a list of steps, performed in
+array order:
 
 | step | meaning |
 |---|---|
-| `"PowerOn"` (a bare string) | send the command with this `name` from the device's code set |
-| `{"command": "X", "durationMs": 500}` | send `X` and keep sending it for 500 ms — a press-and-hold |
+| `"PowerOn"` | send the command with this `name` from the device's code set |
+| `{"command": "X", "durationMs": 500}` | send `X` repeatedly for 500 ms (press and hold) |
 | `{"hold": "X"}` | hold `X`, with no duration given |
-| `{"delayMs": 500}` | send nothing; wait 500 ms before the next step |
-| `{"set": "Input", "to": "Antenna"}` | **not a transmission.** The device is now in state `Input` = `Antenna`; record it if you track device state |
+| `{"delayMs": 500}` | send nothing, and wait 500 ms before the next step |
+| `{"set": "Input", "to": "Antenna"}` | not a transmission. It records that the device is now in state `Input` = `Antenna` |
 
-So `["InputNext", {"delayMs": 500}, "InputTuner"]` means: send `InputNext`, wait half
-a second for the set to settle, then send `InputTuner`. **The order is the order of
-the array** — a delay in the middle is a real wait between two presses, not a
-trailing cooldown. A consumer that ignores everything except the bare strings and
-`command` fields will still work; it will just be less careful about timing and
-state.
+A delay between two steps is a real wait between them, not a cooldown at the end.
+Logitech stores each step's position in an `Order` field and sometimes stores the
+steps out of order (about 1 in 12 input lists). Every list here was sorted on
+`Order` before publishing, so the array position is the execution order. A press with
+a 0 ms duration is published as a bare string.
 
-You can rely on that order as published. Logitech numbers each step with an `Order`
-field and does not always store the steps in that order: about 1 in 12 of an input's
-`commands` lists arrives shuffled, most often a two-step sequence stored as `[2, 1]`.
-Every action list here, at every level — the per-input and per-state-value lists
-included — was sorted on `Order` before it was written, so array position *is*
-execution order and there is no `Order` field to check against.
+A consumer can ignore everything except the bare strings and `command` steps. It
+will still work, but it will be less careful about timing and state.
 
-A press Logitech gives a duration of 0 ms is published as a bare string, the same as
-a press with no duration: a 0 ms hold is just a press.
-
-The names in `set` / `to` are Logitech's own state labels, and where the device
-declares them you will find them in its `states` block, below.
-
-#### `power` — read `type` before you send anything
+#### `power`: read `type` first
 
 | field | meaning |
 |---|---|
 | `type` | `discrete`, `toggle`, `none` or `unknown` |
-| `on`, `off` | the action lists for discrete power control |
+| `on`, `off` | action lists for discrete power control |
 | `toggle` | the action list that flips power state |
 | `onReset` | actions to run after powering on, to put the device in a known state |
 | `onResetInput` | the input `onReset` selects, when named |
 
-**`type` is the single most important field in this archive after the codes
-themselves.** On a `toggle` device (176,596 of them — the majority) there is exactly
-one power command and it flips whatever the current state is. Sending it to "turn the
-TV on" turns it *off* half the time. Only `discrete` devices (63,924) have separate
-`on` and `off` that are safe to send blind and idempotent.
-
-A device can carry a command *named* `PowerOn` in its code set and still be
-`toggle`-behaviour. Trust `type`, not the command name. `none` (35,412 devices) means
-no power control at all, and the block is then omitted entirely.
+Most devices are `toggle`. They have one power command, and it flips the current
+state, so sending it to "turn the TV on" turns it off if the TV is already on. Only
+`discrete` devices have separate `on` and `off` commands that are safe to send blind.
+A code set can contain a command *named* `PowerOn` on a device that is really a
+toggle, so **go by `type`, not by command names.** Most devices with no power control
+have no `power` block at all.
 
 #### `inputs`
 
 | field | meaning |
 |---|---|
-| `list` | the device's inputs in order, each with a `name`, the `commands` that select it, and the `ports` it is wired to |
-| `next`, `previous` | cycle through inputs, for devices with no discrete selection |
-| `start`, `finish` | actions to bracket an input change |
-| `canSkip` | present and `true` when inputs may be skipped |
-| `type` | an **undecoded** Logitech enum, 0–6 |
+| `list` | the inputs in order, each with a `name`, the `commands` that select it, and the `ports` it is wired to |
+| `next`, `previous` | cycle through the inputs, for devices with no direct selection |
+| `start`, `finish` | actions that bracket an input change |
+| `canSkip` | `true` when inputs may be skipped |
+| `type` | an undecoded Logitech enum, 0–6. Treat it as an opaque tag |
 
-209,010 devices (76%) name their inputs — 1,089,512 inputs, all named, 5.2 per
-device. 680,091 of those inputs name a command that selects them directly; the rest
-belong to devices that can only cycle with `next`.
-
-`ports` values are Logitech's own labels (`HDMI`, `Composite`, `Streaming`,
-`Antenna`, `Component`, `Optical`, `USB`, `Coaxial`, `S-Video`, `FM Antenna`, …) and
-are not a closed set. **`type`, and the port `Attributes` that are not published, are
-Logitech enums nobody here has decoded** — `type` is passed through as the integer it
-is rather than guessed at a meaning for. Treat it as an opaque tag.
+Port names are Logitech's labels (`HDMI`, `Composite`, `Antenna`, `Optical`, …), and
+the list of possible names is not fixed. Inputs with no `commands` belong to devices
+that can only cycle through inputs with `next`.
 
 #### `channelTuning`
 
 | field | meaning |
 |---|---|
-| `fixedDigits` | every channel number must be sent with exactly this many digits |
-| `start`, `finish` | actions bracketing the digits — `finish` is usually `Enter` |
+| `fixedDigits` | every channel number must be sent with exactly this many digits, e.g. `07` |
+| `start`, `finish` | actions bracketing the digits. `finish` is usually `Enter` |
 | `greaterTen` | prefix for a channel above 9 |
-| `greaterHundred` | prefix for a channel above 99 — the old `-/--` key |
+| `greaterHundred` | prefix for a channel above 99 (the old `-/--` key), pressed before the digits |
 
-`fixedDigits` is on 57,940 devices (2 digits x41,339, 3 digits x16,594): on those,
-channel 7 must be dialled `07` or `007`, or the tuner sits waiting for a digit that
-never arrives. `finish` is on 28,996 devices — send the digits, then `Enter`.
-`greaterHundred` is on 997 and is pressed *before* the digits, not after.
-
-#### `states` — what `{"set": …, "to": …}` refers to
-
-An `IRDevAction` step says the device is now in state `VideoInput` = `VideoSVideo`.
-The `states` block is where those names are declared: which states the device has,
-what values each can take, and what to send to reach one.
+#### `states`: what `{"set": …, "to": …}` refers to
 
 ```json
 "states": {
@@ -230,26 +211,18 @@ what values each can take, and what to send to reach one.
 
 | field | meaning |
 |---|---|
-| `values` | every value this state can hold, in Logitech's order. `name` is what a `{"to": …}` will match |
-| `values[].select` | how to reach that value — one or more routes, each an action list. Absent where the value is only declared and Logitech gives no way to select it directly |
-| `next`, `previous` | cycle through this state's values |
+| `values` | every value this state can hold, in Logitech's order. A `{"to": …}` matches `name` |
+| `values[].select` | ways to reach that value, each an action list. Absent when Logitech gives no direct way |
+| `next`, `previous` | cycle through the values |
 | `start`, `finish` | actions bracketing a change to this state |
-| `valueDelay` | ms to wait after changing this state. Rare — 36 devices |
+| `valueDelay` | ms to wait after changing this state (rare) |
 
-15,689 devices (5.7%) declare states: 39,854 states, 947 distinct names — most
-commonly `InputType`, `TVInput`, `Screen`, `VideoInput`, `TunerInput` and `Teletext`
-— with 149,586 declared values, of which 82,622 carry a route.
+When `select` has more than one route, they are genuinely different routes,
+distinguished by `setType`, an undecoded enum (1 or 2 in practice). Duplicate routes
+have been removed. If you only want one route, take the first.
 
-**A value can have more than one route.** Where `select` holds two, they are
-genuinely different ways to reach the same value, distinguished by `setType` — an
-**undecoded** Logitech enum, in practice 1 or 2. They are kept separate rather than
-merged because collapsing them would silently pick one of two real alternatives. If
-you only want one, take the first. Routes that were byte-identical repeats in
-Logitech's data are dropped, so two entries here always mean two different things.
-
-Not every `{"set": …}` resolves: 14,693 devices reference a state they never declare.
-Those actions are still worth recording as opaque labels — two actions naming the
-same state and value refer to the same thing — you just cannot enumerate the state.
+Some devices `set` a state they never declare. Treat those as opaque labels: two
+actions that name the same state and value still refer to the same thing.
 
 ### `codesets/<xx>/<hash>.json`
 
@@ -265,25 +238,20 @@ same state and value refer to the same thing — you just cannot enumerate the s
 | field | meaning |
 |---|---|
 | `name` | the command's name, as Logitech ships it |
-| `protocol` | Logitech's **canonical** protocol name — always resolves to a file in `protocols/`. The keycode's own spelling of it sometimes differs in case or spacing |
-| `keycode` | the original Harmony keycode, always present |
-| `pronto` | Pronto Hex (learned/CCF format `0000`). **Absent** — never null, never a placeholder — where the protocol is not infrared |
-| `prontoRepeat` | present only when the transmission wraps a looping burst in a lead-in or trailer: the repeat burst alone, as its own Pronto string |
+| `protocol` | Logitech's canonical protocol name, which always matches a file in `protocols/`. The keycode's own spelling of it can differ in case or spacing |
+| `keycode` | the original Harmony keycode. Always present |
+| `pronto` | Pronto Hex (format `0000`). Absent when the command can't be rendered (see *Caveats*) |
+| `prontoRepeat` | the repeat burst alone, as its own Pronto string. Present only when there is a lead-in or trailer around it |
 
-`pronto` is a complete two-section Pronto: `0000 <freq> <once pairs> <repeat pairs>`
-followed by the once bursts and then the repeat bursts. A player sends section one,
-then loops section two while the key is held. When there is no separate repeat burst
-the repeat-pair count is `0000` and the string is a plain single-sequence Pronto.
-`prontoRepeat` is a convenience for tools that accept only one sequence: the same
-repeat bursts as a standalone `0000 <freq> 0000 <repeat pairs>` string.
+`pronto` is a two-section Pronto string: a player sends the first section once, then
+loops the second while the key is held. If there is no separate repeat burst, the
+second section is empty. `prontoRepeat` is for tools that only accept a single
+sequence.
 
-`hash` is the first 16 hex characters of the SHA-1 of the command set. It is
-computed over `name`, a NUL byte, `keycode` and a newline for each command, with
-commands sorted by `(name, keycode)` — order-independent and stable, and it depends
-only on Logitech's data, never on our rendering.
-
-The `<xx>` directory is the first two characters of the hash; it exists only to keep
-any one directory under a few hundred entries.
+`hash` is the first 16 hex characters of a SHA-1 over each command's `name`, a NUL
+byte, its `keycode` and a newline, with the commands sorted by `(name, keycode)`. It
+depends only on Logitech's data, not on our rendering. `<xx>` is the first two
+characters of the hash.
 
 ### `protocols/<Protocol_Name>.json`
 
@@ -301,54 +269,53 @@ any one directory under a few hundred entries.
 
 | field | meaning |
 |---|---|
-| `name` | Logitech's canonical name — what a command's `protocol` field holds |
+| `name` | Logitech's canonical name, which is what a command's `protocol` field holds |
 | `logitechProtocolId` | Logitech's internal protocol id |
-| `carrierHz` | carrier frequency in Hz. 192 distinct values appear, from 30 kHz to 455 kHz — this is not a 38 kHz-with-rounding database |
-| `standardProtocol` | the name IrpTransmogrifier gives one generated waveform from this protocol (`NEC1`, `RC5`, `Kaseikyo`, …), or `null` where it does not decode. Informational; the definition is authoritative |
-| `irp` | the definition rendered as an [IRP](http://hifi-remote.com/wiki/index.php/IRP_Notation) string, or `null` for a non-IR protocol |
-| `keycodeFields` | which keycode group, token and segment feeds each `CodeN` field of the IRP, its width, and the toggle-bit position if it has one |
-| `pressMinimumRepeats` | Logitech's protocol-level repeat count, set on 39 of the 684 protocols. The hub firmware reads it but never sends with it — the repeat count that is actually used is the device's `timing.pressMinRepeats`. See *Repeats* |
-| `definition` | **Logitech's original JSON, verbatim.** The primary source, and the reason this archive outlives our tooling |
+| `carrierHz` | carrier frequency. There are 192 distinct values, from 30 kHz to 455 kHz |
+| `standardProtocol` | IrpTransmogrifier's name for it (`NEC1`, `RC5`, …), or `null` when it does not decode. For information only |
+| `irp` | the definition as an [IRP](http://hifi-remote.com/wiki/index.php/IRP_Notation) string, or `null` for a non-IR protocol |
+| `keycodeFields` | for each `CodeN` field in the IRP, the keycode group, token and segment it comes from, its width, and any toggle bit |
+| `pressMinimumRepeats` | not the repeat count. See *Repeats* |
+| `definition` | **Logitech's original JSON, verbatim.** It is the primary source, and other tools can render it without ours |
 
 ## Timing
 
-There are **three separate timing layers** in this archive and they are not
-interchangeable:
+There are three timing layers, and they are not interchangeable:
 
-| layer | unit | where | what it controls |
+| layer | unit | where | controls |
 |---|---|---|---|
-| waveform | **microseconds** | `protocols/<name>.json`, and the Pronto strings | the shape of a single burst — mark and space lengths, framing, repeat structure |
-| burst spacing | **milliseconds** | a device's `timing` block | how far apart whole transmissions are sent to this device |
-| macro steps | **milliseconds** | `{"delayMs": N}` inside a control action list | how long to pause between two steps of a sequence |
+| waveform | µs | protocol files and Pronto strings | the shape of one burst |
+| burst spacing | ms | the device's `timing` block | gaps between whole transmissions |
+| macro steps | ms | `{"delayMs": N}` in an action list | pauses within a sequence |
 
-Getting the first one wrong means the device does not decode the signal at all.
-Getting the second or third wrong means it decodes each signal fine but misses or
-doubles presses.
+If the waveform is wrong, the device does not decode the signal at all. If the other
+two are wrong, the device decodes each signal but misses or doubles presses.
 
 ### The `timing` block
 
-Every one of the 276,236 devices carries one.
+Every device has one.
 
 | field | unit | meaning |
 |---|---|---|
-| `interKeyDelay` | ms | between two presses sent to this device (500 or 100 on most) |
+| `interKeyDelay` | ms | between two presses to this device (500 or 100 on most) |
 | `interDeviceDelay` | ms | between a command to this device and one to a different device |
-| `holdInterDeviceDelay` | ms | the same, while a key is held. 0 on all but 6 devices |
-| `pressMinRepeats` | count | **the repeat count** for a single press (3 on 206,783; 1 on 67,803). See *Repeats* |
-| `minRepeats` | count | a second catalogue repeat value, present on 78,846. Nothing we have seen send IR reads it; published in case Logitech's desktop compiler does |
-| `isInterKeyDelayOptimized` | flag | Logitech has tuned `interKeyDelay` for this device. True on 288 |
-| `powerOnDelay` | ms | how long the device takes to become responsive after power on — present on 268,058, commonly 1500, and up to tens of seconds |
-| `connectedAppPowerOnDelay` | ms | the same for a network-connected app rather than the device itself. 0 on 268,967 |
-| `inputDelay` | ms | settling time after an input change before the device accepts more commands |
+| `holdInterDeviceDelay` | ms | the same, while a key is held. Almost always 0 |
+| `pressMinRepeats` | count | **the repeat count for a single press**, usually 3 or 1. See *Repeats* |
+| `minRepeats` | count | a second catalogue value that no known IR sender reads. See *Repeats* |
+| `isInterKeyDelayOptimized` | flag | Logitech has tuned `interKeyDelay` for this device |
+| `powerOnDelay` | ms | time to become responsive after power on. Commonly 1500, and can be tens of seconds |
+| `connectedAppPowerOnDelay` | ms | the same for a network-connected app. Almost always 0 |
+| `inputDelay` | ms | settling time after an input change |
+
+The first six fields come from Logitech's catalogue, and the last three come from a
+per-device profile, which wins when the two disagree. A device lacking a field, most
+often `minRepeats` or `powerOnDelay`, simply has no value for it.
 
 ### Repeats
 
-Most IR protocols repeat a command while a key is held. Harmony also sends a
-*minimum* number of repeats for a single short press, and that number varies by device.
-It is `timing.pressMinRepeats`. It is not in the keycode and not in the protocol.
-
-The Harmony Hub's own IR engine (`irmanager.lua`, `generateFromKeyCode`) does exactly
-this:
+Harmony sends a minimum number of repeats even for a short press, and that number is
+set per device in `timing.pressMinRepeats`. The Harmony Hub's IR engine
+(`irmanager.lua`) reads it, defaulting to 3:
 
 ```lua
 local minRepeats = 3
@@ -357,77 +324,71 @@ if device.pressMinRepeats ~= json.null and device.pressMinRepeats >= 0 then
 end
 ```
 
-The hub's IR driver then plays a single press as:
+A single press plays as:
 
     start group once  →  repeat group × pressMinRepeats  →  finish group
 
-All of those copies are sent even when the key is released straight away. While the
-key is held, the hub keeps replaying the last repeat copy. On release it finishes that
-copy and plays the finish group. A device with `pressMinRepeats` 0 sends no repeat at
-all on a quick press, unless its keycode has no start or finish group, in which case
-it sends one. This was traced through the hub's own IR stack, from the Lua engine
-through its streaming daemon to the kernel DMA driver. It has not yet been checked
-against a capture from a real hub. Devices from one manufacturer
-tend to share a value, so it can look like it follows a device family. It is stored
-per device, so read it per device.
+All of these copies are sent even if the key is released immediately. While the key
+is held, the hub keeps replaying the repeat group, and it plays the finish group on
+release. With `pressMinRepeats` 0, a quick press sends no repeat at all, unless the
+keycode has no start or finish group, in which case one repeat is sent.
 
-Three other repeat-looking values are **not** the repeat count:
+This was traced through the hub firmware but has not yet been checked against a
+capture from a real hub. Older remotes (650, 700, One, …) were programmed by
+Logitech's desktop compiler, which we have not seen.
 
-- the number after the last colon of a keycode, which is `3` on 99.95% of keycodes
-  whatever the device's real count is — see *The keycode*
-- a protocol's `pressMinimumRepeats`, which the hub reads but never sends with
-- the device's `minRepeats`, which the hub does not read at all
+These three values look like repeat counts but are not:
 
-All of this comes from the hub's firmware. We have not seen the compiler Logitech's
-desktop app uses for older remotes (650, 700, One, …), so treat `pressMinRepeats` as
-the tried value. Treat the other two as possible hints that compiler may use.
+- the number after the keycode's last colon, which is `3` on 99.95% of keycodes
+  regardless of the device
+- a protocol's `pressMinimumRepeats`, which the hub reads but never uses when sending
+- the device's `minRepeats`, which the hub does not read. The desktop compiler might
+  use either of the last two
 
-**Provenance, and why a device may be short a field.** These come from two different
-Logitech endpoints. `interKeyDelay`, `interDeviceDelay`, `holdInterDeviceDelay`,
-`pressMinRepeats`, `minRepeats` and `isInterKeyDelayOptimized` are catalogue values;
-`powerOnDelay`, `connectedAppPowerOnDelay` and `inputDelay` come from the resolved
-device profile, which had to be fetched per device. Where the two disagree the
-resolved profile wins. A field a device does not have is simply absent — most
-noticeably `minRepeats`, which only the catalogue publishes, and `powerOnDelay`,
-which 8,178 devices have no profile value for.
+## Caveats
 
-**Nine fields, not sixteen.** Logitech serves seven more that are not published here,
-because each carries no information: `holdInterKeyDelay` is 100 on every one of the
-276,236 devices and `holdMinRepeats` is 0 on every one, while
-`defaultInterKeyDelay`, `defaultInterDeviceDelay`, `defaultPressMinRepeats` and
-`defaultInputDelay` are exact restatements of the field they are named after, and
-`defaultPowerOnDelay` is exactly `powerOnDelay` with absent read as 0. All seven were
-checked device by device across the whole catalogue, and all seven are in the raw
-capture (see below) if you want to confirm that for yourself.
+**The toggle bit is always 0.** Protocols with a toggle bit (RC5 and its relatives,
+which have `toggleBit` in `keycodeFields`) expect the bit to alternate between
+presses. A device may ignore the same Pronto sent twice. Flip the bit yourself for
+the second press.
 
-**There is no `preSilence` field, here or at Logitech.** Harmony hub firmware has a
-runtime `preSilence` in its own engine, fed from the hub's compiled configuration. It
-is not per-device data, Logitech's service never published it, and nothing in this
-archive is a relabelling of it.
+**2,247 commands have no `pronto`, and never can:**
+
+| protocol | commands | why |
+|---|---|---|
+| `ATI 21 Bit` | 2,067 | 433 MHz radio, not infrared |
+| `HID 16 Bit` | 109 | USB HID keyboard control |
+| `Sonos IP` | 52 | network control |
+| `Roku IP` | 19 | network control |
+
+**61 more commands have keycodes that are corrupted in Logitech's database**, for
+example a doubled prefix (`0x0x020122_…`), a stray character (`0x00FF48B7v`), a
+missing digit (`xB6BA20DF`), or a segment the protocol does not define. They are kept
+exactly as Logitech serves them, with no `pronto`.
+
+**About 18,500 devices have no commands.** They are empty entries in Logitech's
+catalogue, and here they have `"codeset": null`.
 
 ## What is not here
 
-This archive is a curated projection. Alongside it, the **raw capture** is published
-as release assets: the verbatim service responses every field above was derived
-from, one JSON object per line, compressed. If a field you need was dropped, or a
-schema decision here turns out to be the wrong one, nothing is lost — the raw has
-every byte, and the fix is a rebuild rather than a re-crawl of a service that may not
-answer forever.
+This archive is a curated subset of the data. The raw capture, which has every
+service response verbatim, is published as release assets (see the TL;DR). If a field
+you need was dropped, it can be rebuilt from the raw capture. The following are in
+the raw capture but not here:
 
-Known to be in the raw and not projected here:
+- seven timing fields that carry no information: `holdInterKeyDelay` (100 on every
+  device), `holdMinRepeats` (0 on every device), and the `default*` fields, each of
+  which repeats the field it is named after
+- `OutputFeature`, the output jacks of about 11,000 devices. No actions are
+  attached to them
+- the undecoded `Attributes` integers on input port types
+- identifiers and timestamps from Logitech's account system, which describe our
+  capture rather than the device
 
-- the seven constant or duplicated timing fields listed above;
-- `OutputFeature` — the physical output jacks of 11,185 devices. Named and typed, but
-  **no device has any action attached to one**, so there is nothing to send and
-  nothing an IR consumer can act on;
-- the `Attributes` on each input's port types, which are undecoded integers;
-- per-device identifiers and timestamps from Logitech's own account plumbing, which
-  describe our capture rather than the device.
+## Rendering a keycode yourself
 
-## The keycode, and how a definition becomes a waveform
-
-A keycode is the whole command. Everything else in the archive is derived from it
-plus a protocol definition.
+Every other field in the archive is derived from the keycode plus the protocol
+definition.
 
 ```
 G:<protocol name>:(<start>)(<repeat>)(<finish>):<trailer>
@@ -435,150 +396,51 @@ G:Sony 12 Bit:()(0x8D1)():3
 G:JVC 16 Bit:(Start)(0xC004)():3
 ```
 
-- The three parenthesised groups are IRP's intro / repeat / ending sequences. Each
-  splits on `_` into **segment tokens**; an empty group has none.
-- A token is either `<segment id>x<hex value>` — the `x` sits at index 1, so plain
-  `0x750` *is* segment `"0"` carrying the value `750` — or a bare segment id naming
-  a fixed (literal) segment, such as `Start` or `Repeat`.
-- The trailing number after the last colon is not part of the waveform, and it is
-  **not** the repeat count. It is `3` on 13,287,136 of 13,293,293 keycodes, including
-  on devices whose real count is 1. Use the device's `timing.pressMinRepeats` — see
-  *Repeats*.
+- The three groups are IRP's intro, repeat and ending sequences. Each splits on `_`
+  into **segment tokens**.
+- A token is either `<segment id>x<hex value>` (the `x` is always at index 1, so
+  `0x750` is segment `"0"` with the value `750`) or a bare segment id naming a fixed
+  segment, such as `Start`.
+- The trailer is not part of the waveform and is not the repeat count.
 
-The protocol definition supplies the rest.
+Then, from the protocol `definition`:
 
-- **Segments.** Each entry in the definition's `IRSegments` (encoded) and
-  `CodeSegments` (fixed literal) is filed under a short id taken from its `Name`:
-  equal to the protocol name → `"0"`; containing `KeyCode` → the text after
-  `KeyCode` (so `Toshiba 32 Bit KeyCodeRepeat` → `"Repeat"`); otherwise the text
-  after `"<protocol name> "`.
-- **Bits.** `EncodingType` 0 or 1: each hex character of the token's value
-  contributes 4 bits, **most significant first**, in written order. `EncodingType`
-  2 or 3: each hex character is **one symbol** — these are the quaternary "N Bit
-  Quad" protocols. The bit list is then left-padded with zeros to `NumberOfBits`,
-  or has *leading* bits dropped if the value is wider.
-- **Toggle.** If the payload names a `ToggleBit`, that one bit position is
-  overwritten with a counter that alternates between presses. Nothing else moves.
-- **Playout.** For each segment: the `Header` atoms, then one
-  `Encodings[BitType].Atoms` list per bit, then the `Trailer` atoms, then a space of
-  `TotalLength - (header + data + trailer)` if that is positive. An atom's `Type` is
-  `1` for a mark (carrier on) and `0` for a space, and `Value` is microseconds.
-- **Assembly.** Play the start group's segments, then the repeat group's, then the
-  finish group's. Merge adjacent same-level runs and drop any leading space: the
-  result is the microsecond mark/space waveform, and the carrier is
+- **Segments.** Each entry in `IRSegments` (encoded) and `CodeSegments` (fixed) is
+  filed under an id taken from its `Name`. If the name equals the protocol name, the
+  id is `"0"`. If it contains `KeyCode`, the id is the text after `KeyCode` (so
+  `Toshiba 32 Bit KeyCodeRepeat` → `"Repeat"`). Otherwise it is the text after
+  `"<protocol name> "`.
+- **Bits.** For `EncodingType` 0 or 1, each hex digit contributes 4 bits, most
+  significant first. For `EncodingType` 2 or 3 (the "N Bit Quad" protocols), each hex
+  digit is one symbol. Left-pad with zeros to `NumberOfBits`, or drop *leading* bits
+  if the value is too wide.
+- **Toggle.** If there is a `ToggleBit`, that bit position is overwritten with a
+  counter that alternates between presses.
+- **Playout.** For each segment, play the `Header` atoms, then the
+  `Encodings[BitType].Atoms` for each bit, then the `Trailer` atoms, then a space of
+  `TotalLength - (header + data + trailer)` if that is positive. An atom with `Type`
+  1 is a mark and one with `Type` 0 is a space. `Value` is in microseconds.
+- **Assembly.** Play the start, repeat and finish groups in that order. Merge adjacent
+  runs at the same level and drop any leading space. The carrier is
   `CarrierFrequency`.
 
-The `pronto` field here is that full start+repeat+finish transmission. `prontoRepeat`
-is the repeat group alone, and it is only emitted when a start or finish group
-exists — otherwise it would just repeat `pronto`.
-
-> If you write your own renderer, do **not** take "the first non-empty group" as the
-> data. For 4.81% of commands (~639,000, across 38 protocols) the first non-empty
-> group is framing: `G:JVC 16 Bit:(Start)(0xC004)()` yields a lead-in carrying no
-> payload, which no decoder can read. `JVC 16 Bit` alone is ~472,000 commands.
-
-## Caveats
-
-**The toggle bit is always 0.** Every waveform here is rendered with the toggle bit
-at zero. Protocols that have one (RC5 and its many relatives — look for `toggleBit`
-in the protocol's `keycodeFields`) expect that bit to *alternate* between consecutive
-presses. Send the same Pronto twice to such a device and the second press may be
-ignored as a repeat. Flip the bit yourself for a second press: its position is in the
-protocol file.
-
-**2,247 commands have no `pronto`, and never can.** They keep their `keycode` and
-their `protocol`; the field is simply absent.
-
-| protocol | commands | why |
-|---|---|---|
-| `ATI 21 Bit` | 2,067 | carrier is 433 MHz — a radio remote, not infrared |
-| `HID 16 Bit` | 109 | USB HID keyboard control |
-| `Sonos IP` | 52 | network control |
-| `Roku IP` | 19 | network control |
-
-Logitech's service types all four as `IrProtocol`, but the last three carry no
-segments and a zero carrier, and the first is out of any IR transmitter's reach.
-This is not a gap in the data.
-
-**A further 61 commands have a keycode Logitech's own database has corrupted**, and
-they lose `pronto` for the same reason: there is nothing to render. All 61 come from
-46 distinct keycodes, in four shapes — a doubled prefix (`0x0x020122_1x0_2x2120030`),
-a stray trailing character (`0x00FF48B7v`), a missing leading digit (`xB6BA20DF`),
-and a group naming a segment the protocol does not define
-(`G:MemorexO1 32 Bit:(0x7689906F)(Repeat)()`, where `MemorexO1 32 Bit` has no
-`Repeat` segment). They are preserved exactly as Logitech serves them, so anyone who
-works out what was meant can render them later.
-
-**18,516 devices have no commands.** They are recorded as stubs with
-`"codeset": null`. They are genuinely empty catalogue entries rather than missing
-data, and they are here so that nothing has to keep re-checking them.
+> Don't treat "the first non-empty group" as the data. For ~4.8% of commands (38
+> protocols, mostly `JVC 16 Bit`), that group is a lead-in with no payload.
 
 ## Filenames
 
-Filenames are addresses, not data. Read `manufacturer` and `model` from inside the
-file — the archive is checked out on Windows and macOS too, so names are normalised:
+Filenames are only addresses, so read `manufacturer` and `model` from inside the
+file. They are normalised so that the archive checks out on Windows and macOS:
 
-- Unicode is NFKC-normalised and stripped of combining marks (`Alizé` → `Alize`,
-  `２５Ｓ９９` → `25S99`).
-- Anything outside `A-Za-z0-9._-` becomes `_`; runs collapse; leading and trailing
-  `_ . -` and spaces are trimmed.
-- Windows reserved names get a trailing `_` — `AUX` is a real manufacturer here.
-- Remaining collisions, compared case-insensitively so a checkout on a
-  case-insensitive filesystem is safe, are resolved by appending `-<globalDeviceId>`
-  for a device and `-2`, `-3`, … for a manufacturer directory.
+- Unicode is NFKC-normalised and combining marks are stripped (`Alizé` → `Alize`).
+- Anything outside `A-Za-z0-9._-` becomes `_`. Runs of these collapse into one, and
+  leading or trailing `_ . -` and spaces are trimmed.
+- Windows reserved names get a trailing `_` (`AUX` is a real manufacturer).
+- Collisions, compared case-insensitively, get `-<globalDeviceId>` added for a device,
+  or `-2`, `-3`, … for a manufacturer.
 
-An address, once assigned, is never recomputed. If Logitech re-spells a model, the
-file stays where it is and only the `model` field inside it changes.
-
-## Looking something up
-
-**The page.** `index.html` is a single vanilla-JS file with no build step, no CDN
-and no dependencies. It reads the archive two ways.
-
-*Double-click it.* Browsers block `fetch()` on `file://`, so the page instead offers
-an **Open archive folder…** button: pick the folder holding `manifest.json` and it
-reads the files where they sit. Nothing is uploaded and nothing is copied — looking
-up one device opens about seven files out of the 338,935 in the tree. This needs a
-browser with the File System Access API: Chrome, Edge, Opera, Brave and other
-Chromium browsers have it; Firefox and Safari do not.
-
-*Or serve the folder* and open it over `http://`, which works in every browser. Any
-of these, run from the archive root, will do it — use whichever you already have:
-
-```sh
-npx --yes serve                 # Node
-php -S localhost:8000           # PHP
-ruby -run -e httpd . -p 8000    # Ruby
-busybox httpd -f -p 8000        # busybox
-python3 -m http.server 8000     # Python
-```
-
-Editors help too: VS Code's Live Server extension serves the open folder in a click.
-And if the archive is published on a static host or your forge's pages service, the
-page just works at that URL with nothing installed at all.
-
-**By hand.**
-
-```sh
-jq -r '.[] | select(.n=="Sony") | .s' index.json           # -> Sony
-jq -r '.[] | select(.m=="CDP222ES") | .f' devices/Sony/index.json
-jq . devices/Sony/CDP222ES.json
-jq -r '.commands[] | "\(.name)\t\(.pronto)"' \
-   "$(jq -r .codeset devices/Sony/CDP222ES.json)"
-```
-
-**Rehydrated.** `rehydrate.py` writes device files with their commands inlined, so
-each output file is self-contained:
-
-```sh
-python3 rehydrate.py --manufacturer Sony --out /tmp/sony
-python3 rehydrate.py --model-file my-devices.txt --out /tmp/mine
-python3 rehydrate.py --all --out /tmp/everything      # ~5.8 GB, 276,236 files
-```
-
-`rehydrate.ps1` is the same forty lines for PowerShell. Windows' built-in PowerShell
-5.1 parses JSON slowly — fine for one manufacturer; use Python or PowerShell 7 for
-anything larger.
+Once a file has an address, it keeps it. If Logitech re-spells a model, only the
+`model` field changes.
 
 ## Acknowledgements
 
