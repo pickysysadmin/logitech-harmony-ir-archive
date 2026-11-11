@@ -1,0 +1,71 @@
+{
+  "codeset": "codesets/96/96679cf8e1b434ec.json",
+  "deviceType": 22,
+  "globalDeviceId": 220804,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"FM"}],"name":"FM","ports":["FM Antenna"]},
+      {"commands":[{"set":"InputType","to":"Tuner"},{"set":"TunerInput","to":"AM"}],"name":"AM","ports":["AM Antenna"]},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"Disc/USB"},{"set":"AVInput","to":"Disc/USB"}],"name":"Disc/USB","ports":["BuiltIn"]},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI 1"}],"name":"HDMI 1","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"AV"},{"set":"AVInput","to":"HDMI 2"}],"name":"HDMI 2","ports":["HDMI"]},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Coax In"}],"name":"Coax In","ports":["Coaxial"]},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Opti In"}],"name":"Opti In","ports":["Optical"]},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Aux In 1"}],"name":"Aux In 1","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Aux In 2"}],"name":"Aux In 2","ports":["Composite"]},
+      {"commands":[{"set":"InputType","to":"Audio"},{"set":"AudioInput","to":"Aux In 3"}],"name":"Aux In 3","ports":["Composite"]}
+    ],
+    "type": 5
+  },
+  "manufacturer": "Teufel",
+  "model": "IP 3000 BR",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "AVInput": {
+      "next": ["InputAV"],
+      "values": [
+        {"name":"Disc/USB"},
+        {"name":"HDMI 1"},
+        {"name":"HDMI 2"}
+      ]
+    },
+    "AudioInput": {
+      "next": ["InputAudio"],
+      "values": [
+        {"name":"Coax In"},
+        {"name":"Opti In"},
+        {"name":"Aux In 1"},
+        {"name":"Aux In 2"},
+        {"name":"Aux In 3"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Tuner","select":[{"commands":["InputTuner"],"setType":2}]},
+        {"name":"AV","select":[{"commands":["InputAV",{"set":"AVInput","to":"Disc/USB"}],"setType":2}]},
+        {"name":"Audio","select":[{"commands":["InputAudio"],"setType":2}]}
+      ]
+    },
+    "TunerInput": {
+      "next": ["InputTuner"],
+      "values": [
+        {"name":"FM"},
+        {"name":"AM"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "minRepeats": 1,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 1
+  }
+}

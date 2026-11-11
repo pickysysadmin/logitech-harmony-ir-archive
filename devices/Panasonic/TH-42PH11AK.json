@@ -1,0 +1,48 @@
+{
+  "codeset": "codesets/ed/eddee91c4301be67.json",
+  "deviceType": 13,
+  "globalDeviceId": 221444,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"Input1Input","to":"Input1A"}],"name":"Input 1A"},
+      {"commands":[{"set":"InputType","to":"Input1"},{"set":"Input1Input","to":"Input1B"}],"name":"Input 1B"},
+      {"commands":[{"set":"InputType","to":"Input2"}],"name":"Input 2"},
+      {"commands":[{"set":"InputType","to":"Input3"}],"name":"Input 3"},
+      {"commands":[{"set":"InputType","to":"PC"}],"name":"PC"}
+    ],
+    "type": 5
+  },
+  "manufacturer": "Panasonic",
+  "model": "TH-42PH11AK",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "Input1Input": {
+      "next": ["Input1"],
+      "values": [
+        {"name":"Input1A"},
+        {"name":"Input1B"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"Input2","select":[{"commands":["Input2"],"setType":2}]},
+        {"name":"Input3","select":[{"commands":["Input3"],"setType":2}]},
+        {"name":"PC","select":[{"commands":["InputPc"],"setType":2}]},
+        {"name":"Input1","select":[{"commands":["Input1"],"setType":2}]}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 0,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
+}

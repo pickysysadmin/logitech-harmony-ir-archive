@@ -1,0 +1,58 @@
+{
+  "codeset": "codesets/94/943040249081a637.json",
+  "deviceType": 22,
+  "globalDeviceId": 221077,
+  "inputs": {
+    "list": [
+      {"commands":[{"set":"InputType","to":"DISC/SD"},{"set":"DISC/SDInput","to":"BD/DVD"}],"name":"BD/DVD"},
+      {"commands":[{"set":"InputType","to":"DISC/SD"},{"set":"DISC/SDInput","to":"SD"}],"name":"SD"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"iPod"}],"name":"iPod"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"Radio FM"}],"name":"Radio FM"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"AUX"}],"name":"AUX"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"ARC"}],"name":"ARC"},
+      {"commands":[{"set":"InputType","to":"iPod"},{"set":"iPodInput","to":"DIN"}],"name":"DIN"}
+    ],
+    "type": 5
+  },
+  "manufacturer": "Panasonic",
+  "model": "SC-BTT262",
+  "power": {
+    "toggle": ["PowerToggle"],
+    "type": "toggle"
+  },
+  "states": {
+    "DISC/SDInput": {
+      "next": ["InputDisc/Sd"],
+      "values": [
+        {"name":"BD/DVD"},
+        {"name":"SD"}
+      ]
+    },
+    "InputType": {
+      "values": [
+        {"name":"DISC/SD","select":[{"commands":["InputDisc/Sd"],"setType":2}]},
+        {"name":"iPod","select":[{"commands":["InputIpod"],"setType":2}]}
+      ]
+    },
+    "iPodInput": {
+      "next": ["InputIpod"],
+      "values": [
+        {"name":"iPod"},
+        {"name":"Radio FM"},
+        {"name":"AUX"},
+        {"name":"ARC"},
+        {"name":"DIN"}
+      ]
+    }
+  },
+  "timing": {
+    "connectedAppPowerOnDelay": 0,
+    "holdInterDeviceDelay": 0,
+    "inputDelay": 1000,
+    "interDeviceDelay": 500,
+    "interKeyDelay": 100,
+    "isInterKeyDelayOptimized": false,
+    "powerOnDelay": 1500,
+    "pressMinRepeats": 3
+  }
+}
